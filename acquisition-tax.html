@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>취득세 계산기 - 주택 취득세 자동 계산 (2024 기준)</title>
+  <meta name="description" content="주택 구매 시 납부하는 취득세를 주택 수, 취득가액, 면적에 따라 자동 계산합니다. 농어촌특별세, 지방교육세 포함 총 세금을 한눈에 확인하세요.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html" class="active">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="subscription.html">청약가점</a>
+      <a href="capital-gains.html">양도세</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal">광고 영역 (728x90)</div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>취득세 계산기</h1>
+        <p class="desc">주택 취득 시 납부해야 할 취득세와 부가세를 자동으로 계산합니다. (2024년 지방세법 기준)</p>
+
+        <div class="form-group">
+          <label>현재 보유 주택 수 <span class="hint">(취득 후 기준)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="houseCount" value="1" checked><span>1주택</span></label>
+            <label><input type="radio" name="houseCount" value="2"><span>2주택</span></label>
+            <label><input type="radio" name="houseCount" value="3"><span>3주택 이상</span></label>
+            <label><input type="radio" name="houseCount" value="corp"><span>법인</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>취득 지역</label>
+          <div class="radio-group">
+            <label><input type="radio" name="region" value="normal" checked><span>일반 지역</span></label>
+            <label><input type="radio" name="region" value="adjust"><span>조정대상지역</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>취득가액 <span class="hint">만원 단위</span></label>
+          <input type="number" id="price" placeholder="예: 90000 (9억)" value="90000" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>전용면적 <span class="hint">㎡</span></label>
+          <input type="number" id="area" placeholder="예: 84" value="84" min="0">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">총 납부 세금 (취득세 + 부가세)</div>
+            <div class="value" id="rTotal">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr>
+              <td>취득가액</td>
+              <td id="rPrice">-</td>
+            </tr>
+            <tr>
+              <td>취득세율</td>
+              <td id="rRate">-</td>
+            </tr>
+            <tr>
+              <td>취득세</td>
+              <td id="rAcq">-</td>
+            </tr>
+            <tr>
+              <td>농어촌특별세</td>
+              <td id="rAgri">-</td>
+            </tr>
+            <tr>
+              <td>지방교육세</td>
+              <td id="rEdu">-</td>
+            </tr>
+            <tr class="total">
+              <td>합계</td>
+              <td id="rSum">-</td>
+            </tr>
+          </table>
+
+          <div style="margin-top:16px;padding:12px;background:#fff8e1;border-radius:8px;font-size:13px;color:#795548;">
+            <strong>주의:</strong> 일시적 2주택, 생애최초 감면, 신혼부부 특례 등 감면 조건이 있을 수 있습니다. 정확한 세액은 관할 시·군·구청에 문의하세요.
+          </div>
+        </div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;">광고 영역 (728x90)</div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle">광고 영역 (300x250)</div>
+
+      <div class="info-box">
+        <h3>2024년 취득세율 요약</h3>
+        <ul>
+          <li><strong>1주택 (6억 이하):</strong> 1%</li>
+          <li><strong>1주택 (6억~9억):</strong> 1~3% 구간세율</li>
+          <li><strong>1주택 (9억 초과):</strong> 3%</li>
+          <li><strong>2주택 (조정지역):</strong> 8%</li>
+          <li><strong>2주택 (비조정):</strong> 일반세율</li>
+          <li><strong>3주택 이상 (조정):</strong> 12%</li>
+          <li><strong>법인:</strong> 12%</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>부가세 안내</h3>
+        <ul>
+          <li><strong>농어촌특별세:</strong> 취득세의 10% (85㎡ 초과 주택)</li>
+          <li><strong>지방교육세:</strong> 취득세의 10%</li>
+          <li>85㎡ 이하 주택은 농어촌특별세 면제</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="subscription.html" class="related-link">청약가점</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle">광고 영역 (300x250)</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세액은 관할 기관에 문의하세요.</p>
+  <p><a href="#">개인정보처리방침</a> | <a href="#">이용약관</a></p>
+</footer>
+
+<script>
+const fmt = n => Math.round(n).toLocaleString('ko-KR');
+const fmtW = n => fmt(Math.round(n / 10000)) + '만원';
+
+function getAcquisitionTaxRate(price, houseCount, region) {
+  // 가격 단위: 만원
+  if (houseCount === 'corp') return 0.12;
+  if (houseCount === '3') return region === 'adjust' ? 0.12 : 0.08;
+  if (houseCount === '2') {
+    if (region === 'adjust') return 0.08;
+    // 비조정 2주택: 일반세율
+  }
+  // 1주택 or 비조정 2주택 → 일반세율
+  if (price <= 60000) return 0.01;
+  if (price <= 90000) {
+    // 6억~9억: (취득가액 × 2/3 - 3) / 100
+    return (price * 2 / 3 - 30000) / price / 100 * 100;
+    // 공식: 세율(%) = (취득가액(억) × 2/3 - 3) ÷ 100
+    // 실제: rate = (price억 × 2/3 - 3) / 100
+  }
+  return 0.03;
+}
+
+function getAcquisitionTaxRateCorrect(priceMan, houseCount, region) {
+  if (houseCount === 'corp') return 0.12;
+  if (houseCount === '3') return region === 'adjust' ? 0.12 : 0.08;
+  if (houseCount === '2' && region === 'adjust') return 0.08;
+
+  // 일반세율 (1주택, 비조정 2주택)
+  const priceEok = priceMan / 10000; // 억 단위
+  if (priceMan <= 60000) return 0.01;       // 6억 이하: 1%
+  if (priceMan <= 90000) {
+    // 6억 초과 9억 이하: 구간 세율
+    // 세율 = (취득가액(만원) × 2 / 3억 - 3억) / 취득가액 ... 복잡하므로 공식 사용
+    // 실제 세율: (취득가액 - 6억) / 3억 × 2% + 1%
+    const ratio = (priceMan - 60000) / 30000; // 0~1
+    return 0.01 + ratio * 0.02;
+  }
+  return 0.03; // 9억 초과: 3%
+}
+
+function calculate() {
+  const priceMan = parseFloat(document.getElementById('price').value);
+  const area = parseFloat(document.getElementById('area').value);
+  const houseCount = document.querySelector('input[name="houseCount"]:checked').value;
+  const region = document.querySelector('input[name="region"]:checked').value;
+
+  if (!priceMan || !area) return alert('취득가액과 면적을 입력해주세요.');
+
+  const priceWon = priceMan * 10000;
+  const rate = getAcquisitionTaxRateCorrect(priceMan, houseCount, region);
+  const acqTax = priceWon * rate;
+
+  // 농어촌특별세: 85㎡ 초과 & 취득세율 1% 초과인 경우 취득세의 10%
+  // 단, 취득세율이 1%인 경우 농특세 없음 (85㎡ 이하 여부와 무관하게 간이세율 적용 시)
+  // 간소화: 85㎡ 초과이면 취득세 × 10%, 이하이면 0
+  const agriTax = area > 85 ? acqTax * 0.1 : 0;
+
+  // 지방교육세: 취득세의 10%
+  const eduTax = acqTax * 0.1;
+
+  const total = acqTax + agriTax + eduTax;
+
+  document.getElementById('rTotal').textContent = fmtW(total);
+  document.getElementById('rSub').textContent = `취득가액의 약 ${(total / priceWon * 100).toFixed(2)}%`;
+  document.getElementById('rPrice').textContent = fmtW(priceWon);
+  document.getElementById('rRate').textContent = (rate * 100).toFixed(2) + '%';
+  document.getElementById('rAcq').textContent = fmtW(acqTax);
+  document.getElementById('rAgri').textContent = agriTax > 0 ? fmtW(agriTax) : '면제 (85㎡ 이하)';
+  document.getElementById('rEdu').textContent = fmtW(eduTax);
+  document.getElementById('rSum').textContent = fmtW(total);
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

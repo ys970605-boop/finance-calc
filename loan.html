@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대출이자 계산기 - 원리금균등/원금균등/만기일시상환 월 상환액 계산</title>
+  <meta name="description" content="대출 원리금균등, 원금균등, 만기일시상환 방식별 월 납입금과 총 이자를 무료로 계산하세요. 상환 스케줄도 한눈에 확인 가능합니다.">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html" class="active">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="subscription.html">청약가점</a>
+      <a href="capital-gains.html">양도세</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- 상단 광고 -->
+  <div class="ad-zone horizontal">광고 영역 (728x90)</div>
+
+  <div class="calc-layout">
+    <!-- 계산기 본체 -->
+    <div>
+      <div class="calc-box">
+        <h1>대출이자 계산기</h1>
+        <p class="desc">대출금액, 금리, 기간을 입력하면 월 상환액과 총 이자를 계산해드립니다.</p>
+
+        <div class="form-group">
+          <label>상환 방식</label>
+          <div class="radio-group">
+            <label><input type="radio" name="method" value="equal-payment" checked><span>원리금균등</span></label>
+            <label><input type="radio" name="method" value="equal-principal"><span>원금균등</span></label>
+            <label><input type="radio" name="method" value="balloon"><span>만기일시상환</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>대출 금액 <span class="hint">만원 단위</span></label>
+          <input type="number" id="loanAmount" placeholder="예: 30000 (3억)" value="30000" min="0">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>연이자율 <span class="hint">%</span></label>
+            <input type="number" id="rate" placeholder="예: 4.5" value="4.5" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>대출 기간 <span class="hint">개월</span></label>
+            <input type="number" id="months" placeholder="예: 360 (30년)" value="360" min="1">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label" id="mainLabel">월 납입금 (원리금균등)</div>
+            <div class="value" id="mainValue">-</div>
+            <div class="sub" id="mainSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr>
+              <td>대출 원금</td>
+              <td id="rPrincipal">-</td>
+            </tr>
+            <tr>
+              <td>총 상환 금액</td>
+              <td id="rTotal">-</td>
+            </tr>
+            <tr class="total">
+              <td>총 이자 금액</td>
+              <td id="rInterest">-</td>
+            </tr>
+            <tr>
+              <td>원금 대비 이자 비율</td>
+              <td id="rRatio">-</td>
+            </tr>
+          </table>
+
+          <!-- 상환 스케줄 -->
+          <div style="margin-top:24px;">
+            <div class="tab-btns">
+              <button class="tab-btn active" onclick="showTab('chart')">연도별 요약</button>
+              <button class="tab-btn" onclick="showTab('full')">전체 스케줄</button>
+            </div>
+            <div id="tab-chart">
+              <div class="amort-table-wrap">
+                <table class="amort-table" id="yearlyTable">
+                  <thead>
+                    <tr>
+                      <th>연차</th>
+                      <th>원금 납입</th>
+                      <th>이자 납입</th>
+                      <th>연 납입 합계</th>
+                      <th>잔여 원금</th>
+                    </tr>
+                  </thead>
+                  <tbody id="yearlyBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div id="tab-full" style="display:none;">
+              <div class="amort-table-wrap" style="max-height:400px;overflow-y:auto;">
+                <table class="amort-table" id="fullTable">
+                  <thead>
+                    <tr>
+                      <th>회차</th>
+                      <th>원금</th>
+                      <th>이자</th>
+                      <th>월 납입액</th>
+                      <th>잔여 원금</th>
+                    </tr>
+                  </thead>
+                  <tbody id="fullBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 하단 광고 -->
+      <div class="ad-zone horizontal" style="margin-top:20px;">광고 영역 (728x90)</div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle">광고 영역 (300x250)</div>
+
+      <div class="info-box">
+        <h3>상환 방식 비교</h3>
+        <ul>
+          <li><strong>원리금균등</strong>: 매달 동일한 금액 납부. 초기 이자 비중 높음. 일반 주택담보대출에 많이 사용.</li>
+          <li><strong>원금균등</strong>: 매달 동일한 원금 상환. 초기 납입액 높지만 총 이자가 적음.</li>
+          <li><strong>만기일시상환</strong>: 매달 이자만 납부 후 만기에 원금 일시 상환. 단기 대출에 적합.</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>대출 팁</h3>
+        <ul>
+          <li>금리 0.5% 차이가 30년 대출에서 수천만원 차이를 만들 수 있습니다.</li>
+          <li>조기 상환 수수료를 고려해 여유 자금 활용 전략을 세우세요.</li>
+          <li>DSR(총부채원리금상환비율) 규제로 소득 대비 대출 한도가 제한됩니다.</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="subscription.html" class="related-link">청약가점</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle">광고 영역 (300x250)</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 금융기관에 문의하세요.</p>
+  <p><a href="#">개인정보처리방침</a> | <a href="#">이용약관</a></p>
+</footer>
+
+<script>
+const fmt = n => Math.round(n).toLocaleString('ko-KR');
+const fmtW = n => fmt(n) + '만원';
+
+function getMethod() {
+  return document.querySelector('input[name="method"]:checked').value;
+}
+
+function showTab(tab) {
+  document.getElementById('tab-chart').style.display = tab === 'chart' ? 'block' : 'none';
+  document.getElementById('tab-full').style.display = tab === 'full' ? 'block' : 'none';
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', (i === 0 && tab === 'chart') || (i === 1 && tab === 'full'));
+  });
+}
+
+function calculate() {
+  const P = parseFloat(document.getElementById('loanAmount').value) * 10000;
+  const r = parseFloat(document.getElementById('rate').value) / 100 / 12;
+  const n = parseInt(document.getElementById('months').value);
+  const method = getMethod();
+
+  if (!P || !r || !n) return alert('모든 항목을 입력해주세요.');
+
+  let schedule = [];
+  let totalInterest = 0;
+  let totalPayment = 0;
+  let mainValue = 0;
+  let mainLabel = '';
+  let mainSub = '';
+
+  if (method === 'equal-payment') {
+    // 원리금균등
+    const monthly = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    mainValue = monthly;
+    mainLabel = '월 납입금 (원리금균등)';
+    let balance = P;
+    for (let i = 1; i <= n; i++) {
+      const interest = balance * r;
+      const principal = monthly - interest;
+      balance -= principal;
+      totalInterest += interest;
+      totalPayment += monthly;
+      schedule.push({ month: i, principal, interest, payment: monthly, balance: Math.max(0, balance) });
+    }
+    mainSub = `매달 동일하게 ${fmt(monthly / 10000)}만원`;
+
+  } else if (method === 'equal-principal') {
+    // 원금균등
+    const monthlyPrincipal = P / n;
+    let balance = P;
+    let firstPayment = 0;
+    for (let i = 1; i <= n; i++) {
+      const interest = balance * r;
+      const payment = monthlyPrincipal + interest;
+      balance -= monthlyPrincipal;
+      totalInterest += interest;
+      totalPayment += payment;
+      if (i === 1) firstPayment = payment;
+      schedule.push({ month: i, principal: monthlyPrincipal, interest, payment, balance: Math.max(0, balance) });
+    }
+    mainValue = firstPayment;
+    mainLabel = '첫달 납입금 (원금균등)';
+    mainSub = `매달 ${fmt(monthlyPrincipal / 10000)}만원씩 원금 상환`;
+
+  } else {
+    // 만기일시상환
+    const monthlyInterest = P * r;
+    mainValue = monthlyInterest;
+    mainLabel = '월 이자 (만기일시상환)';
+    for (let i = 1; i <= n; i++) {
+      const isLast = i === n;
+      const payment = isLast ? monthlyInterest + P : monthlyInterest;
+      const balance = isLast ? 0 : P;
+      totalInterest += monthlyInterest;
+      totalPayment += payment;
+      schedule.push({ month: i, principal: isLast ? P : 0, interest: monthlyInterest, payment, balance });
+    }
+    mainSub = `만기(${n}개월 후) 원금 ${fmtW(P / 10000)} 상환`;
+  }
+
+  // 결과 출력
+  document.getElementById('mainLabel').textContent = mainLabel;
+  document.getElementById('mainValue').textContent = fmt(mainValue / 10000) + '만원';
+  document.getElementById('mainSub').textContent = mainSub;
+  document.getElementById('rPrincipal').textContent = fmtW(P / 10000);
+  document.getElementById('rTotal').textContent = fmtW(totalPayment / 10000);
+  document.getElementById('rInterest').textContent = fmtW(totalInterest / 10000);
+  document.getElementById('rRatio').textContent = ((totalInterest / P) * 100).toFixed(1) + '%';
+
+  // 연도별 요약 테이블
+  const yearlyBody = document.getElementById('yearlyBody');
+  yearlyBody.innerHTML = '';
+  for (let y = 0; y < Math.ceil(n / 12); y++) {
+    const monthsInYear = schedule.slice(y * 12, y * 12 + 12);
+    const yPrincipal = monthsInYear.reduce((s, m) => s + m.principal, 0);
+    const yInterest = monthsInYear.reduce((s, m) => s + m.interest, 0);
+    const yPayment = monthsInYear.reduce((s, m) => s + m.payment, 0);
+    const lastBalance = monthsInYear[monthsInYear.length - 1].balance;
+    yearlyBody.innerHTML += `<tr>
+      <td>${y + 1}년차</td>
+      <td>${fmt(yPrincipal / 10000)}만원</td>
+      <td>${fmt(yInterest / 10000)}만원</td>
+      <td>${fmt(yPayment / 10000)}만원</td>
+      <td>${fmt(lastBalance / 10000)}만원</td>
+    </tr>`;
+  }
+
+  // 전체 스케줄 테이블
+  const fullBody = document.getElementById('fullBody');
+  fullBody.innerHTML = schedule.map(s => `<tr>
+    <td>${s.month}회</td>
+    <td>${fmt(s.principal / 10000)}만원</td>
+    <td>${fmt(s.interest / 10000)}만원</td>
+    <td>${fmt(s.payment / 10000)}만원</td>
+    <td>${fmt(s.balance / 10000)}만원</td>
+  </tr>`).join('');
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>
