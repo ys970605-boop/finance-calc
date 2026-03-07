@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연봉 실수령액 계산기 - 세금 공제 후 실제 수령액 계산 (2024)</title>
+  <meta name="description" content="연봉을 입력하면 국민연금, 건강보험, 소득세 등 공제 후 실제 월 수령액을 자동 계산합니다. 2024년 기준 연봉 실수령액 계산기.">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="salary.html" class="active">실수령액</a>
+      <a href="subscription.html">청약가점</a>
+      <a href="capital-gains.html">양도세</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>연봉 실수령액 계산기</h1>
+        <p class="desc">연봉 입력 시 4대보험 및 소득세 공제 후 실제 월 수령액을 계산합니다. (2024년 기준)</p>
+
+        <div class="form-group">
+          <label>연봉 <span class="hint">만원 단위</span></label>
+          <input type="number" id="salary" placeholder="예: 4000 (4천만원)" value="4000">
+        </div>
+
+        <div class="form-group">
+          <label>부양가족 수 <span class="hint">본인 포함</span></label>
+          <input type="number" id="dependents" placeholder="예: 1" value="1" min="1">
+        </div>
+
+        <div class="form-group">
+          <label>20세 이하 자녀 수</label>
+          <input type="number" id="children" placeholder="예: 0" value="0" min="0">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">월 실수령액</div>
+            <div class="value" id="rMonthly">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>연봉</td><td id="rSalary">-</td></tr>
+            <tr><td>월 세전 급여</td><td id="rMonthGross">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;"><td colspan="2" style="font-weight:700;padding-top:12px;color:#5f6368;">공제 항목</td></tr>
+            <tr><td>국민연금 (4.5%)</td><td id="rPension">-</td></tr>
+            <tr><td>건강보험 (3.545%)</td><td id="rHealth">-</td></tr>
+            <tr><td>장기요양보험 (건보의 12.95%)</td><td id="rLongterm">-</td></tr>
+            <tr><td>고용보험 (0.9%)</td><td id="rEmploy">-</td></tr>
+            <tr><td>소득세 (근로소득세)</td><td id="rIncome">-</td></tr>
+            <tr><td>지방소득세 (소득세의 10%)</td><td id="rLocal">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>총 공제액</td><td id="rTotal">-</td></tr>
+            <tr class="total"><td>월 실수령액</td><td id="rNet">-</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>2024년 4대보험 요율</h3>
+        <ul>
+          <li><strong>국민연금:</strong> 4.5% (사용자 4.5% 별도)</li>
+          <li><strong>건강보험:</strong> 3.545%</li>
+          <li><strong>장기요양:</strong> 건보료의 12.95%</li>
+          <li><strong>고용보험:</strong> 0.9%</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>연봉 구간별 실수령액</h3>
+        <ul>
+          <li><strong>3천만원:</strong> 월 약 219만원</li>
+          <li><strong>4천만원:</strong> 월 약 286만원</li>
+          <li><strong>5천만원:</strong> 월 약 350만원</li>
+          <li><strong>6천만원:</strong> 월 약 411만원</li>
+          <li><strong>8천만원:</strong> 월 약 529만원</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="weekly-holiday.html" class="related-link">주휴수당</a>
+          <a href="health-insurance.html" class="related-link">건강보험</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 급여명세서를 확인하세요.</p>
+  <p><a href="#">개인정보처리방침</a> | <a href="#">이용약관</a></p>
+</footer>
+<script>
+const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+const fmtW = n => Math.round(n/10000).toLocaleString('ko-KR') + '만원';
+
+// 2024 근로소득 간이세액표 (월급여 기준, 부양가족 수별)
+function getIncomeTax(monthlyGross, dependents, children) {
+  // 과세표준 = 월급여 - 비과세(식대 10만원)
+  const taxable = Math.max(0, monthlyGross - 100000);
+  // 간이세액 근사치 계산 (실제는 간이세액표 사용)
+  const annual = taxable * 12;
+  let tax = 0;
+  if (annual <= 14000000) tax = annual * 0.06;
+  else if (annual <= 50000000) tax = 840000 + (annual - 14000000) * 0.15;
+  else if (annual <= 88000000) tax = 6240000 + (annual - 50000000) * 0.24;
+  else if (annual <= 150000000) tax = 15360000 + (annual - 88000000) * 0.35;
+  else tax = 37060000 + (annual - 150000000) * 0.38;
+
+  // 근로소득공제
+  let deduct = 0;
+  if (annual <= 5000000) deduct = annual * 0.7;
+  else if (annual <= 15000000) deduct = 3500000 + (annual - 5000000) * 0.4;
+  else if (annual <= 45000000) deduct = 7500000 + (annual - 15000000) * 0.15;
+  else if (annual <= 100000000) deduct = 12000000 + (annual - 45000000) * 0.05;
+  else deduct = 14750000;
+
+  // 인적공제 (본인+부양가족 150만원씩, 자녀 150만원)
+  const personalDeduct = dependents * 1500000 + children * 1500000;
+  const taxBase = Math.max(0, annual - deduct - personalDeduct);
+
+  let annualTax = 0;
+  if (taxBase <= 14000000) annualTax = taxBase * 0.06;
+  else if (taxBase <= 50000000) annualTax = 840000 + (taxBase - 14000000) * 0.15;
+  else if (taxBase <= 88000000) annualTax = 6240000 + (taxBase - 14000000) * 0.24;
+  else if (taxBase <= 150000000) annualTax = 15360000 + (taxBase - 88000000) * 0.35;
+  else annualTax = 37060000 + (taxBase - 150000000) * 0.38;
+
+  return Math.max(0, annualTax / 12);
+}
+
+function calculate() {
+  const salaryMan = parseFloat(document.getElementById('salary').value) || 0;
+  const dependents = parseInt(document.getElementById('dependents').value) || 1;
+  const children = parseInt(document.getElementById('children').value) || 0;
+
+  const annual = salaryMan * 10000;
+  const monthly = annual / 12;
+
+  // 4대보험 (월 상한 적용 근사치)
+  const pension = Math.min(monthly, 5900000) * 0.045;
+  const health = monthly * 0.03545;
+  const longterm = health * 0.1295;
+  const employ = monthly * 0.009;
+  const incomeTax = getIncomeTax(monthly, dependents, children);
+  const localTax = incomeTax * 0.1;
+
+  const totalDeduct = pension + health + longterm + employ + incomeTax + localTax;
+  const net = monthly - totalDeduct;
+
+  document.getElementById('rSalary').textContent = fmtW(annual);
+  document.getElementById('rMonthGross').textContent = fmt(monthly);
+  document.getElementById('rPension').textContent = fmt(pension);
+  document.getElementById('rHealth').textContent = fmt(health);
+  document.getElementById('rLongterm').textContent = fmt(longterm);
+  document.getElementById('rEmploy').textContent = fmt(employ);
+  document.getElementById('rIncome').textContent = fmt(incomeTax);
+  document.getElementById('rLocal').textContent = fmt(localTax);
+  document.getElementById('rTotal').textContent = fmt(totalDeduct);
+  document.getElementById('rNet').textContent = fmt(net);
+  document.getElementById('rMonthly').textContent = fmt(net);
+  document.getElementById('rSub').textContent = `연 실수령액 약 ${fmtW(net * 12)}`;
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>
