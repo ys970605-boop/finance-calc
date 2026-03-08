@@ -7,8 +7,22 @@ import asyncio
 import json
 import os
 import random
+import time
+import urllib.request
 from datetime import datetime
 from playwright.async_api import async_playwright
+
+
+def wait_for_network(max_wait=300, interval=30):
+    """네트워크 연결 대기 (맥 잠자기 복귀 대응)"""
+    for i in range(max_wait // interval):
+        try:
+            urllib.request.urlopen("https://www.google.com", timeout=10)
+            return True
+        except:
+            print(f"[{datetime.now()}] 네트워크 대기 중... ({(i+1)*interval}s)")
+            time.sleep(interval)
+    return False
 
 SESSION_FILE = "/tmp/threads_session.json"
 POSTED_FILE = "/tmp/threads_posted.json"
@@ -139,8 +153,17 @@ async def post_thread(body, comment):
         )
         page = await context.new_page()
 
-        page.set_default_timeout(30000)
-        await page.goto("https://www.threads.com/", wait_until="domcontentloaded", timeout=30000)
+        page.set_default_timeout(45000)
+        for attempt in range(3):
+            try:
+                await page.goto("https://www.threads.com/", wait_until="domcontentloaded", timeout=60000)
+                break
+            except Exception as e:
+                if attempt < 2:
+                    print(f"[{datetime.now()}] 접속 재시도 {attempt+2}/3...")
+                    await page.wait_for_timeout(5000)
+                else:
+                    raise e
         await page.wait_for_timeout(4000)
 
         # 입력창 클릭 - text content 기반 (안정적)
@@ -206,7 +229,7 @@ async def post_thread(body, comment):
         # 방금 올린 글에 댓글 달기
         try:
             # 내 프로필로 이동해서 최신 글 찾기
-            await page.goto("https://www.threads.com/@calcmoney.kr", wait_until="domcontentloaded", timeout=30000)
+            await page.goto("https://www.threads.com/@calcmoney.kr", wait_until="domcontentloaded", timeout=60000)
             await page.wait_for_timeout(3000)
 
             # 첫 번째 글의 댓글 버튼 클릭
@@ -245,6 +268,10 @@ async def post_thread(body, comment):
         return True
 
 def main():
+    if not wait_for_network():
+        print(f"[{datetime.now()}] 네트워크 연결 실패 - 종료")
+        return
+
     posted_list = json.load(open(POSTED_FILE)) if os.path.exists(POSTED_FILE) else []
     remaining = [p for p in POSTS if p[0] not in posted_list]
 

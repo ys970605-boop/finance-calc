@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>종합소득세 계산기 - 2026년 세율 자동 계산 | 프리랜서·사업자·근로자</title>
+  <meta name="description" content="2026년 종합소득세를 자동 계산합니다. 프리랜서, 개인사업자, 근로소득자 모두 사용 가능. 소득 유형별 경비율 적용, 누진세율 자동 계산.">
+  <link rel="canonical" href="https://finance-calc-kr.netlify.app/income-tax.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="종합소득세 계산기 - 2026년 세율 자동 계산">
+  <meta property="og:description" content="2026년 종합소득세를 자동 계산합니다. 프리랜서, 사업자, 근로자 모두 사용 가능.">
+  <meta property="og:url" content="https://finance-calc-kr.netlify.app/income-tax.html">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "종합소득세란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종합소득세는 개인이 1년간 얻은 모든 소득(근로, 사업, 이자, 배당, 연금, 기타소득)을 합산하여 부과하는 세금입니다. 매년 5월 1일~31일에 전년도 소득을 신고·납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 종합소득세 세율은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 종합소득세 세율은 과세표준 1,400만원 이하 6%, 5,000만원 이하 15%, 8,800만원 이하 24%, 1.5억 이하 35%, 3억 이하 38%, 5억 이하 40%, 10억 이하 42%, 10억 초과 45%의 8단계 누진세율이 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "프리랜서 종합소득세는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "프리랜서는 사업소득으로 분류되며, 총수입금액에서 필요경비를 빼 소득금액을 구합니다. 단순경비율(보통 64.1%) 또는 기준경비율(약 19.4%)을 적용하고, 소득공제 후 누진세율로 세금을 계산합니다. 이미 원천징수된 3.3%는 기납부세액으로 차감됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "종합소득세 신고 기간은 언제인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종합소득세 정기 신고 기간은 매년 5월 1일부터 5월 31일까지입니다. 성실신고확인 대상자는 6월 30일까지 연장됩니다. 기한 내 미신고 시 무신고가산세(20%)가 부과됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "종합소득세 환급은 어떻게 받나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "원천징수된 세금(프리랜서 3.3% 등)이 실제 산출세액보다 많은 경우 환급을 받을 수 있습니다. 5월 신고 후 보통 6월 말~7월 초에 환급금이 입금됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연 수입 5000만원 프리랜서 세금은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연 수입 5,000만원 프리랜서의 경우, 단순경비율(64.1%) 적용 시 소득금액 약 1,795만원, 기본공제 150만원 차감 후 과세표준 약 1,645만원으로 종합소득세 약 177만원(지방세 포함 약 194만원)이 산출됩니다. 기납부 원천징수세액(3.3%, 약 165만원)을 차감하면 추가 납부액은 약 29만원입니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html" class="active">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>종합소득세 계산기</h1>
+        <p class="desc">2026년 기준 종합소득세를 자동 계산합니다. 프리랜서, 개인사업자, 근로소득자 모두 사용 가능합니다.</p>
+
+        <div class="form-group">
+          <label>소득 유형</label>
+          <select id="incomeType" onchange="toggleFields()">
+            <option value="freelancer">프리랜서 (3.3% 원천징수)</option>
+            <option value="business">개인사업자</option>
+            <option value="salary">근로소득자 (직장인)</option>
+            <option value="other">기타소득</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>연간 총수입금액 <span class="hint">만원 단위</span></label>
+          <input type="number" id="totalIncome" placeholder="예: 5000 (5천만원)" value="5000">
+        </div>
+
+        <div class="form-group" id="expenseTypeGroup">
+          <label>경비율 적용 방식</label>
+          <select id="expenseType" onchange="toggleExpenseInput()">
+            <option value="simple">단순경비율 (소규모 사업자)</option>
+            <option value="standard">기준경비율 (일정 규모 이상)</option>
+            <option value="manual">직접 입력</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="expenseRateGroup" style="display:none;">
+          <label>경비율 (%) <span class="hint">직접 입력</span></label>
+          <input type="number" id="expenseRate" placeholder="예: 60" value="60" step="0.1">
+        </div>
+
+        <div class="form-group" id="expenseAmountGroup" style="display:none;">
+          <label>필요경비 <span class="hint">만원 단위</span></label>
+          <input type="number" id="expenseAmount" placeholder="예: 2000" value="0">
+        </div>
+
+        <div class="form-group">
+          <label>부양가족 수 <span class="hint">본인 포함</span></label>
+          <input type="number" id="dependents" value="1" min="1">
+        </div>
+
+        <div class="form-group">
+          <label>20세 이하 자녀 수</label>
+          <input type="number" id="children" value="0" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>70세 이상 경로우대 수</label>
+          <input type="number" id="elderly" value="0" min="0">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">최종 납부(환급)세액</div>
+            <div class="value" id="rFinal">-</div>
+            <div class="sub" id="rFinalSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>연간 총수입금액</td><td id="rGross">-</td></tr>
+            <tr><td>필요경비</td><td id="rExpense">-</td></tr>
+            <tr><td>소득금액</td><td id="rIncome">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;"><td colspan="2" style="font-weight:700;padding-top:12px;color:#5f6368;">소득공제</td></tr>
+            <tr><td>인적공제 (기본)</td><td id="rPersonal">-</td></tr>
+            <tr><td>경로우대공제</td><td id="rElderly">-</td></tr>
+            <tr><td>국민연금 공제</td><td id="rPension">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>과세표준</td><td id="rTaxBase">-</td></tr>
+            <tr><td>적용 세율</td><td id="rRate">-</td></tr>
+            <tr><td>산출세액</td><td id="rTax">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;"><td colspan="2" style="font-weight:700;padding-top:12px;color:#5f6368;">세액공제·기납부세액</td></tr>
+            <tr><td>표준세액공제</td><td id="rStdDeduct">-</td></tr>
+            <tr><td>자녀세액공제</td><td id="rChildCredit">-</td></tr>
+            <tr><td>기납부세액 (원천징수)</td><td id="rWithheld">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>결정세액</td><td id="rDecided">-</td></tr>
+            <tr><td>지방소득세 (10%)</td><td id="rLocal">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>최종 납부(환급)세액</td><td id="rFinalTotal">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 세율표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 종합소득세 세율표</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준</td><td>세율</td><td>누진공제</td></tr>
+          <tr><td>1,400만원 이하</td><td>6%</td><td>-</td></tr>
+          <tr><td>5,000만원 이하</td><td>15%</td><td>126만원</td></tr>
+          <tr><td>8,800만원 이하</td><td>24%</td><td>576만원</td></tr>
+          <tr><td>1.5억원 이하</td><td>35%</td><td>1,544만원</td></tr>
+          <tr><td>3억원 이하</td><td>38%</td><td>1,994만원</td></tr>
+          <tr><td>5억원 이하</td><td>40%</td><td>2,594만원</td></tr>
+          <tr><td>10억원 이하</td><td>42%</td><td>3,594만원</td></tr>
+          <tr><td>10억원 초과</td><td>45%</td><td>6,594만원</td></tr>
+        </table>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>소득 유형별 경비율</h3>
+        <ul>
+          <li><strong>프리랜서:</strong> 단순 64.1% / 기준 19.4%</li>
+          <li><strong>온라인 판매:</strong> 단순 86.5% / 기준 12.0%</li>
+          <li><strong>음식점:</strong> 단순 89.7% / 기준 9.1%</li>
+          <li><strong>부동산임대:</strong> 단순 42.6% / 기준 17.1%</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 업종별로 상이하며, 위는 대표적인 예시입니다.</p>
+      </div>
+      <div class="info-box">
+        <h3>신고 일정</h3>
+        <ul>
+          <li><strong>신고기간:</strong> 5월 1일 ~ 5월 31일</li>
+          <li><strong>성실신고:</strong> 6월 30일까지</li>
+          <li><strong>환급 입금:</strong> 6월 말 ~ 7월 초</li>
+          <li><strong>중간예납:</strong> 11월</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="capital-gains.html" class="related-link">양도소득세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- FAQ 섹션 -->
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">종합소득세란 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">종합소득세는 개인이 1년간 얻은 모든 소득(근로, 사업, 이자, 배당, 연금, 기타소득)을 합산하여 부과하는 세금입니다. 매년 <strong>5월 1일~31일</strong>에 전년도 소득을 신고·납부합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">프리랜서도 종합소득세를 내야 하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, 프리랜서는 <strong>사업소득</strong>으로 분류되어 종합소득세 신고 의무가 있습니다. 보통 소득 지급 시 3.3%(소득세 3% + 지방소득세 0.3%)를 원천징수하는데, 이는 임시 세금이며 5월에 정확한 세액을 정산합니다. 원천징수된 금액이 실제 세금보다 많으면 <strong>환급</strong>을 받을 수 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">단순경비율과 기준경비율 차이는?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;"><strong>단순경비율</strong>은 소규모 사업자(직전연도 수입 2,400만원 미만 등)에게 적용되며, 수입금액에 경비율을 곱한 금액을 필요경비로 인정합니다. <strong>기준경비율</strong>은 일정 규모 이상 사업자에게 적용되며, 주요경비(매입비, 임차료, 인건비)는 증빙에 따라 공제하고 나머지는 기준경비율로 계산합니다. 일반적으로 단순경비율이 더 유리합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">종합소득세 절세 방법은?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">주요 절세 방법으로는 (1) <strong>경비 증빙 철저히 관리</strong> - 사업 관련 지출 영수증 보관, (2) <strong>노란우산공제</strong> 가입 - 연 최대 500만원 소득공제, (3) <strong>연금저축/IRP</strong> - 연 최대 900만원 세액공제, (4) <strong>부양가족 공제</strong> 활용, (5) <strong>성실신고</strong>를 통한 가산세 방지 등이 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">종합소득세 미신고하면 어떻게 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">기한 내 미신고 시 <strong>무신고가산세 20%</strong>(부정 시 40%)가 부과됩니다. 또한 납부 지연일수에 따라 <strong>납부지연가산세</strong>(1일 0.022%)가 추가됩니다. 5년 내 수정신고하면 가산세를 일부 감면받을 수 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">연 수입 5000만원 프리랜서 세금은 얼마인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">연 수입 5,000만원 프리랜서의 경우, 단순경비율(64.1%) 적용 시 소득금액 약 1,795만원, 기본공제 150만원 차감 후 과세표준 약 1,645만원으로 <strong>종합소득세 약 177만원</strong>(지방세 포함 약 194만원)이 산출됩니다. 기납부 원천징수세액(3.3%, 약 165만원)을 차감하면 추가 납부액은 약 29만원입니다.</p>
+    </details>
+  </div>
+
+  <!-- 내부 링크 섹션 -->
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+      <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 양도소득세 자동 계산</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+      <li><a href="severance.html">퇴직금 계산기</a> - 근속연수별 퇴직금 예상액</li>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택·토지·건물 취득세 계산</li>
+    </ul>
+  </div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세금은 세무사 상담 또는 홈택스를 이용하세요.</p>
+  <p><a href="#">개인정보처리방침</a> | <a href="#">이용약관</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+const fmtW = n => {
+  const abs = Math.abs(Math.round(n / 10000));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '만원';
+};
+
+// 소득 유형별 경비율 (프리랜서 기준)
+const EXPENSE_RATES = {
+  freelancer: { simple: 64.1, standard: 19.4 },
+  business: { simple: 70.0, standard: 20.0 },
+  salary: { simple: 0, standard: 0 },
+  other: { simple: 60.0, standard: 20.0 }
+};
+
+function toggleFields() {
+  const type = document.getElementById('incomeType').value;
+  const expGroup = document.getElementById('expenseTypeGroup');
+  const rateGroup = document.getElementById('expenseRateGroup');
+  const amtGroup = document.getElementById('expenseAmountGroup');
+
+  if (type === 'salary') {
+    expGroup.style.display = 'none';
+    rateGroup.style.display = 'none';
+    amtGroup.style.display = 'none';
+  } else {
+    expGroup.style.display = '';
+    toggleExpenseInput();
+  }
+}
+
+function toggleExpenseInput() {
+  const expType = document.getElementById('expenseType').value;
+  const rateGroup = document.getElementById('expenseRateGroup');
+  const amtGroup = document.getElementById('expenseAmountGroup');
+
+  if (expType === 'manual') {
+    rateGroup.style.display = 'none';
+    amtGroup.style.display = '';
+  } else {
+    rateGroup.style.display = 'none';
+    amtGroup.style.display = 'none';
+  }
+}
+
+// 2026 종합소득세 누진세율
+function calcTax(taxBase) {
+  if (taxBase <= 0) return { tax: 0, rate: '0%' };
+  if (taxBase <= 14000000) return { tax: taxBase * 0.06, rate: '6%' };
+  if (taxBase <= 50000000) return { tax: taxBase * 0.15 - 1260000, rate: '15%' };
+  if (taxBase <= 88000000) return { tax: taxBase * 0.24 - 5760000, rate: '24%' };
+  if (taxBase <= 150000000) return { tax: taxBase * 0.35 - 15440000, rate: '35%' };
+  if (taxBase <= 300000000) return { tax: taxBase * 0.38 - 19940000, rate: '38%' };
+  if (taxBase <= 500000000) return { tax: taxBase * 0.40 - 25940000, rate: '40%' };
+  if (taxBase <= 1000000000) return { tax: taxBase * 0.42 - 35940000, rate: '42%' };
+  return { tax: taxBase * 0.45 - 65940000, rate: '45%' };
+}
+
+// 근로소득공제
+function salaryDeduction(annual) {
+  if (annual <= 5000000) return annual * 0.7;
+  if (annual <= 15000000) return 3500000 + (annual - 5000000) * 0.4;
+  if (annual <= 45000000) return 7500000 + (annual - 15000000) * 0.15;
+  if (annual <= 100000000) return 12000000 + (annual - 45000000) * 0.05;
+  return 14750000 + (annual - 100000000) * 0.02;
+}
+
+function calculate() {
+  const type = document.getElementById('incomeType').value;
+  const totalIncomeMan = parseFloat(document.getElementById('totalIncome').value) || 0;
+  const totalIncome = totalIncomeMan * 10000;
+  const dependents = parseInt(document.getElementById('dependents').value) || 1;
+  const children = parseInt(document.getElementById('children').value) || 0;
+  const elderly = parseInt(document.getElementById('elderly').value) || 0;
+
+  let expense = 0;
+  let income = 0;
+
+  if (type === 'salary') {
+    // 근로소득: 근로소득공제 적용
+    expense = salaryDeduction(totalIncome);
+    income = totalIncome - expense;
+  } else {
+    const expType = document.getElementById('expenseType').value;
+    if (expType === 'manual') {
+      expense = (parseFloat(document.getElementById('expenseAmount').value) || 0) * 10000;
+    } else {
+      const rates = EXPENSE_RATES[type] || EXPENSE_RATES.freelancer;
+      const rate = expType === 'simple' ? rates.simple : rates.standard;
+      expense = totalIncome * (rate / 100);
+    }
+    income = totalIncome - expense;
+  }
+
+  income = Math.max(0, income);
+
+  // 소득공제
+  const personalDeduct = dependents * 1500000; // 기본공제 1인당 150만원
+  const elderlyDeduct = elderly * 1000000; // 경로우대 1인당 100만원
+  // 국민연금 공제 (사업자: 소득의 9% 중 본인부담 4.5%, 상한 적용)
+  let pensionDeduct = 0;
+  if (type !== 'salary') {
+    pensionDeduct = Math.min(income * 0.045, 3040200); // 2026 상한 약 304만원
+  }
+
+  const taxBase = Math.max(0, income - personalDeduct - elderlyDeduct - pensionDeduct);
+
+  // 세액 계산
+  const { tax: rawTax, rate } = calcTax(taxBase);
+
+  // 세액공제
+  const stdDeduct = 70000; // 표준세액공제 7만원
+  let childCredit = 0;
+  if (children === 1) childCredit = 150000;
+  else if (children === 2) childCredit = 350000;
+  else if (children >= 3) childCredit = 350000 + (children - 2) * 300000;
+
+  const decidedTax = Math.max(0, rawTax - stdDeduct - childCredit);
+
+  // 기납부세액 (원천징수)
+  let withheld = 0;
+  if (type === 'freelancer') {
+    withheld = totalIncome * 0.033; // 3.3% 원천징수
+  } else if (type === 'salary') {
+    // 근로소득 간이세액 근사치
+    withheld = decidedTax; // 직장인은 이미 원천징수됨
+  }
+
+  const localTax = decidedTax * 0.1;
+  const finalTax = decidedTax + localTax - withheld;
+
+  // 결과 표시
+  document.getElementById('rGross').textContent = fmtW(totalIncome);
+  document.getElementById('rExpense').textContent = fmtW(expense);
+  document.getElementById('rIncome').textContent = fmtW(income);
+  document.getElementById('rPersonal').textContent = fmtW(personalDeduct);
+  document.getElementById('rElderly').textContent = elderly > 0 ? fmtW(elderlyDeduct) : '-';
+  document.getElementById('rPension').textContent = pensionDeduct > 0 ? fmtW(pensionDeduct) : '-';
+  document.getElementById('rTaxBase').textContent = fmtW(taxBase);
+  document.getElementById('rRate').textContent = rate;
+  document.getElementById('rTax').textContent = fmt(rawTax);
+  document.getElementById('rStdDeduct').textContent = fmt(stdDeduct);
+  document.getElementById('rChildCredit').textContent = children > 0 ? fmt(childCredit) : '-';
+  document.getElementById('rWithheld').textContent = withheld > 0 ? fmt(withheld) : '-';
+  document.getElementById('rDecided').textContent = fmt(decidedTax);
+  document.getElementById('rLocal').textContent = fmt(localTax);
+  document.getElementById('rFinalTotal').textContent = fmt(finalTax);
+
+  const finalEl = document.getElementById('rFinal');
+  finalEl.textContent = fmt(finalTax);
+  if (finalTax < 0) {
+    finalEl.style.color = '#34a853';
+    document.getElementById('rFinalSub').textContent = '환급 예상';
+  } else if (finalTax === 0) {
+    finalEl.style.color = '#1a73e8';
+    document.getElementById('rFinalSub').textContent = '추가 납부 없음';
+  } else {
+    finalEl.style.color = '#d93025';
+    document.getElementById('rFinalSub').textContent = '추가 납부 예상';
+  }
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>
