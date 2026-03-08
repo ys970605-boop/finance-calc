@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://finance-calc-kr.pages.dev/sitemap.xml
+Sitemap: https://calcmoney.kr/sitemap.xml
