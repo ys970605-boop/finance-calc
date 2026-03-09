@@ -223,18 +223,40 @@ async def post_carousel(img_paths: list, caption: str):
         await page.goto("https://www.instagram.com/", wait_until="domcontentloaded", timeout=30000)
         await page.wait_for_timeout(4000)
 
-        if "accounts/login" in page.url:
-            log("세션 만료 - 갱신 후 재시도")
-            await browser.close()
-            await refresh_session()
-            await post_carousel(img_paths, caption)
-            return
+        # 세션 만료 판단: 실제 login 페이지 리다이렉트만 체크
+        current_url = page.url
+        is_login_page = "accounts/login" in current_url or "accounts/onetap" in current_url
+        if is_login_page:
+            # 2차 확인: login form 존재 여부
+            login_form = await page.query_selector('input[name="username"], #loginForm, [aria-label="Phone number, username, or email"]')
+            if login_form:
+                log("세션 만료 - login 페이지 리다이렉트 확인, 갱신 후 재시도")
+                await browser.close()
+                await refresh_session()
+                await post_carousel(img_paths, caption)
+                return
+            else:
+                log("login URL 감지되었으나 login form 없음 - 세션 유효로 판단, 메인으로 이동")
+                await page.goto("https://www.instagram.com/", wait_until="domcontentloaded", timeout=30000)
+                await page.wait_for_timeout(3000)
 
-        # 게시물 만들기 버튼
+        # 게시물 만들기 버튼 (2026 Instagram UI selectors)
         create_btn = None
-        for selector in ['[aria-label="New post"]', '[aria-label="새 게시물"]', 'a[href="/create/style/"]']:
+        create_selectors = [
+            '[aria-label="New post"]',
+            '[aria-label="새 게시물"]',
+            '[aria-label="새로운 게시물"]',
+            '[aria-label="Create"]',
+            '[aria-label="만들기"]',
+            'a[href="/create/style/"]',
+            'a[href="/create/select/"]',
+            'svg[aria-label="New post"]',
+            'svg[aria-label="새 게시물"]',
+            'svg[aria-label="새로운 게시물"]',
+        ]
+        for selector in create_selectors:
             try:
-                el = await page.wait_for_selector(selector, timeout=5000)
+                el = await page.wait_for_selector(selector, timeout=3000)
                 if el:
                     create_btn = el
                     break
@@ -242,11 +264,19 @@ async def post_carousel(img_paths: list, caption: str):
                 continue
 
         if not create_btn:
-            # 텍스트/aria로 재탐색
-            for btn in await page.query_selector_all('[role="link"], [role="button"]'):
+            # role 기반 재탐색
+            for btn in await page.query_selector_all('[role="link"], [role="button"], [role="menuitem"]'):
                 aria = (await btn.get_attribute("aria-label") or "").lower()
-                if "new post" in aria or "새 게시물" in aria or "create" in aria:
+                if any(k in aria for k in ["new post", "새 게시물", "새로운 게시물", "create", "만들기"]):
                     create_btn = btn
+                    break
+
+        if not create_btn:
+            # 사이드바 nav 링크 중 create 관련 탐색
+            for link in await page.query_selector_all('nav a, aside a'):
+                href = (await link.get_attribute("href") or "")
+                if "/create" in href:
+                    create_btn = link
                     break
 
         if not create_btn:
@@ -260,14 +290,23 @@ async def post_carousel(img_paths: list, caption: str):
 
         # 파일 업로드 (다중 파일 = 캐러셀)
         file_input = None
+        file_input_selectors = [
+            'input[type="file"]',
+            'input[accept="image/jpeg,image/png,image/heic,image/heif,video/mp4,video/quicktime"]',
+            'input[accept*="image"]',
+            'form input[type="file"]',
+        ]
         for attempt in range(3):
-            file_input = await page.query_selector('input[type="file"]')
+            for fselector in file_input_selectors:
+                file_input = await page.query_selector(fselector)
+                if file_input:
+                    break
             if file_input:
                 break
             # 다시 create 버튼 클릭 시도
             await page.wait_for_timeout(2000)
             try:
-                for sel in ['[aria-label="New post"]', '[aria-label="새 게시물"]', 'svg[aria-label="New post"]', 'svg[aria-label="새 게시물"]']:
+                for sel in create_selectors[:5]:
                     el = await page.query_selector(sel)
                     if el:
                         await el.click()
@@ -275,8 +314,16 @@ async def post_carousel(img_paths: list, caption: str):
                         break
             except:
                 pass
+            # "컴퓨터에서 선택" 버튼 클릭 시도
+            try:
+                select_btn = await page.query_selector('button:has-text("컴퓨터에서 선택"), button:has-text("Select from computer"), button:has-text("Select from device")')
+                if select_btn:
+                    await select_btn.click()
+                    await page.wait_for_timeout(1500)
+            except:
+                pass
         if not file_input:
-            log("파일 입력 못 찾음 - 세션 만료 가능성")
+            log("파일 입력 못 찾음 - selector 불일치 (세션은 유효)")
             await page.screenshot(path="/tmp/insta_debug.png")
             await browser.close()
             return False
