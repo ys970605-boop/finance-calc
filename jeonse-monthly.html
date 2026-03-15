@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65XND7BHMS');
+</script>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 전월세 전환율 계산기 - 전세 월세 전환 자동 계산</title>
+  <meta name="description" content="전세를 월세로, 월세를 전세로 전환할 때 금액을 자동으로 계산합니다. 법정 전월세 전환율 기준 계산기.">
+  <link rel="canonical" href="https://calcmoney.kr/jeonse-monthly">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 전월세 전환율 계산기 - 전세 월세 전환 자동 계산">
+  <meta property="og:description" content="전세를 월세로, 월세를 전세로 전환할 때 금액을 자동으로 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/jeonse-monthly">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "전월세 전환율이란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "전세보증금을 월세로 전환할 때 적용하는 비율로, 법정 상한은 기준금리+2%입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 전월세 전환율 상한은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "한국은행 기준금리 2.50% + 2% = 4.50%입니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="salary.html">실수령액</a>
+      <a href="jeonse-monthly.html" class="active">전월세전환</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>전월세 전환율 계산기</h1>
+        <p class="desc">전세 → 월세, 월세 → 전세 전환 금액을 계산합니다.</p>
+
+        <div class="form-group">
+          <label>계산 방향</label>
+          <div class="radio-group">
+            <label><input type="radio" name="direction" value="to-monthly" checked><span>전세 → 월세</span></label>
+            <label><input type="radio" name="direction" value="to-jeonse"><span>월세 → 전세</span></label>
+          </div>
+        </div>
+
+        <div id="toMonthlyForm">
+          <div class="form-group">
+            <label>전세 보증금 <span class="hint">만원</span></label>
+            <input type="number" id="jeonse" placeholder="예: 30000 (3억)" value="30000">
+          </div>
+          <div class="form-group">
+            <label>월세 보증금 <span class="hint">만원 (보증금 있을 경우)</span></label>
+            <input type="number" id="deposit" placeholder="예: 1000 (없으면 0)" value="1000">
+          </div>
+        </div>
+
+        <div id="toJeonseForm" style="display:none;">
+          <div class="form-group">
+            <label>월세 보증금 <span class="hint">만원</span></label>
+            <input type="number" id="monthlyDeposit" placeholder="예: 1000" value="1000">
+          </div>
+          <div class="form-group">
+            <label>월세 <span class="hint">만원</span></label>
+            <input type="number" id="monthlyRent" placeholder="예: 80" value="80">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>전월세 전환율 <span class="hint">% (법정 상한: 연 5%)</span></label>
+          <input type="number" id="convRate" placeholder="예: 5" value="5" step="0.1">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label" id="rLabel">전환 월세</div>
+            <div class="value" id="rMain">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+          <table class="result-table">
+            <tr><td id="r1Label">전세 보증금</td><td id="r1">-</td></tr>
+            <tr><td id="r2Label">월세 보증금</td><td id="r2">-</td></tr>
+            <tr><td>전환 기준금액</td><td id="r3">-</td></tr>
+            <tr><td>전환율</td><td id="r4">-</td></tr>
+            <tr class="total"><td id="r5Label">월세</td><td id="r5">-</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>전월세 전환율이란?</h3>
+        <ul>
+          <li>전세를 월세로 바꿀 때 적용하는 이율</li>
+          <li>법정 상한: 기준금리 + 2% (연 5% 수준)</li>
+          <li>이 이율 초과 전환 요구는 거절 가능</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>계산 공식</h3>
+        <ul>
+          <li><strong>월세 = (전세금 - 월세보증금) × 전환율 ÷ 12</strong></li>
+          <li><strong>전세금 = 월세보증금 + 월세 × 12 ÷ 전환율</strong></li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용입니다.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+<script>
+const fmt = n => Math.round(n).toLocaleString('ko-KR') + '만원';
+
+document.querySelectorAll('input[name="direction"]').forEach(r => {
+  r.addEventListener('change', () => {
+    const toMonthly = r.value === 'to-monthly';
+    document.getElementById('toMonthlyForm').style.display = toMonthly ? 'block' : 'none';
+    document.getElementById('toJeonseForm').style.display = toMonthly ? 'none' : 'block';
+  });
+});
+
+function calculate() {
+  const direction = document.querySelector('input[name="direction"]:checked').value;
+  const rate = parseFloat(document.getElementById('convRate').value) / 100;
+
+  if (direction === 'to-monthly') {
+    const jeonse = parseFloat(document.getElementById('jeonse').value) || 0;
+    const deposit = parseFloat(document.getElementById('deposit').value) || 0;
+    const base = jeonse - deposit;
+    const monthly = base * rate / 12;
+
+    document.getElementById('rLabel').textContent = '전환 월세';
+    document.getElementById('rMain').textContent = fmt(monthly) + '/월';
+    document.getElementById('rSub').textContent = `전세 ${fmt(jeonse)} → 보증금 ${fmt(deposit)} + 월세`;
+    document.getElementById('r1Label').textContent = '전세 보증금';
+    document.getElementById('r1').textContent = fmt(jeonse);
+    document.getElementById('r2Label').textContent = '월세 보증금';
+    document.getElementById('r2').textContent = fmt(deposit);
+    document.getElementById('r3').textContent = fmt(base);
+    document.getElementById('r4').textContent = (rate * 100).toFixed(1) + '%';
+    document.getElementById('r5Label').textContent = '월세';
+    document.getElementById('r5').textContent = fmt(monthly) + '/월';
+  } else {
+    const mDeposit = parseFloat(document.getElementById('monthlyDeposit').value) || 0;
+    const mRent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+    const jeonse = mDeposit + (mRent * 12 / rate);
+
+    document.getElementById('rLabel').textContent = '환산 전세금';
+    document.getElementById('rMain').textContent = fmt(jeonse);
+    document.getElementById('rSub').textContent = `월세 보증금 ${fmt(mDeposit)} + 월세 ${fmt(mRent)} → 전세`;
+    document.getElementById('r1Label').textContent = '월세 보증금';
+    document.getElementById('r1').textContent = fmt(mDeposit);
+    document.getElementById('r2Label').textContent = '월세';
+    document.getElementById('r2').textContent = fmt(mRent) + '/월';
+    document.getElementById('r3').textContent = fmt(mRent * 12 / rate);
+    document.getElementById('r4').textContent = (rate * 100).toFixed(1) + '%';
+    document.getElementById('r5Label').textContent = '환산 전세금';
+    document.getElementById('r5').textContent = fmt(jeonse);
+  }
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

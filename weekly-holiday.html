@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65XND7BHMS');
+</script>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주휴수당 계산기 - 주휴수당 자동 계산 (2026 최저시급 기준)</title>
+  <meta name="description" content="주 15시간 이상 근무 시 발생하는 주휴수당을 자동으로 계산합니다. 시급, 하루 근무시간, 주 근무일수를 입력하면 바로 계산됩니다.">
+  <link rel="canonical" href="https://calcmoney.kr/weekly-holiday">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="주휴수당 계산기 - 주휴수당 자동 계산 (2026 최저시급 기준)">
+  <meta property="og:description" content="주 15시간 이상 근무 시 발생하는 주휴수당을 자동으로 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/weekly-holiday">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "주휴수당 지급 조건은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1주 소정근로시간 15시간 이상, 개근 시 지급됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 최저시급 기준 주휴수당은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "시급 10,320원 기준 주 40시간 근무 시 주휴수당은 82,560원입니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="salary.html">실수령액</a>
+      <a href="weekly-holiday.html" class="active">주휴수당</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="subscription.html">청약가점</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>주휴수당 계산기</h1>
+        <p class="desc">주 15시간 이상 근무하는 근로자에게 지급되는 주휴수당을 계산합니다. (근로기준법 제55조)</p>
+
+        <div class="form-group">
+          <label>시급 <span class="hint">원 (2026년 최저시급 10,320원)</span></label>
+          <input type="number" id="hourlyWage" placeholder="예: 10320" value="10320">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>하루 근무시간 <span class="hint">시간</span></label>
+            <input type="number" id="dailyHours" placeholder="예: 8" value="8" step="0.5">
+          </div>
+          <div class="form-group">
+            <label>주 근무일수 <span class="hint">일</span></label>
+            <input type="number" id="weeklyDays" placeholder="예: 5" value="5" min="1" max="6">
+          </div>
+        </div>
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">주휴수당 (1주)</div>
+            <div class="value" id="rWeekly">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+          <table class="result-table">
+            <tr><td>시급</td><td id="rHourly">-</td></tr>
+            <tr><td>주 총 근무시간</td><td id="rWeekHours">-</td></tr>
+            <tr><td>주휴시간</td><td id="rHolidayHours">-</td></tr>
+            <tr><td>주휴수당</td><td id="rHolidayPay">-</td></tr>
+            <tr><td>주 총 급여 (근무+주휴)</td><td id="rWeekTotal">-</td></tr>
+            <tr class="total"><td>월 총 급여 (4.345주)</td><td id="rMonthTotal">-</td></tr>
+          </table>
+          <div style="margin-top:16px;padding:12px;background:#e8f5e9;border-radius:8px;font-size:13px;color:#2e7d32;">
+            <strong>주휴수당 지급 조건:</strong> 주 15시간 이상 근무, 소정근로일 개근 시 지급됩니다.
+          </div>
+        </div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>주휴수당 계산 공식</h3>
+        <ul>
+          <li><strong>주휴시간 = 주 근무시간 ÷ 5</strong></li>
+          <li><strong>주휴수당 = 주휴시간 × 시급</strong></li>
+          <li>단, 1일 최대 8시간 한도</li>
+          <li>주 15시간 미만이면 주휴수당 없음</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>2026년 최저시급</h3>
+        <ul>
+          <li><strong>최저시급:</strong> 10,320원</li>
+          <li><strong>월 최저임금:</strong> 2,060,740원</li>
+          <li>(주 40시간 기준, 주휴수당 포함)</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="subscription.html" class="related-link">청약가점</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용입니다.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+<script>
+const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+
+function calculate() {
+  const hourly = parseFloat(document.getElementById('hourlyWage').value) || 0;
+  const dailyHours = parseFloat(document.getElementById('dailyHours').value) || 0;
+  const weeklyDays = parseInt(document.getElementById('weeklyDays').value) || 0;
+  const weekHours = dailyHours * weeklyDays;
+
+  if (weekHours < 15) {
+    document.getElementById('result').classList.add('show');
+    document.getElementById('rWeekly').textContent = '해당 없음';
+    document.getElementById('rSub').textContent = '주 15시간 미만 — 주휴수당 발생하지 않음';
+    return;
+  }
+
+  // 주휴시간 = 주 근무시간 / 5, 최대 8시간
+  const holidayHours = Math.min(weekHours / 5, 8);
+  const holidayPay = holidayHours * hourly;
+  const weekWork = weekHours * hourly;
+  const weekTotal = weekWork + holidayPay;
+  const monthTotal = weekTotal * 4.345;
+
+  document.getElementById('rHourly').textContent = fmt(hourly);
+  document.getElementById('rWeekHours').textContent = weekHours + '시간';
+  document.getElementById('rHolidayHours').textContent = holidayHours.toFixed(1) + '시간';
+  document.getElementById('rHolidayPay').textContent = fmt(holidayPay);
+  document.getElementById('rWeekTotal').textContent = fmt(weekTotal);
+  document.getElementById('rMonthTotal').textContent = fmt(monthTotal);
+  document.getElementById('rWeekly').textContent = fmt(holidayPay);
+  document.getElementById('rSub').textContent = `월 총 급여 약 ${Math.round(monthTotal/10000)}만원`;
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "cookies": [
+    {
+      "name": "csrftoken",
+      "value": "3f14cROmIGXR4QAVplPJiavl3ZNWciIN",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807576543.3816433,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ds_user_id",
+      "value": "47244628345",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1780792543.3819351,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ig_did",
+      "value": "0B788912-CF36-4164-ACF1-69A04CB66A91",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1804395367.8197174,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "mid",
+      "value": "aauv6QAEAAESiDnOhpEEHfhK59ou",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807419370.2584476,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ps_l",
+      "value": "1",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807421075.1308212,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ps_n",
+      "value": "1",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807421075.1309586,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sessionid",
+      "value": "47244628345%3APgWWLt8raMIZ8s%3A15%3AAYhChb47oh3IqogSgrIq5S4Pl1Vc9U7KLn2LGPkHufw",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1804640690.6986828,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ig_did",
+      "value": "49601D61-2648-4F1A-82C8-D3BDA056A178",
+      "domain": ".threads.net",
+      "path": "/",
+      "expires": 1804640689.670868,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": []
+}

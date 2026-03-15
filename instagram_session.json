@@ -1,0 +1,155 @@
+{
+  "cookies": [
+    {
+      "name": "csrftoken",
+      "value": "yhczC9YYaBK3YieFlQyZ90",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1807422346.0174923,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "datr",
+      "value": "o7qraVvmTvlaoEREfEsaPTJP",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1807422115.430193,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ds_user_id",
+      "value": "42773377638",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1780638346.0181007,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ig_did",
+      "value": "AB8DEC9F-9FEB-44B8-A5F3-C987E53B48AF",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1804398115.430231,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "mid",
+      "value": "aau6owAEAAEhyGXDtnOCc6-7KSeh",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1807422116.0,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sessionid",
+      "value": "42773377638%3AOVw0VNCcZncRwj%3A13%3AAYhvll6ln3zbI3q5kpDEPejWPw14P_UFWzlWAB-cRQ",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1804398339.2554111,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "wd",
+      "value": "1470x783",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1773709538.0,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "csrftoken",
+      "value": "3f14cROmIGXR4QAVplPJiavl3ZNWciIN",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807576543.3816433,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ds_user_id",
+      "value": "47244628345",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1780792543.3819351,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ig_did",
+      "value": "0B788912-CF36-4164-ACF1-69A04CB66A91",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1804395367.8197174,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "mid",
+      "value": "aauv6QAEAAESiDnOhpEEHfhK59ou",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807419370.2584476,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ps_l",
+      "value": "1",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807421075.1308212,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ps_n",
+      "value": "1",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1807421075.1309586,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sessionid",
+      "value": "47244628345%3APgWWLt8raMIZ8s%3A15%3AAYhChb47oh3IqogSgrIq5S4Pl1Vc9U7KLn2LGPkHufw",
+      "domain": ".threads.com",
+      "path": "/",
+      "expires": 1804640690.6986828,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ig_did",
+      "value": "49601D61-2648-4F1A-82C8-D3BDA056A178",
+      "domain": ".threads.net",
+      "path": "/",
+      "expires": 1804640689.670868,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": []
+}

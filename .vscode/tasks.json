@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Agent Team: finance-calc 작업",
+      "type": "shell",
+      "command": "/opt/homebrew/bin/claude",
+      "args": [
+        "--dangerously-skip-permissions",
+        "Agent 3개 병렬로 실행:\n\nAgent 1: /Users/yongseok/cursor/finance-calc/threads_post.py 읽고 게시 실패 원인 찾아서 수정\n\nAgent 2: /Users/yongseok/cursor/finance-calc/salary.html SEO 개선 (meta description, og 태그)\n\nAgent 3: /Users/yongseok/cursor/finance-calc/blog/ 에 연말정산 환급 극대화 블로그 글 추가\n\n3개 동시에 처리하고 각 결과 보고해줘."
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "group": "build"
+    }
+  ]
+}
