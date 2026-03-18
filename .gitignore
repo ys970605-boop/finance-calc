@@ -1,0 +1,8 @@
+__pycache__/
+.netlify/
+*.pyc
+naver_session.json
+extract_*.py
+naver_blog_*.py
+naver_blog_daily.sh
+.github/
