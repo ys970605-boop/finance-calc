@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>임대수익률 계산기 2026 - 순수익률·총수익률·레버리지 수익률 비교 | calcmoney.kr</title>
+  <meta name="description" content="매매가·보증금·월세·대출·공실률·관리비·재산세를 입력하면 총투자금, 순수익률(NET), 총수익률(GROSS), 레버리지 수익률을 자동 계산합니다. 갭투자 vs 전액투자 비교 시뮬레이션 포함.">
+  <link rel="canonical" href="https://calcmoney.kr/rental-yield">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="임대수익률 계산기 2026 - 순수익률·총수익률·레버리지 수익률 비교">
+  <meta property="og:description" content="매매가·보증금·월세·대출·공실률·관리비·재산세를 입력하면 총투자금, 순수익률(NET), 총수익률(GROSS), 레버리지 수익률을 자동 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/rental-yield">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "calcmoney.kr 임대수익률 계산기",
+    "url": "https://calcmoney.kr/rental-yield",
+    "description": "매매가·보증금·월세·대출·공실률 입력으로 순수익률, 총수익률, 레버리지 수익률을 계산하는 임대수익률 계산기"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "임대수익률 몇 % 이상이면 좋은 투자인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "일반적으로 순수익률(NET) 기준 3~4% 이상이면 양호한 임대 수익률로 평가됩니다. 2026년 기준 시중은행 정기예금 금리가 연 3~3.5% 수준이므로, 임대 수익률이 이보다 높아야 부동산 특유의 리스크(공실, 수리비, 유동성 부족)를 감수할 실익이 있습니다. 서울 아파트의 순수익률은 평균 1.5~2.5%로 낮지만, 지방·수익형 부동산(오피스텔, 상가)은 4~6%대를 기대할 수 있습니다. 레버리지 활용 시 대출 금리보다 총수익률이 높은지 반드시 확인해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "총수익률(GROSS)과 순수익률(NET)의 차이는 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "총수익률(GROSS)은 연간 임대료 수입을 매매가로 나눈 값으로, 비용을 고려하지 않은 단순 수익률입니다. 반면 순수익률(NET)은 공실 손실, 관리비, 재산세, 대출이자 등 실제 비용을 모두 공제한 뒤의 실질 수익률입니다. 투자 결정 시에는 반드시 순수익률(NET)을 기준으로 판단해야 합니다. 총수익률이 높아 보여도 공실률이 높거나 대출 이자 부담이 크면 실제 순수익이 크게 줄어들 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "공실률은 어떻게 계산에 반영하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "공실률은 연간 임대 가능 기간 대비 실제 비어있는 기간의 비율입니다. 예를 들어 공실률 5%를 입력하면, 연간 임대료 수입에서 5%를 차감해 실제 수입을 계산합니다. 서울 아파트의 평균 공실률은 1~3%이지만, 오피스텔은 5~10%, 지방 상가는 10~20%까지 올라갈 수 있습니다. 보수적 투자라면 오피스텔 7~10%, 아파트 3~5%를 적용하는 것이 안전합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "레버리지 수익률이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "레버리지 수익률은 대출을 활용한 갭투자 시 실제 투자금(매매가 - 보증금 - 대출금) 대비 순수익의 비율입니다. 대출 이자를 비용으로 처리한 뒤, 내 돈만 기준으로 수익률을 계산합니다. 대출 금리보다 총수익률이 높으면 레버리지 효과로 자기자본 수익률이 높아지지만, 반대의 경우 투자 손실이 발생합니다. 예를 들어 매매가 3억, 보증금 1억, 대출 1억(금리 4%), 내 돈 1억을 투자했을 때 순수익 600만원이면 레버리지 수익률은 6%가 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "갭투자 시 임대수익률을 어떻게 분석해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "갭투자(전세 끼고 매수)는 실제 투자금이 적어 레버리지 수익률은 높아 보이지만, 월세 수입이 없거나 미미합니다. 보증금을 보전금으로 사용하는 구조이므로 역전세 리스크(전세가 하락 시 보증금 반환 부담), 공실 리스크, 금리 상승 리스크를 종합적으로 분석해야 합니다. 갭투자는 임대수익보다 시세차익을 기대하는 전략이므로, 임대수익률만으로 갭투자의 수익성을 판단하기는 어렵습니다. 이 계산기의 갭투자 비교 시뮬레이션을 활용해 실투자금 차이와 수익률 차이를 비교해보세요."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "재산세와 종합부동산세도 수익률에 영향을 주나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 상당한 영향을 줍니다. 재산세는 주택 공시가격에 따라 연 0.1~0.4%가 부과되며, 공시가격 6억원 초과 주택은 종합부동산세가 추가됩니다. 임대 수입에 대한 임대소득세도 연간 2,000만원 초과 시 분리과세(세율 14%)가 적용됩니다. 이 계산기는 재산세를 직접 입력받아 순수익률에 반영합니다. 정확한 세금 계산은 국세청 홈택스 또는 세무사 상담을 권장합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월세 보증금도 수익률 계산에 포함해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "월세 보증금은 임대인이 운용할 수 있는 무이자 자금으로, 실질 투자금을 줄여주는 역할을 합니다. 이 계산기에서는 총투자금을 '매매가 - 보증금 - 대출금'으로 계산해 보증금의 효과를 반영합니다. 단, 보증금은 임대 계약 종료 시 반환해야 하므로 수익으로 처리하지 않습니다. 전세나 반전세의 경우 보증금 규모가 커서 실투자금이 크게 줄어들지만, 역전세 리스크도 그만큼 높아집니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .result-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0; }
+    .result-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
+    .result-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .result-card.success { border-color: #4caf50; background: #e8f5e9; }
+    .result-card.warn { border-color: #ff9800; background: #fff3e0; }
+    .result-card .rlabel { font-size: 0.78em; color: #666; margin-bottom: 4px; }
+    .result-card .rvalue { font-size: 1.2em; font-weight: 800; color: #1a73e8; }
+    .result-card.success .rvalue { color: #2e7d32; }
+    .result-card.warn .rvalue { color: #e65100; }
+    .total-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .total-box .tsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .compare-table th { background: #f0f4ff; color: #333; font-size: 0.85em; padding: 10px 12px; text-align: left; border-bottom: 2px solid #c5cae9; }
+    .compare-table td { padding: 9px 12px; font-size: 0.88em; border-bottom: 1px solid #f0f0f0; }
+    .compare-table tr:hover td { background: #f8f9fa; }
+    .compare-table .winner { background: #e8f5e9; font-weight: 700; color: #2e7d32; }
+    .compare-table .loser { background: #fce4ec; color: #c62828; }
+    .section-tag { font-size: 0.72em; background: #1a73e8; color: white; border-radius: 4px; padding: 2px 7px; margin-right: 6px; vertical-align: middle; }
+    .sim-row { display: flex; gap: 10px; align-items: center; margin: 8px 0; font-size: 0.88em; }
+    .sim-label { min-width: 160px; color: #555; flex-shrink: 0; }
+    .sim-bar-wrap { flex: 1; background: #f0f0f0; border-radius: 6px; height: 14px; overflow: hidden; }
+    .sim-bar { height: 14px; border-radius: 6px; transition: width 0.4s; }
+    .sim-val { min-width: 90px; text-align: right; font-weight: 700; color: #333; }
+    .bar-blue { background: #1a73e8; }
+    .bar-green { background: #4caf50; }
+    .bar-orange { background: #ff9800; }
+    .bar-red { background: #e53935; }
+    .recommend-box { background: #e3f2fd; border-left: 4px solid #1a73e8; border-radius: 0 10px 10px 0; padding: 16px; margin: 16px 0; }
+    .recommend-box h4 { margin: 0 0 8px; font-size: 0.92em; color: #0d47a1; }
+    .recommend-box p { margin: 0; font-size: 0.85em; color: #1565c0; line-height: 1.7; }
+    .warn-box { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 16px; margin: 16px 0; }
+    .warn-box h4 { margin: 0 0 8px; font-size: 0.92em; color: #e65100; }
+    .warn-box p { margin: 0; font-size: 0.85em; color: #bf360c; line-height: 1.7; }
+    .monthly-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.84em; }
+    .monthly-table th { background: #f0f4ff; padding: 8px 10px; text-align: center; border-bottom: 2px solid #c5cae9; font-size: 0.85em; }
+    .monthly-table td { padding: 7px 10px; text-align: right; border-bottom: 1px solid #f0f0f0; }
+    .monthly-table td:first-child { text-align: center; font-weight: 600; color: #555; }
+    .monthly-table tr:hover td { background: #f8f9fa; }
+    .monthly-table .total-row td { background: #e8f0fe; font-weight: 700; color: #1a73e8; border-top: 2px solid #c5cae9; }
+    .gap-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+    .gap-card { border: 2px solid #e0e0e0; border-radius: 10px; padding: 16px; }
+    .gap-card.active { border-color: #1a73e8; background: #e8f0fe; }
+    .gap-card h4 { margin: 0 0 10px; font-size: 0.92em; color: #333; }
+    .gap-card.active h4 { color: #0d47a1; }
+    .gap-item { display: flex; justify-content: space-between; font-size: 0.84em; margin: 5px 0; color: #555; }
+    .gap-item strong { color: #222; }
+    .gap-rate { font-size: 1.4em; font-weight: 800; color: #1a73e8; text-align: center; margin-top: 12px; }
+    @media (max-width: 540px) {
+      .gap-compare { grid-template-columns: 1fr; }
+      .monthly-table { font-size: 0.78em; }
+    }
+    .faq-section { margin-top: 40px; }
+    .faq-item { border-bottom: 1px solid #eee; padding: 18px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; font-size: 0.97em; color: #1a73e8; margin-bottom: 8px; cursor: pointer; display: flex; align-items: flex-start; gap: 8px; }
+    .faq-q::before { content: "Q."; font-weight: 800; flex-shrink: 0; }
+    .faq-a { font-size: 0.87em; color: #555; line-height: 1.85; }
+    .content-section { margin-top: 36px; background: #fff; border-radius: 12px; padding: 28px; border: 1px solid #e8e8e8; }
+    .content-section h2 { font-size: 1.15em; color: #222; margin: 0 0 14px; }
+    .content-section h3 { font-size: 1em; color: #333; margin: 20px 0 8px; }
+    .content-section p { font-size: 0.88em; color: #555; line-height: 1.9; margin: 0 0 12px; }
+    .content-section ul { font-size: 0.87em; color: #555; line-height: 2; padding-left: 20px; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .related-link { background: #f0f4ff; color: #1a73e8; border: 1px solid #c5cae9; border-radius: 6px; padding: 6px 14px; font-size: 0.83em; text-decoration: none; transition: background 0.2s; }
+    .related-link:hover { background: #e8f0fe; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>임대수익률 계산기</h1>
+        <p class="desc">매매가·보증금·월세·대출·공실률·관리비·재산세를 입력하면 총투자금, 연간 순수익, 순수익률(NET), 총수익률(GROSS), 레버리지 수익률을 자동으로 계산합니다. 갭투자 vs 전액투자 비교 시뮬레이션도 제공합니다.</p>
+
+        <!-- 부동산 기본 정보 -->
+        <div class="input-section-title">부동산 기본 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>매매가 <span class="hint">원 (취득 가격)</span></label>
+            <input type="number" id="salePrice" placeholder="예: 300000000" value="300000000">
+          </div>
+          <div class="form-group">
+            <label>보증금 <span class="hint">원 (전세금 또는 월세 보증금)</span></label>
+            <input type="number" id="deposit" placeholder="예: 50000000" value="50000000">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>월 임대료 <span class="hint">원/월 (순수 월세, 관리비 별도)</span></label>
+            <input type="number" id="monthlyRent" placeholder="예: 800000" value="800000">
+          </div>
+          <div class="form-group">
+            <label>공실률 <span class="hint">% (예: 아파트 3%, 오피스텔 7%)</span></label>
+            <input type="number" id="vacancyRate" placeholder="예: 5" value="5" min="0" max="100">
+          </div>
+        </div>
+
+        <!-- 대출 정보 -->
+        <hr class="section-divider">
+        <div class="input-section-title">대출 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>대출금 <span class="hint">원 (담보대출 원금)</span></label>
+            <input type="number" id="loanAmount" placeholder="예: 100000000" value="100000000">
+          </div>
+          <div class="form-group">
+            <label>대출 금리 <span class="hint">% 연이율 (예: 4.5)</span></label>
+            <input type="number" id="loanRate" placeholder="예: 4.5" value="4.5" step="0.1" min="0">
+          </div>
+        </div>
+
+        <!-- 비용 정보 -->
+        <hr class="section-divider">
+        <div class="input-section-title">연간 비용 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>연간 관리비 <span class="hint">원/년 (수선비·청소비 등 임대인 부담)</span></label>
+            <input type="number" id="annualMgmt" placeholder="예: 1200000" value="1200000">
+          </div>
+          <div class="form-group">
+            <label>연간 재산세 <span class="hint">원/년 (세금계산서 기준)</span></label>
+            <input type="number" id="annualTax" placeholder="예: 500000" value="500000">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>기타 연간 비용 <span class="hint">원/년 (화재보험, 수리비 등)</span></label>
+            <input type="number" id="otherCosts" placeholder="예: 300000" value="300000">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">임대수익률 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총투자금 -->
+          <div class="total-box">
+            <div class="tlabel">실제 투자금 (매매가 - 보증금 - 대출금)</div>
+            <div class="tvalue" id="totalInvestment">-</div>
+            <div class="tsub" id="totalInvestmentSub">-</div>
+          </div>
+
+          <!-- 수익률 카드 -->
+          <div class="result-cards" id="yieldCards"></div>
+
+          <!-- 연간 수익 구조 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">
+            <span class="section-tag">분석</span>연간 수익·비용 구조
+          </div>
+          <div id="simChart"></div>
+
+          <!-- 추천/경고 메시지 -->
+          <div id="adviceBox"></div>
+
+          <!-- 갭투자 vs 전액투자 비교 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:24px 0 8px;">
+            <span class="section-tag">비교</span>갭투자 vs 전액투자 시뮬레이션
+          </div>
+          <div class="gap-compare" id="gapCompare"></div>
+
+          <!-- 월별 수익 시뮬레이션 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:24px 0 8px;">
+            <span class="section-tag">시뮬레이션</span>월별 수익 시뮬레이션
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="monthly-table" id="monthlyTable">
+              <thead>
+                <tr>
+                  <th>월</th>
+                  <th>임대수입</th>
+                  <th>대출이자</th>
+                  <th>관리·세금</th>
+                  <th>월 순수익</th>
+                  <th>누적 순수익</th>
+                </tr>
+              </thead>
+              <tbody id="monthlyBody"></tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 본문 콘텐츠 -->
+      <div class="content-section">
+        <h2>임대수익률이란? 계산 방법과 투자 판단 기준 완전 가이드</h2>
+
+        <p>임대수익률은 부동산 투자에서 가장 중요한 지표 중 하나입니다. 얼마를 투자해서 얼마를 버는지를 백분율로 나타내며, 크게 총수익률(GROSS)과 순수익률(NET)로 구분합니다. 이 두 가지를 혼동하면 투자 판단을 크게 그르칠 수 있으므로, 차이를 명확히 이해하는 것이 중요합니다.</p>
+
+        <h3>총수익률(GROSS)과 순수익률(NET) 계산 공식</h3>
+        <p><strong>총수익률(GROSS)</strong> = 연간 임대료 ÷ 매매가 × 100</p>
+        <p>예를 들어 매매가 3억원, 월세 80만원이라면 총수익률 = (80만원 × 12) ÷ 3억원 × 100 = 3.2%입니다. 비용을 전혀 고려하지 않은 단순 계산이므로, 광고나 부동산 중개 홍보물에서 자주 사용하지만 실제 수익성을 정확히 반영하지는 않습니다.</p>
+        <p><strong>순수익률(NET)</strong> = (연간 임대료 - 공실 손실 - 관리비 - 재산세 - 대출이자 - 기타 비용) ÷ 총투자금 × 100</p>
+        <p>순수익률은 실제로 손에 쥐는 이익을 기준으로 계산하므로, 투자 결정의 핵심 지표입니다. 총수익률이 3.2%라도 공실·비용을 제하면 순수익률은 1~2%대로 낮아질 수 있습니다.</p>
+
+        <h3>총투자금 계산 방법</h3>
+        <p>총투자금 = 매매가 - 보증금 - 대출금입니다. 보증금은 임대인이 임차인에게 받아 활용할 수 있는 무이자 자금이고, 대출금은 금융기관에서 조달한 자금이므로 이 둘을 내 투자금에서 제외합니다. 예를 들어 매매가 3억원, 보증금 5000만원, 대출금 1억원이라면 총투자금 = 3억 - 5000만 - 1억 = 1억5000만원이 됩니다.</p>
+
+        <h3>레버리지 수익률의 의미와 주의사항</h3>
+        <p>레버리지 수익률은 내 자기자본 대비 수익률입니다. 대출을 많이 활용할수록 레버리지 수익률이 높아지지만, 대출 금리보다 총수익률이 낮으면 오히려 역레버리지가 발생해 손해가 납니다. 2026년 현재 대출 금리가 4~5%대인 상황에서, 총수익률이 4% 미만인 부동산에 대출을 활용하면 수익보다 이자 부담이 더 큰 역레버리지 상황이 될 수 있습니다. 반드시 (총수익률 - 대출 금리)가 플러스인지 확인하세요.</p>
+
+        <h3>공실 리스크 관리 방법</h3>
+        <p>공실은 임대수익의 가장 큰 위협입니다. 아파트는 1~3%, 오피스텔은 5~10%, 지방 상가는 10~20%의 공실률을 감안해야 합니다. 공실 리스크를 줄이려면 ①교통·학군 등 수요가 풍부한 입지 선택, ②적정 임대료 설정(시세보다 약간 낮게), ③인테리어·관리 상태 유지, ④임차인 관계 관리가 중요합니다. 보수적 투자자라면 예상 공실률에 2~3%p를 추가해 계산하는 것이 안전합니다.</p>
+
+        <h3>갭투자 vs 전액투자, 무엇이 유리한가?</h3>
+        <p>갭투자는 전세를 끼고 소액으로 매수하는 방식입니다. 투자금이 적어 레버리지 수익률이 높아 보이지만, 월세 수입이 없거나 미미하고 역전세·보증금 반환 리스크가 있습니다. 전액투자는 대출 없이 전액 자기자본으로 매수하는 방식으로, 레버리지 효과는 없지만 이자 부담이 없고 리스크가 낮습니다. 어떤 방식이 유리한지는 개인의 자금 상황, 금리 수준, 투자 목적(수익 vs 시세차익)에 따라 달라지므로 이 계산기의 비교 시뮬레이션을 활용해 직접 수치를 비교해보세요.</p>
+
+        <h3>관련 계산기 바로가기</h3>
+        <div class="related-links">
+          <a href="jeonse-monthly.html" class="related-link">전세·월세 전환 계산기</a>
+          <a href="acquisition-tax.html" class="related-link">취득세 계산기</a>
+          <a href="property-tax.html" class="related-link">재산세 계산기</a>
+          <a href="loan.html" class="related-link">대출이자 계산기</a>
+          <a href="capital-gains.html" class="related-link">양도소득세 계산기</a>
+          <a href="dti-dsr.html" class="related-link">DTI/DSR 계산기</a>
+          <a href="rent-tax-credit-detail.html" class="related-link">월세 세액공제 계산기</a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section faq-section">
+        <h2>임대수익률 자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">임대수익률 몇 % 이상이면 좋은 투자인가요?</div>
+          <div class="faq-a">순수익률(NET) 기준 3~4% 이상이면 양호한 수익률로 평가됩니다. 2026년 기준 시중은행 정기예금 금리가 연 3~3.5% 수준이므로, 임대 수익률이 이보다 높아야 부동산 특유의 리스크(공실, 수리비, 유동성 부족)를 감수할 실익이 있습니다. 서울 아파트의 순수익률은 평균 1.5~2.5%로 낮지만, 지방·수익형 부동산(오피스텔, 상가)은 4~6%대를 기대할 수 있습니다. 레버리지 활용 시 대출 금리보다 총수익률이 높은지 반드시 확인해야 합니다.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">총수익률(GROSS)과 순수익률(NET)의 차이는 무엇인가요?</div>
+          <div class="faq-a">총수익률(GROSS)은 연간 임대료 수입을 매매가로 나눈 값으로, 비용을 고려하지 않은 단순 수익률입니다. 반면 순수익률(NET)은 공실 손실, 관리비, 재산세, 대출이자 등 실제 비용을 모두 공제한 뒤의 실질 수익률입니다. 투자 결정 시에는 반드시 순수익률(NET)을 기준으로 판단해야 합니다. 총수익률이 높아 보여도 공실률이 높거나 대출 이자 부담이 크면 실제 순수익이 크게 줄어들 수 있습니다.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">공실률은 어떻게 계산에 반영하나요?</div>
+          <div class="faq-a">공실률은 연간 임대 가능 기간 대비 실제 비어있는 기간의 비율입니다. 공실률 5%를 입력하면, 연간 임대료 수입에서 5%를 차감해 실제 수입을 계산합니다. 서울 아파트의 평균 공실률은 1~3%이지만, 오피스텔은 5~10%, 지방 상가는 10~20%까지 올라갈 수 있습니다. 보수적 투자라면 오피스텔 7~10%, 아파트 3~5%를 적용하는 것이 안전합니다.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">레버리지 수익률이란 무엇인가요?</div>
+          <div class="faq-a">레버리지 수익률은 대출을 활용한 투자 시 실제 투자금(매매가 - 보증금 - 대출금) 대비 순수익의 비율입니다. 대출 이자를 비용으로 처리한 뒤, 내 자기자본만 기준으로 수익률을 계산합니다. 대출 금리보다 총수익률이 높으면 레버리지 효과로 자기자본 수익률이 높아지지만, 반대의 경우 투자 손실이 발생합니다. 예를 들어 매매가 3억, 보증금 1억, 대출 1억(금리 4%), 내 돈 1억을 투자했을 때 순수익 600만원이면 레버리지 수익률은 6%가 됩니다.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">갭투자 시 임대수익률을 어떻게 분석해야 하나요?</div>
+          <div class="faq-a">갭투자(전세 끼고 매수)는 실제 투자금이 적어 레버리지 수익률은 높아 보이지만, 월세 수입이 없거나 미미합니다. 역전세 리스크(전세가 하락 시 보증금 반환 부담), 공실 리스크, 금리 상승 리스크를 종합적으로 분석해야 합니다. 갭투자는 임대수익보다 시세차익을 기대하는 전략이므로, 임대수익률만으로 갭투자의 수익성을 판단하기는 어렵습니다. 이 계산기의 갭투자 비교 시뮬레이션을 활용해 실투자금 차이와 수익률 차이를 비교해보세요.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">재산세와 종합부동산세도 수익률에 영향을 주나요?</div>
+          <div class="faq-a">네, 상당한 영향을 줍니다. 재산세는 주택 공시가격에 따라 연 0.1~0.4%가 부과되며, 공시가격 6억원 초과 주택은 종합부동산세가 추가됩니다. 임대 수입에 대한 임대소득세도 연간 2,000만원 초과 시 분리과세(세율 14%)가 적용됩니다. 이 계산기는 재산세를 직접 입력받아 순수익률에 반영합니다. 정확한 세금 계산은 국세청 홈택스 또는 세무사 상담을 권장합니다.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">월세 보증금도 수익률 계산에 포함해야 하나요?</div>
+          <div class="faq-a">월세 보증금은 임대인이 운용할 수 있는 무이자 자금으로, 실질 투자금을 줄여주는 역할을 합니다. 이 계산기에서는 총투자금을 '매매가 - 보증금 - 대출금'으로 계산해 보증금의 효과를 반영합니다. 단, 보증금은 임대 계약 종료 시 반환해야 하므로 수익으로 처리하지 않습니다. 전세나 반전세의 경우 보증금 규모가 커서 실투자금이 크게 줄어들지만, 역전세 리스크도 그만큼 높아집니다.</div>
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <!-- 사이드바 -->
+    <aside>
+      <div class="ad-zone vertical"></div>
+      <div class="sidebar-box" style="margin-top:16px;">
+        <div class="sidebar-title">관련 계산기</div>
+        <ul class="sidebar-links">
+          <li><a href="jeonse-monthly.html">전세·월세 전환 계산기</a></li>
+          <li><a href="acquisition-tax.html">취득세 계산기</a></li>
+          <li><a href="property-tax.html">재산세 계산기</a></li>
+          <li><a href="loan.html">대출이자 계산기</a></li>
+          <li><a href="capital-gains.html">양도소득세 계산기</a></li>
+          <li><a href="dti-dsr.html">DTI/DSR 계산기</a></li>
+          <li><a href="rent-tax-credit-detail.html">월세 세액공제 계산기</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>calcmoney.kr · 금융 계산기 모음 · 세금·대출·부동산 계산</p>
+    <p style="font-size:0.8em;color:#aaa;margin-top:6px;">본 계산기는 참고용이며 법적 효력이 없습니다. 정확한 세금·투자 판단은 전문가와 상담하세요.</p>
+  </div>
+</footer>
+
+<script>
+function fmt(n) {
+  if (n === undefined || n === null || isNaN(n)) return '-';
+  return Math.round(n).toLocaleString('ko-KR') + '원';
+}
+function fmtPct(n) {
+  if (n === undefined || n === null || isNaN(n)) return '-';
+  return n.toFixed(2) + '%';
+}
+
+function calculate() {
+  const salePrice    = parseFloat(document.getElementById('salePrice').value) || 0;
+  const deposit      = parseFloat(document.getElementById('deposit').value) || 0;
+  const monthlyRent  = parseFloat(document.getElementById('monthlyRent').value) || 0;
+  const vacancyRate  = parseFloat(document.getElementById('vacancyRate').value) || 0;
+  const loanAmount   = parseFloat(document.getElementById('loanAmount').value) || 0;
+  const loanRate     = parseFloat(document.getElementById('loanRate').value) || 0;
+  const annualMgmt   = parseFloat(document.getElementById('annualMgmt').value) || 0;
+  const annualTax    = parseFloat(document.getElementById('annualTax').value) || 0;
+  const otherCosts   = parseFloat(document.getElementById('otherCosts').value) || 0;
+
+  if (salePrice <= 0) { alert('매매가를 입력해주세요.'); return; }
+
+  // 계산
+  const annualRentGross    = monthlyRent * 12;
+  const vacancyLoss        = annualRentGross * (vacancyRate / 100);
+  const annualRentNet      = annualRentGross - vacancyLoss;
+  const annualLoanInterest = loanAmount * (loanRate / 100);
+  const totalAnnualCost    = annualLoanInterest + annualMgmt + annualTax + otherCosts;
+  const annualNetIncome    = annualRentNet - totalAnnualCost;
+
+  const totalInvestment    = salePrice - deposit - loanAmount;
+  const safeInvestment     = totalInvestment > 0 ? totalInvestment : 1; // 분모 0 방지
+
+  const grossYield    = salePrice > 0 ? (annualRentGross / salePrice) * 100 : 0;
+  const netYield      = safeInvestment > 0 ? (annualNetIncome / safeInvestment) * 100 : 0;
+  const levYield      = safeInvestment > 0 ? (annualNetIncome / safeInvestment) * 100 : 0; // 레버리지 = 자기자본 수익률
+
+  // 전액투자 수익률 (대출 없다고 가정)
+  const fullInvest        = salePrice - deposit;
+  const fullNetIncome     = annualRentNet - annualMgmt - annualTax - otherCosts; // 이자 없음
+  const fullNetYield      = fullInvest > 0 ? (fullNetIncome / fullInvest) * 100 : 0;
+
+  // 결과 표시
+  document.getElementById('result').style.display = 'block';
+
+  // 총투자금 박스
+  document.getElementById('totalInvestment').textContent = fmt(totalInvestment);
+  document.getElementById('totalInvestmentSub').textContent =
+    `매매가 ${fmt(salePrice)} - 보증금 ${fmt(deposit)} - 대출금 ${fmt(loanAmount)}`;
+
+  // 수익률 카드
+  const cards = [
+    { label: '총수익률 (GROSS)', value: fmtPct(grossYield), cls: '' },
+    { label: '순수익률 (NET)', value: fmtPct(netYield), cls: netYield >= 3 ? 'success' : netYield >= 2 ? '' : 'warn' },
+    { label: '레버리지 수익률', value: fmtPct(levYield), cls: loanAmount > 0 ? 'highlight' : '' },
+    { label: '연간 순수익', value: fmt(annualNetIncome), cls: annualNetIncome >= 0 ? 'success' : 'warn' },
+    { label: '월 순수익', value: fmt(annualNetIncome / 12), cls: '' },
+    { label: '연간 임대수입', value: fmt(annualRentNet), cls: '' },
+  ];
+  document.getElementById('yieldCards').innerHTML = cards.map(c =>
+    `<div class="result-card ${c.cls}"><div class="rlabel">${c.label}</div><div class="rvalue">${c.value}</div></div>`
+  ).join('');
+
+  // 수익·비용 구조 바 차트
+  const items = [
+    { label: '연간 임대수입(공실 전)', val: annualRentGross, bar: 'bar-blue' },
+    { label: '공실 손실', val: -vacancyLoss, bar: 'bar-red' },
+    { label: '대출 이자', val: -annualLoanInterest, bar: 'bar-orange' },
+    { label: '관리비·수선비', val: -annualMgmt, bar: 'bar-orange' },
+    { label: '재산세', val: -annualTax, bar: 'bar-orange' },
+    { label: '기타 비용', val: -otherCosts, bar: 'bar-orange' },
+    { label: '연간 순수익', val: annualNetIncome, bar: annualNetIncome >= 0 ? 'bar-green' : 'bar-red' },
+  ];
+  const maxAbs = Math.max(...items.map(i => Math.abs(i.val)), 1);
+  document.getElementById('simChart').innerHTML = items.map(item => {
+    const pct = Math.min(100, Math.abs(item.val) / maxAbs * 100);
+    const valText = (item.val < 0 ? '-' : '') + fmt(Math.abs(item.val));
+    return `<div class="sim-row">
+      <div class="sim-label">${item.label}</div>
+      <div class="sim-bar-wrap"><div class="sim-bar ${item.bar}" style="width:${pct.toFixed(1)}%"></div></div>
+      <div class="sim-val">${valText}</div>
+    </div>`;
+  }).join('');
+
+  // 조언 박스
+  let advice = '';
+  if (loanAmount > 0 && grossYield < loanRate) {
+    advice = `<div class="warn-box"><h4>역레버리지 경고</h4><p>현재 총수익률(${fmtPct(grossYield)})이 대출 금리(${fmtPct(loanRate)})보다 낮습니다. 대출을 활용할수록 수익이 줄어드는 역레버리지 상태입니다. 대출 비중을 줄이거나 임대료 인상, 비용 절감 방안을 검토하세요.</p></div>`;
+  } else if (netYield >= 4) {
+    advice = `<div class="recommend-box"><h4>양호한 수익률</h4><p>순수익률 ${fmtPct(netYield)}는 예금 금리 대비 충분한 수익을 기대할 수 있는 수준입니다. 공실 리스크와 금리 변동을 지속적으로 모니터링하면서 관리하세요.</p></div>`;
+  } else if (netYield >= 2) {
+    advice = `<div class="recommend-box"><h4>보통 수준의 수익률</h4><p>순수익률 ${fmtPct(netYield)}는 예금 금리와 비슷한 수준입니다. 시세차익 기대가 없다면 수익성 개선이 필요할 수 있습니다. 비용 절감이나 임대료 조정을 검토해보세요.</p></div>`;
+  } else {
+    advice = `<div class="warn-box"><h4>낮은 수익률 주의</h4><p>순수익률 ${fmtPct(netYield)}는 예금 금리보다 낮습니다. 부동산 투자의 유동성 리스크와 관리 부담을 감안하면, 순수한 임대 수익만으로는 투자 효율이 떨어집니다. 시세차익 가능성을 함께 고려하거나 투자 조건을 재검토하세요.</p></div>`;
+  }
+  document.getElementById('adviceBox').innerHTML = advice;
+
+  // 갭투자 vs 전액투자 비교
+  const gapInvest = Math.max(totalInvestment, 1);
+  const gapNetYield = (annualNetIncome / gapInvest) * 100;
+
+  document.getElementById('gapCompare').innerHTML = `
+    <div class="gap-card active">
+      <h4>현재 투자 구조 (레버리지)</h4>
+      <div class="gap-item"><span>실투자금</span><strong>${fmt(totalInvestment)}</strong></div>
+      <div class="gap-item"><span>대출금</span><strong>${fmt(loanAmount)}</strong></div>
+      <div class="gap-item"><span>연간 이자 비용</span><strong>${fmt(annualLoanInterest)}</strong></div>
+      <div class="gap-item"><span>연간 순수익</span><strong>${fmt(annualNetIncome)}</strong></div>
+      <div class="gap-rate">${fmtPct(gapNetYield)}</div>
+      <div style="text-align:center;font-size:0.78em;color:#555;margin-top:4px;">자기자본 수익률</div>
+    </div>
+    <div class="gap-card">
+      <h4>전액 자기자본 투자 (무대출)</h4>
+      <div class="gap-item"><span>실투자금</span><strong>${fmt(fullInvest)}</strong></div>
+      <div class="gap-item"><span>대출금</span><strong>0원</strong></div>
+      <div class="gap-item"><span>연간 이자 비용</span><strong>0원</strong></div>
+      <div class="gap-item"><span>연간 순수익</span><strong>${fmt(fullNetIncome)}</strong></div>
+      <div class="gap-rate" style="color:${fullNetYield >= netYield ? '#2e7d32' : '#1a73e8'}">${fmtPct(fullNetYield)}</div>
+      <div style="text-align:center;font-size:0.78em;color:#555;margin-top:4px;">자기자본 수익률</div>
+    </div>`;
+
+  // 월별 시뮬레이션 테이블
+  const monthlyRentNet  = annualRentNet / 12;
+  const monthlyInterest = annualLoanInterest / 12;
+  const monthlyCost     = (annualMgmt + annualTax + otherCosts) / 12;
+  const monthlyNet      = monthlyRentNet - monthlyInterest - monthlyCost;
+
+  let tbody = '';
+  let cumulative = 0;
+  const monthNames = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+  for (let m = 0; m < 12; m++) {
+    cumulative += monthlyNet;
+    tbody += `<tr>
+      <td>${monthNames[m]}</td>
+      <td>${fmt(monthlyRentNet)}</td>
+      <td>${fmt(monthlyInterest)}</td>
+      <td>${fmt(monthlyCost)}</td>
+      <td style="color:${monthlyNet>=0?'#2e7d32':'#c62828'};font-weight:700;">${fmt(monthlyNet)}</td>
+      <td style="color:${cumulative>=0?'#1a73e8':'#c62828'};font-weight:700;">${fmt(cumulative)}</td>
+    </tr>`;
+  }
+  tbody += `<tr class="total-row">
+    <td>합계</td>
+    <td>${fmt(annualRentNet)}</td>
+    <td>${fmt(annualLoanInterest)}</td>
+    <td>${fmt(annualMgmt + annualTax + otherCosts)}</td>
+    <td>${fmt(annualNetIncome)}</td>
+    <td>${fmt(annualNetIncome)}</td>
+  </tr>`;
+  document.getElementById('monthlyBody').innerHTML = tbody;
+
+  // 결과 영역으로 스크롤
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+</body>
+</html>
