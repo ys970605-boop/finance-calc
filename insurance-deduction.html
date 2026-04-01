@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 보험료세액공제 계산기 - 보장성보험·장애인보험 공제한도 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="보장성보험료를 입력하면 일반(12%)·장애인전용(15%) 세액공제를 자동 계산합니다. 연 100만원 한도, 공제 불가 보험 안내 포함.">
+  <link rel="canonical" href="https://calcmoney.kr/insurance-deduction">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 보험료세액공제 계산기 - 보장성보험·장애인보험 공제한도 자동 계산">
+  <meta property="og:description" content="보장성보험료를 입력하면 일반(12%)·장애인전용(15%) 세액공제를 자동 계산합니다. 연 100만원 한도, 공제 불가 보험 안내 포함.">
+  <meta property="og:url" content="https://calcmoney.kr/insurance-deduction">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "보험료세액공제 대상 보험은 어떤 것인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "보험료세액공제 대상은 보장성 보험입니다. 생명보험(사망·상해보험), 실손의료보험, 암보험, 건강보험(민간), 운전자보험 등 피보험자의 신체·생명을 보장하는 보험이 해당됩니다. 만기 시 납입보험료를 초과하지 않는 환급금이 있는 상품도 포함됩니다. 피보험자가 기본공제 대상자(본인 또는 소득 없는 부양가족)이어야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "자동차보험은 보험료세액공제가 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "자동차보험은 재산 보호를 목적으로 하는 손해보험이므로 보험료세액공제 대상에서 제외됩니다. 자동차보험, 화재보험, 풍수해보험 등 재산 관련 보험은 공제 불가합니다. 단, 자동차보험 내 운전자 상해 특약(자기신체사고 특약 등) 중 사람의 신체를 보장하는 부분만 공제 가능한 경우도 있으나, 실무상 구분이 어려워 일반적으로 공제 대상에서 제외합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "맞벌이 부부는 보험료세액공제를 어떻게 분할하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "맞벌이 부부의 경우 각자 자신이 계약자이면서 피보험자인 보험료만 공제 가능합니다. 배우자가 계약자이고 본인이 피보험자인 경우 공제 불가합니다. 즉, 계약자 기준이 아닌 피보험자를 기본공제에 등록한 사람이 공제를 받습니다. 자녀 보험료는 자녀를 기본공제에 등록한 배우자 쪽에서 공제받습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실손보험도 보험료세액공제 대상인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "실손의료보험(실손보험)은 보장성 보험에 해당하므로 보험료세액공제 대상입니다. 연간 납입 보험료를 일반보장성보험 한도(100만원)에 합산하여 12% 세액공제를 받을 수 있습니다. 단, 실손보험으로 보험금을 수령한 경우 해당 금액은 의료비 세액공제에서 차감됩니다(중복 공제 불가)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "저축성보험(연금보험, 저축보험)은 공제 가능한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "저축성 보험은 보험료세액공제 대상이 아닙니다. 만기환급금이 납입보험료를 초과하는 저축보험, 연금보험(세제비적격), 변액유니버설보험(저축형) 등은 공제 불가합니다. 다만, 연금저축보험(세제적격)은 연금계좌 세액공제(별도 항목, 최대 16.5% 공제)를 통해 혜택을 받을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "장애인전용보장성보험은 일반 보험과 다른가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "장애인전용보장성보험은 피보험자가 장애인인 보장성 보험입니다. 공제율이 15%로 일반보장성보험(12%)보다 높고, 한도는 동일하게 연 100만원입니다. 장애인복지법에 따른 장애인, 국가유공자법에 따른 상이자, 항시 치료를 요하는 중증환자도 해당됩니다. 일반보장성보험 공제와 별도로 추가 적용되어 최대 15만원(100만원×15%)을 추가로 공제받을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "국민건강보험료는 보험료세액공제 대상인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "국민건강보험료, 고용보험료, 노인장기요양보험료는 세액공제가 아닌 소득공제(보험료 소득공제) 대상입니다. 즉, 근로소득에서 전액 차감하여 과세표준을 줄이는 방식입니다. 연말정산 시 자동으로 반영되므로 별도 입력이 필요 없습니다. 본 계산기의 보험료세액공제와는 별개의 항목입니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .deduction-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+    .deduction-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
+    .deduction-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .deduction-card .dlabel { font-size: 0.78em; color: #666; margin-bottom: 4px; }
+    .deduction-card .dvalue { font-size: 1.25em; font-weight: 800; color: #1a73e8; }
+    .total-deduction-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-deduction-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-deduction-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .monthly-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .monthly-table th { background: #f0f4ff; color: #333; font-size: 0.85em; padding: 10px 12px; text-align: left; border-bottom: 2px solid #c5cae9; }
+    .monthly-table td { padding: 9px 12px; font-size: 0.88em; border-bottom: 1px solid #f0f0f0; }
+    .monthly-table tr:hover td { background: #f8f9fa; }
+    .notice-box { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 16px; margin: 16px 0; }
+    .notice-box h4 { margin: 0 0 8px; font-size: 0.9em; color: #e65100; }
+    .notice-box ul { margin: 0; padding-left: 18px; font-size: 0.85em; color: #555; line-height: 1.8; }
+    .notice-box-blue { background: #e8f0fe; border-left: 4px solid #1a73e8; border-radius: 0 10px 10px 0; padding: 16px; margin: 16px 0; }
+    .notice-box-blue h4 { margin: 0 0 8px; font-size: 0.9em; color: #1557b0; }
+    .notice-box-blue ul { margin: 0; padding-left: 18px; font-size: 0.85em; color: #555; line-height: 1.8; }
+    .input-section-title { font-size: 0.9em; font-weight: 700; color: #1a73e8; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #e8f0fe; }
+    .section-divider { border: none; border-top: 1px dashed #e0e0e0; margin: 20px 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .faq-item summary { padding: 14px 16px; font-size: 0.9em; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.2em; color: #1a73e8; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { padding: 0 16px 14px; font-size: 0.85em; color: #555; line-height: 1.7; margin: 0; }
+    .related-links h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--text); padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .related-links .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>보험료세액공제 계산기</h1>
+        <p class="desc">2026년 기준 보장성보험료를 입력하면 일반(12%)·장애인전용(15%) 세액공제를 자동으로 계산합니다. 연 100만원 한도, 공제 불가 보험 안내 포함.</p>
+
+        <!-- 일반보장성보험 -->
+        <div class="input-section-title">일반보장성보험료 (본인 및 부양가족)</div>
+        <div class="form-group">
+          <label>연간 납입 보험료 <span class="hint">원 (생명보험·실손보험·암보험·건강보험 등)</span></label>
+          <input type="number" id="generalInsurance" placeholder="예: 1200000" value="1200000" min="0">
+        </div>
+        <div class="notice-box-blue" style="margin-top: -4px;">
+          <h4>공제 대상 일반보장성보험</h4>
+          <ul>
+            <li>생명보험(사망·상해), 실손의료보험, 암보험, 건강보험(민간)</li>
+            <li>운전자보험(신체 보장 부분), 상해보험, 간병보험</li>
+            <li>피보험자가 본인 또는 기본공제 대상 부양가족이어야 함</li>
+          </ul>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- 장애인전용보장성보험 -->
+        <div class="input-section-title">장애인전용보장성보험료</div>
+        <div class="form-group">
+          <label>연간 납입 보험료 <span class="hint">원 (피보험자가 장애인인 보장성 보험)</span></label>
+          <input type="number" id="disabledInsurance" placeholder="예: 600000" value="0" min="0">
+        </div>
+        <div class="notice-box-blue" style="margin-top: -4px;">
+          <h4>장애인전용보장성보험 대상자</h4>
+          <ul>
+            <li>장애인복지법에 따른 장애인</li>
+            <li>국가유공자법에 따른 상이자</li>
+            <li>항시 치료를 요하는 중증환자 (세법상 장애인 포함)</li>
+          </ul>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- 공제 불가 안내 -->
+        <div class="notice-box">
+          <h4>공제 불가 보험 (입력하지 마세요)</h4>
+          <ul>
+            <li><strong>자동차보험</strong>: 재산 보호 목적, 공제 불가</li>
+            <li><strong>화재보험·풍수해보험</strong>: 재산 관련 손해보험, 공제 불가</li>
+            <li><strong>저축성보험·연금보험(비적격)</strong>: 만기환급금 납입보험료 초과 시 공제 불가</li>
+            <li><strong>국민건강보험·고용보험·노인장기요양보험</strong>: 세액공제 아닌 소득공제(자동 반영)</li>
+          </ul>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">공제액 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총 절세액 -->
+          <div class="total-deduction-box">
+            <div class="tlabel">연간 보험료 세액공제 총액</div>
+            <div class="tvalue" id="totalDeduction"></div>
+            <div style="font-size:0.82em;opacity:0.8;margin-top:6px;" id="totalSub"></div>
+          </div>
+
+          <!-- 항목별 카드 -->
+          <div class="deduction-cards" id="deductionCards"></div>
+
+          <!-- 상세 결과 테이블 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">항목별 세액공제 상세</div>
+          <table class="result-table" id="detailTable">
+            <tbody id="detailBody"></tbody>
+          </table>
+
+          <!-- 월 실질 절세효과 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">세율 구간별 월 실질 절세효과</div>
+          <p style="font-size:0.82em;color:#888;margin:-4px 0 10px;">보험료 세액공제는 세율과 무관하게 산출세액에서 직접 차감됩니다. 월 환산 참고 정보입니다.</p>
+          <table class="monthly-table" id="monthlyTable">
+            <thead>
+              <tr>
+                <th>총급여 구간</th>
+                <th>세율</th>
+                <th>연간 공제액</th>
+                <th>월 환산 절세액</th>
+              </tr>
+            </thead>
+            <tbody id="monthlyBody"></tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">보험료세액공제 핵심 정보</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">보험료세액공제란?</h3>
+        <p>보험료세액공제는 소득세법 제59조의4에 따라 근로자가 보장성 보험료를 납입한 경우 납입액의 일정 비율을 산출세액에서 직접 차감하는 제도입니다. 소득공제와 달리 세율 구간에 관계없이 동일 금액을 차감하므로, 저소득·고소득 근로자 모두 동일한 절세 혜택을 받습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 보험료세액공제 한도 및 공제율</h3>
+        <p>① 일반보장성보험: 연간 납입보험료 100만원 한도, 12% 세액공제 → 최대 12만원 절세. ② 장애인전용보장성보험: 연간 납입보험료 100만원 한도, 15% 세액공제 → 최대 15만원 절세. 두 항목은 별도 한도가 적용되어 최대 27만원(12만원+15만원) 공제 가능합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">공제 대상 피보험자 요건</h3>
+        <p>피보험자가 본인 또는 기본공제 대상 부양가족이어야 합니다. 기본공제 대상 부양가족: ①직계존속(부모, 조부모) - 만 60세 이상, 연소득 100만원 이하 ②직계비속(자녀) - 만 20세 이하, 연소득 100만원 이하 ③형제자매 - 만 20세 이하 또는 만 60세 이상, 연소득 100만원 이하. 맞벌이 배우자 보험료는 상호 공제 불가합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">국민건강보험·고용보험 소득공제 안내</h3>
+        <p>국민건강보험료, 고용보험료, 노인장기요양보험료는 본 세액공제와 별개로 <strong>소득공제</strong> 항목으로 처리됩니다. 근로소득에서 전액 차감하여 과세표준을 낮추는 방식이며, 연말정산 시 자동으로 반영되므로 별도 서류 제출이 필요 없습니다. 소득공제이므로 세율이 높을수록 절세 효과가 커집니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">보험료 세액공제 신청 방법</h3>
+        <p>연말정산 시 보험사에서 발급한 '보험료납입확인서'를 회사에 제출하면 됩니다. 홈택스에서 조회 가능한 연말정산 간소화 자료에도 자동으로 포함됩니다. 단, 일부 소규모 공제조합이나 외국 보험사 보험료는 간소화 서비스에 누락될 수 있으므로 직접 확인이 필요합니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>부모님 보험료도 세액공제 받을 수 있나요?</summary>
+            <p>부모님이 기본공제 대상 부양가족(만 60세 이상, 연소득 100만원 이하)이라면 부모님 명의 보장성 보험료도 세액공제 가능합니다. 단, 계약자가 자녀(본인)이어야 합니다. 부모님 본인이 계약자인 경우에도 피보험자 요건을 충족하면 공제 가능합니다. 맞벌이 자녀 중 한 명만 부양가족으로 등록 가능하므로, 등록한 쪽에서 공제받습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>보험료를 100만원 초과 납입했을 때 초과분은 어떻게 되나요?</summary>
+            <p>일반보장성보험과 장애인전용보장성보험 각각 연 100만원이 공제 한도입니다. 초과 납입한 보험료는 공제 혜택을 받을 수 없으며, 이월도 되지 않습니다. 예를 들어 연간 200만원 납입 시 100만원까지만 인정, 12만원 공제. 여러 보험에 분산 가입한 경우 합산 금액으로 한도를 적용합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>운전자보험은 보험료세액공제가 되나요?</summary>
+            <p>운전자보험 중 피보험자의 신체·생명을 보장하는 상해 부분은 보장성 보험에 해당하여 공제 가능합니다. 그러나 자동차 수리비나 대물보상 등 재산 보호 성격의 담보는 공제 불가합니다. 보험사에 따라 구분 방식이 다르므로, 홈택스 연말정산 간소화 서비스에서 반영 여부를 확인하는 것이 가장 정확합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>배우자 명의 보험료도 공제받을 수 있나요?</summary>
+            <p>맞벌이 배우자는 서로 기본공제 대상 부양가족이 아니므로 배우자 명의 보험료는 공제 불가합니다. 단, 소득이 없는 배우자(연소득 100만원 이하)는 기본공제 부양가족에 해당하므로, 배우자가 피보험자인 보장성 보험료를 본인이 납부한 경우 공제 가능합니다. 배우자가 소득이 있는 경우 각자 자신의 보험료만 공제받습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>연금저축보험과 보장성보험 세액공제는 중복 가능한가요?</summary>
+            <p>연금저축보험(세제적격)의 세액공제는 '연금계좌 세액공제' 항목으로 별도 적용되며, 보험료세액공제와 중복 적용이 가능합니다. 연금저축보험 세액공제: 납입액 600만원 한도, 공제율 12~15%(총급여에 따라 다름). 보장성보험 세액공제: 납입액 100만원 한도, 12%. 두 항목 모두 최대 한도 활용 시 연금저축 최대 99만원 + 보장성보험 12만원 = 111만원 이상 절세 가능합니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>2026년 공제 한도·공제율</h3>
+        <ul>
+          <li><strong>일반보장성보험</strong></li>
+          <li>한도: 연 100만원</li>
+          <li>공제율: 12%</li>
+          <li>최대 절세: <strong>12만원/년</strong></li>
+          <li style="margin-top:8px;"><strong>장애인전용보장성보험</strong></li>
+          <li>한도: 연 100만원</li>
+          <li>공제율: 15%</li>
+          <li>최대 절세: <strong>15만원/년</strong></li>
+        </ul>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>공제 불가 보험</h3>
+        <ul>
+          <li>자동차보험 (재산보험)</li>
+          <li>화재·풍수해보험</li>
+          <li>저축성보험·연금보험(비적격)</li>
+          <li>국민건강보험 → 소득공제</li>
+          <li>고용보험 → 소득공제</li>
+          <li>노인장기요양보험 → 소득공제</li>
+        </ul>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="child-tax-deduction.html" class="related-link">자녀세액공제</a>
+          <a href="income-tax-refund.html" class="related-link">소득세 환급액</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 활용 가이드 + 상세 해설 -->
+<div class="container" style="padding-top:0;">
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">보험료세액공제 계산기 활용 가이드</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      연말정산 시즌마다 보험료세액공제는 놓치기 쉬운 항목입니다. 이 계산기로 올해 납입한 보험료 총액을 입력하고 예상 절세액을 미리 파악해두세요. 특히 실손보험·암보험·종신보험을 여러 개 보유한 경우 합산 한도(100만원)를 초과하면 초과분은 공제되지 않습니다.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 1 — 직장인 연말정산 체크:</strong> 실손보험 연 50만원, 암보험 연 40만원, 종신보험 연 60만원을 납입한 경우 합산 150만원이지만, 공제 한도 100만원만 인정됩니다. 세액공제액은 100만원 × 12% = 12만원입니다. 총급여 5,500만원 이하 근로자는 공제율이 15%로 올라 15만원을 돌려받습니다.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 2 — 가족 보험료 공제 전략:</strong> 소득이 없는 배우자나 자녀가 피보험자인 보험료를 본인이 납부한 경우 공제 가능합니다. 맞벌이 부부라면 각자의 보험료를 각자 공제받는 것이 원칙이며, 자녀 보험료는 자녀를 기본공제에 등록한 쪽에서 공제받습니다.
+    </p>
+    <p style="line-height:1.8;color:#444;">
+      <strong>활용 사례 3 — 장애인전용보험 추가 절세:</strong> 장애인 가족이 있다면 장애인전용보장성보험을 별도로 100만원 한도로 추가 공제받을 수 있습니다. 공제율도 15%로 일반보험(12%)보다 높아 최대 15만원까지 추가 절세가 가능합니다.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">보험료세액공제 상세 해설 — 2026년 기준</h2>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">공제 대상·불가 보험 구분표</h3>
+    <table class="result-table" style="font-size:0.9em;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>구분</td><td>공제 여부</td><td>비고</td></tr>
+      <tr><td>생명보험·종신보험</td><td style="color:#1e7e34;">공제 가능</td><td>보장성 보험</td></tr>
+      <tr><td>실손의료보험</td><td style="color:#1e7e34;">공제 가능</td><td>보장성 보험</td></tr>
+      <tr><td>암보험·건강보험(민간)</td><td style="color:#1e7e34;">공제 가능</td><td>보장성 보험</td></tr>
+      <tr><td>자동차보험</td><td style="color:#d32f2f;">공제 불가</td><td>재산 보호 목적</td></tr>
+      <tr><td>화재·풍수해보험</td><td style="color:#d32f2f;">공제 불가</td><td>재산 보호 목적</td></tr>
+      <tr><td>저축성보험·연금보험(비적격)</td><td style="color:#d32f2f;">공제 불가</td><td>저축 목적</td></tr>
+      <tr><td>연금저축보험(적격)</td><td style="color:#1a73e8;">별도 공제</td><td>연금계좌 세액공제</td></tr>
+    </table>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">홈택스 간소화 서비스 vs 직접 입력</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      국세청 홈택스 연말정산 간소화 서비스에서 보험료 납입 내역이 자동으로 조회되는 경우가 많습니다. 다만 공제 불가 보험(자동차보험 등)이 함께 조회될 수 있으므로, 보험사에서 발급한 공제 대상 보험료 확인서와 대조하는 것이 정확합니다. 간소화 서비스에서 조회되지 않으면 보험사에 직접 확인서를 요청하세요.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">총급여에 따른 공제율 차이</h3>
+    <p style="line-height:1.8;color:#444;">
+      총급여 5,500만원 이하(종합소득금액 4,000만원 이하)인 근로자는 보장성보험료 공제율이 <strong>15%</strong>로 적용됩니다. 총급여 5,500만원 초과 시에는 <strong>12%</strong>가 적용됩니다. 장애인전용보험은 소득 수준과 관계없이 항상 <strong>15%</strong>가 적용됩니다.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="year-end-tax.html">연말정산 계산기</a> — 각종 공제를 합산한 환급액 추정</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> — 프리랜서·개인사업자 소득세 계산</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> — 4대보험·소득세 공제 후 월 수령액</li>
+      <li><a href="pension-savings-deduction.html">연금저축 세액공제</a> — IRP·연금저축 세액공제 계산</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 국세청 홈택스 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  // 소득세율 구간
+  const taxBrackets = [
+    { label: '~2,800만원', rate: '6%', rateVal: 0.06 },
+    { label: '~5,000만원', rate: '15%', rateVal: 0.15 },
+    { label: '~8,800만원', rate: '24%', rateVal: 0.24 },
+    { label: '~1.5억원',  rate: '35%', rateVal: 0.35 },
+    { label: '~3억원',    rate: '38%', rateVal: 0.38 },
+    { label: '3억 초과',  rate: '40%+', rateVal: 0.40 },
+  ];
+
+  function calculate() {
+    const generalInput  = parseFloat(document.getElementById('generalInsurance').value)  || 0;
+    const disabledInput = parseFloat(document.getElementById('disabledInsurance').value) || 0;
+
+    // 한도 적용
+    const generalCapped  = Math.min(generalInput,  1000000);
+    const disabledCapped = Math.min(disabledInput, 1000000);
+
+    // 세액공제 계산
+    const generalDeduction  = Math.round(generalCapped  * 0.12);
+    const disabledDeduction = Math.round(disabledCapped * 0.15);
+    const totalDeduction    = generalDeduction + disabledDeduction;
+
+    // 총 공제액 표시
+    document.getElementById('totalDeduction').textContent = fmt(totalDeduction);
+    document.getElementById('totalSub').textContent =
+      `일반보장성 ${fmt(generalDeduction)} + 장애인전용 ${fmt(disabledDeduction)}`;
+
+    // 항목별 카드
+    const cards = [];
+    if (generalInput > 0) {
+      cards.push({
+        label: `일반보장성보험 (한도 ${fmt(generalCapped)})`,
+        value: fmt(generalDeduction),
+        highlight: true
+      });
+    }
+    if (disabledInput > 0) {
+      cards.push({
+        label: `장애인전용보장성보험 (한도 ${fmt(disabledCapped)})`,
+        value: fmt(disabledDeduction),
+        highlight: false
+      });
+    }
+    if (cards.length === 0) {
+      cards.push({ label: '공제 항목 없음', value: '0원', highlight: false });
+    }
+
+    document.getElementById('deductionCards').innerHTML = cards.map(c =>
+      `<div class="deduction-card ${c.highlight ? 'highlight' : ''}"><div class="dlabel">${c.label}</div><div class="dvalue">${c.value}</div></div>`
+    ).join('');
+
+    // 상세 테이블
+    const detailRows = [];
+    if (generalInput > 0) {
+      detailRows.push(`<tr><td>일반보장성보험 납입액</td><td>${fmt(generalInput)}</td></tr>`);
+      if (generalInput > 1000000) {
+        detailRows.push(`<tr><td style="color:#e65100;">초과액 (공제 불가)</td><td style="color:#e65100;">${fmt(generalInput - 1000000)}</td></tr>`);
+      }
+      detailRows.push(`<tr><td>공제대상액 (100만원 한도)</td><td>${fmt(generalCapped)}</td></tr>`);
+      detailRows.push(`<tr><td>세액공제액 (×12%)</td><td style="color:#1a73e8;font-weight:700;">${fmt(generalDeduction)}</td></tr>`);
+    }
+    if (disabledInput > 0) {
+      detailRows.push(`<tr><td colspan="2" style="padding-top:12px;font-weight:600;color:#555;">─ 장애인전용보장성보험 ─</td></tr>`);
+      detailRows.push(`<tr><td>장애인전용보험 납입액</td><td>${fmt(disabledInput)}</td></tr>`);
+      if (disabledInput > 1000000) {
+        detailRows.push(`<tr><td style="color:#e65100;">초과액 (공제 불가)</td><td style="color:#e65100;">${fmt(disabledInput - 1000000)}</td></tr>`);
+      }
+      detailRows.push(`<tr><td>공제대상액 (100만원 한도)</td><td>${fmt(disabledCapped)}</td></tr>`);
+      detailRows.push(`<tr><td>세액공제액 (×15%)</td><td style="color:#1a73e8;font-weight:700;">${fmt(disabledDeduction)}</td></tr>`);
+    }
+    detailRows.push(`<tr class="total"><td>합계 세액공제액</td><td>${fmt(totalDeduction)}</td></tr>`);
+    detailRows.push(`<tr><td>월 실질 절세액</td><td>${fmt(totalDeduction / 12)}/월</td></tr>`);
+    document.getElementById('detailBody').innerHTML = detailRows.join('');
+
+    // 세율 구간별 월 절세효과
+    const monthlyBody = taxBrackets.map(b =>
+      `<tr>
+        <td>${b.label}</td>
+        <td>${b.rate}</td>
+        <td>${fmt(totalDeduction)}</td>
+        <td>${fmt(totalDeduction / 12)}</td>
+      </tr>`
+    ).join('');
+    document.getElementById('monthlyBody').innerHTML = monthlyBody;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 페이지 로드 시 기본 계산 실행
+  window.addEventListener('DOMContentLoaded', calculate);
+</script>
+
+</body>
+</html>

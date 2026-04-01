@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 중도상환수수료 계산기 - 주담대·신용대출 잔여기간 비례감면 자동 계산</title>
+  <meta name="description" content="대출 중도상환 시 수수료를 자동으로 계산합니다. 잔여기간 비례감면 적용, 주담대 1.2~1.4%·신용대출 0.5~2% 기준. 3년 경과 면제 여부도 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/prepayment-fee">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 중도상환수수료 계산기 - 잔여기간 비례감면 자동 계산">
+  <meta property="og:description" content="중도상환 수수료를 잔여기간 비례감면까지 반영해 정확하게 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/prepayment-fee">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "중도상환수수료란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "중도상환수수료(조기상환수수료)는 대출 약정 기간보다 일찍 원금을 갚을 때 금융기관이 부과하는 위약금입니다. 은행이 대출 기간 동안 받을 이자 수익이 줄어드는 손실을 보전하기 위해 부과합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중도상환수수료 계산 공식은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "기본 공식은 '상환금액 × 수수료율'이며, 잔여기간 비례감면 적용 시 '상환금액 × 수수료율 × (잔여일수 ÷ 대출기간일수)'로 계산합니다. 대부분의 은행이 잔여기간 비례감면을 적용합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중도상환수수료율은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택담보대출은 1.2~1.4%, 신용대출은 0.5~2.0%가 일반적입니다. 은행별·상품별로 다르며, 가입 시 약정서에서 정확한 수수료율을 확인하세요."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "3년이 지나면 중도상환수수료가 면제되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "대부분의 은행에서 대출 실행 후 3년(36개월)이 경과하면 중도상환수수료를 면제합니다. 단, 일부 상품이나 특판 대출의 경우 면제 기간이 다를 수 있으므로 약정서를 확인해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주담대와 신용대출의 수수료율 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택담보대출은 담보가 있어 리스크가 낮으므로 1.2~1.4%의 낮은 수수료율이 적용됩니다. 신용대출은 담보 없이 신용만으로 실행되어 은행 리스크가 크므로 0.5~2.0%로 범위가 넓고, 신용등급에 따라 달라집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "일부 중도상환과 전액 상환 시 수수료 차이가 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "수수료 계산 방식 자체는 동일합니다. '상환금액 × 수수료율 × 잔여기간 비례'로 계산되며, 일부만 갚는 경우에는 상환금액을 실제 중도상환 금액으로 입력하면 됩니다. 전액 상환 시에는 현재 대출잔액 전체를 입력하세요."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중도상환수수료를 줄이는 방법은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "3년 경과 후 상환, 연간 허용되는 무수수료 상환 한도 활용(일부 은행은 연 20~30% 이내 무수수료), 만기 가까운 시점에 상환하면 잔여기간 비례감면으로 수수료가 낮아집니다. 또한 대출 갈아타기(대환) 시에도 수수료가 발생하므로 금리 절감액과 비교해 유불리를 따져보세요."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="prepayment-fee.html" class="active">중도상환</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- 상단 광고 -->
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <!-- 계산기 본체 -->
+    <div>
+      <div class="calc-box">
+        <h1>중도상환수수료 계산기</h1>
+        <p class="desc">대출 중도상환 시 예상 수수료를 계산합니다. 잔여기간 비례감면이 적용된 실제 납부액을 확인하세요.</p>
+
+        <div class="form-group">
+          <label>대출 잔액 <span class="hint">원 단위</span></label>
+          <input type="number" id="loanBalance" placeholder="예: 200000000 (2억)" value="200000000" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>중도상환 금액 <span class="hint">원 단위</span></label>
+          <input type="number" id="repayAmount" placeholder="예: 50000000 (5천만)" value="50000000" min="0">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>대출 기간 <span class="hint">년</span></label>
+            <input type="number" id="loanYears" placeholder="예: 30" value="30" min="1" max="50">
+          </div>
+          <div class="form-group">
+            <label>중도상환수수료율 <span class="hint">%</span></label>
+            <input type="number" id="feeRate" placeholder="예: 1.4" value="1.4" step="0.01" min="0" max="10">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>경과 기간 (년) <span class="hint">0~대출기간</span></label>
+            <input type="number" id="elapsedYears" placeholder="예: 2" value="2" min="0">
+          </div>
+          <div class="form-group">
+            <label>경과 기간 (월) <span class="hint">0~11</span></label>
+            <input type="number" id="elapsedMonths" placeholder="예: 6" value="6" min="0" max="11">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:4px;">
+          <p class="hint" style="margin:0;">※ 대부분의 은행은 대출 실행 후 <strong>3년(36개월) 경과 시 수수료 면제</strong></p>
+        </div>
+
+        <!-- 수수료율 참고 버튼 -->
+        <div style="margin-bottom:16px;">
+          <p class="hint" style="margin-bottom:6px;">수수료율 빠른 입력:</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button type="button" onclick="setRate(1.2)" style="padding:4px 12px;border:1px solid #ccc;border-radius:6px;background:#f8f9fa;cursor:pointer;font-size:13px;">주담대 1.2%</button>
+            <button type="button" onclick="setRate(1.4)" style="padding:4px 12px;border:1px solid #ccc;border-radius:6px;background:#f8f9fa;cursor:pointer;font-size:13px;">주담대 1.4%</button>
+            <button type="button" onclick="setRate(0.5)" style="padding:4px 12px;border:1px solid #ccc;border-radius:6px;background:#f8f9fa;cursor:pointer;font-size:13px;">신용대출 0.5%</button>
+            <button type="button" onclick="setRate(1.0)" style="padding:4px 12px;border:1px solid #ccc;border-radius:6px;background:#f8f9fa;cursor:pointer;font-size:13px;">신용대출 1.0%</button>
+            <button type="button" onclick="setRate(2.0)" style="padding:4px 12px;border:1px solid #ccc;border-radius:6px;background:#f8f9fa;cursor:pointer;font-size:13px;">신용대출 2.0%</button>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+          <!-- 3년 경과 면제 안내 -->
+          <div id="exemptNotice" style="display:none;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#2e7d32;font-size:14px;font-weight:600;">
+            ✔ 대출 실행 후 3년(36개월)이 경과하여 중도상환수수료가 면제됩니다.
+          </div>
+
+          <div class="result-highlight">
+            <div class="label">실제 납부 수수료 (잔여기간 비례감면 적용)</div>
+            <div class="value" id="rActualFee">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr>
+              <td>중도상환 금액</td>
+              <td id="rRepay">-</td>
+            </tr>
+            <tr>
+              <td>적용 수수료율</td>
+              <td id="rRate">-</td>
+            </tr>
+            <tr>
+              <td>기본 수수료 (비례감면 전)</td>
+              <td id="rBaseFee">-</td>
+            </tr>
+            <tr>
+              <td>잔여기간 / 대출기간</td>
+              <td id="rPeriodRatio">-</td>
+            </tr>
+            <tr class="total">
+              <td>잔여기간 비례감면 후 수수료</td>
+              <td id="rFinalFee">-</td>
+            </tr>
+            <tr>
+              <td>절감액 (감면으로 아낀 수수료)</td>
+              <td id="rSaved">-</td>
+            </tr>
+          </table>
+
+          <div id="detailBox" style="margin-top:16px;padding:14px 16px;background:#f8f9fa;border-radius:8px;font-size:13px;line-height:1.8;color:#555;">
+            <strong style="color:#333;">계산 과정</strong><br>
+            <span id="rFormula"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 하단 광고 -->
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- FAQ -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:18px;margin-bottom:16px;">자주 묻는 질문</h2>
+
+        <div class="faq-item" style="margin-bottom:16px;">
+          <h3 style="font-size:15px;margin-bottom:6px;color:#1a1a1a;">Q. 중도상환수수료가 없는 경우도 있나요?</h3>
+          <p style="font-size:14px;color:#555;margin:0;">대출 실행 후 3년이 경과하면 대부분 면제됩니다. 또한 일부 은행은 연간 대출 원금의 20~30% 이내 상환에 대해 수수료를 면제하거나, 인터넷·모바일 전용 대출 상품 중 중도상환수수료 없음을 특장점으로 내세우는 경우도 있습니다.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom:16px;">
+          <h3 style="font-size:15px;margin-bottom:6px;color:#1a1a1a;">Q. 대환대출(갈아타기) 시에도 수수료가 발생하나요?</h3>
+          <p style="font-size:14px;color:#555;margin:0;">네. 기존 대출을 조기상환하는 것이므로 중도상환수수료가 발생합니다. 새로운 대출로 절감되는 이자와 수수료를 비교해 실제 이익이 있는지 계산해보세요.</p>
+        </div>
+
+        <div class="faq-item" style="margin-bottom:16px;">
+          <h3 style="font-size:15px;margin-bottom:6px;color:#1a1a1a;">Q. 잔여기간 비례감면이란?</h3>
+          <p style="font-size:14px;color:#555;margin:0;">대출 기간 중 아직 남은 기간이 적을수록 수수료를 적게 부과하는 방식입니다. 예를 들어 30년 대출 중 29년이 경과했다면 잔여기간이 거의 없으므로 수수료도 거의 없습니다. 공식은 수수료 = 상환금액 × 수수료율 × (잔여일수 ÷ 총대출일수)입니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 style="font-size:15px;margin-bottom:6px;color:#1a1a1a;">Q. 중도상환 후 남은 대출잔액에는 영향이 없나요?</h3>
+          <p style="font-size:14px;color:#555;margin:0;">중도상환 후 잔여 원금이 줄어들므로 향후 납입할 이자도 감소합니다. 수수료를 내더라도 장기적으로 이자 절감 효과가 클 수 있으니 총 절감 이자와 수수료를 비교해 의사결정하세요.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>수수료율 기준</h3>
+        <ul>
+          <li><strong>주택담보대출</strong>: 1.2~1.4%<br><span style="font-size:12px;color:#777;">3년 후 면제. 고정·변동금리 동일</span></li>
+          <li><strong>신용대출</strong>: 0.5~2.0%<br><span style="font-size:12px;color:#777;">신용등급·상품에 따라 상이</span></li>
+          <li><strong>전세자금대출</strong>: 0.5~1.0%<br><span style="font-size:12px;color:#777;">HUG/SGI/KB 보증 상품</span></li>
+          <li><strong>정책모기지 (보금자리론)</strong>: 1.2%<br><span style="font-size:12px;color:#777;">3년 경과 후 면제</span></li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>중도상환 절감 팁</h3>
+        <ul>
+          <li>3년(36개월) 경과 후 상환하면 수수료 <strong>면제</strong></li>
+          <li>연간 허용 무수수료 한도 확인 (20~30% 이내)</li>
+          <li>만기가 가까울수록 비례감면으로 수수료 감소</li>
+          <li>대환 시 수수료와 이자 절감액을 반드시 비교</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="dti-dsr.html" class="related-link">DTI·DSR</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="jeonse-monthly.html" class="related-link">전월세 전환</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO 콘텐츠 -->
+<div class="container seo-content">
+
+  <section class="seo-section">
+    <h2>중도상환수수료란? 개념과 부과 이유</h2>
+    <p>중도상환수수료(조기상환수수료, Prepayment Penalty)는 대출 약정 기간보다 일찍 원금 일부 또는 전액을 상환할 때 금융기관이 부과하는 수수료입니다. 은행은 대출 실행 시 고객에게 일정 기간 동안 이자를 받을 것을 전제로 자금을 조달하고 운용 계획을 세웁니다. 고객이 예정보다 일찍 상환하면 은행은 수익 손실이 발생하므로, 이를 보전하기 위해 수수료를 부과합니다.</p>
+    <p>금융소비자보호법에 따라 금융기관은 중도상환수수료율, 면제 조건, 계산 방식 등을 계약서에 명시해야 합니다. 대출 실행 전 약정서의 '중도상환수수료' 항목을 반드시 확인하세요.</p>
+
+    <div class="seo-table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>대출 종류</th>
+            <th>수수료율(연)</th>
+            <th>면제 조건</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>주택담보대출 (고정)</strong></td>
+            <td>1.2~1.4%</td>
+            <td>3년 경과 후 면제</td>
+            <td>잔여기간 비례감면 적용</td>
+          </tr>
+          <tr>
+            <td><strong>주택담보대출 (변동)</strong></td>
+            <td>1.2~1.4%</td>
+            <td>3년 경과 후 면제</td>
+            <td>고정 동일 수준</td>
+          </tr>
+          <tr>
+            <td><strong>전세자금대출</strong></td>
+            <td>0.5~1.0%</td>
+            <td>3년 경과 후 면제</td>
+            <td>보증기관별 상이</td>
+          </tr>
+          <tr>
+            <td><strong>신용대출 (1~3등급)</strong></td>
+            <td>0.5~1.0%</td>
+            <td>1~3년 경과 후 면제</td>
+            <td>상품별 상이</td>
+          </tr>
+          <tr>
+            <td><strong>신용대출 (4~6등급)</strong></td>
+            <td>1.0~2.0%</td>
+            <td>3년 경과 후 면제</td>
+            <td>은행별 차이 큼</td>
+          </tr>
+          <tr>
+            <td><strong>보금자리론</strong></td>
+            <td>1.2%</td>
+            <td>3년 경과 후 면제</td>
+            <td>한국주택금융공사</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="seo-section">
+    <h2>중도상환수수료 계산 공식 완전 이해</h2>
+    <p>중도상환수수료 계산에는 크게 두 가지 방식이 있습니다.</p>
+
+    <h3>1. 기본 계산식 (비례감면 미적용)</h3>
+    <p>일부 상품이나 고정금리 기간 내 상환 시 단순 계산을 적용하는 경우입니다.</p>
+    <div class="seo-table-wrap">
+      <table class="seo-table">
+        <tbody>
+          <tr>
+            <td style="background:#f8f9fa;font-weight:600;">수수료 = 중도상환금액 × 수수료율(%)</td>
+          </tr>
+          <tr>
+            <td>예시: 5,000만원 × 1.4% = 700,000원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2. 잔여기간 비례감면 계산식 (일반 적용)</h3>
+    <p>대부분의 은행이 적용하는 방식으로, 대출 만기가 가까울수록 수수료가 줄어듭니다.</p>
+    <div class="seo-table-wrap">
+      <table class="seo-table">
+        <tbody>
+          <tr>
+            <td style="background:#f8f9fa;font-weight:600;">수수료 = 중도상환금액 × 수수료율(%) × (잔여일수 ÷ 대출총일수)</td>
+          </tr>
+          <tr>
+            <td>예시: 5,000만원 × 1.4% × (10,220일 ÷ 10,950일) = 654,155원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>잔여일수는 '대출총일수 - 경과일수'로 계산되며, 잔여일수가 작을수록(만기가 가까울수록) 수수료도 감소합니다. 3년 경과 시 면제이므로 잔여기간이 대출기간 - 3년 이하가 되면 면제 조건을 충족할 수 있습니다.</p>
+
+    <h3>계산 예시 (30년 주담대, 2년 6개월 경과, 5천만 상환)</h3>
+    <div class="seo-table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>값</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>중도상환금액</td><td>50,000,000원</td></tr>
+          <tr><td>수수료율</td><td>1.4%</td></tr>
+          <tr><td>대출기간</td><td>30년 = 10,950일</td></tr>
+          <tr><td>경과기간</td><td>2년 6개월 = 912일</td></tr>
+          <tr><td>잔여일수</td><td>10,950 - 912 = 10,038일</td></tr>
+          <tr><td>기본 수수료</td><td>50,000,000 × 1.4% = 700,000원</td></tr>
+          <tr style="font-weight:600;background:#fff8e1;"><td>비례감면 후 수수료</td><td>700,000 × (10,038 ÷ 10,950) ≈ 641,836원</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="seo-section">
+    <h2>중도상환수수료 절감 전략</h2>
+    <p>수수료를 최소화하거나 면제받는 방법들을 정리했습니다.</p>
+    <ul>
+      <li><strong>3년 후 상환 전략</strong>: 대출 실행 후 36개월이 지나면 대부분 면제됩니다. 여윳돈이 생겼다면 36개월을 채운 뒤 상환하는 것이 유리합니다.</li>
+      <li><strong>연간 무수수료 한도 활용</strong>: KB국민·신한·하나·우리은행 등 일부 은행은 연간 대출 원금의 20~30% 이내 상환에 대해 수수료를 면제합니다. 은행 약정서에서 확인하세요.</li>
+      <li><strong>만기 가까이 상환</strong>: 잔여기간 비례감면으로 만기에 가까울수록 수수료가 낮아집니다. 만기 6개월 이내라면 수수료가 거의 없습니다.</li>
+      <li><strong>인터넷·모바일 전용 상품 선택</strong>: 일부 인터넷은행(카카오뱅크, 토스뱅크 등)은 중도상환수수료가 없는 대출 상품을 제공합니다.</li>
+      <li><strong>대환 전 손익 계산</strong>: 새 대출 금리로 절약되는 이자와 기존 대출 중도상환수수료를 비교해 손익분기점을 계산하세요. 일반적으로 금리 차이 0.5%p 이상이어야 대환이 유리한 경우가 많습니다.</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="privacy.html">개인정보처리방침</a>
+    <a href="about.html">소개</a>
+    <a href="contact.html">문의</a>
+    <p>© 2026 calcmoney.kr · 본 계산기는 참고용이며 실제 수수료는 금융기관에 확인하세요.</p>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+
+  function setRate(r) {
+    document.getElementById('feeRate').value = r;
+  }
+
+  function calculate() {
+    const balance    = parseFloat(document.getElementById('loanBalance').value) || 0;
+    const repay      = parseFloat(document.getElementById('repayAmount').value) || 0;
+    const loanYears  = parseFloat(document.getElementById('loanYears').value) || 0;
+    const feeRate    = parseFloat(document.getElementById('feeRate').value) || 0;
+    const elYears    = parseFloat(document.getElementById('elapsedYears').value) || 0;
+    const elMonths   = parseFloat(document.getElementById('elapsedMonths').value) || 0;
+
+    if (repay <= 0 || loanYears <= 0 || feeRate <= 0) {
+      alert('상환금액, 대출기간, 수수료율을 올바르게 입력하세요.');
+      return;
+    }
+    if (repay > balance && balance > 0) {
+      alert('중도상환 금액이 대출 잔액보다 클 수 없습니다.');
+      return;
+    }
+
+    // 일수 계산 (1년 = 365일, 1개월 = 365/12일)
+    const totalDays   = Math.round(loanYears * 365);
+    const elapsedDays = Math.round(elYears * 365 + elMonths * (365 / 12));
+    const remainDays  = Math.max(totalDays - elapsedDays, 0);
+
+    // 3년(1095일) 경과 여부
+    const isExempt = elapsedDays >= 1095;
+
+    // 기본 수수료
+    const baseFee   = repay * (feeRate / 100);
+
+    // 잔여기간 비례감면 후 수수료
+    const ratio     = totalDays > 0 ? remainDays / totalDays : 0;
+    const finalFee  = isExempt ? 0 : baseFee * ratio;
+    const saved     = baseFee - finalFee;
+
+    // 결과 표시
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('exemptNotice').style.display = isExempt ? 'block' : 'none';
+
+    document.getElementById('rActualFee').textContent = isExempt ? '0원 (면제)' : fmt(finalFee);
+    document.getElementById('rRepay').textContent     = fmt(repay);
+    document.getElementById('rRate').textContent      = feeRate.toFixed(2) + '%';
+    document.getElementById('rBaseFee').textContent   = fmt(baseFee);
+    document.getElementById('rPeriodRatio').textContent =
+      remainDays.toLocaleString() + '일 / ' + totalDays.toLocaleString() + '일' +
+      ' (' + (ratio * 100).toFixed(1) + '%)';
+    document.getElementById('rFinalFee').textContent  = isExempt ? '0원 (3년 경과 면제)' : fmt(finalFee);
+    document.getElementById('rSaved').textContent     = fmt(saved) + ' 절감';
+
+    // 계산 과정
+    let formula = '';
+    if (isExempt) {
+      formula = `경과기간 ${elYears}년 ${elMonths}개월(${elapsedDays}일) ≥ 3년(1,095일) → 수수료 면제`;
+    } else {
+      formula =
+        `기본 수수료: ${fmt(repay)} × ${feeRate}% = ${fmt(baseFee)}<br>` +
+        `잔여일수: ${totalDays.toLocaleString()}일 - ${elapsedDays.toLocaleString()}일 = ${remainDays.toLocaleString()}일<br>` +
+        `비례감면율: ${remainDays.toLocaleString()}일 ÷ ${totalDays.toLocaleString()}일 = ${(ratio * 100).toFixed(2)}%<br>` +
+        `<strong>실제 수수료: ${fmt(baseFee)} × ${(ratio * 100).toFixed(2)}% = ${fmt(finalFee)}</strong>`;
+    }
+    document.getElementById('rFormula').innerHTML = formula;
+
+    // 스크롤
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 엔터키 지원
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') calculate();
+  });
+</script>
+
+</body>
+</html>

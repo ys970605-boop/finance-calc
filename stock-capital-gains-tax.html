@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="bbb2e816e372612b1e5820af29a23857b401ffea" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주식 양도소득세 계산기 - 국내·해외주식 양도세 자동 계산 2026 | calcmoney.kr</title>
+  <meta name="description" content="주식 양도소득세를 자동 계산합니다. 국내 상장주식(대주주 과세), 국내 비상장주식, 해외주식(연 250만원 공제 후 22%) 세금을 즉시 계산. 손익통산·절세 전략 포함.">
+  <link rel="canonical" href="https://calcmoney.kr/stock-capital-gains-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="주식 양도소득세 계산기 - 국내·해외주식 양도세 자동 계산 2026">
+  <meta property="og:description" content="국내 상장주식(대주주), 비상장주식, 해외주식 양도소득세를 즉시 계산. 연 250만원 공제, 손익통산 전략, 세율표 포함.">
+  <meta property="og:url" content="https://calcmoney.kr/stock-capital-gains-tax">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "국내 상장주식 양도소득세는 누가 납부하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 국내 상장주식은 대주주에 해당하는 경우에만 양도소득세가 부과됩니다. 대주주 기준은 종목별 보유액 10억 원 이상 또는 지분율 코스피 1%, 코스닥 2%, 코넥스 4% 이상입니다. 소액주주는 양도소득세가 비과세입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "해외주식 양도소득세는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "해외주식 양도소득세는 연간 양도차익에서 기본공제 250만 원을 차감한 후 양도소득세 20%, 지방소득세 2%를 합산해 총 22%의 세율이 적용됩니다. 예를 들어 연 1,000만 원 순이익이면 (1,000만 원 - 250만 원) × 22% = 165만 원이 세금입니다. 신고는 매년 5월 종합소득세 신고 기간에 직접 신고해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "해외주식 손익통산이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "동일 연도 내 여러 해외주식 거래의 이익과 손실을 합산해 순이익에 대해서만 세금을 내는 방식입니다. 예를 들어 A종목에서 +500만 원 이익, B종목에서 -200만 원 손실이면 합산 순이익 300만 원에서 기본공제 250만 원을 차감한 50만 원에 22%를 적용해 11만 원만 납부하면 됩니다. 국내주식 손실과 해외주식 이익은 통산되지 않습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주식 양도소득세 신고 방법은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "국내 대주주 상장주식과 비상장주식은 양도일이 속하는 반기의 말일로부터 2개월 이내에 예정신고(반기별)를 하거나, 다음 해 5월에 확정신고를 할 수 있습니다. 해외주식은 매년 5월 종합소득세 신고 기간에 양도소득세를 신고·납부합니다. 국세청 홈택스(hometax.go.kr)에서 신고할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연말 손절매 전략이란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "해외주식을 보유한 투자자가 연말(12월)에 손실 중인 종목을 일시적으로 매도해 실현 손실을 만들고, 이를 이익 종목의 차익과 손익통산해 과세표준을 줄이는 전략입니다. 세금 절감 후 즉시 재매수(wash sale 규정은 한국에 없음)해 보유를 이어갈 수 있습니다. 250만 원 기본공제와 함께 활용하면 세금을 합법적으로 최소화할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "국내 비상장주식 양도소득세는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "국내 비상장주식은 소액주주도 과세 대상입니다. 기본세율은 양도차익의 20%이며, 지방소득세 2%를 합산하면 총 22%입니다. 중소기업 주식은 10%(지방세 포함 11%), 대기업 대주주는 25%(지방세 포함 27.5%)가 적용됩니다. 장기보유특별공제는 주식에는 적용되지 않습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주식 양도차익 계산 시 수수료는 공제되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 매입 수수료와 매도 수수료 모두 양도차익 계산 시 필요경비로 공제됩니다. 양도차익 = 매도금액 - 매입금액 - (매입수수료 + 매도수수료 + 기타 거래세)로 계산됩니다. 증권거래세는 매도 시 자동 부과되며, 이 역시 필요경비에 포함됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "해외주식 양도소득세 신고를 안 하면 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "해외주식 양도소득세를 신고하지 않으면 무신고가산세(20%)와 납부지연가산세(연 8.03%)가 부과됩니다. 국세청은 금융정보 자동교환(CRS) 협정을 통해 해외 금융계좌 정보를 수집하므로 미신고 적발 가능성이 높습니다. 납부할 세금이 없더라도(250만 원 공제 이하) 신고 의무는 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "주식 양도소득세 계산기",
+    "url": "https://calcmoney.kr/stock-capital-gains-tax",
+    "description": "국내 상장주식(대주주), 비상장주식, 해외주식 양도소득세를 자동 계산하는 무료 계산기",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "inLanguage": "ko-KR",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    /* 주식양도세 특화 스타일 */
+    .stock-type-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid #1a73e8;
+    }
+    .stock-type-tabs button {
+      flex: 1;
+      padding: 10px 8px;
+      border: none;
+      background: #fff;
+      color: #1a73e8;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      border-right: 1px solid #1a73e8;
+    }
+    .stock-type-tabs button:last-child { border-right: none; }
+    .stock-type-tabs button.active {
+      background: #1a73e8;
+      color: white;
+    }
+    .tax-result-highlight {
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .tax-result-highlight.taxable {
+      background: linear-gradient(135deg, #fce8e6 0%, #f5c6c3 100%);
+      border: 2px solid #d93025;
+    }
+    .tax-result-highlight.exempt {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border: 2px solid #34a853;
+    }
+    .tax-result-highlight.zero {
+      background: linear-gradient(135deg, #e8f0fe 0%, #c5d8fb 100%);
+      border: 2px solid #1a73e8;
+    }
+    .tax-result-highlight .result-label {
+      font-size: 0.9em;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .tax-result-highlight .result-amount {
+      font-size: 2em;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .tax-result-highlight.taxable .result-amount { color: #c62828; }
+    .tax-result-highlight.exempt .result-amount { color: #1e7e34; }
+    .tax-result-highlight.zero .result-amount { color: #1a73e8; }
+    .tax-result-highlight .result-sub {
+      font-size: 0.85em;
+      color: #555;
+      margin-top: 4px;
+    }
+    /* 대주주 판정 배지 */
+    .shareholder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.88em;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .shareholder-badge.major {
+      background: #fce8e6;
+      border: 1px solid #d93025;
+      color: #c62828;
+    }
+    .shareholder-badge.minor {
+      background: #e8f5e9;
+      border: 1px solid #34a853;
+      color: #1e7e34;
+    }
+    /* 해외주식 종목 추가 */
+    .stock-item-row {
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .stock-item-row .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .stock-item-row .item-name {
+      font-weight: 700;
+      font-size: 0.95em;
+      color: #1a1a1a;
+    }
+    .stock-item-row .btn-remove {
+      background: none;
+      border: none;
+      color: #d93025;
+      font-size: 1.1em;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .stock-item-row .btn-remove:hover { background: #fce8e6; }
+    .btn-add-stock {
+      width: 100%;
+      padding: 10px;
+      background: #e8f0fe;
+      color: #1a73e8;
+      border: 1.5px dashed #1a73e8;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: background 0.2s;
+    }
+    .btn-add-stock:hover { background: #c5d8fb; }
+    /* 절세 팁 카드 */
+    .tip-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .tip-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .tip-card .tip-icon {
+      font-size: 1.4em;
+      margin-bottom: 6px;
+    }
+    .tip-card .tip-title {
+      font-weight: 700;
+      font-size: 0.9em;
+      color: #1a73e8;
+      margin-bottom: 4px;
+    }
+    .tip-card .tip-desc {
+      font-size: 0.82em;
+      color: #555;
+      line-height: 1.6;
+    }
+    .info-badge {
+      background: #fff8e1;
+      border-left: 4px solid #f9a825;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.87em;
+      color: #5a4100;
+      margin-bottom: 16px;
+    }
+    .major-check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .major-check-item {
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .major-check-item .check-label {
+      font-size: 0.78em;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    .major-check-item .check-value {
+      font-weight: 700;
+      font-size: 1em;
+    }
+    .major-check-item.over .check-value { color: #c62828; }
+    .major-check-item.under .check-value { color: #1e7e34; }
+    @media (max-width: 480px) {
+      .major-check-grid { grid-template-columns: 1fr 1fr; }
+      .tip-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="health-insurance.html">건강보험료</a>
+      <a href="stock-capital-gains-tax.html" class="active">주식양도세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>주식 양도소득세 계산기</h1>
+        <p class="desc">국내 상장주식(대주주), 비상장주식, 해외주식의 양도소득세를 자동 계산합니다. 해외주식은 연간 250만 원 기본공제 후 22% 세율을 적용합니다. (2026년 세법 기준)</p>
+
+        <!-- 주식 유형 탭 -->
+        <div class="stock-type-tabs">
+          <button id="tab-listed" class="active" onclick="switchTab('listed')">국내 상장주식</button>
+          <button id="tab-unlisted" onclick="switchTab('unlisted')">국내 비상장주식</button>
+          <button id="tab-overseas" onclick="switchTab('overseas')">해외주식</button>
+        </div>
+
+        <!-- ====== 국내 상장주식 ====== -->
+        <div id="section-listed">
+          <div class="info-badge">
+            국내 상장주식은 <strong>대주주</strong>만 양도소득세 과세 대상입니다. 소액주주는 비과세입니다.
+          </div>
+
+          <!-- 대주주 판정 -->
+          <div class="form-group">
+            <label>시장 구분</label>
+            <select id="ls-market" onchange="checkMajorShareholder()">
+              <option value="kospi">코스피 (지분율 1% 이상)</option>
+              <option value="kosdaq">코스닥 (지분율 2% 이상)</option>
+              <option value="konex">코넥스 (지분율 4% 이상)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>종목 보유 시가총액 <span class="hint">만원 단위</span></label>
+              <input type="number" id="ls-holding" placeholder="예: 150000 (15억)" value="0" oninput="checkMajorShareholder()">
+            </div>
+            <div class="form-group">
+              <label>지분율 <span class="hint">%</span></label>
+              <input type="number" id="ls-ratio" placeholder="예: 1.5" value="0" step="0.01" oninput="checkMajorShareholder()">
+            </div>
+          </div>
+
+          <!-- 대주주 판정 결과 표시 -->
+          <div id="ls-major-badge" class="shareholder-badge minor">
+            소액주주 — 양도소득세 비과세
+          </div>
+
+          <div id="section-listed-tax" style="display:none;">
+            <div class="form-row">
+              <div class="form-group">
+                <label>매입가 <span class="hint">만원 단위</span></label>
+                <input type="number" id="ls-buy" placeholder="예: 5000" value="">
+              </div>
+              <div class="form-group">
+                <label>매도가 <span class="hint">만원 단위</span></label>
+                <input type="number" id="ls-sell" placeholder="예: 8000" value="">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>매입 수수료 <span class="hint">만원 단위</span></label>
+                <input type="number" id="ls-buy-fee" placeholder="예: 5" value="0">
+              </div>
+              <div class="form-group">
+                <label>매도 수수료+세금 <span class="hint">만원 단위</span></label>
+                <input type="number" id="ls-sell-fee" placeholder="예: 5" value="0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>보유 기간</label>
+              <select id="ls-period">
+                <option value="under1">1년 미만</option>
+                <option value="over1" selected>1년 이상</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>대주주 유형</label>
+              <select id="ls-shareholder-type">
+                <option value="major_1y">일반 대주주 (1년 이상 보유, 20%)</option>
+                <option value="major_short">일반 대주주 (1년 미만 보유, 25%)</option>
+                <option value="mega_major">1년 이상 보유 + 과세표준 3억 초과분 (25%)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn-calc" onclick="calcListed()">양도소득세 계산하기</button>
+
+          <div class="result-box" id="result-listed">
+            <div id="listed-exempt-msg" style="display:none;background:#e8f5e9;border-radius:10px;padding:16px;text-align:center;color:#1e7e34;font-weight:700;font-size:1.1em;margin-bottom:16px;">
+              소액주주 — 양도소득세 비과세 (세금 없음)
+            </div>
+            <div id="listed-tax-result">
+              <div id="ls-result-box" class="tax-result-highlight zero">
+                <div class="result-label" id="ls-result-label">납부세액</div>
+                <div class="result-amount" id="ls-result-amount">-</div>
+                <div class="result-sub" id="ls-result-sub"></div>
+              </div>
+              <table class="result-table">
+                <tr><td>매도금액</td><td id="ls-r-sell">-</td></tr>
+                <tr><td>매입금액</td><td id="ls-r-buy">-</td></tr>
+                <tr><td>필요경비 (수수료·세금)</td><td id="ls-r-fee">-</td></tr>
+                <tr class="total"><td>양도차익</td><td id="ls-r-gain">-</td></tr>
+                <tr><td>적용 세율</td><td id="ls-r-rate">-</td></tr>
+                <tr><td>양도소득세</td><td id="ls-r-tax">-</td></tr>
+                <tr><td>지방소득세 (10%)</td><td id="ls-r-local">-</td></tr>
+                <tr class="total"><td>총 납부세액</td><td id="ls-r-total">-</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== 국내 비상장주식 ====== -->
+        <div id="section-unlisted" style="display:none;">
+          <div class="info-badge">
+            국내 비상장주식은 <strong>소액주주 포함 전원 과세</strong> 대상입니다. 중소기업 여부에 따라 세율이 다릅니다.
+          </div>
+
+          <div class="form-group">
+            <label>회사 구분</label>
+            <select id="ul-company-type">
+              <option value="sme">중소기업 (기본 세율 10%)</option>
+              <option value="general" selected>일반법인 (기본 세율 20%)</option>
+              <option value="major_large">대기업 대주주 (세율 25%)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>매입가 <span class="hint">만원 단위</span></label>
+              <input type="number" id="ul-buy" placeholder="예: 2000" value="">
+            </div>
+            <div class="form-group">
+              <label>매도가 <span class="hint">만원 단위</span></label>
+              <input type="number" id="ul-sell" placeholder="예: 5000" value="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>매입 수수료 <span class="hint">만원 단위</span></label>
+              <input type="number" id="ul-buy-fee" placeholder="예: 0" value="0">
+            </div>
+            <div class="form-group">
+              <label>매도 수수료·세금 <span class="hint">만원 단위</span></label>
+              <input type="number" id="ul-sell-fee" placeholder="예: 0" value="0">
+            </div>
+          </div>
+
+          <button class="btn-calc" onclick="calcUnlisted()">양도소득세 계산하기</button>
+
+          <div class="result-box" id="result-unlisted">
+            <div id="ul-result-box" class="tax-result-highlight zero">
+              <div class="result-label" id="ul-result-label">납부세액</div>
+              <div class="result-amount" id="ul-result-amount">-</div>
+              <div class="result-sub" id="ul-result-sub"></div>
+            </div>
+            <table class="result-table">
+              <tr><td>매도금액</td><td id="ul-r-sell">-</td></tr>
+              <tr><td>매입금액</td><td id="ul-r-buy">-</td></tr>
+              <tr><td>필요경비</td><td id="ul-r-fee">-</td></tr>
+              <tr class="total"><td>양도차익</td><td id="ul-r-gain">-</td></tr>
+              <tr><td>적용 세율</td><td id="ul-r-rate">-</td></tr>
+              <tr><td>양도소득세</td><td id="ul-r-tax">-</td></tr>
+              <tr><td>지방소득세 (10%)</td><td id="ul-r-local">-</td></tr>
+              <tr class="total"><td>총 납부세액</td><td id="ul-r-total">-</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- ====== 해외주식 ====== -->
+        <div id="section-overseas" style="display:none;">
+          <div class="info-badge">
+            해외주식은 <strong>소액주주 포함 전원 과세</strong>입니다. 연간 양도차익 합산 후 <strong>250만 원 기본공제</strong>를 차감해 22% 세율을 적용합니다.
+          </div>
+
+          <!-- 종목 목록 -->
+          <div id="overseas-stocks">
+            <div class="stock-item-row" id="os-item-0">
+              <div class="item-header">
+                <span class="item-name">종목 1</span>
+                <button class="btn-remove" onclick="removeStock(0)" style="display:none;">✕</button>
+              </div>
+              <div class="form-row">
+                <div class="form-group" style="margin-bottom:10px;">
+                  <label style="font-size:13px;">종목명 (선택)</label>
+                  <input type="text" class="os-name" placeholder="예: 애플(AAPL)" value="">
+                </div>
+                <div class="form-group" style="margin-bottom:10px;">
+                  <label style="font-size:13px;">거래소</label>
+                  <select class="os-exchange">
+                    <option value="us">미국 (NYSE/NASDAQ)</option>
+                    <option value="jp">일본</option>
+                    <option value="cn">중국</option>
+                    <option value="other">기타</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group" style="margin-bottom:10px;">
+                  <label style="font-size:13px;">매입가 <span class="hint">만원 단위</span></label>
+                  <input type="number" class="os-buy" placeholder="예: 3000" value="">
+                </div>
+                <div class="form-group" style="margin-bottom:10px;">
+                  <label style="font-size:13px;">매도가 <span class="hint">만원 단위</span></label>
+                  <input type="number" class="os-sell" placeholder="예: 5000" value="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label style="font-size:13px;">매입 수수료 <span class="hint">만원</span></label>
+                  <input type="number" class="os-buy-fee" placeholder="예: 3" value="0">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label style="font-size:13px;">매도 수수료·세금 <span class="hint">만원</span></label>
+                  <input type="number" class="os-sell-fee" placeholder="예: 3" value="0">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-add-stock" onclick="addStock()">+ 종목 추가 (손익통산)</button>
+
+          <button class="btn-calc" onclick="calcOverseas()">양도소득세 계산하기</button>
+
+          <div class="result-box" id="result-overseas">
+            <div id="os-result-box" class="tax-result-highlight zero">
+              <div class="result-label" id="os-result-label">납부세액</div>
+              <div class="result-amount" id="os-result-amount">-</div>
+              <div class="result-sub" id="os-result-sub"></div>
+            </div>
+            <div id="os-stocks-summary" style="margin-bottom:16px;"></div>
+            <table class="result-table">
+              <tr><td>연간 양도차익 합계</td><td id="os-r-total-gain">-</td></tr>
+              <tr><td>기본공제</td><td id="os-r-deduction">-</td></tr>
+              <tr class="total"><td>과세표준</td><td id="os-r-taxbase">-</td></tr>
+              <tr><td>양도소득세 (20%)</td><td id="os-r-tax">-</td></tr>
+              <tr><td>지방소득세 (2%)</td><td id="os-r-local">-</td></tr>
+              <tr class="total"><td>총 납부세액</td><td id="os-r-total">-</td></tr>
+            </table>
+            <div id="os-loss-note" style="display:none;background:#e8f5e9;border-radius:8px;padding:12px;font-size:0.87em;color:#1e7e34;margin-top:12px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 해외주식 250만원 공제 시뮬레이션 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>해외주식 연간 이익별 세금 시뮬레이션</h3>
+        <p style="font-size:0.87em;color:#666;margin-bottom:12px;">250만 원 기본공제 및 22% 세율 기준. 수수료 등 필요경비 제외 순이익 기준.</p>
+        <table class="result-table" style="font-size:0.9em;">
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <td>연간 순이익</td>
+            <td>과세표준</td>
+            <td>납부세액</td>
+            <td>실효세율</td>
+          </tr>
+          <tr><td>250만원 이하</td><td>0원</td><td style="color:#1e7e34;font-weight:700;">0원</td><td>0%</td></tr>
+          <tr style="background:#f8f9fa;"><td>500만원</td><td>250만원</td><td style="color:#555;font-weight:700;">55만원</td><td>11.0%</td></tr>
+          <tr><td>1,000만원</td><td>750만원</td><td style="color:#555;font-weight:700;">165만원</td><td>16.5%</td></tr>
+          <tr style="background:#f8f9fa;"><td>2,000만원</td><td>1,750만원</td><td style="color:#e67e22;font-weight:700;">385만원</td><td>19.3%</td></tr>
+          <tr><td>3,000만원</td><td>2,750만원</td><td style="color:#e67e22;font-weight:700;">605만원</td><td>20.2%</td></tr>
+          <tr style="background:#f8f9fa;"><td>5,000만원</td><td>4,750만원</td><td style="color:#c62828;font-weight:700;">1,045만원</td><td>20.9%</td></tr>
+          <tr><td>1억원</td><td>9,750만원</td><td style="color:#c62828;font-weight:700;">2,145만원</td><td>21.5%</td></tr>
+        </table>
+        <p style="font-size:0.8em;color:#aaa;margin-top:8px;">* 수수료 등 필요경비 차감 전 순이익 기준 추정값</p>
+      </div>
+
+      <!-- 세율표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>주식 종류별 양도소득세율 (2026년)</h3>
+        <table class="result-table" style="font-size:0.9em;">
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <td>주식 종류</td>
+            <td>대상</td>
+            <td>양도세</td>
+            <td>지방세</td>
+            <td>합계</td>
+          </tr>
+          <tr><td>국내 상장주식</td><td>소액주주</td><td style="color:#1e7e34;font-weight:700;">비과세</td><td>-</td><td style="color:#1e7e34;font-weight:700;">0%</td></tr>
+          <tr style="background:#f8f9fa;"><td>국내 상장주식</td><td>대주주 (1년 이상)</td><td>20%</td><td>2%</td><td style="font-weight:700;">22%</td></tr>
+          <tr><td>국내 상장주식</td><td>대주주 (1년 미만)</td><td>25%</td><td>2.5%</td><td style="font-weight:700;">27.5%</td></tr>
+          <tr style="background:#f8f9fa;"><td>국내 상장주식</td><td>대주주 (3억 초과분)</td><td>25%</td><td>2.5%</td><td style="font-weight:700;">27.5%</td></tr>
+          <tr><td>국내 비상장주식</td><td>중소기업</td><td>10%</td><td>1%</td><td style="font-weight:700;">11%</td></tr>
+          <tr style="background:#f8f9fa;"><td>국내 비상장주식</td><td>일반법인</td><td>20%</td><td>2%</td><td style="font-weight:700;">22%</td></tr>
+          <tr><td>국내 비상장주식</td><td>대기업 대주주</td><td>25%</td><td>2.5%</td><td style="font-weight:700;">27.5%</td></tr>
+          <tr style="background:#f8f9fa;"><td>해외주식</td><td>전체 (소액주주 포함)</td><td>20%</td><td>2%</td><td style="font-weight:700;">22%</td></tr>
+        </table>
+        <p style="font-size:0.8em;color:#888;margin-top:6px;">* 해외주식은 연간 250만 원 기본공제 적용 후 과세. 지방소득세는 양도소득세의 10%.</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <!-- 대주주 기준 -->
+      <div class="info-box">
+        <h3>대주주 기준 (2026년)</h3>
+        <table style="width:100%;font-size:0.83em;border-collapse:collapse;">
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <td style="padding:6px 8px;">시장</td>
+            <td style="padding:6px 8px;text-align:center;">보유액</td>
+            <td style="padding:6px 8px;text-align:center;">지분율</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:5px 8px;">코스피</td>
+            <td style="padding:5px 8px;text-align:center;font-weight:700;color:#1a73e8;">10억원↑</td>
+            <td style="padding:5px 8px;text-align:center;">1%↑</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;">
+            <td style="padding:5px 8px;">코스닥</td>
+            <td style="padding:5px 8px;text-align:center;font-weight:700;color:#1a73e8;">10억원↑</td>
+            <td style="padding:5px 8px;text-align:center;">2%↑</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:5px 8px;">코넥스</td>
+            <td style="padding:5px 8px;text-align:center;font-weight:700;color:#1a73e8;">10억원↑</td>
+            <td style="padding:5px 8px;text-align:center;">4%↑</td>
+          </tr>
+        </table>
+        <p style="font-size:0.79em;color:#888;margin-top:6px;">* 보유액·지분율 중 하나만 충족해도 대주주 해당</p>
+        <p style="font-size:0.79em;color:#888;">* 직계존비속·배우자 등 특수관계인 보유분 합산</p>
+      </div>
+
+      <!-- 신고 일정 -->
+      <div class="info-box">
+        <h3>주식 양도세 신고 일정</h3>
+        <ul>
+          <li><strong>국내주식 반기별 예정신고:</strong><br>1~6월 양도분 → 8월 말까지<br>7~12월 양도분 → 다음해 2월 말까지</li>
+          <li style="margin-top:8px;"><strong>확정신고:</strong> 다음해 5월 종합소득세 신고 시</li>
+          <li style="margin-top:8px;"><strong>해외주식:</strong> 매년 5월 종합소득세 신고 시 합산 신고</li>
+        </ul>
+      </div>
+
+      <!-- 절세 팁 -->
+      <div class="info-box">
+        <h3>주식 양도세 절세 핵심 3가지</h3>
+        <ul>
+          <li><strong>해외주식 250만원 공제:</strong> 매년 1월 1일 초기화. 연도별 분할 매도 활용</li>
+          <li style="margin-top:6px;"><strong>손익통산:</strong> 같은 연도 손실·이익 합산. 연말 전략적 손절 활용</li>
+          <li style="margin-top:6px;"><strong>배우자 증여 후 매도:</strong> 배우자에게 증여 시 취득가액이 증여일 시가로 재산정됨</li>
+        </ul>
+      </div>
+
+      <!-- 관련 계산기 -->
+      <div class="info-box">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="capital-gains.html" class="related-link">부동산 양도세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="inheritance-tax.html" class="related-link">상속세</a>
+          <a href="savings-interest.html" class="related-link">적금이자</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ 섹션 -->
+<div class="info-box" style="margin-top:32px;">
+  <h2 style="font-size:1.3em;margin-bottom:18px;">주식 양도소득세 자주 묻는 질문</h2>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">국내 상장주식은 대주주만 세금을 내나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2026년 기준으로 국내 상장주식(코스피·코스닥·코넥스)의 경우 <strong>대주주에 해당하는 경우에만</strong> 양도소득세가 부과됩니다. 소액주주는 주식 양도로 아무리 큰 이익을 내더라도 양도소득세가 부과되지 않습니다. 대주주 기준은 종목별 보유액 10억 원 이상 또는 지분율 코스피 1%, 코스닥 2%, 코넥스 4% 이상입니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">해외주식 세금은 언제 신고하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">해외주식 양도소득세는 <strong>매년 5월 종합소득세 신고 기간(5월 1일~31일)</strong>에 국세청 홈택스에서 신고·납부합니다. 전년도 1월 1일부터 12월 31일까지 발생한 양도소득을 합산해 신고합니다. 근로소득자도 해외주식 양도소득이 있으면 별도 신고가 필요합니다. 신고를 하지 않으면 무신고가산세(20%)와 납부지연가산세가 부과됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">손익통산은 어떻게 적용되나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">해외주식의 경우 동일 연도에 발생한 여러 종목의 이익과 손실을 합산(통산)할 수 있습니다. 예를 들어 A 종목에서 1,000만 원 이익, B 종목에서 400만 원 손실이 발생했다면 순이익 600만 원에서 기본공제 250만 원을 차감한 350만 원에 22%를 적용해 77만 원만 납부하면 됩니다. 단, 국내주식 손실과 해외주식 이익은 통산되지 않으며, 이월결손금 공제도 주식 양도소득세에는 적용되지 않습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8m 0;">대주주 판정 시 가족 주식도 합산되나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, <strong>특수관계인(직계존비속·배우자 등)</strong>의 보유분을 합산해 대주주 여부를 판단합니다. 따라서 본인 보유액은 10억 원 미만이더라도 배우자나 자녀의 보유분을 합산하면 10억 원을 초과할 수 있습니다. 대주주 판정 기준일은 직전 사업연도 말(12월 31일)이며, 해당일 현재 보유 현황으로 판정합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">해외주식 수익이 250만원 이하면 신고 안 해도 되나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">납부할 세금은 없지만 <strong>신고 의무 자체는 면제되지 않습니다</strong>. 다만, 국세청에서는 금액이 소액인 경우 실무상 무신고 제재를 하지 않는 경우가 많습니다. 그러나 원칙적으로는 신고해야 하며, 특히 수년간 미신고가 누적되면 세무조사 대상이 될 수 있습니다. 안전하게는 250만 원 공제 이하라도 신고하는 것을 권장합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">연말 손절매 전략이 합법적인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, <strong>완전히 합법적인 절세 전략</strong>입니다. 연말(12월)에 손실 중인 해외주식을 매도해 실현 손실을 만들고, 이를 이익 종목의 차익과 통산해 과세표준을 줄이는 방법입니다. 미국의 '워시세일(wash sale)' 규정과 달리 한국 세법에는 직후 재매수를 금지하는 규정이 없으므로, 매도 후 즉시 재매수해도 세금 계산에는 영향이 없습니다. 단, 재매수 시 새로운 취득가액으로 기록됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">ISA 계좌로 투자하면 세금이 줄어드나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, ISA(개인종합자산관리계좌)를 활용하면 절세 효과가 있습니다. ISA 계좌 내에서 발생한 투자 이익은 <strong>비과세 한도(일반 200만 원, 서민·청년 400만 원)</strong> 초과분에 대해서만 9.9% 분리과세가 적용됩니다. 일반 계좌에서 해외주식 투자 시 22%가 부과되는 것과 비교하면 절세 효과가 큽니다. 단, ISA는 3년 이상 유지해야 세제 혜택이 적용됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">비상장주식 양도세는 언제 신고하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">국내 비상장주식은 양도일이 속하는 반기의 말일로부터 <strong>2개월 이내에 예정신고</strong>를 하거나, 다음 해 5월에 확정신고를 할 수 있습니다. 예를 들어 1월에 양도한 경우 8월 말까지, 8월에 양도한 경우 다음 해 2월 말까지 예정신고를 해야 합니다. 예정신고를 하지 않으면 확정신고 시 가산세가 부과될 수 있습니다.</p>
+  </details>
+</div>
+
+<!-- 내부 링크 섹션 -->
+<div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+  <h3>다른 계산기도 확인해보세요</h3>
+  <ul>
+    <li><a href="capital-gains.html">부동산 양도소득세 계산기</a> - 주택·토지 양도 시 양도소득세 계산</li>
+    <li><a href="income-tax.html">종합소득세 계산기</a> - 근로·사업·기타소득 합산 종합소득세 계산</li>
+    <li><a href="gift-tax.html">증여세 계산기</a> - 주식·부동산 증여 시 증여세 계산</li>
+    <li><a href="inheritance-tax.html">상속세 계산기</a> - 상속재산 규모별 상속세 계산</li>
+    <li><a href="savings-interest.html">적금 이자 계산기</a> - 세전·세후·비과세 적금 이자 비교</li>
+  </ul>
+</div>
+
+<!-- SEO 콘텐츠 영역 -->
+<div style="max-width:900px;margin:0 auto;padding:0 16px;">
+
+  <!-- 1. 주식 양도소득세 완전 가이드 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">주식 양도소득세 완전 계산 가이드 (2026년)</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:20px;">
+      주식 양도소득세는 주식을 팔아서 이익(양도차익)이 발생했을 때 납부하는 세금입니다. 국내 상장주식, 국내 비상장주식, 해외주식으로 구분되며, 각각 과세 기준과 세율이 다릅니다. 2026년 현재 국내 상장주식은 대주주만 과세되고, 해외주식은 연 250만 원 기본공제 후 22%가 적용됩니다.
+    </p>
+
+    <h3 style="font-size:1.1em;font-weight:700;margin:20px 0 10px;">양도차익 계산 공식</h3>
+    <div style="background:#e8f0fe;border-radius:10px;padding:16px 20px;font-size:0.95em;color:#1a1a1a;line-height:1.8;margin-bottom:16px;">
+      <strong>양도차익</strong> = 매도금액 − 매입금액 − 필요경비<br>
+      <strong>필요경비</strong> = 매입 시 수수료 + 매도 시 수수료 + 증권거래세<br>
+      <strong>과세표준</strong> = 양도차익 − 기본공제(해외주식 250만원)<br>
+      <strong>납부세액</strong> = 과세표준 × 세율 + 지방소득세(양도세의 10%)
+    </div>
+
+    <p style="color:#555;line-height:1.8;margin-bottom:12px;">
+      주식 양도소득세는 부동산 양도소득세와 달리 <strong>장기보유특별공제가 적용되지 않습니다</strong>. 얼마나 오래 보유했든 세율은 동일합니다(단, 국내 대주주는 1년 이상 보유 시 세율이 낮아짐). 해외주식의 경우 연간 이익이 250만 원 이하이면 세금이 전혀 없으며, 이 공제는 매년 초기화됩니다.
+    </p>
+
+    <h3 style="font-size:1.1em;font-weight:700;margin:20px 0 10px;">국내 상장주식 대주주 과세 세율</h3>
+    <p style="color:#555;line-height:1.8;margin-bottom:12px;">
+      국내 상장주식 대주주에게 적용되는 세율은 보유 기간과 양도차익 규모에 따라 달라집니다. 1년 이상 보유한 경우 20%(지방소득세 포함 22%), 1년 미만 단기 보유는 25%(지방소득세 포함 27.5%)가 적용됩니다. 또한 양도차익 중 3억 원을 초과하는 부분에 대해서는 보유 기간과 관계없이 25%가 적용됩니다.
+    </p>
+
+    <h3 style="font-size:1.1em;font-weight:700;margin:20px 0 10px;">해외주식 양도소득세 핵심 포인트</h3>
+    <p style="color:#555;line-height:1.8;margin-bottom:12px;">
+      해외주식은 소액주주를 포함한 모든 투자자가 과세 대상입니다. 가장 중요한 특징은 <strong>연간 250만 원 기본공제</strong>입니다. 이 공제는 매년 1월 1일 기준으로 초기화되므로, 연도를 나눠서 매도하면 공제를 두 번 활용할 수 있습니다. 예를 들어 500만 원 이익이 예상되는 주식을 올해 말에 절반, 내년 초에 절반 매도하면 각각 250만 원씩 공제받아 세금이 0원이 됩니다.
+    </p>
+
+    <div style="background:#fff3e0;border-left:4px solid #ff9800;border-radius:4px;padding:14px 18px;margin-top:16px;font-size:0.9em;color:#5a4100;">
+      <strong>주의:</strong> 해외주식 양도소득세 신고는 증권사가 대신 해주지 않습니다. 본인이 직접 국세청 홈택스(hometax.go.kr)에서 매년 5월에 신고해야 합니다. 미신고 시 무신고가산세(20%)와 납부지연가산세가 추가됩니다.
+    </div>
+  </section>
+
+  <!-- 2. 절세 전략 섹션 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:16px;">주식 양도소득세 절세 전략 5가지</h2>
+
+    <div class="tip-cards">
+      <div class="tip-card">
+        <div class="tip-icon">📅</div>
+        <div class="tip-title">연간 250만원 공제 활용</div>
+        <div class="tip-desc">해외주식 이익이 클 경우 연말과 연초에 나눠 매도해 매년 250만원 공제를 활용하세요. 500만원 이익을 두 해에 나누면 세금이 0원이 됩니다.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📉</div>
+        <div class="tip-title">연말 손절매 전략</div>
+        <div class="tip-desc">12월 말 손실 중인 종목을 매도해 실현 손실을 만들고, 이익 종목 차익과 통산해 과세표준을 줄이세요. 세금 절감 후 즉시 재매수 가능합니다.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">💑</div>
+        <div class="tip-title">배우자 증여 후 매도</div>
+        <div class="tip-desc">배우자에게 주식을 증여(10년간 6억원 비과세)하면 취득가액이 증여 시점 시가로 재산정됩니다. 이후 매도 시 양도차익이 줄어 세금이 절감됩니다.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🏦</div>
+        <div class="tip-title">ISA 계좌 활용</div>
+        <div class="tip-desc">ISA 계좌 내 해외주식 이익은 200만원(서민·청년 400만원) 비과세 후 초과분만 9.9% 분리과세. 일반 계좌 22%보다 유리합니다. 3년 이상 유지 필수.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🔄</div>
+        <div class="tip-title">손익통산 적극 활용</div>
+        <div class="tip-desc">여러 해외주식 종목의 이익과 손실을 합산해 순이익에만 세금을 냅니다. 연말에 포트폴리오 전체를 점검하고 전략적으로 손실 실현을 활용하세요.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📋</div>
+        <div class="tip-title">연금저축 IRP 활용</div>
+        <div class="tip-desc">연금저축·IRP 계좌에서 국내 ETF(해외지수 포함)를 운용하면 양도소득세 없이 투자 가능. 인출 시 연금소득세(5.5~3.3%)만 납부합니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 국내 비상장주식 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:12px;">국내 비상장주식 양도소득세 상세 안내</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:16px;">
+      국내 비상장주식은 코스피·코스닥에 상장되지 않은 중소기업, 스타트업, 비공개법인의 주식을 말합니다. 소액주주라도 양도소득세가 부과된다는 점이 상장주식과 다릅니다. 스타트업 주식 취득 후 매도, 비상장사 지분 거래 시 반드시 세금 계산이 필요합니다.
+    </p>
+
+    <h3 style="font-size:1.05em;font-weight:700;margin:16px 0 8px;">세율 적용 기준</h3>
+    <ul style="color:#555;line-height:1.9;padding-left:20px;">
+      <li><strong>중소기업 주식:</strong> 양도소득세 10% + 지방소득세 1% = 합계 11%. 중소기업기본법 기준 중소기업으로, 매출액·자산 규모 등 요건을 충족해야 합니다.</li>
+      <li><strong>일반법인 주식 (소액주주):</strong> 양도소득세 20% + 지방소득세 2% = 합계 22%.</li>
+      <li><strong>대기업 대주주:</strong> 양도소득세 25% + 지방소득세 2.5% = 합계 27.5%. 대기업의 지분 4% 이상(또는 시가총액 기준) 대주주에 적용됩니다.</li>
+    </ul>
+
+    <h3 style="font-size:1.05em;font-weight:700;margin:16px 0 8px;">비상장주식 양도 시 주의사항</h3>
+    <ul style="color:#555;line-height:1.9;padding-left:20px;">
+      <li><strong>취득가액 증빙:</strong> 최초 취득 시 계약서, 주주명부, 납입 증빙을 반드시 보관해야 합니다. 증빙이 없으면 취득가액 인정이 어렵습니다.</li>
+      <li><strong>시가 산정:</strong> 비상장주식은 시장가격이 없으므로 세무상 시가는 순자산가치법 등으로 평가합니다. 저가·고가 양도 시 세무 문제가 발생할 수 있습니다.</li>
+      <li><strong>예정신고 기한:</strong> 반기 말로부터 2개월 이내에 예정신고를 해야 합니다. 미신고 시 5~20% 가산세가 부과될 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <!-- 4. 해외주식 신고 방법 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:12px;">해외주식 양도소득세 신고 방법 (홈택스)</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:16px;">
+      해외주식 양도소득세는 증권사가 대신 신고해주지 않습니다. 투자자가 직접 국세청 홈택스에서 매년 5월에 신고해야 합니다. 대부분의 국내 증권사는 해외주식 거래내역과 손익 계산서를 제공하므로, 이를 활용하면 신고가 편리합니다.
+    </p>
+
+    <div style="background:#f8f9fa;border-radius:10px;padding:18px 20px;margin-bottom:16px;">
+      <h4 style="font-weight:700;margin-bottom:10px;color:#1a73e8;">홈택스 신고 순서</h4>
+      <ol style="color:#444;line-height:2;padding-left:20px;">
+        <li>증권사 HTS/MTS에서 <strong>해외주식 양도소득 손익내역서</strong> 다운로드</li>
+        <li>홈택스(hometax.go.kr) 로그인 → 신고/납부 → 세금신고 → 양도소득세</li>
+        <li>신고서 종류: <strong>예정신고(반기별)</strong> 또는 <strong>확정신고(5월)</strong> 선택</li>
+        <li>양도자산 입력: 국가코드, 자산종류, 양도일자, 양도가액, 취득가액, 필요경비 입력</li>
+        <li>세금 계산 후 납부 (납부기한: 5월 31일)</li>
+      </ol>
+    </div>
+
+    <p style="color:#555;line-height:1.8;margin-bottom:12px;">
+      증권사 앱에서 해외주식 손익 계산서를 출력하면 종목별 매입가, 매도가, 수수료, 순손익이 자동으로 계산되어 있습니다. 이 자료를 홈택스에 입력하면 됩니다. 여러 증권사를 이용한 경우 각 증권사 자료를 합산해야 합니다.
+    </p>
+
+    <p style="color:#555;line-height:1.8;">
+      <strong>주의사항:</strong> 해외주식은 환율도 중요합니다. 양도가액과 취득가액은 실제 매도/매수일의 기준환율(한국은행 고시 환율)로 원화 환산해야 합니다. 증권사 거래내역서에는 이미 환산된 원화 금액이 표시되므로 해당 값을 그대로 사용하면 됩니다.
+    </p>
+  </section>
+
+</div>
+
+<!-- 하단 광고 -->
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+</div>
+
+<script>
+  let stockCount = 1;
+
+  function switchTab(type) {
+    ['listed','unlisted','overseas'].forEach(t => {
+      document.getElementById('section-' + t).style.display = (t === type) ? 'block' : 'none';
+      document.getElementById('tab-' + t).classList.toggle('active', t === type);
+    });
+  }
+
+  function fmt(n) {
+    if (n === null || n === undefined || isNaN(n)) return '-';
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  function fmtWan(n) {
+    if (n === null || n === undefined || isNaN(n)) return '-';
+    const abs = Math.abs(n);
+    if (abs >= 10000) return (n / 10000).toFixed(1) + '억원';
+    if (abs >= 1000) return (n / 1000).toFixed(1) + '천만원';
+    return Math.round(n) + '만원';
+  }
+
+  /* ========== 국내 상장주식 ========== */
+  function checkMajorShareholder() {
+    const market = document.getElementById('ls-market').value;
+    const holding = parseFloat(document.getElementById('ls-holding').value) || 0;
+    const ratio = parseFloat(document.getElementById('ls-ratio').value) || 0;
+
+    const thresholdRatio = { kospi: 1, kosdaq: 2, konex: 4 };
+    const ratioThreshold = thresholdRatio[market];
+    const holdingThreshold = 100000; // 10억 만원 단위
+
+    const isMajor = (holding >= holdingThreshold) || (ratio >= ratioThreshold);
+    const badge = document.getElementById('ls-major-badge');
+    const taxSection = document.getElementById('section-listed-tax');
+
+    if (isMajor) {
+      badge.className = 'shareholder-badge major';
+      badge.innerHTML = '대주주 해당 — 양도소득세 과세 대상';
+      taxSection.style.display = 'block';
+    } else {
+      badge.className = 'shareholder-badge minor';
+      badge.innerHTML = '소액주주 — 양도소득세 비과세 (세금 없음)';
+      taxSection.style.display = 'none';
+    }
+  }
+
+  function calcListed() {
+    const market = document.getElementById('ls-market').value;
+    const holding = parseFloat(document.getElementById('ls-holding').value) || 0;
+    const ratio = parseFloat(document.getElementById('ls-ratio').value) || 0;
+
+    const thresholdRatio = { kospi: 1, kosdaq: 2, konex: 4 };
+    const isMajor = (holding >= 100000) || (ratio >= thresholdRatio[market]);
+
+    const resultBox = document.getElementById('result-listed');
+    resultBox.classList.add('show');
+
+    if (!isMajor) {
+      document.getElementById('listed-exempt-msg').style.display = 'block';
+      document.getElementById('listed-tax-result').style.display = 'none';
+      return;
+    }
+
+    document.getElementById('listed-exempt-msg').style.display = 'none';
+    document.getElementById('listed-tax-result').style.display = 'block';
+
+    const buy = parseFloat(document.getElementById('ls-buy').value) || 0;
+    const sell = parseFloat(document.getElementById('ls-sell').value) || 0;
+    const buyFee = parseFloat(document.getElementById('ls-buy-fee').value) || 0;
+    const sellFee = parseFloat(document.getElementById('ls-sell-fee').value) || 0;
+    const shareholderType = document.getElementById('ls-shareholder-type').value;
+
+    const gain = sell - buy - buyFee - sellFee;
+
+    let rate, rateLabel;
+    if (shareholderType === 'major_1y') {
+      // 1년 이상: 과표 3억 이하 20%, 초과 25%
+      rate = 0.20;
+      rateLabel = '20% (1년 이상, 과표 3억 이하)';
+    } else if (shareholderType === 'major_short') {
+      rate = 0.25;
+      rateLabel = '25% (1년 미만 단기)';
+    } else {
+      rate = 0.25;
+      rateLabel = '25% (과세표준 3억 초과분)';
+    }
+
+    let taxBase = gain;
+    let incomeTax = 0;
+
+    if (shareholderType === 'major_1y' && gain > 30000) {
+      // 3억 초과 부분은 25%
+      incomeTax = 30000 * 0.20 + (gain - 30000) * 0.25;
+      rateLabel = '20% (3억 이하) + 25% (3억 초과)';
+    } else {
+      incomeTax = gain * rate;
+    }
+
+    if (gain <= 0) incomeTax = 0;
+    const localTax = incomeTax * 0.10;
+    const totalTax = incomeTax + localTax;
+
+    const box = document.getElementById('ls-result-box');
+    const amountEl = document.getElementById('ls-result-amount');
+    const subEl = document.getElementById('ls-result-sub');
+
+    if (gain <= 0) {
+      box.className = 'tax-result-highlight exempt';
+      document.getElementById('ls-result-label').textContent = '양도차손 발생';
+      amountEl.textContent = fmtWan(gain) + ' (손실)';
+      subEl.textContent = '세금 없음';
+    } else {
+      box.className = 'tax-result-highlight taxable';
+      document.getElementById('ls-result-label').textContent = '납부세액 (대주주)';
+      amountEl.textContent = fmtWan(totalTax);
+      subEl.textContent = '양도소득세 ' + fmtWan(incomeTax) + ' + 지방소득세 ' + fmtWan(localTax);
+    }
+
+    document.getElementById('ls-r-sell').textContent = fmtWan(sell);
+    document.getElementById('ls-r-buy').textContent = fmtWan(buy);
+    document.getElementById('ls-r-fee').textContent = fmtWan(buyFee + sellFee);
+    document.getElementById('ls-r-gain').textContent = fmtWan(gain) + (gain < 0 ? ' (손실)' : '');
+    document.getElementById('ls-r-rate').textContent = gain > 0 ? rateLabel : '-';
+    document.getElementById('ls-r-tax').textContent = fmtWan(incomeTax);
+    document.getElementById('ls-r-local').textContent = fmtWan(localTax);
+    document.getElementById('ls-r-total').textContent = fmtWan(totalTax);
+  }
+
+  /* ========== 국내 비상장주식 ========== */
+  function calcUnlisted() {
+    const companyType = document.getElementById('ul-company-type').value;
+    const buy = parseFloat(document.getElementById('ul-buy').value) || 0;
+    const sell = parseFloat(document.getElementById('ul-sell').value) || 0;
+    const buyFee = parseFloat(document.getElementById('ul-buy-fee').value) || 0;
+    const sellFee = parseFloat(document.getElementById('ul-sell-fee').value) || 0;
+
+    const gain = sell - buy - buyFee - sellFee;
+
+    let rate, rateLabel;
+    if (companyType === 'sme') { rate = 0.10; rateLabel = '10% (중소기업)'; }
+    else if (companyType === 'major_large') { rate = 0.25; rateLabel = '25% (대기업 대주주)'; }
+    else { rate = 0.20; rateLabel = '20% (일반법인)'; }
+
+    const incomeTax = gain > 0 ? gain * rate : 0;
+    const localTax = incomeTax * 0.10;
+    const totalTax = incomeTax + localTax;
+
+    const resultBox = document.getElementById('result-unlisted');
+    resultBox.classList.add('show');
+
+    const box = document.getElementById('ul-result-box');
+    const amountEl = document.getElementById('ul-result-amount');
+    const subEl = document.getElementById('ul-result-sub');
+
+    if (gain <= 0) {
+      box.className = 'tax-result-highlight exempt';
+      document.getElementById('ul-result-label').textContent = '양도차손 발생';
+      amountEl.textContent = fmtWan(gain) + ' (손실)';
+      subEl.textContent = '세금 없음';
+    } else {
+      box.className = 'tax-result-highlight taxable';
+      document.getElementById('ul-result-label').textContent = '납부세액';
+      amountEl.textContent = fmtWan(totalTax);
+      subEl.textContent = '양도소득세 ' + fmtWan(incomeTax) + ' + 지방소득세 ' + fmtWan(localTax);
+    }
+
+    document.getElementById('ul-r-sell').textContent = fmtWan(sell);
+    document.getElementById('ul-r-buy').textContent = fmtWan(buy);
+    document.getElementById('ul-r-fee').textContent = fmtWan(buyFee + sellFee);
+    document.getElementById('ul-r-gain').textContent = fmtWan(gain) + (gain < 0 ? ' (손실)' : '');
+    document.getElementById('ul-r-rate').textContent = gain > 0 ? rateLabel : '-';
+    document.getElementById('ul-r-tax').textContent = fmtWan(incomeTax);
+    document.getElementById('ul-r-local').textContent = fmtWan(localTax);
+    document.getElementById('ul-r-total').textContent = fmtWan(totalTax);
+  }
+
+  /* ========== 해외주식 ========== */
+  function addStock() {
+    const container = document.getElementById('overseas-stocks');
+    const idx = stockCount++;
+    const div = document.createElement('div');
+    div.className = 'stock-item-row';
+    div.id = 'os-item-' + idx;
+    div.innerHTML = `
+      <div class="item-header">
+        <span class="item-name">종목 ${idx + 1}</span>
+        <button class="btn-remove" onclick="removeStock(${idx})">✕</button>
+      </div>
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:10px;">
+          <label style="font-size:13px;">종목명 (선택)</label>
+          <input type="text" class="os-name" placeholder="예: 테슬라(TSLA)" value="">
+        </div>
+        <div class="form-group" style="margin-bottom:10px;">
+          <label style="font-size:13px;">거래소</label>
+          <select class="os-exchange">
+            <option value="us">미국 (NYSE/NASDAQ)</option>
+            <option value="jp">일본</option>
+            <option value="cn">중국</option>
+            <option value="other">기타</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:10px;">
+          <label style="font-size:13px;">매입가 <span class="hint">만원 단위</span></label>
+          <input type="number" class="os-buy" placeholder="예: 3000" value="">
+        </div>
+        <div class="form-group" style="margin-bottom:10px;">
+          <label style="font-size:13px;">매도가 <span class="hint">만원 단위</span></label>
+          <input type="number" class="os-sell" placeholder="예: 5000" value="">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label style="font-size:13px;">매입 수수료 <span class="hint">만원</span></label>
+          <input type="number" class="os-buy-fee" placeholder="예: 3" value="0">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label style="font-size:13px;">매도 수수료·세금 <span class="hint">만원</span></label>
+          <input type="number" class="os-sell-fee" placeholder="예: 3" value="0">
+        </div>
+      </div>`;
+    container.appendChild(div);
+    // 첫 번째 종목의 삭제 버튼 활성화
+    document.querySelector('#os-item-0 .btn-remove').style.display = 'inline-block';
+  }
+
+  function removeStock(idx) {
+    const el = document.getElementById('os-item-' + idx);
+    if (el) el.remove();
+    // 남은 종목이 1개면 삭제버튼 숨김
+    const remaining = document.querySelectorAll('#overseas-stocks .stock-item-row');
+    if (remaining.length === 1) {
+      remaining[0].querySelector('.btn-remove').style.display = 'none';
+    }
+  }
+
+  function calcOverseas() {
+    const rows = document.querySelectorAll('#overseas-stocks .stock-item-row');
+    const DEDUCTION = 250; // 만원
+
+    let totalGain = 0;
+    let summaryHtml = '';
+    let hasData = false;
+
+    rows.forEach((row, i) => {
+      const name = row.querySelector('.os-name').value || ('종목 ' + (i + 1));
+      const buy = parseFloat(row.querySelector('.os-buy').value) || 0;
+      const sell = parseFloat(row.querySelector('.os-sell').value) || 0;
+      const buyFee = parseFloat(row.querySelector('.os-buy-fee').value) || 0;
+      const sellFee = parseFloat(row.querySelector('.os-sell-fee').value) || 0;
+
+      if (buy === 0 && sell === 0) return;
+      hasData = true;
+
+      const gain = sell - buy - buyFee - sellFee;
+      totalGain += gain;
+
+      const gainColor = gain >= 0 ? '#c62828' : '#1e7e34';
+      const gainText = gain >= 0 ? '+' + fmtWan(gain) : fmtWan(gain) + ' (손실)';
+      summaryHtml += `<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;font-size:0.88em;">
+        <span style="color:#444;">${name}</span>
+        <span style="font-weight:700;color:${gainColor};">${gainText}</span>
+      </div>`;
+    });
+
+    if (!hasData) {
+      alert('매입가와 매도가를 입력해주세요.');
+      return;
+    }
+
+    const taxBase = Math.max(0, totalGain - DEDUCTION);
+    const incomeTax = taxBase * 0.20;
+    const localTax = taxBase * 0.02;
+    const totalTax = incomeTax + localTax;
+
+    const resultBox = document.getElementById('result-overseas');
+    resultBox.classList.add('show');
+
+    document.getElementById('os-stocks-summary').innerHTML = summaryHtml;
+
+    const box = document.getElementById('os-result-box');
+    const amountEl = document.getElementById('os-result-amount');
+    const subEl = document.getElementById('os-result-sub');
+    const lossNote = document.getElementById('os-loss-note');
+
+    if (totalGain <= 0) {
+      box.className = 'tax-result-highlight exempt';
+      document.getElementById('os-result-label').textContent = '손익통산 결과 손실';
+      amountEl.textContent = fmtWan(totalGain) + ' (손실)';
+      subEl.textContent = '납부세액 없음';
+      lossNote.style.display = 'block';
+      lossNote.textContent = '연간 손실 실현 시 세금이 없습니다. 단, 해외주식 손실은 이월공제(다음 연도 공제)는 적용되지 않습니다.';
+    } else if (totalGain <= DEDUCTION) {
+      box.className = 'tax-result-highlight exempt';
+      document.getElementById('os-result-label').textContent = '납부세액';
+      amountEl.textContent = '0원';
+      subEl.textContent = '연간 이익 ' + fmtWan(totalGain) + ' — 250만원 기본공제 이하, 세금 없음';
+      lossNote.style.display = 'none';
+    } else {
+      box.className = 'tax-result-highlight taxable';
+      document.getElementById('os-result-label').textContent = '납부세액';
+      amountEl.textContent = fmtWan(totalTax);
+      subEl.textContent = '양도소득세 ' + fmtWan(incomeTax) + ' + 지방소득세 ' + fmtWan(localTax);
+      lossNote.style.display = 'none';
+    }
+
+    document.getElementById('os-r-total-gain').textContent = fmtWan(totalGain) + (totalGain < 0 ? ' (손실)' : '');
+    document.getElementById('os-r-deduction').textContent = '- ' + fmtWan(Math.min(totalGain, DEDUCTION)) + ' (기본공제)';
+    document.getElementById('os-r-taxbase').textContent = fmtWan(taxBase);
+    document.getElementById('os-r-tax').textContent = fmtWan(incomeTax);
+    document.getElementById('os-r-local').textContent = fmtWan(localTax);
+    document.getElementById('os-r-total').textContent = fmtWan(totalTax);
+  }
+</script>
+</body>
+</html>

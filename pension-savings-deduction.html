@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 연금저축 세액공제 계산기 - IRP 포함 절세액·최적 납입 가이드 | calcmoney.kr</title>
+  <meta name="description" content="2026년 기준 총급여·연금저축·IRP 납입액 입력 시 세액공제액, 실효 절세율, 연금저축 vs IRP 최적 배분 가이드를 자동 계산합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/pension-savings-deduction">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 연금저축 세액공제 계산기 - IRP 포함 최적 납입 가이드">
+  <meta property="og:description" content="총급여·연금저축·IRP 납입액 입력 → 세액공제액 + 최적 배분 전략 즉시 계산. 2026년 세법 기준.">
+  <meta property="og:url" content="https://calcmoney.kr/pension-savings-deduction">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026년 연금저축 세액공제 한도는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 연금저축 세액공제 한도: 총급여 1억2천만원(종합소득 1억원) 이하는 연금저축 600만원, IRP 포함 합산 900만원입니다. 총급여 1억2천만원 초과 시 연금저축 300만원, IRP 포함 합산 900만원(IRP 단독 최대 900만원)이 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연금저축 세액공제율은 몇 %인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "총급여 5,500만원(종합소득 4,500만원) 이하: 16.5%(지방소득세 포함), 총급여 5,500만원 초과: 13.2%(지방소득세 포함)입니다. 예를 들어 총급여 5,000만원인 경우 연금저축 600만원 납입 시 세액공제 99만원(600만원×16.5%)을 받습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "IRP와 연금저축을 어떻게 배분하는 게 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "세액공제 한도만 따진다면: 총급여 1억2천만원 이하는 연금저축 600만원 채운 후 IRP로 나머지 300만원(합산 900만원 한도), 총급여 1억2천만원 초과는 연금저축 300만원 채운 후 IRP로 나머지 600만원이 효율적입니다. 단, IRP는 퇴직금 수령도 가능하고 운용 제한이 있으므로 유동성을 고려해 배분하세요."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연금저축펀드와 연금저축보험 중 어느 게 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "세액공제 금액은 동일합니다. 다만 연금저축펀드는 원금 비보장 대신 기대수익이 높고 중도해지·이전이 자유롭습니다. 연금저축보험은 원금 보장(공시이율 적용)이나 사업비가 차감되어 초기 수익률이 낮습니다. 장기 투자 목적이라면 연금저축펀드가 유리한 경우가 많습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중도해지 시 세액공제 받은 금액을 돌려줘야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네. 연금저축·IRP 중도해지 시 세액공제 받은 납입액과 운용수익 전체에 기타소득세 16.5%가 부과됩니다(분리과세). 단, 부득이한 사유(사망, 해외이주, 3개월 이상 요양 필요 질병, 천재지변 등)에 해당하면 3.3~5.5% 낮은 세율로 연금수령으로 인정받을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연금 수령 시 세금은 얼마나 내나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연금저축·IRP에서 연금으로 수령 시 연금소득세가 부과됩니다. 나이별 세율: 70세 미만 5.5%, 70~80세 미만 4.4%, 80세 이상 3.3%입니다. 연금수령액이 연 1,500만원 이하이면 분리과세(낮은 세율), 1,500만원 초과 시 종합과세 또는 16.5% 분리과세 중 유리한 방식 선택 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "퇴직금을 IRP에 넣으면 세액공제를 더 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "퇴직금을 IRP에 이전하는 것은 퇴직소득세 과세이연 효과가 있지만, 세액공제 한도(연 900만원)와는 별도입니다. 퇴직금 이전분은 세액공제 한도 계산에 포함되지 않으며, 본인 추가 납입분만 세액공제 대상이 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "종합소득세 신고자도 동일한 세액공제를 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네. 근로소득자(연말정산)와 종합소득세 신고자 모두 동일하게 적용됩니다. 다만 소득 기준은 근로소득자는 총급여, 종합소득세 신고자는 종합소득금액 기준입니다. 종합소득 4,500만원 이하 16.5%, 초과 시 13.2%, 종합소득 1억원 초과 시 연금저축 한도 300만원으로 축소됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .result-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+    .result-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
+    .result-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .result-card.warn { border-color: #ff9800; background: #fff8e1; }
+    .result-card .rlabel { font-size: 0.78em; color: #666; margin-bottom: 4px; }
+    .result-card .rvalue { font-size: 1.2em; font-weight: 800; color: #1a73e8; }
+    .result-card.warn .rvalue { color: #e65100; }
+    .total-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .guide-box { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 10px 10px 0; padding: 16px; margin: 16px 0; }
+    .guide-box h4 { margin: 0 0 10px; font-size: 0.9em; color: #1b5e20; }
+    .guide-box ul { margin: 0; padding-left: 18px; font-size: 0.85em; color: #333; line-height: 1.9; }
+    .warn-box { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 14px; margin: 12px 0; font-size: 0.85em; color: #555; }
+    .limit-progress { margin: 16px 0; }
+    .limit-progress .lp-label { font-size: 0.82em; color: #555; margin-bottom: 4px; display: flex; justify-content: space-between; }
+    .progress-bar { height: 10px; background: #e0e0e0; border-radius: 6px; overflow: hidden; margin-bottom: 10px; }
+    .progress-fill { height: 100%; border-radius: 6px; transition: width 0.4s; }
+    .fill-blue { background: linear-gradient(90deg, #1a73e8, #42a5f5); }
+    .fill-green { background: linear-gradient(90deg, #43a047, #81c784); }
+    .fill-orange { background: linear-gradient(90deg, #ff9800, #ffcc80); }
+    .section-tag { display: inline-block; background: #1a73e8; color: white; border-radius: 20px; padding: 2px 10px; font-size: 0.78em; font-weight: 700; margin-left: 6px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="year-end-tax.html">연말정산</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>연금저축 세액공제 계산기</h1>
+        <p class="desc">총급여(또는 종합소득), 연금저축 납입액, IRP 납입액을 입력하면 2026년 세법 기준 세액공제액·실효 절세율·연금저축 vs IRP 최적 배분 가이드를 자동으로 계산합니다.</p>
+
+        <!-- 소득 정보 -->
+        <div class="input-section-title">소득 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>소득 유형</label>
+            <select id="incomeType">
+              <option value="salary">근로소득 (총급여)</option>
+              <option value="comprehensive">종합소득금액</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>총급여 / 종합소득금액 <span class="hint">원</span></label>
+            <input type="number" id="totalIncome" placeholder="예: 55000000" value="55000000" min="0">
+          </div>
+        </div>
+
+        <!-- 납입 정보 -->
+        <hr class="section-divider">
+        <div class="input-section-title">연금 납입 정보 (연간)</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>연금저축 납입액 <span class="hint">원/년</span></label>
+            <input type="number" id="pensionSavings" placeholder="예: 6000000" value="6000000" min="0">
+          </div>
+          <div class="form-group">
+            <label>IRP 납입액 <span class="hint">원/년 (본인 추가납입분)</span></label>
+            <input type="number" id="irp" placeholder="예: 3000000" value="3000000" min="0">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">세액공제 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <div class="total-box">
+            <div class="tlabel">연간 세액공제액 (지방소득세 포함)</div>
+            <div class="tvalue" id="totalDeduction"></div>
+            <div style="font-size:0.82em;opacity:0.8;margin-top:6px;" id="totalSub"></div>
+          </div>
+
+          <div class="result-cards" id="resultCards"></div>
+
+          <!-- 한도 진행률 -->
+          <div class="limit-progress" id="limitProgress"></div>
+
+          <!-- 최적 배분 가이드 -->
+          <div class="guide-box" id="guideBox"></div>
+
+          <!-- 추가 납입 시 절세 효과 -->
+          <div id="additionalGuide"></div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">연금저축 세액공제 완전 가이드</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연금저축 세액공제란?</h3>
+        <p>연금저축 세액공제는 노후 준비를 장려하기 위해 소득세법 제59조의3에서 규정한 세금 혜택입니다. 연금저축계좌(연금저축펀드·연금저축보험·연금저축신탁)와 IRP(개인형 퇴직연금)에 납입한 금액 중 일정 한도까지 세금에서 직접 차감해 줍니다. 소득공제(과세표준을 줄여 간접 절세)와 달리 세액공제는 납부 세금에서 직접 빼는 방식이므로, 세율에 관계없이 동일 납입 시 세율이 낮은 사람에게 상대적으로 유리합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 세액공제 한도표</h3>
+        <p>세액공제 한도는 총급여(근로소득자) 또는 종합소득금액(자영업자·프리랜서) 기준으로 구분됩니다.</p>
+        <table style="width:100%;border-collapse:collapse;font-size:0.88em;margin:12px 0;">
+          <thead>
+            <tr style="background:#f0f4ff;">
+              <th style="padding:10px;text-align:left;border-bottom:2px solid #c5cae9;">총급여 구간</th>
+              <th style="padding:10px;text-align:center;border-bottom:2px solid #c5cae9;">연금저축 한도</th>
+              <th style="padding:10px;text-align:center;border-bottom:2px solid #c5cae9;">IRP 포함 합산 한도</th>
+              <th style="padding:10px;text-align:center;border-bottom:2px solid #c5cae9;">공제율</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:9px 10px;border-bottom:1px solid #f0f0f0;">5,500만원 이하<br><span style="font-size:0.85em;color:#888;">(종합소득 4,500만원 이하)</span></td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">600만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">900만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;color:#1a73e8;font-weight:700;">16.5%</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px;border-bottom:1px solid #f0f0f0;">5,500만원 초과<br>1억2천만원 이하<br><span style="font-size:0.85em;color:#888;">(종합소득 4,500만원 초과 1억원 이하)</span></td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">600만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">900만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;color:#1565c0;font-weight:700;">13.2%</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px;">1억2천만원 초과<br><span style="font-size:0.85em;color:#888;">(종합소득 1억원 초과)</span></td>
+              <td style="padding:9px 10px;text-align:center;font-weight:700;">300만원</td>
+              <td style="padding:9px 10px;text-align:center;font-weight:700;">900만원</td>
+              <td style="padding:9px 10px;text-align:center;color:#1565c0;font-weight:700;">13.2%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연금저축 vs IRP 핵심 차이</h3>
+        <p>두 계좌 모두 세액공제 대상이지만 성격이 다릅니다. <strong>연금저축</strong>은 자유 납입·중도 인출이 가능하고 운용 상품이 다양(펀드·ETF·보험 등)합니다. <strong>IRP(개인형 퇴직연금)</strong>는 퇴직금 수령 계좌로도 사용하며, 위험자산(주식형 펀드·ETF) 비중이 70% 이하로 제한됩니다. 또한 IRP는 연간 운용수수료가 발생하므로 저비용 상품 선택이 중요합니다. 세액공제만 목적이라면 수수료가 없는 IRP 계좌(일부 증권사 제공)를 활용하는 것이 유리합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">최적 납입 전략 (총급여 구간별)</h3>
+        <p><strong>① 총급여 5,500만원 이하:</strong> 연금저축 600만원을 먼저 채우고, 추가로 IRP에 300만원(합산 900만원)을 납입하면 최대 세액공제 148만5천원(900만원×16.5%)을 받을 수 있습니다. 세액공제율이 높으므로 한도를 최대한 활용하는 것이 이득입니다.</p>
+        <p><strong>② 총급여 5,500만원~1억2천만원:</strong> 연금저축 600만원 + IRP 300만원(합산 900만원) 납입 시 최대 세액공제 118만8천원(900만원×13.2%)을 받습니다. 세액공제만 따지면 연금저축 먼저 채운 후 IRP로 나머지를 채우는 방식이 합리적입니다.</p>
+        <p><strong>③ 총급여 1억2천만원 초과:</strong> 연금저축 한도가 300만원으로 축소되지만, IRP 한도는 900만원 유지됩니다. 따라서 IRP에 최대 900만원을 납입하는 것이 유리합니다(연금저축 300만원 + IRP 600만원, 또는 IRP 단독 900만원). 최대 세액공제 118만8천원(900만원×13.2%)을 받을 수 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연금 수령 시 세금 구조</h3>
+        <p>납입 시 절세 혜택을 받은 연금저축·IRP는 연금 수령 시 연금소득세를 납부합니다. 연금소득세율은 수령 나이에 따라 다릅니다: 70세 미만 5.5%, 70~80세 미만 4.4%, 80세 이상 3.3%(지방소득세 포함). 연간 연금수령액이 1,500만원 이하이면 위 세율로 분리과세가 적용되어 종합소득세 신고가 불필요합니다. 1,500만원 초과 시 16.5% 분리과세 또는 종합과세 중 유리한 방식을 선택할 수 있습니다. 납입 시 13.2~16.5% 공제받고, 수령 시 3.3~5.5%만 내므로 장기적으로 세금 혜택이 큽니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">중도해지 패널티</h3>
+        <p>세액공제 받은 금액과 운용수익을 만 55세 이전에 중도해지하면 기타소득세 16.5%가 부과됩니다. 따라서 중도해지 시 절세 혜택이 사라질 뿐만 아니라 원금 일부도 돌려줘야 하는 상황이 생길 수 있습니다. 단, 부득이한 사유(천재지변, 3개월 이상 입원 치료 필요, 해외이주, 파산·개인회생 등)에 해당하면 낮은 세율(3.3~5.5%)로 연금 수령과 동일하게 처리할 수 있습니다. 유동성이 필요한 자금은 연금 계좌에 과도하게 넣지 않는 것이 중요합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연금저축 세액공제와 다른 세액공제 중복 활용</h3>
+        <p>연금저축·IRP 세액공제는 다른 세액공제(자녀세액공제, 의료비 세액공제, 교육비 세액공제, 월세 세액공제 등)와 중복 적용됩니다. 연말정산 시 모든 세액공제를 합산해 결정세액에서 차감하며, 결정세액보다 세액공제 합계가 크면 그 차액은 환급됩니다. 단, 세액공제 합계가 결정세액을 초과해도 초과분을 이월하거나 현금으로 환급받지는 못합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연금저축 계좌 이전(계약 이전)</h3>
+        <p>세액공제 혜택을 유지한 채 금융기관(은행·보험사·증권사)을 이전할 수 있습니다. 연금저축 간 이전, 연금저축→IRP 이전, IRP→IRP 이전 모두 가능합니다. 이전 시 비과세·이연세액 혜택이 유지되며, 별도의 세금 부과 없이 이전됩니다. 단, IRP→연금저축 이전은 불가합니다. 수수료가 저렴하고 운용 상품이 다양한 증권사 IRP로 이전하면 수익률을 개선할 수 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연말정산 신청 방법</h3>
+        <p>회사 근로자의 경우 연말정산 시 연금저축 납입확인서(금융기관 발급)를 회사 인사·급여 담당자에게 제출하면 됩니다. 국세청 홈택스 연말정산 간소화 서비스(1월 15일~)에서 연금저축 납입 내역을 조회하면 자동으로 공제 내역이 반영됩니다. 프리랜서·자영업자는 5월 종합소득세 신고 시 연금저축 세액공제를 직접 신고합니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">Q. 연금저축과 IRP 합산 한도 900만원을 초과해서 납입해도 되나요?</div>
+          <div class="faq-a">A. 초과 납입 자체는 가능하지만, 세액공제 혜택은 한도(연금저축 600만원/300만원 + 합산 900만원) 이내분에만 적용됩니다. 초과분은 연금 수령 시 비과세(세액공제를 받지 않은 납입분)로 처리되어 원금은 세금 없이 돌려받을 수 있습니다.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Q. 배우자 명의 연금저축도 세액공제 받을 수 있나요?</div>
+          <div class="faq-a">A. 아닙니다. 연금저축 세액공제는 본인 명의 계좌의 납입액에 대해서만 본인이 공제받을 수 있습니다. 배우자 명의 계좌에 납입하면 배우자가 공제를 받습니다. 맞벌이 부부라면 각자 연금저축·IRP를 활용해 각자 세액공제를 극대화하는 것이 유리합니다.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Q. 직장을 옮길 때 IRP는 어떻게 되나요?</div>
+          <div class="faq-a">A. 이직 시 퇴직금을 IRP로 의무 이전받습니다. 새 직장에서 새 IRP를 개설하거나, 기존 IRP를 유지하면서 추가 납입할 수 있습니다. 이직으로 수령하는 퇴직금을 IRP에 이전하면 퇴직소득세 과세이연 혜택을 받습니다(바로 수령 시 퇴직소득세 즉시 납부).</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Q. 55세 이후에도 연금저축 세액공제를 받을 수 있나요?</div>
+          <div class="faq-a">A. 네. 연금저축 세액공제는 나이 제한이 없습니다. 다만, 연금 수령 개시 후에는 납입이 불가합니다. 연금 개시 전까지는 계속 납입하며 세액공제를 받을 수 있습니다. 단, 만 55세 이후 연금 수령을 시작하는 경우 동일 계좌에 추가 납입은 사실상 어렵습니다(별도 계좌 개설 필요).</div>
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 금융기관 및 관계 기관에 문의하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+function fmt(n) {
+  return Math.round(n).toLocaleString('ko-KR') + '원';
+}
+
+function calculate() {
+  const incomeType = document.getElementById('incomeType').value;
+  const totalIncome = parseFloat(document.getElementById('totalIncome').value) || 0;
+  const pensionSavings = parseFloat(document.getElementById('pensionSavings').value) || 0;
+  const irp = parseFloat(document.getElementById('irp').value) || 0;
+
+  // 소득 기준 변환 (종합소득금액 → 총급여 환산 아님, 별도 기준 적용)
+  let isSalary = incomeType === 'salary';
+  // 공제율 결정
+  let rate, pensionLimit, totalLimit;
+
+  if (isSalary) {
+    if (totalIncome <= 55000000) {
+      rate = 0.165;
+      pensionLimit = 6000000;
+      totalLimit = 9000000;
+    } else if (totalIncome <= 120000000) {
+      rate = 0.132;
+      pensionLimit = 6000000;
+      totalLimit = 9000000;
+    } else {
+      rate = 0.132;
+      pensionLimit = 3000000;
+      totalLimit = 9000000;
+    }
+  } else {
+    // 종합소득금액 기준
+    if (totalIncome <= 45000000) {
+      rate = 0.165;
+      pensionLimit = 6000000;
+      totalLimit = 9000000;
+    } else if (totalIncome <= 100000000) {
+      rate = 0.132;
+      pensionLimit = 6000000;
+      totalLimit = 9000000;
+    } else {
+      rate = 0.132;
+      pensionLimit = 3000000;
+      totalLimit = 9000000;
+    }
+  }
+
+  // 실제 공제 가능 금액 계산
+  const effectivePension = Math.min(pensionSavings, pensionLimit);
+  const effectiveCombined = Math.min(pensionSavings + irp, totalLimit);
+  const effectiveTotal = Math.min(effectiveCombined, pensionLimit + irp); // 연금저축 한도 초과분은 IRP로
+
+  // 실제 공제 기준 금액: 연금저축은 한도 내, 전체 합산은 totalLimit 내
+  const effectivePensionForCalc = Math.min(pensionSavings, pensionLimit);
+  const remainingForIRP = Math.max(0, totalLimit - effectivePensionForCalc);
+  const effectiveIRP = Math.min(irp, remainingForIRP);
+  const totalEffective = effectivePensionForCalc + effectiveIRP;
+
+  const deduction = totalEffective * rate;
+  const ratePercent = (rate * 100).toFixed(1);
+  const effectiveRate = totalIncome > 0 ? ((deduction / totalIncome) * 100).toFixed(2) : '0.00';
+
+  // 최대 공제 가능액
+  const maxDeduction = totalLimit * rate;
+
+  // 추가 납입 시 추가 절세액
+  const remainingPension = Math.max(0, pensionLimit - pensionSavings);
+  const remainingIRP = Math.max(0, totalLimit - Math.min(pensionSavings, pensionLimit) - irp);
+
+  // 결과 표시
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('totalDeduction').textContent = fmt(deduction);
+
+  const incomeLabel = isSalary ? '총급여' : '종합소득금액';
+  const threshold = isSalary ? '5,500만원' : '4,500만원';
+  document.getElementById('totalSub').textContent =
+    `공제율 ${ratePercent}% | 공제 기준금액 ${fmt(totalEffective)} | 실효 절세율 ${effectiveRate}%`;
+
+  // 결과 카드
+  const cards = [
+    { label: '연금저축 공제 기준액', value: fmt(effectivePensionForCalc), highlight: true },
+    { label: 'IRP 공제 기준액', value: fmt(effectiveIRP), highlight: true },
+    { label: '합산 공제 기준액', value: fmt(totalEffective), highlight: false },
+    { label: '세액공제율', value: ratePercent + '%', highlight: false },
+    { label: '최대 가능 세액공제', value: fmt(maxDeduction), highlight: false },
+    { label: '실효 절세율', value: effectiveRate + '%', highlight: false }
+  ];
+
+  let cardsHtml = '';
+  cards.forEach(c => {
+    cardsHtml += `<div class="result-card${c.highlight ? ' highlight' : ''}">
+      <div class="rlabel">${c.label}</div>
+      <div class="rvalue">${c.value}</div>
+    </div>`;
+  });
+  document.getElementById('resultCards').innerHTML = cardsHtml;
+
+  // 한도 진행률
+  const pensionPct = Math.min(100, (pensionSavings / pensionLimit * 100)).toFixed(1);
+  const totalPct = Math.min(100, ((pensionSavings + irp) / totalLimit * 100)).toFixed(1);
+  const pensionExcess = pensionSavings > pensionLimit ? fmt(pensionSavings - pensionLimit) + ' 초과(한도 미적용)' : fmt(pensionLimit - pensionSavings) + ' 추가 납입 가능';
+  const totalExcess = (pensionSavings + irp) > totalLimit ? fmt(pensionSavings + irp - totalLimit) + ' 초과(한도 미적용)' : fmt(totalLimit - pensionSavings - irp) + ' 추가 납입 가능';
+
+  document.getElementById('limitProgress').innerHTML = `
+    <div class="lp-label"><span>연금저축 한도 (${fmt(pensionLimit)})</span><span>${fmt(pensionSavings)} / ${fmt(pensionLimit)} · ${pensionExcess}</span></div>
+    <div class="progress-bar"><div class="progress-fill fill-blue" style="width:${pensionPct}%"></div></div>
+    <div class="lp-label"><span>연금저축+IRP 합산 한도 (${fmt(totalLimit)})</span><span>${fmt(pensionSavings + irp)} / ${fmt(totalLimit)} · ${totalExcess}</span></div>
+    <div class="progress-bar"><div class="progress-fill fill-green" style="width:${totalPct}%"></div></div>
+  `;
+
+  // 최적 배분 가이드
+  let guideHtml = '<h4>최적 납입 배분 가이드</h4><ul>';
+  if (totalEffective < totalLimit) {
+    if (pensionSavings < pensionLimit) {
+      guideHtml += `<li>연금저축을 ${fmt(pensionLimit - pensionSavings)} 더 납입하면 최대 ${fmt((pensionLimit - pensionSavings) * rate)} 추가 절세 가능합니다.</li>`;
+    }
+    if (effectiveIRP < Math.min(irp, totalLimit - effectivePensionForCalc) || (pensionSavings >= pensionLimit && irp < totalLimit - pensionLimit)) {
+      const addIRP = Math.max(0, totalLimit - Math.min(pensionSavings, pensionLimit) - irp);
+      if (addIRP > 0) {
+        guideHtml += `<li>IRP에 ${fmt(addIRP)} 더 납입하면 ${fmt(addIRP * rate)} 추가 절세 가능합니다.</li>`;
+      }
+    }
+    guideHtml += `<li>한도 최대 활용 시 연간 세액공제 <strong>${fmt(maxDeduction)}</strong>까지 받을 수 있습니다.</li>`;
+  } else {
+    guideHtml += `<li>합산 한도(${fmt(totalLimit)})를 이미 초과 납입하고 있습니다. 현재 최대 세액공제 혜택을 받고 있습니다.</li>`;
+    if (pensionSavings > pensionLimit) {
+      guideHtml += `<li>연금저축 납입액이 한도(${fmt(pensionLimit)})를 ${fmt(pensionSavings - pensionLimit)} 초과했습니다. 초과분은 세액공제 대상이 아닙니다.</li>`;
+    }
+  }
+
+  // 고소득자 IRP 전략
+  const highIncome = isSalary ? totalIncome > 120000000 : totalIncome > 100000000;
+  if (highIncome) {
+    guideHtml += `<li><strong>고소득자 전략:</strong> 연금저축 한도가 ${fmt(pensionLimit)}으로 축소되었습니다. IRP에 최대 ${fmt(9000000 - pensionLimit)}까지 추가 납입하면 합산 한도 900만원을 채울 수 있습니다.</li>`;
+  }
+
+  guideHtml += '</ul>';
+  document.getElementById('guideBox').innerHTML = guideHtml;
+
+  // 추가 납입 시 절세 시뮬레이션
+  let addHtml = '';
+  if (totalEffective < totalLimit) {
+    const remaining = totalLimit - totalEffective;
+    const addSave = remaining * rate;
+    addHtml = `<div class="warn-box">
+      <strong>추가 납입 절세 시뮬레이션:</strong> 현재 세액공제 기준금액 대비 <strong>${fmt(remaining)}</strong>을 추가 납입하면 연간 <strong>${fmt(addSave)}</strong>를 더 절세할 수 있습니다.
+      <br><span style="color:#888;">→ 추가 납입처: ${pensionSavings < pensionLimit ? '연금저축 먼저' : 'IRP'}</span>
+    </div>`;
+  } else {
+    addHtml = `<div class="warn-box" style="background:#e8f5e9;border-color:#43a047;">
+      <strong>현재 세액공제 한도를 최대로 활용 중입니다.</strong> 연간 최대 <strong>${fmt(maxDeduction)}</strong> 세액공제를 받습니다.
+    </div>`;
+  }
+  document.getElementById('additionalGuide').innerHTML = addHtml;
+
+  document.getElementById('result').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// 페이지 로드 시 자동 계산
+window.onload = function() { calculate(); };
+</script>
+
+</body>
+</html>

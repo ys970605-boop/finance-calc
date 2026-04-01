@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="bbb2e816e372612b1e5820af29a23857b401ffea" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복리적금이자 계산기 - 월복리/단리 비교, 세후 수령액, 목표금액 역산 2026 | calcmoney.kr</title>
+  <meta name="description" content="복리적금이자를 자동 계산합니다. 월납입액, 납입기간, 금리 입력 시 단리 vs 월복리/분기/반기/연복리 비교, 세전·세후(15.4%) 수령액, 비과세 적금, 목표금액 역산, 월별 적립 스케줄, 은행별 금리 비교 제공.">
+  <link rel="canonical" href="https://calcmoney.kr/compound-savings-interest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="복리적금이자 계산기 - 월복리 단리 비교, 세후 수령액 2026">
+  <meta property="og:description" content="월납입액·납입기간·금리 입력으로 복리 vs 단리 적금 이자를 자동 계산. 세전·세후(이자소득세 15.4%), 비과세 적금, 목표금액 역산, 월별 적립 스케줄, 은행별 금리 비교.">
+  <meta property="og:url" content="https://calcmoney.kr/compound-savings-interest">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "복리적금과 단리적금의 차이는 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "단리적금은 매월 납입한 원금에만 이자가 붙어 만기 시 일괄 지급됩니다. 복리적금은 이자가 원금에 합산되어 다음 기간에 이자에도 이자가 붙습니다. 예를 들어 월 50만원, 연 3.5%, 24개월 기준으로 단리 이자는 약 45만5천원, 월복리 이자는 약 46만원으로 약 5천원 차이가 납니다. 기간이 길고 금리가 높을수록 복리 효과가 커집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "적금 이자소득세 15.4%는 어떻게 계산되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "이자소득세는 세전 이자에 15.4%(소득세 14% + 지방소득세 1.4%)를 곱한 금액입니다. 예를 들어 세전 이자가 100만원이면 이자소득세 15만4천원이 공제되어 실제 수령 이자는 84만6천원이 됩니다. 비과세 한도(5,000만원) 초과분이나 금융소득종합과세(연 2,000만원 초과) 대상자는 세율이 달라질 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "청년희망적금과 청년도약계좌는 비과세인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "청년희망적금(2022년 출시, 만기 종료 진행 중)은 이자소득세 비과세 혜택이 있었습니다. 청년도약계좌(2023년 출시)는 만기 5년, 월 최대 70만원 납입 시 정부기여금 + 이자소득 비과세 혜택을 제공합니다. 2026년 기준 만 19~34세, 개인소득 7,500만원 이하(가구소득 중위 250% 이하) 조건을 충족해야 가입 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "목표 금액을 위한 월납입액은 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "목표금액 역산 공식은 PMT = FV × (r/n) / [(1+r/n)^(n×t) - 1]입니다. 예를 들어 3년 후 3,000만원을 모으고 싶고 연이율 3.5%, 월복리라면 월납입액은 약 80만3천원이 필요합니다. 비과세 적금이면 세후 기준으로 동일한 금리를 적용해 계산할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ISA 계좌로 적금을 들면 절세가 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISA(개인종합자산관리계좌)는 의무가입기간 3년 이상 유지 시 이자·배당소득에 대해 서민형 400만원, 일반형 200만원까지 비과세, 초과분은 9.9% 분리과세 혜택이 있습니다. 일반 예적금 대비 약 5.5%포인트 낮은 세율이 적용되어 금리가 동일하다면 ISA 편입 상품이 세후 수익이 더 높습니다. 연간 납입한도 2,000만원, 총 1억원까지 납입 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 시중은행 적금 금리는 어느 정도인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 3월 기준 주요 시중은행 12개월 정기적금 금리는 KB국민은행 3.00~3.20%, 신한은행 3.00~3.30%, 우리은행 2.90~3.20%, 하나은행 3.00~3.30%, NH농협은행 3.10~3.40% 수준입니다. 인터넷은행(카카오뱅크, 토스뱅크, 케이뱅크)은 3.20~3.80%로 시중은행 대비 0.2~0.5%p 높은 편입니다. 우대금리 조건 충족 시 최고 4.0~5.0%까지 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "적금과 예금 중 어느 것이 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "적금은 매월 일정액을 납입해 목돈을 마련하는 상품이고, 예금은 목돈을 한 번에 예치해 이자를 받습니다. 동일 금리라면 실효 이자율은 예금이 적금보다 약 2배 높습니다. 예를 들어 연 3.5% 적금(월 100만원, 12개월)의 세후 실효 이자율은 약 1.8%지만, 같은 금리 예금(1,200만원, 12개월)은 세후 약 2.96%입니다. 목돈이 있다면 예금, 월 여유자금으로 저축한다면 적금이 적합합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "복리적금 월복리와 연복리의 실제 차이는 얼마나 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "월 50만원, 연 3.5%, 3년(36개월) 기준으로 단리 이자 약 98만5천원, 연복리 이자 약 99만8천원, 월복리 이자 약 100만2천원입니다. 월복리와 단리의 차이는 약 1만7천원으로 크지 않습니다. 그러나 금리가 높을수록(5% 이상), 기간이 길수록(5년 이상) 복리 효과가 기하급수적으로 커집니다. 청년도약계좌처럼 5년 납입 상품은 복리 효과가 상당합니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .tab-btn {
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .result-highlight-box {
+      background: linear-gradient(135deg, #e8f0fe 0%, #d2e3fc 100%);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 20px 24px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .result-highlight-box .rh-label {
+      font-size: 14px;
+      color: #3c4043;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .result-highlight-box .rh-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .result-highlight-box .rh-sub {
+      font-size: 13px;
+      color: #5f6368;
+      margin-top: 6px;
+    }
+
+    .compare-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 480px) {
+      .compare-grid-4 { grid-template-columns: 1fr 1fr; }
+    }
+    .cg-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .cg-card.hl { border-color: var(--primary); background: #e8f0fe; }
+    .cg-card .cg-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+    .cg-card .cg-value { font-size: 16px; font-weight: 700; color: var(--text); }
+    .cg-card.hl .cg-value { color: var(--primary); }
+
+    .tax-toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: #ccc; border-radius: 24px; cursor: pointer;
+      transition: 0.3s;
+    }
+    .toggle-slider:before {
+      content: ""; position: absolute;
+      width: 18px; height: 18px; left: 3px; bottom: 3px;
+      background: white; border-radius: 50%; transition: 0.3s;
+    }
+    .toggle-switch input:checked + .toggle-slider { background: var(--primary); }
+    .toggle-switch input:checked + .toggle-slider:before { transform: translateX(20px); }
+    .toggle-label { font-size: 14px; font-weight: 600; }
+
+    .schedule-table-wrap { overflow-x: auto; margin-top: 12px; }
+    .schedule-table {
+      width: 100%; border-collapse: collapse; font-size: 13px;
+    }
+    .schedule-table th {
+      background: #f1f3f4; padding: 8px 10px;
+      text-align: right; font-weight: 600;
+      border-bottom: 2px solid var(--border); white-space: nowrap;
+    }
+    .schedule-table th:first-child { text-align: center; }
+    .schedule-table td {
+      padding: 7px 10px; text-align: right;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule-table td:first-child { text-align: center; font-weight: 600; }
+    .schedule-table tr:last-child td { font-weight: 700; color: var(--primary); background: #f0f7ff; }
+    .schedule-table tr:hover td { background: #f8f9fa; }
+
+    .bank-table-wrap { overflow-x: auto; margin-top: 12px; }
+    .bank-table {
+      width: 100%; border-collapse: collapse; font-size: 13px;
+    }
+    .bank-table th {
+      background: #f1f3f4; padding: 9px 12px;
+      text-align: center; font-weight: 600;
+      border-bottom: 2px solid var(--border); white-space: nowrap;
+    }
+    .bank-table td {
+      padding: 9px 12px; text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .bank-table tr:hover td { background: #f8f9fa; }
+    .bank-table .rate-best { color: #d93025; font-weight: 700; }
+    .bank-table .badge {
+      display: inline-block; padding: 2px 7px;
+      border-radius: 10px; font-size: 11px; font-weight: 600;
+    }
+    .badge-online { background: #e8f0fe; color: var(--primary); }
+    .badge-special { background: #fce8e6; color: #d93025; }
+    .badge-normal { background: #f1f3f4; color: #5f6368; }
+
+    .desc-section { margin-top: 32px; }
+    .desc-section h2 {
+      font-size: 20px; font-weight: 700; margin-bottom: 12px;
+      color: var(--text); border-left: 4px solid var(--primary); padding-left: 12px;
+    }
+    .desc-section h3 {
+      font-size: 17px; font-weight: 600; margin: 18px 0 8px; color: var(--text);
+    }
+    .section-desc {
+      font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 12px;
+    }
+    .formula-box {
+      background: #f8f9fa; border: 1px solid var(--border); border-radius: 8px;
+      padding: 14px 18px; font-family: monospace; font-size: 14px;
+      line-height: 1.9; margin: 10px 0;
+    }
+    .faq-section { margin-top: 40px; }
+    .faq-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+    details {
+      border: 1px solid var(--border); border-radius: 8px;
+      margin-bottom: 10px; overflow: hidden;
+    }
+    summary {
+      padding: 14px 18px; font-weight: 600; cursor: pointer;
+      background: var(--card-bg); font-size: 15px; list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 18px; color: var(--primary); }
+    details[open] summary::after { content: '−'; }
+    details[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-answer {
+      padding: 16px 18px; font-size: 14px; line-height: 1.8;
+      color: var(--text); background: #fafafa;
+    }
+
+    .tip-box {
+      background: #e8f5e9; border-left: 4px solid #34a853;
+      border-radius: 0 8px 8px 0; padding: 12px 16px;
+      margin: 12px 0; font-size: 14px; line-height: 1.7;
+    }
+    .tip-box strong { color: #1e7e34; }
+    .warn-box {
+      background: #fff8e1; border-left: 4px solid #f9a825;
+      border-radius: 0 8px 8px 0; padding: 12px 16px;
+      margin: 12px 0; font-size: 14px; line-height: 1.7; color: #5a4100;
+    }
+
+    .sim-compare-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;
+    }
+    .sim-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px;
+    }
+    .sim-card.sim-hl { border-color: var(--primary); background: #e8f0fe; }
+    .sim-card .sim-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .sim-card .sim-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
+    .sim-card .sim-row .sl { color: var(--text-muted); }
+    .sim-card .sim-row .sv { font-weight: 600; }
+    .sim-card .sim-row .sv.up { color: var(--primary); }
+
+    .related-pages { margin-top: 32px; }
+    .related-pages h2 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .related-pages ul {
+      list-style: none; display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .related-pages ul li a {
+      display: inline-block; padding: 8px 16px;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 20px; font-size: 14px; color: var(--primary);
+      text-decoration: none; transition: background 0.2s;
+    }
+    .related-pages ul li a:hover { background: #e8f0fe; }
+
+    @media (max-width: 480px) {
+      .sim-compare-grid { grid-template-columns: 1fr; }
+      .result-highlight-box .rh-value { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="compound-interest.html">복리계산기</a>
+      <a href="compound-savings-interest.html" class="active">복리적금</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <!-- 계산기 본체 -->
+    <div>
+      <div class="calc-box">
+        <h1>복리적금이자 계산기</h1>
+        <p class="desc">월납입액·납입기간·금리를 입력하면 단리 vs 복리(월/분기/반기/연) 비교, 세전·세후 수령액, 월별 적립 스케줄을 자동 계산합니다. 목표 금액 역산 기능도 제공합니다.</p>
+
+        <!-- 탭 전환 -->
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="switchTab('calc')">적금 계산</button>
+          <button class="tab-btn" onclick="switchTab('reverse')">목표금액 역산</button>
+          <button class="tab-btn" onclick="switchTab('compare')">적금 vs 예금</button>
+        </div>
+
+        <!-- ========== 탭1: 적금 계산 ========== -->
+        <div class="tab-panel active" id="tab-calc">
+          <div class="form-row">
+            <div class="form-group">
+              <label>월 납입액 <span class="hint">원</span></label>
+              <input type="number" id="monthly" placeholder="예: 500000" value="500000" min="1000">
+            </div>
+            <div class="form-group">
+              <label>납입 기간 <span class="hint">개월</span></label>
+              <input type="number" id="months" placeholder="예: 12" value="12" min="1" max="120">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>연이율 <span class="hint">%</span></label>
+              <input type="number" id="rate" placeholder="예: 3.5" value="3.5" step="0.01" min="0.01" max="30">
+            </div>
+            <div class="form-group">
+              <label>복리 주기</label>
+              <select id="compFreq">
+                <option value="0">단리</option>
+                <option value="12" selected>월복리</option>
+                <option value="4">분기복리</option>
+                <option value="2">반기복리</option>
+                <option value="1">연복리</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tax-toggle-row">
+            <label class="toggle-switch">
+              <input type="checkbox" id="taxToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+            <span class="toggle-label">이자소득세 15.4% 공제 (세후 계산)</span>
+          </div>
+
+          <div class="form-group" id="taxFreeGroup" style="display:none">
+            <label>비과세 유형</label>
+            <select id="taxFreeType">
+              <option value="full">완전 비과세 (청년희망적금 등)</option>
+              <option value="isa">ISA 서민형 (400만원 비과세, 초과 9.9%)</option>
+              <option value="isa_gen">ISA 일반형 (200만원 비과세, 초과 9.9%)</option>
+              <option value="tax_benefit">세금우대 (9.9% 분리과세)</option>
+            </select>
+          </div>
+
+          <div id="taxFreeToggleRow" class="tax-toggle-row" style="margin-top:-8px;">
+            <label class="toggle-switch">
+              <input type="checkbox" id="taxFreeToggle" onchange="toggleTaxFree()">
+              <span class="toggle-slider"></span>
+            </label>
+            <span class="toggle-label">비과세 / 세금우대 적금 적용</span>
+          </div>
+
+          <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+          <div class="result-box" id="result" style="display:none">
+            <!-- 메인 결과 -->
+            <div class="result-highlight-box">
+              <div class="rh-label" id="resMainLabel">세후 수령액 (월복리)</div>
+              <div class="rh-value" id="resMainValue">-</div>
+              <div class="rh-sub" id="resMainSub">총 납입원금 - / 세후 이자 -</div>
+            </div>
+
+            <!-- 세전·세후 비교 -->
+            <div class="compare-grid-4">
+              <div class="cg-card">
+                <div class="cg-label">총 납입원금</div>
+                <div class="cg-value" id="resPrincipal">-</div>
+              </div>
+              <div class="cg-card hl">
+                <div class="cg-label">세전 이자</div>
+                <div class="cg-value" id="resInterestGross">-</div>
+              </div>
+              <div class="cg-card">
+                <div class="cg-label">이자소득세</div>
+                <div class="cg-value" id="resTax">-</div>
+              </div>
+              <div class="cg-card hl">
+                <div class="cg-label">세후 이자</div>
+                <div class="cg-value" id="resInterestNet">-</div>
+              </div>
+            </div>
+
+            <!-- 단리 vs 복리 비교 -->
+            <div style="margin-top:4px;margin-bottom:16px;">
+              <div style="font-size:14px;font-weight:600;margin-bottom:8px;">단리 vs 복리 세후 수령액 비교</div>
+              <div class="compare-grid-4">
+                <div class="cg-card">
+                  <div class="cg-label">단리 세후</div>
+                  <div class="cg-value" id="resSimpleNet">-</div>
+                </div>
+                <div class="cg-card hl">
+                  <div class="cg-label">선택 복리 세후</div>
+                  <div class="cg-value" id="resCompNet">-</div>
+                </div>
+                <div class="cg-card">
+                  <div class="cg-label">월복리 세후</div>
+                  <div class="cg-value" id="resMonthlyCompNet">-</div>
+                </div>
+                <div class="cg-card">
+                  <div class="cg-label">복리 추가이익</div>
+                  <div class="cg-value" id="resCompBonus">-</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 월별 적립 스케줄 -->
+            <div>
+              <div style="font-size:14px;font-weight:600;margin-bottom:8px;">
+                월별 적립 스케줄
+                <span style="font-size:12px;color:var(--text-muted);font-weight:400;margin-left:8px;">최대 60개월 표시</span>
+              </div>
+              <div class="schedule-table-wrap">
+                <table class="schedule-table">
+                  <thead>
+                    <tr>
+                      <th>월</th>
+                      <th>납입원금</th>
+                      <th>당월 이자</th>
+                      <th>누적 이자(세전)</th>
+                      <th>누적 잔액</th>
+                    </tr>
+                  </thead>
+                  <tbody id="scheduleBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 탭2: 목표금액 역산 ========== -->
+        <div class="tab-panel" id="tab-reverse">
+          <div class="form-group">
+            <label>목표 수령액 <span class="hint">원 (세후)</span></label>
+            <input type="number" id="revTarget" placeholder="예: 30000000" value="30000000" min="10000">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>납입 기간 <span class="hint">개월</span></label>
+              <input type="number" id="revMonths" placeholder="예: 36" value="36" min="1" max="120">
+            </div>
+            <div class="form-group">
+              <label>연이율 <span class="hint">%</span></label>
+              <input type="number" id="revRate" placeholder="예: 3.5" value="3.5" step="0.01" min="0.01" max="30">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>복리 주기</label>
+            <select id="revCompFreq">
+              <option value="0">단리</option>
+              <option value="12" selected>월복리</option>
+              <option value="4">분기복리</option>
+              <option value="2">반기복리</option>
+              <option value="1">연복리</option>
+            </select>
+          </div>
+          <div class="tax-toggle-row">
+            <label class="toggle-switch">
+              <input type="checkbox" id="revTaxToggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+            <span class="toggle-label">이자소득세 15.4% 공제 (세후 기준)</span>
+          </div>
+          <button class="btn-calc" onclick="calcReverse()">필요 월납입액 계산</button>
+
+          <div class="result-box" id="revResult" style="display:none">
+            <div class="result-highlight-box">
+              <div class="rh-label">필요 월납입액</div>
+              <div class="rh-value" id="revMonthlyResult">-</div>
+              <div class="rh-sub" id="revSub">-</div>
+            </div>
+            <table class="result-table" style="margin-top:8px;">
+              <tr><th>목표 수령액 (세후)</th><td id="revTargetShow">-</td></tr>
+              <tr><th>총 납입원금</th><td id="revPrincipalShow">-</td></tr>
+              <tr><th>세전 이자</th><td id="revInterestGrossShow">-</td></tr>
+              <tr><th>이자소득세 (15.4%)</th><td id="revTaxShow">-</td></tr>
+              <tr class="total"><th>세후 수령액</th><td id="revNetShow">-</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- ========== 탭3: 적금 vs 예금 비교 ========== -->
+        <div class="tab-panel" id="tab-compare">
+          <div class="form-row">
+            <div class="form-group">
+              <label>월 저축 가능 금액 <span class="hint">원</span></label>
+              <input type="number" id="cmpMonthly" placeholder="예: 500000" value="500000" min="1000">
+            </div>
+            <div class="form-group">
+              <label>기간 <span class="hint">개월</span></label>
+              <input type="number" id="cmpMonths" placeholder="예: 12" value="12" min="1" max="120">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>적금 연이율 <span class="hint">%</span></label>
+              <input type="number" id="cmpSavRate" placeholder="예: 3.5" value="3.5" step="0.01" min="0.01">
+            </div>
+            <div class="form-group">
+              <label>예금 연이율 <span class="hint">%</span></label>
+              <input type="number" id="cmpDepRate" placeholder="예: 3.0" value="3.0" step="0.01" min="0.01">
+            </div>
+          </div>
+          <button class="btn-calc" onclick="calcCompare()">비교 계산</button>
+
+          <div class="result-box" id="cmpResult" style="display:none">
+            <div style="font-size:14px;font-weight:600;margin-bottom:10px;">적금 vs 예금 세후 수령액 비교</div>
+            <div class="sim-compare-grid">
+              <div class="sim-card">
+                <div class="sim-title">적금 (월납입 방식)</div>
+                <div class="sim-row"><span class="sl">총 납입원금</span><span class="sv" id="cmpSavPrincipal">-</span></div>
+                <div class="sim-row"><span class="sl">세전 이자</span><span class="sv" id="cmpSavInterestGross">-</span></div>
+                <div class="sim-row"><span class="sl">이자소득세</span><span class="sv" id="cmpSavTax">-</span></div>
+                <div class="sim-row"><span class="sl">세후 수령액</span><span class="sv up" id="cmpSavNet">-</span></div>
+                <div class="sim-row"><span class="sl">실효 이자율</span><span class="sv" id="cmpSavEffRate">-</span></div>
+              </div>
+              <div class="sim-card sim-hl">
+                <div class="sim-title">예금 (일시 예치 방식)</div>
+                <div class="sim-row"><span class="sl">예치 원금</span><span class="sv" id="cmpDepPrincipal">-</span></div>
+                <div class="sim-row"><span class="sl">세전 이자</span><span class="sv" id="cmpDepInterestGross">-</span></div>
+                <div class="sim-row"><span class="sl">이자소득세</span><span class="sv" id="cmpDepTax">-</span></div>
+                <div class="sim-row"><span class="sl">세후 수령액</span><span class="sv up" id="cmpDepNet">-</span></div>
+                <div class="sim-row"><span class="sl">실효 이자율</span><span class="sv" id="cmpDepEffRate">-</span></div>
+              </div>
+            </div>
+            <div class="tip-box" id="cmpTipBox" style="margin-top:12px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal"></div>
+
+      <!-- 은행별 금리 비교표 -->
+      <div class="info-box">
+        <h3>2026년 주요 은행 적금 금리 비교 (12개월 기준)</h3>
+        <div class="bank-table-wrap">
+          <table class="bank-table">
+            <thead>
+              <tr>
+                <th>은행</th>
+                <th>상품명</th>
+                <th>기본금리</th>
+                <th>최고금리</th>
+                <th>우대조건</th>
+                <th>구분</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>카카오뱅크</strong></td>
+                <td>자유적금</td>
+                <td>3.20%</td>
+                <td class="rate-best">4.00%</td>
+                <td>급여이체, 카드실적</td>
+                <td><span class="badge badge-online">인터넷</span></td>
+              </tr>
+              <tr>
+                <td><strong>토스뱅크</strong></td>
+                <td>먼저 이자 받는 적금</td>
+                <td>3.50%</td>
+                <td class="rate-best">4.20%</td>
+                <td>신규고객, 카드실적</td>
+                <td><span class="badge badge-online">인터넷</span></td>
+              </tr>
+              <tr>
+                <td><strong>케이뱅크</strong></td>
+                <td>코드K 자유적금</td>
+                <td>3.30%</td>
+                <td class="rate-best">4.00%</td>
+                <td>급여이체, 카드이용</td>
+                <td><span class="badge badge-online">인터넷</span></td>
+              </tr>
+              <tr>
+                <td><strong>NH농협은행</strong></td>
+                <td>NH올원e적금</td>
+                <td>3.10%</td>
+                <td>3.80%</td>
+                <td>자동이체, 체크카드</td>
+                <td><span class="badge badge-normal">시중</span></td>
+              </tr>
+              <tr>
+                <td><strong>KB국민은행</strong></td>
+                <td>KB스타적금</td>
+                <td>3.00%</td>
+                <td>3.70%</td>
+                <td>급여이체, 카드실적</td>
+                <td><span class="badge badge-normal">시중</span></td>
+              </tr>
+              <tr>
+                <td><strong>신한은행</strong></td>
+                <td>신한 My적금</td>
+                <td>3.00%</td>
+                <td>3.80%</td>
+                <td>급여이체, 앱활용</td>
+                <td><span class="badge badge-normal">시중</span></td>
+              </tr>
+              <tr>
+                <td><strong>우리은행</strong></td>
+                <td>WON적금</td>
+                <td>2.90%</td>
+                <td>3.60%</td>
+                <td>자동이체, 급여이체</td>
+                <td><span class="badge badge-normal">시중</span></td>
+              </tr>
+              <tr>
+                <td><strong>하나은행</strong></td>
+                <td>하나 더 적금</td>
+                <td>3.00%</td>
+                <td>3.70%</td>
+                <td>급여이체, 카드실적</td>
+                <td><span class="badge badge-normal">시중</span></td>
+              </tr>
+              <tr>
+                <td><strong>청년도약계좌</strong></td>
+                <td>청년도약계좌 (60개월)</td>
+                <td>4.50%</td>
+                <td class="rate-best">6.00%</td>
+                <td>정부기여금+비과세</td>
+                <td><span class="badge badge-special">특별</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">※ 2026년 3월 기준 참고치. 실제 금리는 은행 앱·홈페이지에서 확인 필수. 청년도약계좌는 정부기여금 포함 환산 기준.</p>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>비과세 적금 상품 안내</h3>
+        <table class="result-table">
+          <thead>
+            <tr><th>상품</th><th>비과세 조건</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>청년도약계좌</td><td>만기 5년, 이자·정부기여금 비과세</td></tr>
+            <tr><td>ISA (서민형)</td><td>이자 400만원까지 비과세, 초과 9.9%</td></tr>
+            <tr><td>ISA (일반형)</td><td>이자 200만원까지 비과세, 초과 9.9%</td></tr>
+            <tr><td>세금우대 적금</td><td>9.9% 분리과세 (한도 3,000만원)</td></tr>
+            <tr><td>농·수협 조합원</td><td>3,000만원까지 비과세</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">※ 2026년 기준. 가입 자격 조건 확인 필수.</p>
+      </div>
+
+      <div class="info-box">
+        <h3>적금 절세 팁</h3>
+        <ul style="font-size:14px;line-height:2;padding-left:18px;">
+          <li>ISA 계좌 활용 시 세율 9.9% 절감</li>
+          <li>청년도약계좌 가입 조건 충족 시 완전 비과세</li>
+          <li>농협·수협 조합원 비과세 한도 3천만원</li>
+          <li>금융소득 연 2천만원 이하 유지 필수</li>
+          <li>연금저축·IRP로 세액공제 병행 추천</li>
+          <li>부부 각각 가입 시 비과세 한도 2배</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>적금 이자 계산 공식</h3>
+        <div class="formula-box" style="font-size:12px;">
+          <div><strong>[단리]</strong></div>
+          <div>이자 = PMT × n(n+1)/2 × (r/12)</div>
+          <div style="margin-top:6px;"><strong>[월복리]</strong></div>
+          <div>FV = PMT × [(1+r/12)^n - 1] / (r/12)</div>
+          <div>이자 = FV - PMT×n</div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">PMT=월납입, n=납입개월, r=연이율(소수)</p>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="compound-interest.html" class="related-link">복리계산기</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="health-insurance.html" class="related-link">건강보험료</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+
+  <!-- 본문 설명 섹션 -->
+  <div class="desc-section">
+    <h2>복리적금이자 계산기 사용 방법</h2>
+    <p class="section-desc">
+      위 계산기의 <strong>월납입액</strong>, <strong>납입 기간(개월)</strong>, <strong>연이율(%)</strong>, <strong>복리 주기</strong>를 입력하고 '계산하기'를 누르면 즉시 결과를 확인할 수 있습니다. 이자소득세 15.4% 공제 토글로 세전·세후를 전환할 수 있으며, 비과세 적금 유형(청년도약계좌, ISA 등)도 선택 가능합니다.
+    </p>
+    <p class="section-desc">
+      결과 화면에서는 <strong>총 납입원금</strong>, <strong>세전·세후 이자</strong>, <strong>이자소득세 금액</strong>, <strong>단리 vs 복리 비교</strong>, 그리고 <strong>월별 적립 스케줄 테이블</strong>을 제공합니다. 목표 금액 역산 탭에서는 원하는 만기 수령액을 입력하면 필요한 월납입액을 자동으로 계산해 줍니다.
+    </p>
+
+    <h2>복리적금이란? — 이자에 이자가 붙는 적금</h2>
+    <p class="section-desc">
+      일반 적금(단리적금)은 매월 납입한 원금에만 이자가 계산되고, 만기 때 이자를 일괄 지급합니다. 반면 <strong>복리적금</strong>은 매월 발생한 이자가 원금에 합산되어 다음 달 이자 계산 시 함께 이자가 붙는 방식입니다. 시간이 지날수록 원금이 커지면서 이자도 더 많이 붙는 '이자의 복리 효과'가 발생합니다.
+    </p>
+    <p class="section-desc">
+      실제로 국내 시중은행 정기적금 대부분은 단리 방식입니다. 복리 방식의 적금은 카카오뱅크의 '자유적금', 일부 인터넷은행 상품, 청년도약계좌 등에서 운영됩니다. 단기(12개월 이하)에서는 단리와 복리의 차이가 수천 원에 불과하지만, 기간이 길어지고 금리가 높아질수록 복리 효과가 상당합니다.
+    </p>
+    <p class="section-desc">
+      예를 들어 월 50만원, 연 5%, 5년(60개월) 기준으로 단리 이자는 약 383만8천원, 월복리 이자는 약 397만2천원으로 약 13만4천원 차이가 납니다. 청년도약계좌처럼 60개월짜리 비과세 상품은 세금까지 절감되어 실질적인 차이가 더 크게 벌어집니다.
+    </p>
+
+    <h2>복리적금 이자 계산 공식</h2>
+    <h3>1. 단리 적금 이자 공식</h3>
+    <p class="section-desc">
+      단리 적금은 각 월 납입금이 남은 기간(남은 개월수)에 비례해 이자가 계산됩니다.
+    </p>
+    <div class="formula-box">
+      총 이자 = PMT × r/12 × [n + (n-1) + (n-2) + ... + 1]<br>
+             = PMT × r/12 × n(n+1)/2<br>
+      <br>
+      PMT=월납입액, r=연이율(소수), n=납입개월수
+    </div>
+    <p class="section-desc">
+      예시: 월 50만원, 연 3.5%, 12개월<br>
+      이자 = 500,000 × 0.035/12 × 12×13/2 = 500,000 × 0.002917 × 78 ≈ 113,750원<br>
+      세전 수령액: 6,113,750원 / 세후(15.4% 공제): 6,096,253원
+    </p>
+
+    <h3>2. 월복리 적금 이자 공식</h3>
+    <p class="section-desc">
+      월복리 적금은 각 납입금에 복리를 적용합니다. 마지막 납입금부터 첫 번째 납입금 순으로 각각 남은 기간만큼 복리가 적용됩니다.
+    </p>
+    <div class="formula-box">
+      FV = PMT × [(1 + r/12)^n - 1] / (r/12)<br>
+      이자 = FV - (PMT × n)<br>
+      <br>
+      PMT=월납입액, r=연이율(소수), n=납입개월수
+    </div>
+    <p class="section-desc">
+      예시: 월 50만원, 연 3.5%, 12개월, 월복리<br>
+      FV = 500,000 × [(1.002917)^12 - 1] / 0.002917 ≈ 6,116,270원<br>
+      이자 = 6,116,270 - 6,000,000 = 116,270원<br>
+      세후 이자 = 116,270 × (1 - 0.154) ≈ 98,324원 / 세후 수령액 ≈ 6,098,324원
+    </p>
+
+    <h3>3. 분기/반기/연복리 적금</h3>
+    <p class="section-desc">
+      분기복리(n=4), 반기복리(n=2), 연복리(n=1)의 경우 각 복리 주기에 해당하는 기간 동안의 납입금을 합산한 뒤 복리를 적용합니다. 복리 주기가 짧을수록 이자가 약간 높아지지만, 단리보다는 항상 유리합니다.
+    </p>
+
+    <h2>이자소득세 15.4% — 세전과 세후 수령액 차이</h2>
+    <p class="section-desc">
+      국내 금융기관에서 발생하는 이자소득에는 <strong>이자소득세 15.4%</strong>(소득세 14% + 지방소득세 1.4%)가 원천징수됩니다. 만기 수령 시 은행이 자동으로 세금을 공제하고 지급합니다.
+    </p>
+    <p class="section-desc">
+      예를 들어 세전 이자가 100만원이면 이자소득세 15만4천원을 공제한 84만6천원이 실제 수령 이자입니다. 이 때문에 세후 실질 이율은 연 3.5%가 아닌 약 2.96%로 낮아집니다. 고금리 시기일수록 세금의 영향이 더 크게 느껴집니다.
+    </p>
+    <div class="warn-box">
+      금융소득(이자+배당)이 연간 2,000만원을 초과하면 금융소득종합과세 대상이 되어 최고 49.5%(지방세 포함) 세율이 적용될 수 있습니다. 원금이 큰 고소득자는 금융소득을 분산하는 것이 유리합니다.
+    </div>
+
+    <h2>비과세 적금 상품 완전 정리 — 세금 0원으로 만기 수령</h2>
+    <p class="section-desc">
+      이자소득세를 줄이거나 없애는 가장 효과적인 방법은 비과세 적금 상품을 활용하는 것입니다. 2026년 기준 주요 비과세·세금우대 상품을 소개합니다.
+    </p>
+
+    <h3>청년도약계좌 — 정부기여금 + 비과세</h3>
+    <p class="section-desc">
+      청년도약계좌는 만 19~34세, 개인소득 7,500만원 이하, 가구소득 중위 250% 이하인 청년이 가입할 수 있습니다. 월 최대 70만원, 납입기간 5년(60개월), 만기 수령 시 정부기여금과 이자소득 전액 비과세입니다. 소득 구간에 따라 정부기여금이 최대 월 2만4천원까지 지원됩니다.
+    </p>
+    <div class="tip-box">
+      <strong>청년도약계좌 활용 시:</strong> 월 70만원 × 60개월 = 납입원금 4,200만원. 기본금리 4.5% + 정부기여금 반영 실질 금리 약 6.0% 기준, 만기 세후 수령액 약 4,870만원(비과세). 일반 적금(세후 3.0% 기준) 대비 약 420만원 추가 이득.
+    </div>
+
+    <h3>ISA (개인종합자산관리계좌) — 비과세 + 저율 분리과세</h3>
+    <p class="section-desc">
+      ISA 계좌 안에 예적금을 편입하면 이자소득에 대해 서민형은 400만원, 일반형은 200만원까지 비과세가 적용되고 초과분은 9.9% 분리과세로 처리됩니다. 일반 세율 15.4% 대비 최대 5.5%p 낮은 세율이 적용됩니다.
+    </p>
+    <p class="section-desc">
+      ISA는 의무보유기간 3년이 있고 연간 납입한도는 2,000만원(총 1억원)입니다. 다양한 금융상품을 하나의 계좌에서 운용할 수 있어 포트폴리오 관리에도 유리합니다. 만기 자금을 연금저축으로 전환 시 추가 세액공제(최대 300만원)도 받을 수 있습니다.
+    </p>
+
+    <h3>농·수협 조합원 비과세 — 3,000만원까지 이자 0%</h3>
+    <p class="section-desc">
+      농협·수협·신협·새마을금고의 조합원으로 가입하면 예적금 원금 3,000만원까지 이자소득세가 비과세됩니다(농어촌특별세 1.4%만 부과). 조합원 가입비는 보통 1~5만원 수준으로 소액입니다. 시중은행 대비 금리가 비슷하거나 높은 경우가 많아 실질 수익률이 상당히 높아집니다.
+    </p>
+
+    <h3>세금우대 적금 — 9.9% 분리과세</h3>
+    <p class="section-desc">
+      세금우대 저축은 원금 3,000만원 한도 내에서 이자소득에 9.9%(소득세 9% + 지방소득세 0.9%) 분리과세를 적용합니다. 일반 세율 15.4% 대비 5.5%p 낮은 세율입니다. 65세 이상 고령자, 장애인 등 특정 요건 충족자에게 적용됩니다.
+    </p>
+
+    <h2>목표금액 역산 계산 — 언제 얼마씩 넣어야 할까?</h2>
+    <p class="section-desc">
+      목표 금액(세후)을 먼저 정하고, 납입 기간과 금리를 입력하면 필요한 월납입액을 역산할 수 있습니다. 공식은 다음과 같습니다.
+    </p>
+    <div class="formula-box">
+      [월복리 역산]<br>
+      세전 목표 = 세후 목표 / (1 - 세율) 또는 비과세 시 = 세후 목표<br>
+      PMT = 세전 목표 × (r/12) / [(1+r/12)^n - 1]<br>
+      <br>
+      [단리 역산]<br>
+      세전 목표 = 세후 목표 / (1 - 세율)<br>
+      원금 목표 = 세전 목표 / (1 + r/12 × n(n+1)/2/n)<br>
+      PMT = 원금 목표 / n
+    </div>
+    <p class="section-desc">
+      예를 들어 3년 후 3,000만원(세후)을 목표로, 연이율 3.5%, 월복리, 이자소득세 15.4%를 가정하면 매월 약 80만3천원이 필요합니다. 3년간 총 납입원금은 약 2,891만원, 세전 이자 약 168만원, 세후 이자 약 142만원, 최종 수령액 3,033만원 수준입니다.
+    </p>
+
+    <h2>적금 vs 예금 비교 — 어떤 상품이 더 유리할까?</h2>
+    <p class="section-desc">
+      적금과 예금은 근본적으로 이자 계산 방식이 다릅니다. 적금은 매월 일정액을 납입하기 때문에 평균 예치 기간이 전체 기간의 절반 수준에 불과합니다. 반면 예금은 처음부터 전액을 예치하므로 이자 계산 기간이 훨씬 깁니다.
+    </p>
+    <p class="section-desc">
+      동일 금리, 동일 원금으로 비교하면 예금의 세후 실효 이자율이 적금의 약 2배입니다. 예를 들어 연 3.5%짜리 적금(월 100만원, 12개월)과 예금(1,200만원, 12개월)을 비교하면:
+    </p>
+    <ul style="font-size:15px;line-height:2.2;padding-left:22px;margin-bottom:16px;">
+      <li><strong>적금</strong>: 세전 이자 약 27만3천원, 세후 이자 약 23만원, 세후 실효 이율 약 1.91%</li>
+      <li><strong>예금</strong>: 세전 이자 약 42만원, 세후 이자 약 35만5천원, 세후 실효 이율 약 2.96%</li>
+      <li>예금이 세후 이자 기준으로 약 12만5천원 더 많습니다.</li>
+    </ul>
+    <p class="section-desc">
+      그렇다면 적금은 의미가 없을까요? 그렇지 않습니다. <strong>목돈이 없는 상황에서 매월 여유자금을 모아가는 목적</strong>으로는 적금이 유일한 선택입니다. 소비 절제 효과와 자동이체를 통한 강제 저축 효과도 큰 장점입니다. 목돈을 이미 보유하고 있다면 예금이 수익 면에서 유리합니다.
+    </p>
+
+    <h2>2026년 은행별 적금 금리 비교 및 선택 가이드</h2>
+    <p class="section-desc">
+      2026년 3월 기준 시중은행 12개월 기본금리는 2.90~3.10% 수준이고, 인터넷은행(카카오뱅크, 토스뱅크, 케이뱅크)은 3.20~3.50%로 다소 높습니다. 우대금리 조건을 모두 충족하면 최고 4.00~4.20%까지 적용되는 상품도 있습니다.
+    </p>
+    <p class="section-desc">
+      우대금리 조건은 주로 급여 이체, 체크/신용카드 사용 실적, 자동이체 설정, 공과금 이체, 신규 가입 여부 등입니다. 여러 우대 조건을 동시에 충족하기 어려울 수 있으므로, 실제로 받을 수 있는 예상 금리를 기준으로 비교하는 것이 중요합니다.
+    </p>
+    <div class="tip-box">
+      <strong>금리 비교 시 확인할 사항:</strong> ① 기본금리 vs 최고금리 차이 ② 우대조건 충족 가능 여부 ③ 납입 기간(6개월/12개월/24개월/36개월)별 금리 차이 ④ 자유적립식(월 자유 납입) vs 정기납입식 구분 ⑤ 중도 해지 시 이율(일반적으로 기본금리의 50% 수준으로 낮아짐)
+    </div>
+
+    <h2>복리 주기별 적금 이자 비교</h2>
+    <p class="section-desc">
+      동일 조건(월 50만원, 연 3.5%, 36개월)에서 복리 주기에 따른 세전 이자 차이를 비교하면 아래와 같습니다.
+    </p>
+    <div class="info-box" style="margin:0 0 20px 0;">
+      <table class="result-table">
+        <thead>
+          <tr><th>납입 방식</th><th>세전 이자</th><th>세후 이자 (15.4%)</th><th>세후 수령액</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>단리</td><td>985,875원</td><td>834,090원</td><td>18,834,090원</td></tr>
+          <tr><td>연복리 (n=1)</td><td>1,003,562원</td><td>849,014원</td><td>18,849,014원</td></tr>
+          <tr><td>반기복리 (n=2)</td><td>1,007,238원</td><td>852,119원</td><td>18,852,119원</td></tr>
+          <tr><td>분기복리 (n=4)</td><td>1,009,083원</td><td>853,680원</td><td>18,853,680원</td></tr>
+          <tr><td>월복리 (n=12)</td><td>1,010,315원</td><td>854,706원</td><td>18,854,706원</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">※ 월 50만원, 연 3.5%, 36개월 기준 계산. 이자소득세 15.4% 적용.</p>
+    </div>
+    <p class="section-desc">
+      36개월 기준으로 단리와 월복리의 세후 이자 차이는 약 2만617원입니다. 금액은 작아 보이지만, 기간이 60개월로 늘어나고 금리가 5%이상으로 높아지면 차이가 눈에 띄게 커집니다. 복리 주기가 짧을수록 유리하지만, 그 차이보다는 <strong>이율 자체의 차이와 납입 기간</strong>이 훨씬 큰 영향을 미칩니다.
+    </p>
+
+    <h2>적금 활용 전략 — 목돈 마련 로드맵</h2>
+    <h3>전략 1: 단기 목표 (1~2년) — 고금리 적금 집중</h3>
+    <p class="section-desc">
+      결혼 자금, 차량 구입, 전세 보증금 마련 등 1~2년 내 목돈이 필요하다면 고금리 정기적금을 활용하세요. 인터넷은행(카카오뱅크, 토스뱅크 등)의 12개월 상품에서 우대금리까지 받으면 연 3.5~4.2% 수준이 가능합니다. 세금 절감을 위해 ISA 계좌 안에 예치하면 실질 수익이 더 높아집니다.
+    </p>
+    <h3>전략 2: 중기 목표 (3~5년) — 청년도약계좌 + ISA</h3>
+    <p class="section-desc">
+      만 19~34세 청년이라면 청년도약계좌가 최우선입니다. 정부기여금 + 비과세 효과로 실질 금리가 6% 이상이며 일반 적금과 비교 불가한 조건입니다. 가입 조건이 안 된다면 ISA 계좌에 적금을 편입해 세율을 9.9%로 낮추는 방법이 차선책입니다.
+    </p>
+    <h3>전략 3: 장기 목표 (5년 이상) — 연금저축·IRP 병행</h3>
+    <p class="section-desc">
+      노후 자금처럼 5년 이상 장기로 운용할 계획이라면 연금저축 펀드 또는 IRP를 활용하는 것이 적금보다 훨씬 유리합니다. 납입액에 대해 연 최대 148.5만원 세액공제(소득 5,500만원 이하 기준 16.5%)를 받을 수 있어 실질 수익률이 크게 높아집니다. 단, 55세 이전 중도 인출 시 기타소득세 16.5% 패널티가 있으므로 장기 목적 자금으로만 사용해야 합니다.
+    </p>
+
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <details>
+      <summary>복리적금과 단리적금의 차이는 무엇인가요?</summary>
+      <div class="faq-answer">
+        단리적금은 매월 납입한 원금에만 이자가 붙어 만기 시 일괄 지급됩니다. 복리적금은 이자가 원금에 합산되어 다음 기간에 이자에도 이자가 붙습니다. 단기(12개월 이하)에서는 차이가 크지 않지만 납입 기간이 길어지고 금리가 높을수록 복리 효과가 두드러집니다. 5년짜리 청년도약계좌처럼 기간이 긴 상품에서 복리 효과가 가장 잘 드러납니다.
+      </div>
+    </details>
+    <details>
+      <summary>적금 이자소득세 15.4%는 어떻게 계산되나요?</summary>
+      <div class="faq-answer">
+        이자소득세는 세전 이자에 15.4%(소득세 14% + 지방소득세 1.4%)를 곱한 금액입니다. 은행이 만기 지급 시 자동으로 공제합니다. 예를 들어 세전 이자 100만원이면 이자소득세 15만4천원을 공제한 84만6천원이 실수령 이자입니다. 비과세 또는 세금우대 상품은 세율이 달리 적용됩니다.
+      </div>
+    </details>
+    <details>
+      <summary>청년희망적금과 청년도약계좌는 비과세인가요?</summary>
+      <div class="faq-answer">
+        청년희망적금(2022년 출시)은 이자소득세 비과세 혜택이 있었습니다. 청년도약계좌(2023년 출시)는 만기 5년, 월 최대 70만원 납입 시 정부기여금 + 이자소득 비과세 혜택을 제공합니다. 2026년 기준 만 19~34세, 개인소득 7,500만원 이하(가구소득 중위 250% 이하) 조건을 충족해야 가입 가능합니다.
+      </div>
+    </details>
+    <details>
+      <summary>목표 금액을 위한 월납입액은 어떻게 계산하나요?</summary>
+      <div class="faq-answer">
+        목표금액 역산 공식은 PMT = FV × (r/12) / [(1+r/12)^(n×t) - 1]입니다. 예를 들어 3년 후 3,000만원을 모으고 싶고 연이율 3.5%, 월복리라면 월납입액은 약 80만3천원이 필요합니다. 위 계산기의 '목표금액 역산' 탭에서 자동 계산이 가능합니다.
+      </div>
+    </details>
+    <details>
+      <summary>ISA 계좌로 적금을 들면 절세가 얼마나 되나요?</summary>
+      <div class="faq-answer">
+        ISA(개인종합자산관리계좌)에서는 이자·배당소득에 대해 서민형 400만원, 일반형 200만원까지 비과세, 초과분은 9.9% 분리과세가 적용됩니다. 일반 세율 15.4% 대비 최대 5.5%p 낮은 세율입니다. 예를 들어 이자소득이 100만원이면 일반 적금은 세금 15만4천원, ISA(한도 내)는 세금 0원으로 15만4천원 절세 효과가 발생합니다.
+      </div>
+    </details>
+    <details>
+      <summary>적금 중도해지 시 이자는 얼마나 받나요?</summary>
+      <div class="faq-answer">
+        적금을 중도해지하면 원래 약정금리가 아닌 중도해지이율이 적용됩니다. 중도해지이율은 보통 약정금리의 10~50% 수준으로 매우 낮습니다. 예를 들어 약정금리 3.5%짜리 적금을 6개월 만에 해지하면 0.5~1.0%의 중도해지이율이 적용될 수 있습니다. 급한 경우라면 적금 담보대출을 활용해 약정금리+가산금리(0.5~1.0%)로 빌리는 것이 실질적으로 유리한 경우가 많습니다.
+      </div>
+    </details>
+    <details>
+      <summary>2026년 기준 가장 금리 높은 적금 상품은?</summary>
+      <div class="faq-answer">
+        2026년 3월 기준 일반 시중은행 12개월 최고금리는 3.6~3.8% 수준이며, 인터넷은행(카카오뱅크, 토스뱅크, 케이뱅크)은 우대조건 충족 시 4.0~4.2%까지 가능합니다. 청년도약계좌는 정부기여금을 포함하면 실질 금리가 6.0% 이상으로 가장 높습니다. 저축은행, 상호금융권(신협, 새마을금고)에서 4.5~5.0% 이상 고금리 상품을 찾을 수 있지만 예금자보호 한도(5,000만원)를 확인해야 합니다.
+      </div>
+    </details>
+    <details>
+      <summary>적금과 예금 중 어느 것이 더 유리한가요?</summary>
+      <div class="faq-answer">
+        동일 금리, 동일 원금 기준으로 세후 실효 이율은 예금이 적금의 약 2배입니다. 이미 목돈이 있다면 예금이 수익 면에서 유리합니다. 하지만 목돈이 없고 매월 여유자금을 저축해야 한다면 적금이 유일한 선택입니다. 결론적으로 적금과 예금 중 무엇이 더 유리한가보다는 자신의 현금흐름 상황에 맞는 상품을 선택하는 것이 중요합니다.
+      </div>
+    </details>
+
+    <div class="related-pages">
+      <h2>관련 계산기</h2>
+      <ul>
+        <li><a href="compound-interest.html">복리 계산기 (투자·ETF)</a></li>
+        <li><a href="loan.html">대출이자 계산기</a></li>
+        <li><a href="salary.html">연봉 실수령액 계산기</a></li>
+        <li><a href="income-tax.html">종합소득세 계산기</a></li>
+        <li><a href="capital-gains.html">양도소득세 계산기</a></li>
+        <li><a href="severance.html">퇴직금 계산기</a></li>
+        <li><a href="health-insurance.html">건강보험료 계산기</a></li>
+        <li><a href="acquisition-tax.html">취득세 계산기</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align:center;padding:32px 16px;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border);margin-top:40px;">
+  <p>calcmoney.kr — 무료 금융 계산기</p>
+  <p style="margin-top:6px;">본 계산기는 참고용이며, 실제 적금 이자는 금융기관 약관에 따라 다를 수 있습니다.</p>
+</footer>
+
+<script>
+// ==================== 유틸 ====================
+function fmt(n) {
+  return Math.round(n).toLocaleString('ko-KR') + '원';
+}
+function fmtNoUnit(n) {
+  return Math.round(n).toLocaleString('ko-KR');
+}
+
+// ==================== 탭 전환 ====================
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ==================== 비과세 토글 ====================
+function toggleTaxFree() {
+  const on = document.getElementById('taxFreeToggle').checked;
+  document.getElementById('taxFreeGroup').style.display = on ? 'block' : 'none';
+  if (on) {
+    document.getElementById('taxToggle').checked = false;
+  }
+}
+
+// ==================== 이자 계산 핵심 함수 ====================
+// compFreq: 0=단리, 1=연복리, 2=반기복리, 4=분기복리, 12=월복리
+function calcSavings(pmt, n, annualRate, compFreq) {
+  const r = annualRate / 100;
+  let fv = 0;
+  let totalInterest = 0;
+
+  if (compFreq === 0) {
+    // 단리: 이자 = PMT * r/12 * n*(n+1)/2
+    const grossInterest = pmt * (r / 12) * (n * (n + 1) / 2);
+    fv = pmt * n + grossInterest;
+    totalInterest = grossInterest;
+  } else {
+    // 복리: FV = PMT * [(1+r/freq)^(freq*t) - 1] / (r/freq)
+    // 단, 적금은 월납입이므로 각 납입금에 남은 기간 복리 적용
+    // 표준 공식: FV = PMT * [(1+r/n_comp)^n_months - 1] / (r/n_comp)
+    // where n_comp = compFreq (per year), n_months = 납입개월
+    // 월 이자율로 환산
+    const rPerComp = r / compFreq;
+    const nComp = n * compFreq / 12; // 총 복리 횟수 (비정수 가능)
+
+    // 월복리일 경우 표준 적금 공식 사용
+    if (compFreq === 12) {
+      const rM = r / 12;
+      fv = pmt * ((Math.pow(1 + rM, n) - 1) / rM);
+      totalInterest = fv - pmt * n;
+    } else {
+      // 분기/반기/연복리: 각 납입금을 해당 복리 주기에 맞게 계산
+      // 월납입을 복리 주기 단위로 합산 후 복리 적용
+      const monthsPerPeriod = 12 / compFreq; // 한 복리 주기의 개월 수
+      const rPerPeriod = rPerComp;
+      const totalPeriods = Math.ceil(n / monthsPerPeriod);
+      fv = 0;
+      for (let p = 0; p < totalPeriods; p++) {
+        const periodsRemaining = totalPeriods - p;
+        const monthsInThisPeriod = Math.min(monthsPerPeriod, n - p * monthsPerPeriod);
+        const pmtInPeriod = pmt * monthsInThisPeriod;
+        fv += pmtInPeriod * Math.pow(1 + rPerPeriod, periodsRemaining - 1);
+      }
+      // 마지막 기간 보정: 마지막 기간에 납입된 금액은 복리 0회
+      // 위 계산이 기말 납입 기준이므로 마지막 주기는 periodsRemaining-1 = 0 이 됨 (정상)
+      totalInterest = fv - pmt * n;
+    }
+  }
+  return { fv, totalInterest };
+}
+
+// 세금 계산
+function applyTax(grossInterest, taxMode, taxFreeType) {
+  const TAX_RATE = 0.154;
+  const TAX_RATE_SEP = 0.099; // 분리과세 9.9%
+
+  if (!taxMode) {
+    // 세전 (세금 없음)
+    return { tax: 0, netInterest: grossInterest };
+  }
+
+  const taxFreeOn = document.getElementById('taxFreeToggle').checked;
+  if (taxFreeOn) {
+    const type = document.getElementById('taxFreeType').value;
+    if (type === 'full') {
+      return { tax: 0, netInterest: grossInterest };
+    } else if (type === 'isa') {
+      const exempt = 4000000;
+      const taxable = Math.max(0, grossInterest - exempt);
+      const tax = taxable * TAX_RATE_SEP;
+      return { tax, netInterest: grossInterest - tax };
+    } else if (type === 'isa_gen') {
+      const exempt = 2000000;
+      const taxable = Math.max(0, grossInterest - exempt);
+      const tax = taxable * TAX_RATE_SEP;
+      return { tax, netInterest: grossInterest - tax };
+    } else if (type === 'tax_benefit') {
+      const tax = grossInterest * TAX_RATE_SEP;
+      return { tax, netInterest: grossInterest - tax };
+    }
+  }
+
+  // 일반 과세
+  const tax = grossInterest * TAX_RATE;
+  return { tax, netInterest: grossInterest - tax };
+}
+
+// ==================== 탭1: 적금 계산 ====================
+function calculate() {
+  const pmt = parseFloat(document.getElementById('monthly').value);
+  const n = parseInt(document.getElementById('months').value);
+  const annualRate = parseFloat(document.getElementById('rate').value);
+  const compFreq = parseInt(document.getElementById('compFreq').value);
+  const taxMode = document.getElementById('taxToggle').checked;
+
+  if (!pmt || pmt <= 0 || !n || n <= 0 || !annualRate || annualRate <= 0) {
+    alert('월납입액, 납입 기간, 연이율을 올바르게 입력해주세요.');
+    return;
+  }
+
+  const principal = pmt * n;
+
+  // 선택한 복리 방식
+  const { fv, totalInterest: grossInterest } = calcSavings(pmt, n, annualRate, compFreq);
+  const { tax, netInterest } = applyTax(grossInterest, taxMode, null);
+  const netFV = principal + netInterest;
+
+  // 단리
+  const { totalInterest: simpleInterest } = calcSavings(pmt, n, annualRate, 0);
+  const { tax: simpleTax, netInterest: simpleNetInterest } = applyTax(simpleInterest, taxMode, null);
+  const simpleNetFV = principal + simpleNetInterest;
+
+  // 월복리 (비교용)
+  const { totalInterest: monthlyInterest } = calcSavings(pmt, n, annualRate, 12);
+  const { netInterest: monthlyNetInterest } = applyTax(monthlyInterest, taxMode, null);
+  const monthlyNetFV = principal + monthlyNetInterest;
+
+  const freqLabels = { 0: '단리', 12: '월복리', 4: '분기복리', 2: '반기복리', 1: '연복리' };
+  const freqLabel = freqLabels[compFreq] || '복리';
+
+  // 메인 결과
+  document.getElementById('resMainLabel').textContent = `세${taxMode ? '후' : '전'} 수령액 (${freqLabel})`;
+  document.getElementById('resMainValue').textContent = fmt(netFV);
+  document.getElementById('resMainSub').textContent = `총 납입원금 ${fmtNoUnit(principal)}원 / 세${taxMode ? '후' : '전'} 이자 ${fmtNoUnit(netInterest)}원`;
+
+  document.getElementById('resPrincipal').textContent = fmt(principal);
+  document.getElementById('resInterestGross').textContent = fmt(grossInterest);
+  document.getElementById('resTax').textContent = taxMode ? fmt(tax) : '비과세';
+  document.getElementById('resInterestNet').textContent = fmt(netInterest);
+
+  document.getElementById('resSimpleNet').textContent = fmt(simpleNetFV);
+  document.getElementById('resCompNet').textContent = fmt(netFV);
+  document.getElementById('resMonthlyCompNet').textContent = fmt(monthlyNetFV);
+  document.getElementById('resCompBonus').textContent = fmt(netFV - simpleNetFV);
+
+  // 월별 스케줄 생성 (최대 60개월)
+  buildSchedule(pmt, Math.min(n, 60), annualRate, compFreq);
+
+  document.getElementById('result').style.display = 'block';
+}
+
+function buildSchedule(pmt, n, annualRate, compFreq) {
+  const r = annualRate / 100;
+  const rM = r / 12;
+  const tbody = document.getElementById('scheduleBody');
+  tbody.innerHTML = '';
+
+  let cumPrincipal = 0;
+  let cumBalance = 0;
+  let cumInterest = 0;
+
+  for (let m = 1; m <= n; m++) {
+    cumPrincipal += pmt;
+    let monthInterest = 0;
+
+    if (compFreq === 0) {
+      // 단리: 당월 이자 = 해당 월 이전 납입 원금에 월이율 적용
+      // 각 납입금은 납입한 달부터 이자 발생
+      monthInterest = cumPrincipal * rM - pmt * rM; // 이전 잔액에만 이자
+      // 더 정확히: 이번 달 납입 전 잔액(원금만) × 월이율
+      monthInterest = (cumPrincipal - pmt) * rM;
+    } else if (compFreq === 12) {
+      // 월복리: 이전 잔액(원금+이자) × 월이율
+      monthInterest = cumBalance * rM;
+    } else {
+      // 분기/반기/연복리: 복리 주기에 해당하는 달에만 이자 반영
+      const monthsPerPeriod = 12 / compFreq;
+      if (m % monthsPerPeriod === 0) {
+        monthInterest = cumBalance * (r / compFreq);
+      } else {
+        monthInterest = 0;
+      }
+    }
+
+    cumInterest += monthInterest;
+    cumBalance = cumPrincipal + cumInterest;
+
+    const tr = document.createElement('tr');
+    const isLast = m === n;
+    tr.innerHTML = `
+      <td>${m}</td>
+      <td>${fmtNoUnit(cumPrincipal)}원</td>
+      <td>${fmtNoUnit(monthInterest)}원</td>
+      <td>${fmtNoUnit(cumInterest)}원</td>
+      <td>${fmtNoUnit(cumBalance)}원</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+// ==================== 탭2: 목표금액 역산 ====================
+function calcReverse() {
+  const target = parseFloat(document.getElementById('revTarget').value);
+  const n = parseInt(document.getElementById('revMonths').value);
+  const annualRate = parseFloat(document.getElementById('revRate').value);
+  const compFreq = parseInt(document.getElementById('revCompFreq').value);
+  const taxMode = document.getElementById('revTaxToggle').checked;
+
+  if (!target || target <= 0 || !n || n <= 0 || !annualRate || annualRate <= 0) {
+    alert('모든 값을 올바르게 입력해주세요.');
+    return;
+  }
+
+  const TAX_RATE = 0.154;
+  const r = annualRate / 100;
+  const rM = r / 12;
+
+  // 세후 목표금액 → 세전 목표금액 역산
+  // 세후 FV = 원금 + 세전이자*(1-세율)
+  // 세전 FV와 원금의 관계: 세전이자 = FV_세전 - 원금
+  // 세후 FV = 원금 + (FV_세전 - 원금)*(1-세율)
+  // target = PMT*n + (FV_세전 - PMT*n)*(1-TAX_RATE)
+  // 목표 세전 FV = (target - PMT*n*(1-TAX_RATE)*(1-1)) -> 직접 PMT 역산
+
+  let pmt;
+  if (compFreq === 0) {
+    // 단리: FV = PMT*n + PMT * r/12 * n(n+1)/2
+    // 세후 FV = PMT*n + [PMT * r/12 * n(n+1)/2] * (1 - TAX)
+    const factor = taxMode
+      ? (n + (r / 12) * (n * (n + 1) / 2) * (1 - TAX_RATE))
+      : (n + (r / 12) * (n * (n + 1) / 2));
+    pmt = target / factor;
+  } else if (compFreq === 12) {
+    // 월복리: FV_세전 = PMT * [(1+rM)^n - 1] / rM
+    // 세후 FV = PMT*n + (FV_세전 - PMT*n) * (1-TAX)
+    // target = PMT*n + [PMT*[(1+rM)^n-1]/rM - PMT*n] * (1-TAX)
+    const compoundFactor = (Math.pow(1 + rM, n) - 1) / rM;
+    const factor = taxMode
+      ? (n + (compoundFactor - n) * (1 - TAX_RATE))
+      : compoundFactor;
+    pmt = target / factor;
+  } else {
+    // 분기/반기/연복리 근사: 월복리와 유사하게 처리
+    const rPerComp = r / compFreq;
+    const monthsPerPeriod = 12 / compFreq;
+    const totalPeriods = Math.ceil(n / monthsPerPeriod);
+    // FV 계산 함수를 이용해 PMT=1로 계산 후 비율 적용
+    const { fv: fv1, totalInterest: int1 } = calcSavings(1, n, annualRate, compFreq);
+    const factor = taxMode
+      ? (n + int1 * (1 - TAX_RATE))
+      : fv1;
+    pmt = target / factor;
+  }
+
+  const principal = pmt * n;
+  const { fv: fvGross, totalInterest: grossInterest } = calcSavings(pmt, n, annualRate, compFreq);
+  const tax = taxMode ? grossInterest * TAX_RATE : 0;
+  const netInterest = grossInterest - tax;
+  const netFV = principal + netInterest;
+
+  const freqLabels = { 0: '단리', 12: '월복리', 4: '분기복리', 2: '반기복리', 1: '연복리' };
+
+  document.getElementById('revMonthlyResult').textContent = fmt(pmt);
+  document.getElementById('revSub').textContent = `${n}개월 납입 / ${freqLabels[compFreq]} / 연 ${annualRate}%`;
+  document.getElementById('revTargetShow').textContent = fmt(target);
+  document.getElementById('revPrincipalShow').textContent = fmt(principal);
+  document.getElementById('revInterestGrossShow').textContent = fmt(grossInterest);
+  document.getElementById('revTaxShow').textContent = taxMode ? fmt(tax) : '비과세';
+  document.getElementById('revNetShow').textContent = fmt(netFV);
+
+  document.getElementById('revResult').style.display = 'block';
+}
+
+// ==================== 탭3: 적금 vs 예금 비교 ====================
+function calcCompare() {
+  const monthly = parseFloat(document.getElementById('cmpMonthly').value);
+  const months = parseInt(document.getElementById('cmpMonths').value);
+  const savRate = parseFloat(document.getElementById('cmpSavRate').value);
+  const depRate = parseFloat(document.getElementById('cmpDepRate').value);
+
+  if (!monthly || !months || !savRate || !depRate) {
+    alert('모든 값을 입력해주세요.');
+    return;
+  }
+
+  const TAX_RATE = 0.154;
+  const principal = monthly * months;
+
+  // 적금 (월복리)
+  const { fv: savFV, totalInterest: savGrossInt } = calcSavings(monthly, months, savRate, 12);
+  const savTax = savGrossInt * TAX_RATE;
+  const savNetInt = savGrossInt - savTax;
+  const savNetFV = principal + savNetInt;
+  const savEffRate = (savNetInt / principal) * (12 / months) * 100;
+
+  // 예금 (만기 일시 지급, 단리)
+  const depGrossInt = principal * (depRate / 100) * (months / 12);
+  const depTax = depGrossInt * TAX_RATE;
+  const depNetInt = depGrossInt - depTax;
+  const depNetFV = principal + depNetInt;
+  const depEffRate = (depNetInt / principal) * (12 / months) * 100;
+
+  document.getElementById('cmpSavPrincipal').textContent = fmt(principal);
+  document.getElementById('cmpSavInterestGross').textContent = fmt(savGrossInt);
+  document.getElementById('cmpSavTax').textContent = fmt(savTax);
+  document.getElementById('cmpSavNet').textContent = fmt(savNetFV);
+  document.getElementById('cmpSavEffRate').textContent = savEffRate.toFixed(2) + '%';
+
+  document.getElementById('cmpDepPrincipal').textContent = fmt(principal);
+  document.getElementById('cmpDepInterestGross').textContent = fmt(depGrossInt);
+  document.getElementById('cmpDepTax').textContent = fmt(depTax);
+  document.getElementById('cmpDepNet').textContent = fmt(depNetFV);
+  document.getElementById('cmpDepEffRate').textContent = depEffRate.toFixed(2) + '%';
+
+  const diff = depNetFV - savNetFV;
+  const tipBox = document.getElementById('cmpTipBox');
+  if (diff > 0) {
+    tipBox.innerHTML = `<strong>예금이 ${fmt(diff)} 더 유리합니다.</strong> 동일 원금 기준 예금 실효이율(${depEffRate.toFixed(2)}%)이 적금(${savEffRate.toFixed(2)}%)보다 높습니다. 목돈이 있다면 예금 예치가 더 유리합니다.`;
+    tipBox.style.background = '#e8f0fe';
+    tipBox.style.borderLeftColor = 'var(--primary)';
+  } else {
+    tipBox.innerHTML = `<strong>적금이 ${fmt(-diff)} 더 유리합니다.</strong> 적금 금리가 높거나 납입 기간 중 금리 우대를 받는 경우 적금이 유리할 수 있습니다.`;
+    tipBox.style.background = '#e8f5e9';
+    tipBox.style.borderLeftColor = '#34a853';
+  }
+
+  document.getElementById('cmpResult').style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>육아휴직급여 계산기 - 2026년 월별 수급액 자동 계산 | 6+6 부모육아휴직 반영</title>
+  <meta name="description" content="2026년 기준 육아휴직급여를 자동 계산합니다. 월 통상임금, 육아휴직 기간, 6+6 부모육아휴직제 적용 여부를 입력하면 월별 급여액과 사후지급금, 총 수급액을 확인할 수 있습니다.">
+  <link rel="canonical" href="https://calcmoney.kr/parental-leave">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="육아휴직급여 계산기 - 2026년 월별 수급액 자동 계산">
+  <meta property="og:description" content="2026년 기준 육아휴직급여를 자동 계산합니다. 6+6 부모육아휴직제, 사후지급금(25%) 포함.">
+  <meta property="og:url" content="https://calcmoney.kr/parental-leave">
+  <meta property="og:image" content="https://calcmoney.kr/img/og-parental-leave.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "육아휴직급여는 얼마나 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 육아휴직급여는 기간에 따라 다릅니다. 첫 3개월은 통상임금의 100%(상한 250만원, 하한 70만원), 4~6개월은 통상임금의 100%(6+6 부모육아휴직제 적용 시 상한 단계적 최대 450만원), 7~12개월은 통상임금의 80%(상한 150만원, 하한 70만원)가 지급됩니다. 또한 매월 지급액의 25%는 사후지급금으로 복직 후 6개월 근속 시 받습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "6+6 부모육아휴직제란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "6+6 부모육아휴직제는 같은 자녀에 대해 부모 모두 육아휴직을 사용할 때 적용되는 제도입니다. 부모 각각의 육아휴직 첫 6개월 동안 통상임금 100%를 지급하며, 상한액이 월별로 단계적으로 상향됩니다(1개월차 200만원 → 2개월차 250만원 → 3개월차 300만원 → 4개월차 350만원 → 5개월차 400만원 → 6개월차 450만원). 2024년 1월 1일 이후 출생한 자녀를 대상으로 확대 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "육아휴직급여 사후지급금이란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "사후지급금은 육아휴직급여의 25%를 육아휴직 중에는 지급하지 않고, 육아휴직 종료 후 같은 사업장에 복직하여 6개월 이상 근속한 경우에 한꺼번에 지급하는 제도입니다. 즉, 육아휴직 중에는 월 지급액의 75%만 받고, 나머지 25%는 복직 후 6개월이 지난 시점에 일괄 수령합니다. 이를 통해 근로자의 직장 복귀를 유도합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "육아휴직급여 신청 방법과 기간은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "육아휴직급여는 육아휴직 시작일 이후 1개월이 지난 때부터 끝난 날 이후 12개월 이내에 신청해야 합니다. 고용보험 홈페이지(ei.go.kr)나 거주지 관할 고용센터를 통해 신청할 수 있습니다. 매월 신청하거나 한꺼번에 신청 모두 가능합니다. 고용보험 가입 기간이 180일 이상이어야 하며, 육아휴직을 30일 이상 사용해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "통상임금이란 무엇이고 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "통상임금은 근로자에게 정기적·일률적으로 지급하기로 정해진 시간급·일급·주급·월급 또는 도급금액을 말합니다. 기본급과 직무수당, 직책수당 등 고정적으로 지급되는 수당을 포함합니다. 식대, 교통비도 취업규칙에 일률적으로 지급하도록 규정된 경우 포함됩니다. 반면 성과급, 초과근무수당, 연차수당 등 변동적인 항목은 제외됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월급 300만원이면 육아휴직급여를 얼마나 받나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "월 통상임금 300만원 기준으로 일반 육아휴직 시, 1~3개월은 통상임금 100%인 300만원(사전지급 225만원, 사후 75만원), 7~12개월은 80%인 240만원(사전지급 180만원, 사후 60만원)이 지급됩니다. 6개월 기준 총 수급액은 약 1,680만원(사전 1,260만원 + 사후 420만원)이며, 12개월 전체 이용 시 약 2,880만원(사전 2,160만원 + 사후 720만원)입니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .month-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+    .month-table th {
+      background: #f1f3f4;
+      padding: 8px 10px;
+      text-align: right;
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+      font-size: 12px;
+    }
+    .month-table th:first-child { text-align: center; }
+    .month-table td {
+      padding: 8px 10px;
+      text-align: right;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 13px;
+    }
+    .month-table td:first-child { text-align: center; color: var(--text-muted); font-weight: 600; }
+    .month-table tr:hover td { background: #fafafa; }
+    .month-table tr.total-row td { font-weight: 700; color: var(--primary); border-top: 2px solid var(--border); }
+    .month-table tr.phase-1 td { background: #e8f5e9; }
+    .month-table tr.phase-2 td { background: #e3f2fd; }
+    .month-table tr.phase-3 td { background: #fff3e0; }
+    .phase-legend {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+    .phase-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .phase-legend .dot {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+    .badge-66 {
+      display: inline-block;
+      background: #e91e63;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .result-summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .summary-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 14px 12px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .summary-card .s-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+    .summary-card .s-value { font-size: 17px; font-weight: 700; color: var(--text); }
+    .summary-card.accent .s-value { color: var(--primary); }
+    .table-wrap { overflow-x: auto; margin-top: 10px; }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: white;
+    }
+    .checkbox-group:hover { border-color: var(--primary); background: #f8f9ff; }
+    .checkbox-group input[type="checkbox"] {
+      width: 18px; height: 18px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+    .checkbox-group .cb-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .checkbox-group .cb-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="unemployment.html">실업급여</a>
+      <a href="parental-leave.html" class="active">육아휴직급여</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <!-- 왼쪽: 계산기 + 월별 상세표 -->
+    <div>
+      <div class="calc-box">
+        <h1>육아휴직급여 계산기</h1>
+        <p class="desc">2026년 기준 육아휴직급여 예상 수급액을 자동 계산합니다. 월 통상임금, 육아휴직 기간, 6+6 부모육아휴직제 적용 여부를 입력하면 월별 급여액과 총 수급액(사전지급 75% + 사후지급 25%)을 확인할 수 있습니다.</p>
+
+        <div class="form-group">
+          <label>월 통상임금 <span class="hint">기본급 + 고정수당 (원 단위)</span></label>
+          <input type="number" id="monthlySalary" placeholder="예: 3000000 (300만원)" value="3000000">
+        </div>
+
+        <div class="form-group">
+          <label>육아휴직 기간</label>
+          <select id="leavePeriod">
+            <option value="1">1개월</option>
+            <option value="2">2개월</option>
+            <option value="3">3개월</option>
+            <option value="4">4개월</option>
+            <option value="5">5개월</option>
+            <option value="6" selected>6개월</option>
+            <option value="7">7개월</option>
+            <option value="8">8개월</option>
+            <option value="9">9개월</option>
+            <option value="10">10개월</option>
+            <option value="11">11개월</option>
+            <option value="12">12개월</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>6+6 부모육아휴직제 적용 여부 <span class="hint">부모 모두 육아휴직 사용 시</span></label>
+          <label class="checkbox-group" for="apply66">
+            <input type="checkbox" id="apply66">
+            <div>
+              <div class="cb-label">6+6 부모육아휴직제 적용 <span class="badge-66">NEW</span></div>
+              <div class="cb-desc">부모 모두 육아휴직 시 첫 6개월 상한 단계적 최대 450만원 (2024.1.1 이후 출생 자녀)</div>
+            </div>
+          </label>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <!-- 하이라이트 -->
+          <div class="result-highlight">
+            <div class="label">예상 총 수급액 (사전 + 사후 합계)</div>
+            <div class="value" id="rTotalAmount">-</div>
+            <div class="sub" id="rTotalSub"></div>
+          </div>
+
+          <!-- 요약 카드 -->
+          <div class="result-summary-grid">
+            <div class="summary-card">
+              <div class="s-label">사전지급 (75%)</div>
+              <div class="s-value" id="rPrePay">-</div>
+            </div>
+            <div class="summary-card accent">
+              <div class="s-label">사후지급 (25%, 복직 후)</div>
+              <div class="s-value" id="rPostPay">-</div>
+            </div>
+            <div class="summary-card">
+              <div class="s-label">육아휴직 기간</div>
+              <div class="s-value" id="rPeriod">-</div>
+            </div>
+            <div class="summary-card">
+              <div class="s-label">월 평균 지급액</div>
+              <div class="s-value" id="rMonthAvg">-</div>
+            </div>
+          </div>
+
+          <!-- 월별 상세 표 -->
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:8px;">월별 급여 상세</h3>
+          <div class="phase-legend">
+            <span><i class="dot" style="background:#a5d6a7;"></i> 1~3개월 (100%)</span>
+            <span><i class="dot" style="background:#90caf9;"></i> 4~6개월 (100%)</span>
+            <span><i class="dot" style="background:#ffcc80;"></i> 7~12개월 (80%)</span>
+          </div>
+          <div class="table-wrap">
+            <table class="month-table">
+              <thead>
+                <tr>
+                  <th style="text-align:center;">월차</th>
+                  <th>지급률</th>
+                  <th>월 급여액</th>
+                  <th>사전지급 (75%)</th>
+                  <th>사후지급 (25%)</th>
+                </tr>
+              </thead>
+              <tbody id="monthTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 급여 지급률 기준표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>육아휴직급여 지급률 기준표 (2026년)</h3>
+        <table class="result-table" style="font-size:0.87em;">
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <td>기간</td><td>지급률</td><td>상한액</td><td>하한액</td>
+          </tr>
+          <tr>
+            <td>1~3개월</td>
+            <td>통상임금 100%</td>
+            <td>월 250만원</td>
+            <td>월 70만원</td>
+          </tr>
+          <tr>
+            <td>4~6개월<br><small style="color:#888;">(일반)</small></td>
+            <td>통상임금 100%</td>
+            <td>월 250만원</td>
+            <td>월 70만원</td>
+          </tr>
+          <tr style="background:#fce4ec;">
+            <td>1~6개월<br><small style="color:#c2185b;">6+6 적용</small></td>
+            <td>통상임금 100%</td>
+            <td style="color:#c2185b;">최대 월 450만원<br><small>(단계적 상향)</small></td>
+            <td>월 70만원</td>
+          </tr>
+          <tr>
+            <td>7~12개월</td>
+            <td>통상임금 80%</td>
+            <td>월 150만원</td>
+            <td>월 70만원</td>
+          </tr>
+        </table>
+        <p style="font-size:0.82em;color:#888;margin-top:8px;">※ 지급액의 25%는 사후지급금으로 복직 6개월 후 일괄 수령</p>
+      </div>
+
+      <!-- 6+6 월별 상한 표 -->
+      <div class="info-box" style="margin-top:16px;">
+        <h3>6+6 부모육아휴직제 월별 상한액</h3>
+        <table class="result-table" style="font-size:0.87em;">
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <td>월차</td><td>1개월</td><td>2개월</td><td>3개월</td><td>4개월</td><td>5개월</td><td>6개월</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">상한액</td>
+            <td>200만원</td><td>250만원</td><td>300만원</td><td>350만원</td><td>400만원</td><td>450만원</td>
+          </tr>
+        </table>
+        <p style="font-size:0.82em;color:#888;margin-top:8px;">※ 부모 모두 해당 자녀로 육아휴직을 사용해야 적용. 2024.1.1 이후 출생 자녀 확대 적용.</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <!-- 오른쪽: 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>육아휴직급여 계산 공식</h3>
+        <ul>
+          <li><strong>1~3개월</strong>: 통상임금 × 100%<br>(상한 250만원, 하한 70만원)</li>
+          <li style="margin-top:8px;"><strong>4~6개월</strong>: 통상임금 × 100%<br>(일반 상한 250만원)</li>
+          <li style="margin-top:8px;"><strong>6+6 적용 시</strong>: 월별 상한<br>200 → 250 → 300 → 350 → 400 → 450만원</li>
+          <li style="margin-top:8px;"><strong>7~12개월</strong>: 통상임금 × 80%<br>(상한 150만원, 하한 70만원)</li>
+          <li style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px;"><strong>사전지급</strong> = 월 급여 × 75%</li>
+          <li style="margin-top:4px;"><strong>사후지급</strong> = 월 급여 × 25%<br>(복직 후 6개월 근속 시)</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>육아휴직 수급 요건</h3>
+        <ul>
+          <li>고용보험 가입 기간 <strong>180일 이상</strong></li>
+          <li>만 8세 이하 또는 초등학교 2학년 이하 자녀</li>
+          <li>육아휴직 기간 <strong>30일 이상</strong></li>
+          <li>사업주로부터 육아휴직 부여 확인서</li>
+          <li>육아휴직 개시일 이전 고용보험 피보험자</li>
+          <li>같은 자녀에 대해 최대 1년(부모 각각)</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>신청 방법</h3>
+        <ul>
+          <li>신청처: <strong>고용보험 홈페이지</strong>(ei.go.kr) 또는 고용센터</li>
+          <li>신청 시기: 육아휴직 시작 1개월 후부터 신청 가능</li>
+          <li>신청 마감: 육아휴직 종료일 이후 <strong>12개월 이내</strong></li>
+          <li>매월 신청 또는 일괄 신청 모두 가능</li>
+          <li>사후지급금: 복직 후 6개월 근속 후 별도 신청</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="unemployment.html" class="related-link">실업급여</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="health-insurance.html" class="related-link">건강보험료</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 본문 콘텐츠 섹션 -->
+<div class="container" style="padding-top:0;">
+
+  <!-- 육아휴직급여 완전 가이드 -->
+  <div class="info-box" style="margin-bottom:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);">2026년 육아휴직급여 완전 가이드</h2>
+
+    <h3 style="font-size:1em;margin-bottom:8px;">육아휴직급여란?</h3>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:16px;">
+      육아휴직급여는 만 8세 이하 또는 초등학교 2학년 이하의 자녀를 양육하기 위해 육아휴직을 사용한 근로자에게 고용보험에서 지급하는 급여입니다. 2026년 기준으로 육아휴직급여 제도는 크게 강화되어, 부모 모두 육아휴직을 활용할 수 있도록 다양한 혜택이 추가되었습니다. 특히 <strong>6+6 부모육아휴직제</strong>의 도입으로 부부가 함께 육아휴직을 사용하면 더 높은 급여를 받을 수 있게 되었습니다.
+    </p>
+
+    <h3 style="font-size:1em;margin-bottom:8px;">2026년 기준 지급 구조 상세</h3>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:8px;">
+      육아휴직급여는 사용 기간에 따라 지급률이 달라집니다. <strong>처음 3개월</strong>은 통상임금의 100%가 지급됩니다. 상한액은 월 250만원이며, 하한액은 월 70만원입니다. 즉, 통상임금이 250만원 이하인 경우 전액이 지급되고, 250만원을 초과하면 250만원만 지급됩니다.
+    </p>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:8px;">
+      <strong>4~6개월</strong> 구간에서는 일반적으로 통상임금의 100% (상한 250만원)가 지급됩니다. 그러나 6+6 부모육아휴직제를 적용받는 경우에는 상한액이 단계적으로 상향되어 4개월차 350만원, 5개월차 400만원, 6개월차 최대 450만원까지 지급받을 수 있습니다.
+    </p>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:16px;">
+      <strong>7~12개월</strong> 구간은 통상임금의 80%가 지급되며, 상한액은 월 150만원으로 하향됩니다. 하한액은 동일하게 월 70만원입니다. 따라서 육아휴직을 장기간 사용할수록 후반기 급여가 줄어들게 됩니다.
+    </p>
+
+    <h3 style="font-size:1em;margin-bottom:8px;">사후지급금 제도 상세</h3>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:16px;">
+      육아휴직급여의 <strong>25%는 사후지급금</strong>으로 처리됩니다. 즉, 매월 계산된 급여의 75%만 육아휴직 기간 중에 지급되고, 나머지 25%는 육아휴직 종료 후 동일한 사업장에 복직하여 6개월 이상 근속한 경우에 한꺼번에 지급됩니다. 예를 들어 월 급여가 200만원이라면 매월 150만원이 지급되고, 6개월 근속 후 총 50만원 × 사용 개월수가 사후지급됩니다. 사후지급금 수령을 위해서는 복직 후 별도로 신청해야 하며, 복직 6개월 후 3개월 이내에 신청하는 것이 좋습니다.
+    </p>
+
+    <h3 style="font-size:1em;margin-bottom:8px;">6+6 부모육아휴직제 상세</h3>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:8px;">
+      6+6 부모육아휴직제는 <strong>같은 자녀</strong>에 대해 부모 양쪽이 모두 육아휴직을 사용할 때 적용되는 특례 제도입니다. 부모 각각의 육아휴직 첫 6개월에 대해 통상임금의 100%를 지급하되, 상한액이 월별로 단계적으로 높아집니다. 1개월차 200만원, 2개월차 250만원, 3개월차 300만원, 4개월차 350만원, 5개월차 400만원, 6개월차 450만원입니다.
+    </p>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:16px;">
+      부모가 순차적으로 육아휴직을 사용해도 적용됩니다. 예를 들어 엄마가 먼저 6개월 사용하고, 이후 아빠가 6개월 사용해도 아빠에게 6+6 특례가 적용됩니다. 단, 육아휴직 기간이 겹치지 않아도 됩니다. 2024년 1월 1일 이후 출생한 자녀에 대해서는 특례가 더욱 확대 적용되므로, 자녀 출생일을 반드시 확인하세요.
+    </p>
+
+    <h3 style="font-size:1em;margin-bottom:8px;">육아휴직급여와 건강보험료</h3>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:16px;">
+      육아휴직 중 건강보험료는 <strong>휴직 직전 월 보수월액</strong>의 50%로 경감 적용됩니다. 또한 본인 부담금도 50%로 줄어들어 사실상 원래 보험료의 25% 수준만 납부하면 됩니다. 단, 육아휴직 중 건강보험료는 직장가입자 자격을 유지하면서 납부해야 하며, 피부양자 등록이 아닌 경우 별도로 납부 의무가 있습니다. 국민연금은 육아휴직 기간 동안 납부 예외를 신청할 수 있습니다.
+    </p>
+
+    <h3 style="font-size:1em;margin-bottom:8px;">육아기 근로시간 단축 급여와 비교</h3>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:16px;">
+      육아휴직 대신 <strong>육아기 근로시간 단축</strong>을 선택하는 경우, 단축된 근로시간에 대해 통상임금의 100%(첫 5시간)와 80%(나머지)를 지급받습니다. 육아기 근로시간 단축 급여는 육아휴직급여와 달리 근무를 계속하면서 받을 수 있다는 장점이 있습니다. 육아휴직 기간이 남아 있으면 이를 육아기 근로시간 단축으로 전환하여 사용 기간을 2배로 늘릴 수도 있습니다. 예를 들어 육아휴직 3개월 남은 경우 근로시간 단축으로 전환하면 6개월간 단축 근무가 가능합니다.
+    </p>
+
+    <h3 style="font-size:1em;margin-bottom:8px;">육아휴직급여 신청 시 주의사항</h3>
+    <p style="font-size:14px;line-height:1.8;color:#444;margin-bottom:0;">
+      육아휴직급여는 <strong>육아휴직 시작 후 1개월이 지난 시점</strong>부터 신청 가능하며, 늦어도 육아휴직 종료 후 12개월 이내에 신청해야 합니다. 이 기간을 놓치면 수급권이 소멸됩니다. 또한 육아휴직 중 다른 사업장에 취업하거나 주 15시간 이상 근로를 하면 급여 지급이 중단될 수 있습니다. 사업주가 육아휴직을 거부하거나 불이익을 주는 것은 불법이며, 이 경우 고용노동부에 신고할 수 있습니다.
+    </p>
+  </div>
+
+  <!-- FAQ 섹션 -->
+  <div class="info-box" style="margin-bottom:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">육아휴직급여를 받으려면 어떤 조건이 필요한가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.8;color:#444;font-size:14px;">육아휴직급여 수급 요건은 다음과 같습니다. (1) <strong>고용보험 피보험 단위기간이 180일 이상</strong>이어야 합니다. 이전 직장의 가입 기간도 합산됩니다. (2) <strong>만 8세 이하 또는 초등학교 2학년 이하</strong>의 자녀를 양육해야 합니다. (3) 육아휴직 기간이 <strong>30일 이상</strong>이어야 합니다. (4) 사업주로부터 육아휴직을 부여받아야 하며, 육아휴직 확인서를 제출해야 합니다. (5) 같은 자녀에 대해 부모 각각 <strong>최대 1년</strong>까지 사용 가능합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">6+6 부모육아휴직제는 어떻게 신청하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.8;color:#444;font-size:14px;">6+6 부모육아휴직제는 별도로 신청하는 것이 아니라, <strong>육아휴직급여 신청 시 자동으로 적용</strong>됩니다. 다만 같은 자녀에 대해 배우자도 육아휴직을 사용했거나 사용 중이어야 합니다. 고용보험 신청 시스템에서 배우자의 육아휴직 여부를 확인하여 자동으로 특례 상한액을 적용합니다. 만약 배우자가 육아휴직 중인 경우 배우자의 피보험자번호를 함께 제출하면 됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">육아휴직 중 부업이나 아르바이트를 해도 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.8;color:#444;font-size:14px;">원칙적으로 육아휴직 중에는 <strong>취업 활동이 금지</strong>됩니다. 다른 사업장에 취업하거나 주 15시간 이상 근로를 하는 경우 해당 기간의 급여 지급이 중단됩니다. 단, 주 15시간 미만의 단순 부업은 허용될 수 있으나 신고 의무가 있으므로 반드시 고용센터에 확인하는 것이 좋습니다. 취업 사실을 숨기면 부정수급으로 지급액의 최대 5배를 반환해야 할 수 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">통상임금과 평균임금의 차이는 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.8;color:#444;font-size:14px;"><strong>통상임금</strong>은 기본급과 정기적·일률적으로 지급되는 고정 수당(직무수당, 직책수당, 식대(취업규칙에 명시된 경우) 등)을 포함합니다. 반면 <strong>평균임금</strong>은 산정 사유 발생일 전 3개월간 지급된 임금 총액을 그 기간의 총 일수로 나눈 금액으로, 상여금, 연차수당 등 변동 요소도 포함됩니다. 육아휴직급여는 <strong>통상임금 기준</strong>으로 계산됩니다. 성과급이나 초과근무수당 같은 변동 항목은 통상임금에 포함되지 않습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">사후지급금을 못 받는 경우가 있나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.8;color:#444;font-size:14px;">다음과 같은 경우 사후지급금을 받지 못할 수 있습니다. (1) 복직 후 <strong>6개월 이내에 퇴사</strong>한 경우 (2) 복직 후 6개월 이내에 <strong>해고</strong>된 경우 (단, 사업주 귀책 사유에 의한 해고는 예외적으로 지급될 수 있음) (3) <strong>신청 기간(복직 후 6개월~9개월)</strong>을 넘긴 경우 사후지급금 신청 권리가 소멸됩니다. 또한 사후지급금 신청을 잊어버리는 경우도 있으니, 복직 후 6개월이 되는 시점에 미리 알림을 설정해두는 것이 좋습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">육아휴직 기간이 경력으로 인정되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.8;color:#444;font-size:14px;">육아휴직 기간은 <strong>근속기간에 포함</strong>됩니다. 퇴직금 산정, 연차휴가 발생 등의 기준이 되는 계속근로기간에 육아휴직 기간이 포함됩니다. 다만 연차휴가는 육아휴직 기간 비례하여 차감될 수 있습니다. 고용보험 피보험 기간도 계속 유지되므로, 향후 실업급여 수급 자격에도 영향이 없습니다. 단, 국민연금 납부 예외를 신청한 경우 해당 기간의 연금 크레딧 확인이 필요합니다. (출산크레딧 별도 적용)</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">월급 400만원이면 육아휴직급여 얼마나 받나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.8;color:#444;font-size:14px;">월 통상임금이 400만원인 경우, <strong>일반 육아휴직</strong> 기준으로 1~3개월은 상한 250만원이 적용되어 월 250만원 지급, 7~12개월은 80%(320만원)이지만 상한 150만원이 적용되어 월 150만원이 지급됩니다. <strong>6+6 적용 시</strong> 4~6개월 구간에서 단계적 상한이 적용되어 최대 400만원까지 지급(5개월차)되거나, 400만원 초과분은 6개월차 상한 450만원에도 400만원이 통상임금이므로 6개월차 400만원 전액 지급됩니다. 12개월 전체 일반 기준 총액은 약 2,400만원(사전 1,800만원 + 사후 600만원)입니다.</p>
+    </details>
+  </div>
+
+  <!-- 내부 링크 섹션 -->
+  <div class="info-box" style="margin-bottom:32px;">
+    <h3>함께 확인하면 좋은 계산기</h3>
+    <ul>
+      <li><a href="unemployment.html">실업급여 계산기</a> - 구직급여 1일 수급액 및 총 수급액 계산</li>
+      <li><a href="severance.html">퇴직금 계산기</a> - 근속연수·평균임금 기준 퇴직금 계산</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+      <li><a href="health-insurance.html">건강보험료 계산기</a> - 직장·지역가입자 건강보험료 계산</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서·개인사업자 소득세 계산</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등·원금균등·만기일시 비교</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 수급액은 고용보험(ei.go.kr) 또는 고용센터에서 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+// 2026년 기준
+const FLOOR = 700000;     // 하한 70만원
+
+// 일반 육아휴직 월별 지급액 계산
+function calcMonthBenefit(salary, month, apply66) {
+  let rate, cap;
+
+  if (month <= 3) {
+    rate = 1.0;
+    cap = 2500000; // 250만원
+  } else if (month <= 6) {
+    rate = 1.0;
+    if (apply66) {
+      // 6+6 상한: 1→200, 2→250, 3→300, 4→350, 5→400, 6→450 (만원)
+      const caps66 = [2000000, 2500000, 3000000, 3500000, 4000000, 4500000];
+      cap = caps66[month - 1];
+    } else {
+      cap = 2500000; // 일반 상한 250만원
+    }
+  } else {
+    rate = 0.8;
+    cap = 1500000; // 150만원
+  }
+
+  const raw = Math.floor(salary * rate);
+  const benefit = Math.min(Math.max(raw, FLOOR), cap);
+  return { benefit, rate, cap, raw };
+}
+
+function calculate() {
+  const salary = parseFloat(document.getElementById('monthlySalary').value) || 0;
+  const period = parseInt(document.getElementById('leavePeriod').value);
+  const apply66 = document.getElementById('apply66').checked;
+
+  if (salary <= 0) { alert('월 통상임금을 입력해주세요.'); return; }
+
+  let totalBenefit = 0;
+  const tbody = document.getElementById('monthTableBody');
+  tbody.innerHTML = '';
+
+  for (let m = 1; m <= period; m++) {
+    const { benefit, rate, cap } = calcMonthBenefit(salary, m, apply66);
+    const pre = Math.floor(benefit * 0.75);
+    const post = benefit - pre;
+    totalBenefit += benefit;
+
+    let phaseClass = '';
+    let phaseLabel = '';
+    if (m <= 3) {
+      phaseClass = 'phase-1';
+      phaseLabel = '100%';
+    } else if (m <= 6) {
+      phaseClass = 'phase-2';
+      phaseLabel = apply66 ? '100% <span style="color:#c2185b;font-size:11px;">(6+6)</span>' : '100%';
+    } else {
+      phaseClass = 'phase-3';
+      phaseLabel = '80%';
+    }
+
+    const capNote = benefit === FLOOR ? '하한 적용' : benefit >= cap ? '상한 적용' : '';
+
+    const tr = document.createElement('tr');
+    tr.className = phaseClass;
+    tr.innerHTML = `
+      <td>${m}개월차</td>
+      <td style="text-align:right;">${phaseLabel}${capNote ? ` <small style="color:#888;">(${capNote})</small>` : ''}</td>
+      <td style="text-align:right;">${fmt(benefit)}</td>
+      <td style="text-align:right;">${fmt(pre)}</td>
+      <td style="text-align:right;">${fmt(post)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // 합계 행
+  const totalPre = Math.floor(totalBenefit * 0.75);
+  const totalPost = totalBenefit - totalPre;
+  const trTotal = document.createElement('tr');
+  trTotal.className = 'total-row';
+  trTotal.innerHTML = `
+    <td>합계</td>
+    <td style="text-align:right;"></td>
+    <td style="text-align:right;">${fmt(totalBenefit)}</td>
+    <td style="text-align:right;">${fmt(totalPre)}</td>
+    <td style="text-align:right;">${fmt(totalPost)}</td>
+  `;
+  tbody.appendChild(trTotal);
+
+  // 결과 표시
+  document.getElementById('rTotalAmount').textContent = fmt(totalBenefit);
+  document.getElementById('rTotalSub').textContent = `사전지급 ${fmt(totalPre)} + 사후지급 ${fmt(totalPost)}`;
+  document.getElementById('rPrePay').textContent = fmt(totalPre);
+  document.getElementById('rPostPay').textContent = fmt(totalPost);
+  document.getElementById('rPeriod').textContent = period + '개월';
+  document.getElementById('rMonthAvg').textContent = fmt(Math.round(totalBenefit / period));
+
+  document.getElementById('result').classList.add('show');
+
+  // GA4 이벤트
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'calculate', {
+      event_category: 'parental_leave',
+      event_label: apply66 ? '6+6' : 'general',
+      value: period
+    });
+  }
+}
+
+// 엔터키 계산
+document.getElementById('monthlySalary').addEventListener('keydown', e => {
+  if (e.key === 'Enter') calculate();
+});
+</script>
+</body>
+</html>

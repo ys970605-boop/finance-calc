@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부동산 중개수수료 계산기 - 2026년 매매·전세·월세 수수료율 자동 계산</title>
+  <meta name="description" content="2026년 기준 부동산 중개수수료를 매매·전세·월세별로 자동 계산합니다. 상한 요율, 수수료, 부가세 포함 금액까지 한눈에 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/real-estate-fee">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="부동산 중개수수료 계산기 - 2026년 매매·전세·월세 수수료율 자동 계산">
+  <meta property="og:description" content="2026년 기준 부동산 중개수수료를 매매·전세·월세별로 자동 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/real-estate-fee">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"부동산 중개수수료란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"부동산 중개수수료는 공인중개사가 매매·임대 거래를 중개한 대가로 받는 보수입니다. 법정 상한 요율 이내에서 협의하여 결정하며, 매도인(임대인)과 매수인(임차인) 각자가 지불합니다."}},
+      {"@type":"Question","name":"2026년 주택 매매 중개수수료 요율은?","acceptedAnswer":{"@type":"Answer","text":"2026년 주택 매매 기준으로 5천만원 미만 0.6%(한도 25만원), 5천만~2억 미만 0.5%(한도 80만원), 2억~9억 미만 0.4%, 9억~12억 미만 0.5%, 12억~15억 미만 0.6%, 15억 이상 0.7%입니다."}},
+      {"@type":"Question","name":"월세 중개수수료 계산 방법은?","acceptedAnswer":{"@type":"Answer","text":"월세 거래금액은 보증금 + (월세 × 100)으로 환산합니다. 단, 환산 금액이 5천만원 미만인 경우 보증금 + (월세 × 70)으로 계산합니다."}},
+      {"@type":"Question","name":"중개수수료에 부가세가 붙나요?","acceptedAnswer":{"@type":"Answer","text":"개업 공인중개사(사업자)는 중개수수료에 부가가치세(10%)를 별도로 청구할 수 있습니다. 부가세 포함 시 수수료 × 1.1이 실제 지불 금액이 됩니다."}},
+      {"@type":"Question","name":"5억 아파트 전세 중개수수료는?","acceptedAnswer":{"@type":"Answer","text":"5억원 전세는 임대 요율 기준 1억~6억 구간에 해당해 0.3%가 적용됩니다. 중개수수료 상한액은 150만원이며, 부가세 포함 시 165만원입니다."}},
+      {"@type":"Question","name":"중개수수료는 꼭 상한액을 내야 하나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 법정 상한 요율은 최대 한도이며 중개사와 협의해 더 낮은 금액으로 정할 수 있습니다. 다만 상한액을 초과해 받는 것은 불법입니다."}},
+      {"@type":"Question","name":"10억 아파트 매매 중개수수료는?","acceptedAnswer":{"@type":"Answer","text":"10억원 매매는 9억~12억 구간에 해당해 상한 요율 0.5%가 적용됩니다. 수수료 상한액은 500만원이며, 부가세 포함 시 550만원입니다."}}
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="real-estate-fee.html" class="active">중개수수료</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>부동산 중개수수료 계산기</h1>
+        <p class="desc">2026년 기준 주택 중개수수료 상한액을 자동으로 계산합니다. 매매·전세·월세 모두 지원합니다.</p>
+
+        <div class="form-group">
+          <label>거래 유형</label>
+          <div class="radio-group">
+            <label><input type="radio" name="tradeType" value="sale" checked onchange="toggleRentFields()"><span>매매</span></label>
+            <label><input type="radio" name="tradeType" value="jeonse" onchange="toggleRentFields()"><span>전세</span></label>
+            <label><input type="radio" name="tradeType" value="monthly" onchange="toggleRentFields()"><span>월세</span></label>
+          </div>
+        </div>
+
+        <div class="form-group" id="priceGroup">
+          <label>거래금액 <span class="hint">만원 단위 (매매가 / 전세 보증금)</span></label>
+          <input type="number" id="price" placeholder="예: 50000 (5억)" value="" min="0">
+        </div>
+
+        <div id="monthlyFields" style="display:none;">
+          <div class="form-group">
+            <label>보증금 <span class="hint">만원 단위</span></label>
+            <input type="number" id="deposit" placeholder="예: 5000 (5천만원)" value="" min="0">
+          </div>
+          <div class="form-group">
+            <label>월세 <span class="hint">만원 단위</span></label>
+            <input type="number" id="monthly" placeholder="예: 100 (100만원)" value="" min="0">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">중개수수료 상한액 (부가세 포함)</div>
+            <div class="value" id="rTotalVat">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr>
+              <td>거래금액</td>
+              <td id="rPrice">-</td>
+            </tr>
+            <tr>
+              <td>적용 요율</td>
+              <td id="rRate">-</td>
+            </tr>
+            <tr>
+              <td>중개수수료 상한액</td>
+              <td id="rFee">-</td>
+            </tr>
+            <tr>
+              <td>부가세 (10%)</td>
+              <td id="rVat">-</td>
+            </tr>
+            <tr class="total">
+              <td>부가세 포함 합계</td>
+              <td id="rTotal">-</td>
+            </tr>
+          </table>
+
+          <div style="margin-top:16px;padding:12px;background:#fff8e1;border-radius:8px;font-size:13px;color:#795548;">
+            <strong>참고:</strong> 위 금액은 법정 <strong>상한액</strong>이며 중개사와 협의해 더 낮게 정할 수 있습니다. 부가세는 개업 공인중개사(사업자)에게만 적용됩니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 요율표 매매 -->
+      <div class="info-box" style="margin-top:24px;">
+        <h3>2026년 주택 매매 중개수수료 요율표</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <thead>
+              <tr style="background:#3b82f6;color:#fff;">
+                <th style="padding:10px 14px;text-align:left;border:1px solid #2563eb;">거래금액</th>
+                <th style="padding:10px 14px;text-align:center;border:1px solid #2563eb;">상한 요율</th>
+                <th style="padding:10px 14px;text-align:center;border:1px solid #2563eb;">한도액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f8faff;">
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">5천만원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">0.6%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">25만원</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">5천만원 이상 ~ 2억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">0.5%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">80만원</td>
+              </tr>
+              <tr style="background:#f8faff;">
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">2억원 이상 ~ 9억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">0.4%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">없음</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">9억원 이상 ~ 12억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">0.5%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">없음</td>
+              </tr>
+              <tr style="background:#f8faff;">
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">12억원 이상 ~ 15억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">0.6%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">없음</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">15억원 이상</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">0.7%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">없음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 요율표 임대 -->
+      <div class="info-box" style="margin-top:16px;">
+        <h3>2026년 주택 임대(전세·월세) 중개수수료 요율표</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <thead>
+              <tr style="background:#10b981;color:#fff;">
+                <th style="padding:10px 14px;text-align:left;border:1px solid #059669;">거래금액</th>
+                <th style="padding:10px 14px;text-align:center;border:1px solid #059669;">상한 요율</th>
+                <th style="padding:10px 14px;text-align:center;border:1px solid #059669;">한도액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f0fdf4;">
+                <td style="padding:9px 14px;border:1px solid #d1fae5;">5천만원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">0.5%</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">20만원</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;">5천만원 이상 ~ 1억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">0.4%</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">30만원</td>
+              </tr>
+              <tr style="background:#f0fdf4;">
+                <td style="padding:9px 14px;border:1px solid #d1fae5;">1억원 이상 ~ 6억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">0.3%</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">없음</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;">6억원 이상 ~ 12억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">0.4%</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">없음</td>
+              </tr>
+              <tr style="background:#f0fdf4;">
+                <td style="padding:9px 14px;border:1px solid #d1fae5;">12억원 이상 ~ 15억원 미만</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">0.5%</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">없음</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;">15억원 이상</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">0.6%</td>
+                <td style="padding:9px 14px;border:1px solid #d1fae5;text-align:center;">없음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px;color:#666;margin-top:10px;line-height:1.6;">
+          ※ 월세 거래금액 환산: 보증금 + (월세 × 100)<br>
+          단, 환산 금액이 5천만원 미만인 경우 보증금 + (월세 × 70) 적용
+        </p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>중개수수료 계산 공식</h3>
+        <ul>
+          <li><strong>기본 공식:</strong> 거래금액 × 상한 요율</li>
+          <li><strong>한도 적용:</strong> 계산값 vs 한도액 중 낮은 금액</li>
+          <li><strong>월세 환산:</strong> 보증금 + (월세 × 100)</li>
+          <li><strong>부가세:</strong> 수수료 × 10% (사업자 중개사)</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>알아두면 좋은 팁</h3>
+        <ul>
+          <li>수수료는 <strong>상한액 이내</strong>에서 협의 가능</li>
+          <li>매도인·매수인 <strong>각자 별도</strong> 지불</li>
+          <li>부가세는 사업자 등록 중개사만 청구 가능</li>
+          <li>계약 전 수수료 협의 및 영수증 수령 권고</li>
+          <li>오피스텔 등 비주택은 별도 요율 적용</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="jeonse-monthly.html" class="related-link">전월세전환</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">부동산 중개수수료란 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">부동산 중개수수료는 공인중개사가 매매·임대 거래를 중개한 대가로 받는 보수입니다. 법정 상한 요율 이내에서 협의하여 결정하며, <strong>매도인(임대인)과 매수인(임차인) 각자</strong>가 지불합니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">2026년 주택 매매 중개수수료 요율은?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2026년 주택 매매 기준으로 <strong>5천만원 미만 0.6%(한도 25만원)</strong>, 5천만~2억 미만 0.5%(한도 80만원), 2억~9억 미만 0.4%, 9억~12억 미만 0.5%, 12억~15억 미만 0.6%, <strong>15억 이상 0.7%</strong>입니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">월세 중개수수료는 어떻게 계산하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">월세 거래금액은 <strong>보증금 + (월세 × 100)</strong>으로 환산합니다. 단, 이 금액이 5천만원 미만이면 <strong>보증금 + (월세 × 70)</strong>을 적용합니다. 환산된 거래금액에 임대 요율을 곱해 수수료를 계산합니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">중개수수료에 부가세가 붙나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">개업 공인중개사(사업자 등록자)는 중개수수료에 <strong>부가가치세 10%</strong>를 별도로 청구할 수 있습니다. 부가세 포함 시 수수료 × 1.1이 실제 지불 금액이 됩니다. 단, 모든 중개사가 부가세를 청구하는 것은 아닙니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">5억 전세 중개수수료는 얼마인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">5억원 전세는 임대 요율 기준 <strong>1억~6억 구간(0.3%)</strong>에 해당합니다. 중개수수료 상한액은 150만원이며, 부가세 포함 시 <strong>165만원</strong>입니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">중개수수료는 꼭 상한액을 내야 하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">아닙니다. 법정 상한 요율은 <strong>최대 한도</strong>이며 중개사와 협의해 더 낮은 금액으로 정할 수 있습니다. 다만 상한액을 초과해 받는 것은 공인중개사법 위반으로 처벌 대상입니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">10억 아파트 매매 중개수수료는?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">10억원 매매는 <strong>9억~12억 구간(0.5%)</strong>에 해당합니다. 수수료 상한액은 500만원이며, 부가세 포함 시 <strong>550만원</strong>입니다. 협의에 따라 더 낮게 정할 수 있습니다.</p>
+    </details>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택 취득 시 납부하는 취득세</li>
+      <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 매도 시 양도세</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 주택담보대출 이자 계산</li>
+      <li><a href="jeonse-monthly.html">전월세 전환 계산기</a> - 전세·월세 전환 계산</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 세금 공제 후 실제 수령액</li>
+    </ul>
+  </div>
+
+<!-- SEO 콘텐츠 영역 -->
+<div class="container seo-content">
+
+  <!-- 1. 부동산 중개수수료란 -->
+  <section class="seo-section">
+    <h2>부동산 중개수수료 완벽 가이드</h2>
+    <p>부동산 거래를 준비 중이라면 중개수수료는 빠질 수 없는 비용입니다. 아파트 매매, 전세 계약, 월세 계약 등 어떤 거래든 공인중개사를 통하면 수수료가 발생하며, 거래금액이 클수록 수수료도 커집니다. 이 가이드에서는 2026년 기준 중개수수료의 법적 근거부터 요율, 협상 전략, 절세 방법까지 모두 설명합니다.</p>
+
+    <h3>부동산 중개수수료란 — 법적 근거</h3>
+    <p><strong>부동산 중개수수료(공인중개사 보수)</strong>는 공인중개사법 제32조 및 같은 법 시행규칙 제20조에 따라 규율됩니다. 공인중개사가 매매·교환·임대차 등의 중개를 완료하면 중개 의뢰인으로부터 받을 수 있는 보수이며, 국토교통부 고시 및 각 시·도 조례로 상한 요율을 정하고 있습니다. 상한 요율을 초과하여 수수료를 받는 것은 <strong>공인중개사법 위반</strong>으로 500만원 이하의 과태료 또는 자격 정지 처분을 받을 수 있습니다.</p>
+    <p>중요한 원칙은 수수료가 <strong>매도인(임대인)과 매수인(임차인) 각자 별도로</strong> 부담한다는 점입니다. 즉, 10억원 아파트 매매 시 매도인도 최대 500만원, 매수인도 최대 500만원을 각자 공인중개사에게 지불합니다. 합산하면 최대 1,000만원이 중개수수료로 나가게 됩니다.</p>
+
+    <h3>2026년 중개수수료 요율 개요</h3>
+    <p>2021년 10월 국토교통부 고시 개정으로 고가 주택의 중개수수료 요율이 인하되었습니다. 이전에는 6억원 이상 매매가 모두 0.9%였지만, 개정 후 구간이 세분화되어 현재의 요율 체계가 적용되고 있습니다. 이 요율은 주택(아파트·단독주택·다세대·연립주택)에 적용되며, 오피스텔·상가·토지 등 비주택 부동산은 별도 요율이 적용됩니다.</p>
+    <p>오피스텔의 경우 매매·교환 시 0.5% 이내, 임대차 시 0.4% 이내가 상한 요율이며, 상가·토지는 매매·교환·임대차 모두 0.9% 이내로 중개사와 협의해 결정합니다.</p>
+  </section>
+
+  <!-- 2. 공인중개사 vs 직거래 -->
+  <section class="seo-section">
+    <h2>공인중개사 중개 vs 직거래 — 장단점 비교</h2>
+    <p>중개수수료를 아끼기 위해 직거래(당사자 간 직접 계약)를 고려하는 분들도 있습니다. 그러나 직거래는 비용 절감 외에 상당한 위험이 따르므로 신중히 판단해야 합니다.</p>
+
+    <div class="seo-table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>공인중개사 중개</th>
+            <th>직거래</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>비용</strong></td>
+            <td>법정 상한 요율 이내 수수료 발생</td>
+            <td>중개수수료 없음</td>
+          </tr>
+          <tr>
+            <td><strong>계약 안전성</strong></td>
+            <td>공인중개사가 권리관계 확인·보증</td>
+            <td>당사자가 직접 확인 필요</td>
+          </tr>
+          <tr>
+            <td><strong>하자 발생 시</strong></td>
+            <td>공인중개사 손해배상 책임(공제보험)</td>
+            <td>법적 분쟁 당사자 간 해결</td>
+          </tr>
+          <tr>
+            <td><strong>사기 위험</strong></td>
+            <td>전세사기 등 위험 상대적으로 낮음</td>
+            <td>권리관계 미확인 시 전세사기 위험</td>
+          </tr>
+          <tr>
+            <td><strong>서류 처리</strong></td>
+            <td>중개사가 등기부·확정일자 등 안내</td>
+            <td>당사자가 직접 처리</td>
+          </tr>
+          <tr>
+            <td><strong>적합한 경우</strong></td>
+            <td>일반적인 모든 부동산 거래</td>
+            <td>지인 간 거래, 충분한 법률 지식 보유 시</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>결론적으로 수억원이 오가는 부동산 거래에서 수백만원의 수수료를 아끼려다 전세사기나 계약 하자로 수천만원을 잃는 경우가 매년 발생합니다. 특히 전세 거래의 경우 등기부등본 확인, 선순위 채권 파악, 확정일자·전입신고 절차 등 전문 지식이 필요하므로 공인중개사를 통하는 것이 안전합니다.</p>
+  </section>
+
+  <!-- 3. 중개수수료 협상 팁 -->
+  <section class="seo-section">
+    <h2>중개수수료 협상 팁 — 합법적으로 줄이는 방법</h2>
+    <p>중개수수료 상한 요율은 법이 정한 최대치이며, 중개사와 협의해 더 낮게 정하는 것은 완전히 합법적입니다. 실제로 많은 거래에서 상한 요율보다 낮은 금액으로 협의가 이루어집니다. 다음 전략을 참고하세요.</p>
+
+    <div class="tip-item">
+      <h3>팁 1. 계약 전에 먼저 협의하기</h3>
+      <p>계약서에 서명하기 전에 수수료 금액을 명확히 협의하고 서면으로 남겨두어야 합니다. 계약 완료 후 수수료를 낮추려 하면 이미 늦은 경우가 많습니다. 계약 전 "수수료 얼마로 해주실 수 있나요?"라고 직접 물어보는 것이 중요합니다.</p>
+    </div>
+
+    <div class="tip-item">
+      <h3>팁 2. 고가 거래일수록 협상 여지가 크다</h3>
+      <p>거래금액이 클수록 상한 수수료 금액도 커지므로 협상 여지가 더 큽니다. 10억원 매매의 경우 상한은 500만원이지만, 300~400만원 수준으로 협의되는 사례가 많습니다. 중개사 입장에서도 고가 거래는 한 건으로 충분한 수익이 되므로 할인 여지가 있습니다.</p>
+    </div>
+
+    <div class="tip-item">
+      <h3>팁 3. 복수 중개사 비교하기</h3>
+      <p>같은 매물이라도 여러 중개사에 문의해 수수료를 비교할 수 있습니다. 경쟁이 있는 환경에서 중개사들은 수수료를 낮추거나 추가 서비스를 제공하는 방향으로 협상에 응하는 경향이 있습니다. 단, 너무 낮은 수수료만 쫓으면 서비스 질이 떨어질 수 있으니 균형을 잡는 것이 중요합니다.</p>
+    </div>
+
+    <div class="tip-item">
+      <h3>팁 4. 부가세 별도 여부 미리 확인하기</h3>
+      <p>사업자 등록을 한 개업 공인중개사는 중개수수료에 부가가치세(10%)를 별도로 청구할 수 있습니다. 예를 들어 수수료가 300만원이라면 부가세 30만원이 더해져 실제로는 330만원을 내게 됩니다. 계약 전에 부가세 포함 여부를 반드시 확인하고, 영수증(세금계산서 또는 현금영수증)을 요청하세요.</p>
+    </div>
+
+    <div class="tip-item">
+      <h3>팁 5. 영수증과 확인서를 반드시 받기</h3>
+      <p>중개수수료를 지불한 후에는 반드시 영수증을 받아야 합니다. 세금계산서 또는 현금영수증을 받으면 소득공제 등에 활용할 수 있으며, 추후 분쟁 발생 시 증거 자료가 됩니다. 또한 <strong>중개대상물 확인·설명서</strong>와 <strong>중개보수 영수증</strong>은 공인중개사의 법적 의무 교부 서류입니다.</p>
+    </div>
+  </section>
+
+  <!-- 4. 부가세 및 세금 -->
+  <section class="seo-section">
+    <h2>중개수수료 부가세 — 언제, 얼마나 내나요?</h2>
+    <p>중개수수료와 부가세 문제는 많은 분들이 혼동하는 부분입니다. 핵심만 정리하면 다음과 같습니다.</p>
+
+    <h3>부가세가 붙는 경우</h3>
+    <p>사업자 등록을 한 <strong>개업 공인중개사(일반과세자)</strong>는 중개수수료에 <strong>부가가치세 10%</strong>를 추가로 청구할 수 있습니다. 이 경우 세금계산서를 발행합니다. 예를 들어 수수료가 200만원이면 부가세 20만원이 더해져 220만원을 지불합니다.</p>
+
+    <h3>부가세가 붙지 않는 경우</h3>
+    <p>간이과세자로 등록된 중개사나 연간 매출이 일정 기준 이하인 경우 부가세를 별도로 청구하지 않을 수 있습니다. 또한 중개사가 부가세를 청구하지 않겠다고 합의한 경우도 있습니다. 계약 전에 "부가세 별도인가요, 포함인가요?"를 직접 확인하는 것이 가장 확실합니다.</p>
+
+    <h3>법인 사업자의 경우</h3>
+    <p>사업 목적으로 부동산을 거래하는 법인이나 사업자는 중개수수료를 비용으로 처리할 수 있으며, 세금계산서를 받아 부가세를 매입세액공제로 환급받을 수 있습니다. 이 경우 실질적인 수수료 부담은 일반인보다 낮아집니다.</p>
+
+    <h3>중개수수료 현금영수증</h3>
+    <p>개인이 중개수수료를 지불하는 경우 현금영수증 발행을 요청하면 연말정산 소득공제 항목으로 활용할 수 있습니다(근로소득자 기준 신용카드 등 사용금액 소득공제). 단, 중개수수료는 현금으로 지불하는 경우가 많으므로 현금영수증 발행을 잊지 말고 요청하세요.</p>
+  </section>
+
+  <!-- 5. FAQ -->
+  <section class="seo-section">
+    <h2>부동산 중개수수료 자주 묻는 질문 (FAQ)</h2>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q1. 3억원 아파트 전세 중개수수료는 얼마인가요?</h3>
+      <p class="faq-a">3억원 전세는 임대 요율표에서 <strong>1억~6억 구간(0.3%)</strong>에 해당합니다. 중개수수료 상한액은 3억원 × 0.3% = <strong>90만원</strong>이며, 부가세 포함 시 99만원입니다. 실제로는 중개사와 협의해 이보다 낮게 정하는 경우도 많습니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q2. 5억원 아파트 매매 중개수수료는 얼마인가요?</h3>
+      <p class="faq-a">5억원 매매는 <strong>2억~9억 구간(0.4%)</strong>에 해당합니다. 수수료 상한액은 5억원 × 0.4% = <strong>200만원</strong>이며, 부가세 포함 시 220만원입니다. 매도인과 매수인이 각자 최대 220만원씩 지불하므로 합산하면 최대 440만원이 됩니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q3. 월세 보증금 1,000만원에 월세 50만원이면 중개수수료는?</h3>
+      <p class="faq-a">거래금액 환산: 1,000만원 + (50만원 × 100) = 6,000만원. 6,000만원은 임대 요율표에서 <strong>5천만~1억 구간(0.4%, 한도 30만원)</strong>에 해당합니다. 6,000만원 × 0.4% = 24만원인데 한도 30만원 이하이므로 수수료 상한은 <strong>24만원</strong>, 부가세 포함 시 26만 4,000원입니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q4. 중개수수료를 초과 요구하면 어떻게 해야 하나요?</h3>
+      <p class="faq-a">법정 상한 요율을 초과한 수수료 요구는 <strong>공인중개사법 위반</strong>입니다. 이 경우 해당 공인중개사를 관할 시·군·구청 부동산 관련 부서에 신고할 수 있습니다. 위반 시 500만원 이하의 과태료가 부과되며, 중개사 자격 정지 또는 취소 처분을 받을 수 있습니다. 수수료 협의 내역을 문자나 서면으로 남겨두면 분쟁 시 유용합니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q5. 오피스텔 중개수수료 요율은 주택과 다른가요?</h3>
+      <p class="faq-a">네, 다릅니다. 오피스텔은 비주택 부동산으로 분류되어 별도 요율이 적용됩니다. <strong>매매·교환 시 0.5% 이내</strong>, <strong>임대차 시 0.4% 이내</strong>가 상한 요율입니다. 주거용으로 실제 사용하더라도 등기부상 오피스텔로 분류되면 이 요율이 적용됩니다. 상가, 토지 등은 매매·임대 모두 0.9% 이내에서 협의합니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q6. 계약이 취소되면 중개수수료를 돌려받을 수 있나요?</h3>
+      <p class="faq-a">원칙적으로 중개 행위가 완료(계약서 작성)되면 수수료 청구 권리가 발생합니다. 그러나 중개사의 귀책사유로 계약이 무효·취소된 경우에는 수수료를 반환받거나 감액을 요청할 수 있습니다. 매수인이나 임차인의 단순 변심으로 계약이 취소된 경우 수수료는 반환되지 않는 것이 일반적입니다. 계약 전 이러한 조건을 중개사와 명확히 확인하는 것이 좋습니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q7. 직거래 후 등기 문제가 생기면 책임은 누가 지나요?</h3>
+      <p class="faq-a">직거래 시 권리 하자(선순위 채권, 가압류, 위장 임대인 등)로 손해가 발생하면 <strong>계약 당사자 간에 직접 법적 분쟁을 해결</strong>해야 합니다. 공인중개사를 통한 거래였다면 공인중개사 손해배상 공제(최대 1억원 이상)를 통해 피해를 보상받을 수 있지만, 직거래는 이 보호가 없습니다. 특히 전세 사기 피해는 직거래에서 더 많이 발생하므로 주의가 필요합니다.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Q8. 중개수수료는 언제 지불하나요?</h3>
+      <p class="faq-a">중개수수료는 원칙적으로 <strong>잔금 지급일(거래 완료일)</strong>에 지불합니다. 계약금 지급 시점에 일부를 요구하는 경우도 있지만, 계약이 성사되지 않으면 환불 문제가 생길 수 있으므로 잔금일 지급이 안전합니다. 특별한 합의가 없는 한 잔금일에 전액 지불하는 것이 일반적인 관행입니다.</p>
+    </div>
+  </section>
+
+  <!-- 6. 관련 계산기 -->
+  <section class="seo-section">
+    <h2>부동산 거래 관련 계산기</h2>
+    <p>부동산 거래 시 중개수수료 외에도 다양한 세금과 비용이 발생합니다. 아래 계산기를 함께 활용하면 전체 거래 비용을 정확히 파악할 수 있습니다.</p>
+    <ul class="seo-list">
+      <li><a href="acquisition-tax.html"><strong>취득세 계산기</strong></a> — 주택 매수 시 납부하는 취득세를 자동 계산. 1주택·2주택·법인 여부에 따라 세율이 달라집니다.</li>
+      <li><a href="capital-gains.html"><strong>양도소득세 계산기</strong></a> — 부동산 매도 시 발생하는 양도세를 계산. 1세대 1주택 비과세 여부와 보유기간 장기공제를 반영합니다.</li>
+      <li><a href="loan.html"><strong>대출이자 계산기</strong></a> — 주택담보대출 원리금 상환액과 총 이자를 계산. 원리금균등·원금균등·만기일시상환 방식 모두 지원합니다.</li>
+      <li><a href="jeonse-monthly.html"><strong>전월세 전환 계산기</strong></a> — 전세를 월세로, 또는 월세를 전세로 전환할 때 적정 보증금과 월세를 계산합니다.</li>
+      <li><a href="salary.html"><strong>연봉 실수령액 계산기</strong></a> — 세금·4대보험 공제 후 실제 받는 월급을 계산. 중개수수료 납부 여력 판단에 활용할 수 있습니다.</li>
+    </ul>
+  </section>
+
+</div>
+<!-- /SEO 콘텐츠 영역 -->
+
+<style>
+.seo-content {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+.seo-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.seo-section h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e8f0fe;
+}
+.seo-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 20px 0 8px;
+}
+.seo-section p {
+  color: #444;
+  line-height: 1.8;
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+.seo-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+.seo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.seo-table th {
+  background: #f0f4ff;
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid #dce6f0;
+}
+.seo-table td {
+  padding: 9px 14px;
+  border: 1px solid #dce6f0;
+  color: #444;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.seo-table tr:nth-child(even) td {
+  background: #f9fbff;
+}
+.seo-list {
+  padding-left: 20px;
+  margin: 8px 0 12px;
+  color: #444;
+  line-height: 2;
+  font-size: 0.95rem;
+}
+.tip-item {
+  border-left: 3px solid #4a7cdc;
+  padding-left: 16px;
+  margin-bottom: 20px;
+}
+.tip-item h3 {
+  margin-top: 0;
+  color: #1a5276;
+}
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.faq-q {
+  color: #1a5276;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.faq-a {
+  color: #444;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .seo-section {
+    padding: 20px 16px;
+  }
+  .seo-section h2 {
+    font-size: 1.15rem;
+  }
+}
+</style>
+
+<div class="container" style="margin-bottom:0">
+  <div class="info-box" style="background:#f0f7ff;border-left:4px solid #3b82f6;padding:1rem 1.25rem;margin-bottom:1.5rem">
+    <p style="margin:0">오피스텔·상가·교환 거래도 계산하려면? <a href="/real-estate-fee-detail.html" style="color:#2563eb;font-weight:600">주택·오피스텔·상가 요율 상세 계산기 →</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 수수료는 담당 중개사에 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+const fmtMan = n => {
+  const man = Math.round(n / 10000);
+  if (man >= 10000) {
+    const eok = Math.floor(man / 10000);
+    const rem = man % 10000;
+    return rem > 0 ? eok + '억 ' + rem.toLocaleString('ko-KR') + '만원' : eok + '억원';
+  }
+  return man.toLocaleString('ko-KR') + '만원';
+};
+
+function toggleRentFields() {
+  const type = document.querySelector('input[name="tradeType"]:checked').value;
+  const monthlyFields = document.getElementById('monthlyFields');
+  const priceGroup = document.getElementById('priceGroup');
+
+  if (type === 'monthly') {
+    monthlyFields.style.display = 'block';
+    priceGroup.style.display = 'none';
+  } else {
+    monthlyFields.style.display = 'none';
+    priceGroup.style.display = 'block';
+  }
+}
+
+// 매매 수수료 계산
+function getSaleFee(priceMan) {
+  // priceMan: 만원 단위
+  let rate, limit;
+  if (priceMan < 5000) {
+    rate = 0.006; limit = 250000;
+  } else if (priceMan < 20000) {
+    rate = 0.005; limit = 800000;
+  } else if (priceMan < 90000) {
+    rate = 0.004; limit = null;
+  } else if (priceMan < 120000) {
+    rate = 0.005; limit = null;
+  } else if (priceMan < 150000) {
+    rate = 0.006; limit = null;
+  } else {
+    rate = 0.007; limit = null;
+  }
+  const priceWon = priceMan * 10000;
+  const fee = priceWon * rate;
+  const finalFee = limit !== null ? Math.min(fee, limit) : fee;
+  return { rate, fee: finalFee };
+}
+
+// 임대(전세/월세) 수수료 계산
+function getRentFee(priceMan) {
+  let rate, limit;
+  if (priceMan < 5000) {
+    rate = 0.005; limit = 200000;
+  } else if (priceMan < 10000) {
+    rate = 0.004; limit = 300000;
+  } else if (priceMan < 60000) {
+    rate = 0.003; limit = null;
+  } else if (priceMan < 120000) {
+    rate = 0.004; limit = null;
+  } else if (priceMan < 150000) {
+    rate = 0.005; limit = null;
+  } else {
+    rate = 0.006; limit = null;
+  }
+  const priceWon = priceMan * 10000;
+  const fee = priceWon * rate;
+  const finalFee = limit !== null ? Math.min(fee, limit) : fee;
+  return { rate, fee: finalFee };
+}
+
+// 월세 거래금액 환산
+function convertMonthlyToPrice(depositMan, monthlyMan) {
+  // 1차 환산: 보증금 + 월세 × 100
+  const converted100 = depositMan + monthlyMan * 100;
+  if (converted100 < 5000) {
+    // 5천만원 미만이면 × 70 적용
+    return depositMan + monthlyMan * 70;
+  }
+  return converted100;
+}
+
+function calculate() {
+  const type = document.querySelector('input[name="tradeType"]:checked').value;
+  let priceMan, displayPrice;
+
+  if (type === 'monthly') {
+    const depositVal = document.getElementById('deposit').value;
+    const monthlyVal = document.getElementById('monthly').value;
+    if (!depositVal && !monthlyVal) {
+      alert('보증금 또는 월세를 입력해주세요.');
+      return;
+    }
+    const depositMan = parseFloat(depositVal) || 0;
+    const monthlyMan = parseFloat(monthlyVal) || 0;
+    priceMan = convertMonthlyToPrice(depositMan, monthlyMan);
+    const multiplier = (priceMan === depositMan + monthlyMan * 70) ? 70 : 100;
+    displayPrice = `${fmtMan(priceMan * 10000)} (보증금 ${fmtMan(depositMan * 10000)} + 월세 ${fmtMan(monthlyMan * 10000)} × ${multiplier} 환산)`;
+  } else {
+    const priceVal = document.getElementById('price').value;
+    if (!priceVal) {
+      alert('거래금액을 입력해주세요.');
+      return;
+    }
+    priceMan = parseFloat(priceVal);
+    if (priceMan <= 0) {
+      alert('올바른 거래금액을 입력해주세요.');
+      return;
+    }
+    displayPrice = fmtMan(priceMan * 10000);
+  }
+
+  let result;
+  if (type === 'sale') {
+    result = getSaleFee(priceMan);
+  } else {
+    result = getRentFee(priceMan);
+  }
+
+  const fee = result.fee;
+  const vat = fee * 0.1;
+  const totalWithVat = fee + vat;
+
+  document.getElementById('rPrice').textContent = displayPrice;
+  document.getElementById('rRate').textContent = (result.rate * 100).toFixed(1) + '%';
+  document.getElementById('rFee').textContent = fmt(fee);
+  document.getElementById('rVat').textContent = fmt(vat);
+  document.getElementById('rTotal').textContent = fmt(totalWithVat);
+  document.getElementById('rTotalVat').textContent = fmt(totalWithVat);
+  document.getElementById('rSub').textContent = `수수료 상한액 ${fmt(fee)} + 부가세 ${fmt(vat)}`;
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

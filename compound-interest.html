@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026년 복리 계산기 - 적금·투자 복리이자 자동 계산 (단리 비교 포함)</title>
+  <meta name="description" content="원금, 월 적립금, 연이율, 투자기간을 입력하면 복리이자를 자동 계산합니다. 단리 vs 복리 비교, 연도별 성장 테이블, 수익률까지 한눈에 확인하세요. 2026년 최신 기준.">
+  <link rel="canonical" href="https://calcmoney.kr/compound-interest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026년 복리 계산기 - 적금·투자 복리이자 자동 계산">
+  <meta property="og:description" content="원금·월 적립금·연이율·투자기간 입력만으로 복리이자, 단리 비교, 연도별 잔액을 즉시 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/compound-interest">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "복리란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "복리(Compound Interest)란 원금에 붙은 이자가 다시 원금에 합산되어, 다음 기간에는 그 합산된 금액 전체에 이자가 붙는 방식입니다. 단리는 항상 최초 원금에만 이자가 적용되지만, 복리는 시간이 지날수록 이자에 이자가 붙어 자산이 기하급수적으로 늘어납니다. 아인슈타인이 '세상에서 8번째 불가사의'라고 표현한 개념입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "복리 계산 공식은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "거치식(초기 원금만): FV = P × (1 + r/n)^(n×t), 적립식(월 추가 납입 포함): FV = P×(1+r/n)^(n×t) + PMT×((1+r/n)^(n×t) - 1)/(r/n) 입니다. 여기서 P=초기 원금, r=연이율(소수), n=연간 복리 횟수, t=투자기간(년), PMT=1회당 추가 납입금입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "복리 주기(월/분기/반기/연)에 따라 수익이 달라지나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 복리 주기가 짧을수록 최종 수익이 조금 더 커집니다. 예를 들어 연 5% 이율로 1,000만 원을 10년 투자할 때, 연복리는 약 1,628만 원, 월복리는 약 1,647만 원으로 월복리가 약 19만 원 더 많습니다. 단, 차이는 이율이 높거나 기간이 길수록 더 크게 벌어집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "단리와 복리의 실제 차이는 얼마나 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "원금 1,000만 원, 연 5% 이율, 20년 투자 시 단리는 2,000만 원(이자 1,000만 원), 복리(연)는 약 2,653만 원(이자 1,653만 원)으로 복리가 약 653만 원 더 많습니다. 투자 기간이 길어질수록 복리와 단리의 격차는 기하급수적으로 벌어집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "72의 법칙이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "72의 법칙은 복리로 원금이 2배가 되는 기간을 빠르게 추정하는 방법입니다. '72 ÷ 연이율(%)' 으로 계산합니다. 예를 들어 연 6% 이율이면 72÷6=12년, 연 8%이면 72÷8=9년이 2배가 되는 데 걸리는 대략적인 기간입니다. 투자 계획을 빠르게 판단할 때 유용합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월 적립금(추가 납입)은 어떻게 계산에 반영되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "월 적립금(PMT)은 매월 말 납입하는 방식(기말 불입)으로 계산됩니다. 복리 주기가 월이 아닌 경우(분기/반기/연)에는 해당 복리 주기에 맞춰 납입금을 합산한 뒤 복리를 적용합니다. 즉, 분기 복리라면 월 적립금×3을 분기마다 납입하는 것으로 계산합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "적금과 ETF 투자, 어느 쪽이 복리 효과가 큰가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "적금은 이자에 15.4% 이자소득세가 부과되어 세후 실질 이율이 낮아집니다. ETF(특히 연금계좌 내)는 세금 이연 효과로 복리가 온전히 쌓입니다. 예를 들어 세전 연 5% 적금은 세후 약 4.23%, 연금계좌 ETF는 55세 이후 인출 시 3.3~5.5% 저율 분리과세가 적용됩니다. 장기 투자일수록 세후 복리가 큰 금융상품을 선택하는 것이 유리합니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .compare-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+    }
+    .compare-card .c-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .compare-card .c-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .compare-card.highlight {
+      border-color: var(--primary);
+      background: #e8f0fe;
+    }
+    .compare-card.highlight .c-value {
+      color: var(--primary);
+    }
+    .growth-table-wrap {
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+    .growth-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .growth-table th {
+      background: #f1f3f4;
+      padding: 8px 10px;
+      text-align: right;
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+    .growth-table th:first-child { text-align: center; }
+    .growth-table td {
+      padding: 8px 10px;
+      text-align: right;
+      border-bottom: 1px solid var(--border);
+    }
+    .growth-table td:first-child { text-align: center; font-weight: 600; }
+    .growth-table tr:last-child td { font-weight: 700; color: var(--primary); }
+    .growth-table tr:hover td { background: #f8f9fa; }
+    .rule72-box {
+      background: #e8f0fe;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+    .rule72-box strong { color: var(--primary); }
+    .section-desc {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .desc-section {
+      margin-top: 32px;
+    }
+    .desc-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+    .desc-section h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 18px 0 8px;
+      color: var(--text);
+    }
+    .formula-box {
+      background: #f8f9fa;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 10px 0;
+    }
+    .faq-section {
+      margin-top: 40px;
+    }
+    .faq-section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    summary {
+      padding: 14px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--card-bg);
+      font-size: 15px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 18px; color: var(--primary); }
+    details[open] summary::after { content: '−'; }
+    details[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-answer {
+      padding: 16px 18px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #fafafa;
+    }
+    .related-pages {
+      margin-top: 32px;
+    }
+    .related-pages h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .related-pages ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .related-pages ul li a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 14px;
+      color: var(--primary);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .related-pages ul li a:hover { background: #e8f0fe; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="compound-interest.html" class="active">복리계산기</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <!-- 계산기 본체 -->
+    <div>
+      <div class="calc-box">
+        <h1>복리 계산기</h1>
+        <p class="desc">원금, 월 적립금, 연이율, 투자기간, 복리 주기를 입력하면 최종 금액·이자수익·단리 비교·연도별 성장 테이블을 계산합니다.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>초기 원금 <span class="hint">원</span></label>
+            <input type="number" id="principal" placeholder="예: 10000000" value="10000000" min="0">
+          </div>
+          <div class="form-group">
+            <label>월 추가 납입금 <span class="hint">원 (없으면 0)</span></label>
+            <input type="number" id="monthlyAdd" placeholder="예: 300000" value="300000" min="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>연이율 <span class="hint">%</span></label>
+            <input type="number" id="annualRate" placeholder="예: 5" value="5" step="0.01" min="0" max="100">
+          </div>
+          <div class="form-group">
+            <label>투자 기간 <span class="hint">년</span></label>
+            <input type="number" id="years" placeholder="예: 10" value="10" min="1" max="50">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>복리 주기</label>
+          <div class="radio-group">
+            <label><input type="radio" name="compFreq" value="12" checked><span>월복리</span></label>
+            <label><input type="radio" name="compFreq" value="4"><span>분기복리</span></label>
+            <label><input type="radio" name="compFreq" value="2"><span>반기복리</span></label>
+            <label><input type="radio" name="compFreq" value="1"><span>연복리</span></label>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result" style="display:none">
+          <div class="result-highlight">
+            <div class="label">최종 금액 (복리)</div>
+            <div class="value" id="resFV">-</div>
+            <div class="sub" id="resYield">수익률 -</div>
+          </div>
+
+          <table class="result-table">
+            <tr><th>총 투자원금</th><td id="resPrincipalTotal">-</td></tr>
+            <tr><th>이자수익 (복리)</th><td id="resInterestComp">-</td></tr>
+            <tr class="total"><th>최종 금액 (복리)</th><td id="resFV2">-</td></tr>
+          </table>
+
+          <!-- 단리 vs 복리 비교 -->
+          <div style="margin-top:20px">
+            <div style="font-size:14px;font-weight:600;margin-bottom:8px;">단리 vs 복리 비교</div>
+            <div class="compare-grid">
+              <div class="compare-card">
+                <div class="c-label">단리 최종 금액</div>
+                <div class="c-value" id="resFVSimple">-</div>
+              </div>
+              <div class="compare-card highlight">
+                <div class="c-label">복리 최종 금액</div>
+                <div class="c-value" id="resFVComp">-</div>
+              </div>
+              <div class="compare-card">
+                <div class="c-label">단리 이자수익</div>
+                <div class="c-value" id="resIntSimple">-</div>
+              </div>
+              <div class="compare-card highlight">
+                <div class="c-label">복리 추가이익</div>
+                <div class="c-value" id="resCompBonus">-</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 72의 법칙 -->
+          <div class="rule72-box" id="rule72Box"></div>
+
+          <!-- 연도별 성장 테이블 -->
+          <div style="margin-top:24px">
+            <div style="font-size:14px;font-weight:600;margin-bottom:8px;">연도별 성장 테이블</div>
+            <div class="growth-table-wrap">
+              <table class="growth-table">
+                <thead>
+                  <tr>
+                    <th>연도</th>
+                    <th>투자원금 누계</th>
+                    <th>복리 이자 누계</th>
+                    <th>복리 잔액</th>
+                    <th>단리 잔액 (비교)</th>
+                  </tr>
+                </thead>
+                <tbody id="growthTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 복리 공식 참고 -->
+      <div class="info-box" style="margin-top:20px">
+        <h3>복리 계산 공식</h3>
+        <div class="formula-box">
+          <div><strong>[거치식]</strong> FV = P × (1 + r/n)^(n×t)</div>
+          <div><strong>[적립식]</strong> FV = P×(1+r/n)^(n×t) + PMT×((1+r/n)^(n×t) - 1) / (r/n)</div>
+          <div><strong>[단리]</strong> FV = P×(1 + r×t) + PMT×12×t</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">
+          P=초기 원금, r=연이율(소수), n=연간 복리 횟수, t=투자기간(년), PMT=1회 납입금
+        </p>
+        <div style="margin-top:12px;font-size:14px;">
+          <strong>72의 법칙</strong>: 72 ÷ 연이율(%) = 원금이 2배 되는 데 걸리는 년수
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal"></div>
+
+      <!-- 복리 주기별 비교 표 -->
+      <div class="info-box">
+        <h3>복리 주기별 1,000만 원 10년 수익 비교 (연 5%)</h3>
+        <table class="result-table">
+          <thead>
+            <tr><th>복리 주기</th><th>최종 금액</th><th>이자수익</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>연복리 (n=1)</td><td>16,288,946원</td><td>6,288,946원</td></tr>
+            <tr><td>반기복리 (n=2)</td><td>16,386,164원</td><td>6,386,164원</td></tr>
+            <tr><td>분기복리 (n=4)</td><td>16,436,194원</td><td>6,436,194원</td></tr>
+            <tr><td>월복리 (n=12)</td><td>16,470,095원</td><td>6,470,095원</td></tr>
+            <tr><td>단리 (비교)</td><td>15,000,000원</td><td>5,000,000원</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">※ 월 추가 납입 없는 거치식 기준. 세전 기준.</p>
+      </div>
+
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>복리 이율별 2배 도달 기간</h3>
+        <table class="result-table">
+          <thead>
+            <tr><th>연이율</th><th>2배 도달 (72법칙)</th><th>실제 기간</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>3%</td><td>24년</td><td>23.4년</td></tr>
+            <tr><td>4%</td><td>18년</td><td>17.7년</td></tr>
+            <tr><td>5%</td><td>14.4년</td><td>14.2년</td></tr>
+            <tr><td>6%</td><td>12년</td><td>11.9년</td></tr>
+            <tr><td>7%</td><td>10.3년</td><td>10.2년</td></tr>
+            <tr><td>8%</td><td>9년</td><td>9.0년</td></tr>
+            <tr><td>10%</td><td>7.2년</td><td>7.3년</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:6px;">※ 연복리 기준. 추가 납입 없음.</p>
+      </div>
+
+      <div class="info-box">
+        <h3>복리 계산기 활용 팁</h3>
+        <ul style="font-size:14px;line-height:2;padding-left:18px;">
+          <li>복리 주기가 짧을수록 수익이 미세하게 증가</li>
+          <li>월 적립금이 있으면 원금 효과가 크게 늘어남</li>
+          <li>이율보다 투자 기간이 더 큰 영향을 줌</li>
+          <li>세금(이자소득세 15.4%) 반영 시 실질 이율 차감 필요</li>
+          <li>연금저축/IRP는 세금 이연으로 복리 효과 극대화</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="health-insurance.html" class="related-link">건강보험료</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+
+  <!-- 본문 설명 섹션 -->
+  <div class="desc-section">
+    <h2>복리 계산기 사용 방법</h2>
+    <p class="section-desc">
+      위 계산기에 <strong>초기 원금</strong>, <strong>월 추가 납입금</strong>, <strong>연이율(%)</strong>, <strong>투자 기간(년)</strong>, <strong>복리 주기</strong>를 입력하고 '계산하기' 버튼을 누르면 즉시 결과가 나옵니다.
+      월 추가 납입금이 없는 순수 거치식이라면 0을 입력하세요.
+    </p>
+    <p class="section-desc">
+      결과 화면에서는 <strong>최종 금액(복리)</strong>, <strong>총 투자원금</strong>, <strong>이자수익</strong>, <strong>수익률(%)</strong>, <strong>단리 vs 복리 비교</strong>, 그리고 <strong>연도별 성장 테이블</strong>을 한눈에 확인할 수 있습니다.
+    </p>
+
+    <h2>복리란 무엇인가? — 돈이 돈을 버는 원리</h2>
+    <p class="section-desc">
+      복리(複利, Compound Interest)는 <strong>'이자에 이자가 붙는' 방식</strong>입니다. 원금 1,000만 원에 연 5% 이자가 붙으면 첫 해에 50만 원을 받아 1,050만 원이 됩니다. 그런데 단리라면 다음 해에도 최초 원금 1,000만 원에만 5%를 계산해 50만 원의 이자를 받습니다. 반면 복리라면 1,050만 원 전체에 5%를 적용하여 52.5만 원을 받게 됩니다. 이 차이가 해마다 누적되면서 시간이 지날수록 복리의 위력은 엄청나게 커집니다.
+    </p>
+    <p class="section-desc">
+      알베르트 아인슈타인은 복리를 "세상에서 8번째 불가사의"라고 불렀다고 전해집니다. 워런 버핏이 93세에 전 재산의 99% 이상을 65세 이후에 모은 것도 바로 복리의 힘 덕분입니다. 복리는 단순한 이자 계산 공식이 아니라, <strong>장기 투자의 핵심 원리</strong>입니다.
+    </p>
+
+    <h2>복리 공식 완전 정복</h2>
+    <h3>1. 거치식 복리 (추가 납입 없이 초기 원금만)</h3>
+    <p class="section-desc">
+      초기 원금만 예치하고 이후 추가 납입 없이 복리로 굴리는 방식입니다. 공식은 다음과 같습니다.
+    </p>
+    <div class="formula-box">
+      FV = P × (1 + r/n)^(n × t)
+    </div>
+    <p class="section-desc">
+      예시: 원금 1,000만 원, 연 5%, 월복리(n=12), 10년<br>
+      FV = 10,000,000 × (1 + 0.05/12)^(12×10) = 약 16,470,095원<br>
+      이자수익: 6,470,095원, 수익률: 64.7%
+    </p>
+
+    <h3>2. 적립식 복리 (월 추가 납입 포함)</h3>
+    <p class="section-desc">
+      매월 일정 금액을 추가로 납입하면서 복리를 적용하는 방식입니다. 적금이나 정기 투자가 이에 해당합니다.
+    </p>
+    <div class="formula-box">
+      FV = P×(1+r/n)^(n×t) + PMT × [(1+r/n)^(n×t) - 1] / (r/n)
+    </div>
+    <p class="section-desc">
+      예시: 원금 1,000만 원 + 월 30만 원 납입, 연 5%, 월복리, 10년<br>
+      거치식 원금 부분: 약 16,470,095원<br>
+      적립식 부분: 300,000 × [(1.004167)^120 - 1] / 0.004167 ≈ 46,474,781원<br>
+      합계 최종 금액: 약 62,944,876원<br>
+      총 투자원금: 1,000만 원 + (30만 원 × 120개월) = 4,600만 원<br>
+      이자수익: 약 1,694만 원, 수익률: 36.8%
+    </p>
+
+    <h3>3. 단리 (비교용)</h3>
+    <p class="section-desc">
+      단리(Simple Interest)는 항상 최초 원금에만 이자를 계산합니다. 공식은 다음과 같습니다.
+    </p>
+    <div class="formula-box">
+      FV_단리 = P × (1 + r × t) + PMT × 12 × t
+    </div>
+    <p class="section-desc">
+      예시: 원금 1,000만 원, 연 5%, 10년<br>
+      FV_단리 = 10,000,000 × (1 + 0.05 × 10) = 15,000,000원 (이자 5,000,000원)<br>
+      같은 조건의 복리(월복리)는 16,470,095원으로, <strong>복리가 약 1,470,095원 더 많습니다.</strong>
+    </p>
+
+    <h2>복리 주기별 차이 — 얼마나 달라지나?</h2>
+    <p class="section-desc">
+      같은 연이율이라도 복리를 계산하는 주기(n)에 따라 최종 수익이 달라집니다. 연 5% 이율로 원금 1,000만 원을 10년 운용할 때:
+    </p>
+    <ul style="font-size:15px;line-height:2.2;padding-left:22px;margin-bottom:16px;">
+      <li><strong>연복리(n=1)</strong>: 최종 16,288,946원 (이자 6,288,946원)</li>
+      <li><strong>반기복리(n=2)</strong>: 최종 16,386,164원 (이자 6,386,164원)</li>
+      <li><strong>분기복리(n=4)</strong>: 최종 16,436,194원 (이자 6,436,194원)</li>
+      <li><strong>월복리(n=12)</strong>: 최종 16,470,095원 (이자 6,470,095원)</li>
+      <li><strong>단리(비교)</strong>: 최종 15,000,000원 (이자 5,000,000원)</li>
+    </ul>
+    <p class="section-desc">
+      월복리와 연복리의 차이는 약 181,149원(1.1%)에 불과합니다. 그러나 이율이 높거나(10% 이상) 투자 기간이 길수록(20년 이상) 그 차이가 점점 벌어집니다. 가장 중요한 것은 복리 주기보다 <strong>이율 자체</strong>와 <strong>투자 기간</strong>입니다.
+    </p>
+
+    <h2>72의 법칙 — 2배 되는 기간 즉석 계산</h2>
+    <p class="section-desc">
+      <strong>72의 법칙</strong>은 복리로 원금이 2배가 되는 기간을 암산으로 빠르게 구하는 방법입니다.
+    </p>
+    <div class="formula-box">
+      2배 도달 기간(년) ≈ 72 ÷ 연이율(%)
+    </div>
+    <ul style="font-size:15px;line-height:2.2;padding-left:22px;margin-bottom:16px;">
+      <li>연 3%: 72 ÷ 3 = <strong>24년</strong></li>
+      <li>연 4%: 72 ÷ 4 = <strong>18년</strong></li>
+      <li>연 5%: 72 ÷ 5 = <strong>14.4년</strong></li>
+      <li>연 6%: 72 ÷ 6 = <strong>12년</strong></li>
+      <li>연 8%: 72 ÷ 8 = <strong>9년</strong></li>
+      <li>연 10%: 72 ÷ 10 = <strong>7.2년</strong></li>
+    </ul>
+    <p class="section-desc">
+      이 법칙은 이율이 1~20% 범위에서 상당히 정확한 근사치를 제공합니다. 실제로 연 5%, 연복리로 계산하면 약 14.2년으로 72법칙 결과(14.4년)와 거의 일치합니다.
+    </p>
+
+    <h2>월 적립금의 강력한 효과 — 습관적 저축의 힘</h2>
+    <p class="section-desc">
+      많은 사람들이 초기 원금이 작아서 복리 효과가 없다고 생각합니다. 하지만 <strong>매월 꾸준히 납입하는 적립금</strong>이 복리와 결합되면 매우 강력한 결과를 만들어냅니다.
+    </p>
+    <p class="section-desc">
+      예를 들어 초기 원금 없이 월 30만 원씩, 연 5%, 월복리, 30년을 투자하면:
+    </p>
+    <ul style="font-size:15px;line-height:2.2;padding-left:22px;margin-bottom:16px;">
+      <li>총 납입금: 30만 원 × 360개월 = <strong>1억 800만 원</strong></li>
+      <li>최종 금액(복리): 약 <strong>2억 5,080만 원</strong></li>
+      <li>이자수익: 약 <strong>1억 4,280만 원</strong> (수익률 132%)</li>
+    </ul>
+    <p class="section-desc">
+      단리라면 이자수익은 30만 원 × 360 × 0.05 × 15 ≈ 약 8,100만 원에 불과합니다. <strong>복리는 단리 대비 약 6,180만 원을 더 벌어다 줍니다.</strong> 이것이 바로 젊을 때부터 꾸준히 소액을 투자해야 하는 이유입니다.
+    </p>
+
+    <h2>복리 계산기 활용 예시</h2>
+
+    <h3>예시 1. 은행 정기예금 (거치식)</h3>
+    <p class="section-desc">
+      원금 5,000만 원, 연이율 3.5%, 분기복리, 5년 투자<br>
+      FV = 50,000,000 × (1 + 0.035/4)^(4×5) = 약 59,568,890원<br>
+      이자수익: 9,568,890원 / 수익률: 19.1%<br>
+      단리 비교: 50,000,000 × (1 + 0.035 × 5) = 58,750,000원 → <strong>복리가 818,890원 더 많음</strong>
+    </p>
+
+    <h3>예시 2. 적금 (월 납입 포함)</h3>
+    <p class="section-desc">
+      원금 0원, 월 50만 원씩, 연이율 4%, 월복리, 5년<br>
+      총 납입금: 50만 원 × 60개월 = 3,000만 원<br>
+      최종 금액(복리): 약 33,049,200원<br>
+      이자수익: 약 3,049,200원 / 수익률: 10.2%
+    </p>
+
+    <h3>예시 3. ETF / 주식 장기 투자</h3>
+    <p class="section-desc">
+      원금 1,000만 원 + 월 100만 원 납입, 연이율 8% (S&P500 역사적 평균 수익률 가정), 월복리, 20년<br>
+      총 납입금: 1,000만 원 + (100만 원 × 240개월) = 2억 5,000만 원<br>
+      최종 금액(복리): 약 6억 3,700만 원<br>
+      이자수익: 약 3억 8,700만 원 / 수익률: 154.8%<br>
+      ※ 주식 투자는 원금 보장이 되지 않으며, 과거 수익률이 미래를 보장하지 않습니다.
+    </p>
+
+    <h2>세금을 고려한 실질 복리 이율</h2>
+    <p class="section-desc">
+      국내 금융상품의 이자소득에는 <strong>이자소득세 15.4%(소득세 14% + 지방소득세 1.4%)</strong>가 부과됩니다. 따라서 명목 연이율에서 세금을 차감한 <strong>세후 실질 이율</strong>을 기준으로 계산하는 것이 더 현실적입니다.
+    </p>
+    <ul style="font-size:15px;line-height:2.2;padding-left:22px;margin-bottom:16px;">
+      <li>명목 연 3% → 세후 약 2.54%</li>
+      <li>명목 연 4% → 세후 약 3.38%</li>
+      <li>명목 연 5% → 세후 약 4.23%</li>
+    </ul>
+    <p class="section-desc">
+      단, <strong>비과세 상품(ISA, 청년우대청약저축 등)</strong>이나 <strong>연금계좌(연금저축·IRP)</strong>를 활용하면 세금 이연 또는 감면 혜택으로 복리 효과를 극대화할 수 있습니다. 특히 연금계좌는 운용 기간 중 세금을 내지 않아 세전 이율 그대로 복리가 쌓이며, 인출 시 3.3~5.5%의 저율 분리과세가 적용됩니다.
+    </p>
+
+    <h2>2026년 복리 투자 포인트</h2>
+    <p class="section-desc">
+      2026년 현재 한국 기준금리는 2.75%(2025년 2월 기준)로 인하 기조가 지속되고 있습니다. 시중 정기예금 금리는 연 3~4% 수준입니다. 반면, ISA 계좌를 활용한 채권형 ETF나 배당주 ETF는 세제 혜택을 받으면서 연 4~6% 이상의 수익률을 기대할 수 있어 복리 투자 관점에서 주목받고 있습니다.
+    </p>
+    <p class="section-desc">
+      핵심 전략: <strong>1) 가능한 일찍 시작</strong>, <strong>2) 꾸준히 적립</strong>, <strong>3) 세금 혜택 계좌 활용</strong>, <strong>4) 리밸런싱으로 복리 유지</strong>. 투자금이 적더라도 복리 계산기로 미래 가치를 확인하면 저축·투자 동기를 높이는 데 큰 도움이 됩니다.
+    </p>
+  </div>
+
+  <!-- FAQ 섹션 -->
+  <div class="faq-section">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+
+    <details>
+      <summary>복리란 무엇인가요?</summary>
+      <div class="faq-answer">
+        복리(Compound Interest)란 원금에 붙은 이자가 다시 원금에 합산되어, 다음 기간에는 그 합산된 금액 전체에 이자가 붙는 방식입니다. 단리는 항상 최초 원금에만 이자가 적용되지만, 복리는 시간이 지날수록 이자에 이자가 붙어 자산이 기하급수적으로 늘어납니다. 아인슈타인이 '세상에서 8번째 불가사의'라고 표현한 개념으로, 장기 투자의 핵심 원리입니다.
+      </div>
+    </details>
+
+    <details>
+      <summary>복리 계산 공식은 무엇인가요?</summary>
+      <div class="faq-answer">
+        <strong>거치식(초기 원금만):</strong> FV = P × (1 + r/n)^(n×t)<br>
+        <strong>적립식(월 추가 납입 포함):</strong> FV = P×(1+r/n)^(n×t) + PMT×((1+r/n)^(n×t) - 1)/(r/n)<br><br>
+        P=초기 원금, r=연이율(소수, 예: 5% → 0.05), n=연간 복리 횟수(월=12, 분기=4, 반기=2, 연=1), t=투자기간(년), PMT=1회당 추가 납입금입니다. 단리는 FV = P×(1+r×t) + PMT×12×t 로 계산합니다.
+      </div>
+    </details>
+
+    <details>
+      <summary>복리 주기(월/분기/반기/연)에 따라 수익이 달라지나요?</summary>
+      <div class="faq-answer">
+        네, 복리 주기가 짧을수록 최종 수익이 조금 더 커집니다. 예를 들어 연 5% 이율로 1,000만 원을 10년 투자할 때, 연복리는 약 16,288,946원, 월복리는 약 16,470,095원으로 월복리가 약 181,149원 더 많습니다. 단, 이율이 높거나 투자 기간이 길수록 차이가 더 벌어집니다. 현실적으로는 복리 주기보다 이율 자체와 투자 기간이 훨씬 더 큰 영향을 미칩니다.
+      </div>
+    </details>
+
+    <details>
+      <summary>단리와 복리의 실제 차이는 얼마나 되나요?</summary>
+      <div class="faq-answer">
+        원금 1,000만 원, 연 5% 이율 기준으로 비교하면:<br>
+        - 10년: 단리 1,500만 원 vs 복리(월) 약 1,647만 원 → 복리가 약 147만 원 더 많음<br>
+        - 20년: 단리 2,000만 원 vs 복리(월) 약 2,712만 원 → 복리가 약 712만 원 더 많음<br>
+        - 30년: 단리 2,500만 원 vs 복리(월) 약 4,467만 원 → 복리가 약 1,967만 원 더 많음<br>
+        투자 기간이 길수록 복리와 단리의 격차는 기하급수적으로 벌어집니다. 이것이 장기 투자에서 복리가 중요한 이유입니다.
+      </div>
+    </details>
+
+    <details>
+      <summary>72의 법칙이란 무엇인가요?</summary>
+      <div class="faq-answer">
+        72의 법칙은 복리로 원금이 2배가 되는 기간을 빠르게 추정하는 방법입니다. 계산 공식은 <strong>72 ÷ 연이율(%)</strong>입니다.<br><br>
+        예를 들어 연 6% 이율이면 72÷6=12년, 연 8%이면 72÷8=9년, 연 4%이면 72÷4=18년이 2배가 되는 데 걸리는 대략적인 기간입니다. 이율이 1~20% 범위에서 상당히 정확한 근사치를 제공하며, 투자 계획을 빠르게 판단할 때 매우 유용합니다.
+      </div>
+    </details>
+
+    <details>
+      <summary>월 적립금(추가 납입)은 어떻게 계산에 반영되나요?</summary>
+      <div class="faq-answer">
+        월 적립금(PMT)은 매월 말 납입하는 방식(기말 불입, Ordinary Annuity)으로 계산됩니다. 복리 주기가 월이 아닌 경우(분기/반기/연)에는 해당 복리 주기에 맞춰 납입금을 합산한 뒤 복리를 적용합니다.<br><br>
+        예를 들어 분기복리(n=4)이고 월 30만 원을 납입한다면, 분기마다 30만 원 × 3 = 90만 원을 납입하는 것으로 계산합니다. 즉, PMT를 12/n 배 한 금액을 각 복리 주기당 납입금으로 사용합니다.
+      </div>
+    </details>
+
+    <details>
+      <summary>적금과 ETF 투자, 어느 쪽이 복리 효과가 큰가요?</summary>
+      <div class="faq-answer">
+        단순 비교는 어렵지만 세제 측면에서 차이가 있습니다. 적금은 이자에 15.4% 이자소득세가 부과되어 세후 실질 이율이 낮아집니다 (연 4% → 세후 3.38%). ETF를 일반 계좌로 투자하면 배당소득세·양도세가 발생하지만, 연금저축·IRP·ISA 계좌를 활용하면 운용 기간 중 세금이 이연되어 세전 이율 그대로 복리가 쌓입니다. 장기(20년 이상) 투자라면 세금 이연 효과만으로도 수천만 원의 차이가 생길 수 있습니다. 단, ETF 투자는 원금 보장이 되지 않으므로 개인 투자 성향에 맞게 선택하세요.
+      </div>
+    </details>
+  </div>
+
+  <!-- 관련 계산기 내부 링크 -->
+  <div class="related-pages">
+    <h2>관련 금융 계산기</h2>
+    <ul>
+      <li><a href="loan.html">대출이자 계산기 — 원리금균등·원금균등·만기일시 비교</a></li>
+      <li><a href="salary.html">실수령액 계산기 — 세후 월급 계산</a></li>
+      <li><a href="severance.html">퇴직금 계산기 — 평균임금·통상임금 기준</a></li>
+      <li><a href="income-tax.html">종합소득세 계산기 — 2026년 세율 기준</a></li>
+      <li><a href="capital-gains.html">양도소득세 계산기 — 부동산·주식 양도세</a></li>
+      <li><a href="acquisition-tax.html">취득세 계산기 — 부동산 매수 시 세금</a></li>
+      <li><a href="gift-tax.html">증여세 계산기 — 가족 간 증여세 계산</a></li>
+      <li><a href="health-insurance.html">건강보험료 계산기 — 직장·지역 가입자</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 수익은 금융상품 약관을 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+  const fmtPct = n => n.toFixed(2) + '%';
+
+  function getCompFreq() {
+    const el = document.querySelector('input[name="compFreq"]:checked');
+    return el ? parseInt(el.value) : 12;
+  }
+
+  function calculate() {
+    const P = parseFloat(document.getElementById('principal').value) || 0;
+    const PMT_monthly = parseFloat(document.getElementById('monthlyAdd').value) || 0;
+    const rAnnual = parseFloat(document.getElementById('annualRate').value) || 0;
+    const t = parseFloat(document.getElementById('years').value) || 0;
+    const n = getCompFreq(); // 연간 복리 횟수
+
+    if (t <= 0 || rAnnual < 0) {
+      alert('투자 기간과 이율을 올바르게 입력해주세요.');
+      return;
+    }
+
+    const r = rAnnual / 100;
+
+    // 복리 계산
+    // 각 복리 주기당 납입금: 월납입 × (12/n)
+    const PMT_per_period = PMT_monthly * (12 / n);
+    const totalPeriods = n * t; // 총 복리 주기 수
+    const periodRate = r / n;  // 주기당 이율
+
+    let FV_compound;
+    if (r === 0) {
+      // 이율 0%인 경우
+      FV_compound = P + PMT_monthly * 12 * t;
+    } else {
+      const growth = Math.pow(1 + periodRate, totalPeriods);
+      FV_compound = P * growth + PMT_per_period * (growth - 1) / periodRate;
+    }
+
+    // 단리 계산 (비교용)
+    const FV_simple = P * (1 + r * t) + PMT_monthly * 12 * t;
+
+    // 총 투자원금
+    const totalPrincipal = P + PMT_monthly * 12 * t;
+
+    // 이자수익
+    const interestComp = FV_compound - totalPrincipal;
+    const interestSimple = FV_simple - totalPrincipal;
+
+    // 수익률
+    const yieldPct = totalPrincipal > 0 ? (interestComp / totalPrincipal) * 100 : 0;
+
+    // 72의 법칙
+    const rule72Years = rAnnual > 0 ? (72 / rAnnual).toFixed(1) : '∞';
+
+    // 결과 표시
+    document.getElementById('resFV').textContent = fmt(FV_compound);
+    document.getElementById('resYield').textContent = '수익률 ' + fmtPct(yieldPct);
+    document.getElementById('resPrincipalTotal').textContent = fmt(totalPrincipal);
+    document.getElementById('resInterestComp').textContent = fmt(interestComp);
+    document.getElementById('resFV2').textContent = fmt(FV_compound);
+    document.getElementById('resFVSimple').textContent = fmt(FV_simple);
+    document.getElementById('resFVComp').textContent = fmt(FV_compound);
+    document.getElementById('resIntSimple').textContent = fmt(interestSimple);
+    document.getElementById('resCompBonus').textContent = fmt(interestComp - interestSimple);
+
+    // 72의 법칙 박스
+    document.getElementById('rule72Box').innerHTML =
+      '<strong>72의 법칙:</strong> 연이율 ' + rAnnual + '%로 원금이 2배가 되는 기간 = 약 <strong>' + rule72Years + '년</strong>' +
+      (r > 0 ? ' (실제 복리 계산: ' + (Math.log(2) / Math.log(1 + r / n) / n).toFixed(1) + '년)' : '');
+
+    // 연도별 성장 테이블
+    const tbody = document.getElementById('growthTableBody');
+    tbody.innerHTML = '';
+
+    for (let yr = 1; yr <= t; yr++) {
+      const periodsNow = n * yr;
+      const growthNow = r === 0 ? 1 : Math.pow(1 + periodRate, periodsNow);
+
+      let fvComp;
+      if (r === 0) {
+        fvComp = P + PMT_monthly * 12 * yr;
+      } else {
+        fvComp = P * growthNow + PMT_per_period * (growthNow - 1) / periodRate;
+      }
+
+      const fvSimpleNow = P * (1 + r * yr) + PMT_monthly * 12 * yr;
+      const principalNow = P + PMT_monthly * 12 * yr;
+      const interestNow = fvComp - principalNow;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' + yr + '년</td>' +
+        '<td>' + fmt(principalNow) + '</td>' +
+        '<td>' + fmt(Math.max(0, interestNow)) + '</td>' +
+        '<td>' + fmt(fvComp) + '</td>' +
+        '<td>' + fmt(fvSimpleNow) + '</td>';
+      tbody.appendChild(tr);
+    }
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 페이지 로드 시 기본값으로 계산
+  window.addEventListener('DOMContentLoaded', () => {
+    calculate();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실업급여 계산기 - 2026년 구직급여 자동 계산 | 소정급여일수·상한액 반영</title>
+  <meta name="description" content="2026년 기준 실업급여(구직급여)를 자동 계산합니다. 퇴직 전 평균임금, 나이, 고용보험 가입기간으로 1일 수급액과 총 수급액을 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/unemployment">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="실업급여 계산기 - 2026년 구직급여 자동 계산">
+  <meta property="og:description" content="2026년 기준 실업급여를 자동 계산합니다. 평균임금, 나이, 가입기간으로 수급액 확인.">
+  <meta property="og:url" content="https://calcmoney.kr/unemployment">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "실업급여는 얼마나 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "실업급여(구직급여)는 퇴직 전 평균임금의 60%를 소정급여일수만큼 지급받습니다. 2026년 기준 1일 상한액은 66,000원이며, 하한액은 최저임금의 80%인 66,048원입니다. 2026년에는 하한액이 상한액(66,000원)을 초과하여 사실상 모든 수급자가 66,048원을 받게 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실업급여 수급 조건은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "이직일 전 18개월간 고용보험 피보험 단위기간이 180일 이상이어야 하며, 비자발적 사유로 이직해야 합니다. 또한 근로 의사와 능력이 있으나 취업하지 못한 상태여야 하고, 재취업을 위해 적극적으로 노력해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "소정급여일수는 어떻게 정해지나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "소정급여일수는 나이와 고용보험 가입기간에 따라 120일~270일까지 차등 적용됩니다. 50세 미만은 120~240일, 50세 이상 또는 장애인은 120~270일입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실업급여 상한액과 하한액은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 1일 상한액은 66,000원, 하한액은 63,104원(최저임금 10,030원 × 80% × 8시간 기준)입니다. 대부분의 수급자가 하한액~상한액 사이에서 수급하게 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실업급여 신청 방법은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "퇴직 후 지체 없이 거주지 관할 고용센터에 실업 신고를 하고, 워크넷(work.go.kr)에서 구직 등록을 한 뒤, 수급자격 인정 신청서를 제출합니다. 온라인으로도 고용보험 홈페이지(ei.go.kr)에서 신청 가능합니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="unemployment.html" class="active">실업급여</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>실업급여 계산기</h1>
+        <p class="desc">2026년 기준 실업급여(구직급여) 예상 수급액을 자동 계산합니다. 퇴직 전 평균임금, 나이, 고용보험 가입기간을 입력하면 1일 수급액과 총 수급액을 확인할 수 있습니다.</p>
+
+        <div class="form-group">
+          <label>월 평균임금 (퇴직 전 3개월) <span class="hint">원 단위</span></label>
+          <input type="number" id="monthlySalary" placeholder="예: 3000000 (300만원)" value="3000000">
+        </div>
+
+        <div class="form-group">
+          <label>나이</label>
+          <select id="ageGroup">
+            <option value="under50">50세 미만</option>
+            <option value="over50">50세 이상 또는 장애인</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>고용보험 가입기간</label>
+          <select id="insurancePeriod">
+            <option value="1">1년 미만</option>
+            <option value="3" selected>1년 이상 ~ 3년 미만</option>
+            <option value="5">3년 이상 ~ 5년 미만</option>
+            <option value="10">5년 이상 ~ 10년 미만</option>
+            <option value="99">10년 이상</option>
+          </select>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">예상 총 수급액</div>
+            <div class="value" id="rTotalAmount">-</div>
+            <div class="sub" id="rTotalSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>퇴직 전 평균임금 (월)</td><td id="rMonthlySalary">-</td></tr>
+            <tr><td>1일 평균임금</td><td id="rDailyWage">-</td></tr>
+            <tr><td>1일 구직급여액 (60%)</td><td id="rDailyBenefit">-</td></tr>
+            <tr><td>적용 상한/하한</td><td id="rCapApplied">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>최종 1일 수급액</td><td id="rFinalDaily">-</td></tr>
+            <tr><td>소정급여일수</td><td id="rBenefitDays">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>예상 총 수급액</td><td id="rTotal">-</td></tr>
+            <tr><td>예상 수급 기간</td><td id="rMonths">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 소정급여일수 표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>소정급여일수 표 (2026년)</h3>
+        <table class="result-table" style="font-size:0.88em;">
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <td>구분</td><td>1년 미만</td><td>1~3년</td><td>3~5년</td><td>5~10년</td><td>10년 이상</td>
+          </tr>
+          <tr><td style="font-weight:600;">50세 미만</td><td>120일</td><td>150일</td><td>180일</td><td>210일</td><td>240일</td></tr>
+          <tr><td style="font-weight:600;">50세 이상·장애인</td><td>120일</td><td>180일</td><td>210일</td><td>240일</td><td>270일</td></tr>
+        </table>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>실업급여 계산 공식</h3>
+        <ul>
+          <li><strong>1일 구직급여</strong> =<br>퇴직 전 평균임금 × 60%</li>
+          <li style="margin-top:10px;"><strong>상한액</strong>: 1일 66,000원</li>
+          <li style="margin-top:10px;"><strong>하한액</strong>: 1일 66,048원<br>(최저임금 80% × 8시간)<br>※ 상한액보다 높아 사실상 통일</li>
+          <li style="margin-top:10px;"><strong>총 수급액</strong> =<br>1일 수급액 × 소정급여일수</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 대기기간 7일 제외 후 지급 시작</p>
+      </div>
+      <div class="info-box">
+        <h3>수급 요건 체크리스트</h3>
+        <ul>
+          <li>고용보험 가입 180일 이상</li>
+          <li>비자발적 이직 (권고사직, 계약만료 등)</li>
+          <li>근로 의사와 능력 보유</li>
+          <li>적극적 구직활동</li>
+          <li>워크넷 구직등록</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="health-insurance.html" class="related-link">건강보험료</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- 실업급여 완벽 가이드 -->
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.4em;margin-bottom:20px;">실업급여 완벽 가이드 (2026년 최신)</h2>
+
+    <h3 style="font-size:1.15em;margin:0 0 12px 0;color:#1a73e8;">실업급여란 무엇인가</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">실업급여는 고용보험에 가입된 근로자가 비자발적인 사유로 직장을 잃었을 때 재취업 활동 기간 동안 생활 안정을 지원하기 위해 지급하는 급여입니다. 공식 명칭은 <strong>구직급여</strong>이며, 고용보험법에 근거하여 고용노동부에서 관장합니다. 재취업수당, 직업능력개발수당 등 취업촉진수당도 실업급여의 범주에 포함됩니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">실업급여는 단순한 생활보조금이 아니라 <strong>적극적 구직활동을 조건</strong>으로 지급됩니다. 수급 중에는 정기적으로 고용센터에 출석하여 구직활동 실적을 보고해야 하며, 취업 의지 없이 수급만 하려는 경우 지급이 중단됩니다. 실업급여의 핵심 목적은 실직자의 생계 보호와 함께 빠른 재취업을 유도하는 것입니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:20px;">2026년 기준 실업급여는 구직급여 외에도 <strong>조기재취업수당</strong>, <strong>직업능력개발수당</strong>, <strong>광역구직활동비</strong>, <strong>이주비</strong> 등 다양한 취업촉진수당을 포함합니다. 이 중 구직급여가 가장 대표적이며, 일반적으로 '실업급여'라 할 때 구직급여를 의미합니다. 고용보험에 가입한 근로자라면 퇴직 시 이 제도를 적극 활용하여 재취업 준비 기간 동안 안정적인 생활을 유지할 수 있습니다.</p>
+
+    <h3 style="font-size:1.15em;margin:0 0 12px 0;color:#1a73e8;">2026년 실업급여 수급 조건</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;">실업급여를 받으려면 다음 세 가지 조건을 모두 충족해야 합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>첫째, 고용보험 가입기간 — 피보험 단위기간 180일 이상</strong>: 이직일 이전 18개월 동안(초단시간 근로자는 24개월) 고용보험에 가입된 피보험 단위기간이 합산 180일 이상이어야 합니다. 피보험 단위기간은 실제 임금을 받은 근로일수를 기준으로 하며, 유급휴일도 포함됩니다. 여러 직장을 다닌 경우 기간을 합산할 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>둘째, 이직 사유 — 비자발적 이직</strong>: 권고사직, 계약만료, 정리해고, 사업장 폐업, 임금 체불(2개월 이상) 등 비자발적 사유로 이직해야 합니다. 자발적 퇴사라도 근로조건 위반, 직장 내 괴롭힘·성희롱 피해, 사업장 이전(통근 왕복 3시간 이상), 질병·부상으로 근무 불가 등 정당한 이직 사유가 인정되면 수급이 가능합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:20px;"><strong>셋째, 적극적 구직활동</strong>: 근로 의사와 능력이 있음에도 취업하지 못한 상태여야 하며, 워크넷(work.go.kr) 구직 등록 후 정기적으로 구직활동 실적(입사지원, 취업상담, 직업훈련 등)을 제출해야 합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:0 0 12px 0;color:#1a73e8;">실업급여 지급액 계산 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;">구직급여 지급액은 <strong>이직 전 평균임금의 60%</strong>를 1일 기준으로 산정합니다. 평균임금은 퇴직 직전 3개월간 지급된 임금 총액을 해당 기간 총 일수(90~92일)로 나눈 값입니다.</p>
+    <div style="background:#f8f9fa;border-left:4px solid #1a73e8;padding:14px 16px;margin-bottom:12px;border-radius:0 6px 6px 0;">
+      <p style="margin:0;line-height:1.9;color:#333;"><strong>1일 구직급여액</strong> = 이직 전 1일 평균임금 × 60%</p>
+      <p style="margin:6px 0 0 0;line-height:1.9;color:#333;"><strong>총 수급액</strong> = 1일 구직급여액 × 소정급여일수</p>
+    </div>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>2026년 1일 상한액: 66,000원</strong> — 월급이 약 330만원을 초과하면 평균임금의 60%가 상한액을 넘으므로 66,000원이 적용됩니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>2026년 1일 하한액: 66,048원</strong> — 최저임금 10,320원 × 80% × 8시간으로 산정됩니다. 2026년에는 하한액이 상한액을 초과하는 역전 현상으로, 사실상 소득 수준에 관계없이 모든 수급자가 <strong>1일 66,048원</strong>을 수령합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;">대기기간 7일은 급여가 지급되지 않으며, 7일 이후부터 실업인정을 통해 수급이 시작됩니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>평균임금 계산 예시</strong>: 퇴직 전 3개월간 기본급 250만원 + 식대 10만원 + 교통비 10만원 = 월 270만원을 받았다면, 3개월 합산 810만원 ÷ 91일(3개월 일수) = 1일 평균임금 약 89,011원입니다. 이의 60%는 53,407원이지만 하한액(66,048원)이 적용되어 1일 66,048원을 수령합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:20px;">고연봉자의 경우도 마찬가지입니다. 월급 600만원이어도 1일 평균임금 200,000원의 60%는 120,000원이지만 상한액(66,000원)이 적용되고, 실제로는 하한액인 66,048원이 지급됩니다. 결국 2026년에는 소득 수준과 무관하게 동일한 금액을 수령하게 됩니다.</p>
+
+    <h3 style="font-size:1.15em;margin:0 0 12px 0;color:#1a73e8;">실업급여 수급 기간 — 연령·가입기간별 소정급여일수</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">소정급여일수(수급 가능 총 일수)는 나이와 고용보험 가입기간에 따라 120일~270일까지 차등 적용됩니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:12px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>구분</td><td>1년 미만</td><td>1~3년</td><td>3~5년</td><td>5~10년</td><td>10년 이상</td></tr>
+      <tr><td style="font-weight:600;">50세 미만</td><td>120일</td><td>150일</td><td>180일</td><td>210일</td><td>240일</td></tr>
+      <tr><td style="font-weight:600;">50세 이상·장애인</td><td>120일</td><td>180일</td><td>210일</td><td>240일</td><td>270일</td></tr>
+    </table>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>수급 기간</td><td>50세 미만 예시</td><td>50세 이상 예시</td><td>총 수급액 (1일 66,048원 기준)</td></tr>
+      <tr><td>120일 (4개월)</td><td>가입 1년 미만</td><td>가입 1년 미만</td><td>약 7,926,000원</td></tr>
+      <tr><td>150일 (5개월)</td><td>가입 1~3년</td><td>-</td><td>약 9,907,000원</td></tr>
+      <tr><td>180일 (6개월)</td><td>가입 3~5년</td><td>가입 1~3년</td><td>약 11,889,000원</td></tr>
+      <tr><td>210일 (7개월)</td><td>가입 5~10년</td><td>가입 3~5년</td><td>약 13,870,000원</td></tr>
+      <tr><td>240일 (8개월)</td><td>가입 10년 이상</td><td>가입 5~10년</td><td>약 15,852,000원</td></tr>
+      <tr><td>270일 (9개월)</td><td>-</td><td>가입 10년 이상</td><td>약 17,833,000원</td></tr>
+    </table>
+    <p style="font-size:0.85em;color:#888;margin-bottom:20px;">* 2026년 실업급여 1일 하한액 66,048원 기준. 실제 수급액은 개인 상황에 따라 다를 수 있음.</p>
+
+    <h3 style="font-size:1.15em;margin:0 0 12px 0;color:#1a73e8;">실업급여 신청 절차 — 워크넷·고용센터 이용 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>1단계: 워크넷 구직등록</strong> — 퇴직 후 워크넷(work.go.kr)에서 구직 등록을 합니다. 이력서 작성 및 구직 희망 조건을 입력하면 됩니다. 이직 전에도 미리 등록할 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>2단계: 이직확인서 확인</strong> — 전 직장에서 고용보험 이직확인서를 제출했는지 확인합니다. 고용보험 홈페이지(ei.go.kr) 또는 고용센터 방문으로 확인할 수 있으며, 회사가 미제출 시 고용센터에 신고할 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>3단계: 수급자격 인정 신청</strong> — 거주지 관할 고용센터를 방문하거나 고용보험 홈페이지(ei.go.kr)에서 온라인으로 수급자격 인정 신청서를 제출합니다. 퇴직 후 <strong>12개월 이내</strong>에 신청해야 합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>4단계: 수급자격자 교육 이수</strong> — 온라인 또는 집체 교육(약 1~2시간)을 이수합니다. 이수 후 첫 번째 실업인정일이 지정됩니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>5단계: 대기기간(7일)</strong> — 수급자격 인정일로부터 7일간 대기기간이 적용되며, 이 기간은 급여가 지급되지 않습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:20px;"><strong>6단계: 실업인정 및 급여 수령</strong> — 1~4주 간격으로 고용센터에 출석하거나 온라인으로 구직활동 실적을 신고하고, 실업인정을 받으면 지정 계좌로 급여가 지급됩니다. 수급 중 취업이 결정되면 즉시 신고해야 하며, 잔여 수급일수가 절반 이상이면 <strong>재취업수당</strong>(잔여일수의 50%)을 받을 수 있습니다.</p>
+  </div>
+
+  <!-- FAQ 섹션 -->
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">실업급여를 받으려면 어떤 조건이 필요한가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">(1) 이직일 전 18개월간 <strong>고용보험 피보험 단위기간이 180일 이상</strong>이어야 합니다. (2) <strong>비자발적 사유</strong>(권고사직, 계약만료, 정리해고 등)로 이직해야 합니다. 자발적 퇴사라도 임금 체불, 근로조건 위반, 직장 내 괴롭힘 등 정당한 사유가 인정되면 수급 가능합니다. (3) 근로 의사와 능력이 있으나 취업하지 못한 상태에서 적극적으로 구직활동을 해야 합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">1일 상한액과 하한액은 왜 비슷한가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2026년 기준 <strong>상한액은 66,000원</strong>이지만, <strong>하한액은 66,048원</strong>으로 하한액이 상한액을 초과합니다. 이는 최저임금 인상으로 하한액이 계속 올라갔기 때문입니다. 결과적으로 2026년에는 소득과 관계없이 <strong>모든 수급자가 1일 66,048원</strong>을 받게 됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">실업급여 신청은 어디서 하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">퇴직 후 <strong>워크넷(work.go.kr)</strong>에서 구직등록을 하고, 거주지 관할 <strong>고용센터</strong>를 방문하여 실업 신고를 합니다. 온라인으로는 <strong>고용보험 홈페이지(ei.go.kr)</strong>에서 수급자격 신청이 가능합니다. 퇴직 후 <strong>12개월 이내</strong>에 신청해야 하며, 이 기간이 지나면 수급권이 소멸됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">자발적 퇴사도 실업급여를 받을 수 있나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">원칙적으로는 불가능하지만, <strong>정당한 이직 사유</strong>가 인정되면 가능합니다. 인정 사유에는 임금 체불(2개월 이상), 최저임금 미달, 근로조건 불이행, 직장 내 괴롭힘·성희롱, 사업장 이전(통근 3시간 이상), 질병·부상으로 근무 불가 등이 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">월급 300만원이면 실업급여 얼마 받나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">월급 300만원 기준 1일 평균임금은 약 100,000원이고, 60%인 60,000원이 1일 구직급여입니다. 하지만 하한액(66,048원)보다 낮으므로 <strong>1일 66,048원</strong>이 적용됩니다. 고용보험 3년 가입, 50세 미만이면 소정급여일수 180일이므로 총 수급액은 약 <strong>1,189만원</strong>, 약 6개월간 수급합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">실업급여 받으면서 알바해도 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">가능하지만 <strong>제한이 있습니다</strong>. 월 60시간 미만(주 15시간 미만)의 단시간 근로는 가능하며, 이 경우 근로한 날은 수급에서 제외됩니다. 월 60시간 이상 취업하면 실업급여 수급이 중단됩니다. 취업 사실을 숨기면 <strong>부정수급</strong>으로 지급액의 최대 5배를 반환해야 합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">조기 재취업하면 남은 실업급여는 어떻게 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">수급 중 조기에 재취업하면 <strong>재취업수당</strong>을 받을 수 있습니다. 소정급여일수의 절반 이상이 남은 상태에서 안정적인 직장(12개월 이상 고용 보장)에 취업하면, 잔여 수급일수의 50%를 일시금으로 받습니다. 예를 들어 180일 중 100일이 남았다면 50일치(약 3,302,400원)를 재취업수당으로 수령할 수 있습니다. 재취업 후 12개월 근무 뒤 고용보험 홈페이지(ei.go.kr) 또는 고용센터에서 신청합니다.</p>
+    </details>
+  </div>
+
+  <!-- 내부 링크 섹션 -->
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="severance.html">퇴직금 계산기</a> - 근속연수별 퇴직금 예상액</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서, 개인사업자 자동 계산</li>
+      <li><a href="health-insurance.html">건강보험료 계산기</a> - 직장·지역가입자 자동 계산</li>
+      <li><a href="gift-tax.html">증여세 계산기</a> - 관계별 공제, 혼인·출산 공제 반영</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+    </ul>
+  </div>
+
+<div class="container" style="margin-bottom:0">
+  <div class="info-box" style="background:#f0f7ff;border-left:4px solid #3b82f6;padding:1rem 1.25rem;margin-bottom:1.5rem">
+    <p style="margin:0">수급자격 판정·소정급여일수 상세 계산이 필요하신가요? <a href="/unemployment-detail.html" style="color:#2563eb;font-weight:600">실업급여 상세 계산기 →</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 수급액은 고용보험(ei.go.kr) 또는 고용센터에서 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+// 2026년 기준
+const BENEFIT_RATE = 0.60;        // 평균임금의 60%
+const DAILY_CAP = 66000;          // 1일 상한액
+const MIN_WAGE_2026 = 10320;      // 2026년 최저시급
+const DAILY_FLOOR = Math.floor(MIN_WAGE_2026 * 0.8 * 8); // 1일 하한액 = 최저임금 80% × 8시간
+
+// 소정급여일수 표 [나이그룹][가입기간코드]
+const BENEFIT_DAYS = {
+  under50: { 1: 120, 3: 150, 5: 180, 10: 210, 99: 240 },
+  over50:  { 1: 120, 3: 180, 5: 210, 10: 240, 99: 270 },
+};
+
+function calculate() {
+  const monthlySalary = parseFloat(document.getElementById('monthlySalary').value) || 0;
+  const ageGroup = document.getElementById('ageGroup').value;
+  const period = parseInt(document.getElementById('insurancePeriod').value);
+
+  // 1일 평균임금 (월급 / 30일)
+  const dailyWage = Math.floor(monthlySalary / 30);
+
+  // 1일 구직급여 (60%)
+  let dailyBenefit = Math.floor(dailyWage * BENEFIT_RATE);
+
+  // 상한/하한 적용
+  let capNote = '';
+  if (dailyBenefit > DAILY_CAP) {
+    dailyBenefit = DAILY_CAP;
+    capNote = '상한액 적용';
+  } else if (dailyBenefit < DAILY_FLOOR) {
+    dailyBenefit = DAILY_FLOOR;
+    capNote = '하한액 적용';
+  } else {
+    capNote = '상한/하한 미적용';
+  }
+
+  // 소정급여일수
+  const benefitDays = BENEFIT_DAYS[ageGroup][period] || 120;
+
+  // 총 수급액
+  const totalAmount = dailyBenefit * benefitDays;
+  const months = (benefitDays / 30).toFixed(1);
+
+  // 결과 표시
+  document.getElementById('rMonthlySalary').textContent = fmt(monthlySalary);
+  document.getElementById('rDailyWage').textContent = fmt(dailyWage);
+  document.getElementById('rDailyBenefit').textContent = fmt(Math.floor(dailyWage * BENEFIT_RATE)) + ' (60%)';
+  document.getElementById('rCapApplied').textContent = capNote;
+  document.getElementById('rFinalDaily').textContent = fmt(dailyBenefit);
+  document.getElementById('rBenefitDays').textContent = benefitDays + '일';
+  document.getElementById('rTotal').textContent = fmt(totalAmount);
+  document.getElementById('rMonths').textContent = '약 ' + months + '개월';
+
+  document.getElementById('rTotalAmount').textContent = fmt(totalAmount);
+  document.getElementById('rTotalSub').textContent = '1일 ' + fmt(dailyBenefit) + ' × ' + benefitDays + '일';
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

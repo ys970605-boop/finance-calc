@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 자동차 취득세 계산기 - 경차·전기차·하이브리드·다자녀 감면 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="차량 유형·가격·감면 조건을 입력하면 취득세, 농어촌특별세, 지방교육세까지 총 납부세액을 자동 계산합니다. 경차·전기차·다자녀 감면 반영.">
+  <link rel="canonical" href="https://calcmoney.kr/car-acquisition-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 자동차 취득세 계산기 - 경차·전기차·하이브리드·다자녀 감면 자동 계산">
+  <meta property="og:description" content="차량 유형·가격·감면 조건 입력 → 취득세·농어촌특별세·지방교육세 총 납부세액 즉시 계산. 경차·전기차·다자녀 감면 반영.">
+  <meta property="og:url" content="https://calcmoney.kr/car-acquisition-tax">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026년 자동차 취득세율은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 자동차 취득세율: 비영업용 승용차 7%, 비영업용 승합·화물·특수차 5%, 영업용 차량 4%, 이륜차(125cc 초과) 2%입니다. 경차(1000cc 이하)는 4%이며 75만원 감면이 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "경차 취득세 감면은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "경차(배기량 1000cc 이하)는 2026년까지 취득세 75만원이 감면됩니다. 취득세율 4%를 적용한 세액에서 75만원을 차감하여 납부합니다. 단, 차량 가격이 낮아 취득세가 75만원 미만이면 실제 납부액이 0원이 될 수 있습니다. 경차는 농어촌특별세도 비과세입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "전기차·수소차 취득세 감면은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "전기차와 수소전기차는 취득세 140만원이 감면됩니다. 2026년 기준으로도 동일하게 적용되며, 전기차와 수소차는 농어촌특별세도 비과세입니다. 일반 취득세에서 140만원을 차감한 금액을 납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "하이브리드차 취득세 감면은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "하이브리드 자동차(일반 하이브리드)는 취득세 40만원이 감면됩니다. 플러그인 하이브리드(PHEV)도 동일하게 적용됩니다. 하이브리드차는 농어촌특별세 과세 대상입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "다자녀 가구 자동차 취득세 감면은 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "만 18세 미만 자녀를 3명 이상 둔 다자녀 가구는 자동차 취득세 면제(첫 번째 차량, 200만원 한도)를 받을 수 있습니다. 다자녀 감면은 지방세특례제한법 제22조의2에 따라 적용됩니다. 이후 취득하는 차량은 50% 감면됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "농어촌특별세와 지방교육세는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "농어촌특별세는 취득세 감면액의 20%가 부과됩니다. 단, 경차·전기차·수소차는 비과세입니다. 지방교육세는 취득세의 20%가 부과됩니다. 예를 들어 취득세가 140만원이면 농특세 최대 28만원, 지방교육세 28만원이 추가됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중고차 취득세는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "중고차 취득세 과세표준은 실제 거래가격과 지방세법상 시가표준액 중 높은 금액을 기준으로 합니다. 시가표준액은 행정안전부 고시 기준으로 연식·차종에 따라 결정됩니다. 취득가격이 시가표준액보다 낮으면 시가표준액을 과세표준으로 사용합니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .input-section-title { font-size: 0.95em; font-weight: 700; color: #333; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #e0e0e0; }
+    .section-divider { border: none; border-top: 1px dashed #e0e0e0; margin: 20px 0; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .checkbox-group label { display: flex; align-items: center; gap: 6px; font-weight: 400; cursor: pointer; padding: 8px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; transition: all 0.2s; margin-bottom: 0; }
+    .checkbox-group input[type="checkbox"] { display: none; }
+    .checkbox-group label:has(input:checked) { border-color: var(--primary); background: #e8f0fe; color: var(--primary); font-weight: 600; }
+    .tax-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 16px 0; }
+    .tax-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 12px; text-align: center; }
+    .tax-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .tax-card.discount { border-color: #34a853; background: #e6f4ea; }
+    .tax-card .tlabel { font-size: 0.76em; color: #666; margin-bottom: 4px; }
+    .tax-card .tval { font-size: 1.15em; font-weight: 800; color: #1a73e8; }
+    .tax-card.discount .tval { color: #34a853; }
+    .total-tax-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-tax-box .ttlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-tax-box .ttvalue { font-size: 2.2em; font-weight: 800; }
+    .total-tax-box .ttsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .notice-box { background: #fff8e1; border-left: 4px solid #ffb300; border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 14px 0; font-size: 0.85em; color: #555; line-height: 1.7; }
+    .notice-box strong { color: #e65100; }
+    .faq-list { margin-top: 12px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .faq-item summary { padding: 14px 16px; font-weight: 600; font-size: 14px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::after { content: '+'; font-size: 18px; color: var(--text-muted); }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { padding: 0 16px 14px; font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>자동차 취득세 계산기</h1>
+        <p class="desc">차량 유형, 가격, 감면 조건을 입력하면 2026년 기준 취득세·농어촌특별세·지방교육세를 포함한 총 납부세액을 자동으로 계산합니다.</p>
+
+        <!-- 차량 정보 -->
+        <div class="input-section-title">차량 기본 정보</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>차량 유형</label>
+            <select id="carType">
+              <option value="passenger">승용차 (비영업용)</option>
+              <option value="van">승합차 (비영업용)</option>
+              <option value="truck">화물차 (비영업용)</option>
+              <option value="commercial">영업용 차량</option>
+              <option value="motorcycle">이륜차 (125cc 초과)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>차량 가격 (과세표준) <span class="hint">원</span></label>
+            <input type="number" id="carPrice" placeholder="예: 30000000" value="30000000" min="0" step="100000">
+          </div>
+        </div>
+
+        <!-- 감면 조건 -->
+        <hr class="section-divider">
+        <div class="input-section-title">감면 조건 선택 <span class="hint">(해당하는 항목을 모두 선택하세요)</span></div>
+
+        <div class="form-group">
+          <label>친환경·경차 여부</label>
+          <div class="radio-group">
+            <label><input type="radio" name="ecoType" value="none" checked><span>일반 차량</span></label>
+            <label><input type="radio" name="ecoType" value="small"><span>경차 (1000cc 이하)</span></label>
+            <label><input type="radio" name="ecoType" value="hybrid"><span>하이브리드</span></label>
+            <label><input type="radio" name="ecoType" value="ev"><span>전기차</span></label>
+            <label><input type="radio" name="ecoType" value="hydrogen"><span>수소차</span></label>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:14px;">
+          <label>추가 감면 조건</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" id="chkDisabled"><span>장애인 (본인 또는 가족)</span></label>
+            <label><input type="checkbox" id="chkMultiChild"><span>다자녀 (18세 미만 3명 이상)</span></label>
+          </div>
+        </div>
+
+        <div class="form-group" id="multiChildOption" style="display:none;">
+          <label>다자녀 차량 순번 <span class="hint">(감면 금액이 달라집니다)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="multiChildOrder" value="first" checked><span>첫 번째 차량 (100% 면제, 200만원 한도)</span></label>
+            <label><input type="radio" name="multiChildOrder" value="after"><span>이후 차량 (50% 감면)</span></label>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">취득세 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총 납부세액 -->
+          <div class="total-tax-box">
+            <div class="ttlabel">총 납부세액</div>
+            <div class="ttvalue" id="totalTax"></div>
+            <div class="ttsub" id="totalSub"></div>
+          </div>
+
+          <!-- 세목별 카드 -->
+          <div class="tax-cards" id="taxCards"></div>
+
+          <!-- 상세 내역 테이블 -->
+          <table class="result-table" id="taxTable">
+            <tbody id="taxTableBody"></tbody>
+          </table>
+
+          <div class="notice-box" id="noticeBox"></div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 설명 섹션 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">자동차 취득세 핵심 정리</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">자동차 취득세란?</h3>
+        <p>자동차 취득세는 차량을 취득할 때 납부하는 지방세로, 지방세법 제12조에 따라 부과됩니다. 과세표준은 차량 취득가격(신차는 공급가액 기준, 중고차는 실거래가와 시가표준액 중 높은 금액)이며, 차량 유형과 용도에 따라 세율이 달라집니다. 취득세 외에 농어촌특별세와 지방교육세가 추가로 부과됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 차량 유형별 취득세율</h3>
+        <p>비영업용 승용차 7%, 비영업용 승합·화물·특수차 5%, 영업용 차량 4%, 이륜차(125cc 초과) 2%입니다. 경차(1000cc 이하)는 비영업용 승용차 기준 4%이며 75만원 감면이 별도 적용됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">농어촌특별세·지방교육세 계산 방법</h3>
+        <p>농어촌특별세는 감면을 받는 경우 원래 세액에 대한 20%가 부과되는 구조이나, 실무상 취득세 납부세액 기준 10%로 산출됩니다. 지방교육세는 취득세 납부세액의 20%입니다. 단, 경차·전기차·수소차는 농어촌특별세 비과세입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">경차 취득세 감면 (2026년)</h3>
+        <p>배기량 1000cc 이하, 길이 3.6m 이하, 너비 1.6m 이하, 높이 2.0m 이하인 경형 자동차는 취득세 4%에서 75만원을 감면받습니다. 2026년까지 감면 조항이 유지됩니다. 경차는 농어촌특별세도 비과세로 추가 절세 효과가 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">전기차·수소차·하이브리드 감면</h3>
+        <p>전기차와 수소전기차는 취득세 140만원 감면, 하이브리드(일반/플러그인)는 40만원 감면이 적용됩니다. 전기차·수소차는 농어촌특별세도 비과세입니다. 하이브리드는 농어촌특별세 과세 대상입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">장애인 취득세 비과세</h3>
+        <p>지방세특례제한법 제17조에 따라 장애인(본인 또는 동거 가족)이 취득하는 자동차 중 2000cc 이하 승용차 또는 승합차·화물차 1대는 취득세가 비과세됩니다. 이미 1대에 대해 비과세를 적용받은 경우 추가 차량은 과세됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">다자녀 가구 취득세 감면</h3>
+        <p>만 18세 미만 자녀 3명 이상을 둔 다자녀 가구는 지방세특례제한법 제22조의2에 따라 취득세 감면을 받습니다. 첫 번째 취득 차량은 취득세 전액 면제(200만원 한도), 이후 차량은 50% 감면입니다. 감면 신청은 차량 등록 시 관할 시·군·구청에서 합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">중고차 취득세 과세표준</h3>
+        <p>중고차는 실제 취득가격과 행정안전부 고시 시가표준액 중 높은 금액을 과세표준으로 합니다. 시가표준액은 차종·연식·배기량에 따라 다르며, 국토교통부 자동차365 또는 위택스에서 확인 가능합니다. 취득가격을 입증하지 못하는 경우 시가표준액이 적용됩니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>승용차와 SUV의 취득세율은 같은가요?</summary>
+            <p>네, SUV는 차량 등록상 승용차로 분류되므로 비영업용 기준 7% 세율이 적용됩니다. 다만 경차 기준(배기량 1000cc 이하, 크기 제한)을 충족하는 소형 SUV는 경차 혜택을 받을 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>감면 조건이 여러 개 중복되면 어떻게 되나요?</summary>
+            <p>감면 조건이 중복되는 경우 가장 유리한 단일 감면을 적용하며 중복 감면은 허용되지 않습니다. 예를 들어 전기차이면서 다자녀 가구인 경우, 더 유리한 감면 조건 하나만 적용됩니다. 단, 장애인 비과세는 전액 비과세로 다른 감면보다 유리한 경우가 많습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>취득세 납부 기한은 언제인가요?</summary>
+            <p>자동차 취득세는 차량 취득일(등록일)로부터 60일 이내에 납부해야 합니다. 기한 내 미납 시 가산세(납부세액의 3%)와 중가산세가 부과됩니다. 자동차 등록 신청 시 함께 납부하는 것이 일반적입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>법인 명의 차량도 동일한 세율인가요?</summary>
+            <p>법인 명의 차량도 개인과 동일한 취득세율이 적용됩니다. 다만 법인 영업용 차량은 4% 세율이 적용됩니다. 법인의 경우 경차·전기차 감면은 동일하게 적용되나, 장애인·다자녀 감면은 개인에게만 해당됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>이미 납부한 취득세를 환급받을 수 있나요?</summary>
+            <p>감면 신청을 누락한 경우 취득세 납부일로부터 5년 이내에 경정청구를 통해 환급받을 수 있습니다. 경차·전기차 감면, 다자녀 감면 등을 놓친 경우 관할 시·군·구청 세무과에 경정청구서를 제출하면 됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>취득세 신고는 어디서 하나요?</summary>
+            <p>자동차 취득세는 차량 등록 시 관할 시·군·구청(자동차 등록사업소)에서 함께 처리됩니다. 위택스(wetax.go.kr)에서 온라인 신고 및 납부도 가능합니다. 딜러를 통한 신차 구매 시 보통 딜러가 대행하는 경우가 많습니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>차량 유형별 취득세율</h3>
+        <ul>
+          <li><strong>비영업용 승용차</strong>: 7%</li>
+          <li><strong>비영업용 승합·화물</strong>: 5%</li>
+          <li><strong>영업용 차량</strong>: 4%</li>
+          <li><strong>경차 (1000cc↓)</strong>: 4% - 75만원</li>
+          <li><strong>이륜차 (125cc↑)</strong>: 2%</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 2026년 기준</p>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>친환경차 감면</h3>
+        <ul>
+          <li><strong>전기차</strong>: 140만원 감면</li>
+          <li><strong>수소차</strong>: 140만원 감면</li>
+          <li><strong>하이브리드</strong>: 40만원 감면</li>
+          <li><strong>경차</strong>: 75만원 감면</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 전기차·수소차·경차는 농특세 비과세</p>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>추가 감면 조건</h3>
+        <ul>
+          <li><strong>장애인</strong>: 비과세 (2000cc↓ 또는 승합)</li>
+          <li><strong>다자녀 첫 차</strong>: 전액 면제 (200만원 한도)</li>
+          <li><strong>다자녀 이후 차</strong>: 50% 감면</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 만 18세 미만 자녀 3명 이상</p>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="acquisition-tax.html" class="related-link">부동산 취득세</a>
+          <a href="loan.html" class="related-link">자동차 대출</a>
+          <a href="child-tax-deduction.html" class="related-link">자녀세액공제</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 활용 가이드 + 상세 해설 -->
+<div class="container" style="padding-top:0;">
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">자동차 취득세 계산기 활용 가이드</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      차량 구매 시 취득세는 차량 가격 외 추가로 납부해야 하는 비용 중 가장 큰 항목입니다. 차량 구매 전에 이 계산기로 총 납부세액을 파악하고 예산을 정확히 수립하세요.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 1 — 중형 승용차 구매:</strong> 4,000만원 비영업용 승용차를 구매할 경우 취득세 7% = 280만원, 농어촌특별세 2% = 80만원, 지방교육세 취득세의 30% = 84만원으로 총 세금은 약 444만원입니다. 하이브리드 차량이라면 취득세에서 40만원이 차감되어 총 약 400만원입니다.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 2 — 전기차 절세 효과:</strong> 5,000만원 전기차 구매 시 취득세 7% = 350만원에서 140만원 감면을 받으면 납부액은 210만원입니다. 여기에 농어촌특별세가 비과세로, 지방교육세만 약 63만원 납부합니다. 일반 승용차 대비 최소 220만원 이상 절세됩니다.
+    </p>
+    <p style="line-height:1.8;color:#444;">
+      <strong>활용 사례 3 — 다자녀 가구 면세 혜택:</strong> 만 18세 미만 자녀 3명 이상 가구의 첫 번째 차량은 200만원 한도로 취득세가 전액 면제됩니다. 3,000만원 이하 경차를 첫 차로 구매하면 취득세가 0원이 될 수도 있습니다.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">자동차 취득세 상세 해설 — 2026년 기준</h2>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">세금 종류별 부과 기준</h3>
+    <table class="result-table" style="font-size:0.9em;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>세금 종류</td><td>세율</td><td>과세 기준</td></tr>
+      <tr><td>취득세</td><td>7% (승용차 기준)</td><td>차량 취득가액</td></tr>
+      <tr><td>농어촌특별세</td><td>취득세의 10%</td><td>경차·전기차·수소차 비과세</td></tr>
+      <tr><td>지방교육세</td><td>취득세의 30%</td><td>경차는 별도 규정 없음</td></tr>
+    </table>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">취득가액 산정 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      취득세 계산의 기준이 되는 취득가액은 실제 구입가격(부가세 포함, 취등록세·보험료 등 제외)이 원칙입니다. 다만 신차의 경우 제조사가 정한 <strong>시가표준액(기준가격)</strong>이 취득가액보다 낮으면 시가표준액으로 과세합니다. 일반적으로 실제 구입가격을 기준으로 신고하면 됩니다.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">취득세 신고·납부 기한</h3>
+    <p style="line-height:1.8;color:#444;">
+      자동차 취득세는 차량 등록일로부터 <strong>60일 이내</strong>에 신고·납부해야 합니다. 기한을 초과하면 무신고 가산세 20%와 납부지연 가산세가 부과됩니다. 딜러·영업사원을 통해 차량을 구입하면 대행 처리해주는 경우가 많으므로 납부 일정을 미리 확인하세요.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="acquisition-tax.html">부동산 취득세 계산기</a> — 주택·토지·건물 취득세</li>
+      <li><a href="loan.html">대출이자 계산기</a> — 자동차 할부·대출 이자 계산</li>
+      <li><a href="car-tax.html">자동차세 계산기</a> — 배기량 기준 연간 자동차세</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> — 4대보험·소득세 공제 후 월 수령액</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 관할 시·군·구청 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  // 다자녀 체크박스 토글
+  document.getElementById('chkMultiChild').addEventListener('change', function() {
+    document.getElementById('multiChildOption').style.display = this.checked ? 'block' : 'none';
+  });
+
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  function calculate() {
+    const carType = document.getElementById('carType').value;
+    const carPrice = parseFloat(document.getElementById('carPrice').value) || 0;
+    const ecoType = document.querySelector('input[name="ecoType"]:checked').value;
+    const isDisabled = document.getElementById('chkDisabled').checked;
+    const isMultiChild = document.getElementById('chkMultiChild').checked;
+    const multiChildOrder = document.querySelector('input[name="multiChildOrder"]:checked').value;
+
+    if (carPrice <= 0) {
+      alert('차량 가격을 입력해 주세요.');
+      return;
+    }
+
+    // ── 기본 취득세율 결정 ──────────────────────────────────
+    let baseRate = 0.07; // 비영업용 승용차 기본
+    if (carType === 'van' || carType === 'truck') baseRate = 0.05;
+    else if (carType === 'commercial') baseRate = 0.04;
+    else if (carType === 'motorcycle') baseRate = 0.02;
+    else if (carType === 'passenger' && ecoType === 'small') baseRate = 0.04;
+
+    // ── 취득세 원액 ──────────────────────────────────────────
+    let rawTax = carPrice * baseRate;
+
+    // ── 감면액 계산 ──────────────────────────────────────────
+    let discountAmt = 0;         // 취득세 감면액
+    let discountLabel = '';
+    let isExempt = false;        // 비과세 여부
+    let isAgriTaxFree = false;   // 농특세 비과세 여부
+
+    // 장애인 비과세 (최우선)
+    if (isDisabled) {
+      isExempt = true;
+      isAgriTaxFree = true;
+      discountLabel = '장애인 비과세';
+    }
+    // 다자녀 첫 번째 차량 (200만원 한도 전액 면제)
+    else if (isMultiChild && multiChildOrder === 'first') {
+      discountAmt = Math.min(rawTax, 2000000);
+      discountLabel = '다자녀 취득세 면제 (200만원 한도)';
+    }
+    // 친환경·경차 감면
+    else {
+      if (ecoType === 'small') {
+        discountAmt = 750000;
+        isAgriTaxFree = true;
+        discountLabel = '경차 감면 (75만원)';
+      } else if (ecoType === 'ev') {
+        discountAmt = 1400000;
+        isAgriTaxFree = true;
+        discountLabel = '전기차 감면 (140만원)';
+      } else if (ecoType === 'hydrogen') {
+        discountAmt = 1400000;
+        isAgriTaxFree = true;
+        discountLabel = '수소차 감면 (140만원)';
+      } else if (ecoType === 'hybrid') {
+        discountAmt = 400000;
+        discountLabel = '하이브리드 감면 (40만원)';
+      }
+
+      // 다자녀 이후 차량 50% 감면 (친환경 감면과 비교해 유리한 것 선택)
+      if (isMultiChild && multiChildOrder === 'after') {
+        const multiChildDiscount = rawTax * 0.5;
+        if (multiChildDiscount > discountAmt) {
+          discountAmt = multiChildDiscount;
+          discountLabel = '다자녀 취득세 50% 감면';
+          isAgriTaxFree = false; // 다자녀는 농특세 비과세 아님
+        }
+      }
+    }
+
+    // ── 취득세 납부액 ────────────────────────────────────────
+    let acquisitionTax = 0;
+    if (isExempt) {
+      acquisitionTax = 0;
+      discountAmt = rawTax;
+    } else {
+      acquisitionTax = Math.max(0, rawTax - discountAmt);
+    }
+
+    // ── 농어촌특별세 (취득세 납부액 × 10%, 비과세 차량 제외) ──
+    // 이륜차는 농특세 없음
+    let agriTax = 0;
+    if (!isAgriTaxFree && carType !== 'motorcycle') {
+      agriTax = acquisitionTax * 0.1;
+    }
+
+    // ── 지방교육세 (취득세 납부액 × 20%) ────────────────────
+    // 이륜차, 영업용은 지방교육세 부과
+    let eduTax = acquisitionTax * 0.2;
+
+    // ── 총 납부세액 ──────────────────────────────────────────
+    const totalTax = acquisitionTax + agriTax + eduTax;
+
+    // ── 결과 표시 ────────────────────────────────────────────
+    document.getElementById('totalTax').textContent = fmt(totalTax);
+    document.getElementById('totalSub').textContent =
+      `취득세 ${fmt(acquisitionTax)} + 농특세 ${fmt(agriTax)} + 지방교육세 ${fmt(eduTax)}`;
+
+    // 카드
+    const cards = [
+      { label: '취득세 (감면 전)', val: fmt(rawTax), cls: '' },
+      { label: discountLabel || '감면 없음', val: discountAmt > 0 ? '−' + fmt(discountAmt) : '−0원', cls: 'discount' },
+      { label: '취득세 (납부)', val: fmt(acquisitionTax), cls: 'highlight' },
+      { label: '농어촌특별세', val: fmt(agriTax), cls: '' },
+      { label: '지방교육세', val: fmt(eduTax), cls: '' },
+    ];
+    document.getElementById('taxCards').innerHTML = cards.map(c =>
+      `<div class="tax-card ${c.cls}"><div class="tlabel">${c.label}</div><div class="tval">${c.val}</div></div>`
+    ).join('');
+
+    // 테이블
+    const rateLabel = baseRate * 100 + '%';
+    const rows = [
+      ['차량 과세표준', fmt(carPrice)],
+      ['적용 세율', rateLabel],
+      ['취득세 원액', fmt(rawTax)],
+      ['감면액 (' + (discountLabel || '해당없음') + ')', discountAmt > 0 ? '−' + fmt(discountAmt) : '−0원'],
+      ['취득세 납부액', fmt(acquisitionTax)],
+      ['농어촌특별세 (취득세×10%)', isAgriTaxFree || carType === 'motorcycle' ? '비과세' : fmt(agriTax)],
+      ['지방교육세 (취득세×20%)', fmt(eduTax)],
+    ];
+    document.getElementById('taxTableBody').innerHTML = rows.map((r, i) =>
+      `<tr${i === rows.length - 1 ? '' : ''}><td>${r[0]}</td><td>${r[1]}</td></tr>`
+    ).join('') +
+    `<tr class="total"><td>총 납부세액</td><td>${fmt(totalTax)}</td></tr>`;
+
+    // 안내문구
+    let notice = '';
+    if (isExempt) notice = '<strong>장애인 비과세</strong>: 2000cc 이하 승용차 또는 승합·화물차 1대에 한해 취득세가 전액 비과세됩니다. 관할 시·군·구청에 장애인증명서를 제출해야 합니다.';
+    else if (isMultiChild && multiChildOrder === 'first') notice = '<strong>다자녀 첫 번째 차량 면제</strong>: 만 18세 미만 자녀 3명 이상인 경우 취득세 전액(최대 200만원)이 면제됩니다. 차량 등록 시 가족관계증명서 등 자녀 수 확인 서류를 제출하세요.';
+    else if (ecoType === 'small') notice = '<strong>경차 감면</strong>: 1000cc 이하 경형 자동차는 취득세 75만원 감면 및 농어촌특별세 비과세 혜택이 있습니다. 2026년까지 적용됩니다.';
+    else if (ecoType === 'ev' || ecoType === 'hydrogen') notice = '<strong>전기·수소차 감면</strong>: 취득세 140만원 감면 및 농어촌특별세 비과세가 적용됩니다.';
+    else if (ecoType === 'hybrid') notice = '<strong>하이브리드 감면</strong>: 취득세 40만원 감면이 적용됩니다. 농어촌특별세는 과세 대상입니다.';
+    else notice = '본 계산 결과는 참고용입니다. 정확한 세액은 위택스(wetax.go.kr) 또는 관할 시·군·구청에서 확인하세요.';
+
+    document.getElementById('noticeBox').innerHTML = notice;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

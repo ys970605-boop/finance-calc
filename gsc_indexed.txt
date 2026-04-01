@@ -10,3 +10,5 @@ https://calcmoney.kr/jeonse-monthly
 https://calcmoney.kr/simplified-vat
 https://calcmoney.kr/vat
 https://calcmoney.kr/weekly-holiday
+https://calcmoney.kr/severance
+https://calcmoney.kr/loan

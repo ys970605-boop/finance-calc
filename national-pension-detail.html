@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국민연금 수령액 상세 계산기 2026 - A값·B값·가급연금·조기/연기수령 완전 계산</title>
+  <meta name="description" content="2026년 기준 국민연금 예상 수령액을 상세 계산합니다. A값(286만원)·B값·소득대체율·부양가족 가급연금, 조기수령(최대 30% 감액)·연기수령(최대 36% 증액)까지 한번에 계산하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/national-pension-detail">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="국민연금 수령액 상세 계산기 2026 - A값·B값·가급연금·조기/연기수령">
+  <meta property="og:description" content="2026년 기준 국민연금 기본연금액, 부양가족 가급연금, 조기/연기수령 금액을 나이별로 비교하세요.">
+  <meta property="og:url" content="https://calcmoney.kr/national-pension-detail">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026년 국민연금 A값은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 국민연금 A값(전체 가입자 평균소득월액의 3년 평균)은 약 286만원(2,860,000원)입니다. A값은 매년 전체 가입자의 평균 소득 변화를 반영하여 조정됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "국민연금 기본연금액 계산 공식은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "기본연금액 = 1.2 × (A + B) × (1 + 0.05n/12) 입니다. A는 전체 가입자 평균소득월액(2026년 286만원), B는 본인 가입기간 평균소득월액(기준소득월액 평균), n은 20년 초과 가입월수입니다. 가입기간이 20년 이하이면 n=0입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "부양가족 가급연금이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "가급연금은 국민연금 수급자가 부양하는 가족(배우자, 자녀, 부모)이 있을 경우 기본연금액에 추가로 지급되는 금액입니다. 2026년 기준 배우자 월 27,900원, 자녀·부모 1인당 월 18,600원이 추가 지급됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "조기수령 시 얼마나 감액되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "조기수령(조기노령연금)은 60세부터 신청 가능하며, 정상 수급나이(65세)보다 1년 앞당길수록 월 0.5%씩(연 6%) 감액됩니다. 최대 5년 조기 시 총 30% 감액되어 60세 수령 시 기본 수령액의 70%만 받게 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연기수령 시 얼마나 증액되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연기수령(연기연금)은 최대 5년(70세)까지 연기할 수 있으며, 1개월 연기할 때마다 0.6%(연 7.2%)씩 증액됩니다. 최대 5년 연기 시 36% 증액되어 70세 수령 시 기본 수령액의 136%를 받게 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "국민연금 소득대체율이란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "소득대체율은 40년 가입 기준으로 생애 평균소득 대비 연금 수령액 비율입니다. 2026년 현재 소득대체율은 42%(2028년까지 단계적 인상 예정). 실질 수령액은 가입기간이 짧을수록 낮아집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "국민연금 기준소득월액 상한·하한은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 국민연금 기준소득월액 상한은 617만원, 하한은 37만원입니다. 실제 소득이 617만원을 초과해도 617만원 기준으로 보험료 및 B값이 산정됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "국민연금 보험료는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 국민연금 보험료율은 기준소득월액의 9%입니다. 직장가입자는 근로자 4.5%, 사업주 4.5%씩 부담합니다. 지역가입자(자영업자, 프리랜서 등)는 9% 전액 본인 부담입니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .formula-block { background: #f8f9fa; border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 12px 0; font-size: 14px; line-height: 1.9; }
+    .formula-block strong { color: var(--primary); }
+    .warn-box { background: #fff3e0; border: 1px solid #ffcc02; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #7a5800; margin-top: 16px; }
+    .badge-early { display: inline-block; background: #ff6d00; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 12px; font-weight: 700; margin-left: 6px; vertical-align: middle; }
+    .badge-late { display: inline-block; background: #1976d2; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 12px; font-weight: 700; margin-left: 6px; vertical-align: middle; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
+    .compare-table th, .compare-table td { padding: 9px 12px; border: 1px solid var(--border); text-align: center; }
+    .compare-table th { background: #f1f3f4; font-weight: 600; }
+    .compare-table tr.row-normal { background: #e8f5e9; font-weight: 700; }
+    .compare-table tr.row-normal td { color: #2e7d32; }
+    .compare-table tr.row-early td { color: #e65100; }
+    .compare-table tr.row-late td { color: #1565c0; }
+    .seo-content { margin-top: 32px; }
+    .seo-section { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 32px; margin-bottom: 24px; }
+    .seo-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+    .seo-section h3 { font-size: 16px; font-weight: 700; margin: 20px 0 8px; color: var(--text); }
+    .seo-section p { font-size: 15px; color: #3c4043; line-height: 1.8; margin-bottom: 12px; }
+    .seo-list { padding-left: 20px; margin-bottom: 12px; }
+    .seo-list li { font-size: 14px; color: #3c4043; line-height: 1.8; margin-bottom: 4px; }
+    .table-wrap { overflow-x: auto; margin: 12px 0; }
+    .seo-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .seo-table th, .seo-table td { padding: 10px 14px; border: 1px solid var(--border); text-align: center; }
+    .seo-table th { background: #f1f3f4; font-weight: 600; }
+    .seo-table tbody tr:nth-child(even) { background: #fafafa; }
+    .table-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+    .result-section-title { font-size: 15px; font-weight: 700; margin: 20px 0 8px; color: #333; border-top: 2px solid #e0e0e0; padding-top: 16px; }
+    @media (max-width: 600px) { .seo-section { padding: 20px 16px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="pension-payout.html">연금수령액</a>
+      <a href="national-pension-detail.html" class="active">연금상세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>국민연금 수령액 상세 계산기</h1>
+        <p class="desc">2026년 기준 국민연금 기본연금액(A값·B값), 부양가족 가급연금, 조기수령·연기수령 금액을 상세 계산합니다. 수령 시작 나이별 비교표를 통해 최적 시점을 판단하세요.</p>
+
+        <div class="form-group">
+          <label>현재 나이 <span class="hint">만 나이 기준</span></label>
+          <input type="number" id="currentAge" placeholder="예: 45" value="45" min="18" max="69">
+        </div>
+
+        <div class="form-group">
+          <label>국민연금 가입 시작 나이 <span class="hint">처음 납부 시작한 나이</span></label>
+          <input type="number" id="startAge" placeholder="예: 25" value="25" min="18" max="60">
+        </div>
+
+        <div class="form-group">
+          <label>월 기준소득월액 <span class="hint">세전 월소득, 원 단위 (상한 617만원)</span></label>
+          <input type="number" id="monthlyIncome" placeholder="예: 4000000" value="4000000" min="370000" max="6170000">
+        </div>
+
+        <div class="form-group">
+          <label>예상 은퇴 나이 <span class="hint">납부 종료 나이, 60~65세</span></label>
+          <input type="number" id="retireAge" placeholder="예: 60" value="60" min="50" max="65">
+        </div>
+
+        <div class="form-group">
+          <label>부양가족 — 배우자 수 <span class="hint">국민연금 미가입 배우자</span></label>
+          <select id="spouseCount">
+            <option value="0">없음</option>
+            <option value="1">1명</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>부양가족 — 자녀·부모 수 <span class="hint">합산 인원수</span></label>
+          <input type="number" id="dependents" placeholder="예: 2" value="0" min="0" max="10">
+        </div>
+
+        <div class="form-group">
+          <label>연간 소득 상승률 <span class="hint">%, 없으면 0</span></label>
+          <input type="number" id="incomeGrowth" placeholder="예: 2" value="2" min="0" max="20" step="0.1">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result" style="display:none;">
+          <div class="result-highlight">
+            <div class="label">65세 정상 수령 시 월 예상수령액</div>
+            <div class="value" id="rMonthly">-</div>
+            <div class="sub" id="rAnnual"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>총 가입 기간</td><td id="rJoinedMonths">-</td></tr>
+            <tr><td>가입 기간 평균 기준소득월액 (B값)</td><td id="rBValue">-</td></tr>
+            <tr><td>전체 가입자 평균소득월액 (A값)</td><td>2,860,000원 (2026년 기준)</td></tr>
+            <tr><td>소득대체율 (40년 기준)</td><td>42%</td></tr>
+            <tr><td>20년 초과 가입월수 (n)</td><td id="rN">-</td></tr>
+            <tr><td>기본연금액 계산식</td><td id="rFormula">-</td></tr>
+            <tr class="total"><td>기본연금액 (월)</td><td id="rBasePension">-</td></tr>
+            <tr><td>부양가족 가급연금 (월)</td><td id="rFamilyBonus">-</td></tr>
+            <tr class="total"><td>총 월 수령액 (65세)</td><td id="rTotalMonthly">-</td></tr>
+            <tr><td>연간 수령액 (65세)</td><td id="rYearly">-</td></tr>
+          </table>
+
+          <div class="result-section-title">수령 시작 나이별 월 수령액 비교 <span class="badge-early">조기</span><span class="badge-late">연기</span></div>
+          <table class="compare-table" id="compareTable">
+            <thead>
+              <tr>
+                <th>수령 시작 나이</th>
+                <th>구분</th>
+                <th>감액/증액률</th>
+                <th>월 수령액</th>
+                <th>연간 수령액</th>
+              </tr>
+            </thead>
+            <tbody id="compareBody"></tbody>
+          </table>
+
+          <div class="warn-box" style="margin-top:16px;">
+            <strong>주의:</strong> 본 계산기는 2026년 국민연금 기본연금액 공식 및 가급연금 기준을 바탕으로 한 <strong>참고용 추정치</strong>입니다. 실제 수령액은 국민연금공단의 가입 이력, 군복무·출산·실직 크레딧, 분할연금, 중복급여 조정 등에 따라 달라질 수 있습니다. 정확한 수령액은 <a href="https://www.nps.or.kr" target="_blank" rel="noopener" style="color:var(--primary);">국민연금공단 홈페이지</a>에서 확인하세요.
+          </div>
+        </div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>기본연금액 공식</h3>
+        <div class="formula-block">
+          <strong>기본연금액 = 1.2 × (A+B) × (1 + 0.05n/12)</strong><br>
+          · A = 전체 가입자 평균소득월액 (2026년 약 286만원)<br>
+          · B = 본인 가입기간 기준소득월액 평균<br>
+          · n = 20년 초과 가입월수 (20년 이하 시 n=0)
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h3>조기/연기 수령 요약</h3>
+        <ul>
+          <li>60세 조기: <strong>30% 감액 (70%)</strong></li>
+          <li>61세 조기: 24% 감액 (76%)</li>
+          <li>62세 조기: 18% 감액 (82%)</li>
+          <li>63세 조기: 12% 감액 (88%)</li>
+          <li>64세 조기: 6% 감액 (94%)</li>
+          <li>65세: 정상 (100%)</li>
+          <li>66세 연기: 7.2% 증액 (107.2%)</li>
+          <li>67세 연기: 14.4% 증액 (114.4%)</li>
+          <li>68세 연기: 21.6% 증액 (121.6%)</li>
+          <li>69세 연기: 28.8% 증액 (128.8%)</li>
+          <li>70세 연기: <strong>36% 증액 (136%)</strong></li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>2026년 가급연금 기준</h3>
+        <ul>
+          <li>배우자: 월 27,900원</li>
+          <li>자녀(18세 미만 또는 장애): 1인당 월 18,600원</li>
+          <li>부모(60세 이상 또는 장애): 1인당 월 18,600원</li>
+          <li>최대 지급: 자녀·부모 합산 최대 5인까지</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>기준소득월액 상·하한</h3>
+        <ul>
+          <li>상한: 6,170,000원 (617만원)</li>
+          <li>하한: 370,000원 (37만원)</li>
+          <li>보험료율: 9% (직장 근로자 4.5%, 사업주 4.5%)</li>
+          <li>지역가입자: 9% 전액 본인 부담</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="pension-payout.html" class="related-link">연금수령액</a>
+          <a href="four-insurance.html" class="related-link">4대보험</a>
+          <a href="retirement-fund.html" class="related-link">퇴직연금</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO 콘텐츠 -->
+<div class="container seo-content">
+
+  <section class="seo-section">
+    <h2>2026년 국민연금 수령액 — 소득·가입기간별 시뮬레이션</h2>
+    <p>아래 표는 <strong>2026년 A값 286만원</strong>을 기준으로, 월 소득 300만원·400만원·500만원 직장인이 가입 기간에 따라 65세에 수령하는 예상 월 연금액 시뮬레이션입니다.</p>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>월 소득</th>
+            <th>가입 20년</th>
+            <th>가입 25년</th>
+            <th>가입 30년</th>
+            <th>가입 35년</th>
+            <th>가입 40년</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>200만원</td><td>약 580,800원</td><td>약 755,000원</td><td>약 929,000원</td><td>약 1,105,000원</td><td>약 1,278,000원</td></tr>
+          <tr><td>300만원</td><td>약 696,000원</td><td>약 905,000원</td><td>약 1,114,000원</td><td>약 1,323,000원</td><td>약 1,531,000원</td></tr>
+          <tr><td>400만원</td><td>약 811,200원</td><td>약 1,055,000원</td><td>약 1,298,000원</td><td>약 1,542,000원</td><td>약 1,785,000원</td></tr>
+          <tr><td>500만원</td><td>약 926,400원</td><td>약 1,205,000원</td><td>약 1,483,000원</td><td>약 1,761,000원</td><td>약 2,038,000원</td></tr>
+          <tr><td>617만원(상한)</td><td>약 1,068,000원</td><td>약 1,388,000원</td><td>약 1,709,000원</td><td>약 2,030,000원</td><td>약 2,349,000원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">※ 2026년 A값 286만원, 소득 상승률 0% 기준 추정치. 실제 수령액은 가입 이력에 따라 다릅니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>국민연금 기본연금액 공식 완전 해설</h2>
+
+    <h3>공식의 구성 요소</h3>
+    <p>국민연금 기본연금액은 다음 공식으로 산정됩니다.</p>
+    <div class="formula-block">
+      <strong>기본연금액 = 1.2 × (A + B) × (1 + 0.05n/12)</strong><br><br>
+      · <strong>A값</strong>: 연금 수급 직전 3년간 전체 가입자의 평균소득월액 평균 → 2026년 약 <strong>2,860,000원</strong><br>
+      · <strong>B값</strong>: 가입자 본인의 가입기간 중 기준소득월액을 재평가한 평균 (현재가치 환산)<br>
+      · <strong>n</strong>: 20년(240개월) 초과 가입월수. 20년 이하이면 n=0, 가입기간이 길수록 비례해서 증가<br>
+      · 1.2는 소득재분배와 적정 급여 보장을 위한 가중치
+    </div>
+
+    <h3>A값의 의미와 소득재분배 효과</h3>
+    <p>A값이 공식에 포함되는 이유는 <strong>소득재분배</strong> 때문입니다. 저소득 가입자의 경우 본인 소득(B값)보다 A값이 높을 수 있어 상대적으로 높은 대체율을 보장합니다. 반면 고소득 가입자는 B값이 A값보다 크지만, 기준소득월액 상한(617만원)이 적용되어 무한정 높아지지는 않습니다.</p>
+
+    <h3>B값 계산 방법</h3>
+    <p>B값은 가입기간 동안 매년 납부한 기준소득월액을 수급 전년도 현재가치로 환산한 후 평균을 낸 값입니다. 간단히 말해 과거 소득을 현재 소득 수준으로 재평가하여 물가 상승 효과를 반영합니다. 이 계산기에서는 연간 소득 상승률을 반영해 근사치를 계산합니다.</p>
+
+    <h3>20년 초과 가산 (n값)</h3>
+    <p>가입기간이 20년을 초과하면 초과 1개월당 기본연금액이 0.05/12(약 0.417%) 증가합니다. 예를 들어 30년(360개월) 가입 시 n=120으로 기본연금액은 (1 + 0.05×120/12) = 1.5배, 즉 50% 추가됩니다. 40년 가입 시 n=240으로 기본연금액은 2.0배가 됩니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>조기수령 vs 연기수령 — 언제 받는 것이 유리할까?</h2>
+
+    <h3>조기노령연금 (60~64세 수령)</h3>
+    <p>조기수령은 수입이 없거나 건강 문제가 있는 경우 65세 이전에 연금을 받을 수 있는 제도입니다. 단 1개월당 0.5%(연 6%) 감액되며 최대 5년 조기 시 30% 영구 감액됩니다. 감액은 사망 시까지 지속되므로 신중하게 결정해야 합니다.</p>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr><th>수령 나이</th><th>감액률</th><th>지급 비율</th><th>기준 월 100만원 시</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>60세</td><td>30%</td><td>70%</td><td>700,000원</td></tr>
+          <tr><td>61세</td><td>24%</td><td>76%</td><td>760,000원</td></tr>
+          <tr><td>62세</td><td>18%</td><td>82%</td><td>820,000원</td></tr>
+          <tr><td>63세</td><td>12%</td><td>88%</td><td>880,000원</td></tr>
+          <tr><td>64세</td><td>6%</td><td>94%</td><td>940,000원</td></tr>
+          <tr><td>65세</td><td>없음</td><td>100%</td><td>1,000,000원</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>연기연금 (66~70세 수령)</h3>
+    <p>연기수령은 연금 수급 나이가 됐지만 받지 않고 최대 5년까지 연기하는 제도입니다. 1개월 연기할 때마다 0.6%(연 7.2%) 증액되며 최대 5년 연기 시 36% 영구 증액됩니다. 건강하고 다른 소득이 있는 경우 유리할 수 있습니다.</p>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr><th>수령 나이</th><th>증액률</th><th>지급 비율</th><th>기준 월 100만원 시</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>65세</td><td>없음</td><td>100%</td><td>1,000,000원</td></tr>
+          <tr><td>66세</td><td>7.2%</td><td>107.2%</td><td>1,072,000원</td></tr>
+          <tr><td>67세</td><td>14.4%</td><td>114.4%</td><td>1,144,000원</td></tr>
+          <tr><td>68세</td><td>21.6%</td><td>121.6%</td><td>1,216,000원</td></tr>
+          <tr><td>69세</td><td>28.8%</td><td>128.8%</td><td>1,288,000원</td></tr>
+          <tr><td>70세</td><td>36%</td><td>136%</td><td>1,360,000원</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>손익분기점 계산</h3>
+    <p><strong>60세 조기수령 vs 65세 정상수령의 손익분기점</strong>: 65세부터 받으면 1개월에 30% 더 받는데, 5년간 조기수령으로 받은 누적액과 같아지는 시점이 손익분기점입니다. 월 100만원 기준 시 60세 조기는 월 70만원, 65세 정상은 월 100만원입니다. 손익분기점은 약 77~78세로, 그 이후 생존 시 정상수령이 유리합니다.</p>
+    <p><strong>70세 연기수령 vs 65세 정상수령의 손익분기점</strong>: 월 136만원 vs 100만원으로 5년 연기 손실을 만회하는 시점은 약 78~79세입니다. 건강하고 장수할 것으로 예상된다면 연기수령이 유리합니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>부양가족 가급연금 — 추가 수령액 계산</h2>
+
+    <h3>가급연금이란?</h3>
+    <p>가급연금은 국민연금 수급자에게 생계를 의존하는 가족이 있을 경우 기본연금액에 추가로 지급하는 금액입니다. 수급자 본인의 가입 기간이 <strong>20년 이상</strong>이어야 하며, 부양가족이 국민연금을 수령하고 있지 않아야 합니다.</p>
+
+    <h3>2026년 가급연금 지급액</h3>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr><th>부양가족 구분</th><th>지급 조건</th><th>월 추가 지급액</th><th>연간 추가 지급액</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>배우자</td><td>국민연금 미수급 배우자</td><td>27,900원</td><td>334,800원</td></tr>
+          <tr><td>자녀</td><td>18세 미만 또는 2급 이상 장애</td><td>1인당 18,600원</td><td>1인당 223,200원</td></tr>
+          <tr><td>부모(부·모·시부모·장인·장모)</td><td>60세 이상 또는 2급 이상 장애</td><td>1인당 18,600원</td><td>1인당 223,200원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>가급연금은 기본연금액 수급 요건(가입 20년 이상)을 갖추어야 지급됩니다. 배우자가 본인도 국민연금을 수령하게 되면 가급연금은 중단됩니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>국민연금 수령액에 영향을 주는 크레딧 제도</h2>
+
+    <h3>군복무 크레딧</h3>
+    <p>2008년 1월 이후 입대자로 6개월 이상 복무한 경우 복무 기간의 일부(최대 6개월)를 가입 기간으로 인정합니다. 인정 기준소득월액은 A값의 일정 비율로 적용됩니다.</p>
+
+    <h3>출산 크레딧</h3>
+    <p>2008년 1월 이후 둘째 자녀부터 적용됩니다. 자녀 수에 따라 최대 50개월까지 가입기간으로 추가 인정받을 수 있습니다. 자녀 2명: 12개월, 3명: 30개월, 4명: 48개월, 5명 이상: 50개월이 추가됩니다.</p>
+
+    <h3>실업 크레딧</h3>
+    <p>구직급여 수급자가 희망할 경우 연금보험료의 75%를 국가가 지원하며, 납부 기간의 최대 1년을 가입 기간으로 인정합니다. 연 1회, 생애 합산 12개월(1년)까지 신청 가능합니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>국민연금 수령 시 세금 부과 여부</h2>
+
+    <h3>연금소득세 과세 대상</h3>
+    <p>국민연금 수령액은 <strong>연금소득</strong>으로 분류되어 소득세가 부과됩니다. 단, 1999년 이전에 납부한 보험료 해당분은 비과세입니다. 2002년 이후 납부분부터 수령 시 연금소득세가 적용됩니다.</p>
+
+    <h3>연금소득공제</h3>
+    <p>연금소득에는 큰 폭의 연금소득공제가 적용됩니다. 총연금액 350만원 이하: 전액 공제, 350~700만원: 350만원 + 초과분의 40%, 700~1,400만원: 490만원 + 초과분의 20%, 1,400만원 초과: 630만원 + 초과분의 10%(최대 900만원 공제). 노인 인적공제(150만원)와 결합하면 실질 세부담은 대부분 소액 또는 없는 경우가 많습니다.</p>
+
+    <h3>건강보험료 연동</h3>
+    <p>국민연금을 수령하면 해당 금액이 소득으로 잡혀 지역건강보험료에 반영됩니다. 연 소득 336만원(월 28만원) 초과 시부터 건강보험료가 산정되므로, 연금 수령액이 높을 경우 건강보험료 부담도 고려해야 합니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+
+    <h3>Q. 직장을 그만두면 국민연금을 중단할 수 있나요?</h3>
+    <p>직장을 그만두면 직장가입자 자격을 상실하지만, 임의계속가입 신청을 통해 60세가 될 때까지 계속 납부할 수 있습니다. 또는 지역가입자로 전환되어 보험료를 납부할 수 있습니다. 소득이 없어도 납부를 원하면 임의가입(최소 납부 기준)을 활용하세요.</p>
+
+    <h3>Q. 국민연금 가입기간이 10년 미만이면 어떻게 되나요?</h3>
+    <p>가입기간 10년(120개월) 미만 시 노령연금을 받을 수 없습니다. 이 경우 60세 도달 후 반환일시금(납부 보험료 원금 + 이자)으로 돌려받거나, 임의계속가입으로 10년을 채운 후 연금으로 수령할 수 있습니다. 반환일시금보다 연금 수령이 장기적으로 유리한 경우가 많습니다.</p>
+
+    <h3>Q. 배우자가 사망하면 유족연금을 받나요?</h3>
+    <p>국민연금 가입자 또는 수급자가 사망하면 유족(배우자, 자녀, 부모, 조부모, 손자녀 순)이 유족연금을 수령할 수 있습니다. 유족연금액은 수급자의 기본연금액의 40~60%입니다. 단, 배우자 본인도 노령연금 수급자라면 둘 중 유리한 급여 하나를 선택합니다(중복수급 불가).</p>
+
+    <h3>Q. 국민연금 임의가입 최소 보험료는 얼마인가요?</h3>
+    <p>2026년 기준 임의가입의 최저 기준소득월액은 370,000원이며, 보험료율 9%를 적용하면 월 최소 33,300원을 납부합니다. 소득이 없는 전업주부, 학생, 무직자도 이 금액으로 가입하여 가입기간을 늘릴 수 있습니다.</p>
+
+    <h3>Q. 해외 거주 중에도 국민연금을 받을 수 있나요?</h3>
+    <p>네, 국민연금은 국내 거주 여부와 무관하게 수령 가능합니다. 다만, 한국과 사회보장협정을 체결한 국가(미국, 캐나다, 독일 등 30여 개국)의 경우 상호 가입기간 합산이 가능합니다. 해외 수령 시 환율 변동 및 현지 세금 처리 방식도 확인이 필요합니다.</p>
+
+    <h3>Q. 국민연금 수령 중 소득이 생기면 감액되나요?</h3>
+    <p>노령연금 수급 중 소득 활동(근로·사업소득)이 있는 경우, 60~65세 구간에서 소득이 일정 기준(A값의 일정 배수)을 초과하면 재직자노령연금으로 일부 감액될 수 있습니다. 65세 이후에는 소득에 관계없이 전액 지급됩니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>국민연금 수령액 극대화 전략</h2>
+
+    <h3>1. 가입기간을 최대한 늘려라</h3>
+    <p>국민연금 수령액에 가장 큰 영향을 미치는 요소는 가입기간입니다. 특히 20년 초과분부터는 가산율이 추가되므로, 중간에 소득 공백이 생겨도 임의계속가입·임의가입을 통해 가입기간을 유지하는 것이 유리합니다.</p>
+
+    <h3>2. 추납 제도 적극 활용</h3>
+    <p>과거에 소득이 없어 납부하지 못한 기간(적용 제외 기간)은 추후납부(추납) 신청을 통해 보험료를 소급 납부할 수 있습니다. 추납 시 해당 기간이 가입기간으로 인정되어 연금액이 늘어납니다. 최대 10년분까지 일시납 또는 분납이 가능합니다.</p>
+
+    <h3>3. 연기수령으로 장기 이익 확보</h3>
+    <p>건강하고 65세 이후에도 다른 소득(근로소득, 금융자산)이 있다면 연기수령으로 월 수령액을 최대 36%까지 늘리는 전략이 효과적입니다. 기대 수명을 80세 이상으로 예상한다면 연기수령의 누적 수령액이 정상수령보다 많아집니다.</p>
+
+    <h3>4. 배우자와 전략적으로 수령 시점 분리</h3>
+    <p>부부가 각각 국민연금 수급권이 있다면, 한 사람은 조기수령으로 당장의 현금 흐름을 확보하고 다른 한 사람은 연기수령으로 고령 시점의 연금액을 극대화하는 이중 전략도 고려할 수 있습니다.</p>
+
+    <h3>5. 크레딧 누락 확인</h3>
+    <p>군복무 크레딧, 출산 크레딧, 실업 크레딧이 제대로 적용됐는지 국민연금공단을 통해 확인하세요. 누락된 크레딧은 신청으로 소급 반영이 가능합니다. 특히 출산 크레딧은 신청하지 않으면 자동 적용되지 않을 수 있습니다.</p>
+  </section>
+
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 금융기관 및 관계 기관에 문의하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+  // 2026년 기준 상수
+  const A_VALUE = 2860000;          // 전체 가입자 평균소득월액 (A값)
+  const INCOME_RATE = 0.42;          // 소득대체율 40년 기준 42%
+  const MAX_INCOME = 6170000;        // 기준소득월액 상한
+  const MIN_INCOME = 370000;         // 기준소득월액 하한
+  const SPOUSE_BONUS = 27900;        // 배우자 가급연금 (월)
+  const DEPENDENT_BONUS = 18600;     // 자녀/부모 가급연금 (1인당 월)
+
+  function clamp(val, min, max) {
+    return Math.min(Math.max(val, min), max);
+  }
+
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  function calculate() {
+    const currentAge = parseInt(document.getElementById('currentAge').value) || 45;
+    const startAge = parseInt(document.getElementById('startAge').value) || 25;
+    const rawIncome = parseInt(document.getElementById('monthlyIncome').value) || 4000000;
+    const retireAge = parseInt(document.getElementById('retireAge').value) || 60;
+    const spouseCount = parseInt(document.getElementById('spouseCount').value) || 0;
+    const dependents = parseInt(document.getElementById('dependents').value) || 0;
+    const incomeGrowth = parseFloat(document.getElementById('incomeGrowth').value) || 0;
+
+    // 기준소득월액 상/하한 적용
+    const monthlyIncome = clamp(rawIncome, MIN_INCOME, MAX_INCOME);
+
+    // 총 가입 기간 (월)
+    const alreadyMonths = (currentAge - startAge) * 12;
+    const futureMonths = (retireAge - currentAge) * 12;
+    const totalMonths = Math.max(0, alreadyMonths) + Math.max(0, futureMonths);
+
+    if (totalMonths < 120) {
+      alert('가입기간이 10년(120개월) 미만입니다. 노령연금 대신 반환일시금이 지급됩니다.');
+    }
+
+    // B값 계산: 소득 상승률 반영한 평균 기준소득월액
+    // 과거분: 현재 소득으로 소급 (단순화)
+    // 미래분: 은퇴까지 연 growth% 성장
+    let bSum = 0;
+    // 과거 가입 기간: 소득 상승률 역산
+    for (let i = 0; i < Math.max(0, alreadyMonths); i++) {
+      const monthsAgo = alreadyMonths - i;
+      const pastIncome = monthlyIncome / Math.pow(1 + incomeGrowth / 100, monthsAgo / 12);
+      bSum += clamp(pastIncome, MIN_INCOME, MAX_INCOME);
+    }
+    // 미래 가입 기간
+    for (let i = 0; i < Math.max(0, futureMonths); i++) {
+      const futureIncome = monthlyIncome * Math.pow(1 + incomeGrowth / 100, i / 12);
+      bSum += clamp(futureIncome, MIN_INCOME, MAX_INCOME);
+    }
+    const B = totalMonths > 0 ? bSum / totalMonths : monthlyIncome;
+
+    // 20년 초과 가입월수 (n)
+    const n = Math.max(0, totalMonths - 240);
+
+    // 기본연금액 공식: 1.2 × (A + B) × (1 + 0.05n/12)
+    const basePension = 1.2 * (A_VALUE + B) * (1 + 0.05 * n / 12);
+
+    // 가급연금
+    const familyBonus = spouseCount * SPOUSE_BONUS + Math.min(dependents, 5) * DEPENDENT_BONUS;
+
+    // 65세 정상 수령 시 총 월 수령액
+    const totalMonthly = basePension + familyBonus;
+    const yearly = totalMonthly * 12;
+
+    // 결과 표시
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('rMonthly').textContent = fmt(totalMonthly);
+    document.getElementById('rAnnual').textContent = '연간 ' + fmt(yearly);
+    document.getElementById('rJoinedMonths').textContent = totalMonths + '개월 (' + Math.floor(totalMonths / 12) + '년 ' + (totalMonths % 12) + '개월)';
+    document.getElementById('rBValue').textContent = fmt(B);
+    document.getElementById('rN').textContent = n + '개월';
+    document.getElementById('rFormula').textContent = '1.2 × (' + (A_VALUE / 10000).toFixed(0) + '만 + ' + (Math.round(B) / 10000).toFixed(1) + '만) × ' + (1 + 0.05 * n / 12).toFixed(4);
+    document.getElementById('rBasePension').textContent = fmt(basePension);
+    document.getElementById('rFamilyBonus').textContent = fmt(familyBonus);
+    document.getElementById('rTotalMonthly').textContent = fmt(totalMonthly);
+    document.getElementById('rYearly').textContent = fmt(yearly);
+
+    // 수령 나이별 비교표 생성
+    const tbody = document.getElementById('compareBody');
+    tbody.innerHTML = '';
+
+    // 조기수령: 60~64세
+    const earlyAges = [60, 61, 62, 63, 64];
+    earlyAges.forEach(age => {
+      const yearsEarly = 65 - age;
+      const reductionRate = yearsEarly * 0.06; // 연 6% 감액
+      const adjustedMonthly = totalMonthly * (1 - reductionRate);
+      const adjustedYearly = adjustedMonthly * 12;
+      const tr = document.createElement('tr');
+      tr.className = 'row-early';
+      tr.innerHTML = `
+        <td>${age}세</td>
+        <td><span class="badge-early">조기</span></td>
+        <td>-${(reductionRate * 100).toFixed(0)}%</td>
+        <td>${fmt(adjustedMonthly)}</td>
+        <td>${fmt(adjustedYearly)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // 정상 수령: 65세
+    const normalTr = document.createElement('tr');
+    normalTr.className = 'row-normal';
+    normalTr.innerHTML = `
+      <td>65세</td>
+      <td>정상</td>
+      <td>기준</td>
+      <td>${fmt(totalMonthly)}</td>
+      <td>${fmt(yearly)}</td>
+    `;
+    tbody.appendChild(normalTr);
+
+    // 연기수령: 66~70세
+    const lateAges = [66, 67, 68, 69, 70];
+    lateAges.forEach(age => {
+      const monthsLate = (age - 65) * 12;
+      const increaseRate = monthsLate * 0.006; // 월 0.6% 증액
+      const adjustedMonthly = totalMonthly * (1 + increaseRate);
+      const adjustedYearly = adjustedMonthly * 12;
+      const tr = document.createElement('tr');
+      tr.className = 'row-late';
+      tr.innerHTML = `
+        <td>${age}세</td>
+        <td><span class="badge-late">연기</span></td>
+        <td>+${(increaseRate * 100).toFixed(1)}%</td>
+        <td>${fmt(adjustedMonthly)}</td>
+        <td>${fmt(adjustedYearly)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // 스크롤
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+</body>
+</html>

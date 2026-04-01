@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 종합부동산세 계산기 - 공시가격·공제·세율 자동 시뮬레이션 | calcmoney.kr</title>
+  <meta name="description" content="2026년 종합부동산세 계산기. 보유 주택 수·공시가격·1세대1주택·연령·보유기간 입력 시 과세표준, 세율, 세액공제, 농어촌특별세, 재산세 중복공제 반영한 최종 납부세액 자동 계산.">
+  <link rel="canonical" href="https://calcmoney.kr/comprehensive-property-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 종합부동산세 계산기 - 공시가격·세율·공제 자동 계산">
+  <meta property="og:description" content="주택 수·공시가격·1세대1주택 여부·연령·보유기간 입력 → 종부세+농특세+재산세 중복공제 반영 최종 납부세액 즉시 계산.">
+  <meta property="og:url" content="https://calcmoney.kr/comprehensive-property-tax">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "종합부동산세 공제금액은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 종합부동산세 공제금액은 1세대1주택자 12억원, 그 외(다주택자·법인·공동명의 등) 9억원입니다. 공시가격 합산액에서 공제금액을 차감한 뒤 공정시장가액비율(60%)을 곱하면 과세표준이 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "종합부동산세 세율은 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 종부세 세율: 2주택 이하(조정대상지역 외 3주택 포함)는 과세표준 3억 이하 0.5%, 3~6억 0.7%, 6~12억 1.0%, 12~25억 1.3%, 25~50억 1.5%, 50~94억 2.0%, 94억 초과 2.7%. 3주택 이상(조정지역 2주택 포함)은 3억 이하 1.2%, 3~6억 1.6%, 6~12억 2.2%, 12~25억 3.6%, 25~50억 5.0%, 50억 초과 6.0%입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "1세대1주택 고령자·장기보유 공제는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1세대1주택자는 고령자공제(만 60~65세 미만 20%, 65~70세 미만 30%, 70세 이상 40%)와 장기보유공제(5~10년 미만 20%, 10~15년 미만 40%, 15년 이상 50%)를 합산 적용할 수 있으며, 합산 한도는 80%입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "농어촌특별세는 종부세의 몇 %인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "농어촌특별세는 종합부동산세액의 20%입니다. 종부세 100만원이면 농특세 20만원이 추가되어 실납부액은 120만원입니다. 다만 1세대1주택으로 세액공제를 받은 경우 공제 후 산출세액 기준으로 농특세가 계산됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "재산세와 종부세 이중과세는 어떻게 조정되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종부세 납부 시 이미 납부한 재산세와의 이중과세를 조정하기 위해 재산세 공제를 받습니다. 공시가격 합산액에서 공제금액을 뺀 금액에 대한 재산세 상당액을 종부세에서 차감합니다. 이를 통해 동일한 주택에 재산세와 종부세가 이중으로 부과되는 것을 방지합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "종합부동산세 납부 기간은 언제인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종합부동산세는 매년 12월 1일~12월 15일에 납부합니다. 세액이 250만원을 초과하는 경우 6개월 분납 신청이 가능합니다(500만원 초과 시 세액의 50% 이하를 6개월 내 분납). 납부 방법은 은행, 인터넷뱅킹, 위택스(wetax.go.kr), 홈택스에서 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "공동명의 1주택자는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "부부 공동명의 1주택자는 각자 지분에 해당하는 공시가격에서 9억원을 각각 공제받는 방식(각자 9억 기준)과 합산하여 1세대1주택자 기준(12억 공제, 고령자·장기보유공제 가능)으로 신고하는 방식 중 유리한 방법을 선택할 수 있습니다. 선택은 매년 9월 16~30일 신고 기간에 합산 신청하면 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "임대사업자 등록 시 종부세 합산 배제가 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2020년 7·10 대책 이후 단기임대(4년)는 폐지되었고, 장기일반민간임대(10년)로 등록한 주택 중 공시가격 6억원 이하(수도권 외 3억원 이하) 아파트 이외의 주택은 종부세 합산 배제 혜택이 있습니다. 아파트 장기임대는 2020년 이후 신규 등록이 불가합니다. 기존 등록 임대사업자는 요건 충족 시 합산 배제 혜택을 유지할 수 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .step-flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .step-item { background: #fce4ec; border-radius: 8px; padding: 8px 14px; font-size: 0.85em; color: #c62828; font-weight: 600; }
+    .step-arrow { display: flex; align-items: center; color: #aaa; font-size: 1.1em; }
+    .tax-result-main { background: #fce4ec; border: 2px solid #e53935; border-radius: 10px; padding: 20px; text-align: center; margin: 16px 0; }
+    .tax-result-label { font-size: 0.9em; color: #555; margin-bottom: 6px; }
+    .tax-result-amount { font-size: 2em; font-weight: 800; color: #c62828; }
+    .tax-result-sub { font-size: 0.82em; color: #666; margin-top: 6px; }
+    .tax-result-zero { background: #e8f5e9; border-color: #34a853; }
+    .tax-result-zero .tax-result-amount { color: #1e8e3e; }
+    .calc-steps { background: #f8f9fa; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .calc-step-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e0e0e0; font-size: 0.9em; }
+    .calc-step-row:last-child { border-bottom: none; }
+    .calc-step-label { color: #555; }
+    .calc-step-value { font-weight: 600; color: #333; }
+    .highlight-row { background: #f0f4ff; border-radius: 6px; padding: 8px !important; }
+    .highlight-row-warn { background: #fff3e0; border-radius: 6px; padding: 8px !important; }
+    .highlight-row-final { background: #fce4ec; border-radius: 6px; padding: 8px !important; font-size: 1.05em; }
+    .tip-box { background: #fff8e1; border-left: 4px solid #fbbc04; border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 12px 0; }
+    .tip-box h4 { margin: 0 0 8px; font-size: 0.9em; color: #f57c00; }
+    .tip-box ul { margin: 0; padding-left: 18px; font-size: 0.85em; color: #555; line-height: 1.7; }
+    .house-add-btn { background: #f0f4ff; border: 1px dashed #4285f4; border-radius: 8px; padding: 10px; text-align: center; cursor: pointer; color: #1a73e8; font-size: 0.9em; margin: 8px 0; }
+    .house-add-btn:hover { background: #e8f0fe; }
+    .house-entry { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; margin: 8px 0; position: relative; }
+    .house-entry .remove-btn { position: absolute; top: 10px; right: 10px; background: #ea4335; color: #fff; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; font-size: 0.8em; line-height: 22px; text-align: center; }
+    .rate-table { width: 100%; border-collapse: collapse; font-size: 0.85em; margin: 8px 0; }
+    .rate-table th { background: #fce4ec; padding: 6px 8px; text-align: center; font-weight: 600; color: #c62828; }
+    .rate-table td { padding: 6px 8px; border-bottom: 1px solid #f0f0f0; text-align: center; }
+    .rate-table tr:last-child td { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="property-tax.html">재산세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="inheritance-tax.html">상속세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>종합부동산세 계산기</h1>
+        <p class="desc">보유 주택 수, 공시가격, 1세대1주택 여부, 연령, 보유기간을 입력하면 2026년 기준 과세표준, 세율, 세액공제(고령자·장기보유), 농어촌특별세, 재산세 중복공제를 반영한 최종 납부세액을 자동 계산합니다.</p>
+
+        <!-- 계산 흐름 -->
+        <div class="step-flow">
+          <div class="step-item">공시가격 합산</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">공제(9억/12억)</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">×공정시장가액비율</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">세율 적용</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">세액공제</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">+농특세</div>
+        </div>
+
+        <!-- 보유 현황 -->
+        <div class="input-section-title">기본 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>1세대 1주택자 여부</label>
+            <select id="is1House">
+              <option value="yes">예 (1세대1주택자)</option>
+              <option value="no">아니오 (다주택·법인 등)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>보유 주택 수 <span class="hint">종부세 합산 대상 기준</span></label>
+            <select id="houseCount" onchange="renderHouseInputs()">
+              <option value="1">1주택</option>
+              <option value="2">2주택</option>
+              <option value="3">3주택</option>
+              <option value="4">4주택</option>
+              <option value="5">5주택 이상</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 주택별 공시가격 입력 -->
+        <hr class="section-divider">
+        <div class="input-section-title">주택별 공시가격</div>
+        <div id="houseInputs"></div>
+
+        <!-- 1세대1주택 세액공제 -->
+        <hr class="section-divider">
+        <div class="input-section-title" id="creditSection">세액공제 (1세대1주택자만 해당)</div>
+        <div class="form-row" id="creditInputs">
+          <div class="form-group">
+            <label>연령 <span class="hint">만 나이 기준</span></label>
+            <select id="ageGroup">
+              <option value="0">60세 미만 (공제 없음)</option>
+              <option value="20">60~64세 (20% 공제)</option>
+              <option value="30">65~69세 (30% 공제)</option>
+              <option value="40">70세 이상 (40% 공제)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>보유기간 <span class="hint">해당 주택 기준</span></label>
+            <select id="holdPeriod">
+              <option value="0">5년 미만 (공제 없음)</option>
+              <option value="20">5~9년 (20% 공제)</option>
+              <option value="40">10~14년 (40% 공제)</option>
+              <option value="50">15년 이상 (50% 공제)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 조정대상지역 여부 -->
+        <hr class="section-divider">
+        <div class="input-section-title">세율 적용 기준</div>
+        <div class="form-group">
+          <label>보유 현황 <span class="hint">세율 구분 기준</span></label>
+          <select id="taxCategory">
+            <option value="low">2주택 이하 (일반세율 적용)</option>
+            <option value="high">3주택 이상 (중과세율 적용)</option>
+          </select>
+        </div>
+
+        <button class="btn-calc" onclick="calcPropertyTax()">종부세 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <div class="tax-result-main" id="mainResultBox">
+            <div class="tax-result-label">최종 납부세액 (종부세 + 농어촌특별세)</div>
+            <div class="tax-result-amount" id="r_finalTotal"></div>
+            <div class="tax-result-sub" id="r_finalSub"></div>
+          </div>
+
+          <!-- 계산 단계 -->
+          <div class="calc-steps">
+            <div style="font-weight:700;font-size:0.95em;color:#333;margin-bottom:10px;">계산 단계별 상세</div>
+            <div class="calc-step-row"><span class="calc-step-label">공시가격 합산</span><span class="calc-step-value" id="r_totalPublicPrice"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 공제금액</span><span class="calc-step-value" id="r_deduction"></span></div>
+            <div class="calc-step-row highlight-row"><span class="calc-step-label" style="font-weight:600;">공제 후 금액</span><span class="calc-step-value" id="r_afterDeduction"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">× 공정시장가액비율 (60%)</span><span class="calc-step-value" id="r_marketRatio"></span></div>
+            <div class="calc-step-row highlight-row"><span class="calc-step-label" style="font-weight:600;">과세표준</span><span class="calc-step-value" id="r_taxBase"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">적용 세율 구간</span><span class="calc-step-value" id="r_taxRate"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">산출세액 (누진공제 반영)</span><span class="calc-step-value" id="r_calcTax"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 재산세 이중과세 조정</span><span class="calc-step-value" id="r_propTaxCredit"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 고령자 세액공제</span><span class="calc-step-value" id="r_ageCredit"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 장기보유 세액공제</span><span class="calc-step-value" id="r_holdCredit"></span></div>
+            <div class="calc-step-row highlight-row-warn"><span class="calc-step-label" style="font-weight:700;">종합부동산세</span><span class="calc-step-value" id="r_jongbuTax"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(+) 농어촌특별세 (종부세 × 20%)</span><span class="calc-step-value" id="r_agriTax"></span></div>
+            <div class="calc-step-row highlight-row-final"><span class="calc-step-label" style="font-weight:700;color:#c62828;">최종 납부세액</span><span class="calc-step-value" style="color:#c62828;" id="r_finalTax"></span></div>
+          </div>
+
+          <!-- 절세 팁 -->
+          <div class="tip-box" id="taxTipBox"></div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">종합부동산세 핵심 용어 정리</h2>
+
+        <h3 style="font-size:1em;color:#c62828;margin:16px 0 8px;">종합부동산세란?</h3>
+        <p>종합부동산세(종부세)는 국내 소재 주택 및 토지의 공시가격 합산액이 일정 기준을 초과하는 경우 그 초과분에 대해 부과하는 국세입니다. 매년 6월 1일 현재 소유자를 기준으로 과세하며, 12월에 납부합니다. 고가 주택 보유자와 다주택자의 세 부담을 강화하여 부동산 투기를 억제하고 세 부담의 형평성을 높이는 것이 목적입니다.</p>
+
+        <h3 style="font-size:1em;color:#c62828;margin:16px 0 8px;">공시가격과 공정시장가액비율</h3>
+        <p>공시가격은 국토교통부가 매년 공시하는 부동산 가격으로, 시세보다 낮게 책정됩니다. 아파트 등 공동주택은 매년 4월 30일, 단독주택은 1월 25일에 공시됩니다. 공정시장가액비율은 2026년 현재 60%로, 과세표준 계산 시 공시가격에서 공제액을 뺀 금액에 60%를 곱합니다. 과거 100%에서 단계적으로 인하되어 납세 부담이 완화되었습니다.</p>
+
+        <h3 style="font-size:1em;color:#c62828;margin:16px 0 8px;">2026년 종합부동산세 세율표</h3>
+        <p>2주택 이하 세율(일반):</p>
+        <table class="rate-table">
+          <tr><th>과세표준</th><th>세율</th><th>누진공제</th></tr>
+          <tr><td>3억 이하</td><td>0.5%</td><td>-</td></tr>
+          <tr><td>3억~6억</td><td>0.7%</td><td>60만원</td></tr>
+          <tr><td>6억~12억</td><td>1.0%</td><td>240만원</td></tr>
+          <tr><td>12억~25억</td><td>1.3%</td><td>600만원</td></tr>
+          <tr><td>25억~50억</td><td>1.5%</td><td>1,100만원</td></tr>
+          <tr><td>50억~94억</td><td>2.0%</td><td>3,600만원</td></tr>
+          <tr><td>94억 초과</td><td>2.7%</td><td>10,180만원</td></tr>
+        </table>
+        <p style="margin-top:8px;">3주택 이상 중과 세율:</p>
+        <table class="rate-table">
+          <tr><th>과세표준</th><th>세율</th><th>누진공제</th></tr>
+          <tr><td>3억 이하</td><td>1.2%</td><td>-</td></tr>
+          <tr><td>3억~6억</td><td>1.6%</td><td>120만원</td></tr>
+          <tr><td>6억~12억</td><td>2.2%</td><td>480만원</td></tr>
+          <tr><td>12억~25억</td><td>3.6%</td><td>2,160만원</td></tr>
+          <tr><td>25억~50억</td><td>5.0%</td><td>5,660만원</td></tr>
+          <tr><td>50억 초과</td><td>6.0%</td><td>10,660만원</td></tr>
+        </table>
+
+        <h3 style="font-size:1em;color:#c62828;margin:16px 0 8px;">1세대1주택자 세액공제</h3>
+        <p>1세대1주택자는 고령자공제와 장기보유공제를 합산하여 적용할 수 있으며, 합산 한도는 80%입니다. 고령자공제: 만 60~64세 20%, 만 65~69세 30%, 만 70세 이상 40%. 장기보유공제: 보유기간 5~9년 20%, 10~14년 40%, 15년 이상 50%. 두 공제를 더한 값이 80%를 초과해도 80%가 한도입니다. 예를 들어 만 70세 이상(40%) + 15년 이상 보유(50%) = 90% → 80% 적용.</p>
+
+        <h3 style="font-size:1em;color:#c62828;margin:16px 0 8px;">재산세 이중과세 조정</h3>
+        <p>동일한 주택에 재산세와 종부세가 모두 부과되는 이중과세를 방지하기 위해, 종부세 계산 시 이미 납부한 재산세 상당액을 공제합니다. 정확한 재산세 공제액은 주택 재산세(공시가격 × 재산세율)와 종부세 과세표준 산정 방식의 차이를 고려하여 계산됩니다. 이 계산기에서는 재산세 공제를 단순 추정하여 반영합니다.</p>
+
+        <h3 style="font-size:1em;color:#c62828;margin:16px 0 8px;">농어촌특별세</h3>
+        <p>농어촌특별세는 농어업 발전, 농어촌 구조개선 사업 재원 마련을 위해 종합부동산세의 20%를 추가 부과하는 목적세입니다. 종부세와 함께 12월에 납부하며, 별도 신고 없이 과세 당국이 고지합니다. 세액공제 후 종부세가 0원이 되면 농특세도 0원입니다.</p>
+
+        <h3 style="font-size:1em;color:#c62828;margin:16px 0 8px;">종합부동산세 절세 전략</h3>
+        <p>① 공동명의 활용: 부부 공동명의 시 각자 9억 공제로 합산 18억 공제 효과(vs 단독명의 12억). 단, 1세대1주택 세액공제는 합산 신청 시만 가능. ② 증여·양도: 다주택자는 절세를 위해 주택 수를 줄이는 것이 유리. 양도세·증여세와 종합 검토 필요. ③ 임대사업자 등록: 일부 요건 충족 시 합산 배제 혜택. ④ 분납 신청: 세액 250만원 초과 시 6개월 분납 신청으로 유동성 확보. ⑤ 1세대1주택 요건 관리: 일시적 2주택(이사·상속 등) 특례를 적극 활용.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>종합부동산세 과세 기준일은 언제인가요?</summary>
+            <p>종합부동산세 과세 기준일은 매년 6월 1일입니다. 6월 1일 현재 주택을 보유하고 있는 사람이 납세 의무자가 됩니다. 따라서 5월 31일 이전에 주택을 매도하거나 6월 2일 이후에 취득하면 해당 연도 종부세를 피할 수 있습니다. 매매 시 잔금 지급일과 등기 이전일 중 빠른 날이 취득일로 간주됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>일시적 2주택자는 종부세를 1주택자 기준으로 낼 수 있나요?</summary>
+            <p>네, 이사로 인한 일시적 2주택자는 일정 요건을 충족하면 1세대1주택자 기준으로 종부세를 납부할 수 있습니다. 신규 주택 취득 후 2년 이내 기존 주택을 처분하고, 세대원 전원이 신규 주택으로 이사한 경우 1주택자로 인정합니다. 또한 상속으로 인한 2주택(5년간 합산 배제), 노부모 봉양 합가(10년간 1주택 특례) 등의 특례도 있습니다. 해당 연도 9월 16~30일에 합산 배제 신고를 해야 합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>종합부동산세 고지서가 잘못된 경우 어떻게 하나요?</summary>
+            <p>종부세 고지서에 이의가 있으면 납부 기한 내에 이의신청 또는 과세전 적부심사를 청구할 수 있습니다. 고지 후에도 납부 기한 경과 후 5년 이내 경정청구를 통해 환급받을 수 있습니다. 과세 관청(국세청)에 전화(국세상담센터 126) 또는 홈택스를 통해 확인하세요. 공시가격이 잘못된 경우 해당 연도 4~5월 공시가격 이의신청 기간에 시·군·구청에 이의를 제기할 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>법인 보유 주택의 종합부동산세는 어떻게 다른가요?</summary>
+            <p>법인은 개인과 달리 공제금액 없이(공제 0원) 전체 공시가격에 단일 최고세율(2주택 이하 3%, 3주택 이상 6%)이 적용됩니다. 법인세 산정 시 세액공제나 1세대1주택 특례도 적용되지 않습니다. 다만, 공공주택 사업자, 주택건설사업자, 임대주택 등록사업자 중 일부는 합산 배제 대상입니다. 법인의 경우 세 부담이 매우 크므로 반드시 세무 전문가와 상담하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>종합부동산세 분납은 어떻게 신청하나요?</summary>
+            <p>종부세 세액이 250만원을 초과하는 경우 분납이 가능합니다. 세액 250만~500만원: 250만원 초과분을 6개월 내 분납. 세액 500만원 초과: 세액의 50% 이하를 6개월 내 분납. 분납 신청은 종부세 납부 기한(12월 15일)까지 세무서에 신청하거나 홈택스에서 온라인으로 신청할 수 있습니다. 분납액에 대해서는 이자 상당액이 가산되지 않습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>재산세와 종부세를 합친 보유세 총액은 얼마나 되나요?</summary>
+            <p>보유세는 재산세 + 종부세 + 농어촌특별세의 합계입니다. 재산세는 시·군·구에서 7월(1기분)과 9월(2기분)에 부과합니다. 종부세는 12월에 납부합니다. 공시가격 10억원 1주택 보유 시 재산세 약 180만원, 종부세(12억 공제 적용 시) 0원으로 총 보유세는 약 180만원입니다. 공시가격 15억원 1주택은 재산세 약 310만원 + 종부세(12억 공제, 과세표준 1.8억, 0.5% 적용) 약 54만원 = 총 약 364만원 수준입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>임대차 계약 중인 주택도 종부세 합산 대상인가요?</summary>
+            <p>임차인이 거주 중인 주택도 소유자(임대인) 기준으로 종부세가 부과됩니다. 다만 공적 임대사업자로 등록하고 요건(임대기간 10년, 임대료 인상 5% 이내, 공시가격 기준 이하)을 충족하면 일부 합산 배제 혜택을 받을 수 있습니다. 월세 수입에 대한 임대소득세는 별도로 과세됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>주택 외 토지·건물도 종합부동산세 대상인가요?</summary>
+            <p>종합부동산세는 주택과 토지에 모두 적용됩니다. 종합합산토지(나대지·잡종지 등)는 공시가격 5억원 초과분에 0.5~2%, 별도합산토지(상가·사무실 부속 토지 등)는 공시가격 80억원 초과분에 0.5~0.7% 세율이 적용됩니다. 이 계산기는 주택분 종부세만 계산합니다. 토지분 종부세는 별도로 산정해야 합니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-info">
+      <div class="info-box">
+        <h3>2026 종부세 핵심 요약</h3>
+        <ul>
+          <li><strong>1주택 공제: 12억원</strong></li>
+          <li><strong>다주택 공제: 9억원</strong></li>
+          <li>공정시장가액비율: 60%</li>
+          <li>일반세율: 0.5~2.7%</li>
+          <li>중과세율: 1.2~6.0%</li>
+          <li>농특세: 종부세×20%</li>
+          <li>납부기간: 12.1~12.15</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>1세대1주택 세액공제</h3>
+        <ul>
+          <li>60~64세: 20%</li>
+          <li>65~69세: 30%</li>
+          <li>70세+: 40%</li>
+          <li>5~9년 보유: 20%</li>
+          <li>10~14년 보유: 40%</li>
+          <li>15년+ 보유: 50%</li>
+          <li><strong>합산 한도: 80%</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 금융기관 및 관계 기관에 문의하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+function fmt(n) {
+  if (n === 0) return '0원';
+  return Math.round(n).toLocaleString('ko-KR') + '원';
+}
+function fmtMan(n) {
+  const v = Math.round(n / 10000);
+  if (v === 0) return '0원';
+  return v.toLocaleString('ko-KR') + '만원';
+}
+
+function renderHouseInputs() {
+  const cnt = parseInt(document.getElementById('houseCount').value);
+  const container = document.getElementById('houseInputs');
+  container.innerHTML = '';
+  for (let i = 0; i < cnt; i++) {
+    const div = document.createElement('div');
+    div.className = 'house-entry';
+    div.innerHTML = `
+      <div class="form-group" style="margin:0;">
+        <label>${i + 1}번째 주택 공시가격 <span class="hint">원</span></label>
+        <input type="number" id="house_${i}" placeholder="예: 800000000 (8억원)" value="${[800000000, 600000000, 400000000, 300000000, 200000000][i] || 300000000}" min="0">
+      </div>`;
+    container.appendChild(div);
+  }
+}
+
+// 초기 렌더
+renderHouseInputs();
+
+// 2주택 이하 세율
+const rateTableLow = [
+  { limit: 300000000, rate: 0.005, deduct: 0 },
+  { limit: 600000000, rate: 0.007, deduct: 600000 },
+  { limit: 1200000000, rate: 0.010, deduct: 2400000 },
+  { limit: 2500000000, rate: 0.013, deduct: 6000000 },
+  { limit: 5000000000, rate: 0.015, deduct: 11000000 },
+  { limit: 9400000000, rate: 0.020, deduct: 36000000 },
+  { limit: Infinity,  rate: 0.027, deduct: 101800000 }
+];
+
+// 3주택 이상 중과 세율
+const rateTableHigh = [
+  { limit: 300000000, rate: 0.012, deduct: 0 },
+  { limit: 600000000, rate: 0.016, deduct: 1200000 },
+  { limit: 1200000000, rate: 0.022, deduct: 4800000 },
+  { limit: 2500000000, rate: 0.036, deduct: 21600000 },
+  { limit: 5000000000, rate: 0.050, deduct: 56600000 },
+  { limit: Infinity,   rate: 0.060, deduct: 106600000 }
+];
+
+function getTaxRate(base, isHigh) {
+  const table = isHigh ? rateTableHigh : rateTableLow;
+  for (const tier of table) {
+    if (base <= tier.limit) return tier;
+  }
+  return table[table.length - 1];
+}
+
+function calcTax(base, isHigh) {
+  const tier = getTaxRate(base, isHigh);
+  return Math.max(0, Math.round(base * tier.rate - tier.deduct));
+}
+
+// 재산세 추정 (공시가격 기준 재산세율 간이 계산)
+function estPropertyTax(pubPrice) {
+  // 주택 재산세율 (과세표준 = 공시가격 × 60%)
+  // 과표 6천만 이하 0.1%, 6천만~1.5억 0.15%, 1.5억~3억 0.25%, 3억 초과 0.4%
+  const base = pubPrice * 0.6;
+  let tax = 0;
+  if (base <= 60000000) tax = base * 0.001;
+  else if (base <= 150000000) tax = 60000 + (base - 60000000) * 0.0015;
+  else if (base <= 300000000) tax = 195000 + (base - 150000000) * 0.0025;
+  else tax = 570000 + (base - 300000000) * 0.004;
+  return Math.round(tax);
+}
+
+function calcPropertyTax() {
+  const is1 = document.getElementById('is1House').value === 'yes';
+  const cnt = parseInt(document.getElementById('houseCount').value);
+  const ageCredit = parseInt(document.getElementById('ageGroup').value);
+  const holdCredit = parseInt(document.getElementById('holdPeriod').value);
+  const isHigh = document.getElementById('taxCategory').value === 'high';
+
+  // 공시가격 합산
+  let totalPub = 0;
+  for (let i = 0; i < cnt; i++) {
+    totalPub += parseFloat(document.getElementById(`house_${i}`).value) || 0;
+  }
+
+  // 공제금액
+  const deduction = is1 ? 1200000000 : 900000000;
+  const afterDeduction = Math.max(0, totalPub - deduction);
+
+  // 과세표준 (×60%)
+  const taxBase = Math.round(afterDeduction * 0.6);
+
+  if (taxBase === 0) {
+    // 공제 후 0 이하 → 납부 없음
+    document.getElementById('r_totalPublicPrice').textContent = fmtMan(totalPub);
+    document.getElementById('r_deduction').textContent = fmtMan(deduction) + ' (' + (is1 ? '1주택' : '다주택') + ')';
+    document.getElementById('r_afterDeduction').textContent = '0원 (과세 없음)';
+    document.getElementById('r_marketRatio').textContent = '-';
+    document.getElementById('r_taxBase').textContent = '0원';
+    document.getElementById('r_taxRate').textContent = '-';
+    document.getElementById('r_calcTax').textContent = '0원';
+    document.getElementById('r_propTaxCredit').textContent = '0원';
+    document.getElementById('r_ageCredit').textContent = '0원';
+    document.getElementById('r_holdCredit').textContent = '0원';
+    document.getElementById('r_jongbuTax').textContent = '0원';
+    document.getElementById('r_agriTax').textContent = '0원';
+    document.getElementById('r_finalTax').textContent = '0원';
+    document.getElementById('r_finalTotal').textContent = '0원 (납부 없음)';
+    document.getElementById('r_finalSub').textContent = '공시가격 합산이 공제금액 이하입니다.';
+    const box = document.getElementById('mainResultBox');
+    box.className = 'tax-result-main tax-result-zero';
+    document.getElementById('taxTipBox').innerHTML = '<h4>절세 팁</h4><ul><li>공시가격 합산이 ' + fmtMan(deduction) + ' 이하로 종부세 납부 대상이 아닙니다.</li><li>단, 재산세는 별도로 납부해야 합니다.</li></ul>';
+    document.getElementById('result').style.display = 'block';
+    return;
+  }
+
+  // 산출세액
+  const tier = getTaxRate(taxBase, isHigh);
+  const calcTaxAmt = calcTax(taxBase, isHigh);
+
+  // 재산세 이중과세 조정 (간이 계산: 과세표준 해당분 재산세 추정)
+  // 공제금액 초과분에 대한 재산세 = 전체 재산세 - 공제금액 이하분 재산세
+  const propTaxFull = estPropertyTax(totalPub);
+  const propTaxDeduct = estPropertyTax(Math.min(totalPub, deduction));
+  const propTaxCredit = Math.min(Math.max(0, propTaxFull - propTaxDeduct), calcTaxAmt);
+
+  // 세액공제 후 세액
+  let afterPropCredit = Math.max(0, calcTaxAmt - propTaxCredit);
+
+  // 1세대1주택 세액공제 (고령자 + 장기보유, 합산 80% 한도)
+  let totalPersonalCredit = 0;
+  let ageCreditAmt = 0;
+  let holdCreditAmt = 0;
+  if (is1) {
+    const combinedRate = Math.min(ageCredit + holdCredit, 80) / 100;
+    ageCreditAmt = Math.round(afterPropCredit * (ageCredit / 100));
+    holdCreditAmt = Math.round(afterPropCredit * (holdCredit / 100));
+    totalPersonalCredit = Math.round(afterPropCredit * combinedRate);
+    // 합산 한도 처리
+    if (ageCredit + holdCredit > 80) {
+      const ratio = 80 / (ageCredit + holdCredit);
+      ageCreditAmt = Math.round(ageCreditAmt * ratio);
+      holdCreditAmt = Math.round(holdCreditAmt * ratio);
+    }
+  }
+
+  const jongbuTax = Math.max(0, afterPropCredit - totalPersonalCredit);
+  const agriTax = Math.round(jongbuTax * 0.2);
+  const finalTotal = jongbuTax + agriTax;
+
+  // 출력
+  document.getElementById('r_totalPublicPrice').textContent = fmtMan(totalPub);
+  document.getElementById('r_deduction').textContent = '-' + fmtMan(deduction) + ' (' + (is1 ? '1세대1주택' : '다주택·법인') + ')';
+  document.getElementById('r_afterDeduction').textContent = fmtMan(afterDeduction);
+  document.getElementById('r_marketRatio').textContent = '× 60% = ' + fmtMan(taxBase);
+  document.getElementById('r_taxBase').textContent = fmtMan(taxBase);
+  document.getElementById('r_taxRate').textContent = (tier.rate * 100).toFixed(1) + '% (누진공제 ' + fmtMan(tier.deduct) + ')';
+  document.getElementById('r_calcTax').textContent = fmtMan(calcTaxAmt);
+  document.getElementById('r_propTaxCredit').textContent = '-' + fmtMan(propTaxCredit) + ' (재산세 조정)';
+  document.getElementById('r_ageCredit').textContent = is1 && ageCredit > 0 ? '-' + fmtMan(ageCreditAmt) + ' (' + ageCredit + '%)' : '해당 없음';
+  document.getElementById('r_holdCredit').textContent = is1 && holdCredit > 0 ? '-' + fmtMan(holdCreditAmt) + ' (' + holdCredit + '%)' : '해당 없음';
+  document.getElementById('r_jongbuTax').textContent = fmtMan(jongbuTax);
+  document.getElementById('r_agriTax').textContent = '+' + fmtMan(agriTax);
+  document.getElementById('r_finalTax').textContent = fmtMan(finalTotal);
+  document.getElementById('r_finalTotal').textContent = fmtMan(finalTotal);
+  document.getElementById('r_finalSub').textContent = '종부세 ' + fmtMan(jongbuTax) + ' + 농특세 ' + fmtMan(agriTax);
+
+  const box = document.getElementById('mainResultBox');
+  box.className = finalTotal > 0 ? 'tax-result-main' : 'tax-result-main tax-result-zero';
+
+  // 절세 팁 생성
+  let tips = ['<h4>절세 체크리스트</h4><ul>'];
+  if (!is1 && cnt >= 2) tips.push('<li>다주택자는 6월 1일 이전 주택 처분 시 해당 연도 종부세 절감 가능합니다.</li>');
+  if (is1 && ageCredit === 0 && holdCredit === 0) tips.push('<li>1세대1주택자이나 고령자·장기보유공제 대상이 아닙니다. 보유기간을 늘리면 최대 50% 추가 공제 가능합니다.</li>');
+  if (is1) tips.push('<li>부부 공동명의 전환 시 각자 9억 공제(합산 18억)와 1주택 기준(12억+세액공제) 중 유리한 방법을 비교 검토하세요.</li>');
+  if (finalTotal > 2500000) tips.push('<li>세액 250만원 초과로 분납 신청이 가능합니다. 12월 15일까지 홈택스에서 분납 신청하세요.</li>');
+  tips.push('<li>공시가격 이의신청(매년 4~5월)으로 공시가격이 과도하게 높은 경우 감액 가능합니다.</li>');
+  tips.push('</ul>');
+  document.getElementById('taxTipBox').innerHTML = tips.join('');
+
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+<!-- naver79426cddfd6b069ce9c6764a9a427fd9 -->
+</body>
+</html>

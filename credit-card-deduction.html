@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 신용카드소득공제 계산기 - 신용카드·체크카드·현금영수증·전통시장·대중교통·문화비 공제액 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="2026년 신용카드 등 사용금액 소득공제를 자동 계산합니다. 총급여의 25% 초과분에 대해 신용카드 15%, 체크카드·현금영수증 30%, 전통시장 40%, 대중교통 80%, 문화비 30% 공제율 반영. 절세액까지 한번에.">
+  <link rel="canonical" href="https://calcmoney.kr/credit-card-deduction">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 신용카드소득공제 계산기 - 신용카드·체크카드·전통시장·대중교통·문화비 공제액 자동 계산">
+  <meta property="og:description" content="총급여 입력 후 신용카드·체크카드·현금영수증·전통시장·대중교통·문화비 사용액을 입력하면 소득공제액과 예상 절세액을 즉시 계산합니다. 2026년 세법 기준.">
+  <meta property="og:url" content="https://calcmoney.kr/credit-card-deduction">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "신용카드 소득공제는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "신용카드 소득공제는 총급여의 25%를 초과하여 사용한 금액에 대해 공제율을 적용합니다. 신용카드 15%, 체크카드·현금영수증 30%, 전통시장 40%, 대중교통 80%(2026년 한시), 문화비 30%의 공제율이 적용됩니다. 최저사용액(총급여×25%) 충족 후 초과분에 대해 항목별 공제율로 계산하며, 기본 공제한도는 총급여에 따라 200~300만원입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "신용카드 소득공제의 최저사용액 기준이 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "최저사용액은 총급여의 25%입니다. 예를 들어 총급여가 5,000만원이라면 1,250만원(5,000만원×25%)이 최저사용액입니다. 이 금액을 초과하여 사용한 부분만 소득공제 대상이 됩니다. 최저사용액 미만으로 사용했다면 소득공제를 받을 수 없습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "체크카드와 신용카드 중 어느 것이 세금 혜택이 더 큰가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "체크카드와 현금영수증의 소득공제율은 30%로, 신용카드의 15%보다 2배 높습니다. 예를 들어 최저사용액 초과분 100만원을 신용카드로 쓰면 15만원 공제이지만, 체크카드로 쓰면 30만원 공제됩니다. 절세액 기준으로 체크카드 사용이 더 유리합니다. 다만 신용카드의 포인트·할인·무이자 혜택을 고려해 최저사용액까지는 신용카드, 초과분은 체크카드를 활용하는 혼합 전략이 최적입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 신용카드 소득공제 공제 한도는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기본 공제한도는 총급여에 따라 다릅니다. 총급여 7,000만원 이하는 300만원, 7,000만원 초과~1억2,000만원 이하는 250만원, 1억2,000만원 초과는 200만원입니다. 여기에 전통시장 사용분 최대 100만원, 대중교통 사용분 최대 100만원, 문화비 사용분 최대 100만원의 추가 한도가 별도로 적용되어, 최대 합산 600만원까지 공제를 받을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "대중교통 소득공제율 80%는 언제까지 적용되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "대중교통 사용분에 대한 80% 공제율은 2026년에 한시적으로 적용됩니다. 지하철, 버스, KTX, SRT, 시외버스 등 대중교통 수단 이용금액이 해당됩니다. 이 공제율은 정부가 대중교통 이용을 장려하기 위해 한시적으로 상향한 것으로, 2027년 이후에는 변경될 수 있습니다. 정확한 적용 기간은 매년 세법 개정안을 확인하시기 바랍니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "신용카드 소득공제에서 제외되는 항목은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "신용카드 등 사용금액 소득공제에서 제외되는 항목은 다음과 같습니다. 보험료(생명·손해보험 등), 공과금(전기·가스·수도요금), 아파트 관리비, 국세·지방세, 교통위반 과태료 등 세금·공과금 납부액, 해외에서 사용한 신용카드 금액, 기업 카드(법인카드) 사용액, 리스료, 상품권 구매액 등은 공제 대상에서 제외됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "문화비 소득공제 대상은 어떤 것들이 포함되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "문화비 소득공제(30% 공제율, 추가한도 100만원) 대상은 도서 구입비, 공연 관람비, 영화 관람비, 박물관·미술관 입장료, 신문 구독료(종이신문) 등입니다. 단, 총급여 7,000만원 이하인 근로자만 문화비 공제를 추가로 받을 수 있습니다. 온라인 동영상 스트리밍(OTT) 서비스, 음악 스트리밍 등은 문화비 공제 대상이 아닙니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "맞벌이 부부의 신용카드 소득공제는 어떻게 하는 것이 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "맞벌이 부부는 각자의 카드 사용액을 각자의 연말정산에서 공제받습니다. 배우자 명의 카드는 본인 공제 대상이 아닙니다. 절세 전략으로는 소득이 높은 배우자가 최저사용액(총급여×25%) 충족을 먼저 달성하도록 카드 사용을 집중시키고, 이후 초과분은 체크카드·전통시장·대중교통 위주로 쓰는 것이 유리합니다. 부양가족의 카드 사용액은 소득이 100만원 이하인 경우 가족 중 1인의 공제에 합산할 수 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .section-title { font-size: 0.85em; font-weight: 700; color: #1a73e8; background: #e8f0fe; border-radius: 6px; padding: 6px 12px; margin: 20px 0 12px; display: inline-block; }
+    .section-divider { border: none; border-top: 1px dashed #e0e0e0; margin: 20px 0; }
+    .cc-result-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 10px; margin: 16px 0; }
+    .cc-result-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 12px; text-align: center; }
+    .cc-result-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .cc-result-card.tax-save { border-color: #34a853; background: #e6f4ea; }
+    .cc-result-card .dlabel { font-size: 0.73em; color: #666; margin-bottom: 4px; line-height: 1.4; }
+    .cc-result-card .dvalue { font-size: 1.05em; font-weight: 800; color: #1a73e8; }
+    .cc-result-card.tax-save .dvalue { color: #1e7e34; }
+    .total-deduction-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-deduction-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-deduction-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .total-deduction-box .tsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .detail-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.87em; }
+    .detail-table th { background: #f0f4ff; color: #333; padding: 9px 10px; text-align: center; border-bottom: 2px solid #c5cae9; font-size: 0.85em; }
+    .detail-table td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; text-align: right; }
+    .detail-table td:first-child { text-align: left; font-weight: 600; color: #333; }
+    .detail-table tr:hover td { background: #fafafa; }
+    .detail-table tr.total-row td { font-weight: 700; color: #1a73e8; background: #f0f4ff; border-top: 2px solid #c5cae9; }
+    .input-section-title { font-size: 0.88em; font-weight: 700; color: #444; margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #1a73e8; }
+    .limit-notice { background: #e8f5e9; border-left: 4px solid #34a853; border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 16px 0; font-size: 0.85em; color: #2e7d32; line-height: 1.8; }
+    .limit-notice strong { color: #1b5e20; }
+    .warn-notice { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 16px 0; font-size: 0.85em; color: #e65100; line-height: 1.8; }
+    .faq-list { margin-top: 12px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .faq-item summary { padding: 14px 16px; font-weight: 600; font-size: 0.92em; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.2em; color: #1a73e8; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { padding: 0 16px 14px; font-size: 0.87em; color: #555; line-height: 1.7; margin: 0; }
+    .bar-chart { margin: 16px 0; }
+    .bar-item { margin-bottom: 10px; }
+    .bar-label { display: flex; justify-content: space-between; font-size: 0.82em; color: #444; margin-bottom: 4px; }
+    .bar-track { background: #e9ecef; border-radius: 4px; height: 14px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+    .bar-fill.credit { background: #4285f4; }
+    .bar-fill.debit { background: #34a853; }
+    .bar-fill.market { background: #fbbc04; }
+    .bar-fill.transit { background: #ea4335; }
+    .bar-fill.culture { background: #9c27b0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>신용카드 등 사용금액 소득공제 계산기</h1>
+        <p class="desc">총급여와 신용카드·체크카드·현금영수증·전통시장·대중교통·문화비 사용액을 입력하면 2026년 기준 소득공제액과 예상 절세액을 자동 계산합니다. 대중교통 80% 공제율(2026년 한시) 반영.</p>
+
+        <!-- 소득 정보 -->
+        <div class="input-section-title">소득 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>총급여 <span class="hint">원 (연간, 필수)</span></label>
+            <input type="number" id="totalSalary" placeholder="예: 50000000" value="50000000" min="0" oninput="updateMinThreshold()">
+          </div>
+          <div class="form-group">
+            <label>적용 세율 <span class="hint">절세액 계산용</span></label>
+            <select id="taxRate">
+              <option value="0.06">6% (1,400만원 이하)</option>
+              <option value="0.15" selected>15% (1,400~5,000만원)</option>
+              <option value="0.24">24% (5,000만원~8,800만원)</option>
+              <option value="0.35">35% (8,800만원~1.5억원)</option>
+              <option value="0.38">38% (1.5억~3억원)</option>
+              <option value="0.40">40% (3억~5억원)</option>
+              <option value="0.42">42% (5억 초과)</option>
+            </select>
+          </div>
+        </div>
+        <p id="thresholdNotice" style="font-size:0.8em;color:#1a73e8;margin:-10px 0 12px;font-weight:600;"></p>
+
+        <!-- 일반 카드 사용액 -->
+        <hr class="section-divider">
+        <div class="input-section-title">일반 카드 사용액 <span class="hint" style="font-weight:400;font-size:0.85em;">공제율: 신용카드 15% / 체크·현금영수증 30%</span></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>신용카드 사용액 <span class="hint">연간 합계</span></label>
+            <input type="number" id="creditCard" placeholder="예: 8000000" value="8000000" min="0">
+          </div>
+          <div class="form-group">
+            <label>체크카드·현금영수증 <span class="hint">연간 합계</span></label>
+            <input type="number" id="debitCard" placeholder="예: 4000000" value="4000000" min="0">
+          </div>
+        </div>
+
+        <!-- 추가공제 항목 -->
+        <hr class="section-divider">
+        <div class="input-section-title">추가공제 항목 <span class="hint" style="font-weight:400;font-size:0.85em;">별도 추가한도 각 100만원</span></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>전통시장 사용액 <span class="hint">공제율 40%</span></label>
+            <input type="number" id="market" placeholder="예: 500000" value="500000" min="0">
+          </div>
+          <div class="form-group">
+            <label>대중교통 이용액 <span class="hint">공제율 80% (2026 한시)</span></label>
+            <input type="number" id="transit" placeholder="예: 600000" value="600000" min="0">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>문화비 사용액 <span class="hint">도서·공연·영화·박물관 | 공제율 30% | 총급여 7,000만원 이하만</span></label>
+          <input type="number" id="culture" placeholder="예: 300000" value="300000" min="0">
+        </div>
+        <p style="font-size:0.8em;color:#888;margin:-10px 0 4px;">* 전통시장·대중교통·문화비 사용액이 일반카드 사용액과 중복된다면 여기에만 입력하세요. 계산 시 중복 차감됩니다.</p>
+
+        <button class="btn-calc" onclick="calculate()">소득공제 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총 소득공제 -->
+          <div class="total-deduction-box">
+            <div class="tlabel">신용카드 등 총 소득공제액</div>
+            <div class="tvalue" id="totalDeduction"></div>
+            <div class="tsub" id="totalDeductionSub"></div>
+          </div>
+
+          <!-- 결과 카드 -->
+          <div class="cc-result-cards" id="resultCards"></div>
+
+          <!-- 사용처별 공제 기여도 시각화 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">사용처별 공제 기여도</div>
+          <div class="bar-chart" id="barChart"></div>
+
+          <!-- 상세 내역 표 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">항목별 공제 상세 내역</div>
+          <div style="overflow-x:auto;">
+            <table class="detail-table" id="detailTable">
+              <thead>
+                <tr>
+                  <th>항목</th>
+                  <th>사용액</th>
+                  <th>공제율</th>
+                  <th>공제액</th>
+                  <th>적용한도</th>
+                  <th>최종공제</th>
+                </tr>
+              </thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <!-- 한도 안내 -->
+          <div class="limit-notice" id="limitNotice"></div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- SEO 콘텐츠 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">신용카드 등 사용금액 소득공제 완벽 가이드 (2026년 기준)</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">신용카드 소득공제란?</h3>
+        <p>신용카드 등 사용금액 소득공제는 조세특례제한법 제126조의2에 따라 근로소득자가 신용카드, 체크카드, 현금영수증, 전통시장, 대중교통, 문화비 등으로 지출한 금액이 총급여의 25%를 초과하는 경우, 그 초과 금액의 일부를 소득공제해 주는 제도입니다.</p>
+        <p>세액공제와 달리 소득공제는 과세표준(소득)을 줄여주는 방식으로 세금을 줄입니다. 즉, 소득공제를 받으면 그만큼 과세 대상 소득이 줄어들고, 줄어든 소득에 해당 세율을 곱한 만큼 세금이 감소합니다. 예를 들어 300만원 소득공제를 받고 적용 세율이 24%라면 약 72만원(지방소득세 포함 시 약 79.2만원)의 절세 효과가 발생합니다.</p>
+        <p>이 제도는 소비 지출을 양성화하고 근로소득자의 세 부담을 경감하기 위해 도입되었으며, 매년 세법 개정을 통해 공제율과 한도가 조정됩니다. 특히 2026년에는 대중교통 사용분에 대한 공제율이 80%로 한시적으로 상향 적용되어 대중교통을 자주 이용하는 직장인에게 더 큰 혜택이 돌아갑니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">2026년 신용카드 소득공제 변경사항</h3>
+        <p>2026년도에 적용되는 신용카드 소득공제의 주요 내용은 다음과 같습니다.</p>
+        <p><strong>① 대중교통 공제율 80% 한시 적용</strong><br>
+        지하철, 버스, KTX, SRT, 시외버스, 마을버스 등 대중교통 이용금액에 대해 2026년 한해 80% 공제율이 한시적으로 적용됩니다. 이는 일반 대중교통 공제율 40%에서 두 배 수준으로 상향된 것으로, 대중교통을 자주 이용하는 직장인이라면 반드시 챙겨야 할 혜택입니다.</p>
+        <p><strong>② 공제한도 구조 유지</strong><br>
+        기본 공제한도는 총급여 구간별로 200~300만원이 유지됩니다. 전통시장, 대중교통, 문화비에 대한 추가 한도(각 100만원)도 계속 적용됩니다.</p>
+        <p><strong>③ 문화비 공제 대상 확대 유지</strong><br>
+        도서·공연·영화 관람비 외에 박물관·미술관 입장료, 종이신문 구독료가 문화비 공제 대상에 포함됩니다. 총급여 7,000만원 이하 근로자에게만 적용됩니다.</p>
+        <p><strong>④ 최저사용액 기준 동일</strong><br>
+        총급여의 25%를 초과 사용해야 공제를 받을 수 있는 최저사용액 기준은 동일하게 유지됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">공제 대상 vs 공제 제외 항목</h3>
+        <p><strong>공제 대상 항목</strong></p>
+        <p>신용카드(개인 명의), 체크카드(직불카드 포함), 현금영수증 발급 지출액이 기본 공제 대상입니다. 전통시장에서의 신용카드·체크카드·현금영수증 사용액, 버스·지하철·KTX·SRT 등 대중교통 이용금액, 도서·공연·영화·박물관·미술관·신문 구독 등 문화비 지출액도 포함됩니다. 미취학아동 학원비, 교복 구입비, 학교 급식비(카드 결제 시), 의료비(카드 결제 시, 단 의료비 세액공제와 중복 공제 가능)도 포함됩니다.</p>
+        <p><strong>공제 제외 항목</strong></p>
+        <p>보험료(생명보험, 손해보험, 자동차보험 등), 공과금(전기요금, 가스요금, 수도요금, 전화요금), 아파트 관리비, 국세·지방세·벌과금 납부액, 리스료 및 할부금융 수수료, 해외 결제 사용액(국외 가맹점), 법인카드(기업 명의 카드) 사용액, 상품권·선불카드 구매액, 자동차 구입비(신규 등록 차량), 정부기관 수수료 등은 공제 대상에서 제외됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">공제 한도 구조 상세</h3>
+        <p>신용카드 소득공제의 공제한도는 크게 기본 한도와 추가 한도로 구성됩니다.</p>
+        <p><strong>기본 공제한도</strong><br>
+        총급여 7,000만원 이하: 300만원<br>
+        총급여 7,000만원 초과 ~ 1억2,000만원 이하: 250만원<br>
+        총급여 1억2,000만원 초과: 200만원</p>
+        <p><strong>추가 공제한도 (별도 한도 적용)</strong><br>
+        전통시장 사용분: 최대 100만원 추가<br>
+        대중교통 사용분: 최대 100만원 추가<br>
+        문화비 사용분: 최대 100만원 추가 (총급여 7,000만원 이하만 적용)</p>
+        <p>추가 한도는 기본 한도와 별개로 적용되므로, 전통시장·대중교통·문화비를 적극 활용하면 최대 기본 300만원 + 추가 300만원 = 총 600만원까지 소득공제가 가능합니다.</p>
+        <p>다만 문화비 추가 한도는 총급여 7,000만원 이하인 경우에만 적용됩니다. 총급여가 7,000만원을 초과하면 문화비 추가 한도 100만원은 받을 수 없습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">최적 사용 전략: 절세를 극대화하는 방법</h3>
+        <p><strong>전략 1: 최저사용액(총급여×25%)까지는 신용카드로</strong><br>
+        최저사용액 이하 구간에서는 어떤 카드를 사용하든 공제를 받지 못합니다. 따라서 이 구간에서는 포인트 적립, 캐시백, 무이자 할부 등 신용카드 부가 혜택을 최대한 활용하는 것이 유리합니다. 최저사용액에 도달한 뒤 초과분부터는 공제율이 높은 체크카드나 현금영수증을 사용해야 절세 효과가 커집니다.</p>
+        <p><strong>전략 2: 초과분은 체크카드·현금영수증으로</strong><br>
+        최저사용액을 넘긴 후에는 체크카드(30%) 또는 현금영수증(30%)을 우선 사용하는 것이 신용카드(15%)보다 소득공제 효율이 2배 높습니다. 예를 들어 초과분이 500만원이라면 신용카드로는 75만원 공제, 체크카드로는 150만원 공제가 됩니다.</p>
+        <p><strong>전략 3: 전통시장 방문을 늘려 추가 한도 활용</strong><br>
+        전통시장 사용분은 40% 공제율에 추가 한도 100만원이 별도로 적용됩니다. 250만원을 전통시장에서 사용하면 추가 한도 100만원을 모두 채울 수 있습니다. 일상적인 식료품 구매를 대형마트 대신 전통시장으로 전환하면 추가 절세가 가능합니다.</p>
+        <p><strong>전략 4: 대중교통 이용 극대화 (2026년 특히 유리)</strong><br>
+        2026년에는 대중교통 공제율이 80%로 한시 적용됩니다. 월 10만원씩 대중교통을 이용하면 연간 120만원 사용으로 추가 한도 100만원을 모두 채울 수 있습니다(96만원 공제 발생). 자동차 이용을 줄이고 대중교통을 적극 활용하는 것이 세금뿐 아니라 교통비 절감에도 효과적입니다.</p>
+        <p><strong>전략 5: 문화비로 추가 공제 (총급여 7,000만원 이하)</strong><br>
+        총급여 7,000만원 이하라면 도서, 공연, 영화 관람, 박물관·미술관 입장 등 문화비 지출 333만원까지 추가 한도 100만원을 채울 수 있습니다(30% 공제율). 문화생활을 즐기면서 세금도 줄이는 일석이조 효과를 누릴 수 있습니다.</p>
+        <p><strong>전략 6: 가족 명의 카드 활용</strong><br>
+        연간 소득이 100만원 이하(근로소득만 있는 경우 500만원 이하)인 부양가족(배우자, 부모, 자녀 등)이 사용한 신용카드·체크카드·현금영수증 금액도 근로자 본인의 소득공제에 합산할 수 있습니다. 단, 맞벌이 배우자는 소득 기준을 초과하면 합산 불가입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">공제 계산 구조 자세히 이해하기</h3>
+        <p>신용카드 소득공제 계산은 아래 순서로 진행됩니다.</p>
+        <p><strong>1단계: 최저사용액 계산</strong><br>
+        최저사용액 = 총급여 × 25%<br>
+        예) 총급여 6,000만원 → 최저사용액 1,500만원</p>
+        <p><strong>2단계: 최저사용액 차감 순서 결정</strong><br>
+        최저사용액은 신용카드 → 체크카드·현금영수증 → 전통시장 → 대중교통 → 문화비 순서로 차감합니다. 공제율이 낮은 항목부터 먼저 최저사용액으로 차감되어, 공제율이 높은 항목이 더 많이 공제대상에 남도록 계산됩니다.</p>
+        <p><strong>3단계: 기본공제액 계산</strong><br>
+        기본공제액 = (신용카드 공제대상액 × 15%) + (체크카드·현금영수증 공제대상액 × 30%)<br>
+        단, 이 합계가 기본 공제한도(300만/250만/200만원)를 초과하면 한도까지만 적용됩니다.</p>
+        <p><strong>4단계: 추가공제액 계산</strong><br>
+        전통시장 공제액 = 전통시장 공제대상액 × 40% (최대 100만원)<br>
+        대중교통 공제액 = 대중교통 공제대상액 × 80% (최대 100만원)<br>
+        문화비 공제액 = 문화비 공제대상액 × 30% (최대 100만원, 총급여 7천만원 이하만)</p>
+        <p><strong>5단계: 총 소득공제액 산출</strong><br>
+        총 소득공제액 = 기본공제액 + 전통시장 추가공제 + 대중교통 추가공제 + 문화비 추가공제</p>
+        <p><strong>6단계: 예상 절세액 계산</strong><br>
+        예상 절세액 = 총 소득공제액 × 적용 세율 × 1.1(지방소득세 포함)</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">연말정산 시 필요 서류</h3>
+        <p>신용카드 소득공제를 위해 회사에 제출하거나 홈택스에서 조회해야 하는 서류는 다음과 같습니다.</p>
+        <p><strong>① 신용카드 등 사용금액 확인서</strong><br>
+        국세청 홈택스(www.hometax.go.kr) 연말정산 간소화 서비스에서 조회 가능합니다. 매년 1월 15일부터 제공됩니다. 신용카드·체크카드·현금영수증·대중교통·전통시장·문화비 항목이 구분되어 조회됩니다.</p>
+        <p><strong>② 현금영수증 미발급분 소명자료</strong><br>
+        현금 결제 후 현금영수증을 발급받지 못한 경우, 대금 영수증이나 거래 확인 자료를 별도로 보관해야 합니다. 현금영수증은 홈택스 또는 126 콜센터를 통해 사후 발급 신청도 가능합니다.</p>
+        <p><strong>③ 부양가족 카드 사용액 합산 시</strong><br>
+        부양가족의 주민등록등본 또는 가족관계증명서가 필요할 수 있습니다. 홈택스 간소화 서비스에서 부양가족 자료 제공 동의를 받으면 일괄 조회가 가능합니다.</p>
+        <p>참고로 대부분의 근로자는 홈택스 연말정산 간소화 서비스에서 모든 자료를 PDF 또는 XML로 내려받아 회사에 제출하면 됩니다. 간소화 서비스에서 조회되지 않는 항목만 별도 영수증을 챙기면 됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">의료비와 신용카드 공제 중복 적용 가능</h3>
+        <p>많은 분들이 헷갈려하는 부분입니다. 의료비를 신용카드·체크카드로 결제한 경우, 의료비 세액공제(15%)와 신용카드 소득공제를 동시에 받을 수 있습니다. 즉, 같은 지출에 두 가지 공제 혜택이 동시에 적용됩니다. 이는 소득세법과 조세특례제한법이 각각 다른 근거로 공제를 허용하기 때문입니다.</p>
+        <p>예를 들어 병원비 100만원을 신용카드로 결제했다면 의료비 세액공제 15만원(100만원×15%)과 신용카드 소득공제(공제율 15% 적용 시 최저사용액 차감 후 계산)를 동시에 받을 수 있습니다. 따라서 의료비는 반드시 카드로 결제하고 현금영수증을 발급받는 것이 유리합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">총급여별 예상 절세액 시뮬레이션</h3>
+        <p>아래 예시는 총급여별 신용카드 소득공제 최대 절세액을 추산한 것입니다. 공제 한도를 모두 채운 경우 기준입니다.</p>
+        <p><strong>총급여 4,000만원 (세율 15%, 기본한도 300만원)</strong><br>
+        기본공제 300만원 + 전통시장 100만원 + 대중교통 100만원 + 문화비 100만원 = 600만원<br>
+        예상 절세액: 600만원 × 15% × 1.1 = 약 99만원</p>
+        <p><strong>총급여 6,000만원 (세율 24%, 기본한도 300만원)</strong><br>
+        기본공제 300만원 + 전통시장 100만원 + 대중교통 100만원 + 문화비 100만원 = 600만원<br>
+        예상 절세액: 600만원 × 24% × 1.1 = 약 158.4만원</p>
+        <p><strong>총급여 8,000만원 (세율 35%, 기본한도 250만원, 문화비 제외)</strong><br>
+        기본공제 250만원 + 전통시장 100만원 + 대중교통 100만원 = 450만원<br>
+        예상 절세액: 450만원 × 35% × 1.1 = 약 173.25만원</p>
+        <p><strong>총급여 1.5억원 (세율 38%, 기본한도 200만원, 문화비 제외)</strong><br>
+        기본공제 200만원 + 전통시장 100만원 + 대중교통 100만원 = 400만원<br>
+        예상 절세액: 400만원 × 38% × 1.1 = 약 167.2만원</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:24px 0 8px;">자주 하는 실수와 주의사항</h3>
+        <p><strong>실수 1: 최저사용액을 채우지 못한 경우</strong><br>
+        총급여의 25%에 미달하는 카드 사용액은 공제를 한 푼도 받을 수 없습니다. 연말에 최저사용액에 조금 못 미치는 상황이라면 추가 소비를 통해 공제 기준을 채우는 전략을 고려하세요.</p>
+        <p><strong>실수 2: 법인카드(회사 카드) 사용액 포함</strong><br>
+        회사 명의의 법인카드 사용액은 본인 소득공제에 포함되지 않습니다. 오직 본인 명의의 개인카드·체크카드·현금영수증만 해당됩니다.</p>
+        <p><strong>실수 3: 해외 사용액 포함</strong><br>
+        해외 가맹점에서 사용한 카드 금액은 공제 대상이 아닙니다. 홈택스 간소화에서는 국내 사용액만 자동 조회되므로 별도 확인이 필요하지 않습니다.</p>
+        <p><strong>실수 4: 전통시장·대중교통 중복 입력</strong><br>
+        전통시장이나 대중교통 사용액을 일반 신용카드·체크카드 사용액과 중복으로 계산하면 총액이 과대 계산됩니다. 일반 카드 합계에서 전통시장·대중교통·문화비를 이미 합산했다면 별도 입력란에 다시 입력하지 말고, 각 항목별로 분리하여 입력하시기 바랍니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>신용카드 소득공제와 세액공제의 차이점은 무엇인가요?</summary>
+            <p>소득공제는 과세 대상 소득(과세표준)을 줄여주는 방식이고, 세액공제는 계산된 세금에서 직접 차감하는 방식입니다. 신용카드 공제는 소득공제 방식이므로, 적용 세율이 높을수록 절세 효과가 커집니다. 세율 15%인 경우 100만원 소득공제 = 15만원 절세, 세율 35%인 경우 = 35만원 절세입니다. 반면 의료비·기부금·교육비 공제는 세액공제 방식으로 세율에 관계없이 공제율이 고정됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>맞벌이 부부는 카드 사용액을 누구에게 몰아야 하나요?</summary>
+            <p>배우자 명의 카드 사용액은 본인이 공제받을 수 없습니다. 각자의 카드 사용액은 각자의 연말정산에 적용됩니다. 다만 소득이 100만원 이하인 부양가족(자녀, 부모 등)의 카드 사용액은 근로자가 합산할 수 있습니다. 전략적으로는 소득이 높아 세율이 높은 배우자가 최저사용액(총급여×25%)을 넘기도록 소비를 집중시키는 것이 유리하며, 그 이후 초과분은 체크카드·전통시장 위주로 활용하면 절세 효과가 극대화됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>연말 막바지에 카드를 더 써서 공제를 늘릴 수 있나요?</summary>
+            <p>가능합니다. 12월 말까지 카드 사용액을 늘려 최저사용액을 채우거나, 추가 공제 항목(전통시장, 문화비 등)을 더 사용하면 공제액이 증가합니다. 단, 공제 한도(기본 300만원 + 추가 300만원)가 정해져 있으므로 이미 한도를 채운 경우에는 추가 소비가 절세로 이어지지 않습니다. 연말에 지출 계획을 세울 때 현재 카드 사용액과 최저사용액 대비 잔여 공제 여력을 미리 확인하는 것이 좋습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>현금영수증을 받지 못한 경우 어떻게 하나요?</summary>
+            <p>현금 결제 후 현금영수증을 발급받지 못한 경우 국세청 홈택스(www.hometax.go.kr) 또는 손택스(모바일 앱)에서 사후 발급을 신청할 수 있습니다. 발급일로부터 5년 이내에 신청 가능합니다. 또한 현금영수증 미발행 사업자를 신고하면 포상금을 받을 수도 있습니다. 소비자 보호 차원에서 건당 5,000원 이상의 소비자 상대 거래에서 현금영수증 발급은 사업자의 의무입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>전통시장 사용액은 어떻게 인정받나요?</summary>
+            <p>전통시장 사용액은 「전통시장 및 상점가 육성을 위한 특별법」에 따라 지정된 전통시장 내 가맹점에서 신용카드·체크카드·현금영수증으로 결제한 금액입니다. 홈택스 연말정산 간소화 서비스에서 '전통시장 사용분'으로 자동 분류되어 조회됩니다. 전통시장에서 현금으로 구매하더라도 현금영수증을 받으면 전통시장 사용분으로 인정됩니다. 온라인 전통시장 장터는 전통시장 공제가 적용되지 않을 수 있으니 주의하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>대중교통 공제 대상에 택시는 포함되나요?</summary>
+            <p>아니요, 택시는 대중교통 공제 대상에 포함되지 않습니다. 대중교통 공제 대상은 버스(시내·시외·마을버스), 지하철, 기차(KTX·SRT·새마을·무궁화 등), 선박(도선·연안여객선)입니다. 택시·고속버스 전세 좌석버스 등은 일반 신용카드·체크카드 공제율(15% 또는 30%)이 적용되는 일반 소비 지출로 처리됩니다. 단, 카카오택시·우티 등 플랫폼 택시도 대중교통에 해당하지 않습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>홈택스 간소화 서비스에서 조회가 안 되는 항목이 있으면 어떻게 하나요?</summary>
+            <p>홈택스 연말정산 간소화 서비스는 카드사·현금영수증 발행 사업자로부터 제출받은 자료를 자동 조회해 줍니다. 조회가 되지 않는 경우는 ① 가맹점이 자료를 미제출한 경우, ② 현금영수증을 발급받지 않은 경우, ③ 해외 사용분인 경우 등입니다. 조회가 안 되는 항목은 해당 카드사 홈페이지나 앱에서 연간 사용내역 PDF를 직접 출력하거나 현금영수증 사후 등록을 통해 자료를 보완해야 합니다. 누락된 영수증은 별도로 보관 후 회사에 제출하세요.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>항목별 공제율</h3>
+        <ul>
+          <li><strong>신용카드</strong>: 15%</li>
+          <li><strong>체크카드·현금영수증</strong>: 30%</li>
+          <li><strong>전통시장</strong>: 40%</li>
+          <li><strong>대중교통</strong>: 80% (2026 한시)</li>
+          <li><strong>문화비</strong>: 30% (7천만원 이하)</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 최저사용액(총급여×25%) 초과분에 적용</p>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>공제 한도</h3>
+        <ul>
+          <li><strong>7,000만원 이하</strong>: 300만원</li>
+          <li><strong>7,000만~1.2억원</strong>: 250만원</li>
+          <li><strong>1.2억원 초과</strong>: 200만원</li>
+          <li><strong>+ 전통시장</strong>: 100만원</li>
+          <li><strong>+ 대중교통</strong>: 100만원</li>
+          <li><strong>+ 문화비</strong>: 100만원</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 최대 합계 600만원 (7천만원 이하)</p>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="donation-tax-deduction.html" class="related-link">기부금공제</a>
+          <a href="child-tax-deduction.html" class="related-link">자녀세액공제</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 국세청 홈택스 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  function updateMinThreshold() {
+    const salary = parseFloat(document.getElementById('totalSalary').value) || 0;
+    const threshold = salary * 0.25;
+    const el = document.getElementById('thresholdNotice');
+    if (salary > 0) {
+      el.textContent = '최저사용액(총급여의 25%): ' + fmt(threshold) + ' — 이 금액을 초과해야 소득공제가 시작됩니다.';
+    } else {
+      el.textContent = '';
+    }
+  }
+
+  function getTaxRateLabel(rate) {
+    const map = {
+      '0.06': '6%',
+      '0.15': '15%',
+      '0.24': '24%',
+      '0.35': '35%',
+      '0.38': '38%',
+      '0.40': '40%',
+      '0.42': '42%'
+    };
+    return map[String(rate)] || (rate * 100).toFixed(0) + '%';
+  }
+
+  function calculate() {
+    const salary   = parseFloat(document.getElementById('totalSalary').value) || 0;
+    const credit   = parseFloat(document.getElementById('creditCard').value) || 0;
+    const debit    = parseFloat(document.getElementById('debitCard').value) || 0;
+    const market   = parseFloat(document.getElementById('market').value) || 0;
+    const transit  = parseFloat(document.getElementById('transit').value) || 0;
+    const culture  = parseFloat(document.getElementById('culture').value) || 0;
+    const taxRate  = parseFloat(document.getElementById('taxRate').value) || 0.15;
+
+    if (salary <= 0) {
+      alert('총급여를 입력해 주세요.');
+      return;
+    }
+
+    // 최저사용액
+    const threshold = salary * 0.25;
+
+    // 총 사용액 (추가항목은 일반카드와 별도 입력 가정 → 총계에 합산)
+    const totalUsed = credit + debit + market + transit + culture;
+
+    // 최저사용액 미달 시
+    if (totalUsed <= threshold) {
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('totalDeduction').textContent = '0원';
+      document.getElementById('totalDeductionSub').textContent =
+        '총 사용액(' + fmt(totalUsed) + ')이 최저사용액(' + fmt(threshold) + ')에 미달합니다.';
+      document.getElementById('resultCards').innerHTML = '';
+      document.getElementById('barChart').innerHTML = '';
+      document.getElementById('detailBody').innerHTML = '<tr><td colspan="6" style="text-align:center;color:#e53935;padding:16px;">최저사용액 미달 — 공제 대상 없음</td></tr>';
+      document.getElementById('limitNotice').innerHTML =
+        '<strong>최저사용액 부족!</strong><br>총급여의 25%인 ' + fmt(threshold) + '을 초과해야 소득공제가 시작됩니다.<br>현재 ' + fmt(threshold - totalUsed) + ' 부족합니다.';
+      return;
+    }
+
+    // 최저사용액 차감: 신용카드 → 체크카드 → 전통시장 → 대중교통 → 문화비 순
+    let remain = threshold;
+
+    function deductFrom(amount) {
+      if (remain <= 0) return amount;
+      if (amount >= remain) { const used = amount - remain; remain = 0; return used; }
+      remain -= amount; return 0;
+    }
+
+    const creditEff  = deductFrom(credit);
+    const debitEff   = deductFrom(debit);
+    const marketEff  = deductFrom(market);
+    const transitEff = deductFrom(transit);
+    const cultureEff = deductFrom(culture);
+
+    // 항목별 공제액 (한도 전 원시 공제액)
+    const creditDeduction  = creditEff  * 0.15;
+    const debitDeduction   = debitEff   * 0.30;
+    const marketDeduction  = marketEff  * 0.40;
+    const transitDeduction = transitEff * 0.80;
+    const cultureDeduction = cultureEff * 0.30;
+
+    // 기본 공제한도
+    let baseLimit = 3000000;
+    if (salary > 120000000) baseLimit = 2000000;
+    else if (salary > 70000000) baseLimit = 2500000;
+
+    // 기본공제 대상: 신용카드 + 체크카드만
+    const basicRaw = creditDeduction + debitDeduction;
+    const basicApplied = Math.min(basicRaw, baseLimit);
+
+    // 추가 공제 한도 (각 100만원)
+    const marketAdditional  = Math.min(marketDeduction, 1000000);
+    const transitAdditional = Math.min(transitDeduction, 1000000);
+    // 문화비: 총급여 7,000만원 이하만
+    const cultureAdditional = salary <= 70000000 ? Math.min(cultureDeduction, 1000000) : 0;
+
+    const totalDeduction = basicApplied + marketAdditional + transitAdditional + cultureAdditional;
+
+    // 절세액 (지방소득세 10% 포함)
+    const taxSaving = totalDeduction * taxRate * 1.1;
+
+    // 결과 표시
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('totalDeduction').textContent = fmt(totalDeduction);
+    document.getElementById('totalDeductionSub').textContent =
+      '예상 절세액(세율 ' + getTaxRateLabel(taxRate) + ' + 지방소득세): ' + fmt(taxSaving);
+
+    // 결과 카드
+    const cards = [
+      { label: '최저사용액 (25%)', value: fmt(threshold), cls: '' },
+      { label: '기본 공제액', value: fmt(basicApplied), cls: 'highlight' },
+      { label: '전통시장 추가공제', value: fmt(marketAdditional), cls: '' },
+      { label: '대중교통 추가공제', value: fmt(transitAdditional), cls: '' },
+      { label: '문화비 추가공제', value: fmt(cultureAdditional), cls: '' },
+      { label: '예상 절세액', value: fmt(taxSaving), cls: 'tax-save' }
+    ];
+    document.getElementById('resultCards').innerHTML = cards.map(c =>
+      `<div class="cc-result-card ${c.cls}"><div class="dlabel">${c.label}</div><div class="dvalue">${c.value}</div></div>`
+    ).join('');
+
+    // 공제 기여도 바 차트
+    const maxBar = Math.max(creditDeduction, debitDeduction, marketAdditional, transitAdditional, cultureAdditional, 1);
+    const bars = [
+      { label: '신용카드 (15%)',             value: creditDeduction,   cls: 'credit',  fmt: fmt(creditDeduction) },
+      { label: '체크카드·현금영수증 (30%)',   value: debitDeduction,    cls: 'debit',   fmt: fmt(debitDeduction) },
+      { label: '전통시장 (40%)',              value: marketAdditional,  cls: 'market',  fmt: fmt(marketAdditional) },
+      { label: '대중교통 (80%)',              value: transitAdditional, cls: 'transit', fmt: fmt(transitAdditional) },
+      { label: '문화비 (30%)',                value: cultureAdditional, cls: 'culture', fmt: fmt(cultureAdditional) }
+    ];
+    document.getElementById('barChart').innerHTML = bars.map(b => {
+      const pct = Math.round((b.value / maxBar) * 100);
+      return `<div class="bar-item">
+        <div class="bar-label"><span>${b.label}</span><span>${b.fmt}</span></div>
+        <div class="bar-track"><div class="bar-fill ${b.cls}" style="width:${pct}%"></div></div>
+      </div>`;
+    }).join('');
+
+    // 상세 내역 표
+    const rows = [
+      { name: '신용카드',          used: credit,   eff: creditEff,   rate: '15%', raw: creditDeduction,  limit: '-',           final: creditDeduction },
+      { name: '체크카드·현금영수증', used: debit,    eff: debitEff,    rate: '30%', raw: debitDeduction,   limit: '-',           final: debitDeduction },
+      { name: '(기본공제 합계)',     used: '-',      eff: '-',         rate: '-',   raw: basicRaw,         limit: fmt(baseLimit), final: basicApplied },
+      { name: '전통시장',           used: market,   eff: marketEff,   rate: '40%', raw: marketDeduction,  limit: '100만원',     final: marketAdditional },
+      { name: '대중교통',           used: transit,  eff: transitEff,  rate: '80%', raw: transitDeduction, limit: '100만원',     final: transitAdditional },
+      { name: '문화비',             used: culture,  eff: cultureEff,  rate: '30%', raw: cultureDeduction, limit: salary <= 70000000 ? '100만원' : '미적용', final: cultureAdditional }
+    ];
+    document.getElementById('detailBody').innerHTML = rows.map((r, i) => {
+      const isSummary = r.name === '(기본공제 합계)';
+      const style = isSummary ? 'font-style:italic;color:#666;background:#fafafa;' : '';
+      const usedFmt  = typeof r.used === 'number' ? fmt(r.used)  : r.used;
+      const effFmt   = typeof r.eff  === 'number' ? fmt(r.eff)   : r.eff;
+      const rawFmt   = typeof r.raw  === 'number' ? fmt(r.raw)   : r.raw;
+      const finalFmt = typeof r.final === 'number' ? fmt(r.final) : r.final;
+      return `<tr style="${style}">
+        <td>${r.name}</td>
+        <td>${usedFmt}</td>
+        <td>${r.rate}</td>
+        <td>${rawFmt}</td>
+        <td>${r.limit}</td>
+        <td>${finalFmt}</td>
+      </tr>`;
+    }).join('') +
+    `<tr class="total-row">
+      <td>합계</td><td colspan="3"></td><td></td><td>${fmt(totalDeduction)}</td>
+    </tr>`;
+
+    // 한도 안내
+    let limitMsg = `<strong>공제 한도 안내</strong><br>
+      기본 공제한도: <strong>${fmt(baseLimit)}</strong> (총급여 기준)<br>
+      전통시장 추가한도: <strong>100만원</strong> | 대중교통 추가한도: <strong>100만원</strong>`;
+    if (salary <= 70000000) {
+      limitMsg += ' | 문화비 추가한도: <strong>100만원</strong>';
+    } else {
+      limitMsg += '<br>* 문화비 추가한도는 총급여 7,000만원 이하에만 적용됩니다.';
+    }
+    limitMsg += `<br>최대 활용 가능 한도: <strong>${fmt(baseLimit + 1000000 + 1000000 + (salary <= 70000000 ? 1000000 : 0))}</strong>`;
+    document.getElementById('limitNotice').innerHTML = limitMsg;
+  }
+
+  // 초기 최저사용액 표시
+  updateMinThreshold();
+</script>
+</body>
+</html>

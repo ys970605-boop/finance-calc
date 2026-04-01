@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자녀장려금 계산기 - 2026년 가구별 예상 지급액 자동 계산</title>
+  <meta name="description" content="2026년 기준 자녀장려금 예상 수급액을 자동 계산합니다. 가구 유형, 부양자녀 수, 총소득, 재산 입력 시 점증·평탄·점감 구간별 정확한 지급액을 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/child-tax-credit">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="자녀장려금 계산기 - 2026년 가구별 예상 지급액 자동 계산">
+  <meta property="og:description" content="2026년 기준 자녀장려금 예상 수급액을 자동 계산합니다. 가구 유형, 자녀 수, 총소득, 재산 반영.">
+  <meta property="og:url" content="https://calcmoney.kr/child-tax-credit">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "자녀장려금이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "자녀장려금은 18세 미만의 부양자녀가 있는 저소득 가구에 정부가 자녀 양육을 지원하기 위해 지급하는 제도입니다. 2014년 도입되었으며, 2026년 기준으로 부양자녀 1인당 최대 100만원을 지급합니다. 국세청이 소득·재산 요건을 심사하여 매년 5월 신청을 받고 9월에 지급합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 자녀장려금 소득 요건은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 자녀장려금 소득 요건은 홑벌이 가구 총소득 4,000만원 미만, 맞벌이 가구 총소득 4,000만원 미만입니다. 자녀장려금은 단독가구에는 지급되지 않으며, 18세 미만 부양자녀가 반드시 있어야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "자녀장려금 최대 지급액은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 자녀장려금은 부양자녀 1인당 최대 100만원입니다. 부양자녀가 2명이면 최대 200만원, 3명이면 최대 300만원입니다. 최대 지급액은 평탄 구간(홑벌이 2,100만~2,500만원, 맞벌이 2,500만~3,000만원)에 해당할 때 받을 수 있으며, 최소 지급액은 1인당 50만원입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "재산이 1억 7천만원 이상이면 자녀장려금이 줄어드나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 가구원 전체 재산 합계액이 1억 7,000만원 이상 2억 4,000만원 미만이면 산정된 자녀장려금의 50%만 지급됩니다. 재산 합계액이 2억 4,000만원 이상이면 자녀장려금을 받을 수 없습니다. 재산에는 토지·건물·주택(공시가격), 금융재산, 자동차(시가표준액), 회원권 등이 포함되며 부채는 차감되지 않습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "자녀장려금 신청 기간은 언제인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "정기 신청은 매년 5월 1일~31일에 전년도 소득 기준으로 신청합니다. 신청은 국세청 홈택스(hometax.go.kr), 모바일 앱 손택스, ARS(1544-9944), 세무서 방문, 안내문 QR코드 등으로 가능합니다. 자녀장려금은 근로장려금과 함께 한 번의 신청으로 동시 신청할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "홑벌이 가구 총소득 3,000만원이면 자녀장려금이 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "홑벌이 가구 총소득 3,000만원은 점감 구간(2,500만원~4,000만원)에 해당합니다. 자녀 1인당 계산식: 100만원 - (3,000만원 - 2,500만원) × (100 ÷ 1,500) = 100만원 - 33.33만원 ≈ 66.67만원입니다. 재산이 1.7억 미만이면 자녀 1인당 약 66만 7천원, 1.7억~2.4억이면 50% 감액 후 약 33만 3천원을 받습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "자녀장려금과 근로장려금을 동시에 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 자녀장려금과 근로장려금은 동시에 신청하고 수령할 수 있습니다. 두 장려금은 소득·재산 요건이 별도로 적용되며, 국세청 홈택스에서 한 번에 신청 가능합니다. 다만 근로장려금과 자녀장려금의 소득 요건(상한 금액)이 다르므로, 근로장려금 소득 요건을 초과하더라도 자녀장려금은 별도로 받을 수 있는 경우가 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "부양자녀 인정 기준은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "자녀장려금의 부양자녀는 신청인 또는 배우자의 자녀로서, 해당 과세기간 종료일(12월 31일) 현재 18세 미만이어야 합니다. 또한 해당 과세기간의 소득금액 합계액이 100만원 이하이어야 합니다. 장애인인 경우 연령 제한을 적용하지 않습니다. 입양자녀도 부양자녀로 인정됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="car-tax.html">자동차세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>자녀장려금 계산기</h1>
+        <p class="desc">2026년 기준 자녀장려금 예상 수급액을 자동 계산합니다. 가구 유형, 부양자녀 수, 총소득, 재산을 입력하면 점증·평탄·점감 구간별 정확한 지급액을 확인할 수 있습니다.</p>
+
+        <div class="form-group">
+          <label>가구 유형</label>
+          <select id="householdType">
+            <option value="single-income">홑벌이 가구</option>
+            <option value="dual-income">맞벌이 가구</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>부양자녀 수 <span class="hint">18세 미만</span></label>
+          <input type="number" id="childCount" placeholder="예: 2" value="1" min="1" max="10" step="1">
+        </div>
+
+        <div class="form-group">
+          <label>총급여액 (총소득) <span class="hint">만원 단위</span></label>
+          <input type="number" id="totalIncome" placeholder="예: 2000 (2,000만원)" value="2000" min="0" step="1">
+        </div>
+
+        <div class="form-group">
+          <label>재산 합계액 <span class="hint">만원 단위, 가구원 전체 합산</span></label>
+          <input type="number" id="totalAssets" placeholder="예: 10000 (1억원), 없으면 0" value="0" min="0" step="1">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">예상 자녀장려금 지급액</div>
+            <div class="value" id="rTotal">-</div>
+            <div class="sub" id="rTotalSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>가구 유형</td><td id="rHousehold">-</td></tr>
+            <tr><td>총소득</td><td id="rIncome">-</td></tr>
+            <tr><td>소득 구간</td><td id="rSection">-</td></tr>
+            <tr><td>부양자녀 수</td><td id="rChildren">-</td></tr>
+            <tr><td>재산 합계액</td><td id="rAssets">-</td></tr>
+            <tr><td>기본 산정액</td><td id="rBase">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>재산 감액 후 지급액</td><td id="rFinal">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 가구별 지급 기준표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 자녀장려금 가구별 지급 기준</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>가구 유형</td><td>소득 상한</td><td>자녀 1인당 최대액</td></tr>
+          <tr><td>홑벌이 가구</td><td>4,000만원 미만</td><td>100만원</td></tr>
+          <tr><td>맞벌이 가구</td><td>4,000만원 미만</td><td>100만원</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 재산 합계액 2.4억 미만 요건 충족 시. 1.7억~2.4억이면 50% 감액. 자녀 1인당 최소 50만원.</p>
+      </div>
+
+      <!-- 구간별 산정 공식표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>소득 구간별 산정 공식 (2026년)</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>가구</td><td>점증 구간</td><td>평탄 구간</td><td>점감 구간</td></tr>
+          <tr><td>홑벌이</td><td>0~2,100만원</td><td>2,100~2,500만원</td><td>2,500~4,000만원</td></tr>
+          <tr><td>맞벌이</td><td>0~2,500만원</td><td>2,500~3,000만원</td><td>3,000~4,000만원</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 점증: 소득 증가 시 장려금 증가 / 평탄: 자녀 1인당 최대 100만원 / 점감: 소득 증가 시 장려금 감소</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>자녀장려금 산정 공식</h3>
+        <ul>
+          <li><strong>점증 구간 (홑벌이)</strong><br>자녀수 × 100만원 × (총소득 ÷ 2,100만원)</li>
+          <li style="margin-top:10px;"><strong>점증 구간 (맞벌이)</strong><br>자녀수 × 100만원 × (총소득 ÷ 2,500만원)</li>
+          <li style="margin-top:10px;"><strong>평탄 구간</strong><br>자녀수 × 100만원 (최대 지급)</li>
+          <li style="margin-top:10px;"><strong>점감 구간 (홑벌이)</strong><br>자녀수 × [100만원 - (총소득 - 2,500만원) × (100 ÷ 1,500)]</li>
+          <li style="margin-top:10px;"><strong>점감 구간 (맞벌이)</strong><br>자녀수 × [100만원 - (총소득 - 3,000만원) × (100 ÷ 1,000)]</li>
+          <li style="margin-top:10px;"><strong>재산 감액</strong><br>1.7억 이상 2.4억 미만 → 50% 지급</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 재산 2.4억 이상 시 수급 불가. 최소 지급액 자녀 1인당 50만원.</p>
+      </div>
+      <div class="info-box">
+        <h3>신청 방법 안내</h3>
+        <ul>
+          <li><strong>정기 신청:</strong> 매년 5월</li>
+          <li><strong>홈택스:</strong> hometax.go.kr</li>
+          <li><strong>손택스:</strong> 모바일 앱</li>
+          <li><strong>ARS:</strong> 1544-9944</li>
+          <li><strong>세무서:</strong> 방문 신청 가능</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 근로장려금과 동시 신청 가능. 안내문 발송 가구는 QR코드로 간편 신청.</p>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="eitc.html" class="related-link">근로장려금</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- FAQ 섹션 -->
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">자녀장려금 신청 자격은 어떻게 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">자녀장려금은 <strong>18세 미만의 부양자녀</strong>가 있는 가구에 지급됩니다. 소득 요건은 홑벌이·맞벌이 가구 모두 총소득 <strong>4,000만원 미만</strong>이어야 합니다. 재산 요건은 가구원 전체 재산 합계액이 <strong>2억 4,000만원 미만</strong>이어야 하며, 1억 7,000만원 이상이면 50% 감액됩니다. 단독가구(배우자·자녀 없는 1인 가구)는 자녀장려금 대상이 아닙니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">홑벌이와 맞벌이 가구는 어떻게 구분하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;"><strong>홑벌이 가구</strong>는 배우자의 총급여액(총소득)이 <strong>300만원 미만</strong>인 경우 또는 배우자 없이 부양자녀나 70세 이상 직계존속이 있는 경우입니다. <strong>맞벌이 가구</strong>는 신청인과 배우자 각각의 총급여액이 모두 <strong>300만원 이상</strong>인 경우입니다. 가구 유형에 따라 점증·평탄·점감 구간의 소득 기준이 달라지므로 정확히 파악하는 것이 중요합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">자녀가 2명이면 자녀장려금을 2배로 받나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, 자녀장려금은 <strong>부양자녀 1인당</strong> 최대 100만원이 지급됩니다. 자녀가 2명이면 최대 200만원, 3명이면 최대 300만원을 받을 수 있습니다. 다만 소득 구간에 따라 1인당 지급액이 달라지며, 그 금액에 자녀 수를 곱한 금액이 최종 산정액이 됩니다. 최소 지급액은 자녀 1인당 50만원입니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">재산에 포함되는 항목은 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">재산에는 <strong>토지·건물·주택</strong>(공시가격 기준), <strong>금융재산</strong>(예금·적금·주식·채권·보험 등), <strong>자동차</strong>(시가표준액), <strong>회원권</strong>(골프·콘도·헬스클럽 등)이 포함됩니다. 부채는 공제되지 않으며, 가구원 전체(신청인·배우자·부양자녀·직계존속)의 재산을 합산합니다. 주택의 경우 담보대출이 있어도 공시가격 전액이 재산으로 산정됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">맞벌이 가구 총소득 3,500만원이면 자녀장려금이 얼마인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">맞벌이 가구 총소득 3,500만원은 점감 구간(3,000만원~4,000만원)에 해당합니다. 자녀 1인당 계산식: <strong>100만원 - (3,500만원 - 3,000만원) × (100 ÷ 1,000) = 100만원 - 50만원 = 50만원</strong>입니다. 재산이 1.7억 미만이면 자녀 1인당 50만원, 1.7억~2.4억이면 50% 감액 후 25만원을 받습니다. 자녀가 2명이면 각각 2배가 됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">자녀장려금 지급은 언제 이루어지나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">정기 신청(5월)의 경우 <strong>9월 중</strong>에 지급됩니다. 지급은 신청 시 등록한 본인 명의 계좌로 이체됩니다. 계좌 정보가 없는 경우 우편으로 지급 통지서가 발송되며 체신관서(우체국)에서 수령 가능합니다. 자녀장려금은 근로장려금과 달리 반기 신청 제도가 없으며, 정기 신청만 가능합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">장애가 있는 자녀도 자녀장려금을 받을 수 있나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, 장애인 자녀의 경우 <strong>나이 제한(18세 미만)을 적용하지 않습니다</strong>. 「장애인복지법」상 등록 장애인, 「국가유공자 등 예우 및 지원에 관한 법률」에 따른 상이자, 「소득세법 시행령」에서 정하는 항시 치료가 필요한 중증 환자에 해당하는 경우 성인이 되어도 부양자녀로 인정받아 자녀장려금 산정에 포함됩니다.</p>
+    </details>
+  </div>
+
+  <!-- 자녀장려금 가이드 섹션 -->
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.4em;margin-bottom:20px;">2026년 자녀장려금 완벽 가이드</h2>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">자녀장려금이란?</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금은 저소득 가구의 자녀 양육 부담을 줄이기 위해 정부가 부양자녀 수에 비례하여 지급하는 소득 지원 제도입니다. 2014년 처음 도입된 이래 지급 대상과 금액이 꾸준히 확대되어, 2026년 현재 부양자녀 1인당 최대 100만원이 지급됩니다. 국세청이 소득과 재산 요건을 심사하여 매년 5월 정기 신청을 받고 9월에 지급합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금의 핵심 특징은 <strong>자녀 수에 비례하여 지급된다</strong>는 점입니다. 부양자녀가 많을수록 더 많은 금액을 받을 수 있으며, 소득 구간에 따라 점증·평탄·점감 방식으로 지급액이 결정됩니다. 근로장려금(EITC)과 달리 자녀장려금은 반기 신청 제도가 없고, 정기 신청만 가능합니다. 또한 근로장려금과 동시에 신청하고 수령할 수 있어, 18세 미만 자녀가 있는 저소득 근로 가구는 두 장려금을 합산하여 더 많은 혜택을 받을 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금 제도는 저출산 문제 해결을 위한 정부 정책의 일환으로, 출산과 양육을 경제적으로 지원하는 성격을 가집니다. 특히 소득이 낮을수록 양육 부담이 크다는 점을 고려하여, 저소득 가구를 주 대상으로 설계되어 있습니다. 2026년 기준으로 자녀 3명 이상인 맞벌이 가구는 최대 300만원을 받을 수 있으며, 근로장려금까지 합산하면 상당한 규모의 지원을 받을 수 있습니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">2026년 가구 유형별 지급 기준</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금은 가구 구성 형태에 따라 홑벌이 가구와 맞벌이 가구로 구분하여 지급 기준이 달라집니다. 단독가구(배우자·자녀 없는 1인 가구)는 자녀장려금 대상이 아닙니다. 두 유형 모두 소득 상한은 4,000만원으로 동일하지만, 소득 구간의 경계(점증·평탄·점감 구간)가 다르게 설정됩니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>가구 유형</td><td>정의</td><td>소득 상한</td><td>자녀 1인당 최대액</td></tr>
+      <tr><td>홑벌이 가구</td><td>배우자 소득 300만원 미만 또는 1인 양육 가구</td><td>4,000만원</td><td>100만원</td></tr>
+      <tr><td>맞벌이 가구</td><td>신청인·배우자 각각 소득 300만원 이상</td><td>4,000만원</td><td>100만원</td></tr>
+    </table>
+    <p style="font-size:0.85em;color:#888;margin-bottom:20px;">* 위 기준은 2026년도 지급 기준이며, 재산 2.4억 미만 요건 별도 충족 필요.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">소득 구간별 산정 공식 상세 설명</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금은 총소득에 따라 세 구간으로 나뉘어 계산됩니다. 각 구간의 경계와 산정 공식은 가구 유형에 따라 다릅니다. 모든 금액은 자녀 1인당 기준이며, 자녀가 여러 명이면 해당 금액에 자녀 수를 곱합니다.</p>
+
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>홑벌이 가구</strong></p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li>점증 구간 (0~2,100만원): 자녀수 × 100만원 × (총소득 ÷ 2,100만원)</li>
+      <li>평탄 구간 (2,100~2,500만원): 자녀수 × 100만원 (최대 지급)</li>
+      <li>점감 구간 (2,500~4,000만원): 자녀수 × [100만원 - (총소득 - 2,500만원) × (100 ÷ 1,500)]</li>
+    </ul>
+
+    <p style="line-height:1.8;color:#444;margin-bottom:8px;"><strong>맞벌이 가구</strong></p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:20px;padding-left:20px;">
+      <li>점증 구간 (0~2,500만원): 자녀수 × 100만원 × (총소득 ÷ 2,500만원)</li>
+      <li>평탄 구간 (2,500~3,000만원): 자녀수 × 100만원 (최대 지급)</li>
+      <li>점감 구간 (3,000~4,000만원): 자녀수 × [100만원 - (총소득 - 3,000만원) × (100 ÷ 1,000)]</li>
+    </ul>
+
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">산정된 금액이 자녀 1인당 50만원 미만이 되더라도 소득 요건을 충족하는 한 최소 50만원을 지급합니다. 단, 소득이 4,000만원 이상이거나 재산이 2억 4,000만원 이상이면 지급 대상이 아닙니다. 재산이 1억 7,000만원 이상 2억 4,000만원 미만인 경우 산정액의 50%를 지급하며, 이 경우에도 최소 지급액 기준(자녀 1인당 50만원)은 50% 감액이 적용된 후의 기준이 아닌, 감액 전 산정액이 50만원 미만일 때 보장되는 금액입니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">재산 요건과 감액 기준</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금을 받으려면 가구원 전체의 재산 합계액이 <strong>2억 4,000만원 미만</strong>이어야 합니다. 재산 합계액이 <strong>1억 7,000만원 이상 2억 4,000만원 미만</strong>이면 산정된 자녀장려금의 50%만 지급됩니다. 재산에는 토지·건물·주택(공시가격), 금융재산(예금·주식 등), 자동차(시가표준액), 회원권이 포함됩니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">주의할 점은 재산 계산 시 부채를 차감하지 않는다는 것입니다. 예를 들어 주택 공시가격이 2억원이고 담보대출이 1억 5,000만원 있더라도 재산은 2억원으로 계산됩니다. 따라서 내 집이 있는 가구는 공시가격을 미리 확인하여 재산 요건에 해당하는지 반드시 점검해야 합니다. 공시가격은 국토교통부 부동산 공시가격 알리미(realtyprice.kr)에서 확인 가능합니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>재산 합계액</td><td>지급 비율</td><td>비고</td></tr>
+      <tr><td>1억 7,000만원 미만</td><td>100% 지급</td><td>감액 없음</td></tr>
+      <tr><td>1억 7,000만원 이상 ~ 2억 4,000만원 미만</td><td>50% 지급</td><td>산정액의 절반</td></tr>
+      <tr><td>2억 4,000만원 이상</td><td>지급 불가</td><td>수급 자격 없음</td></tr>
+    </table>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">부양자녀 인정 요건</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금에서 인정하는 부양자녀는 다음 요건을 모두 충족해야 합니다. 첫째, 신청인 또는 배우자의 자녀(입양 포함)이어야 합니다. 둘째, 해당 과세기간 종료일(12월 31일) 현재 <strong>18세 미만</strong>이어야 합니다. 다만 장애인인 경우 나이 제한을 적용하지 않습니다. 셋째, 해당 과세기간의 소득금액 합계액이 <strong>100만원 이하</strong>이어야 합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">부양자녀 요건에서 주의해야 할 사항이 있습니다. 부양자녀가 근로소득이 있어 연간 총급여액이 500만원 이하(소득금액 100만원 이하)인 경우에는 부양자녀로 인정됩니다. 그러나 총급여액이 500만원을 초과하면 소득금액이 100만원을 초과하게 되어 부양자녀로 인정받지 못합니다. 또한 부양자녀는 다른 거주자의 부양자녀로 중복 공제될 수 없습니다. 이혼 가정의 경우 실제로 부양하는 측에서 신청해야 하며, 두 가구에서 동시에 신청하면 한 쪽만 인정됩니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>구분</td><td>요건</td></tr>
+      <tr><td>관계</td><td>신청인 또는 배우자의 자녀 (입양자녀 포함)</td></tr>
+      <tr><td>나이</td><td>과세기간 종료일 현재 18세 미만 (장애인 예외)</td></tr>
+      <tr><td>소득</td><td>해당 과세기간 소득금액 합계 100만원 이하</td></tr>
+      <tr><td>중복</td><td>다른 거주자의 부양자녀로 이미 신청된 경우 불인정</td></tr>
+    </table>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">자녀장려금 신청 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금 신청은 여러 방법으로 가능합니다. 가장 편리한 방법은 <strong>국세청 홈택스(hometax.go.kr)</strong>에서 온라인으로 신청하는 것입니다. 공동인증서 또는 금융인증서로 로그인한 뒤 '신청/제출 > 근로·자녀장려금 신청' 메뉴에서 신청할 수 있습니다. 모바일 앱 손택스(Hometax)를 통해서도 동일하게 신청 가능합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">국세청에서 안내문을 발송한 경우 <strong>ARS 전화(1544-9944)</strong>나 안내문의 QR코드를 통해 더욱 간편하게 신청할 수 있습니다. 디지털 접근이 어려운 경우 가까운 세무서에 방문하여 신청할 수도 있습니다. 신청 기간은 매년 5월 1일~31일이며, 기간 내에 신청하지 않으면 기한후 신청(6월 1일~11월 30일)도 가능하지만 지급액이 90% 수준으로 줄어듭니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금과 근로장려금은 <strong>동시에 신청</strong>할 수 있습니다. 홈택스에서 가구 정보를 입력하면 두 장려금을 합산한 예상 지급액을 미리 확인할 수 있으며, 한 번의 신청 절차로 모두 처리됩니다. 신청 후 심사 결과는 8월에 안내문으로 발송되며, 9월 중 지급이 완료됩니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">기한후 신청 시 불이익</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">정기 신청 기간(5월 1일~31일)을 놓친 경우, 기한후 신청(6월 1일~11월 30일)을 통해 신청할 수 있습니다. 다만 기한후 신청 시에는 산정된 지급액의 <strong>90%만 지급</strong>됩니다. 예를 들어 산정액이 200만원이라면 기한후 신청 시 180만원만 받게 됩니다. 기한후 신청분의 지급 시기는 신청 다음 달부터 약 3개월 이내입니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">또한 자녀장려금을 부정하게 신청하거나 허위 서류를 제출하면 지급된 금액이 환수되고, 2~5년간 신청 자격이 제한될 수 있습니다. 따라서 부양자녀 수, 소득, 재산 등의 정보를 정확히 기재하는 것이 중요합니다. 국세청은 신고된 소득과 재산 정보를 기반으로 자동 심사하며, 필요한 경우 추가 서류 제출을 요청할 수 있습니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">자녀장려금 수령 극대화 전략</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금을 최대로 받으려면 몇 가지 사항을 사전에 확인해야 합니다. 첫째, <strong>소득 신고를 정확히</strong> 해야 합니다. 근로소득이 있다면 연말정산이 완료된 후 국세청에 신고 내역이 자동 반영됩니다. 사업소득이 있다면 종합소득세 신고를 통해 소득이 정확히 신고되어 있어야 합니다. 소득이 신고되지 않으면 지급 대상 심사에서 제외될 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">둘째, <strong>가구 유형을 정확히 파악</strong>해야 합니다. 배우자의 연간 소득이 300만원 미만인 경우 홑벌이로 신청하는 것이 유리할 수도 있습니다. 홑벌이와 맞벌이의 점증·평탄·점감 구간 기준이 달라 소득 수준에 따라 어느 유형으로 신청하느냐에 따라 수령액이 달라질 수 있습니다. 셋째, <strong>재산 요건 사전 점검</strong>이 중요합니다. 부동산 공시가격이나 금융재산이 1.7억에 근접한 경우, 재산 구성을 미리 파악하여 예상 지급액을 확인하는 것이 좋습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">넷째, <strong>근로장려금과 동시 신청</strong>을 잊지 마세요. 자녀장려금 요건을 충족하는 가구라면 대부분 근로장려금도 함께 신청할 수 있습니다. 국세청 홈택스에서 본인의 예상 수령액을 미리 시뮬레이션해볼 수 있으니, 신청 전 꼭 확인하시기 바랍니다. 다섯째, <strong>정기 신청 기간(5월)을 반드시 지켜야</strong> 합니다. 기한후 신청 시 10% 감액이 발생하므로, 캘린더에 5월 신청 일정을 미리 표시해두는 것이 유리합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">자녀장려금과 근로장려금 동시 수령</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금과 근로장려금은 요건을 각각 충족하면 <strong>동시에 수령</strong>할 수 있습니다. 두 장려금의 소득 요건 기준이 다소 다르기 때문에, 근로장려금 소득 요건을 넘겼더라도 자녀장려금은 별도 수령이 가능한 경우가 있으며 반대도 마찬가지입니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>구분</td><td>근로장려금</td><td>자녀장려금</td></tr>
+      <tr><td>대상</td><td>저소득 근로·사업 가구</td><td>18세 미만 부양자녀 있는 가구</td></tr>
+      <tr><td>단독가구 가능 여부</td><td>가능 (최대 165만원)</td><td>불가</td></tr>
+      <tr><td>홑벌이 소득 상한</td><td>3,200만원</td><td>4,000만원</td></tr>
+      <tr><td>맞벌이 소득 상한</td><td>3,800만원</td><td>4,000만원</td></tr>
+      <tr><td>최대 지급액</td><td>단독 165만원 / 홑벌이 285만원 / 맞벌이 330만원</td><td>자녀 1인당 100만원</td></tr>
+      <tr><td>반기 신청</td><td>가능 (근로소득자)</td><td>불가 (정기만)</td></tr>
+      <tr><td>동시 신청</td><td colspan="2" style="text-align:center;">가능 (한 번에 신청)</td></tr>
+    </table>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">총소득 계산 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금의 총소득은 근로소득, 사업소득, 종교인 소득을 합산하여 계산합니다. 각 소득 유형별로 계산 방식이 다소 다릅니다.</p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li><strong>근로소득:</strong> 총급여액(비과세 제외) × 100% = 근로소득 금액으로 산정</li>
+      <li><strong>사업소득:</strong> 수입금액 × 업종별 조정률 = 사업소득 금액</li>
+      <li><strong>종교인 소득:</strong> 총수입금액 × 조정률 = 종교인 소득 금액</li>
+      <li><strong>이자·배당·연금·기타 소득:</strong> 원칙적으로 합산 대상이나, 금액 기준에 따라 일부 포함</li>
+    </ul>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">특히 사업소득이 있는 경우 업종별 조정률이 중요합니다. 업종별 조정률은 국세청 고시로 정해지며, 동일한 수입금액이라도 업종에 따라 인정되는 소득금액이 달라집니다. 예를 들어 도소매업은 조정률이 낮아 수입금액에서 인정 소득이 적고, 서비스업은 상대적으로 조정률이 높습니다. 정확한 업종별 조정률은 국세청 홈택스에서 확인할 수 있습니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">자녀장려금 지급 제외 대상</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">소득·재산 요건을 충족하더라도 다음의 경우 자녀장려금을 받을 수 없습니다. 부양자녀가 없는 경우(단독가구), 재산 합계액이 2억 4,000만원 이상인 경우, 총소득이 4,000만원 이상인 경우가 기본 제외 요건입니다. 또한 신청 연도 중 다른 거주자의 부양자녀인 경우(즉, 본인이 부양을 받는 자녀인 경우)에도 자녀장려금을 받을 수 없습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">외국인의 경우, 한국인 배우자가 있거나 대한민국 국적의 부양자녀가 있는 경우에는 신청 가능하나, 그 외의 경우에는 자녀장려금 대상이 아닙니다. 또한 부양자녀의 소득금액 합계가 100만원을 초과하면 해당 자녀는 부양자녀로 인정되지 않습니다. 아르바이트 등으로 자녀의 연간 총급여액이 500만원을 초과하는 경우 주의가 필요합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">자녀장려금 관련 자주 발생하는 오해</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;"><strong>오해 1: "자녀장려금은 세금 환급이다"</strong><br>자녀장려금은 세금 환급이 아니라 별도의 장려금 지급 제도입니다. 세금을 많이 낸 사람이 더 받는 구조가 아니며, 소득·재산 요건을 충족하는 저소득 가구에 정부가 직접 지급하는 방식입니다. 심지어 세금을 전혀 내지 않은 가구도 요건을 충족하면 자녀장려금을 받을 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;"><strong>오해 2: "소득이 없으면 더 많이 받는다"</strong><br>소득이 전혀 없으면 자녀장려금을 받을 수 없습니다. 점증 구간에서 소득이 0이면 계산 결과도 0이 됩니다. 소득이 있고 일정 수준 이상이 되어야 장려금을 받을 수 있으며, 평탄 구간(홑벌이 2,100만~2,500만원, 맞벌이 2,500만~3,000만원)에서 최대 지급액을 받을 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;"><strong>오해 3: "재산에서 대출은 빼준다"</strong><br>자녀장려금의 재산 기준은 부채를 차감하지 않습니다. 주택 공시가격 기준으로 재산이 산정되므로, 담보대출이 아무리 많아도 공시가격이 기준이 됩니다. 이 점에서 은행 재산 심사(순자산 기준)와 크게 다릅니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;"><strong>오해 4: "근로장려금을 받으면 자녀장려금은 못 받는다"</strong><br>두 장려금은 별개의 제도이며 동시 수령이 가능합니다. 근로장려금 소득 요건 이내이면서 18세 미만 자녀가 있다면 두 장려금을 동시에 신청하여 받을 수 있습니다. 근로장려금 소득 요건을 초과하더라도 자녀장려금 소득 요건(4,000만원)을 충족한다면 자녀장려금만 받을 수 있습니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">실제 계산 예시</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">아래는 다양한 상황별 자녀장려금 계산 예시입니다. 모두 재산 1.7억 미만으로 감액 없는 경우를 가정합니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>가구 유형</td><td>총소득</td><td>자녀 수</td><td>구간</td><td>지급액</td></tr>
+      <tr><td>홑벌이</td><td>1,000만원</td><td>1명</td><td>점증</td><td>약 47.6만원 → 최소 보장 50만원</td></tr>
+      <tr><td>홑벌이</td><td>2,300만원</td><td>2명</td><td>평탄</td><td>200만원</td></tr>
+      <tr><td>홑벌이</td><td>3,000만원</td><td>1명</td><td>점감</td><td>약 66.7만원</td></tr>
+      <tr><td>맞벌이</td><td>2,000만원</td><td>1명</td><td>점증</td><td>80만원</td></tr>
+      <tr><td>맞벌이</td><td>2,800만원</td><td>3명</td><td>평탄</td><td>300만원</td></tr>
+      <tr><td>맞벌이</td><td>3,500만원</td><td>2명</td><td>점감</td><td>100만원 (1인당 50만원)</td></tr>
+    </table>
+    <p style="font-size:0.85em;color:#888;margin-bottom:20px;">* 위 계산은 재산 1.7억 미만, 감액 없는 경우 기준. 실제 지급액은 홈택스 공식 계산기로 확인 권장.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">자녀장려금 이의신청 및 불복 절차</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">자녀장려금 심사 결과에 이의가 있는 경우, <strong>결정 통지를 받은 날로부터 90일 이내</strong>에 이의신청을 할 수 있습니다. 이의신청은 국세청 홈택스에서 온라인으로 제출하거나, 관할 세무서에 서면으로 제출할 수 있습니다. 이의신청이 받아들여지지 않으면 조세심판원에 심판청구를 할 수 있으며, 그 이후에도 이의가 있으면 행정소송을 제기할 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">이의신청 시에는 부양자녀의 주민등록등본, 가족관계증명서, 소득 관련 서류 등 필요한 증빙 서류를 함께 제출해야 합니다. 심사 오류가 의심되는 경우, 홈택스의 '결정 내역 조회' 메뉴에서 산정 내역을 확인한 후 이의신청 여부를 결정하는 것이 좋습니다.</p>
+  </div>
+
+  <!-- 내부 링크 섹션 -->
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="eitc.html">근로장려금 계산기</a> - 단독·홑벌이·맞벌이 가구별 근로장려금 자동 계산</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서, 개인사업자 자동 계산</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+      <li><a href="severance.html">퇴직금 계산기</a> - 평균임금 기준 퇴직금 자동 계산</li>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택·토지·건물 취득세 자동 계산</li>
+      <li><a href="gift-tax.html">증여세 계산기</a> - 관계별 공제, 혼인·출산 공제 반영</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+    </ul>
+  </div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 수급액은 국세청 홈택스(hometax.go.kr) 또는 세무서에서 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+const fmtMan = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '만원';
+};
+
+// 가구 유형별 파라미터
+const PARAMS = {
+  'single-income': {
+    label: '홑벌이 가구',
+    maxPerChild: 100,    // 자녀 1인당 최대액 (만원)
+    riseEnd: 2100,       // 점증 구간 상한 (만원)
+    flatEnd: 2500,       // 평탄 구간 상한 (만원)
+    incomeLimit: 4000    // 소득 상한 (만원)
+  },
+  'dual-income': {
+    label: '맞벌이 가구',
+    maxPerChild: 100,
+    riseEnd: 2500,
+    flatEnd: 3000,
+    incomeLimit: 4000
+  }
+};
+
+const MIN_PER_CHILD = 50; // 자녀 1인당 최소 지급액 (만원)
+
+function calcChildTaxCredit(type, incomeMan, childCount) {
+  const p = PARAMS[type];
+
+  if (incomeMan >= p.incomeLimit) {
+    return { amountPerChild: 0, totalAmount: 0, section: '소득 초과 (수급 불가)' };
+  }
+  if (incomeMan <= 0) {
+    return { amountPerChild: 0, totalAmount: 0, section: '소득 없음 (수급 불가)' };
+  }
+
+  let amountPerChild, section;
+  const declineRange = p.incomeLimit - p.flatEnd;
+
+  if (incomeMan <= p.riseEnd) {
+    // 점증 구간
+    amountPerChild = p.maxPerChild * (incomeMan / p.riseEnd);
+    section = `점증 구간 (0 ~ ${p.riseEnd.toLocaleString('ko-KR')}만원)`;
+  } else if (incomeMan <= p.flatEnd) {
+    // 평탄 구간
+    amountPerChild = p.maxPerChild;
+    section = `평탄 구간 (${p.riseEnd.toLocaleString('ko-KR')} ~ ${p.flatEnd.toLocaleString('ko-KR')}만원)`;
+  } else {
+    // 점감 구간
+    amountPerChild = p.maxPerChild - (incomeMan - p.flatEnd) * (p.maxPerChild / declineRange);
+    amountPerChild = Math.max(amountPerChild, 0);
+    section = `점감 구간 (${p.flatEnd.toLocaleString('ko-KR')} ~ ${p.incomeLimit.toLocaleString('ko-KR')}만원)`;
+  }
+
+  // 최소 지급액 보장 (소득 구간 내에서 산정액이 0보다 크면 최소 50만원)
+  if (amountPerChild > 0 && amountPerChild < MIN_PER_CHILD) {
+    amountPerChild = MIN_PER_CHILD;
+  }
+
+  const totalAmount = amountPerChild * childCount;
+
+  return { amountPerChild, totalAmount, section };
+}
+
+function calculate() {
+  const type = document.getElementById('householdType').value;
+  const childCount = Math.max(1, Math.min(10, parseInt(document.getElementById('childCount').value) || 1));
+  const incomeMan = parseFloat(document.getElementById('totalIncome').value) || 0;
+  const assetsMan = parseFloat(document.getElementById('totalAssets').value) || 0;
+
+  const p = PARAMS[type];
+
+  // 재산 요건 체크
+  if (assetsMan >= 24000) {
+    document.getElementById('rHousehold').textContent = p.label;
+    document.getElementById('rIncome').textContent = fmtMan(incomeMan);
+    document.getElementById('rSection').textContent = '-';
+    document.getElementById('rChildren').textContent = childCount + '명';
+    document.getElementById('rAssets').textContent = fmtMan(assetsMan);
+    document.getElementById('rBase').textContent = '-';
+    document.getElementById('rFinal').textContent = '수급 불가';
+    document.getElementById('rTotal').textContent = '0원';
+    document.getElementById('rTotalSub').textContent = '재산 합계액이 2억 4,000만원 이상으로 수급 자격이 없습니다.';
+    document.getElementById('result').classList.add('show');
+    return;
+  }
+
+  const { amountPerChild, totalAmount, section } = calcChildTaxCredit(type, incomeMan, childCount);
+
+  // 만원 단위 → 원 단위
+  const baseAmt = Math.round(totalAmount * 10000);
+
+  // 재산 감액 적용
+  let finalAmt = baseAmt;
+  let assetNote = '감액 없음';
+  if (assetsMan >= 17000) {
+    finalAmt = Math.round(baseAmt * 0.5);
+    assetNote = '50% 감액 적용 (1.7억~2.4억)';
+  }
+
+  document.getElementById('rHousehold').textContent = p.label;
+  document.getElementById('rIncome').textContent = fmtMan(incomeMan);
+  document.getElementById('rSection').textContent = section;
+  document.getElementById('rChildren').textContent = childCount + '명 (1인당 ' + Math.round(amountPerChild) + '만원)';
+  document.getElementById('rAssets').textContent = fmtMan(assetsMan) + ' (' + assetNote + ')';
+  document.getElementById('rBase').textContent = fmt(baseAmt);
+  document.getElementById('rFinal').textContent = fmt(finalAmt);
+
+  if (finalAmt === 0) {
+    document.getElementById('rTotal').textContent = '0원';
+    document.getElementById('rTotalSub').textContent = '소득 또는 재산 요건을 충족하지 못해 지급 대상이 아닙니다.';
+  } else {
+    document.getElementById('rTotal').textContent = fmt(finalAmt);
+    document.getElementById('rTotalSub').textContent =
+      p.label + ' | 자녀 ' + childCount + '명 기준 | 재산 감액: ' + assetNote;
+  }
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

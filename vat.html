@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부가가치세 계산기 - 공급가액·역산·납부세액 자동 계산 | 2026년 기준</title>
+  <meta name="description" content="부가가치세(VAT) 계산기. 공급가액에서 부가세 계산, 합계금액 역산, 일반과세자·간이과세자 납부세액까지 한 번에 계산하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/vat">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="부가가치세 계산기 - 공급가액·역산·납부세액 자동 계산 | 2026년 기준">
+  <meta property="og:description" content="부가가치세(VAT) 계산기. 공급가액→부가세, 합계금액 역산, 일반·간이과세자 납부세액을 자동으로 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/vat">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "부가가치세란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "부가가치세(VAT, Value Added Tax)는 재화나 서비스의 거래 단계마다 창출되는 부가가치에 대해 부과하는 세금입니다. 현재 우리나라 표준세율은 10%이며, 최종 소비자가 실질적으로 부담하고 사업자가 대신 납부하는 간접세입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "일반과세자와 간이과세자의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연 매출액 8,000만원을 기준으로 구분됩니다. 일반과세자는 매출세액(매출액×10%)에서 매입세액을 공제한 금액을 납부합니다. 간이과세자는 업종별 부가가치율(15~30%)에 10%를 곱한 세율로 계산하며 세금계산서 발급이 제한됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "공급가액과 합계금액의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "공급가액은 부가세를 제외한 순수 공급 금액이며, 합계금액(공급대가)은 공급가액에 부가세(10%)를 더한 최종 금액입니다. 합계금액 = 공급가액 × 1.1, 공급가액 = 합계금액 ÷ 1.1 으로 계산됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "매입세액 공제란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "사업자가 원재료, 상품 등을 구입할 때 부담한 부가세를 매입세액이라 합니다. 일반과세자는 세금계산서를 수취한 경우 매입세액을 납부해야 할 매출세액에서 공제받을 수 있습니다. 납부세액 = 매출세액 - 매입세액이며, 매입세액이 매출세액보다 크면 환급을 받습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "간이과세자의 업종별 부가가치율은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "간이과세자 업종별 부가가치율은 소매업·재생용 자원수집업 15%, 음식점업 20%, 제조업·농업·임업·어업·소화물 전문 운송업 20%, 숙박업 25%, 건설업·부동산임대업·그 밖의 서비스업 30%입니다. 실효 세율은 부가가치율에 10%를 곱한 값입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "부가가치세 신고 기한은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "일반과세자는 1년에 2회 신고·납부합니다. 1기(1~6월)는 7월 25일, 2기(7~12월)는 다음 해 1월 25일까지입니다. 간이과세자는 1년에 1회로 다음 해 1월 25일까지 신고합니다. 예정신고는 4월, 10월에 각각 이루어집니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="gift-tax.html">증여세</a>
+      <a href="vat.html" class="active">부가세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>부가가치세 계산기</h1>
+        <p class="desc">공급가액에서 부가세 계산, 합계금액 역산, 일반·간이과세자 납부세액까지 한 번에 계산합니다. 2026년 기준 부가가치세율 10% 반영.</p>
+
+        <div class="form-group">
+          <label>계산 방식</label>
+          <select id="calcMode" onchange="toggleMode()">
+            <option value="supply">공급가액 → 부가세 계산</option>
+            <option value="reverse">합계금액 → 역산 (공급가액·부가세 분리)</option>
+            <option value="payment">사업자 납부세액 계산 (매출세액 - 매입세액)</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="supplyGroup">
+          <label>공급가액 <span class="hint">부가세 제외 금액 (원)</span></label>
+          <input type="number" id="supplyAmount" placeholder="예: 1000000 (100만원)" value="1000000">
+        </div>
+
+        <div class="form-group" id="totalGroup" style="display:none;">
+          <label>합계금액 (공급대가) <span class="hint">부가세 포함 금액 (원)</span></label>
+          <input type="number" id="totalAmount" placeholder="예: 1100000 (110만원)" value="1100000">
+        </div>
+
+        <div id="paymentGroups" style="display:none;">
+          <div class="form-group">
+            <label>매출액 (공급가액 합계) <span class="hint">부가세 제외 (원)</span></label>
+            <input type="number" id="salesAmount" placeholder="예: 50000000 (5천만원)" value="50000000">
+          </div>
+          <div class="form-group">
+            <label>매입액 (매입세금계산서 합계) <span class="hint">부가세 제외 (원)</span></label>
+            <input type="number" id="purchaseAmount" placeholder="예: 30000000 (3천만원)" value="30000000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>과세 유형</label>
+          <select id="taxType" onchange="toggleTaxType()">
+            <option value="general">일반과세자 (연 매출 8,000만원 이상)</option>
+            <option value="simplified">간이과세자 (연 매출 8,000만원 미만)</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="industryGroup" style="display:none;">
+          <label>업종 (간이과세자 부가가치율)</label>
+          <select id="industry">
+            <option value="0.15">소매업·재생용 자원수집업 (부가가치율 15%)</option>
+            <option value="0.20">음식점업 (부가가치율 20%)</option>
+            <option value="0.20">제조업·농업·임업·어업 (부가가치율 20%)</option>
+            <option value="0.25">숙박업 (부가가치율 25%)</option>
+            <option value="0.30">건설업·부동산임대업 (부가가치율 30%)</option>
+            <option value="0.30">그 밖의 서비스업 (부가가치율 30%)</option>
+          </select>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label" id="rMainLabel">부가가치세</div>
+            <div class="value" id="rMainValue">-</div>
+            <div class="sub" id="rMainSub"></div>
+          </div>
+
+          <table class="result-table" id="rTableSupply">
+            <tr><td>공급가액</td><td id="rSupply">-</td></tr>
+            <tr><td>부가세 (10%)</td><td id="rVat">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>합계금액</td><td id="rTotal">-</td></tr>
+          </table>
+
+          <table class="result-table" id="rTableReverse" style="display:none;">
+            <tr><td>합계금액 (입력)</td><td id="rRevTotal">-</td></tr>
+            <tr><td>공급가액 (÷1.1)</td><td id="rRevSupply">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>부가세</td><td id="rRevVat">-</td></tr>
+          </table>
+
+          <table class="result-table" id="rTablePayment" style="display:none;">
+            <tr><td>매출세액 (매출액 × 10%)</td><td id="rSalesTax">-</td></tr>
+            <tr><td>매입세액 (매입액 × 10%)</td><td id="rPurchaseTax">-</td></tr>
+            <tr id="rSimplifiedRow" style="display:none;"><td id="rSimplifiedLabel">간이과세 세율</td><td id="rSimplifiedRate">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>납부세액</td><td id="rPayment">-</td></tr>
+            <tr id="rRefundRow" style="display:none;"><td colspan="2" style="color:#1565c0;font-weight:700;" id="rRefundMsg">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 부가가치세율 안내표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>과세 유형별 세율 비교</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>구분</td><td>기준</td><td>세율 계산</td></tr>
+          <tr><td>일반과세자</td><td>연 매출 8,000만원 이상</td><td>공급가액 × 10%</td></tr>
+          <tr><td>간이과세자 (소매)</td><td>연 매출 8,000만원 미만</td><td>공급대가 × 15% × 10% = 1.5%</td></tr>
+          <tr><td>간이과세자 (음식)</td><td>연 매출 8,000만원 미만</td><td>공급대가 × 20% × 10% = 2%</td></tr>
+          <tr><td>간이과세자 (숙박)</td><td>연 매출 8,000만원 미만</td><td>공급대가 × 25% × 10% = 2.5%</td></tr>
+          <tr><td>간이과세자 (서비스/건설)</td><td>연 매출 8,000만원 미만</td><td>공급대가 × 30% × 10% = 3%</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 간이과세자 연 매출 4,800만원 미만은 납부의무 면제 (단, 신고 의무는 있음)</p>
+      </div>
+
+      <!-- 간이과세자 업종별 부가가치율 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>간이과세자 업종별 부가가치율</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>업종</td><td>부가가치율</td><td>실효 세율</td></tr>
+          <tr><td>소매업, 재생용 자원수집 및 판매업</td><td>15%</td><td>1.5%</td></tr>
+          <tr><td>음식점업</td><td>20%</td><td>2%</td></tr>
+          <tr><td>제조업, 농·임·어업, 소화물 전문 운송업</td><td>20%</td><td>2%</td></tr>
+          <tr><td>숙박업</td><td>25%</td><td>2.5%</td></tr>
+          <tr><td>건설업, 부동산임대업</td><td>30%</td><td>3%</td></tr>
+          <tr><td>그 밖의 서비스업</td><td>30%</td><td>3%</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 간이과세자 세액 = 공급대가 × 업종별 부가가치율 × 10%</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 상세 설명 콘텐츠 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h2 style="font-size:1.2em;margin-bottom:14px;">부가가치세 완전 가이드</h2>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">부가가치세란?</h3>
+        <p style="line-height:1.8;color:#444;">부가가치세(VAT, Value Added Tax)는 상품의 생산·유통·판매 등 각 거래 단계에서 창출되는 부가가치에 부과하는 소비세입니다. 우리나라에서는 1977년에 도입되었으며, 표준세율은 <strong>10%</strong>입니다. 사업자가 소비자로부터 세금을 징수하여 국가에 납부하는 간접세 구조이므로, 최종 소비자가 실질적인 세금 부담자가 됩니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">공급가액 vs 공급대가(합계금액)</h3>
+        <p style="line-height:1.8;color:#444;">세금계산서에서 자주 혼동되는 두 개념입니다. <strong>공급가액</strong>은 부가세가 포함되지 않은 순수 공급 금액으로, 세금계산서의 공급가액 란에 기재됩니다. <strong>공급대가(합계금액)</strong>는 공급가액에 부가세 10%를 더한 최종 금액입니다.</p>
+        <ul style="line-height:2;color:#444;padding-left:18px;">
+          <li>합계금액 = 공급가액 × 1.1</li>
+          <li>공급가액 = 합계금액 ÷ 1.1 (역산)</li>
+          <li>부가세 = 공급가액 × 10% = 합계금액 - 공급가액</li>
+        </ul>
+        <p style="line-height:1.8;color:#444;margin-top:8px;">예를 들어 물건값이 100만원이라면 공급가액 100만원 + 부가세 10만원 = 합계 110만원을 청구하게 됩니다. 반대로 110만원짜리 영수증에서 부가세만 따로 계산하려면 110만원 ÷ 1.1 = 100만원(공급가액), 110만원 - 100만원 = 10만원(부가세)입니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">일반과세자 납부세액 계산</h3>
+        <p style="line-height:1.8;color:#444;">일반과세자는 <strong>매출세액에서 매입세액을 차감</strong>한 금액을 납부합니다. 공제되는 매입세액은 사업과 관련하여 세금계산서를 수취한 경우에만 인정됩니다.</p>
+        <ul style="line-height:2;color:#444;padding-left:18px;">
+          <li>매출세액 = 공급가액(매출 합계) × 10%</li>
+          <li>매입세액 = 공급가액(매입 합계) × 10%</li>
+          <li>납부세액 = 매출세액 - 매입세액</li>
+          <li>납부세액이 음수이면 환급 대상</li>
+        </ul>
+        <p style="line-height:1.8;color:#444;margin-top:8px;">예시: 매출 5,000만원, 매입 3,000만원인 사업자의 납부세액은 (5,000만원 × 10%) - (3,000만원 × 10%) = 500만원 - 300만원 = <strong>200만원</strong>입니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세자란?</h3>
+        <p style="line-height:1.8;color:#444;">연간 매출액이 <strong>8,000만원 미만</strong>인 개인사업자는 간이과세자로 분류됩니다. 단, 부동산임대업이나 과세유흥장소, 광업 등 일부 업종은 매출액과 관계없이 간이과세 적용이 배제됩니다.</p>
+        <p style="line-height:1.8;color:#444;margin-top:8px;">간이과세자 세액 = 공급대가 × 업종별 부가가치율 × 10%</p>
+        <p style="line-height:1.8;color:#444;margin-top:8px;">연 매출이 <strong>4,800만원 미만</strong>인 간이과세자는 납부의무가 면제되지만 신고 의무는 있습니다. 2021년 7월부터 간이과세 기준금액이 4,800만원에서 8,000만원으로 상향됐습니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">부가가치세 신고 기간</h3>
+        <p style="line-height:1.8;color:#444;">일반과세자는 <strong>연 2회</strong> 확정신고를 합니다. 상반기(1~6월) 매출·매입분은 7월 25일까지, 하반기(7~12월)분은 다음 해 1월 25일까지 신고·납부해야 합니다. 또한 4월(1기 예정)과 10월(2기 예정)에 예정신고(또는 예정고지)가 있습니다.</p>
+        <p style="line-height:1.8;color:#444;margin-top:8px;">간이과세자는 <strong>연 1회</strong>로, 전년도 1월 1일~12월 31일 실적을 다음 해 1월 25일까지 신고합니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">부가세 면세 vs 영세율</h3>
+        <p style="line-height:1.8;color:#444;"><strong>면세</strong>는 부가세 자체가 없는 거래로, 기초생필품·의료·교육·금융 서비스 등이 해당합니다. 면세사업자는 세금계산서 발급 및 매입세액 공제가 불가합니다. <strong>영세율(0%)</strong>은 수출 거래에 적용되며, 매출세액은 0이지만 매입세액은 환급받을 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>계산 공식 요약</h3>
+        <ul>
+          <li><strong>부가세</strong> =<br>공급가액 × 10%</li>
+          <li style="margin-top:10px;"><strong>합계금액</strong> =<br>공급가액 × 1.1</li>
+          <li style="margin-top:10px;"><strong>역산 공급가액</strong> =<br>합계금액 ÷ 1.1</li>
+          <li style="margin-top:10px;"><strong>납부세액</strong> =<br>매출세액 - 매입세액</li>
+          <li style="margin-top:10px;"><strong>간이과세 세액</strong> =<br>공급대가 × 부가가치율 × 10%</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>과세 유형 판단 기준</h3>
+        <ul>
+          <li><strong>일반과세자:</strong> 연 매출 8,000만원 이상, 세금계산서 발급·매입세액 공제 가능</li>
+          <li><strong>간이과세자:</strong> 연 매출 8,000만원 미만, 낮은 세율 적용·세금계산서 발급 제한</li>
+          <li><strong>납부면제:</strong> 간이과세자 중 연 매출 4,800만원 미만 (신고는 필수)</li>
+          <li><strong>면세사업자:</strong> 의료·교육·금융 등 부가세 해당 없음</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 신규사업자는 개업일부터 과세 유형 선택 필요</p>
+      </div>
+      <div class="info-box">
+        <h3>절세 포인트</h3>
+        <ul>
+          <li><strong>세금계산서 수취:</strong> 매입세금계산서가 있어야 매입세액 공제 가능.</li>
+          <li><strong>신용카드 매입:</strong> 사업자 신용카드 사용분도 매입세액 공제 가능.</li>
+          <li><strong>조기환급:</strong> 설비 투자 시 매입세액이 크면 조기환급 신청 고려.</li>
+          <li><strong>신고 기한 준수:</strong> 기한 초과 시 가산세 10~20% 부과.</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="capital-gains.html" class="related-link">양도소득세</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ 섹션 -->
+<div class="info-box" style="margin-top:32px;">
+  <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">부가가치세는 누가 납부하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">부가가치세는 <strong>사업자</strong>가 소비자로부터 징수하여 국가에 대신 납부합니다. 소비자는 물건 값에 포함된 10%를 부담하지만, 실제 납세 의무자는 사업자입니다. 이를 전단계 세액 공제법이라 하며, 사업자는 매출 부가세에서 매입 부가세를 차감한 금액만 납부하므로 이중과세가 방지됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">세금계산서와 영수증의 차이는?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;"><strong>세금계산서</strong>는 일반과세자 간 거래에서 발급하는 공식 세무 서류로, 공급가액·세액·사업자번호가 명시됩니다. 매입세액 공제를 받으려면 반드시 세금계산서(전자세금계산서 포함)를 수취해야 합니다. <strong>영수증</strong>은 소비자 거래 시 발급되며 매입세액 공제가 불가합니다. 단, 신용카드 매출전표는 일정 요건 충족 시 공제 가능합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">110만원짜리 물건의 부가세는 얼마인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">합계금액 110만원에서 부가세를 역산하면 공급가액 = 110만원 ÷ 1.1 = <strong>100만원</strong>, 부가세 = 110만원 - 100만원 = <strong>10만원</strong>입니다. 이 계산기의 '합계금액 → 역산' 모드를 사용하면 자동으로 계산됩니다. 단순히 110만원 × 10% = 11만원으로 계산하는 것은 오류입니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">간이과세자도 세금계산서를 발행할 수 있나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2021년 7월부터 <strong>연 매출 4,800만원 이상 간이과세자</strong>는 세금계산서 발급이 가능해졌습니다. 4,800만원 미만 간이과세자는 영수증만 발급할 수 있습니다. 단, 간이과세자가 발급한 세금계산서를 수취한 일반과세자도 매입세액 공제를 받을 수 있습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">부가세 환급은 언제 받나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">매입세액이 매출세액보다 많으면 차액을 환급받습니다. 일반적으로 <strong>확정신고 후 30일 이내</strong>에 환급됩니다. 수출 기업이나 설비 투자가 많은 경우 조기환급 신청이 가능하며, 이 경우 신고 기한 다음 달 15일 이내에 환급됩니다. 간이과세자는 원칙적으로 환급이 되지 않습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">음식점 창업 시 부가세는 얼마나 내나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">음식점업 간이과세자의 경우 부가가치율 20%가 적용됩니다. 예를 들어 연 매출(공급대가) 6,000만원이면 6,000만원 × 20% × 10% = <strong>120만원</strong>이 납부세액입니다. 일반과세자라면 매출세액 600만원에서 매입세액을 차감한 금액을 납부합니다. 연 매출 4,800만원 미만이면 납부의무 면제입니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">부가세 가산세는 얼마인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">신고를 하지 않으면 <strong>무신고 가산세 20%</strong>(부정행위 40%)가 부과됩니다. 신고는 했지만 세액을 적게 신고한 경우 <strong>과소신고 가산세 10%</strong>(부정행위 40%)가 적용됩니다. 세금을 기한 내 납부하지 않으면 <strong>납부지연 가산세 일 0.022%</strong>가 추가로 붙습니다. 전자세금계산서 미발급이나 지연발급에도 별도 가산세가 있습니다.</p>
+  </details>
+</div>
+
+<!-- 내부 링크 섹션 -->
+<div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+  <h3>다른 계산기도 확인해보세요</h3>
+  <ul>
+    <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서, 개인사업자 종합소득세 자동 계산</li>
+    <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택·토지·건물 취득세 계산</li>
+    <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 양도소득세 자동 계산</li>
+    <li><a href="gift-tax.html">증여세 계산기</a> - 배우자·자녀 증여세 납부액 계산</li>
+    <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+    <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+  </ul>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세액은 국세청 또는 세무사에게 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+const VAT_RATE = 0.10;
+
+function toggleMode() {
+  const mode = document.getElementById('calcMode').value;
+  document.getElementById('supplyGroup').style.display = mode === 'supply' ? '' : 'none';
+  document.getElementById('totalGroup').style.display = mode === 'reverse' ? '' : 'none';
+  document.getElementById('paymentGroups').style.display = mode === 'payment' ? '' : 'none';
+
+  // 결과 테이블 표시 초기화
+  document.getElementById('result').classList.remove('show');
+}
+
+function toggleTaxType() {
+  const type = document.getElementById('taxType').value;
+  document.getElementById('industryGroup').style.display = type === 'simplified' ? '' : 'none';
+}
+
+function calculate() {
+  const mode = document.getElementById('calcMode').value;
+  const taxType = document.getElementById('taxType').value;
+  const industryRate = parseFloat(document.getElementById('industry').value) || 0.15;
+
+  // 결과 테이블 전부 숨기고 필요한 것만 표시
+  document.getElementById('rTableSupply').style.display = 'none';
+  document.getElementById('rTableReverse').style.display = 'none';
+  document.getElementById('rTablePayment').style.display = 'none';
+
+  if (mode === 'supply') {
+    // 공급가액 → 부가세 계산
+    let supply = parseFloat(document.getElementById('supplyAmount').value) || 0;
+    let vat, total;
+
+    if (taxType === 'general') {
+      vat = Math.round(supply * VAT_RATE);
+      total = supply + vat;
+    } else {
+      // 간이과세자: 공급대가(합계금액) 기준 세액
+      // 공급가액을 입력받았으므로 공급대가로 환산 후 세액 계산
+      total = Math.round(supply * 1.1);
+      vat = Math.round(total * industryRate * VAT_RATE);
+    }
+
+    document.getElementById('rMainLabel').textContent = '부가가치세';
+    document.getElementById('rMainValue').textContent = fmt(vat);
+    document.getElementById('rMainSub').textContent = taxType === 'general'
+      ? `공급가액 ${fmt(supply)} × 10%`
+      : `공급대가 ${fmt(total)} × 부가가치율 ${(industryRate*100)}% × 10%`;
+
+    document.getElementById('rSupply').textContent = fmt(supply);
+    document.getElementById('rVat').textContent = fmt(vat);
+    document.getElementById('rTotal').textContent = fmt(supply + vat);
+    document.getElementById('rTableSupply').style.display = '';
+
+  } else if (mode === 'reverse') {
+    // 합계금액 → 역산
+    let total = parseFloat(document.getElementById('totalAmount').value) || 0;
+    let supply, vat;
+
+    if (taxType === 'general') {
+      supply = Math.round(total / 1.1);
+      vat = total - supply;
+    } else {
+      // 간이과세자: 공급대가에서 업종별 세액 역산
+      supply = Math.round(total / 1.1);
+      vat = Math.round(total * industryRate * VAT_RATE);
+    }
+
+    document.getElementById('rMainLabel').textContent = '부가가치세';
+    document.getElementById('rMainValue').textContent = fmt(vat);
+    document.getElementById('rMainSub').textContent = taxType === 'general'
+      ? `합계 ${fmt(total)} ÷ 1.1 = 공급가액 ${fmt(supply)}`
+      : `공급대가 ${fmt(total)} × 부가가치율 ${(industryRate*100)}% × 10%`;
+
+    document.getElementById('rRevTotal').textContent = fmt(total);
+    document.getElementById('rRevSupply').textContent = fmt(supply);
+    document.getElementById('rRevVat').textContent = fmt(vat);
+    document.getElementById('rTableReverse').style.display = '';
+
+  } else {
+    // 납부세액 계산
+    let sales = parseFloat(document.getElementById('salesAmount').value) || 0;
+    let purchase = parseFloat(document.getElementById('purchaseAmount').value) || 0;
+    let salesTax, purchaseTax, payment;
+
+    if (taxType === 'general') {
+      salesTax = Math.round(sales * VAT_RATE);
+      purchaseTax = Math.round(purchase * VAT_RATE);
+      payment = salesTax - purchaseTax;
+    } else {
+      // 간이과세자: 매출 공급대가 기준 (입력값을 공급가액으로 보고 공급대가로 환산)
+      const salesTotal = Math.round(sales * 1.1);
+      salesTax = Math.round(salesTotal * industryRate * VAT_RATE);
+      // 간이과세자는 매입세액 공제 없음 (단, 세금계산서 수취분 일부 공제 가능하나 단순화)
+      purchaseTax = 0;
+      payment = salesTax;
+    }
+
+    document.getElementById('rMainLabel').textContent = payment >= 0 ? '납부세액' : '환급세액';
+    document.getElementById('rMainValue').textContent = fmt(Math.abs(payment));
+    document.getElementById('rMainSub').textContent = payment < 0
+      ? '매입세액이 매출세액을 초과하여 환급 대상입니다'
+      : taxType === 'simplified' ? `간이과세자 세액 (부가가치율 ${(industryRate*100)}% 적용)` : '매출세액 - 매입세액';
+
+    document.getElementById('rSalesTax').textContent = fmt(salesTax);
+    document.getElementById('rPurchaseTax').textContent = taxType === 'general' ? fmt(purchaseTax) : '간이과세자 매입공제 미포함';
+
+    if (taxType === 'simplified') {
+      document.getElementById('rSimplifiedRow').style.display = '';
+      document.getElementById('rSimplifiedLabel').textContent = '간이과세 부가가치율';
+      document.getElementById('rSimplifiedRate').textContent = (industryRate * 100) + '%';
+    } else {
+      document.getElementById('rSimplifiedRow').style.display = 'none';
+    }
+
+    document.getElementById('rPayment').textContent = fmt(Math.abs(payment));
+
+    if (payment < 0) {
+      document.getElementById('rRefundRow').style.display = '';
+      document.getElementById('rRefundMsg').textContent = '환급 대상: ' + fmt(Math.abs(payment)) + ' 환급 예정';
+    } else {
+      document.getElementById('rRefundRow').style.display = 'none';
+    }
+
+    document.getElementById('rTablePayment').style.display = '';
+  }
+
+  document.getElementById('result').classList.add('show');
+}
+
+// 초기화
+toggleMode();
+toggleTaxType();
+</script>
+</body>
+</html>

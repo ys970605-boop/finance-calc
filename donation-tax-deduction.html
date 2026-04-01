@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 기부금세액공제 계산기 - 정치자금·법정·지정기부금 공제한도 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="기부금 유형별 금액을 입력하면 공제한도, 세액공제액, 이월공제 가능액을 자동 계산합니다. 정치자금 10만원 전액환급, 종교/비종교 한도 구분 반영.">
+  <link rel="canonical" href="https://calcmoney.kr/donation-tax-deduction">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 기부금세액공제 계산기 - 정치자금·법정·지정기부금 공제한도 자동 계산">
+  <meta property="og:description" content="기부금 유형별 금액 입력 → 공제한도·세액공제액·이월공제 가능액 즉시 계산. 정치자금 10만원 전액환급, 종교/비종교 한도 구분 반영.">
+  <meta property="og:url" content="https://calcmoney.kr/donation-tax-deduction">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "정치자금 기부금 10만원은 전액 환급받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 정치자금 기부금 10만원 이하는 세액공제율이 100/110(약 90.9%)로 적용되어 지방소득세(10%) 포함 시 거의 전액 환급됩니다. 정확히는 기부금액 × 100/110을 세액에서 공제하므로, 10만원 기부 시 약 90,909원을 공제받습니다. 10만원 초과분은 15%(3,000만원 초과분 25%)로 공제율이 낮아집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "법정기부금 대상 기관은 어디인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "법정기부금 대상은 국가·지방자치단체, 국방헌금·위문금품, 이재민 구호금품, 사립학교 장학금, 사회복지공동모금회, 대한적십자사, 한국장학재단 등 법령에 명시된 기관입니다. 공제한도는 근로소득금액 전액이며, 15%(1,000만원 초과분 30%) 세액공제를 받을 수 있습니다. 한도 초과분은 10년간 이월공제가 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "종교단체 기부금과 비종교단체 기부금의 공제한도 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "지정기부금의 공제한도는 기부 대상에 따라 다릅니다. 종교단체 기부금은 근로소득금액의 10%가 한도입니다. 비종교 지정기부금(사회복지법인, 문화예술단체, 환경보전단체 등)은 근로소득금액의 30%가 한도입니다. 두 유형 모두 공제율은 15%(1,000만원 초과 30%)로 동일하며, 한도 초과분은 10년간 이월공제 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "기부금세액공제 이월공제란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "이월공제란 당해연도 공제한도를 초과한 기부금을 다음 연도로 넘겨 최대 10년간 공제받을 수 있는 제도입니다. 예를 들어 근로소득금액이 5,000만원인 근로자가 법정기부금을 6,000만원 기부하면 당해연도 5,000만원(한도 전액) 공제 후, 초과된 1,000만원은 다음 해부터 10년간 이월해 공제받을 수 있습니다. 이월공제는 소득세 확정신고 시 별도로 신청해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "고향사랑기부제는 기부금세액공제를 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "고향사랑기부제는 일반 기부금세액공제와 별도로 운영됩니다. 고향사랑기부금은 10만원 이하 100/110 세액공제(사실상 전액 환급), 10만원 초과 500만원 이하는 16.5% 세액공제가 적용됩니다. 또한 기부금액의 30%를 답례품으로 받을 수 있습니다. 본인 주민등록 주소지 자치단체에는 기부할 수 없으며, 연간 2,000만원이 기부 한도입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "기부금영수증 없이도 공제받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "기부금세액공제를 받으려면 반드시 기부금영수증이 필요합니다. 연말정산 또는 종합소득세 신고 시 기부금영수증을 회사(근로자) 또는 세무서에 제출해야 합니다. 단, 국세청 홈택스의 연말정산 간소화 서비스에서 기부금 내역이 조회되는 경우 별도 영수증 제출 없이 자동 반영될 수 있습니다. 영수증이 없으면 국세청에서 확인 후 공제가 취소될 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "우리사주조합 기부금의 공제 조건은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "우리사주조합 기부금은 우리사주조합원이 아닌 외부인이 해당 회사 우리사주조합에 기부한 금액에 적용됩니다. 공제한도는 근로소득금액의 30%이며, 공제율은 15%(1,000만원 초과 30%)입니다. 우리사주조합원 본인이 자기 회사 우리사주를 취득하는 것은 별도의 우리사주 출자금 공제(소득공제)로 처리되며, 기부금세액공제와 다른 항목입니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .section-title { font-size: 0.85em; font-weight: 700; color: #1a73e8; background: #e8f0fe; border-radius: 6px; padding: 6px 12px; margin: 20px 0 12px; display: inline-block; }
+    .section-divider { border: none; border-top: 1px dashed #e0e0e0; margin: 20px 0; }
+    .donation-result-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 16px 0; }
+    .donation-result-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 12px; text-align: center; }
+    .donation-result-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .donation-result-card.carryover { border-color: #ff9800; background: #fff8e1; }
+    .donation-result-card .dlabel { font-size: 0.75em; color: #666; margin-bottom: 4px; line-height: 1.4; }
+    .donation-result-card .dvalue { font-size: 1.1em; font-weight: 800; color: #1a73e8; }
+    .donation-result-card.carryover .dvalue { color: #e65100; }
+    .total-credit-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-credit-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-credit-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .total-credit-box .tsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .detail-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.87em; }
+    .detail-table th { background: #f0f4ff; color: #333; padding: 9px 10px; text-align: center; border-bottom: 2px solid #c5cae9; font-size: 0.85em; }
+    .detail-table td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; text-align: right; }
+    .detail-table td:first-child { text-align: left; font-weight: 600; color: #333; }
+    .detail-table tr:hover td { background: #fafafa; }
+    .detail-table tr.total-row td { font-weight: 700; color: #1a73e8; background: #f0f4ff; border-top: 2px solid #c5cae9; }
+    .carryover-notice { background: #fff8e1; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 16px 0; font-size: 0.85em; color: #555; line-height: 1.8; }
+    .carryover-notice strong { color: #e65100; }
+    .input-section-title { font-size: 0.88em; font-weight: 700; color: #444; margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #1a73e8; }
+    .faq-list { margin-top: 12px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .faq-item summary { padding: 14px 16px; font-weight: 600; font-size: 0.92em; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.2em; color: #1a73e8; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { padding: 0 16px 14px; font-size: 0.87em; color: #555; line-height: 1.7; margin: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>기부금세액공제 계산기</h1>
+        <p class="desc">기부금 유형별 금액을 입력하면 2026년 기준 공제한도, 세액공제액, 이월공제 가능액을 자동으로 계산합니다. 정치자금 10만원 전액환급, 종교·비종교 한도 구분 반영.</p>
+
+        <!-- 소득 정보 -->
+        <div class="input-section-title">소득 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>근로소득금액 <span class="hint">원 (필수)</span></label>
+            <input type="number" id="earnedIncome" placeholder="예: 40000000" value="40000000" min="0">
+          </div>
+          <div class="form-group">
+            <label>총급여 <span class="hint">원 (입력 시 소득금액 자동계산)</span></label>
+            <input type="number" id="totalSalary" placeholder="예: 50000000" min="0" oninput="autoCalcIncome()">
+          </div>
+        </div>
+        <p style="font-size:0.8em;color:#888;margin:-10px 0 12px;">* 총급여 입력 시 근로소득공제를 자동 차감해 소득금액을 계산합니다. 직접 입력도 가능합니다.</p>
+
+        <!-- 정치자금 기부금 -->
+        <hr class="section-divider">
+        <div class="input-section-title">정치자금 기부금 <span class="hint" style="font-weight:400;font-size:0.85em;">한도: 소득금액 전액</span></div>
+        <div class="form-group">
+          <label>정치자금 기부금액 <span class="hint">10만원 이하 ≈ 전액환급, 초과분 15%</span></label>
+          <input type="number" id="donationPolitical" placeholder="예: 100000" value="0" min="0">
+        </div>
+
+        <!-- 법정기부금 -->
+        <hr class="section-divider">
+        <div class="input-section-title">법정기부금 <span class="hint" style="font-weight:400;font-size:0.85em;">한도: 소득금액 전액 | 15% (1천만↑ 30%)</span></div>
+        <div class="form-group">
+          <label>법정기부금액 <span class="hint">국가·지자체·사회복지·대한적십자사 등</span></label>
+          <input type="number" id="donationLegal" placeholder="예: 500000" value="0" min="0">
+        </div>
+
+        <!-- 우리사주조합 기부금 -->
+        <hr class="section-divider">
+        <div class="input-section-title">우리사주조합 기부금 <span class="hint" style="font-weight:400;font-size:0.85em;">한도: 소득금액 30% | 15% (1천만↑ 30%)</span></div>
+        <div class="form-group">
+          <label>우리사주조합 기부금액 <span class="hint">비조합원의 우리사주조합 기부</span></label>
+          <input type="number" id="donationEsop" placeholder="예: 0" value="0" min="0">
+        </div>
+
+        <!-- 지정기부금 -->
+        <hr class="section-divider">
+        <div class="input-section-title">지정기부금 <span class="hint" style="font-weight:400;font-size:0.85em;">15% (1천만↑ 30%)</span></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>종교단체 기부금 <span class="hint">한도: 소득금액 10%</span></label>
+            <input type="number" id="donationReligion" placeholder="예: 1200000" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>비종교 지정기부금 <span class="hint">한도: 소득금액 30%</span></label>
+            <input type="number" id="donationDesignated" placeholder="예: 0" value="0" min="0">
+          </div>
+        </div>
+        <p style="font-size:0.8em;color:#888;margin:-10px 0 4px;">* 비종교: 사회복지법인, 문화예술단체, 환경단체, 시민단체 등 세법 지정 비종교단체</p>
+
+        <button class="btn-calc" onclick="calculate()">세액공제 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총 세액공제 -->
+          <div class="total-credit-box">
+            <div class="tlabel">연간 기부금 세액공제 합계</div>
+            <div class="tvalue" id="totalCredit"></div>
+            <div class="tsub" id="totalCreditSub"></div>
+          </div>
+
+          <!-- 항목별 카드 -->
+          <div class="donation-result-cards" id="donationCards"></div>
+
+          <!-- 상세 내역 표 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">항목별 공제 상세 내역</div>
+          <div style="overflow-x:auto;">
+            <table class="detail-table" id="detailTable">
+              <thead>
+                <tr>
+                  <th>기부금 유형</th>
+                  <th>기부금액</th>
+                  <th>공제한도</th>
+                  <th>공제대상액</th>
+                  <th>세액공제액</th>
+                  <th>이월(한도초과)</th>
+                </tr>
+              </thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <!-- 이월공제 안내 -->
+          <div class="carryover-notice" id="carryoverNotice" style="display:none;">
+            <strong>이월공제 안내</strong><br>
+            한도 초과 기부금은 최대 <strong>10년간</strong> 이월하여 공제받을 수 있습니다.<br>
+            종합소득세 신고 시 이월공제 명세서를 별도로 제출하세요.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">기부금세액공제 핵심 정보</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">기부금세액공제란?</h3>
+        <p>기부금세액공제는 소득세법 제59조의4에 따라 개인이 일정 기관에 기부한 금액에 대해 산출세액에서 직접 차감하는 제도입니다. 소득공제와 달리 세율과 관계없이 공제율을 동일하게 적용하므로, 기부를 통한 세금 절감 효과를 명확히 예측할 수 있습니다. 기부금 유형(정치자금·법정·우리사주·지정)에 따라 공제율과 한도가 다르게 적용됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 기부금 세액공제율 요약</h3>
+        <p>① 정치자금 기부금: 10만원 이하 100/110(사실상 전액환급), 10만원 초과 15%, 3,000만원 초과 25%, 한도 소득금액 전액.<br>② 법정기부금: 1,000만원 이하 15%, 초과분 30%, 한도 소득금액 전액.<br>③ 우리사주조합 기부금: 1,000만원 이하 15%, 초과분 30%, 한도 소득금액 30%.<br>④ 지정기부금(종교): 1,000만원 이하 15%, 초과분 30%, 한도 소득금액 10%.<br>⑤ 지정기부금(비종교): 1,000만원 이하 15%, 초과분 30%, 한도 소득금액 30%.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">공제 적용 순서</h3>
+        <p>기부금세액공제는 정치자금 → 법정기부금 → 우리사주조합 기부금 → 지정기부금(비종교·종교) 순서로 적용됩니다. 각 단계에서 해당 기부금의 공제 대상액을 먼저 확정한 뒤 다음 단계로 넘어가며, 소득금액 한도는 누적 적용됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">근로소득금액 계산법</h3>
+        <p>근로소득금액 = 총급여 − 근로소득공제. 총급여 5,000만원의 근로소득공제는 약 1,175만원으로, 소득금액은 약 3,825만원입니다. 총급여 구간별 공제: ①500만원 이하 70%, ②500~1,500만원 40%+150만원, ③1,500~4,500만원 15%+375만원, ④4,500~1억원 5%+975만원, ⑤1억원 초과 2%+1,475만원(한도 2,000만원).</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">이월공제 활용법</h3>
+        <p>기부금이 공제한도를 초과하는 경우, 초과금액은 해당 연도에 공제받지 못하고 다음 해부터 최대 10년간 이월 공제됩니다. 예를 들어 2026년 법정기부금이 소득금액 한도를 초과하면, 2027년~2036년 중 소득이 있는 기간 동안 남은 이월분을 공제받을 수 있습니다. 이월공제는 확정신고 시 이월공제명세서(소득세법 시행규칙 별지 제45호 서식)를 제출해야 합니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>근로소득금액과 총급여의 차이는 무엇인가요?</summary>
+            <p>총급여는 1년간 받은 급여 총액(비과세 제외)이고, 근로소득금액은 총급여에서 근로소득공제를 차감한 금액입니다. 기부금 공제한도 계산에는 총급여가 아닌 근로소득금액을 사용합니다. 본 계산기에서 총급여를 입력하면 자동으로 근로소득공제를 계산해 소득금액을 환산해 드립니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>고향사랑기부제도 이 계산기로 계산할 수 있나요?</summary>
+            <p>고향사랑기부금은 별도의 세액공제 체계를 가지고 있어 본 계산기의 범위에 포함되지 않습니다. 고향사랑기부금의 세액공제는 10만원 이하 100/110(사실상 전액환급), 10만원~500만원 구간 16.5% 공제이며, 기부금액의 30%를 답례품으로 받을 수 있어 별도로 계산이 필요합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>맞벌이 부부는 기부금 공제를 어떻게 나누나요?</summary>
+            <p>기부금세액공제는 실제로 기부한 사람이 공제를 받는 것이 원칙입니다. 단, 생계를 같이하는 배우자의 기부금도 공제받을 수 있습니다. 맞벌이 부부라면 소득이 더 높은 배우자에게 기부금을 몰아서 공제받으면 절세 효과가 더 클 수 있습니다. 단, 배우자의 기부금을 배우자의 연말정산에서 이미 공제받은 경우 중복 공제는 불가합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>종교단체 기부금 한도 10%는 어떻게 계산하나요?</summary>
+            <p>종교단체 지정기부금 한도는 근로소득금액의 10%입니다. 예를 들어 근로소득금액이 4,000만원이라면 종교단체 기부금 공제한도는 400만원입니다. 연간 헌금이 600만원이라면 400만원만 공제대상이 되고, 나머지 200만원은 이월공제 대상(10년간)이 됩니다. 단, 이월분도 매년 소득금액 10% 한도 내에서만 공제됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>정치자금 3만원도 세액공제를 받나요?</summary>
+            <p>네, 정치자금 기부금은 소액이라도 세액공제를 받습니다. 10만원 이하 구간에서는 기부금액 × 100/110의 세액공제를 받으므로, 3만원 기부 시 약 27,273원을 세액에서 공제받습니다. 실질적으로 세금이 27,273원 줄어드는 효과입니다. 단, 결정세액이 0인 경우 초과분은 환급되지 않습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>법정기부금과 지정기부금을 동시에 기부했을 때 한도는?</summary>
+            <p>법정기부금 한도는 소득금액 전액이므로, 이론적으로 소득금액 전부를 법정기부금 공제로 쓸 수 있습니다. 법정기부금 공제 후 남은 소득금액이 지정기부금의 기준 소득금액이 됩니다. 본 계산기는 공제 순서(정치자금→법정→우리사주→지정)에 따라 각 항목의 한도와 공제액을 단계적으로 계산합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>기부금영수증 발급이 안 될 때 어떻게 하나요?</summary>
+            <p>기부금영수증을 발급받지 못한 경우 홈택스 연말정산 간소화 서비스에서 해당 기관의 기부내역이 자동 조회되는지 먼저 확인하세요. 조회되지 않으면 기부받은 기관에 직접 요청해야 합니다. 종교단체는 관할 세무서에 기부금단체 지정 여부를 확인하고, 미지정 단체에 대한 기부금은 세액공제 대상이 되지 않습니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>기부금 유형별 공제율</h3>
+        <ul>
+          <li><strong>정치자금(10만 이하)</strong>: 100/110</li>
+          <li><strong>정치자금(초과)</strong>: 15~25%</li>
+          <li><strong>법정기부금</strong>: 15% / 30%</li>
+          <li><strong>우리사주조합</strong>: 15% / 30%</li>
+          <li><strong>지정(종교)</strong>: 15% / 30%</li>
+          <li><strong>지정(비종교)</strong>: 15% / 30%</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 1,000만원 초과분 30% 적용</p>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>공제 한도 요약</h3>
+        <ul>
+          <li><strong>정치자금</strong>: 소득금액 전액</li>
+          <li><strong>법정기부금</strong>: 소득금액 전액</li>
+          <li><strong>우리사주조합</strong>: 소득금액 30%</li>
+          <li><strong>지정(종교)</strong>: 소득금액 10%</li>
+          <li><strong>지정(비종교)</strong>: 소득금액 30%</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 한도 초과분 10년 이월공제 가능</p>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="income-tax-refund.html" class="related-link">소득세 환급액</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="child-tax-deduction.html" class="related-link">자녀세액공제</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 국세청 홈택스 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  // 총급여 → 근로소득금액 자동계산
+  function autoCalcIncome() {
+    const salary = parseFloat(document.getElementById('totalSalary').value) || 0;
+    if (salary <= 0) return;
+    let deduction = 0;
+    if (salary <= 5000000) {
+      deduction = salary * 0.7;
+    } else if (salary <= 15000000) {
+      deduction = 1500000 + (salary - 5000000) * 0.4;
+    } else if (salary <= 45000000) {
+      deduction = 5500000 + (salary - 15000000) * 0.15;
+    } else if (salary <= 100000000) {
+      deduction = 10000000 + (salary - 45000000) * 0.05;
+    } else {
+      deduction = 12750000 + (salary - 100000000) * 0.02;
+      if (deduction > 20000000) deduction = 20000000;
+    }
+    const income = salary - deduction;
+    document.getElementById('earnedIncome').value = Math.round(income);
+  }
+
+  // 세액공제 계산 (구간 적용: 1000만원 이하 15%, 초과 30%)
+  function calcCredit(amount) {
+    if (amount <= 0) return 0;
+    if (amount <= 10000000) return amount * 0.15;
+    return 10000000 * 0.15 + (amount - 10000000) * 0.30;
+  }
+
+  function calculate() {
+    const earnedIncome = parseFloat(document.getElementById('earnedIncome').value) || 0;
+    if (earnedIncome <= 0) {
+      alert('근로소득금액 또는 총급여를 입력해 주세요.');
+      return;
+    }
+
+    const dPolitical = parseFloat(document.getElementById('donationPolitical').value) || 0;
+    const dLegal = parseFloat(document.getElementById('donationLegal').value) || 0;
+    const dEsop = parseFloat(document.getElementById('donationEsop').value) || 0;
+    const dReligion = parseFloat(document.getElementById('donationReligion').value) || 0;
+    const dDesignated = parseFloat(document.getElementById('donationDesignated').value) || 0;
+
+    let remainingIncome = earnedIncome;
+    const rows = [];
+    let totalCredit = 0;
+    let totalCarryover = 0;
+
+    // 1. 정치자금 기부금
+    {
+      const limit = remainingIncome; // 소득금액 전액
+      const eligible = Math.min(dPolitical, limit);
+      const carryover = Math.max(0, dPolitical - limit);
+      let credit = 0;
+      if (eligible > 0) {
+        const base = Math.min(eligible, 100000);
+        const over = Math.max(0, eligible - 100000);
+        const over3000 = Math.max(0, over - 30000000);
+        const mid = Math.max(0, over - over3000);
+        credit = base * (100 / 110) + mid * 0.15 + over3000 * 0.25;
+      }
+      remainingIncome -= eligible;
+      totalCredit += credit;
+      totalCarryover += carryover;
+      if (dPolitical > 0) {
+        rows.push({
+          type: '정치자금',
+          amount: dPolitical,
+          limit: limit,
+          eligible: eligible,
+          credit: credit,
+          carryover: carryover
+        });
+      }
+    }
+
+    // 2. 법정기부금
+    {
+      const limit = remainingIncome; // 소득금액 전액
+      const eligible = Math.min(dLegal, limit);
+      const carryover = Math.max(0, dLegal - limit);
+      const credit = calcCredit(eligible);
+      remainingIncome -= eligible;
+      totalCredit += credit;
+      totalCarryover += carryover;
+      if (dLegal > 0) {
+        rows.push({
+          type: '법정기부금',
+          amount: dLegal,
+          limit: limit,
+          eligible: eligible,
+          credit: credit,
+          carryover: carryover
+        });
+      }
+    }
+
+    // 3. 우리사주조합 기부금
+    {
+      const limit = earnedIncome * 0.3; // 소득금액 30%
+      const eligible = Math.min(dEsop, limit);
+      const carryover = Math.max(0, dEsop - limit);
+      const credit = calcCredit(eligible);
+      totalCredit += credit;
+      totalCarryover += carryover;
+      if (dEsop > 0) {
+        rows.push({
+          type: '우리사주조합',
+          amount: dEsop,
+          limit: limit,
+          eligible: eligible,
+          credit: credit,
+          carryover: carryover
+        });
+      }
+    }
+
+    // 4. 지정기부금 (비종교): 소득금액 30%
+    {
+      const limit = earnedIncome * 0.3;
+      const eligible = Math.min(dDesignated, limit);
+      const carryover = Math.max(0, dDesignated - limit);
+      const credit = calcCredit(eligible);
+      totalCredit += credit;
+      totalCarryover += carryover;
+      if (dDesignated > 0) {
+        rows.push({
+          type: '지정(비종교)',
+          amount: dDesignated,
+          limit: limit,
+          eligible: eligible,
+          credit: credit,
+          carryover: carryover
+        });
+      }
+    }
+
+    // 5. 지정기부금 (종교): 소득금액 10%
+    {
+      const limit = earnedIncome * 0.1;
+      const eligible = Math.min(dReligion, limit);
+      const carryover = Math.max(0, dReligion - limit);
+      const credit = calcCredit(eligible);
+      totalCredit += credit;
+      totalCarryover += carryover;
+      if (dReligion > 0) {
+        rows.push({
+          type: '지정(종교)',
+          amount: dReligion,
+          limit: limit,
+          eligible: eligible,
+          credit: credit,
+          carryover: carryover
+        });
+      }
+    }
+
+    // 총 기부금
+    const totalDonation = dPolitical + dLegal + dEsop + dReligion + dDesignated;
+    const totalEligible = rows.reduce((s, r) => s + r.eligible, 0);
+
+    // 결과 표시
+    document.getElementById('totalCredit').textContent = fmt(totalCredit);
+    document.getElementById('totalCreditSub').textContent =
+      `총 기부금 ${fmt(totalDonation)} 중 공제대상 ${fmt(totalEligible)}${totalCarryover > 0 ? ' | 이월가능 ' + fmt(totalCarryover) : ''}`;
+
+    // 요약 카드
+    const cards = [];
+    if (rows.length > 0) {
+      cards.push({ label: '총 세액공제액', value: fmt(totalCredit), type: 'highlight' });
+      cards.push({ label: '총 공제대상 기부금', value: fmt(totalEligible), type: '' });
+      if (totalCarryover > 0) {
+        cards.push({ label: '이월공제 가능액', value: fmt(totalCarryover), type: 'carryover' });
+      }
+      rows.forEach(r => {
+        cards.push({ label: r.type + ' 공제액', value: fmt(r.credit), type: '' });
+      });
+    }
+    document.getElementById('donationCards').innerHTML = cards.map(c =>
+      `<div class="donation-result-card ${c.type}"><div class="dlabel">${c.label}</div><div class="dvalue">${c.value}</div></div>`
+    ).join('');
+
+    // 상세 표
+    const tbody = rows.map(r => `
+      <tr>
+        <td>${r.type}</td>
+        <td>${fmt(r.amount)}</td>
+        <td>${fmt(r.limit)}</td>
+        <td>${fmt(r.eligible)}</td>
+        <td><strong>${fmt(r.credit)}</strong></td>
+        <td>${r.carryover > 0 ? '<span style="color:#e65100;font-weight:700;">' + fmt(r.carryover) + '</span>' : '-'}</td>
+      </tr>
+    `).join('');
+    const totalRow = `
+      <tr class="total-row">
+        <td>합계</td>
+        <td>${fmt(totalDonation)}</td>
+        <td>-</td>
+        <td>${fmt(totalEligible)}</td>
+        <td>${fmt(totalCredit)}</td>
+        <td>${totalCarryover > 0 ? fmt(totalCarryover) : '-'}</td>
+      </tr>
+    `;
+    document.getElementById('detailBody').innerHTML = (rows.length > 0 ? tbody + totalRow : '<tr><td colspan="6" style="text-align:center;color:#999;padding:20px;">기부금을 입력해 주세요</td></tr>');
+
+    // 이월공제 안내
+    document.getElementById('carryoverNotice').style.display = totalCarryover > 0 ? 'block' : 'none';
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="bbb2e816e372612b1e5820af29a23857b401ffea" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 증여세 상세 계산기 - 세대생략·부담부증여·신고공제 단계별 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="2026년 기준 증여세 상세 계산기. 증여재산 가액, 관계(배우자·직계존속·직계비속·기타친족), 10년 내 증여액, 채무인수(부담부증여)를 입력하면 과세표준·산출세액·세대생략 할증·신고공제·최종 납부세액을 단계별로 자동 계산합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/gift-tax-detail">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 증여세 상세 계산기 - 세대생략·부담부증여·단계별 자동 계산">
+  <meta property="og:description" content="배우자·직계존속·직계비속·기타친족 관계별 공제, 채무인수(부담부증여), 세대생략 할증, 신고세액공제 3%까지 단계별 계산. 2026년 세법 기준.">
+  <meta property="og:url" content="https://calcmoney.kr/gift-tax-detail">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "증여세 과세표준은 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "증여세 과세표준 = 증여재산 가액 - 채무인수액(부담부증여) - 증여재산공제 - 10년 내 기증여액. 증여재산공제는 배우자 6억원, 직계존속→성인자녀 5천만원(미성년자 2천만원), 직계비속→존속 5천만원, 기타친족 1천만원이며, 10년간 합산 한도입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "증여세 세율표는 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "증여세 누진세율: 과세표준 1억원 이하 10%(누진공제 0원), 1억원 초과~5억원 이하 20%(누진공제 1천만원), 5억원 초과~10억원 이하 30%(누진공제 6천만원), 10억원 초과~30억원 이하 40%(누진공제 1억6천만원), 30억원 초과 50%(누진공제 4억6천만원). 산출세액 = 과세표준 × 세율 - 누진공제액."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "세대생략 증여 할증이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "조부모→손자녀처럼 세대를 건너뛰어 증여하면 증여세 산출세액에 30%가 할증됩니다. 단, 수증자가 미성년자이고 증여재산가액이 20억원을 초과하면 40%가 할증됩니다. 이는 세대 간 부의 이전 시 세금 회피를 방지하기 위한 제도입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "부담부증여(채무인수)란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "부담부증여는 증여자의 채무를 수증자가 함께 인수하는 증여 방식입니다. 예를 들어 시가 5억원인 부동산에 담보대출 1억원이 있는 경우, 채무 1억원은 증여재산가액에서 차감하여 과세표준을 계산합니다. 단, 채무 인수액에 해당하는 부분은 수증자의 양도소득세 과세 대상이 될 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "증여세 신고세액공제 3%란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "증여받은 날이 속하는 달의 말일부터 3개월 이내에 자진 신고·납부하면 산출세액(할증 포함)에서 3%를 공제받을 수 있습니다. 예를 들어 산출세액이 1,000만원이면 신고공제 30만원을 차감한 970만원이 최종 납부세액이 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "10년 내 기증여액은 왜 합산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "세법상 동일인(직계존속은 배우자 포함)으로부터 10년간 받은 증여재산은 합산하여 과세합니다(상속세 및 증여세법 제47조). 증여재산공제도 10년간 한도이므로, 과거에 공제를 이미 사용했다면 이번 증여에서 추가 공제를 받지 못할 수 있습니다. 10년 내 기증여액 입력 시 이를 반영한 정확한 세액이 계산됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "직계존속과 직계비속의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "직계존속은 부모·조부모 등 위 세대(증여자)를 말하고, 직계비속은 자녀·손자녀 등 아래 세대(수증자)를 말합니다. 부모가 자녀에게 증여하면 '직계존속→직계비속' 관계로 성인 5천만원(미성년 2천만원) 공제가 적용됩니다. 자녀가 부모에게 증여하면 '직계비속→직계존속' 관계로 5천만원 공제가 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "부모가 성인 자녀에게 2억원 증여하면 세금은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "성인 직계비속 공제 5천만원 적용 시 과세표준 = 2억원 - 5천만원 = 1억5천만원. 산출세액 = 1억5천만원 × 20% - 1천만원 = 2천만원. 신고세액공제 3% = 60만원. 최종 납부세액 = 1,940만원. (10년 내 기증여액이 없고 세대생략 없는 경우 기준)"
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .result-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+    .result-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
+    .result-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .result-card.warn { border-color: #e53935; background: #ffebee; }
+    .result-card.success { border-color: #43a047; background: #e8f5e9; }
+    .result-card .rlabel { font-size: 0.78em; color: #666; margin-bottom: 4px; }
+    .result-card .rvalue { font-size: 1.15em; font-weight: 800; color: #1a73e8; }
+    .result-card.warn .rvalue { color: #c62828; }
+    .result-card.success .rvalue { color: #2e7d32; }
+    .total-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .total-box .tsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .step-box { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .step-box h4 { font-size: 0.92em; color: #1a73e8; margin: 0 0 12px; font-weight: 700; }
+    .step-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #efefef; font-size: 0.88em; }
+    .step-row:last-child { border-bottom: none; font-weight: 700; color: #1a73e8; font-size: 0.95em; }
+    .step-label { color: #555; }
+    .step-value { font-weight: 600; color: #222; }
+    .step-row:last-child .step-value { color: #1a73e8; }
+    .warn-box { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 14px; margin: 12px 0; font-size: 0.85em; color: #555; }
+    .info-box { background: #e3f2fd; border-left: 4px solid #1a73e8; border-radius: 0 10px 10px 0; padding: 14px; margin: 12px 0; font-size: 0.85em; color: #1a237e; }
+    .section-divider { border: none; border-top: 1px solid #e8eaed; margin: 20px 0; }
+    .input-section-title { font-size: 0.85em; font-weight: 700; color: #1a73e8; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .surcharge-box { background: #fff8e1; border: 1px solid #ffe082; border-radius: 10px; padding: 14px; margin: 12px 0; }
+    .surcharge-box .surcharge-title { font-size: 0.85em; font-weight: 700; color: #e65100; margin-bottom: 8px; }
+    .zero-tax-box { background: #e8f5e9; border: 2px solid #43a047; border-radius: 10px; padding: 18px; text-align: center; margin: 16px 0; }
+    .zero-tax-box .zero-title { font-size: 1.1em; font-weight: 800; color: #2e7d32; margin-bottom: 6px; }
+    .zero-tax-box .zero-sub { font-size: 0.85em; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="gift-tax.html">증여세</a>
+      <a href="inheritance-tax.html">상속세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>증여세 상세 계산기</h1>
+        <p class="desc">증여재산 가액, 증여자-수증자 관계, 10년 내 기증여액, 채무인수액(부담부증여)을 입력하면 2026년 세법 기준으로 과세표준·산출세액·세대생략 할증·신고세액공제·최종 납부세액을 단계별로 자동 계산합니다.</p>
+
+        <!-- 증여 정보 -->
+        <div class="input-section-title">증여 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>증여재산 가액 <span class="hint">원</span></label>
+            <input type="number" id="giftAmount" placeholder="예: 100000000" value="100000000" min="0" oninput="onInputChange()">
+          </div>
+          <div class="form-group">
+            <label>증여자 → 수증자 관계</label>
+            <select id="relationship" onchange="onRelationshipChange()">
+              <option value="spouse">배우자</option>
+              <option value="lineal_desc" selected>직계존속 → 직계비속 (부모→자녀)</option>
+              <option value="lineal_asc">직계비속 → 직계존속 (자녀→부모)</option>
+              <option value="other_relative">기타친족 (6촌 이내 혈족, 4촌 이내 인척)</option>
+              <option value="others">타인 (친족 외)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 직계비속 관련 옵션 -->
+        <div id="minorGroup" class="form-row">
+          <div class="form-group">
+            <label>수증자 성년 여부</label>
+            <select id="isMinor" onchange="onInputChange()">
+              <option value="adult">성인 (만 19세 이상)</option>
+              <option value="minor">미성년자 (만 19세 미만)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>세대생략 증여 여부</label>
+            <select id="generationSkip" onchange="onInputChange()">
+              <option value="no">아니오 (일반 증여)</option>
+              <option value="yes">예 (조부모→손자녀 등)</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- 공제 관련 -->
+        <div class="input-section-title">공제 항목</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>10년 내 기증여액 <span class="hint">원 (같은 증여자로부터)</span></label>
+            <input type="number" id="priorGifts" placeholder="예: 0" value="0" min="0" oninput="onInputChange()">
+          </div>
+          <div class="form-group">
+            <label>채무인수액 (부담부증여) <span class="hint">원</span></label>
+            <input type="number" id="debtAssumed" placeholder="예: 0" value="0" min="0" oninput="onInputChange()">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>신고세액공제 적용 여부</label>
+            <select id="selfReport" onchange="onInputChange()">
+              <option value="yes" selected>예 (기한 내 자진신고 — 3% 공제)</option>
+              <option value="no">아니오 (기한 후 신고 또는 결정)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">증여세 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 납부세액 0인 경우 -->
+          <div class="zero-tax-box" id="zeroTaxBox" style="display:none;">
+            <div class="zero-title">납부세액 0원</div>
+            <div class="zero-sub" id="zeroTaxMsg"></div>
+          </div>
+
+          <!-- 납부세액 있는 경우 -->
+          <div id="taxResultSection">
+            <div class="total-box">
+              <div class="tlabel">최종 납부세액</div>
+              <div class="tvalue" id="finalTax"></div>
+              <div class="tsub" id="finalTaxSub"></div>
+            </div>
+
+            <div class="result-cards" id="resultCards"></div>
+
+            <!-- 단계별 계산 과정 -->
+            <div class="step-box" id="stepBox"></div>
+
+            <!-- 세대생략 할증 안내 -->
+            <div class="surcharge-box" id="surchargeTip" style="display:none;">
+              <div class="surcharge-title">세대생략 할증 적용됨</div>
+              <p id="surchargeMsg" style="font-size:0.85em;color:#555;margin:0;"></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <strong>신고 기한:</strong> 증여받은 날이 속하는 달의 말일부터 <strong>3개월 이내</strong> 자진 신고·납부 시 신고세액공제 3%를 받을 수 있습니다. 기한 후 신고 시 가산세가 부과될 수 있습니다.
+          </div>
+
+          <div class="warn-box">
+            본 계산기는 참고용입니다. 실제 납부세액은 세무사 또는 관할 세무서에 확인하세요. 부담부증여의 채무인수액은 양도소득세 별도 과세 여부를 반드시 확인하세요.
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- SEO 콘텐츠 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">증여세 상세 가이드 (2026년 기준)</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">증여세란?</h3>
+        <p>증여세는 타인으로부터 대가 없이 재산을 받았을 때 수증자(받는 사람)가 납부해야 하는 세금입니다. 상속세 및 증여세법(이하 상증세법) 제2조에 근거하며, 현금·부동산·주식·채권 등 모든 종류의 재산이 증여 대상이 됩니다. 증여세는 증여받은 날이 속하는 달의 말일부터 3개월 이내에 신고·납부해야 하며, 기한 내 자진신고 시 3% 세액공제를 받을 수 있습니다.</p>
+        <p>증여세는 수증자가 신고·납부하는 것이 원칙이지만, 증여자가 연대하여 납부할 의무를 집니다(상증세법 제4조의2). 따라서 수증자가 증여세를 납부하지 않으면 증여자에게도 납부 책임이 발생할 수 있습니다. 증여세를 내지 않거나 축소 신고하면 무신고가산세(20%, 부정행위 시 40%)와 납부지연가산세가 부과되므로 기한 내 정확한 신고가 중요합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">증여세 계산 단계별 설명</h3>
+
+        <p><strong>1단계: 증여재산가액 결정</strong></p>
+        <p>증여재산가액은 증여일 현재의 시가(時價)를 원칙으로 합니다. 시가는 불특정 다수 사이에 자유롭게 거래되는 가격으로, 매매사례가액·감정가액·수용보상가액 등이 해당됩니다. 시가 확인이 어려운 경우 부동산은 기준시가, 상장주식은 증여일 전후 2개월 평균가액, 비상장주식은 상증세법상 평가방법을 적용합니다. 국세청 홈택스 '증여재산평가 조회' 서비스를 활용하면 기준시가를 쉽게 확인할 수 있습니다.</p>
+
+        <p><strong>2단계: 채무인수액 차감 (부담부증여)</strong></p>
+        <p>부담부증여는 증여재산에 딸린 채무(담보대출, 전세보증금 등)를 수증자가 함께 인수하는 방식입니다. 채무인수액은 증여재산가액에서 차감하여 순증여가액을 계산합니다. 다만, 채무에 해당하는 부분은 수증자가 유상으로 취득한 것으로 보아 증여자에게 양도소득세가 부과될 수 있습니다. 예를 들어 시가 5억원 부동산에 담보대출 1억원이 있다면, 4억원에 대해 증여세가, 1억원에 해당하는 부분에 대해 증여자에게 양도세가 부과됩니다.</p>
+
+        <p><strong>3단계: 증여재산공제 적용</strong></p>
+        <p>10년간 합산하여 다음 금액을 공제합니다(상증세법 제53조). 증여재산공제는 동일 증여자로부터 10년간 받은 총 증여액에 대한 한도입니다.</p>
+        <table style="width:100%;border-collapse:collapse;font-size:0.88em;margin:12px 0;">
+          <thead>
+            <tr style="background:#f0f4ff;">
+              <th style="padding:10px;text-align:left;border-bottom:2px solid #c5cae9;">증여자-수증자 관계</th>
+              <th style="padding:10px;text-align:center;border-bottom:2px solid #c5cae9;">10년간 공제 한도</th>
+              <th style="padding:10px;text-align:center;border-bottom:2px solid #c5cae9;">비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:9px 10px;border-bottom:1px solid #f0f0f0;">배우자</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;color:#1a73e8;">6억원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">법률혼 배우자만 적용</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px;border-bottom:1px solid #f0f0f0;">직계존속 → 성인 직계비속</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;color:#1a73e8;">5천만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">부모·조부모 등</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px;border-bottom:1px solid #f0f0f0;">직계존속 → 미성년 직계비속</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;color:#e53935;">2천만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">만 19세 미만</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px;border-bottom:1px solid #f0f0f0;">직계비속 → 직계존속</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;color:#1a73e8;">5천만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">자녀→부모 등</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px;border-bottom:1px solid #f0f0f0;">기타친족 (6촌 이내 혈족, 4촌 이내 인척)</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;color:#1a73e8;">1천만원</td>
+              <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">형제자매 등</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px;">타인 (친족 외)</td>
+              <td style="padding:9px 10px;text-align:center;font-weight:700;color:#e53935;">공제 없음</td>
+              <td style="padding:9px 10px;text-align:center;">전액 과세</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>4단계: 10년 내 기증여액 합산</strong></p>
+        <p>상증세법 제47조에 따라 동일인(직계존속은 배우자 포함)으로부터 10년 내에 증여받은 금액은 합산하여 과세합니다. 합산 후 증여재산공제(10년 누적 한도)를 차감하므로, 이미 공제를 사용한 경우 이번 증여에서 추가 공제를 받을 수 없습니다. 이 계산기에서는 기증여액을 입력하면 자동으로 반영됩니다.</p>
+
+        <p><strong>5단계: 과세표준 산출</strong></p>
+        <p>과세표준 = 증여재산가액 - 채무인수액 - 증여재산공제 - 10년 내 기증여액. 이 금액이 0 이하이면 납부세액이 없습니다. 과세표준은 1,000원 미만 절사합니다.</p>
+
+        <p><strong>6단계: 세율 적용 및 산출세액 계산</strong></p>
+        <p>증여세 누진세율표:</p>
+        <table style="width:100%;border-collapse:collapse;font-size:0.88em;margin:12px 0;">
+          <thead>
+            <tr style="background:#f0f4ff;">
+              <th style="padding:10px;text-align:left;border-bottom:2px solid #c5cae9;">과세표준</th>
+              <th style="padding:10px;text-align:center;border-bottom:2px solid #c5cae9;">세율</th>
+              <th style="padding:10px;text-align:center;border-bottom:2px solid #c5cae9;">누진공제액</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0;">1억원 이하</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">10%</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">0원</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0;">1억원 초과 ~ 5억원 이하</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">20%</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">1,000만원</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0;">5억원 초과 ~ 10억원 이하</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">30%</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">6,000만원</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;border-bottom:1px solid #f0f0f0;">10억원 초과 ~ 30억원 이하</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:700;">40%</td>
+              <td style="padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0;">1억 6,000만원</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px;">30억원 초과</td>
+              <td style="padding:8px 10px;text-align:center;font-weight:700;">50%</td>
+              <td style="padding:8px 10px;text-align:center;">4억 6,000만원</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>산출세액 = 과세표준 × 해당 세율 - 누진공제액</p>
+
+        <p><strong>7단계: 세대생략 할증</strong></p>
+        <p>조부모 → 손자녀처럼 세대를 건너뛴 증여는 산출세액에 30%를 할증합니다. 수증자가 미성년자이면서 증여재산가액이 20억원을 초과하는 경우에는 40%를 할증합니다(상증세법 제57조). 이는 세대 간 부의 이전 시 세금 단계를 건너뛰는 것을 방지하기 위한 제도입니다.</p>
+
+        <p><strong>8단계: 신고세액공제 (3%)</strong></p>
+        <p>증여받은 날이 속하는 달의 말일부터 3개월 이내에 자진 신고하면 산출세액(할증 포함)의 3%를 공제받습니다(상증세법 제69조). 예를 들어 산출세액이 2,000만원이면 신고공제 60만원을 차감한 1,940만원이 최종 납부세액입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">실제 계산 예시</h3>
+
+        <p><strong>예시 1: 부모가 성인 자녀에게 2억원 증여 (10년 내 기증여 없음)</strong></p>
+        <ul style="font-size:0.9em;line-height:2;padding-left:20px;">
+          <li>증여재산가액: 2억원</li>
+          <li>채무인수액: 0원</li>
+          <li>증여재산공제: 5,000만원 (직계존속→성인 직계비속)</li>
+          <li>과세표준: 2억원 - 5,000만원 = <strong>1억5,000만원</strong></li>
+          <li>산출세액: 1억5,000만원 × 20% - 1,000만원 = <strong>2,000만원</strong></li>
+          <li>신고세액공제 (3%): 60만원</li>
+          <li>최종 납부세액: <strong>1,940만원</strong></li>
+        </ul>
+
+        <p><strong>예시 2: 조부모가 미성년 손자녀에게 3억원 증여 (세대생략, 10년 내 기증여 5천만원)</strong></p>
+        <ul style="font-size:0.9em;line-height:2;padding-left:20px;">
+          <li>증여재산가액: 3억원</li>
+          <li>증여재산공제: 2,000만원 (직계존속→미성년 직계비속, 한도)</li>
+          <li>10년 내 기증여액: 5,000만원 (이미 공제 2천만원 사용 → 추가 공제 없음)</li>
+          <li>과세표준: 3억원 - 2,000만원 - 5,000만원 = <strong>2억3,000만원</strong></li>
+          <li>산출세액: 2억3,000만원 × 20% - 1,000만원 = <strong>3,600만원</strong></li>
+          <li>세대생략 할증 (30%): 1,080만원</li>
+          <li>할증 후 세액: 4,680만원</li>
+          <li>신고세액공제 (3%): 140.4만원</li>
+          <li>최종 납부세액: 약 <strong>4,539.6만원</strong></li>
+        </ul>
+
+        <p><strong>예시 3: 부모가 자녀에게 아파트 증여 (시가 8억원, 담보대출 2억원 인수)</strong></p>
+        <ul style="font-size:0.9em;line-height:2;padding-left:20px;">
+          <li>증여재산가액: 8억원</li>
+          <li>채무인수액 (부담부증여): 2억원 → 이 부분은 양도소득세 별도 과세</li>
+          <li>순증여가액: 8억원 - 2억원 = 6억원</li>
+          <li>증여재산공제: 5,000만원</li>
+          <li>과세표준: 6억원 - 5,000만원 = <strong>5억5,000만원</strong></li>
+          <li>산출세액: 5억5,000만원 × 30% - 6,000만원 = <strong>1억500만원</strong></li>
+          <li>신고세액공제 (3%): 315만원</li>
+          <li>최종 납부세액: 약 <strong>1억185만원</strong></li>
+        </ul>
+
+        <p><strong>예시 4: 배우자에게 6억5,000만원 증여</strong></p>
+        <ul style="font-size:0.9em;line-height:2;padding-left:20px;">
+          <li>증여재산가액: 6억5,000만원</li>
+          <li>배우자 증여재산공제: 6억원</li>
+          <li>과세표준: 5,000만원</li>
+          <li>산출세액: 5,000만원 × 10% = <strong>500만원</strong></li>
+          <li>신고세액공제 (3%): 15만원</li>
+          <li>최종 납부세액: <strong>485만원</strong></li>
+        </ul>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">증여세 절세 전략</h3>
+        <p>증여세를 합법적으로 줄이는 대표적인 방법은 다음과 같습니다.</p>
+
+        <p><strong>1) 10년 단위 분산 증여</strong></p>
+        <p>증여재산공제는 10년 단위로 초기화됩니다. 자녀가 태어날 때, 10세가 될 때, 20세가 될 때 각각 공제 한도 내에서 증여하면 세금 없이 총 9,000만원(2천만원 + 2천만원 + 5천만원)을 줄 수 있습니다. 증여 타이밍을 10년 단위로 나누는 것이 핵심입니다.</p>
+
+        <p><strong>2) 조기 증여</strong></p>
+        <p>자산 가치가 오르기 전에 미리 증여하면 낮은 가액을 기준으로 세금을 납부할 수 있습니다. 특히 주식이나 부동산의 경우 향후 가치 상승 시 그 이익은 수증자에게 귀속됩니다. 단, 증여 후 10년 내 증여자가 사망하면 상속재산에 합산될 수 있습니다(상증세법 제13조).</p>
+
+        <p><strong>3) 혼인·출산 증여 공제 활용</strong></p>
+        <p>2024년 1월 1일부터 혼인신고일 전후 2년 이내 또는 자녀 출생일로부터 2년 이내에 직계존속으로부터 증여받는 경우 기존 공제 외에 추가로 최대 1억원까지 공제받을 수 있습니다. 부모로부터 증여받는 경우 기본 5천만원 + 혼인·출산 공제 1억원 = 최대 1억5천만원을 공제받을 수 있습니다.</p>
+
+        <p><strong>4) 증여 후 양도 vs 증여 시점 비교</strong></p>
+        <p>부동산을 증여하는 것과 팔아서 현금으로 주는 것 중 어느 것이 유리한지는 취득가액, 보유 기간, 양도차익 등에 따라 달라집니다. 양도세와 증여세를 비교 시뮬레이션한 후 유리한 방식을 선택하는 것이 좋습니다. 세무사 상담을 통해 최적 구조를 설계하는 것을 권장합니다.</p>
+
+        <p><strong>5) 부담부증여 활용</strong></p>
+        <p>담보가 있는 부동산을 채무 포함해서 증여하면 순증여가액이 줄어 증여세 부담이 줄어듭니다. 다만 채무 인수 부분에 대해 증여자에게 양도소득세가 부과되므로, 양도세와 증여세를 합산하여 유불리를 비교해야 합니다. 1세대 1주택 비과세가 적용되는 경우 부담부증여가 유리할 수 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">증여세 신고 절차</h3>
+        <p>증여세 신고·납부 절차는 다음과 같습니다. ① 증여일이 속하는 달의 말일부터 3개월 이내에 수증자의 주소지 관할 세무서에 신고합니다. ② 홈택스(hometax.go.kr) 온라인 신고 또는 세무서 방문 신고 모두 가능합니다. ③ 증여세 신고서, 증여재산 평가 서류(매매계약서, 감정평가서 등), 가족관계증명서 등을 제출합니다. ④ 신고 기한까지 세금을 납부합니다. 1천만원 초과 시 2개월 이내 분납이 가능합니다. ⑤ 자진신고 시 3% 신고세액공제를 적용받습니다.</p>
+
+        <p>기한 후 신고 시에는 신고세액공제를 받을 수 없고, 무신고가산세(일반 20%, 부정행위 40%)와 납부지연가산세(연 8.03%)가 추가됩니다. 증여 사실을 숨기거나 의도적으로 축소 신고하는 경우에는 사기 기타 부정행위로 세금 포탈에 해당하여 가중 처벌을 받을 수 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">증여세 분납 제도</h3>
+        <p>납부세액이 1,000만원을 초과하는 경우 세무서의 허가 없이 납부 기한 경과 후 2개월 이내에 분납할 수 있습니다. 분납 금액은 납부세액이 2,000만원 이하인 경우 1,000만원을 초과하는 금액, 2,000만원 초과인 경우 세액의 50%를 초과하는 금액입니다. 납부세액이 많을 경우 물납(부동산 등으로 납부)도 가능합니다(세무서장 허가 필요).</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">증여추정·증여의제 주의사항</h3>
+        <p>세법은 특정 상황에서 실제 증여 없이도 증여로 간주합니다. ① 증여추정: 배우자나 직계존비속 간에 재산을 무상으로 양도하면 증여로 추정합니다(상증세법 제44조). ② 저가 양도·고가 취득: 시가보다 30% 이상 낮게 팔거나 높게 사면 차액에 대해 증여세가 부과될 수 있습니다(상증세법 제35조). ③ 채무 면제: 부모가 자녀의 채무를 갚아주거나 면제해주면 그 금액에 증여세가 부과됩니다. ④ 이익 분여: 특수관계법인 간 거래로 얻은 이익에도 증여세가 부과될 수 있습니다. 이러한 경우는 복잡한 세법 판단이 필요하므로 반드시 세무사와 상담하시기 바랍니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">자주 묻는 질문</h3>
+
+        <p><strong>Q. 현금 증여는 국세청이 어떻게 알 수 있나요?</strong></p>
+        <p>국세청은 금융정보분석원(FIU)으로부터 고액 금융거래 정보를 받습니다. 1,000만원 이상 현금 거래는 금융기관에서 FIU에 자동 보고되며, 의심거래는 별도로 보고됩니다. 또한 수증자가 소득 대비 고가 자산을 취득하면 자금출처조사 대상이 될 수 있습니다. 증여세 신고 없이 현금을 받는 것은 탈세에 해당하므로 주의해야 합니다.</p>
+
+        <p><strong>Q. 미성년자 자녀 명의 통장에 매월 소액 저축하면 증여세가 있나요?</strong></p>
+        <p>10년간 합산 증여액이 미성년자 공제 한도(2,000만원)를 초과하면 초과분에 증여세가 부과됩니다. 매월 10만원씩 저축해도 10년간 1,200만원이 되어 한도 미만이지만, 이자·운용수익도 증여로 볼 수 있으므로 주의가 필요합니다. 장기 저축을 계획한다면 공제 한도 내에서 신고하고 관리하는 것이 안전합니다.</p>
+
+        <p><strong>Q. 증여세 신고 기한을 놓쳤어도 자진신고가 가능한가요?</strong></p>
+        <p>기한 후라도 자진신고(기한 후 신고)가 가능합니다. 다만 이 경우 신고세액공제 3%는 받을 수 없고, 무신고가산세 20%(부정행위 40%)와 납부지연가산세(연 8.03%)가 부과됩니다. 세무조사 등 과세관청이 인지하기 전에 자진 신고하면 무신고가산세가 50% 감면됩니다(기한 후 1개월 이내 신고 시 10만원 한도). 늦더라도 자진신고가 유리합니다.</p>
+
+        <p><strong>Q. 증여세와 상속세 중 어느 것이 유리한가요?</strong></p>
+        <p>단순 비교는 어렵습니다. 증여세는 수증자별로 과세되어 세율이 낮을 수 있지만, 상속세는 전체 상속재산을 합산하여 누진세율이 적용됩니다. 일반적으로 상속재산이 많은 경우 생전 증여로 분산하는 것이 유리할 수 있습니다. 단, 10년 내 증여재산은 상속재산에 합산됩니다. 증여세율과 상속세율 모두 동일(10~50%)하므로 세율 차이보다는 공제 항목, 분산 효과, 자산 가치 변동 등을 종합적으로 고려해야 합니다.</p>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <aside>
+      <div class="ad-zone vertical"></div>
+      <div class="related-box">
+        <h3>관련 계산기</h3>
+        <a href="gift-tax.html">증여세 계산기 (기본)</a>
+        <a href="inheritance-tax.html">상속세 계산기</a>
+        <a href="capital-gains.html">양도소득세 계산기</a>
+        <a href="acquisition-tax.html">취득세 계산기</a>
+        <a href="income-tax.html">종합소득세 계산기</a>
+        <a href="property-tax.html">재산세 계산기</a>
+        <a href="comprehensive-property-tax.html">종합부동산세 계산기</a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 금융기관 및 관계 기관에 문의하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+  // 관계 변경 시 미성년/세대생략 옵션 표시 여부
+  function onRelationshipChange() {
+    const rel = document.getElementById('relationship').value;
+    const minorGroup = document.getElementById('minorGroup');
+    if (rel === 'lineal_desc') {
+      minorGroup.style.display = '';
+    } else {
+      minorGroup.style.display = 'none';
+    }
+    onInputChange();
+  }
+
+  function onInputChange() {
+    // 입력 변경 시 결과 숨김
+    document.getElementById('result').style.display = 'none';
+  }
+
+  function fmt(n) {
+    if (n === 0) return '0원';
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  function calcTax(taxBase) {
+    // 세율 구간 (과세표준 기준)
+    if (taxBase <= 0) return 0;
+    if (taxBase <= 100000000) {
+      return taxBase * 0.10;
+    } else if (taxBase <= 500000000) {
+      return taxBase * 0.20 - 10000000;
+    } else if (taxBase <= 1000000000) {
+      return taxBase * 0.30 - 60000000;
+    } else if (taxBase <= 3000000000) {
+      return taxBase * 0.40 - 160000000;
+    } else {
+      return taxBase * 0.50 - 460000000;
+    }
+  }
+
+  function getTaxRate(taxBase) {
+    if (taxBase <= 100000000) return { rate: '10%', deduction: 0 };
+    if (taxBase <= 500000000) return { rate: '20%', deduction: 10000000 };
+    if (taxBase <= 1000000000) return { rate: '30%', deduction: 60000000 };
+    if (taxBase <= 3000000000) return { rate: '40%', deduction: 160000000 };
+    return { rate: '50%', deduction: 460000000 };
+  }
+
+  function calculate() {
+    const giftAmount = parseFloat(document.getElementById('giftAmount').value) || 0;
+    const relationship = document.getElementById('relationship').value;
+    const isMinor = document.getElementById('isMinor').value;
+    const generationSkip = document.getElementById('generationSkip').value;
+    const priorGifts = parseFloat(document.getElementById('priorGifts').value) || 0;
+    const debtAssumed = parseFloat(document.getElementById('debtAssumed').value) || 0;
+    const selfReport = document.getElementById('selfReport').value;
+
+    // 증여재산공제 결정
+    let deductionLimit = 0;
+    if (relationship === 'spouse') {
+      deductionLimit = 600000000; // 6억
+    } else if (relationship === 'lineal_desc') {
+      deductionLimit = (isMinor === 'minor') ? 20000000 : 50000000; // 2천만 or 5천만
+    } else if (relationship === 'lineal_asc') {
+      deductionLimit = 50000000; // 5천만
+    } else if (relationship === 'other_relative') {
+      deductionLimit = 10000000; // 1천만
+    } else {
+      deductionLimit = 0; // 타인
+    }
+
+    // 채무인수 후 순증여가액
+    const netGift = Math.max(0, giftAmount - debtAssumed);
+
+    // 실제 적용 가능한 증여재산공제 (이미 기증여로 사용한 공제 차감)
+    const usedDeduction = Math.min(priorGifts, deductionLimit);
+    const remainingDeduction = Math.max(0, deductionLimit - usedDeduction);
+
+    // 과세표준
+    // 기증여액 합산 후 공제 잔여분 적용
+    let taxBase = netGift - remainingDeduction;
+    taxBase = Math.max(0, taxBase);
+    // 1,000원 미만 절사
+    taxBase = Math.floor(taxBase / 1000) * 1000;
+
+    // 결과 표시
+    const resultDiv = document.getElementById('result');
+    const zeroTaxBox = document.getElementById('zeroTaxBox');
+    const taxResultSection = document.getElementById('taxResultSection');
+    resultDiv.style.display = '';
+
+    if (taxBase <= 0) {
+      zeroTaxBox.style.display = '';
+      taxResultSection.style.display = 'none';
+      document.getElementById('zeroTaxMsg').textContent =
+        '증여재산가액이 증여재산공제 한도 이하이거나 채무인수액·기증여액 차감 후 과세표준이 0 이하입니다. 증여세 납부 의무가 없으나, 기한 내 신고를 권장합니다.';
+      return;
+    }
+
+    zeroTaxBox.style.display = 'none';
+    taxResultSection.style.display = '';
+
+    // 산출세액
+    const calcedTax = calcTax(taxBase);
+    const rateInfo = getTaxRate(taxBase);
+
+    // 세대생략 할증
+    let surchargePct = 0;
+    let surchargeAmt = 0;
+    let surchargeMsg = '';
+    if (generationSkip === 'yes' && relationship === 'lineal_desc') {
+      if (isMinor === 'minor' && giftAmount > 2000000000) {
+        surchargePct = 40;
+        surchargeMsg = '수증자가 미성년자이고 증여재산가액이 20억원 초과 → 40% 할증 적용';
+      } else {
+        surchargePct = 30;
+        surchargeMsg = '세대생략 증여(조부모→손자녀 등) → 30% 할증 적용';
+      }
+      surchargeAmt = calcedTax * (surchargePct / 100);
+    }
+
+    const taxAfterSurcharge = calcedTax + surchargeAmt;
+
+    // 신고세액공제
+    const reportCredit = (selfReport === 'yes') ? taxAfterSurcharge * 0.03 : 0;
+    const finalTaxAmt = Math.round(taxAfterSurcharge - reportCredit);
+
+    // 최종 납부세액 표시
+    document.getElementById('finalTax').textContent = fmt(finalTaxAmt);
+    document.getElementById('finalTaxSub').textContent =
+      `산출세액 ${fmt(calcedTax)}` +
+      (surchargeAmt > 0 ? ` + 세대생략 할증 ${fmt(surchargeAmt)}` : '') +
+      (reportCredit > 0 ? ` - 신고공제 ${fmt(reportCredit)}` : '');
+
+    // 결과 카드
+    const cards = [
+      { label: '증여재산가액', value: fmt(giftAmount), cls: '' },
+      { label: '채무인수액', value: fmt(debtAssumed), cls: debtAssumed > 0 ? 'warn' : '' },
+      { label: '증여재산공제', value: fmt(remainingDeduction), cls: 'success' },
+      { label: '과세표준', value: fmt(taxBase), cls: 'highlight' },
+      { label: '산출세액', value: fmt(calcedTax), cls: '' },
+    ];
+    if (surchargeAmt > 0) {
+      cards.push({ label: `세대생략 할증(${surchargePct}%)`, value: fmt(surchargeAmt), cls: 'warn' });
+    }
+    if (reportCredit > 0) {
+      cards.push({ label: '신고세액공제(3%)', value: '-' + fmt(reportCredit), cls: 'success' });
+    }
+    cards.push({ label: '최종 납부세액', value: fmt(finalTaxAmt), cls: 'highlight' });
+
+    const cardsHTML = cards.map(c =>
+      `<div class="result-card ${c.cls}"><div class="rlabel">${c.label}</div><div class="rvalue">${c.value}</div></div>`
+    ).join('');
+    document.getElementById('resultCards').innerHTML = cardsHTML;
+
+    // 단계별 계산
+    let stepHTML = '<h4>단계별 계산 과정</h4>';
+    const steps = [
+      ['① 증여재산가액', fmt(giftAmount)],
+      ['② 채무인수액 차감', debtAssumed > 0 ? `- ${fmt(debtAssumed)}` : '0원 (해당 없음)'],
+      ['③ 순증여가액', fmt(netGift)],
+      ['④ 증여재산공제 (10년 한도 잔여)', `- ${fmt(remainingDeduction)}`],
+      ['⑤ 과세표준', fmt(taxBase)],
+      ['⑥ 적용 세율', `${rateInfo.rate} (누진공제 ${fmt(rateInfo.deduction)})`],
+      ['⑦ 산출세액', fmt(calcedTax)],
+    ];
+    if (surchargeAmt > 0) {
+      steps.push([`⑧ 세대생략 할증 (${surchargePct}%)`, `+ ${fmt(surchargeAmt)}`]);
+      steps.push(['⑨ 할증 후 세액', fmt(taxAfterSurcharge)]);
+      if (reportCredit > 0) {
+        steps.push(['⑩ 신고세액공제 (3%)', `- ${fmt(reportCredit)}`]);
+        steps.push(['⑪ 최종 납부세액', fmt(finalTaxAmt)]);
+      } else {
+        steps.push(['⑩ 최종 납부세액', fmt(finalTaxAmt)]);
+      }
+    } else {
+      if (reportCredit > 0) {
+        steps.push(['⑧ 신고세액공제 (3%)', `- ${fmt(reportCredit)}`]);
+        steps.push(['⑨ 최종 납부세액', fmt(finalTaxAmt)]);
+      } else {
+        steps.push(['⑧ 최종 납부세액', fmt(finalTaxAmt)]);
+      }
+    }
+
+    stepHTML += steps.map((s, i) =>
+      `<div class="step-row"><span class="step-label">${s[0]}</span><span class="step-value">${s[1]}</span></div>`
+    ).join('');
+    document.getElementById('stepBox').innerHTML = stepHTML;
+
+    // 세대생략 팁
+    const surchargeTip = document.getElementById('surchargeTip');
+    if (surchargeAmt > 0) {
+      surchargeTip.style.display = '';
+      document.getElementById('surchargeMsg').textContent = surchargeMsg +
+        '. 세대생략 할증은 산출세액에 추가되므로 세 부담이 크게 증가합니다. 증여 구조를 검토하여 중간 세대를 거치는 방식과 비교해보세요.';
+    } else {
+      surchargeTip.style.display = 'none';
+    }
+  }
+
+  // 페이지 로드 시 관계 초기화
+  document.addEventListener('DOMContentLoaded', function() {
+    onRelationshipChange();
+  });
+</script>
+
+</body>
+</html>

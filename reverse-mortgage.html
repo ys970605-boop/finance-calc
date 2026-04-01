@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="bbb2e816e372612b1e5820af29a23857b401ffea" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주택연금 계산기 2026 - 나이·주택가격별 월 수령액 자동 계산 (한국주택금융공사 기준)</title>
+  <meta name="description" content="2026년 한국주택금융공사(HF) 주택연금 예상 수령액을 자동 계산합니다. 나이·주택시가·지급방식(종신/확정기간/혼합)별 월 수령액, 초기보증료·연보증료, 총 수령 예상액을 한눈에 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/reverse-mortgage">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="주택연금 계산기 2026 - 나이·주택가격별 월 수령액 자동 계산">
+  <meta property="og:description" content="한국주택금융공사 기준 주택연금 월 수령액, 종신지급·확정기간·혼합방식 비교, 초기보증료·연보증료를 무료로 계산하세요.">
+  <meta property="og:url" content="https://calcmoney.kr/reverse-mortgage">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "주택연금이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택연금(역모기지론)은 만 55세 이상의 주택 소유자가 보유 주택을 한국주택금융공사(HF)에 담보로 맡기고 평생 또는 일정 기간 동안 매월 연금을 받는 제도입니다. 집에 계속 거주하면서 생활비를 확보할 수 있어 '내 집에서 죽을 때까지 연금 받기'라고도 불립니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택연금 가입 조건은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택연금 가입 조건은 ① 신청인(또는 배우자)이 만 55세 이상, ② 부부 기준 공시가격 합산 12억원 이하 주택 보유, ③ 실제 거주 주택이어야 합니다. 2023년 10월부터 공시가격 기준이 9억원에서 12억원으로 상향되었으며, 시세는 통상 공시가격의 약 140~150% 수준입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택연금 월 수령액은 어떻게 결정되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택연금 월 수령액은 ① 가입자(최저 연령자) 나이, ② 주택 시가, ③ 지급 방식(종신정액형/증가형/감소형/확정기간형)에 따라 결정됩니다. 나이가 많을수록, 주택 가격이 높을수록 월 수령액이 증가합니다. 한국주택금융공사는 주택가격 상한을 시세 기준 12억원(공시가격 12억원 초과 주택 제외)으로 적용합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택연금 초기보증료와 연보증료는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "초기보증료는 주택가격의 1.5%(일반형 기준)이며, 연보증료는 잔여 보증한도(주택가격)의 연 0.75%입니다. 초기보증료는 보증 개시 시점에 1회 부과되고, 연보증료는 매월 분할하여 대출잔액에 가산됩니다. 초기보증료를 현금으로 납부하면 월 수령액이 더 높아집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택연금 종신지급형과 확정기간형의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종신지급형은 부부 중 한 명이 살아있는 동안 계속 연금을 받는 방식입니다. 확정기간형은 10년·15년·20년·30년 등 선택한 기간 동안만 연금을 받는 방식으로, 동일 주택가격과 나이라면 종신형보다 월 수령액이 많습니다. 혼합형은 종신 지급에 확정기간 동안 추가 연금을 받는 방식입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택연금 중도 해지 시 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택연금은 언제든 중도 해지(상환)할 수 있습니다. 해지 시 그동안 지급받은 연금총액에 이자를 더한 금액(대출잔액)을 상환하면 주택을 돌려받습니다. 사망 시에는 대출잔액이 주택가격을 초과해도 상속인에게 추가 청구하지 않으며, 주택가격이 대출잔액보다 많으면 차액을 상속인에게 지급합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택연금 수령액에 세금이 부과되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택연금 수령액은 소득세 비과세입니다. 또한 주택연금 이자비용은 연 최대 200만원까지 소득공제(연간 이자비용의 30%)를 받을 수 있어 세제 혜택도 있습니다. 재산세도 일부 감면(9억원 이하 1주택자 25% 감면) 혜택이 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 주택연금 월 수령액 예시는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 70세 종신정액형 기준 예시: 주택 3억원 시 약 92만원, 5억원 시 약 153만원, 7억원 시 약 213만원, 10억원 시 약 305만원(상한 적용), 12억원 시 약 366만원(상한 최대)을 매월 수령합니다. 65세라면 동일 주택 기준 약 15~20% 감소합니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .payment-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .payment-tab { flex: 1; min-width: 80px; padding: 8px 4px; border: 2px solid var(--border); border-radius: 8px; text-align: center; font-size: 13px; font-weight: 600; cursor: pointer; background: #f8f9fa; color: #555; transition: all .15s; }
+    .payment-tab.active { border-color: var(--primary); background: var(--primary); color: #fff; }
+    .formula-block { background: #f8f9fa; border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 12px 0; font-size: 14px; line-height: 1.9; }
+    .formula-block strong { color: var(--primary); }
+    .warn-box { background: #fff3e0; border: 1px solid #ffcc02; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #7a5800; margin-top: 16px; }
+    .badge-type { display: inline-block; background: #1976d2; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 12px; font-weight: 700; margin-left: 6px; vertical-align: middle; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
+    .compare-table th, .compare-table td { padding: 9px 12px; border: 1px solid var(--border); text-align: center; }
+    .compare-table th { background: #f1f3f4; font-weight: 600; }
+    .compare-table tr.row-best { background: #e8f5e9; font-weight: 700; }
+    .compare-table tr.row-best td { color: #2e7d32; }
+    .seo-content { margin-top: 32px; }
+    .seo-section { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 32px; margin-bottom: 24px; }
+    .seo-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+    .seo-section h3 { font-size: 16px; font-weight: 700; margin: 20px 0 8px; color: var(--text); }
+    .seo-section p { font-size: 15px; color: #3c4043; line-height: 1.8; margin-bottom: 12px; }
+    .seo-list { padding-left: 20px; margin-bottom: 12px; }
+    .seo-list li { font-size: 14px; color: #3c4043; line-height: 1.8; margin-bottom: 4px; }
+    .table-wrap { overflow-x: auto; margin: 12px 0; }
+    .seo-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .seo-table th, .seo-table td { padding: 10px 14px; border: 1px solid var(--border); text-align: center; }
+    .seo-table th { background: #f1f3f4; font-weight: 600; }
+    .seo-table tbody tr:nth-child(even) { background: #fafafa; }
+    .table-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+    .result-section-title { font-size: 15px; font-weight: 700; margin: 20px 0 8px; color: #333; border-top: 2px solid #e0e0e0; padding-top: 16px; }
+    .fee-highlight { background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 14px; }
+    .fee-highlight strong { color: #e65100; }
+    @media (max-width: 600px) { .seo-section { padding: 20px 16px; } .payment-tab { font-size: 12px; padding: 7px 2px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="pension-payout.html">연금수령액</a>
+      <a href="reverse-mortgage.html" class="active">주택연금</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>주택연금 계산기</h1>
+        <p class="desc">2026년 한국주택금융공사(HF) 기준으로 주택연금 월 예상 수령액을 자동 계산합니다. 나이·주택시가·지급방식별 비교, 초기보증료·연보증료, 총 수령 예상액을 한눈에 확인하세요.</p>
+
+        <div class="form-group">
+          <label>주택 소유자 나이 <span class="hint">만 나이, 55세 이상</span></label>
+          <input type="number" id="ownerAge" placeholder="예: 65" value="65" min="55" max="95">
+        </div>
+
+        <div class="form-group">
+          <label>배우자 나이 <span class="hint">배우자 없으면 0 입력</span></label>
+          <input type="number" id="spouseAge" placeholder="예: 62" value="62" min="0" max="95">
+        </div>
+
+        <div class="form-group">
+          <label>주택 시가 <span class="hint">만원 단위, 최대 120,000만원(12억원)</span></label>
+          <input type="number" id="housePrice" placeholder="예: 50000" value="50000" min="5000" max="120000" step="1000">
+          <span class="hint" style="margin-top:4px;display:block;">입력 단위: 만원 (예: 5억 → 50000)</span>
+        </div>
+
+        <div class="form-group">
+          <label>주택 유형</label>
+          <select id="houseType">
+            <option value="apt">아파트</option>
+            <option value="single">단독주택</option>
+            <option value="multi">다세대/연립</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>지급 방식</label>
+          <div class="payment-tabs">
+            <div class="payment-tab active" onclick="selectPayment('lifetime_flat', this)">종신정액형</div>
+            <div class="payment-tab" onclick="selectPayment('lifetime_inc', this)">종신증가형</div>
+            <div class="payment-tab" onclick="selectPayment('lifetime_dec', this)">종신감소형</div>
+            <div class="payment-tab" onclick="selectPayment('fixed', this)">확정기간형</div>
+          </div>
+        </div>
+
+        <div class="form-group" id="fixedTermGroup" style="display:none;">
+          <label>확정지급 기간</label>
+          <select id="fixedTerm">
+            <option value="10">10년</option>
+            <option value="15">15년</option>
+            <option value="20" selected>20년</option>
+            <option value="30">30년</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>기대수명 (총 수령 기간 계산용) <span class="hint">통계청 기준 남성 81세, 여성 87세</span></label>
+          <input type="number" id="lifeExpect" placeholder="예: 84" value="84" min="60" max="110">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result" style="display:none;">
+          <div class="result-highlight">
+            <div class="label">월 예상 수령액 (종신정액형 기준)</div>
+            <div class="value" id="rMonthly">-</div>
+            <div class="sub" id="rAnnual"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>계산 기준 나이</td><td id="rAge">-</td></tr>
+            <tr><td>적용 주택가격</td><td id="rPrice">-</td></tr>
+            <tr><td>주택 유형</td><td id="rType">-</td></tr>
+            <tr><td>지급 방식</td><td id="rPayType">-</td></tr>
+            <tr class="total"><td>월 수령액</td><td id="rMonthly2">-</td></tr>
+            <tr><td>연간 수령액</td><td id="rYearly">-</td></tr>
+          </table>
+
+          <div class="result-section-title">보증료 안내</div>
+          <div class="fee-highlight">
+            <strong>초기보증료</strong>: <span id="rInitFee">-</span> (주택가격 × 1.5%, 대출금에서 차감)<br>
+            <strong>연보증료</strong>: <span id="rAnnualFee">-</span>/년 (주택가격 × 0.75%, 매월 대출잔액에 가산)
+          </div>
+
+          <div class="result-section-title">지급방식별 비교 <span class="badge-type">비교표</span></div>
+          <table class="compare-table" id="compareTable">
+            <thead>
+              <tr>
+                <th>지급 방식</th>
+                <th>월 수령액</th>
+                <th>연간 수령액</th>
+                <th>기대수명 총 수령액</th>
+                <th>특징</th>
+              </tr>
+            </thead>
+            <tbody id="compareBody"></tbody>
+          </table>
+
+          <div class="result-section-title">기대수명 기준 총 수령 예상액</div>
+          <table class="result-table">
+            <tr><td>잔여 수령 기간 (기대수명 기준)</td><td id="rRemainYears">-</td></tr>
+            <tr><td>종신정액형 총 수령 예상액</td><td id="rTotalLifetime">-</td></tr>
+            <tr><td>초기보증료 (일회성)</td><td id="rInitFee2">-</td></tr>
+            <tr class="total"><td>순 수령 예상액 (보증료 차감)</td><td id="rNetTotal">-</td></tr>
+          </table>
+
+          <div class="warn-box">
+            <strong>주의:</strong> 본 계산기는 한국주택금융공사 주택연금 지급률표(2026년 기준)를 바탕으로 한 <strong>참고용 추정치</strong>입니다. 실제 수령액은 감정평가액, 금리 변동, 보증료 납부 방식, 우대형 여부(저소득·장기가입 우대)에 따라 달라질 수 있습니다. 정확한 조회는 <a href="https://www.hf.go.kr" target="_blank" rel="noopener" style="color:var(--primary);">한국주택금융공사 홈페이지</a>에서 확인하세요.
+          </div>
+        </div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>주택연금 지급 방식</h3>
+        <ul>
+          <li><strong>종신정액형</strong>: 평생 동일 금액 수령 (가장 일반적)</li>
+          <li><strong>종신증가형</strong>: 초기 낮고 매년 3% 증가</li>
+          <li><strong>종신감소형</strong>: 초기 높고 매년 3% 감소</li>
+          <li><strong>확정기간형</strong>: 선택 기간만 수령, 월액 ↑</li>
+          <li><strong>혼합형</strong>: 확정기간+종신 혼합 지급</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>가입 조건 요약</h3>
+        <ul>
+          <li>신청인(또는 배우자) 만 55세 이상</li>
+          <li>공시가격 합산 12억원 이하 주택</li>
+          <li>실제 거주 주택 (1세대 1주택 원칙)</li>
+          <li>보증료: 초기 1.5% + 연 0.75%</li>
+          <li>우대형: 저소득·장기가입자 혜택</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>주택가격 상한 (2026년)</h3>
+        <ul>
+          <li>공시가격 기준: 12억원 이하</li>
+          <li>시세 기준: 약 12억원 상당</li>
+          <li>12억원 초과 시 12억원으로 계산</li>
+          <li>우대형은 공시가격 2억원 이하 적용</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>세제 혜택</h3>
+        <ul>
+          <li>연금 수령액: 소득세 비과세</li>
+          <li>이자비용 소득공제: 연 최대 200만원</li>
+          <li>재산세 감면: 1주택 9억원 이하 25%</li>
+          <li>취득세·등록세 감면 혜택</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="pension-payout.html" class="related-link">연금수령액</a>
+          <a href="national-pension-detail.html" class="related-link">국민연금</a>
+          <a href="property-tax.html" class="related-link">재산세</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO 콘텐츠 -->
+<div class="container seo-content">
+
+  <section class="seo-section">
+    <h2>2026년 주택연금 월 수령액 — 나이·주택가격별 시뮬레이션표</h2>
+    <p>아래 표는 <strong>2026년 한국주택금융공사 주택연금 종신정액형 기준</strong>으로, 나이와 주택 시가에 따른 월 예상 수령액입니다. 부부 중 연소자(더 어린 분)의 나이를 기준으로 산출하며, 주택가격 상한은 12억원입니다.</p>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>나이</th>
+            <th>주택 2억원</th>
+            <th>주택 3억원</th>
+            <th>주택 5억원</th>
+            <th>주택 7억원</th>
+            <th>주택 10억원</th>
+            <th>주택 12억원</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>55세</strong></td><td>23만원</td><td>35만원</td><td>58만원</td><td>81만원</td><td>116만원</td><td>140만원</td></tr>
+          <tr><td><strong>60세</strong></td><td>30만원</td><td>46만원</td><td>76만원</td><td>106만원</td><td>152만원</td><td>182만원</td></tr>
+          <tr><td><strong>65세</strong></td><td>40만원</td><td>61만원</td><td>101만원</td><td>142만원</td><td>203만원</td><td>244만원</td></tr>
+          <tr><td><strong>70세</strong></td><td>55만원</td><td>84만원</td><td>140만원</td><td>196만원</td><td>280만원</td><td>336만원</td></tr>
+          <tr><td><strong>75세</strong></td><td>74만원</td><td>112만원</td><td>186만원</td><td>261만원</td><td>373만원</td><td>447만원</td></tr>
+          <tr><td><strong>80세</strong></td><td>100만원</td><td>151만원</td><td>252만원</td><td>352만원</td><td>504만원</td><td>604만원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">※ 2026년 한국주택금융공사 종신정액형 기준 추정치. 실제 수령액은 감정평가액, 가입 조건, 우대형 여부에 따라 다를 수 있습니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금이란? — 역모기지론의 개념과 원리</h2>
+    <p>주택연금(住宅年金)은 <strong>역모기지론(Reverse Mortgage)</strong>이라고도 불리는 제도로, 고령자가 보유 주택을 한국주택금융공사(HF)에 담보로 제공하고 매월 일정 금액을 연금 형태로 수령하는 공적 보증 금융 상품입니다.</p>
+    <p>일반 주택담보대출이 '돈을 먼저 빌린 뒤 원리금을 갚아 나가는' 방식이라면, 주택연금은 이와 반대로 '집을 담보로 맡기고 매월 연금을 미리 수령하면서 원리금은 사후 정산'하는 방식입니다. 따라서 살아있는 동안 집에서 계속 거주하면서 매월 생활비를 받을 수 있습니다.</p>
+    <h3>주택연금의 핵심 원리</h3>
+    <p>주택연금은 주택가격을 기반으로 '남은 기대수명 동안 얼마를 지급할 수 있는가'를 역산하여 월 수령액을 결정합니다. 나이가 많을수록 기대수명이 짧아 더 많은 금액을 매월 받을 수 있으며, 주택가격이 높을수록 담보 가치가 높아 수령액이 증가합니다.</p>
+    <ul class="seo-list">
+      <li>수령 기간: 종신형은 부부 모두 사망 시까지, 확정기간형은 선택한 기간 동안</li>
+      <li>거주 보장: 가입 기간 동안 주택에 계속 거주 가능</li>
+      <li>초과 손실 없음: 사망 후 대출잔액이 주택가격 초과해도 추가 청구 없음</li>
+      <li>잉여 상속: 주택가격이 대출잔액보다 많으면 차액 상속인에게 지급</li>
+    </ul>
+
+    <h3>주택연금 vs 일반 임대 vs 매각 비교</h3>
+    <p>5억원짜리 주택을 보유한 70세 노인을 기준으로 세 가지 옵션을 비교하면, 주택연금은 월 약 140만원을 종신 수령하면서 계속 거주할 수 있습니다. 직접 임대는 월 130~150만원 수령 가능하지만 세입자 관리, 임대소득세 부담이 있습니다. 매각 후 금융상품 투자는 연 3% 수익 기준 월 약 125만원이지만 거처 마련 비용이 별도로 발생합니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금 가입 조건 — 2026년 기준 완전 정리</h2>
+    <p>주택연금에 가입하려면 다음 조건을 모두 충족해야 합니다.</p>
+    <h3>연령 조건</h3>
+    <p>신청인(주택 소유자) 또는 그 배우자 중 <strong>1명이 만 55세 이상</strong>이어야 합니다. 부부 중 1명이 55세를 넘겼다면 다른 한 명이 더 어려도 가입 가능합니다. 단, 월 수령액 계산 기준은 부부 중 연소자(더 어린 분)의 나이를 적용합니다.</p>
+    <h3>주택 조건</h3>
+    <ul class="seo-list">
+      <li>부부 합산 공시가격 기준 12억원 이하 주택 (2023년 10월부터 상향)</li>
+      <li>1세대 1주택 원칙 (2주택자도 3년 내 처분 조건부 가입 가능)</li>
+      <li>실제 거주 중인 주택이어야 함</li>
+      <li>주택 유형: 아파트, 단독주택, 다세대주택, 연립주택, 주거용 오피스텔(전용 85㎡ 이하)</li>
+      <li>전세 임차인이 있는 경우 퇴거 후 가입 가능</li>
+    </ul>
+    <h3>소득·재산 조건</h3>
+    <p>일반형 주택연금은 별도의 소득·금융재산 조건이 없습니다. 단, <strong>우대형 주택연금</strong>(부부 기준 1.5억원 미만 주택·기초연금 수급자 등)은 일반형 대비 최대 20% 높은 수령액을 제공합니다.</p>
+
+    <h3>주택연금 가입 불가 경우</h3>
+    <ul class="seo-list">
+      <li>주택 소유자·배우자 모두 55세 미만인 경우</li>
+      <li>공시가격 12억원 초과 주택</li>
+      <li>전세보증금이 설정된 임대 주택</li>
+      <li>이미 금융기관에 담보 제공된 주택 (대출 상환 후 가입 가능)</li>
+      <li>주거용 외 건물(상가·창고 등)</li>
+    </ul>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금 지급 방식 — 종신형·확정기간형·혼합형 완전 비교</h2>
+    <p>주택연금은 지급 방식에 따라 월 수령액과 총 수령액이 크게 달라집니다. 동일 조건(70세, 주택 5억원) 기준으로 각 방식을 비교합니다.</p>
+
+    <h3>1. 종신정액형 (가장 인기)</h3>
+    <p>부부 모두 사망할 때까지 <strong>동일한 금액</strong>을 매월 수령하는 방식입니다. 예측 가능한 생활비 계획이 가능하고 장수 리스크에 가장 안전합니다. 70세 기준 5억원 주택이라면 약 140만원/월을 수령합니다.</p>
+
+    <h3>2. 종신증가형 (초기 적고 후기 많음)</h3>
+    <p>초기에는 정액형보다 낮은 금액을 수령하고, 매년 3%씩 증가하는 방식입니다. 시작 금액은 정액형의 약 70% 수준이지만 물가 상승에 따른 구매력 유지에 유리합니다. 20년 후에는 정액형보다 높은 금액을 받게 됩니다.</p>
+
+    <h3>3. 종신감소형 (초기 많고 후기 적음)</h3>
+    <p>초기에는 정액형보다 높은 금액(약 120~130% 수준)을 수령하고, 매년 3%씩 감소하는 방식입니다. 은퇴 초기 여행·의료비 등 지출이 많을 것으로 예상되는 분에게 적합합니다.</p>
+
+    <h3>4. 확정기간형 (기간 동안 고수령액)</h3>
+    <p>10년·15년·20년·30년 중 선택한 기간 동안만 연금을 수령하는 방식입니다. 종신형보다 월 수령액이 높지만, 선택한 기간 이후에는 연금이 지급되지 않습니다. 국민연금·퇴직연금 수령 전 브릿지 소득으로 활용하기에 적합합니다.</p>
+
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>지급 방식</th>
+            <th>월 수령액 (70세, 5억원)</th>
+            <th>장점</th>
+            <th>단점</th>
+            <th>적합 대상</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>종신정액형</td><td>약 140만원</td><td>안정적, 예측 가능</td><td>물가상승 취약</td><td>장수 걱정되는 분</td></tr>
+          <tr><td>종신증가형</td><td>초기 약 98만원</td><td>물가 대응</td><td>초기 수령액 적음</td><td>건강한 노후 설계</td></tr>
+          <tr><td>종신감소형</td><td>초기 약 175만원</td><td>초기 많이 수령</td><td>후기 급감</td><td>초기 지출 많은 분</td></tr>
+          <tr><td>확정기간(20년)</td><td>약 198만원</td><td>수령액 높음</td><td>20년 후 소득 없음</td><td>브릿지 연금 필요</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">※ 70세, 주택시가 5억원 기준 추정치. 실제 수령액은 감정평가 결과에 따라 달라집니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금 보증료 — 초기보증료 1.5% + 연보증료 0.75% 완전 분석</h2>
+    <p>주택연금에는 한국주택금융공사에 납부하는 <strong>보증료</strong>가 발생합니다. 보증료는 수령액에서 자동 차감되며, 직접 납부하는 현금은 없습니다.</p>
+
+    <h3>초기보증료 (1.5%)</h3>
+    <p>가입 시 1회 납부하는 수수료로, <strong>주택가격(감정평가액)의 1.5%</strong>입니다. 대출 원금에 가산되어 초기 연금 수령액에서 차감하거나 현금으로 직접 납부할 수 있습니다. 현금 납부 시 월 수령액이 더 높아지는 장점이 있습니다.</p>
+    <ul class="seo-list">
+      <li>주택가격 3억원: 초기보증료 450만원</li>
+      <li>주택가격 5억원: 초기보증료 750만원</li>
+      <li>주택가격 7억원: 초기보증료 1,050만원</li>
+      <li>주택가격 10억원: 초기보증료 1,500만원</li>
+      <li>주택가격 12억원: 초기보증료 1,800만원</li>
+    </ul>
+
+    <h3>연보증료 (0.75%/년)</h3>
+    <p>매년 주택가격의 0.75%를 납부하는 수수료로, 매월 1/12씩 대출잔액에 자동 가산됩니다. 5억원 주택 기준 연 375만원, 월 약 31만원이 대출잔액에 추가됩니다. 이는 실제 수령하는 연금액에서 빠져나가는 것이 아니라 대출잔액(나중에 집을 처분할 때 상환하는 금액)에 쌓이는 방식입니다.</p>
+
+    <div class="formula-block">
+      <strong>주택가격 5억원, 70세 가입, 20년 수령 시 총 보증료 추정</strong><br>
+      · 초기보증료: 5억원 × 1.5% = <strong>750만원</strong><br>
+      · 연보증료: 5억원 × 0.75% × 20년 = <strong>7,500만원</strong><br>
+      · 총 보증료(20년): 약 <strong>8,250만원</strong><br>
+      · 같은 기간 종신정액형 수령 총액: 약 3억 3,600만원 (월 140만원 × 240개월)<br>
+      · 총 보증료는 총 수령액의 약 24.5% 수준
+    </div>
+    <p>보증료가 높아 보일 수 있지만, 이는 장수 위험(집값보다 더 오래 살 경우 추가 손실 없음), 주택가격 하락 위험을 공사가 부담하는 대가입니다. 또한 사망 후 주택가격이 대출잔액보다 높으면 차액 전액을 상속인이 받게 됩니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금 신청 방법 — 단계별 가이드</h2>
+    <p>주택연금 가입은 한국주택금융공사(HF) 홈페이지 또는 가까운 은행 지점에서 신청할 수 있습니다.</p>
+    <h3>신청 절차 (총 약 3~4주 소요)</h3>
+    <ul class="seo-list">
+      <li><strong>1단계 — 온라인 상담/사전 확인</strong>: HF 홈페이지(hf.go.kr) 또는 고객센터(1688-8114)에서 예상 수령액 조회 및 가입 가능 여부 확인</li>
+      <li><strong>2단계 — 은행 방문 신청</strong>: 취급 은행(국민·우리·신한·하나·농협 등) 방문, 주민등록등본·등기부등본·주택 감정 의뢰</li>
+      <li><strong>3단계 — 주택 감정 평가</strong>: 공사 지정 감정평가법인의 현장 감정 (10~15일 소요, 비용 약 30~50만원은 가입자 부담)</li>
+      <li><strong>4단계 — 보증 심사 및 승인</strong>: 한국주택금융공사의 보증 심사 (3~5 영업일)</li>
+      <li><strong>5단계 — 계약 체결 및 등기</strong>: 저당권 설정 등기 후 첫 연금 지급 시작</li>
+    </ul>
+    <h3>필요 서류</h3>
+    <ul class="seo-list">
+      <li>신분증 (주민등록증 또는 운전면허증)</li>
+      <li>주민등록등본 (부부 동일 주소 확인용)</li>
+      <li>가족관계증명서 (배우자 포함 가족 확인)</li>
+      <li>등기부등본 (주택 소유 확인)</li>
+      <li>건축물대장 (주택 종류 확인)</li>
+      <li>재산세 납부 확인서 (선택)</li>
+    </ul>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금 장단점 — 가입 전 반드시 알아야 할 사항</h2>
+    <h3>주택연금의 장점</h3>
+    <ul class="seo-list">
+      <li><strong>평생 주거 보장</strong>: 집을 담보로 맡겨도 사망 전까지 계속 거주 가능</li>
+      <li><strong>장수 위험 대비</strong>: 아무리 오래 살아도 연금이 끊기지 않음 (종신형)</li>
+      <li><strong>국가 보증</strong>: 한국주택금융공사(공공기관)가 보증하여 금융사 파산 위험 없음</li>
+      <li><strong>비과세 혜택</strong>: 연금 수령액 전액 소득세 비과세</li>
+      <li><strong>이자비용 소득공제</strong>: 연 최대 200만원 공제 (이자비용의 30%)</li>
+      <li><strong>상속 보호</strong>: 집값이 대출잔액보다 많으면 차액 상속인에게 지급</li>
+      <li><strong>초과 손실 없음</strong>: 집값보다 대출잔액이 많아도 추가 청구 없음</li>
+    </ul>
+    <h3>주택연금의 단점</h3>
+    <ul class="seo-list">
+      <li><strong>집값 상승 이익 상실</strong>: 가입 후 집값이 크게 오르더라도 추가 수령 없음</li>
+      <li><strong>보증료 부담</strong>: 초기 1.5% + 연 0.75%로 장기 가입 시 상당한 비용</li>
+      <li><strong>주택 처분 제한</strong>: 가입 중 주택 매도·임대 어려움</li>
+      <li><strong>감정 평가 비용</strong>: 가입 시 30~50만원 감정 평가비 부담</li>
+      <li><strong>부동산 과세 적용</strong>: 가입 중에도 재산세, 종부세 부과</li>
+    </ul>
+
+    <h3>주택연금이 유리한 경우</h3>
+    <ul class="seo-list">
+      <li>국민연금·퇴직금만으로 생활비가 부족한 60~70대</li>
+      <li>자녀에게 집을 물려줄 의사가 없거나 상속 분쟁을 피하고 싶은 경우</li>
+      <li>주거 안정성을 유지하면서 현금 흐름이 필요한 경우</li>
+      <li>집값 상승보다 안정적 생활이 더 중요한 경우</li>
+      <li>건강 이상으로 이사가 어려운 고령 1인 가구</li>
+    </ul>
+    <h3>주택연금이 불리한 경우</h3>
+    <ul class="seo-list">
+      <li>충분한 금융자산이 있어 생활비 걱정이 없는 경우</li>
+      <li>주택 가격이 크게 오를 것으로 예상되는 지역</li>
+      <li>자녀에게 주택을 상속할 계획이 있는 경우</li>
+      <li>단기간 내 다른 주거지로 이사 계획이 있는 경우</li>
+    </ul>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금 우대형 — 저소득층 추가 혜택</h2>
+    <p>한국주택금융공사는 저소득·취약계층을 위한 <strong>우대형 주택연금</strong>을 운영하고 있습니다. 일반형 대비 최대 20% 높은 월 수령액을 제공합니다.</p>
+    <h3>우대형 가입 조건 (2026년 기준)</h3>
+    <ul class="seo-list">
+      <li>부부 기준 1억5천만원 미만 주택 (2024년부터 2억원으로 상향 예정)</li>
+      <li>기초연금 수급자 또는 기초생활수급자</li>
+      <li>차상위계층 확인서 보유자</li>
+    </ul>
+    <h3>우대형 혜택</h3>
+    <ul class="seo-list">
+      <li>일반형 대비 월 수령액 최대 20% 증가</li>
+      <li>초기보증료 면제 (연보증료 0.75%는 동일)</li>
+      <li>주택 유형 제한 없음 (단독·다세대 등 모두 가능)</li>
+    </ul>
+
+    <h3>부부 수령 보장</h3>
+    <p>주택연금의 가장 큰 특징 중 하나는 <strong>부부 모두 사망할 때까지 동일 금액을 지급</strong>한다는 점입니다. 가입자가 먼저 사망해도 배우자가 계속 같은 금액의 연금을 수령하며, 이사 등을 통해 주택이 처분되는 경우에도 연금 수령권을 보장받습니다. 이는 배우자의 노후 생활 안정에 매우 중요한 요소입니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>주택연금 계산 공식 — 지급률표 기반 산출 방법</h2>
+    <p>주택연금 월 수령액은 한국주택금융공사가 발표하는 <strong>월지급금 지급률표</strong>를 기반으로 산출됩니다. 지급률은 나이와 지급 방식에 따라 결정되며, 여기에 주택가격(상한 12억원)을 곱하여 월 수령액을 계산합니다.</p>
+    <div class="formula-block">
+      <strong>종신정액형 월 수령액 = 주택가격(만원) × 나이별 지급률(%)</strong><br><br>
+      <strong>나이별 주요 지급률 (2026년 기준, 종신정액형)</strong><br>
+      · 55세: 0.0467% (주택 5억 = 233,500원/월)<br>
+      · 60세: 0.0612% (주택 5억 = 306,000원/월)<br>
+      · 65세: 0.0810% (주택 5억 = 405,000원/월)<br>
+      · 70세: 0.1121% (주택 5억 = 560,500원/월)<br>
+      · 75세: 0.1570% (주택 5억 = 785,000원/월)<br>
+      · 80세: 0.2210% (주택 5억 = 1,105,000원/월)
+    </div>
+    <p class="table-note">※ 위 지급률은 2026년 추정치입니다. 실제 지급률은 금리 환경 및 주택금융공사 고시에 따라 변동됩니다.</p>
+
+    <h3>지급률 결정 요인</h3>
+    <ul class="seo-list">
+      <li><strong>기대수명</strong>: 나이가 많을수록 기대수명이 짧아 지급률 상승</li>
+      <li><strong>이자율</strong>: 기준금리 상승 시 지급률 하락 (부채 증가 속도 고려)</li>
+      <li><strong>주택가격 전망</strong>: 주택 가격 상승 전망 시 지급률 소폭 상향 가능</li>
+      <li><strong>지급 방식</strong>: 확정기간형은 종신형보다 지급률 높음</li>
+    </ul>
+  </section>
+
+  <section class="seo-section">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <h3>Q. 주택연금 받다가 집값이 올라도 수령액이 늘어나지 않나요?</h3>
+    <p>A. 네, 가입 당시 감정평가액 기준으로 수령액이 확정되므로 이후 집값이 올라도 수령액은 변하지 않습니다. 반대로 집값이 내려가도 수령액은 줄어들지 않습니다.</p>
+
+    <h3>Q. 주택연금 받으면서 집을 리모델링해도 되나요?</h3>
+    <p>A. 소규모 수선(내부 인테리어 등)은 가능하지만, 주택의 구조 변경이나 증·개축을 하려면 한국주택금융공사의 사전 승인이 필요합니다.</p>
+
+    <h3>Q. 주택연금 도중 요양원에 입소하면?</h3>
+    <p>A. 연속 1년 이상 해당 주택에 거주하지 않으면 계약이 해지될 수 있습니다. 단, 질병·요양 등 부득이한 사정은 인정 사유에 해당하므로 공사와 협의하면 대부분 유지가 가능합니다.</p>
+
+    <h3>Q. 집에 전세 세입자가 있어도 가입할 수 있나요?</h3>
+    <p>A. 전세 세입자가 있는 경우 세입자 퇴거 후 가입 가능합니다. 전세 계약 기간이 남은 경우 만료 후 신청해야 합니다.</p>
+
+    <h3>Q. 주택연금 해지 후 재가입이 가능한가요?</h3>
+    <p>A. 가능합니다. 다만 재가입 시점의 나이와 주택가격을 기준으로 수령액이 새롭게 산정되며, 초기보증료도 다시 납부해야 합니다.</p>
+
+    <h3>Q. 2주택자도 주택연금에 가입할 수 있나요?</h3>
+    <p>A. 2주택자도 가입이 가능하지만, 가입일로부터 3년 이내에 1주택을 처분해야 하는 조건이 있습니다. 3년 내 미처분 시 계약이 해지됩니다.</p>
+
+    <h3>Q. 부모님이 주택연금에 가입하셨는데 자녀가 같이 살아도 되나요?</h3>
+    <p>A. 1세대 1주택 요건에서 '1세대'는 가입자·배우자를 기준으로 하므로, 동일 주소에 자녀 세대가 있어도 가입이 가능합니다. 단, 자녀 명의의 또 다른 주택이 있는 경우 조건이 달라질 수 있습니다.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>본 계산기는 참고용이며 실제 수령액과 다를 수 있습니다. 정확한 정보는 <a href="https://www.hf.go.kr" target="_blank" rel="noopener">한국주택금융공사</a>에서 확인하세요.</p>
+    <p><a href="index.html">홈</a> · <a href="about.html">소개</a> · <a href="privacy.html">개인정보처리방침</a></p>
+  </div>
+</footer>
+
+<script>
+  let paymentType = 'lifetime_flat';
+
+  function selectPayment(type, el) {
+    paymentType = type;
+    document.querySelectorAll('.payment-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    const fixedGroup = document.getElementById('fixedTermGroup');
+    fixedGroup.style.display = (type === 'fixed') ? 'block' : 'none';
+  }
+
+  // 2026년 한국주택금융공사 종신정액형 나이별 지급률 (월 수령액 / 주택가격)
+  // 단위: 1만원당 월 수령액(원)
+  const RATE_TABLE = {
+    55: 4.67, 56: 4.88, 57: 5.10, 58: 5.34, 59: 5.60,
+    60: 5.88, 61: 6.18, 62: 6.51, 63: 6.86, 64: 7.25,
+    65: 7.67, 66: 8.12, 67: 8.62, 68: 9.16, 69: 9.75,
+    70: 10.40, 71: 11.10, 72: 11.85, 73: 12.68, 74: 13.58,
+    75: 14.56, 76: 15.64, 77: 16.81, 78: 18.10, 79: 19.51,
+    80: 21.06, 81: 22.75, 82: 24.62, 83: 26.68, 84: 28.95,
+    85: 31.44, 86: 34.19, 87: 37.25, 88: 40.68, 89: 44.55,
+    90: 48.92
+  };
+
+  function getRate(age) {
+    age = Math.min(Math.max(age, 55), 90);
+    return RATE_TABLE[age] || RATE_TABLE[90];
+  }
+
+  // 지급방식별 보정 계수
+  const TYPE_FACTOR = {
+    lifetime_flat: 1.000,  // 종신정액형 기준
+    lifetime_inc:  0.700,  // 종신증가형: 초기 70% (매년 3% 증가)
+    lifetime_dec:  1.250,  // 종신감소형: 초기 125% (매년 3% 감소)
+    fixed:         null    // 확정기간형: 별도 계산
+  };
+
+  // 확정기간형 보정 계수 (기간이 짧을수록 수령액 증가)
+  const FIXED_FACTOR = { 10: 2.00, 15: 1.60, 20: 1.35, 30: 1.10 };
+
+  function fmt(num) {
+    return Math.round(num).toLocaleString('ko-KR') + '원';
+  }
+
+  function fmtMan(num) {
+    return Math.round(num / 10000).toLocaleString('ko-KR') + '만원';
+  }
+
+  function calculate() {
+    const ownerAge = parseInt(document.getElementById('ownerAge').value) || 65;
+    const spouseAge = parseInt(document.getElementById('spouseAge').value) || 0;
+    const housePriceMan = parseInt(document.getElementById('housePrice').value) || 50000; // 만원
+    const houseType = document.getElementById('houseType').value;
+    const lifeExpect = parseInt(document.getElementById('lifeExpect').value) || 84;
+    const fixedTerm = parseInt(document.getElementById('fixedTerm').value) || 20;
+
+    // 주택가격 상한 12억원 = 120,000만원
+    const cappedPriceMan = Math.min(housePriceMan, 120000);
+
+    // 계산 기준 나이: 부부 중 연소자
+    const calcAge = (spouseAge > 0) ? Math.min(ownerAge, spouseAge) : ownerAge;
+    const safeAge = Math.max(calcAge, 55);
+
+    // 종신정액형 기준 월 수령액 계산
+    // getRate 반환값: 1만원당 월 수령액(원)
+    const baseRate = getRate(safeAge);
+    const baseMonthly = cappedPriceMan * baseRate; // 원 단위
+
+    // 선택 지급방식 월 수령액
+    let selectedMonthly;
+    if (paymentType === 'fixed') {
+      const ff = FIXED_FACTOR[fixedTerm] || 1.35;
+      selectedMonthly = baseMonthly * ff;
+    } else {
+      selectedMonthly = baseMonthly * TYPE_FACTOR[paymentType];
+    }
+
+    // 보증료 계산
+    const housePriceWon = cappedPriceMan * 10000;
+    const initFee = housePriceWon * 0.015;
+    const annualFee = housePriceWon * 0.0075;
+
+    // 총 수령 예상액 (기대수명 기준, 종신정액형)
+    const remainYears = Math.max(lifeExpect - safeAge, 1);
+    const totalLifetime = baseMonthly * remainYears * 12;
+    const netTotal = totalLifetime - initFee;
+
+    // 주택 유형 텍스트
+    const typeText = { apt: '아파트', single: '단독주택', multi: '다세대/연립' };
+
+    // 지급방식 텍스트
+    const payTypeText = {
+      lifetime_flat: '종신정액형',
+      lifetime_inc: '종신증가형',
+      lifetime_dec: '종신감소형',
+      fixed: `확정기간형(${fixedTerm}년)`
+    };
+
+    // 결과 표시
+    document.getElementById('rAge').textContent = `${safeAge}세 (${(spouseAge > 0 && spouseAge < ownerAge) ? '배우자' : '본인'} 기준)`;
+    document.getElementById('rPrice').textContent = fmtMan(cappedPriceMan * 10000) + (housePriceMan > 120000 ? ' (12억원 상한 적용)' : '');
+    document.getElementById('rType').textContent = typeText[houseType];
+    document.getElementById('rPayType').textContent = payTypeText[paymentType];
+    document.getElementById('rMonthly').textContent = fmt(selectedMonthly);
+    document.getElementById('rMonthly2').textContent = fmt(selectedMonthly);
+    document.getElementById('rAnnual').textContent = `연간 ${fmt(selectedMonthly * 12)}`;
+    document.getElementById('rYearly').textContent = fmt(selectedMonthly * 12);
+    document.getElementById('rInitFee').textContent = fmt(initFee);
+    document.getElementById('rAnnualFee').textContent = fmt(annualFee);
+    document.getElementById('rInitFee2').textContent = fmt(initFee);
+    document.getElementById('rRemainYears').textContent = `${remainYears}년 (기대수명 ${lifeExpect}세 기준)`;
+    document.getElementById('rTotalLifetime').textContent = fmt(totalLifetime);
+    document.getElementById('rNetTotal').textContent = fmt(netTotal);
+
+    // 비교표
+    const tbody = document.getElementById('compareBody');
+    tbody.innerHTML = '';
+
+    const compareModes = [
+      { key: 'lifetime_flat', label: '종신정액형', factor: 1.000, note: '평생 동일 금액' },
+      { key: 'lifetime_inc', label: '종신증가형', factor: 0.700, note: '초기 낮고 매년 3% 증가' },
+      { key: 'lifetime_dec', label: '종신감소형', factor: 1.250, note: '초기 높고 매년 3% 감소' },
+      { key: 'fixed_10', label: '확정기간(10년)', factor: FIXED_FACTOR[10], note: '10년 한정 고수령' },
+      { key: 'fixed_20', label: '확정기간(20년)', factor: FIXED_FACTOR[20], note: '20년 한정 수령' },
+      { key: 'fixed_30', label: '확정기간(30년)', factor: FIXED_FACTOR[30], note: '30년 한정 수령' },
+    ];
+
+    compareModes.forEach(mode => {
+      const monthly = baseMonthly * mode.factor;
+      const yearly = monthly * 12;
+      const total = monthly * remainYears * 12;
+      const tr = document.createElement('tr');
+      const isBest = (mode.key === paymentType || (paymentType === 'fixed' && mode.key === `fixed_${fixedTerm}`));
+      if (isBest) tr.classList.add('row-best');
+      tr.innerHTML = `
+        <td>${mode.label}${isBest ? ' ✓' : ''}</td>
+        <td>${fmt(monthly)}</td>
+        <td>${fmt(yearly)}</td>
+        <td>${fmt(total)}</td>
+        <td style="font-size:12px;color:#666;">${mode.note}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // 페이지 로드 시 자동 계산
+  window.addEventListener('DOMContentLoaded', calculate);
+</script>
+
+</body>
+</html>

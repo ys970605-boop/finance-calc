@@ -1,0 +1,9 @@
+shorts/
+node_modules/
+.git/
+research/
+.tmp_pydeps/
+*.mp4
+*.mov
+*.avi
+*.mkv

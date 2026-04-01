@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 장기렌트 vs 리스 비교 계산기 - 총비용·월평균·세금혜택 비교 | calcmoney.kr</title>
+  <meta name="description" content="2026년 기준 장기렌트와 운용리스·금융리스의 총비용, 월평균비용, 소유권, 세금혜택을 자동 비교합니다. 어떤 방식이 유리한지 결론까지 제시합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/lease-vs-rent">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 장기렌트 vs 리스 비교 계산기 - 총비용·세금혜택 완전 비교">
+  <meta property="og:description" content="장기렌트, 운용리스, 금융리스 총비용·월평균비용·세금혜택을 자동 비교. 어떤 게 유리한지 결론 제시.">
+  <meta property="og:url" content="https://calcmoney.kr/lease-vs-rent">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "장기렌트와 리스의 가장 큰 차이점은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "장기렌트는 렌터카 회사가 차량을 소유하고 이용자가 빌려 타는 방식으로, 보험·세금·정비가 월납입금에 포함됩니다. 리스는 금융회사가 차량을 구매해 이용자에게 빌려주는 방식으로, 운용리스는 반납, 금융리스는 잔존가치 정산 후 소유권 이전이 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "운용리스와 금융리스의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "운용리스는 계약 종료 시 차량을 반납하는 방식으로, 잔존가치 리스크를 리스사가 부담합니다. 금융리스는 계약 종료 시 잔존가치를 지불하고 차량을 인수하거나 반납할 수 있으며, 자산으로 계상해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "법인이 리스를 이용할 때 세금 혜택은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "법인은 운용리스 월납입금 전액을 비용으로 처리할 수 있습니다. 금융리스는 이자 부분만 비용 처리됩니다. 2026년 기준 업무용 승용차 비용 한도는 연 1,500만원(임직원 전용보험 가입 시 연 2,000만원)이 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "개인사업자도 리스·렌트 비용을 공제받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "개인사업자도 업무용 차량의 리스·렌트 비용을 경비로 처리할 수 있습니다. 다만 2026년 기준 업무용 승용차 비용 연 1,500만원 한도(임직원 전용보험 가입 시 2,000만원) 규정이 적용됩니다. 운행일지 작성으로 업무 사용 비율 입증이 필요합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "장기렌트는 보험이 포함되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 장기렌트는 자동차보험료, 자동차세, 정기점검·소모품 교환 등이 월납입금에 포함됩니다. 리스는 보험과 세금이 별도로 이용자 부담입니다. 따라서 렌트 월납입금이 리스보다 높지만, 별도 비용이 없습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "계약 종료 후 차량을 구매할 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "장기렌트는 계약 종료 후 렌터카 회사에 반납이 원칙이며, 일부 상품은 선매입 옵션을 제공합니다. 금융리스는 잔존가치를 지불하고 소유권 이전이 가능합니다. 운용리스는 반납이 원칙이나 일부 상품은 낮은 가격에 매입 가능한 경우도 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중도해지 시 패널티는 얼마나 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "장기렌트와 리스 모두 중도해지 위약금이 상당합니다. 일반적으로 잔여 계약기간의 월납입금의 30~50%를 위약금으로 부과합니다. 계약 초기에 해지할수록 위약금이 높습니다. 계약 전 중도해지 조건을 반드시 확인해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "어떤 방식이 총비용 면에서 가장 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "일반적으로 총비용만 보면: 할부 구매 < 금융리스 < 운용리스 ≒ 장기렌트 순입니다. 하지만 보험·세금·정비 등 부대비용 포함 실질 비용과 세금 혜택, 잔존가치 리스크, 차량 교체 유연성 등을 종합하면 개인 상황에 따라 달라집니다. 법인·개인사업자는 세금 혜택이 큰 운용리스가 유리한 경우가 많습니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.88em; }
+    .compare-table th { background: #f1f3f4; padding: 10px 12px; text-align: center; font-weight: 700; color: #444; border: 1px solid #e0e0e0; }
+    .compare-table td { padding: 9px 12px; border: 1px solid #e0e0e0; text-align: center; }
+    .compare-table tr:hover td { background: #f9f9f9; }
+    .compare-table td:first-child { text-align: left; font-weight: 600; color: #333; }
+    .best-col { background: #e8f0fe !important; }
+    .winner-badge {
+      display: inline-block;
+      background: #1a73e8;
+      color: white;
+      font-size: 0.78em;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 4px;
+    }
+    .conclusion-box {
+      background: linear-gradient(135deg, #e8f0fe, #f0f4ff);
+      border: 2px solid #4285f4;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .conclusion-box h4 { margin: 0 0 10px; color: #1a73e8; font-size: 1em; }
+    .conclusion-text { font-size: 1em; font-weight: 700; color: #1a73e8; }
+    .cost-cards { display: flex; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
+    .cost-card {
+      flex: 1;
+      min-width: 120px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      background: #fafafa;
+    }
+    .cost-card.highlight { border-color: #4285f4; background: #e8f0fe; }
+    .cost-card .clabel { font-size: 0.82em; color: #666; margin-bottom: 4px; }
+    .cost-card .cvalue { font-size: 1.3em; font-weight: 800; color: #1a73e8; }
+    .cost-card .csub { font-size: 0.78em; color: #888; margin-top: 4px; }
+    .input-section-title {
+      font-size: 0.9em; font-weight: 700; color: #666;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin: 20px 0 8px; padding-bottom: 6px;
+      border-bottom: 2px solid #e8f0fe;
+    }
+    .section-divider { border: none; border-top: 2px dashed #e0e0e0; margin: 22px 0 18px; }
+    .tax-benefit-box {
+      background: #fff8e1;
+      border: 1px solid #f9a825;
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 12px;
+      font-size: 0.88em;
+      color: #555;
+    }
+    .tax-benefit-box strong { color: #f57f17; }
+    @media (max-width: 600px) {
+      .cost-cards { flex-direction: column; }
+      .compare-table { font-size: 0.78em; }
+      .compare-table th, .compare-table td { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>장기렌트 vs 리스 비교 계산기</h1>
+        <p class="desc">차량 정보와 계약 조건을 입력하면 장기렌트·운용리스·금융리스의 총비용과 월평균비용을 비교하고, 어떤 방식이 유리한지 결론을 제시합니다.</p>
+
+        <!-- 차량 기본 정보 -->
+        <div class="input-section-title">차량 기본 정보</div>
+        <div class="form-group">
+          <label>차량가격 <span class="hint">만원 단위</span></label>
+          <input type="number" id="carPrice" placeholder="예: 4000 (4천만원)" value="4000" min="0">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>계약기간 <span class="hint">개월</span></label>
+            <select id="contractMonths">
+              <option value="24">24개월</option>
+              <option value="36" selected>36개월</option>
+              <option value="48">48개월</option>
+              <option value="60">60개월</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>이용자 유형</label>
+            <select id="userType">
+              <option value="personal">개인</option>
+              <option value="business">개인사업자/법인</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 장기렌트 조건 -->
+        <hr class="section-divider">
+        <div class="input-section-title">장기렌트 조건</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>보증금 <span class="hint">만원</span></label>
+            <input type="number" id="rentDeposit" placeholder="예: 300" value="300" min="0">
+          </div>
+          <div class="form-group">
+            <label>월납입금 <span class="hint">만원 (보험·세금 포함)</span></label>
+            <input type="number" id="rentMonthly" placeholder="예: 75" value="75" min="0">
+          </div>
+        </div>
+        <p style="font-size:0.82em;color:#888;margin:-8px 0 12px;">장기렌트는 보험료·자동차세·정비비가 월납입금에 포함됩니다.</p>
+
+        <!-- 리스 공통 조건 -->
+        <hr class="section-divider">
+        <div class="input-section-title">리스 공통 조건</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>보증금 <span class="hint">만원</span></label>
+            <input type="number" id="leaseDeposit" placeholder="예: 400" value="400" min="0">
+          </div>
+          <div class="form-group">
+            <label>잔존가치율 <span class="hint">% (계약 종료 후 차량가치)</span></label>
+            <input type="number" id="residualRate" placeholder="예: 40" value="40" step="1" min="0" max="80">
+          </div>
+        </div>
+
+        <!-- 운용리스 -->
+        <div class="form-group">
+          <label>운용리스 월납입금 <span class="hint">만원 (보험·세금 별도)</span></label>
+          <input type="number" id="opLeaseMonthly" placeholder="예: 65" value="65" min="0">
+        </div>
+
+        <!-- 금융리스 -->
+        <div class="form-group">
+          <label>금융리스 월납입금 <span class="hint">만원 (보험·세금 별도)</span></label>
+          <input type="number" id="finLeaseMonthly" placeholder="예: 60" value="60" min="0">
+        </div>
+
+        <!-- 리스 부대비용 (보험+세금) -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>연간 보험료 <span class="hint">만원 (리스 별도 부담)</span></label>
+            <input type="number" id="annualInsurance" placeholder="예: 80" value="80" min="0">
+          </div>
+          <div class="form-group">
+            <label>연간 자동차세 <span class="hint">만원</span></label>
+            <input type="number" id="annualCarTax" placeholder="예: 25" value="25" min="0">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">비교 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총비용 카드 -->
+          <div class="cost-cards" id="costCards"></div>
+
+          <!-- 비교 테이블 -->
+          <div style="font-weight:700;margin:16px 0 8px;color:#333;">항목별 비교</div>
+          <table class="compare-table" id="compareTable">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>장기렌트</th>
+                <th>운용리스</th>
+                <th>금융리스</th>
+              </tr>
+            </thead>
+            <tbody id="compareBody"></tbody>
+          </table>
+
+          <!-- 세금 혜택 박스 -->
+          <div class="tax-benefit-box" id="taxBox"></div>
+
+          <!-- 결론 -->
+          <div class="conclusion-box" id="conclusionBox">
+            <h4>종합 결론</h4>
+            <div class="conclusion-text" id="conclusionText"></div>
+            <div style="font-size:0.85em;color:#555;margin-top:8px;" id="conclusionSub"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">장기렌트 vs 리스 핵심 용어 정리</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">장기렌트 (Long-term Car Rental)</h3>
+        <p>장기렌트는 렌터카 회사가 차량을 소유하고, 이용자는 일정 기간(보통 12~60개월) 동안 월납입금을 내고 차량을 이용하는 방식입니다. 자동차보험, 자동차세, 정기점검, 소모품 교환 등이 월납입금에 포함되어 있어 별도 관리 부담이 없습니다. 차량 소유권은 렌터카 회사에 있으며, 계약 종료 후 반납이 원칙입니다. 이용자는 별도의 차량 등록·취득세 납부가 불필요합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">운용리스 (Operating Lease)</h3>
+        <p>운용리스는 리스회사(캐피탈사)가 차량을 구매해 이용자에게 빌려주는 방식으로, 계약 종료 후 잔존가치를 보장하는 반납 방식입니다. 차량 감가상각 리스크를 리스사가 부담하므로 이용자는 잔존가치 변동에 영향받지 않습니다. 보험료와 자동차세는 이용자가 별도 부담합니다. 법인·개인사업자는 월납입금 전액을 비용으로 처리할 수 있어 세금 혜택이 큽니다. 2026년 기준 업무용 승용차 비용 연간 한도 1,500만원(임직원 전용보험 가입 시 2,000만원)이 적용됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">금융리스 (Finance Lease)</h3>
+        <p>금융리스는 이용자가 실질적인 위험과 혜택을 모두 부담하는 방식으로, 계약 종료 후 잔존가치를 지불하고 소유권을 이전받을 수 있습니다. 회계상 자산과 부채로 계상해야 하며(IFRS 16 적용), 법인의 경우 이자 부분만 비용 처리됩니다. 장기적으로 차량을 소유하려는 경우 유리합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">잔존가치 (Residual Value)</h3>
+        <p>리스 계약 종료 시 차량의 예상 잔여 가치입니다. 운용리스에서는 리스사가 잔존가치를 보장하므로 이용자 부담 없음. 금융리스에서는 이용자가 잔존가치를 지불하고 차량을 인수하거나, 시장에 매각하여 차액을 정산합니다. 잔존가치는 차량 연식, 주행거리, 차종에 따라 다르며 보통 차량가격의 30~50%입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">보증금 (Deposit)</h3>
+        <p>계약 시 선납하는 금액으로, 계약 종료 후 반환됩니다. 보증금을 높일수록 월납입금이 낮아집니다. 보통 차량가격의 10~30% 수준이며, 보증금 납입 시 실질적인 이자 기회비용이 발생한다는 점도 고려해야 합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 업무용 승용차 비용 한도</h3>
+        <p>2016년부터 도입된 업무용 승용차 비용 제한 규정에 따라, 법인·개인사업자의 업무용 승용차 관련 비용(감가상각비, 리스료, 렌트료 등)은 연간 1,500만원 한도로 경비 처리됩니다. 다만 임직원 전용 자동차보험에 가입하면 연간 2,000만원까지 인정됩니다. 초과 금액은 다음 연도 이후로 이월하여 경비 처리할 수 있습니다. 이 규정은 개인용 승용차를 업무용으로 위장하는 탈세를 방지하기 위해 도입되었습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">총비용 계산 방법</h3>
+        <p><strong>장기렌트 총비용</strong> = 보증금 + (월납입금 × 계약기간) — 보증금 반환분. 실질 총비용 = 월납입금 × 계약기간 (보증금은 반환).</p>
+        <p><strong>운용리스 총비용</strong> = 보증금 + (월납입금 × 계약기간) + (연간 보험료 + 자동차세) × 계약연수 — 보증금 반환분. 잔존가치는 반납 시 이용자 부담 없음.</p>
+        <p><strong>금융리스 총비용</strong> = 보증금 + (월납입금 × 계약기간) + (연간 보험료 + 자동차세) × 계약연수 + 잔존가치(차량 인수 시) — 보증금 반환분. 차량을 반납하면 잔존가치 불필요.</p>
+
+        <details style="margin-top:16px;">
+          <summary>장기렌트의 장단점</summary>
+          <p><strong>장점:</strong> 보험·세금·정비 포함으로 관리 편리. 신차 교체 용이. 취득세 불필요. 개인신용에 따른 대출 한도 영향 없음.</p>
+          <p><strong>단점:</strong> 총비용이 가장 높은 편. 차량 소유권 없음. 중도해지 위약금 높음. 주행거리 초과 시 추가 비용 발생.</p>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary>운용리스의 장단점</summary>
+          <p><strong>장점:</strong> 법인·사업자 비용 처리 유리. 잔존가치 리스크 없음. 장기렌트 대비 월납입금 낮음. 신차 교체 용이.</p>
+          <p><strong>단점:</strong> 보험·세금 별도 부담. 소유권 없음. 중도해지 위약금 높음. 주행거리 초과 비용 발생.</p>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary>금융리스의 장단점</summary>
+          <p><strong>장점:</strong> 계약 종료 후 소유권 취득 가능. 운용리스 대비 월납입금 낮음. 잔존가치 변동에 따른 이익 가능.</p>
+          <p><strong>단점:</strong> 잔존가치 지불 부담. 법인 회계상 자산·부채 계상 필요. 이자만 비용 처리(운용리스 대비 세금 혜택 적음).</p>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary>어떤 경우에 어떤 방식이 유리한가?</summary>
+          <p><strong>장기렌트 추천:</strong> 관리 편의성 중시, 주행거리 많지 않은 개인, 보험료 걱정 없이 고정비로 관리하고 싶은 분.</p>
+          <p><strong>운용리스 추천:</strong> 법인·개인사업자로 세금 혜택 극대화 원하는 분, 2~3년마다 신차 교체 원하는 분, 잔존가치 걱정 없애고 싶은 분.</p>
+          <p><strong>금융리스 추천:</strong> 장기적으로 차량 소유 원하는 분, 잔존가치가 높게 유지될 것으로 예상되는 차종(인기 수입차 등), 할부 대신 리스로 차량 구매 원하는 분.</p>
+          <p><strong>할부 구매 vs 리스:</strong> 순수 총비용만 보면 할부 구매가 가장 저렴하나, 세금 혜택·유연성·관리 편의성을 고려하면 사업자는 리스가 유리한 경우가 많습니다.</p>
+        </details>
+      </div>
+
+      <!-- FAQ -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">자주 묻는 질문</h2>
+
+        <details>
+          <summary>장기렌트와 리스 중 무엇이 더 저렴한가요?</summary>
+          <p>월납입금만 보면 금융리스 &lt; 운용리스 &lt; 장기렌트 순서입니다. 하지만 리스는 보험료(연 70~100만원)와 자동차세가 별도로 발생합니다. 부대비용 포함 실질 비용 기준으로는 비슷하거나 장기렌트가 오히려 저렴한 경우도 있습니다. 또한 법인·사업자는 세금 공제 혜택을 적용하면 운용리스가 가장 유리합니다.</p>
+        </details>
+
+        <details>
+          <summary>주행거리 초과 시 추가 비용은?</summary>
+          <p>장기렌트와 리스 계약에는 연간 약정 주행거리가 있으며(보통 2만km/년), 초과 시 km당 50~100원의 추가 비용이 발생합니다. 연간 3만km 이상 운행한다면 주행거리 초과 비용을 반드시 계산에 포함해야 합니다. 계약 시 주행거리 조건을 높게 설정하면 월납입금이 올라갑니다.</p>
+        </details>
+
+        <details>
+          <summary>계약 기간 중 사고 나면 어떻게 되나요?</summary>
+          <p>장기렌트는 렌터카 회사의 보험으로 처리됩니다. 사고 이력이 생기면 계약 종료 후 이용자에게 감가상각 비용을 청구할 수 있습니다. 리스는 이용자가 직접 가입한 보험으로 처리하며, 사고 수리 후 차량 반납 시 원상복구 의무가 있습니다. 사고 이력 차량은 반납 시 추가 비용이 발생할 수 있습니다.</p>
+        </details>
+
+        <details>
+          <summary>법인차 번호판 의무화 규정은?</summary>
+          <p>2024년부터 법인 업무용 승용차에 연두색(하늘색) 전용 번호판 부착이 의무화되었습니다. 차량가격 8,000만원 이상 법인 승용차가 대상이며, 2026년 기준으로도 동일하게 적용됩니다. 번호판 의무화로 법인차의 사적 사용이 더욱 제한됩니다.</p>
+        </details>
+
+        <details>
+          <summary>개인사업자는 장기렌트 vs 리스 중 어느 게 유리한가요?</summary>
+          <p>개인사업자도 법인과 마찬가지로 업무용 차량 비용을 경비 처리할 수 있습니다. 운용리스의 경우 월납입금 전액(연 1,500만원 한도)을 경비로 처리할 수 있어 소득세 절감 효과가 큽니다. 종합소득세율이 높은 고소득 사업자일수록 리스의 세금 혜택이 더 커집니다. 다만 임직원 전용보험 가입 여부에 따라 한도가 달라지므로 세무사와 상담이 권장됩니다.</p>
+        </details>
+
+        <details>
+          <summary>리스 만료 후 재계약과 신차 교체 중 어느 게 유리한가요?</summary>
+          <p>리스 만료 후 선택지는: ①신차로 재계약, ②같은 차량 재리스(월납입금 크게 낮아짐), ③잔존가치 납부 후 인수(금융리스), ④반납입니다. 2~3년마다 신차 교체를 원한다면 짧은 계약 후 재계약이 유리합니다. 잔존가치가 시장가격보다 높게 책정된 경우 반납이 유리하고, 반대로 낮게 책정된 경우 인수 후 매각이 유리합니다.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>방식별 핵심 차이</h3>
+        <ul>
+          <li><strong>장기렌트</strong>: 보험·세금 포함, 소유권 없음</li>
+          <li><strong>운용리스</strong>: 보험·세금 별도, 반납 원칙</li>
+          <li><strong>금융리스</strong>: 보험·세금 별도, 잔존가치 납부 후 인수 가능</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>2026 세금 혜택 한도</h3>
+        <ul>
+          <li>업무용 승용차 비용 연 <strong>1,500만원</strong></li>
+          <li>임직원 전용보험 가입 시 <strong>2,000만원</strong></li>
+          <li>운용리스료: 전액 비용 처리</li>
+          <li>금융리스: 이자 부분만 비용</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="car-tax.html" class="related-link">자동차세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="housing-subscription.html" class="related-link">주택청약저축</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 실제 계약 조건은 금융회사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR');
+  const fmtMan = n => {
+    const man = Math.round(n);
+    if (man >= 10000) return (man / 10000).toFixed(2).replace(/\.?0+$/, '') + '억원';
+    return man.toLocaleString('ko-KR') + '만원';
+  };
+
+  function calculate() {
+    const carPrice        = parseFloat(document.getElementById('carPrice').value) || 0;
+    const contractMonths  = parseInt(document.getElementById('contractMonths').value) || 36;
+    const userType        = document.getElementById('userType').value;
+    const rentDeposit     = parseFloat(document.getElementById('rentDeposit').value) || 0;
+    const rentMonthly     = parseFloat(document.getElementById('rentMonthly').value) || 0;
+    const leaseDeposit    = parseFloat(document.getElementById('leaseDeposit').value) || 0;
+    const residualRate    = parseFloat(document.getElementById('residualRate').value) || 40;
+    const opLeaseMonthly  = parseFloat(document.getElementById('opLeaseMonthly').value) || 0;
+    const finLeaseMonthly = parseFloat(document.getElementById('finLeaseMonthly').value) || 0;
+    const annualInsurance = parseFloat(document.getElementById('annualInsurance').value) || 0;
+    const annualCarTax    = parseFloat(document.getElementById('annualCarTax').value) || 0;
+
+    if (carPrice <= 0) { alert('차량가격을 입력해주세요.'); return; }
+
+    const contractYears = contractMonths / 12;
+    const residualValue = carPrice * residualRate / 100; // 잔존가치 (만원)
+    const annualExtra   = annualInsurance + annualCarTax; // 리스 연간 부대비용
+
+    // ---- 장기렌트 총비용 ----
+    const rentTotal = rentMonthly * contractMonths; // 보증금 반환 가정, 월납입×기간
+    const rentMonthAvg = rentTotal / contractMonths;
+
+    // ---- 운용리스 총비용 ----
+    const opLeaseTotal = opLeaseMonthly * contractMonths + annualExtra * contractYears;
+    const opLeaseMonthAvg = opLeaseTotal / contractMonths;
+
+    // ---- 금융리스 총비용 (차량 인수 시) ----
+    const finLeaseTotal = finLeaseMonthly * contractMonths + annualExtra * contractYears + residualValue;
+    const finLeaseMonthAvg = finLeaseTotal / contractMonths;
+
+    // ---- 금융리스 총비용 (반납 시) ----
+    const finLeaseReturnTotal = finLeaseMonthly * contractMonths + annualExtra * contractYears;
+    const finLeaseReturnMonthAvg = finLeaseReturnTotal / contractMonths;
+
+    // 최저 총비용 결정
+    const costs = [
+      { name: '장기렌트', total: rentTotal, monthly: rentMonthAvg },
+      { name: '운용리스', total: opLeaseTotal, monthly: opLeaseMonthAvg },
+      { name: '금융리스(인수)', total: finLeaseTotal, monthly: finLeaseMonthAvg },
+      { name: '금융리스(반납)', total: finLeaseReturnTotal, monthly: finLeaseReturnMonthAvg },
+    ];
+    const minTotal = Math.min(...costs.map(c => c.total));
+    const winner = costs.find(c => c.total === minTotal);
+
+    // ---- 세금 혜택 계산 ----
+    const taxLimitPerYear = 1500; // 만원
+    const taxLimitEnhanced = 2000; // 임직원 전용보험
+    let taxSaving = 0;
+    let taxHtml = '';
+    if (userType === 'business') {
+      // 운용리스 연간 비용
+      const opLeaseAnnual = opLeaseMonthly * 12 + annualExtra;
+      const deductible = Math.min(opLeaseAnnual, taxLimitPerYear);
+      // 예시 세율 24% (소득세 누진 중간값)
+      taxSaving = deductible * 0.24 * contractYears;
+      taxHtml = `<strong>사업자 세금 혜택 (운용리스 기준)</strong><br>
+        연간 경비 처리 가능액: <strong>${fmtMan(deductible)}</strong>/년 (한도 ${taxLimitPerYear}만원 적용)<br>
+        ${contractYears}년간 예상 절세액 (세율 24% 가정): <strong style="color:#f57f17">${fmtMan(taxSaving)}</strong><br>
+        임직원 전용보험 가입 시 한도 ${taxLimitEnhanced}만원으로 확대 가능`;
+    } else {
+      taxHtml = '개인 이용자는 별도 세금 공제 혜택이 없습니다. 사업자로 전환 시 운용리스의 세금 혜택을 받을 수 있습니다.';
+    }
+    document.getElementById('taxBox').innerHTML = taxHtml;
+
+    // ---- 비용 카드 렌더링 ----
+    const cardItems = [
+      { label: '장기렌트 총비용', value: rentTotal, sub: `월평균 ${fmtMan(rentMonthAvg)}` },
+      { label: '운용리스 총비용', value: opLeaseTotal, sub: `월평균 ${fmtMan(opLeaseMonthAvg)}` },
+      { label: '금융리스 총비용(인수)', value: finLeaseTotal, sub: `월평균 ${fmtMan(finLeaseMonthAvg)}` },
+    ];
+    const minCardTotal = Math.min(...cardItems.map(c => c.value));
+    let cardsHtml = '';
+    cardItems.forEach(c => {
+      const isBest = c.value === minCardTotal;
+      cardsHtml += `<div class="cost-card ${isBest ? 'highlight' : ''}">
+        <div class="clabel">${c.label}${isBest ? '<span class="winner-badge">최저</span>' : ''}</div>
+        <div class="cvalue">${fmtMan(c.value)}</div>
+        <div class="csub">${c.sub}</div>
+      </div>`;
+    });
+    document.getElementById('costCards').innerHTML = cardsHtml;
+
+    // ---- 비교 테이블 렌더링 ----
+    const rows = [
+      ['보증금', fmtMan(rentDeposit) + ' (반환)', fmtMan(leaseDeposit) + ' (반환)', fmtMan(leaseDeposit) + ' (반환)'],
+      ['월납입금', fmtMan(rentMonthly), fmtMan(opLeaseMonthly), fmtMan(finLeaseMonthly)],
+      ['보험·세금', '포함', `별도 ${fmtMan(annualExtra)}/년`, `별도 ${fmtMan(annualExtra)}/년`],
+      ['잔존가치', '해당없음', '반납 (이용자 부담 없음)', `인수 시 ${fmtMan(residualValue)} 납부`],
+      ['총비용(실질)', fmtMan(rentTotal), fmtMan(opLeaseTotal), fmtMan(finLeaseTotal)],
+      ['월평균비용', fmtMan(rentMonthAvg), fmtMan(opLeaseMonthAvg), fmtMan(finLeaseMonthAvg)],
+      ['소유권', '없음 (렌터카사)', '없음 (리스사)', '인수 후 취득 가능'],
+      ['사업자 세금처리', '월납입금 전액', '월납입금 전액', '이자분만 가능'],
+      ['주요 장점', '관리 편리', '잔존가치 안전', '소유권 취득'],
+    ];
+    let tableHtml = '';
+    rows.forEach(r => {
+      tableHtml += `<tr>
+        <td>${r[0]}</td>
+        <td>${r[1]}</td>
+        <td>${r[2]}</td>
+        <td>${r[3]}</td>
+      </tr>`;
+    });
+    document.getElementById('compareBody').innerHTML = tableHtml;
+
+    // ---- 결론 ----
+    let conclusionText = '';
+    let conclusionSub = '';
+    if (userType === 'business') {
+      if (opLeaseTotal <= rentTotal && opLeaseTotal <= finLeaseTotal) {
+        conclusionText = `사업자 기준: 운용리스가 가장 유리합니다`;
+        conclusionSub = `총비용 ${fmtMan(opLeaseTotal)} + 세금 절감 ${fmtMan(taxSaving)} = 실질비용 ${fmtMan(opLeaseTotal - taxSaving)}. 운용리스 월납입금 전액 경비 처리로 절세 효과가 가장 큽니다.`;
+      } else {
+        conclusionText = `사업자 기준: ${winner.name}이(가) 총비용 면에서 유리하지만, 세금 혜택은 운용리스가 우수합니다`;
+        conclusionSub = `절세 효과(${fmtMan(taxSaving)})를 감안한 실질 비용 비교를 권장합니다.`;
+      }
+    } else {
+      const cheapest = costs.slice(0, 3).reduce((a, b) => a.total < b.total ? a : b);
+      conclusionText = `개인 기준: ${cheapest.name}이(가) 총비용 ${fmtMan(cheapest.total)}으로 가장 경제적입니다`;
+      conclusionSub = `월평균 ${fmtMan(cheapest.monthly)} 기준. 관리 편의성을 원하면 장기렌트, 낮은 월납입금을 원하면 금융리스를 고려하세요.`;
+    }
+    document.getElementById('conclusionText').textContent = conclusionText;
+    document.getElementById('conclusionSub').textContent = conclusionSub;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

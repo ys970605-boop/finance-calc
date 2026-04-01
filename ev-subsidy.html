@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 전기차 보조금 계산기 - 국고·지자체 보조금 실구매가 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="2026년 전기차 보조금 계산기. 차량가격, 차종, 거주지역 입력 시 국고보조금·지자체보조금·취득세 감면까지 자동 계산. 실구매가와 내연기관 대비 유지비 비교까지.">
+  <link rel="canonical" href="https://calcmoney.kr/ev-subsidy">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 전기차 보조금 계산기 - 국고·지자체 보조금 실구매가 자동 계산">
+  <meta property="og:description" content="차량가격·차종·거주지역 입력 → 국고보조금 + 지자체보조금 + 취득세 감면 → 실구매가 즉시 계산.">
+  <meta property="og:url" content="https://calcmoney.kr/ev-subsidy">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026년 전기차 국고보조금은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 전기승용차 국고보조금 최대 680만원입니다. 차량가격 5,700만원 이하는 100% 지급, 5,700만~8,500만원은 50% 지급, 8,500만원 초과는 지급 불가입니다. 성능보조금(배터리용량·주행거리 기준)과 보급목표 이행보조금을 합산하여 결정됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "지자체 전기차 보조금은 지역마다 다른가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 지자체 보조금은 지역마다 크게 다릅니다. 서울 200만원, 경기 300~400만원, 인천 300만원, 부산 350만원, 대구 350만원, 광주 400만원, 대전 400만원, 울산 400만원, 세종 450만원, 강원 500만원, 충북·충남·전북·전남·경북·경남 400~600만원, 제주 400만원 수준입니다. 매년 예산 소진 시 조기 마감될 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "전기차 취득세 감면 혜택은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "전기차 취득세는 140만원 한도로 면제됩니다. 차량가격에 4% 취득세를 적용한 금액이 140만원 이하이면 전액 면제, 초과하면 초과분만 납부합니다. 예를 들어 3,500만원 전기차는 취득세 140만원이 전액 면제되어 취득세 0원입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "전기차와 내연기관 연간 유지비 차이는 얼마나 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "전기차 충전비는 1km당 약 30~50원(완속 기준), 내연기관 유류비는 1km당 약 100~150원으로 연간 15,000km 주행 시 충전비 약 50만원 vs 유류비 약 190만원으로 연간 약 140만원 절감됩니다. 자동차세도 전기차는 배기량 기준 없이 연 13만원 정액, 내연기관 2,000cc는 약 52만원입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "전기차 보조금 신청 방법은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "전기차 보조금은 별도 신청 없이 차량 구매 계약 시 제조사·딜러가 대행합니다. 구매자는 계약 시 거주지 지자체 보조금 신청 서류(주민등록등본 등)를 제출하면, 보조금이 차감된 금액으로 출고됩니다. 단, 지자체별 예산이 한정되어 있어 연초에 신청하는 것이 유리합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "전기화물차·이륜차 보조금은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 전기화물차(소형) 국고보조금 최대 1,200만원, 전기이륜차 국고보조금 최대 90만원입니다. 화물차는 차량가격과 적재량에 따라 차등 지급되며, 이륜차는 차종(경형·일반형)에 따라 다릅니다. 지자체 보조금은 별도로 추가 지급됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "전기차 보조금 사후 관리 의무는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "보조금 지급 후 2년(의무운행기간) 이내에 차량을 양도·수출·폐차하면 보조금을 반납해야 합니다. 단, 교통사고 전손, 천재지변 등 불가피한 사유는 예외입니다. 의무기간 경과 후에는 자유롭게 처분 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 전기차 보조금이 2025년과 달라진 점은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년에는 국산·수입차 구분 없이 성능 중심 보조금 체계로 개편되었으며, 배터리 에너지 밀도·재활용성 기준이 강화되었습니다. 차량가격 상한선(5,700만원/8,500만원)은 유지되나 보조금 단가가 일부 조정되었습니다. 또한 저소득층·생애최초 구매자에 대한 추가 보조금 정책이 신설되었습니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .step-flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .step-item { background: #e8f5e9; border-radius: 8px; padding: 8px 14px; font-size: 0.85em; color: #2e7d32; font-weight: 600; }
+    .step-arrow { display: flex; align-items: center; color: #aaa; font-size: 1.1em; }
+    .ev-result-main { background: #e8f5e9; border: 2px solid #34a853; border-radius: 10px; padding: 20px; text-align: center; margin: 16px 0; }
+    .ev-result-label { font-size: 0.9em; color: #555; margin-bottom: 6px; }
+    .ev-result-amount { font-size: 2em; font-weight: 800; color: #1e8e3e; }
+    .ev-result-sub { font-size: 0.82em; color: #666; margin-top: 6px; }
+    .subsidy-breakdown { background: #f8f9fa; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .subsidy-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e0e0e0; font-size: 0.9em; }
+    .subsidy-row:last-child { border-bottom: none; font-weight: 700; font-size: 1em; }
+    .subsidy-label { color: #555; }
+    .subsidy-value { font-weight: 600; color: #333; }
+    .compare-box { background: #fff8e1; border-left: 4px solid #fbbc04; border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 12px 0; }
+    .compare-box h4 { margin: 0 0 8px; font-size: 0.9em; color: #f57c00; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin-top: 8px; }
+    .compare-table th { background: #f0f4ff; padding: 7px 10px; text-align: left; font-weight: 600; }
+    .compare-table td { padding: 7px 10px; border-bottom: 1px solid #f0f0f0; }
+    .badge-zero { background: #34a853; color: #fff; border-radius: 4px; font-size: 0.8em; padding: 1px 7px; margin-left: 6px; }
+    .warn-box { background: #fce8e6; border-left: 4px solid #ea4335; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-size: 0.87em; color: #c62828; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="car-tax.html">자동차세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>전기차 보조금 계산기</h1>
+        <p class="desc">차량가격, 차종, 거주지역을 입력하면 2026년 기준 국고보조금·지자체보조금·취득세 감면을 합산해 실구매가와 유지비를 자동 계산합니다.</p>
+
+        <!-- 계산 흐름 -->
+        <div class="step-flow">
+          <div class="step-item">차량가격</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">국고보조금</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">지자체보조금</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">취득세 감면</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">실구매가</div>
+        </div>
+
+        <!-- 차량 정보 -->
+        <div class="input-section-title">차량 정보</div>
+        <div class="form-group">
+          <label>차량가격 <span class="hint">부가세 포함 출고가 (원)</span></label>
+          <input type="number" id="carPrice" placeholder="예: 50000000 (5천만원)" value="50000000" min="0">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>차종 <span class="hint">선택</span></label>
+            <select id="carType">
+              <option value="sedan">승용차 (최대 680만원)</option>
+              <option value="van">승합차 (최대 680만원)</option>
+              <option value="truck">화물차 소형 (최대 1,200만원)</option>
+              <option value="moto">이륜차 (최대 90만원)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>거주지역 <span class="hint">지자체 보조금 기준</span></label>
+            <select id="region">
+              <option value="seoul">서울특별시 (200만원)</option>
+              <option value="gyeonggi">경기도 (350만원)</option>
+              <option value="incheon">인천광역시 (300만원)</option>
+              <option value="busan">부산광역시 (350만원)</option>
+              <option value="daegu">대구광역시 (350만원)</option>
+              <option value="gwangju">광주광역시 (400만원)</option>
+              <option value="daejeon">대전광역시 (400만원)</option>
+              <option value="ulsan">울산광역시 (400만원)</option>
+              <option value="sejong">세종특별자치시 (450만원)</option>
+              <option value="gangwon">강원특별자치도 (500만원)</option>
+              <option value="chungbuk">충청북도 (500만원)</option>
+              <option value="chungnam">충청남도 (500만원)</option>
+              <option value="jeonbuk">전북특별자치도 (550만원)</option>
+              <option value="jeonnam">전라남도 (600만원)</option>
+              <option value="gyeongbuk">경상북도 (550만원)</option>
+              <option value="gyeongnam">경상남도 (500만원)</option>
+              <option value="jeju">제주특별자치도 (400만원)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 성능 정보 -->
+        <hr class="section-divider">
+        <div class="input-section-title">성능 정보 (보조금 산정 기준)</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>배터리 용량 <span class="hint">kWh</span></label>
+            <input type="number" id="batteryKwh" placeholder="예: 77.4" value="77" min="1" max="200" step="0.1">
+          </div>
+          <div class="form-group">
+            <label>복합 주행거리 <span class="hint">km (환경부 인증)</span></label>
+            <input type="number" id="rangeKm" placeholder="예: 400" value="400" min="50" max="800">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>연간 주행거리 <span class="hint">km (유지비 비교용)</span></label>
+          <input type="number" id="annualKm" placeholder="예: 15000" value="15000" min="1000" max="100000">
+        </div>
+
+        <button class="btn-calc" onclick="calcSubsidy()">보조금 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <div class="ev-result-main">
+            <div class="ev-result-label">실구매가 (보조금·취득세 감면 적용 후)</div>
+            <div class="ev-result-amount" id="r_realPrice"></div>
+            <div class="ev-result-sub" id="r_totalSavings"></div>
+          </div>
+
+          <div id="warnBox" class="warn-box" style="display:none;">
+            ※ 차량가격이 8,500만원을 초과하여 국고보조금 지급 대상이 아닙니다.
+          </div>
+          <div id="warnBox50" class="warn-box" style="display:none;background:#fff8e1;border-color:#fbbc04;color:#795548;">
+            ※ 차량가격이 5,700만원 초과~8,500만원 이하로 국고보조금 50%만 지급됩니다.
+          </div>
+
+          <!-- 보조금 상세 -->
+          <div class="subsidy-breakdown">
+            <div style="font-weight:700;font-size:0.95em;color:#333;margin-bottom:10px;">보조금 상세 내역</div>
+            <div class="subsidy-row"><span class="subsidy-label">차량 출고가</span><span class="subsidy-value" id="r_carPrice"></span></div>
+            <div class="subsidy-row"><span class="subsidy-label">국고보조금 (성능보조금 + 보급목표이행보조금)</span><span class="subsidy-value" id="r_national"></span></div>
+            <div class="subsidy-row"><span class="subsidy-label">지자체 보조금</span><span class="subsidy-value" id="r_local"></span></div>
+            <div class="subsidy-row"><span class="subsidy-label">소계 (국고 + 지자체)</span><span class="subsidy-value" id="r_subsidyTotal"></span></div>
+            <div class="subsidy-row" style="background:#f0f4ff;border-radius:6px;padding:8px;"><span class="subsidy-label" style="font-weight:600;">취득세 (감면 전)</span><span class="subsidy-value" id="r_taxBefore"></span></div>
+            <div class="subsidy-row"><span class="subsidy-label">취득세 감면액 (최대 140만원)</span><span class="subsidy-value" id="r_taxDiscount"></span></div>
+            <div class="subsidy-row" style="background:#e8f5e9;border-radius:6px;padding:8px;"><span class="subsidy-label" style="font-weight:700;">실납부 취득세</span><span class="subsidy-value" id="r_taxAfter"></span></div>
+            <div class="subsidy-row"><span class="subsidy-label" style="font-weight:700;font-size:1em;">총 혜택금액 (보조금 + 취득세 감면)</span><span class="subsidy-value" style="color:#1e8e3e;font-size:1em;" id="r_totalBenefit"></span></div>
+          </div>
+
+          <!-- 유지비 비교 -->
+          <div class="compare-box">
+            <h4>연간 유지비 비교 (전기차 vs 내연기관)</h4>
+            <table class="compare-table">
+              <tr>
+                <th>항목</th>
+                <th>전기차</th>
+                <th>내연기관 (동급)</th>
+              </tr>
+              <tr>
+                <td>연간 에너지 비용</td>
+                <td id="r_evFuel"></td>
+                <td id="r_iceFuel"></td>
+              </tr>
+              <tr>
+                <td>자동차세</td>
+                <td>130,000원</td>
+                <td id="r_iceTax"></td>
+              </tr>
+              <tr>
+                <td>합계</td>
+                <td id="r_evTotal"></td>
+                <td id="r_iceTotal"></td>
+              </tr>
+              <tr>
+                <td><strong>연간 절감액</strong></td>
+                <td colspan="2" id="r_annualSave" style="font-weight:700;color:#1e8e3e;"></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="compare-box" style="background:#f3e5f5;border-color:#9c27b0;">
+            <h4 style="color:#7b1fa2;">보조금 손익분기점</h4>
+            <p id="r_breakeven" style="font-size:0.88em;margin:0;color:#4a148c;"></p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">전기차 보조금 핵심 용어 정리</h2>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">2026년 전기차 국고보조금 체계</h3>
+        <p>2026년 전기승용차 국고보조금은 최대 680만원으로, 성능보조금(배터리 용량·주행거리 기준)과 보급목표 이행보조금으로 구성됩니다. 차량가격에 따라 차등 지급되며, 5,700만원 이하는 100%, 5,700만~8,500만원은 50%, 8,500만원 초과는 미지급입니다. 2026년부터 배터리 에너지 밀도와 재활용성 기준이 강화되어 우수 성능 차량에 더 많은 보조금이 지급됩니다.</p>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">성능보조금 산정 방식</h3>
+        <p>국고보조금 중 성능보조금은 배터리 용량(kWh)과 환경부 인증 복합주행거리(km)를 기준으로 산정됩니다. 1회 충전 주행거리가 400km 이상이면 최대 보조금, 150km 미만이면 50% 감액됩니다. 배터리 에너지 밀도가 높을수록, 국내 배터리 생산 비중이 높을수록 추가 인센티브가 부여됩니다. 주행거리와 배터리 용량은 환경부 공식 인증 수치를 기준으로 합니다.</p>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">지자체 보조금</h3>
+        <p>지자체 보조금은 각 시·도·군·구별로 별도 예산을 편성하여 지급합니다. 서울시 200만원부터 전남 최대 600만원까지 지역별 편차가 큽니다. 예산 소진 시 조기 마감되므로 연초에 신청하는 것이 유리합니다. 일부 지자체는 저소득층·청년·장애인 등 취약계층에 추가 보조금을 지급하기도 합니다. 기초지자체(군·구)에서 추가 보조금을 별도로 지급하는 경우도 있으니 거주지 지자체에 확인이 필요합니다.</p>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">전기차 취득세 감면</h3>
+        <p>전기차(순수전기차·수소전기차)는 지방세특례제한법에 따라 취득세 140만원 한도로 면제됩니다. 차량가격의 4%가 취득세인데, 4% × 차량가격 ≤ 140만원이면 전액 면제입니다. 즉 차량가격 3,500만원 이하이면 취득세가 0원입니다. 3,500만원 초과 차량은 (차량가격 × 4% - 140만원)을 납부합니다. 플러그인 하이브리드(PHEV)는 별도 감면율이 적용됩니다.</p>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">전기차 자동차세</h3>
+        <p>전기차는 배기량이 없으므로 배기량 기준 자동차세가 적용되지 않으며, 2026년 현재 연 13만원 정액 과세됩니다. 이는 내연기관 2,000cc 차량(약 52만원)의 1/4 수준입니다. 자동차세는 매년 6월(1기분)과 12월(2기분)에 납부하며, 1월에 연납 신청 시 약 5%를 추가 공제받을 수 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">전기차 충전 비용</h3>
+        <p>전기차 충전 비용은 충전 방식에 따라 다릅니다. 가정용 완속 충전(7kW)은 kWh당 약 75~120원(주택용 전기요금), 공공 급속 충전(50~150kW)은 kWh당 약 250~400원입니다. 평균적으로 1km당 충전비는 완속 약 20~40원, 급속 약 70~110원입니다. 내연기관 연비 12km/L 기준 휘발유 1,700원/L이면 1km당 약 142원으로, 완속 충전 대비 3~7배 높습니다.</p>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">전기화물차·이륜차 보조금</h3>
+        <p>전기화물차(소형) 국고보조금은 최대 1,200만원으로 승용차보다 훨씬 높습니다. 1톤 전기트럭은 차량가격과 상관없이 일정 보조금이 지급되나, 상한가(포터EV·봉고EV 기준 약 5,000만원)를 초과하면 감액됩니다. 전기이륜차는 경형(50cc 미만 전동) 50만원, 일반형(125cc 미만) 90만원 수준입니다. 화물차·이륜차에도 별도 지자체 보조금이 추가됩니다.</p>
+
+        <h3 style="font-size:1em;color:#2e7d32;margin:16px 0 8px;">전기차 의무운행 기간</h3>
+        <p>보조금을 받고 구매한 전기차는 2년(의무운행기간) 이내에 매각·수출·폐차 시 보조금을 반납해야 합니다. 경과 일수에 따라 반납액이 차등 감소합니다(1년 이내 전액, 1~2년 50% 반납). 단, 교통사고 전손처리, 천재지변, 리콜에 의한 제조사 회수 등은 예외입니다. 2년 경과 후에는 제한 없이 처분 가능합니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>전기차 보조금은 개인과 법인 모두 받을 수 있나요?</summary>
+            <p>개인, 법인, 공공기관 모두 전기차 보조금을 받을 수 있습니다. 단, 지자체에 따라 개인/법인 배정 물량을 별도로 관리하기도 합니다. 법인의 경우 사업용 차량임을 증명해야 하며, 렌터카·카셰어링 차량은 별도 물량으로 관리됩니다. 개인 명의로 보조금을 받은 후 법인에 양도하는 것은 원칙적으로 금지입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>보조금 예산이 소진되면 어떻게 되나요?</summary>
+            <p>지자체별 보조금 예산은 매년 한정되어 있으며, 예산 소진 시 해당 연도에는 추가 신청이 불가합니다. 예산 소진 시에도 국고보조금은 별도 추가경정예산을 통해 확대되는 경우가 있습니다. 주요 광역시·도는 보통 연중 접수를 받다가 예산 소진 시 마감하며, 수요가 많은 지역은 1분기에 조기 마감되기도 합니다. 보조금 없이 구매 시에도 취득세 감면·자동차세 혜택은 유지됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>중고 전기차 구매 시 보조금을 받을 수 있나요?</summary>
+            <p>2026년부터 중고 전기차에 대해서도 일부 지자체에서 보조금을 시범 지급하고 있습니다. 단, 신차 대비 보조금이 크게 낮고(신차의 50% 이하), 차량 연식·배터리 잔존 용량 기준을 충족해야 합니다. 중고차 보조금은 지자체에 따라 다르므로 거주지 지자체 홈페이지나 무공해차 통합누리집(ev.or.kr)에서 확인하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>전기차 배터리 교체 비용은 얼마나 드나요?</summary>
+            <p>전기차 배터리 교체 비용은 차종에 따라 다르지만, 국산 전기차 기준 배터리 용량 60~80kWh 배터리 교체 시 약 1,000만~1,500만원이 소요됩니다. 그러나 대부분의 전기차 제조사는 배터리 보증 기간을 10년 또는 20만km로 제공하며, 보증 기간 내 70% 미만으로 배터리 용량이 감소할 경우 무상 교체해줍니다. 배터리 열화는 급속 충전 빈도와 충전 습관에 따라 크게 달라집니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>전기차 보험료는 내연기관보다 비싼가요?</summary>
+            <p>전기차 보험료는 차량가액이 높고 수리비(배터리·전기계통)가 비싸 동급 내연기관 대비 10~20% 높은 편입니다. 단, 무사고 할인, 마일리지 특약 등을 활용하면 보험료를 줄일 수 있습니다. 최근 전기차 보험 상품이 다양해지고 경쟁이 심화되면서 보험료 격차가 줄어드는 추세입니다. 전기차 전용 보험 상품(배터리 화재 특약 등)도 출시되어 있으니 비교 가입을 권장합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>아파트 단지에서 전기차 충전이 어려운데 어떻게 하나요?</summary>
+            <p>공동주택 주차장에는 환경부 보조금으로 충전기 설치가 의무화되어 있으나, 설치 속도가 수요를 따라가지 못하는 경우가 많습니다. 이 경우 가까운 공공 급속 충전소(환경부·한전·민간)를 이용하거나, 완속 충전기를 개인 주차구역에 설치 신청할 수 있습니다. 충전기 설치 비용 일부는 정부·지자체 보조금으로 지원됩니다. 외부 충전만으로도 1주일에 1~2회 급속 충전으로 충분히 운행 가능합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>보조금 신청은 어디서 하나요?</summary>
+            <p>전기차 보조금은 무공해차 통합누리집(ev.or.kr) 또는 거주지 지자체 홈페이지에서 신청할 수 있습니다. 실제로는 자동차 딜러사가 구매 계약 시 보조금 신청을 대행하므로, 딜러에게 보조금 신청 의사를 밝히면 됩니다. 보조금 지급까지 차량 출고가 지연될 수 있으므로 사전에 지자체 예산 잔액을 확인하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>수입 전기차도 보조금을 받을 수 있나요?</summary>
+            <p>테슬라, BMW, 현대(해외생산), 폭스바겐, 볼보 등 수입 전기차도 환경부 성능 인증을 받으면 보조금을 받을 수 있습니다. 다만 2026년부터 국내 배터리 생산 비율, 핵심 광물 조달 요건 등 공급망 기준이 강화되어 일부 수입차는 보조금이 감액될 수 있습니다. 또한 한-미 FTA, 한-EU FTA 적용 여부에 따라 보조금 차등이 있을 수 있으니 구매 전 ev.or.kr에서 모델별 보조금을 확인하세요.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-info">
+      <div class="info-box">
+        <h3>2026년 전기차 보조금 요약</h3>
+        <ul>
+          <li><strong>승용차 국고 최대: 680만원</strong></li>
+          <li>5,700만원 이하: 100% 지급</li>
+          <li>5,700~8,500만원: 50% 지급</li>
+          <li>8,500만원 초과: 미지급</li>
+          <li>취득세 감면: 최대 140만원</li>
+          <li>자동차세: 연 13만원 정액</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>주요 지역 지자체 보조금</h3>
+        <ul>
+          <li>서울: 200만원</li>
+          <li>경기: 350만원</li>
+          <li>인천: 300만원</li>
+          <li>부산·대구: 350만원</li>
+          <li>광주·대전·울산: 400만원</li>
+          <li>세종: 450만원</li>
+          <li>강원·충북·충남: 500만원</li>
+          <li>전북: 550만원</li>
+          <li>전남: 600만원</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 금융기관 및 관계 기관에 문의하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+// 지자체 보조금 테이블 (승용 기준, 만원)
+const localSubsidy = {
+  seoul: 200, gyeonggi: 350, incheon: 300,
+  busan: 350, daegu: 350, gwangju: 400,
+  daejeon: 400, ulsan: 400, sejong: 450,
+  gangwon: 500, chungbuk: 500, chungnam: 500,
+  jeonbuk: 550, jeonnam: 600, gyeongbuk: 550,
+  gyeongnam: 500, jeju: 400
+};
+
+// 차종별 국고보조금 최대 (만원)
+const maxNational = { sedan: 680, van: 680, truck: 1200, moto: 90 };
+// 차종별 지자체 보조금 비율 (승용 기준 대비)
+const localRatio = { sedan: 1.0, van: 1.0, truck: 1.5, moto: 0.3 };
+
+function fmt(n) {
+  return Math.round(n).toLocaleString('ko-KR') + '원';
+}
+function fmtMan(n) {
+  return (n/10000).toFixed(0) + '만원';
+}
+
+function calcSubsidy() {
+  const price = parseFloat(document.getElementById('carPrice').value) || 0;
+  const type = document.getElementById('carType').value;
+  const region = document.getElementById('region').value;
+  const battery = parseFloat(document.getElementById('batteryKwh').value) || 0;
+  const range = parseFloat(document.getElementById('rangeKm').value) || 0;
+  const annualKm = parseFloat(document.getElementById('annualKm').value) || 15000;
+
+  // 국고보조금 계산
+  const maxNat = maxNational[type] * 10000;
+
+  // 성능 계수 (주행거리 기준)
+  let performRatio = 1.0;
+  if (type === 'sedan' || type === 'van') {
+    if (range >= 400) performRatio = 1.0;
+    else if (range >= 300) performRatio = 0.9;
+    else if (range >= 200) performRatio = 0.75;
+    else if (range >= 150) performRatio = 0.5;
+    else performRatio = 0.5;
+  } else if (type === 'truck') {
+    performRatio = 1.0; // 화물차는 별도 기준
+  }
+
+  const nationalBase = Math.round(maxNat * performRatio);
+
+  // 가격 기준 보조금 비율
+  let priceRatio = 1.0;
+  const showWarn = document.getElementById('warnBox');
+  const showWarn50 = document.getElementById('warnBox50');
+  showWarn.style.display = 'none';
+  showWarn50.style.display = 'none';
+
+  if (type === 'sedan' || type === 'van') {
+    if (price > 85000000) {
+      priceRatio = 0;
+      showWarn.style.display = 'block';
+    } else if (price > 57000000) {
+      priceRatio = 0.5;
+      showWarn50.style.display = 'block';
+    }
+  }
+
+  const nationalFinal = Math.round(nationalBase * priceRatio);
+
+  // 지자체 보조금
+  const localBase = (localSubsidy[region] || 300) * 10000;
+  const localFinal = Math.round(localBase * localRatio[type]);
+
+  const subsidyTotal = nationalFinal + localFinal;
+
+  // 취득세 계산 (전기차: 4%, 최대 140만원 감면)
+  const taxFull = Math.round(price * 0.04);
+  const taxDiscount = Math.min(taxFull, 1400000);
+  const taxAfter = taxFull - taxDiscount;
+
+  // 실구매가
+  const realPrice = price - subsidyTotal + taxAfter;
+  const totalBenefit = subsidyTotal + taxDiscount;
+
+  // 유지비 비교
+  // 전기차: kWh당 150원(완속 혼합 평균), 전비 5km/kWh
+  const evEfficiency = Math.max(battery > 0 ? (range / battery) : 5, 3);
+  const evFuelCost = Math.round(annualKm / evEfficiency * 150);
+  const evTax = 130000;
+  const evAnnual = evFuelCost + evTax;
+
+  // 내연기관: 연비 12km/L, 휘발유 1,700원/L, 자동차세 520000(2,000cc 기준)
+  const iceFuelCost = Math.round(annualKm / 12 * 1700);
+  const iceTax = 520000;
+  const iceAnnual = iceFuelCost + iceTax;
+  const annualSave = iceAnnual - evAnnual;
+
+  // 손익분기점 (보조금 없는 차량가 차이 추정: EV 프리미엄 약 500만원 가정)
+  const evPremium = 5000000;
+  const adjustedGap = Math.max(evPremium - subsidyTotal - taxDiscount, 0);
+  const breakevenYears = annualSave > 0 ? (adjustedGap / annualSave).toFixed(1) : 'N/A';
+
+  // 출력
+  document.getElementById('r_carPrice').textContent = fmt(price);
+  document.getElementById('r_national').textContent = nationalFinal === 0 ? '0원 (지급 불가)' : fmt(nationalFinal);
+  document.getElementById('r_local').textContent = fmt(localFinal);
+  document.getElementById('r_subsidyTotal').textContent = fmt(subsidyTotal);
+  document.getElementById('r_taxBefore').textContent = fmt(taxFull);
+  document.getElementById('r_taxDiscount').textContent = '-' + fmt(taxDiscount);
+  document.getElementById('r_taxAfter').textContent = taxAfter === 0 ? '0원 (전액 면제)' : fmt(taxAfter);
+  document.getElementById('r_totalBenefit').textContent = fmt(totalBenefit);
+  document.getElementById('r_realPrice').textContent = fmt(realPrice);
+  document.getElementById('r_totalSavings').textContent = '총 혜택: ' + fmt(totalBenefit) + ' 절감';
+
+  document.getElementById('r_evFuel').textContent = fmt(evFuelCost);
+  document.getElementById('r_iceFuel').textContent = fmt(iceFuelCost);
+  document.getElementById('r_iceTax').textContent = fmt(iceTax);
+  document.getElementById('r_evTotal').textContent = fmt(evAnnual);
+  document.getElementById('r_iceTotal').textContent = fmt(iceAnnual);
+  document.getElementById('r_annualSave').textContent = '연간 약 ' + fmt(annualSave) + ' 절감';
+  document.getElementById('r_breakeven').textContent =
+    annualSave > 0
+      ? `연간 유지비 절감(${fmt(annualSave)})으로, 보조금 미적용 시 EV 프리미엄(약 ${fmt(evPremium)})을 기준으로 손익분기점은 약 ${breakevenYears}년입니다. 보조금(${fmt(totalBenefit)}) 적용 시 더욱 단축됩니다.`
+      : '주행거리가 짧아 손익분기점 계산이 어렵습니다. 연간 주행거리를 늘리면 절감 효과가 커집니다.';
+
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+
+<!-- naver79426cddfd6b069ce9c6764a9a427fd9 -->
+</body>
+</html>

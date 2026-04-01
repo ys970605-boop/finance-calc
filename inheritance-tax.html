@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상속세 계산기 - 2026년 기준 자동 계산 | 배우자·일괄공제 포함</title>
+  <meta name="description" content="2026년 기준 상속세를 자동 계산합니다. 배우자공제·일괄공제·금융재산공제를 반영하여 납부세액을 바로 확인하세요. 신고기한 6개월, 자진신고 3% 공제 적용.">
+  <link rel="canonical" href="https://calcmoney.kr/inheritance-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="상속세 계산기 - 2026년 기준 자동 계산 | 배우자·일괄공제 포함">
+  <meta property="og:description" content="2026년 기준 상속세를 자동 계산합니다. 배우자공제·일괄공제·금융재산공제 반영.">
+  <meta property="og:url" content="https://calcmoney.kr/inheritance-tax">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "상속세란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "상속세는 사망으로 인해 재산이 상속인에게 이전될 때 부과되는 세금입니다. 상속개시일(사망일)로부터 6개월 이내에 신고·납부해야 하며, 자진신고 시 3%의 세액공제를 받을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "상속세 배우자 공제는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "배우자 공제는 최소 5억원이며, 법정상속분에 해당하는 금액까지 공제받을 수 있습니다. 최대 한도는 30억원입니다. 배우자가 실제 상속받은 금액이 법정상속분보다 적으면 실제 상속받은 금액만 공제됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "일괄공제 5억원이란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "일괄공제는 기초공제(2억원)와 기타인적공제(자녀·미성년자·장애인·연로자 공제 합계)를 더한 금액과 5억원 중 큰 금액을 선택하는 방식입니다. 일반적으로 자녀 수가 적을 경우 5억원 일괄공제가 유리합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "상속세 금융재산공제란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "금융재산공제는 순금융재산(금융자산 - 금융부채)이 2,000만원을 초과할 경우 순금융재산의 20%를 공제합니다. 최대 공제 한도는 2억원입니다. 순금융재산이 2,000만원 이하이거나 금융부채가 금융자산보다 많으면 공제가 적용되지 않습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "상속세 신고 기한은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "상속세는 상속개시일(사망일)이 속하는 달의 말일부터 6개월 이내에 피상속인의 주소지 관할 세무서에 신고·납부해야 합니다. 피상속인 또는 상속인이 비거주자인 경우 9개월 이내입니다. 기한 내 자진신고 시 산출세액의 3%를 세액공제 받습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "상속재산이 10억원 이하이면 상속세가 없나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "배우자가 있는 경우 일괄공제 5억원 + 배우자공제 최소 5억원 = 10억원이 기본 공제됩니다. 따라서 상속재산이 10억원 이하이면 납부세액이 0원이 됩니다. 배우자가 없는 경우 일괄공제 5억원만 적용되므로 5억원 초과분에 대해 세금이 발생합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "상속세 분할납부 및 연부연납이 가능한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "납부세액이 1,000만원을 초과하면 2개월 이내 분할납부가 가능합니다. 납부세액이 2,000만원을 초과하면 담보 제공 후 최대 10년간(부동산·유가증권은 5년) 연부연납도 가능합니다. 상속재산 중 부동산이 50%를 초과하면 물납도 허용됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="gift-tax.html">증여세</a>
+      <a href="inheritance-tax.html" class="active">상속세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>상속세 계산기</h1>
+        <p class="desc">2026년 기준 상속세를 자동 계산합니다. 배우자공제·일괄공제·금융재산공제를 모두 반영하여 납부세액을 확인할 수 있습니다.</p>
+
+        <div class="form-group">
+          <label>상속재산 총액 <span class="hint">원 단위 (부동산 + 금융자산 + 기타 합계)</span></label>
+          <input type="number" id="totalAsset" placeholder="예: 1000000000 (10억원)" value="1000000000">
+        </div>
+
+        <div class="form-group">
+          <label>채무 및 공과금 <span class="hint">원 단위 (없으면 0)</span></label>
+          <input type="number" id="debt" placeholder="예: 50000000 (5천만원)" value="0">
+        </div>
+
+        <div class="form-group">
+          <label>금융재산 금액 <span class="hint">예금·주식 등 금융자산 (없으면 0)</span></label>
+          <input type="number" id="financialAsset" placeholder="예: 200000000 (2억원)" value="0">
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="hasSpouse" checked>
+            배우자 있음 <span class="hint">(최소 5억원 공제, 최대 30억원)</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>자녀 수 <span class="hint">성인 자녀 기준</span></label>
+          <input type="number" id="childCount" placeholder="자녀 수" value="2" min="0" max="20">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">납부할 상속세</div>
+            <div class="value" id="rFinalTax">-</div>
+            <div class="sub" id="rFinalSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>상속재산 총액</td><td id="rTotalAsset">-</td></tr>
+            <tr><td>채무·공과금 공제</td><td id="rDebt">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>총 상속재산</td><td id="rNetAsset">-</td></tr>
+            <tr><td>기초공제 (2억원)</td><td id="rBasicDeduction">-</td></tr>
+            <tr><td>일괄공제 (5억원)</td><td id="rLumpDeduction">-</td></tr>
+            <tr id="rSpouseRow"><td>배우자공제</td><td id="rSpouseDeduction">-</td></tr>
+            <tr id="rFinancialRow"><td>금융재산공제 (20%)</td><td id="rFinancialDeduction">-</td></tr>
+            <tr><td>공제 합계</td><td id="rTotalDeduction">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>과세표준</td><td id="rTaxBase">-</td></tr>
+            <tr><td>적용 세율</td><td id="rTaxRate">-</td></tr>
+            <tr><td>산출세액</td><td id="rCalcTax">-</td></tr>
+            <tr><td>신고세액공제 (3%)</td><td id="rDiscount">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>최종 납부세액</td><td id="rTotal">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 상속세 세율표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>상속세 세율표 (2026년)</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준</td><td>세율</td><td>누진공제</td></tr>
+          <tr><td>1억원 이하</td><td>10%</td><td>-</td></tr>
+          <tr><td>1억원 초과 ~ 5억원</td><td>20%</td><td>1,000만원</td></tr>
+          <tr><td>5억원 초과 ~ 10억원</td><td>30%</td><td>6,000만원</td></tr>
+          <tr><td>10억원 초과 ~ 30억원</td><td>40%</td><td>1억 6,000만원</td></tr>
+          <tr><td>30억원 초과</td><td>50%</td><td>4억 6,000만원</td></tr>
+        </table>
+      </div>
+
+      <!-- 공제 한도표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>상속세 주요 공제 항목</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>공제 항목</td><td>공제 금액</td></tr>
+          <tr><td>기초공제</td><td>2억원</td></tr>
+          <tr><td>일괄공제 (기초+인적공제와 비교, 큰 값 선택)</td><td>5억원</td></tr>
+          <tr><td>배우자공제 (최소)</td><td>5억원</td></tr>
+          <tr><td>배우자공제 (최대)</td><td>30억원 (법정상속분 한도)</td></tr>
+          <tr><td>금융재산공제 (순금융재산 2천만원 초과 시)</td><td>순금융재산 × 20% (최대 2억원)</td></tr>
+          <tr><td>자진신고 공제</td><td>산출세액 × 3%</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 신고기한: 상속개시일(사망일)로부터 6개월 이내</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>상속세 계산 공식</h3>
+        <ul>
+          <li><strong>총 상속재산</strong> =<br>상속재산 총액 - 채무·공과금</li>
+          <li style="margin-top:10px;"><strong>과세표준</strong> =<br>총 상속재산 - 공제 합계</li>
+          <li style="margin-top:10px;"><strong>산출세액</strong> =<br>과세표준 × 세율 - 누진공제</li>
+          <li style="margin-top:10px;"><strong>납부세액</strong> =<br>산출세액 × 97%<br>(자진신고 3% 공제)</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 신고기한: 사망일로부터 6개월 이내</p>
+      </div>
+      <div class="info-box">
+        <h3>절세 팁</h3>
+        <ul>
+          <li><strong>배우자 공제 최대 활용:</strong> 배우자에게 법정상속분까지 상속 시 최대 30억원 공제.</li>
+          <li><strong>사전 증여 활용:</strong> 10년 단위 분산 증여로 상속재산 축소.</li>
+          <li><strong>금융재산 분산:</strong> 금융재산공제 한도(2억원) 활용.</li>
+          <li><strong>6개월 내 자진신고:</strong> 산출세액의 3% 세액공제.</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="capital-gains.html" class="related-link">양도소득세</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="health-insurance.html" class="related-link">건강보험료</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- FAQ 섹션 -->
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">상속세는 누가 납부하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">상속세는 <strong>상속인 또는 수유자</strong>가 상속받은 재산 비율에 따라 납부합니다. 상속인이 여러 명인 경우 각자 상속받은 지분에 비례하여 세금을 납부하며, 연대납세의무도 집니다. 피상속인(사망자)의 주소지 관할 세무서에 신고합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">상속재산 10억원이면 세금이 없나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">배우자가 있는 경우 <strong>일괄공제 5억원 + 배우자공제 최소 5억원 = 10억원</strong>이 공제되어 상속재산 10억원 이하라면 납부세액이 0원입니다. 배우자가 없는 경우 일괄공제 5억원만 적용되므로 5억원을 초과하는 금액에 대해 세금이 발생합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">배우자공제는 얼마까지 받을 수 있나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">배우자공제는 <strong>최소 5억원</strong>이 보장되며, 배우자가 실제 상속받는 금액이 법정상속분(자녀 1인 기준 3/5) 범위 내라면 최대 <strong>30억원</strong>까지 공제받을 수 있습니다. 절세 목적으로 배우자에게 법정상속분 한도까지 상속하는 전략이 많이 사용됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">금융재산공제란 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;"><strong>순금융재산</strong>(금융자산 - 금융부채)이 2,000만원을 초과할 경우 순금융재산의 <strong>20%</strong>를 공제합니다. 최대 공제 한도는 <strong>2억원</strong>입니다. 예를 들어 순금융재산이 5억원이면 1억원이 공제됩니다. 순금융재산이 10억원 이상이면 최대 한도인 2억원만 공제됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">상속세와 증여세의 차이는?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;"><strong>상속세</strong>는 사망으로 인해 재산이 이전될 때 부과되며 신고기한은 6개월입니다. <strong>증여세</strong>는 살아있는 동안 무상으로 재산을 이전할 때 부과되며 신고기한은 3개월입니다. 세율표는 동일(10~50%)하지만 공제 구조가 다릅니다. 사전 증여재산은 상속개시일 전 10년 이내(상속인) 또는 5년 이내(비상속인) 증여분은 상속재산에 합산됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">상속세 신고 기한을 놓치면?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">신고기한(6개월)을 넘기면 <strong>무신고 가산세 20%</strong>(부정행위 시 40%)와 <strong>납부지연 가산세(일 0.022%)</strong>가 부과됩니다. 또한 자진신고 세액공제 3%도 받을 수 없게 됩니다. 기한 내 신고가 어려운 경우 납부유예 제도를 활용할 수 있으니 세무사와 상담을 권장합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">상속세 분할납부 및 연부연납이 가능한가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">납부세액이 <strong>1,000만원 초과</strong> 시 2개월 이내 분할납부가 가능합니다. 납부세액이 <strong>2,000만원 초과</strong> 시 담보 제공 후 최대 <strong>10년간</strong>(부동산·유가증권의 경우 5년) 연부연납이 가능합니다. 상속재산 중 부동산 및 유가증권 비율이 50%를 초과하면 물납(현물납부)도 허용됩니다.</p>
+    </details>
+  </div>
+
+  <!-- 활용 가이드 -->
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">상속세 계산기 활용 가이드</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      상속세는 갑작스러운 상황에서 처리해야 하는 경우가 많아 미리 예상 세액을 파악해두는 것이 중요합니다. 이 계산기로 부모님 재산 규모에 따른 예상 상속세를 미리 계산하고 절세 전략을 수립하세요.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 1 — 부동산 위주 자산가:</strong> 부모님이 공시가격 10억원 아파트를 남기셨을 때 배우자 없이 자녀 2명이 상속받는다면, 일괄공제 5억원 적용 후 과세표준 5억원에 세율 20%가 적용되어 산출세액은 약 9,000만원입니다. 자진신고 공제 3% 적용 시 최종 납부세액은 약 8,730만원입니다.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 2 — 배우자 공제 최대 활용:</strong> 배우자가 있는 경우 배우자 법정상속분(자녀 2명 기준 약 3/7) 한도까지 배우자에게 상속하면 최대 30억원까지 공제받을 수 있습니다. 상속재산 20억원에서 일괄공제 5억원과 배우자공제 5억원 이상을 적용하면 세 부담이 크게 줄어듭니다.
+    </p>
+    <p style="line-height:1.8;color:#444;">
+      <strong>활용 사례 3 — 사전 증여 전략:</strong> 상속세는 사망 전 10년 이내(상속인) 증여재산을 합산합니다. 10년을 초과해 미리 분산 증여하면 상속재산 규모를 줄일 수 있으므로 50대부터 장기 절세 계획을 세우는 것이 효과적입니다.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">상속세 추가 해설 및 주의사항</h2>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">상속재산 가액 산정 기준</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      상속세 계산의 기준 재산 가액은 <strong>시가(시장가액)</strong>가 원칙입니다. 부동산은 국세청 고시 기준시가(공시가격)가 시가로 인정되지만, 상속개시일 전후 6개월 이내 매매사례가 있으면 해당 거래가격이 시가로 적용됩니다. 비상장주식은 순자산가액법 또는 수익가액법으로 평가합니다.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">합산 대상 사전 증여재산 기간</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      상속개시일로부터 역산하여 <strong>상속인에게는 10년 이내</strong>, <strong>비상속인에게는 5년 이내</strong> 증여한 재산은 상속재산에 합산됩니다. 이미 납부한 증여세액은 상속세 산출세액에서 공제됩니다. 따라서 10년 이상 미리 분산 증여하는 것이 상속세 절감에 효과적입니다.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">신고기한 초과 시 가산세</h3>
+    <p style="line-height:1.8;color:#444;">
+      상속세 신고기한은 사망일이 속하는 달의 말일부터 6개월(비거주자는 9개월)입니다. 기한을 초과하면 <strong>무신고 가산세 20%</strong>와 <strong>납부지연 가산세(일 0.022%)</strong>가 부과됩니다. 또한 자진신고 세액공제 3%도 받을 수 없습니다. 부동산·비상장주식 평가가 복잡한 경우 세무사 상담을 권장합니다.
+    </p>
+  </div>
+
+  <!-- 내부 링크 섹션 -->
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="gift-tax.html">증여세 계산기</a> - 배우자·자녀·친족 관계별 증여세 자동 계산</li>
+      <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 양도소득세 자동 계산</li>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택·토지·건물 취득세 계산</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서, 개인사업자 자동 계산</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+    </ul>
+  </div>
+
+<div class="container" style="margin-bottom:0">
+  <div class="info-box" style="background:#f0f7ff;border-left:4px solid #3b82f6;padding:1rem 1.25rem;margin-bottom:1.5rem">
+    <p style="margin:0">인적공제 상세 비교가 필요하신가요? <a href="/inheritance-tax-detail.html" style="color:#2563eb;font-weight:600">일괄·개별공제 비교, 배우자 법정상속분 단계별 상세 계산기 →</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세액은 국세청 또는 세무사에게 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+// 상속세 세율표 (과세표준 상한, 세율, 누진공제)
+const TAX_BRACKETS = [
+  { limit: 100000000,    rate: 0.10, deduction: 0 },
+  { limit: 500000000,    rate: 0.20, deduction: 10000000 },
+  { limit: 1000000000,   rate: 0.30, deduction: 60000000 },
+  { limit: 3000000000,   rate: 0.40, deduction: 160000000 },
+  { limit: Infinity,     rate: 0.50, deduction: 460000000 },
+];
+
+// 자진신고 세액공제율
+const FILING_DISCOUNT = 0.03;
+
+// 기초공제
+const BASIC_DEDUCTION = 200000000;
+
+// 일괄공제 (기초+인적공제와 비교)
+const LUMP_DEDUCTION = 500000000;
+
+// 배우자공제 최소/최대
+const SPOUSE_MIN = 500000000;
+const SPOUSE_MAX = 3000000000;
+
+// 금융재산공제 한도
+const FINANCIAL_DEDUCTION_MAX = 200000000;
+const FINANCIAL_DEDUCTION_THRESHOLD = 20000000;
+const FINANCIAL_DEDUCTION_RATE = 0.20;
+
+function calcTax(taxBase) {
+  if (taxBase <= 0) return { tax: 0, rate: '0%', bracket: null };
+  for (const b of TAX_BRACKETS) {
+    if (taxBase <= b.limit) {
+      return {
+        tax: Math.floor(taxBase * b.rate - b.deduction),
+        rate: (b.rate * 100) + '%',
+        bracket: b,
+      };
+    }
+  }
+  const last = TAX_BRACKETS[TAX_BRACKETS.length - 1];
+  return {
+    tax: Math.floor(taxBase * last.rate - last.deduction),
+    rate: (last.rate * 100) + '%',
+    bracket: last,
+  };
+}
+
+function calculate() {
+  const totalAsset = parseFloat(document.getElementById('totalAsset').value) || 0;
+  const debt = parseFloat(document.getElementById('debt').value) || 0;
+  const financialAsset = parseFloat(document.getElementById('financialAsset').value) || 0;
+  const hasSpouse = document.getElementById('hasSpouse').checked;
+  const childCount = parseInt(document.getElementById('childCount').value) || 0;
+
+  // 총 상속재산 = 상속재산 총액 - 채무·공과금
+  const netAsset = Math.max(0, totalAsset - debt);
+
+  // 기초공제 2억 + 기타 인적공제 (자녀 1인당 5천만원 기준으로 단순화)
+  // 실제 계산: 자녀공제는 1인당 5천만원, 미성년자공제, 장애인공제, 연로자공제 등 포함
+  // 이 계산기는 자녀 수 기준으로 기본 인적공제를 계산
+  const childDeduction = childCount * 50000000;
+  const basicPlusPersonal = BASIC_DEDUCTION + childDeduction;
+
+  // 일괄공제: 기초+인적공제 합계 vs 5억 중 큰 값
+  const lumpDeduction = Math.max(basicPlusPersonal, LUMP_DEDUCTION);
+
+  // 배우자공제: 배우자 있으면 최소 5억, 법정상속분 한도 최대 30억
+  // 자녀 수에 따른 법정상속분 계산 (배우자: 1.5 / (자녀 수 + 1.5) 비율)
+  let spouseDeduction = 0;
+  if (hasSpouse) {
+    const spouseRatio = childCount === 0 ? 1 : 1.5 / (childCount + 1.5);
+    const legalShareAmount = netAsset * spouseRatio;
+    spouseDeduction = Math.min(
+      SPOUSE_MAX,
+      Math.max(SPOUSE_MIN, legalShareAmount)
+    );
+  }
+
+  // 금융재산공제: 순금융재산 2천만원 초과 시 20% (최대 2억)
+  let financialDeduction = 0;
+  if (financialAsset > FINANCIAL_DEDUCTION_THRESHOLD) {
+    financialDeduction = Math.min(
+      FINANCIAL_DEDUCTION_MAX,
+      Math.floor(financialAsset * FINANCIAL_DEDUCTION_RATE)
+    );
+  }
+
+  // 공제 합계
+  const totalDeduction = lumpDeduction + spouseDeduction + financialDeduction;
+
+  // 과세표준
+  const taxBase = Math.max(0, netAsset - totalDeduction);
+
+  // 산출세액
+  const { tax: calcTaxAmount, rate: taxRateStr } = calcTax(taxBase);
+
+  // 신고세액공제 (3%)
+  const discount = Math.floor(calcTaxAmount * FILING_DISCOUNT);
+  const finalTax = Math.max(0, calcTaxAmount - discount);
+
+  // 결과 표시
+  document.getElementById('rTotalAsset').textContent = fmt(totalAsset);
+  document.getElementById('rDebt').textContent = debt > 0 ? '-' + fmt(debt) : fmt(0);
+  document.getElementById('rNetAsset').textContent = fmt(netAsset);
+  document.getElementById('rBasicDeduction').textContent = '-' + fmt(BASIC_DEDUCTION);
+  document.getElementById('rLumpDeduction').textContent = '-' + fmt(lumpDeduction);
+  document.getElementById('rTotalDeduction').textContent = '-' + fmt(totalDeduction);
+  document.getElementById('rTaxBase').textContent = fmt(taxBase);
+  document.getElementById('rTaxRate').textContent = taxRateStr;
+  document.getElementById('rCalcTax').textContent = fmt(calcTaxAmount);
+  document.getElementById('rDiscount').textContent = '-' + fmt(discount);
+  document.getElementById('rTotal').textContent = fmt(finalTax);
+  document.getElementById('rFinalTax').textContent = fmt(finalTax);
+
+  // 배우자공제 행
+  if (hasSpouse) {
+    document.getElementById('rSpouseRow').style.display = '';
+    document.getElementById('rSpouseDeduction').textContent = '-' + fmt(spouseDeduction);
+  } else {
+    document.getElementById('rSpouseRow').style.display = 'none';
+  }
+
+  // 금융재산공제 행
+  if (financialDeduction > 0) {
+    document.getElementById('rFinancialRow').style.display = '';
+    document.getElementById('rFinancialDeduction').textContent = '-' + fmt(financialDeduction);
+  } else {
+    document.getElementById('rFinancialRow').style.display = 'none';
+  }
+
+  // 보조 텍스트
+  let subParts = ['자진신고 3% 공제 적용'];
+  if (hasSpouse) subParts.push('배우자공제 ' + fmt(spouseDeduction) + ' 적용');
+  if (financialDeduction > 0) subParts.push('금융재산공제 적용');
+  document.getElementById('rFinalSub').textContent = subParts.join(' | ');
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

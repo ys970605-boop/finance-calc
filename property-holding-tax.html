@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>종합부동산세 계산기 - 2026년 종부세 자동 계산</title>
+  <meta name="description" content="2026년 기준 종합부동산세(종부세)를 공시가격, 주택 수, 1세대 1주택 여부에 따라 자동 계산합니다. 농어촌특별세 포함 총 세액을 한눈에 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/property-holding-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="종합부동산세 계산기 - 2026년 종부세 자동 계산">
+  <meta property="og:description" content="2026년 기준 종합부동산세(종부세)를 공시가격, 주택 수, 1세대 1주택 여부에 따라 자동 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/property-holding-tax">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"종합부동산세란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"종합부동산세(종부세)는 일정 기준금액 이상의 주택 또는 토지를 보유한 사람에게 부과하는 국세입니다. 매년 6월 1일 기준 보유자에게 12월에 고지서가 발송되며, 공시가격 합계에서 공제금액을 뺀 과세표준에 세율을 곱해 계산합니다."}},
+      {"@type":"Question","name":"2026년 종부세 공제금액은 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"2026년 기준 주택 종부세 공제금액은 1세대 1주택자의 경우 12억원, 그 외(다주택자 포함)는 9억원입니다. 공시가격 합계에서 이 금액을 뺀 뒤 공정시장가액비율(60%)을 곱해 과세표준을 구합니다."}},
+      {"@type":"Question","name":"종부세 과세표준은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"과세표준 = (주택 공시가격 합계 - 공제금액) × 공정시장가액비율(60%). 1세대 1주택은 공제금액 12억원, 그 외는 9억원을 적용합니다. 과세표준이 0 이하이면 종부세가 부과되지 않습니다."}},
+      {"@type":"Question","name":"3주택 이상이면 종부세가 더 높나요?","acceptedAnswer":{"@type":"Answer","text":"2024년 세법 개정으로 다주택자 중과세율이 폐지되어 2026년 현재 주택 수에 관계없이 동일한 일반세율(0.5%~2.7%)이 적용됩니다. 과세표준 구간에 따라 누진세율이 적용됩니다."}},
+      {"@type":"Question","name":"농어촌특별세는 얼마나 되나요?","acceptedAnswer":{"@type":"Answer","text":"종부세액의 20%가 농어촌특별세로 함께 부과됩니다. 예를 들어 종부세가 100만원이면 농어촌특별세 20만원이 추가되어 실제 납부 금액은 120만원입니다."}},
+      {"@type":"Question","name":"1주택 고령자·장기보유 세액공제는?","acceptedAnswer":{"@type":"Answer","text":"1세대 1주택자는 연령별·보유기간별 세액공제를 받을 수 있습니다. 60세 이상 20%, 65세 이상 30%, 70세 이상 40%의 고령자 공제와 5년 이상 20%, 10년 이상 40%, 15년 이상 50%의 장기보유 공제가 있으며, 두 공제를 합산해 최대 80%까지 세액공제가 가능합니다."}},
+      {"@type":"Question","name":"공시가격 20억 1주택 종부세는 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"공시가격 20억원 1세대 1주택의 경우: 과세표준 = (20억 - 12억) × 60% = 4억 8천만원. 세율 구간 적용 시 종부세 약 276만원, 농어촌특별세 약 55만원으로 총 약 331만원이 됩니다. (세액공제 미적용 기준)"}
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="property-holding-tax.html" class="active">종부세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>종합부동산세 계산기</h1>
+        <p class="desc">주택 공시가격 합계와 주택 수를 입력하면 2026년 기준 종부세와 농어촌특별세를 자동으로 계산합니다.</p>
+
+        <div class="form-group">
+          <label>주택 공시가격 합계 <span class="hint">만원 단위 입력</span></label>
+          <input type="number" id="price" placeholder="예: 150000 (15억)" value="" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>보유 주택 수</label>
+          <div class="radio-group">
+            <label><input type="radio" name="houseCount" value="1" checked><span>1주택</span></label>
+            <label><input type="radio" name="houseCount" value="2"><span>2주택</span></label>
+            <label><input type="radio" name="houseCount" value="3"><span>3주택 이상</span></label>
+          </div>
+        </div>
+
+        <div class="form-group" id="singleHouseGroup">
+          <label>1세대 1주택 해당 여부 <span class="hint">세대원 전원 기준</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="singleHouse" value="yes" checked><span>해당 (공제 12억)</span></label>
+            <label><input type="radio" name="singleHouse" value="no"><span>미해당 (공제 9억)</span></label>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result" style="display:none;">
+          <div class="result-highlight">
+            <div class="label">총 납부 세금 (종부세 + 농어촌특별세)</div>
+            <div class="value" id="rTotal">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr>
+              <td>공시가격 합계</td>
+              <td id="rPrice">-</td>
+            </tr>
+            <tr>
+              <td>공제금액</td>
+              <td id="rDeduct">-</td>
+            </tr>
+            <tr>
+              <td>공정시장가액비율</td>
+              <td>60%</td>
+            </tr>
+            <tr>
+              <td>과세표준</td>
+              <td id="rBase">-</td>
+            </tr>
+            <tr>
+              <td>적용 세율</td>
+              <td id="rRate">-</td>
+            </tr>
+            <tr>
+              <td>종합부동산세</td>
+              <td id="rTax">-</td>
+            </tr>
+            <tr>
+              <td>농어촌특별세 (종부세×20%)</td>
+              <td id="rAgri">-</td>
+            </tr>
+            <tr class="total">
+              <td>합계</td>
+              <td id="rSum">-</td>
+            </tr>
+          </table>
+
+          <div id="notTarget" style="display:none;text-align:center;padding:20px;font-size:16px;font-weight:700;color:#388e3c;">
+            종부세 대상이 아닙니다<br>
+            <span style="font-size:13px;font-weight:400;color:#666;margin-top:8px;display:block;">공시가격 합계가 공제금액 이하입니다.</span>
+          </div>
+
+          <div style="margin-top:16px;padding:12px;background:#fff8e1;border-radius:8px;font-size:13px;color:#795548;">
+            <strong>주의:</strong> 1세대 1주택자의 고령자·장기보유 세액공제, 세부담 상한 적용 등에 따라 실제 납부 세액이 달라질 수 있습니다. 정확한 세액은 국세청 홈택스(hometax.go.kr)에서 확인하세요.
+          </div>
+        </div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>2026년 종부세 세율표</h3>
+        <table style="width:100%;font-size:13px;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#e8f0fe;">
+              <th style="padding:6px 8px;text-align:left;border-bottom:1px solid #c5d4f0;">과세표준</th>
+              <th style="padding:6px 8px;text-align:right;border-bottom:1px solid #c5d4f0;">세율</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">3억 이하</td><td style="padding:5px 8px;text-align:right;border-bottom:1px solid #eee;">0.5%</td></tr>
+            <tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">3억~6억</td><td style="padding:5px 8px;text-align:right;border-bottom:1px solid #eee;">0.7%</td></tr>
+            <tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">6억~12억</td><td style="padding:5px 8px;text-align:right;border-bottom:1px solid #eee;">1.0%</td></tr>
+            <tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">12억~25억</td><td style="padding:5px 8px;text-align:right;border-bottom:1px solid #eee;">1.3%</td></tr>
+            <tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">25억~50억</td><td style="padding:5px 8px;text-align:right;border-bottom:1px solid #eee;">1.5%</td></tr>
+            <tr><td style="padding:5px 8px;border-bottom:1px solid #eee;">50억~94억</td><td style="padding:5px 8px;text-align:right;border-bottom:1px solid #eee;">2.0%</td></tr>
+            <tr><td style="padding:5px 8px;">94억 초과</td><td style="padding:5px 8px;text-align:right;">2.7%</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:8px;font-size:12px;color:#888;">※ 2024년 이후 다주택자 중과 폐지. 주택 수 관계없이 동일 세율 적용.</p>
+      </div>
+
+      <div class="info-box">
+        <h3>1주택 세액공제 안내</h3>
+        <p style="font-size:13px;color:#444;margin-bottom:10px;line-height:1.6;">1세대 1주택자는 아래 공제를 중복 적용(최대 80%)할 수 있습니다.</p>
+        <p style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:6px;">고령자 공제</p>
+        <ul style="font-size:13px;color:#555;padding-left:16px;margin-bottom:10px;">
+          <li>60세 이상: 20%</li>
+          <li>65세 이상: 30%</li>
+          <li>70세 이상: 40%</li>
+        </ul>
+        <p style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:6px;">장기보유 공제</p>
+        <ul style="font-size:13px;color:#555;padding-left:16px;margin-bottom:10px;">
+          <li>5년 이상: 20%</li>
+          <li>10년 이상: 40%</li>
+          <li>15년 이상: 50%</li>
+        </ul>
+        <p style="font-size:12px;color:#e53935;font-weight:600;">두 공제 합산 최대 80% 한도</p>
+      </div>
+
+      <div class="info-box">
+        <h3>공제금액 안내</h3>
+        <ul style="font-size:13px;color:#555;padding-left:16px;">
+          <li><strong>1세대 1주택:</strong> 12억원</li>
+          <li><strong>그 외 (다주택 등):</strong> 9억원</li>
+        </ul>
+        <p style="font-size:13px;margin-top:10px;color:#444;line-height:1.6;">공정시장가액비율 60% 적용 후 누진세율로 계산합니다.</p>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">종합부동산세란 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">종합부동산세(종부세)는 일정 기준금액 이상의 주택 또는 토지를 보유한 사람에게 부과하는 <strong>국세</strong>입니다. 매년 6월 1일 기준 보유자에게 12월에 고지서가 발송되며, 공시가격 합계에서 공제금액을 뺀 과세표준에 세율을 곱해 계산합니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">2026년 종부세 공제금액은 얼마인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2026년 기준 주택 종부세 공제금액은 <strong>1세대 1주택자 12억원</strong>, 그 외(다주택자 포함)는 <strong>9억원</strong>입니다. 공시가격 합계에서 이 금액을 뺀 뒤 공정시장가액비율(60%)을 곱해 과세표준을 구합니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">종부세 과세표준은 어떻게 계산하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">과세표준 = (주택 공시가격 합계 - 공제금액) × 공정시장가액비율(60%). 1세대 1주택은 공제금액 <strong>12억원</strong>, 그 외는 <strong>9억원</strong>을 적용합니다. 과세표준이 0 이하이면 종부세가 부과되지 않습니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">3주택 이상이면 종부세가 더 높나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2024년 세법 개정으로 다주택자 중과세율이 폐지되어 2026년 현재 주택 수에 관계없이 <strong>동일한 일반세율(0.5%~2.7%)</strong>이 적용됩니다. 과세표준 구간에 따라 누진세율이 적용됩니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">농어촌특별세는 얼마나 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">종부세액의 <strong>20%</strong>가 농어촌특별세로 함께 부과됩니다. 예를 들어 종부세가 100만원이면 농어촌특별세 20만원이 추가되어 실제 납부 금액은 120만원입니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">1주택 고령자·장기보유 세액공제는?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">1세대 1주택자는 연령별·보유기간별 세액공제를 받을 수 있습니다. <strong>고령자 공제</strong>: 60세 이상 20%, 65세 이상 30%, 70세 이상 40%. <strong>장기보유 공제</strong>: 5년 이상 20%, 10년 이상 40%, 15년 이상 50%. 두 공제를 합산해 <strong>최대 80%</strong>까지 세액공제가 가능합니다.</p>
+    </details>
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">공시가격 20억 1주택 종부세는 얼마인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">공시가격 20억원 1세대 1주택의 경우: 과세표준 = (20억 - 12억) × 60% = 4억 8천만원. 세율 구간 적용 시 종부세 약 <strong>276만원</strong>, 농어촌특별세 약 55만원으로 총 약 <strong>331만원</strong>이 됩니다. (세액공제 미적용 기준)</p>
+    </details>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택 구매 시 취득세 자동 계산</li>
+      <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 매도 시 양도세</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 주택담보대출 이자 계산</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 사업·이자·임대소득 세금</li>
+      <li><a href="real-estate-fee.html">부동산 중개수수료 계산기</a> - 매매·전월세 중개보수</li>
+    </ul>
+  </div>
+
+<!-- SEO 콘텐츠 섹션 시작 -->
+<div style="max-width:900px;margin:0 auto 48px;padding:0 16px;">
+
+  <section style="margin-bottom:48px;">
+    <h2 style="font-size:1.5em;font-weight:700;color:#1a1a2e;border-left:4px solid #3b82f6;padding-left:14px;margin-bottom:20px;">2026년 종합부동산세 완전 가이드</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:20px;">
+      종합부동산세(종부세)는 부동산 보유 단계에서 부과되는 국세로, 매년 6월 1일을 기준일로 하여 공시가격 합계가 공제금액을 초과하는 경우에만 부과됩니다. 2024년 세법 개정으로 다주택자 중과세율이 폐지되어, 2026년 현재는 주택 수와 무관하게 동일한 세율이 적용됩니다.
+    </p>
+
+    <h3 style="font-size:1.15em;font-weight:700;color:#1a1a2e;margin-bottom:12px;">종부세 계산 공식</h3>
+    <div style="background:#e8f0fe;border-radius:10px;padding:20px;margin-bottom:24px;font-size:14px;line-height:1.8;color:#1a1a2e;">
+      <p style="margin:0;"><strong>① 과세표준</strong> = (공시가격 합계 - 공제금액) × 60%</p>
+      <p style="margin:4px 0;padding-left:12px;color:#555;">· 1세대 1주택: 공제금액 12억원 / 그 외: 9억원</p>
+      <p style="margin:0;"><strong>② 종부세</strong> = 과세표준 × 누진세율 (0.5%~2.7%)</p>
+      <p style="margin:4px 0;padding-left:12px;color:#555;">· 과세표준 구간별 누진공제액 적용</p>
+      <p style="margin:0;"><strong>③ 농어촌특별세</strong> = 종부세 × 20%</p>
+      <p style="margin:4px 0;padding-left:12px;color:#555;">· 최종 납부금액 = 종부세 + 농어촌특별세</p>
+    </div>
+
+    <h3 style="font-size:1.15em;font-weight:700;color:#1a1a2e;margin-bottom:12px;">2026년 주택 종부세 세율표</h3>
+    <div style="overflow-x:auto;margin-bottom:24px;">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead>
+          <tr style="background:#3b82f6;color:#fff;">
+            <th style="padding:12px 16px;text-align:left;border:1px solid #2563eb;">과세표준</th>
+            <th style="padding:12px 16px;text-align:center;border:1px solid #2563eb;">세율</th>
+            <th style="padding:12px 16px;text-align:center;border:1px solid #2563eb;">누진공제액</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f8faff;">
+            <td style="padding:11px 16px;border:1px solid #dde6ff;">3억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;font-weight:700;">0.5%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">-</td>
+          </tr>
+          <tr>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;">3억원 초과 ~ 6억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;font-weight:700;">0.7%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">60만원</td>
+          </tr>
+          <tr style="background:#f8faff;">
+            <td style="padding:11px 16px;border:1px solid #dde6ff;">6억원 초과 ~ 12억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;font-weight:700;">1.0%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">240만원</td>
+          </tr>
+          <tr>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;">12억원 초과 ~ 25억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;font-weight:700;">1.3%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">600만원</td>
+          </tr>
+          <tr style="background:#f8faff;">
+            <td style="padding:11px 16px;border:1px solid #dde6ff;">25억원 초과 ~ 50억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;font-weight:700;">1.5%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">1,100만원</td>
+          </tr>
+          <tr>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;">50억원 초과 ~ 94억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;font-weight:700;">2.0%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">3,600만원</td>
+          </tr>
+          <tr style="background:#f8faff;">
+            <td style="padding:11px 16px;border:1px solid #dde6ff;">94억원 초과</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;font-weight:700;color:#e53935;">2.7%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">10,180만원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:1.15em;font-weight:700;color:#1a1a2e;margin-bottom:12px;">종부세 납부 일정</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      과세기준일은 매년 <strong>6월 1일</strong>이며, 납부 기간은 <strong>12월 1일~12월 15일</strong>입니다. 세액이 250만원을 초과하면 분할납부가 가능합니다. 납부세액의 50%를 납부기한 경과 후 6개월 이내에 납부할 수 있습니다.
+    </p>
+  </section>
+
+</div>
+
+<!-- 활용 가이드 + 상세 해설 -->
+<div class="container" style="padding-top:0;">
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">종합부동산세 계산기 활용 가이드</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      종부세는 매년 6월 1일 기준 주택 보유자에게 12월에 고지서가 발송됩니다. 연말에 갑작스러운 세금 납부로 자금 계획이 흐트러지지 않도록, 이 계산기로 예상 종부세를 미리 파악해두세요.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 1 — 1세대 1주택자 종부세 여부 확인:</strong> 공시가격 12억원 이하 1주택은 종부세가 부과되지 않습니다. 공시가격이 13억원이라면 과세표준은 (13억 - 12억) × 60% = 6,000만원으로 매우 소액입니다. 공시가격은 국토교통부 공시가격 알리미(realtyprice.kr)에서 확인할 수 있습니다.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 2 — 다주택자 절세 전략 검토:</strong> 2024년 다주택자 중과세율 폐지로 2026년에는 주택 수와 관계없이 동일 세율이 적용됩니다. 공시가격 합산 기준으로 9억원을 초과하는 경우부터 종부세가 발생하므로, 공시가격 분산 여부를 계산기로 시뮬레이션해보세요.
+    </p>
+    <p style="line-height:1.8;color:#444;">
+      <strong>활용 사례 3 — 고령자·장기보유 공제 최대 활용:</strong> 만 70세 이상이고 보유 기간이 15년 이상인 1세대 1주택자는 고령자 공제 40% + 장기보유 공제 50% = 최대 80%까지 세액공제가 가능합니다. 이를 반영하면 실제 납부세액이 크게 줄어듭니다.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">종합부동산세 상세 해설 — 2026년 기준</h2>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">종부세 vs 재산세 차이점</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      재산세는 모든 부동산 보유자에게 부과되는 지방세이며 매년 7월(1기)과 9월(2기)에 납부합니다. 종부세는 재산세와 별도로, 공시가격 합계가 일정 기준(주택 9억원, 1세대 1주택 12억원)을 초과하는 경우에만 부과되는 국세입니다. 종부세 납부 시 재산세와의 이중과세를 방지하기 위해 공제가 적용됩니다.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">공시가격 확인 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      아파트·단독주택의 공시가격은 <strong>국토교통부 공시가격 알리미(realtyprice.kr)</strong>에서 무료로 조회할 수 있습니다. 매년 4월 말~5월 초에 새 공시가격이 발표되므로, 계산기 사용 시 최신 공시가격을 입력해야 정확한 결과를 얻을 수 있습니다.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">농어촌특별세와 합산 납부</h3>
+    <p style="line-height:1.8;color:#444;">
+      종부세 납부 시 종부세액의 20%가 <strong>농어촌특별세</strong>로 함께 부과됩니다. 예를 들어 종부세 500만원이면 농어촌특별세 100만원이 추가되어 총 600만원을 납부하게 됩니다. 납부 기간은 12월 1일~15일이며, 세액이 250만원을 초과하면 분할납부 신청이 가능합니다.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> — 주택·토지·건물 취득세 계산</li>
+      <li><a href="capital-gains.html">양도소득세 계산기</a> — 부동산 양도세 자동 계산</li>
+      <li><a href="property-tax.html">재산세 계산기</a> — 주택 재산세 자동 계산</li>
+      <li><a href="loan.html">대출이자 계산기</a> — 원리금균등·원금균등·만기일시 비교</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>calcmoney.kr | 금융 계산기 모음</p>
+    <p>본 계산기는 참고용이며 실제 세금은 세무사 또는 국세청에 문의하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> | <a href="about.html">소개</a> | <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+
+  // 주택 수 변경 시 1세대 1주택 옵션 표시/숨김
+  document.querySelectorAll('input[name="houseCount"]').forEach(el => {
+    el.addEventListener('change', function() {
+      const group = document.getElementById('singleHouseGroup');
+      group.style.display = this.value === '1' ? '' : 'none';
+      if (this.value !== '1') {
+        document.querySelector('input[name="singleHouse"][value="no"]').checked = true;
+      }
+    });
+  });
+
+  function calcTax(base) {
+    // 과세표준(만원 단위)으로 받아 종부세(만원) 반환
+    // 세율 구간: 단위 만원
+    const brackets = [
+      { limit: 30000,     rate: 0.005, prev: 0 },         // 3억 이하
+      { limit: 60000,     rate: 0.007, prev: 150 },        // 3억~6억: 기납 150만
+      { limit: 120000,    rate: 0.010, prev: 360 },        // 6억~12억: 기납 360만
+      { limit: 250000,    rate: 0.013, prev: 960 },        // 12억~25억: 기납 960만
+      { limit: 500000,    rate: 0.015, prev: 2650 },       // 25억~50억: 기납 2650만
+      { limit: 940000,    rate: 0.020, prev: 6400 },       // 50억~94억: 기납 6400만
+      { limit: Infinity,  rate: 0.027, prev: 15200 },      // 94억 초과: 기납 15200만
+    ];
+
+    // 누진공제 방식으로 계산
+    let tax = 0;
+    if (base <= 0) return 0;
+
+    for (let i = 0; i < brackets.length; i++) {
+      const b = brackets[i];
+      const prevLimit = i === 0 ? 0 : brackets[i-1].limit;
+      if (base > prevLimit) {
+        const taxable = Math.min(base, b.limit) - prevLimit;
+        tax = b.prev + (base - prevLimit) * b.rate;
+        if (base <= b.limit) break;
+      }
+    }
+    return tax;
+  }
+
+  function calculate() {
+    const priceInput = document.getElementById('price').value;
+    if (!priceInput || Number(priceInput) <= 0) {
+      alert('공시가격 합계를 입력해주세요.');
+      return;
+    }
+
+    const price = Number(priceInput);        // 만원
+    const houseCount = document.querySelector('input[name="houseCount"]:checked').value;
+    const isSingleHouse = houseCount === '1' &&
+      document.querySelector('input[name="singleHouse"]:checked').value === 'yes';
+
+    const deduction = isSingleHouse ? 120000 : 90000; // 만원 (12억 or 9억)
+    const ratio = 0.6; // 공정시장가액비율
+
+    const taxBase = Math.max(0, (price - deduction) * ratio); // 과세표준 (만원)
+
+    const resultBox = document.getElementById('result');
+    const notTarget = document.getElementById('notTarget');
+    const tableBody = resultBox.querySelector('.result-table');
+
+    resultBox.style.display = '';
+
+    if (taxBase <= 0) {
+      // 종부세 대상 아님
+      notTarget.style.display = '';
+      tableBody.style.display = 'none';
+      resultBox.querySelector('.result-highlight').style.display = 'none';
+      resultBox.querySelector('div[style*="warning"]');
+
+      document.getElementById('rPrice').textContent = fmt(price * 10000);
+      return;
+    }
+
+    notTarget.style.display = 'none';
+    tableBody.style.display = '';
+    resultBox.querySelector('.result-highlight').style.display = '';
+
+    const tax = calcTax(taxBase);            // 만원
+    const agri = tax * 0.2;                  // 농어촌특별세 (만원)
+    const total = tax + agri;               // 합계 (만원)
+
+    // 적용 최고세율 표시
+    let rateLabel = '0.5%';
+    if (taxBase > 940000) rateLabel = '2.7% (누진)';
+    else if (taxBase > 500000) rateLabel = '2.0% (누진)';
+    else if (taxBase > 250000) rateLabel = '1.5% (누진)';
+    else if (taxBase > 120000) rateLabel = '1.3% (누진)';
+    else if (taxBase > 60000) rateLabel = '1.0% (누진)';
+    else if (taxBase > 30000) rateLabel = '0.7% (누진)';
+
+    document.getElementById('rTotal').textContent = fmt(total * 10000);
+    document.getElementById('rSub').textContent =
+      `종부세 ${fmt(tax * 10000)} + 농어촌특별세 ${fmt(agri * 10000)}`;
+    document.getElementById('rPrice').textContent = fmt(price * 10000);
+    document.getElementById('rDeduct').textContent = fmt(deduction * 10000) +
+      (isSingleHouse ? ' (1세대 1주택)' : ' (기본)');
+    document.getElementById('rBase').textContent = fmt(taxBase * 10000);
+    document.getElementById('rRate').textContent = rateLabel;
+    document.getElementById('rTax').textContent = fmt(tax * 10000);
+    document.getElementById('rAgri').textContent = fmt(agri * 10000);
+    document.getElementById('rSum').textContent = fmt(total * 10000);
+  }
+
+  // Enter 키 계산
+  document.getElementById('price').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') calculate();
+  });
+</script>
+
+</body>
+</html>

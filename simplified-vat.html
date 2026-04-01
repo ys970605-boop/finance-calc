@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="bbb2e816e372612b1e5820af29a23857b401ffea" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>간이과세자 부가가치세 계산기 - 업종별 납부세액 자동 계산 | 2026년 기준</title>
+  <meta name="description" content="간이과세자 부가가치세 계산기. 업종별 부가가치율 적용, 납부의무 면제 여부, 일반과세자 대비 세금 비교까지 자동 계산. 2026년 기준 연 매출 1억 400만원 미만 개인사업자 전용.">
+  <link rel="canonical" href="https://calcmoney.kr/simplified-vat">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="간이과세자 부가가치세 계산기 - 업종별 납부세액 자동 계산 | 2026년 기준">
+  <meta property="og:description" content="간이과세자 부가가치세를 업종별 부가가치율로 자동 계산합니다. 납부의무 면제 여부, 신용카드 세액공제, 일반과세자 비교까지 한 번에.">
+  <meta property="og:url" content="https://calcmoney.kr/simplified-vat">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "간이과세자 부가가치세 계산 공식은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "간이과세자 납부세액 = 연간 매출액(공급대가) × 업종별 부가가치율 × 10%입니다. 예를 들어 음식점업(부가가치율 30%)을 운영하며 연 매출이 6,000만원이면 6,000만원 × 30% × 10% = 180만원이 납부세액입니다. 여기서 세금계산서 수취분 매입세액과 신용카드 발행 세액공제를 추가로 차감할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "간이과세자 납부의무 면제 기준은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연간 공급대가(매출액) 합계가 4,800만원 미만이면 부가가치세 납부의무가 면제됩니다. 단, 납부의무가 면제되어도 부가가치세 신고(1월 25일까지)는 반드시 해야 합니다. 신고를 하지 않으면 무신고 가산세 20%가 부과됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "간이과세자와 일반과세자 중 어느 쪽이 세금이 적게 나오나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "매입 비율이 낮은 업종(서비스업, 음식점 등)은 간이과세자가 유리한 경우가 많습니다. 간이과세자는 부가가치율(15~40%)에 10%를 적용해 세율이 1.5~4%로 낮습니다. 반면 매입 비율이 높은 제조업·도매업은 일반과세자로서 매입세액 전액 공제가 유리할 수 있습니다. 이 계산기의 비교 기능을 활용하면 정확한 수치로 확인할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "간이과세자가 일반과세자로 전환되는 기준은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준으로 연 매출액(공급대가)이 1억 400만원 이상이 되면 다음 해 7월 1일부터 자동으로 일반과세자로 전환됩니다. 반대로 연 매출이 1억 400만원 미만으로 떨어지면 간이과세자로 다시 전환 신청이 가능합니다. 단, 부동산임대업·과세유흥장소 등 일부 업종은 매출과 무관하게 간이과세 적용이 배제됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "신용카드 매출전표 발행 세액공제란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "간이과세자가 신용카드·현금영수증으로 발행한 매출에 대해 발행금액의 1.3%를 납부세액에서 공제받을 수 있습니다. 예를 들어 신용카드 매출이 3,000만원이라면 3,000만원 × 1.3% = 39만원을 공제합니다. 단, 공제액이 납부세액을 초과할 수 없으며 연간 공제 한도는 1,000만원입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "간이과세자의 업종별 부가가치율 2026년 기준은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 간이과세자 업종별 부가가치율은 다음과 같습니다. 소매업·재생재료수집판매업 15%(실효세율 1.5%), 제조업·농림어업·소화물전문운송업 20%(실효세율 2%), 음식점업 30%(실효세율 3%), 건설업·운수통신업·금융보험업 30%(실효세율 3%), 부동산임대업 40%(실효세율 4%), 기타 서비스업 30%(실효세율 3%)입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "간이과세자 세금계산서 발급이 가능한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연 매출 4,800만원 이상 간이과세자는 세금계산서 발급이 가능합니다. 4,800만원 미만 간이과세자는 영수증만 발급할 수 있습니다. 세금계산서를 발급하는 간이과세자는 매출 세금계산서 합계에서 매입 세금계산서의 세액 × 0.5를 공제받을 수 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="gift-tax.html">증여세</a>
+      <a href="vat.html">부가세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>간이과세자 부가가치세 계산기</h1>
+        <p class="desc">연간 매출액과 업종을 입력하면 납부세액, 납부의무 면제 여부, 일반과세자 대비 절세금액까지 자동으로 계산합니다. 2026년 기준 (연 매출 1억 400만원 미만 적용).</p>
+
+        <div class="form-group">
+          <label>연간 매출액 (공급대가) <span class="hint">부가세 포함 금액 (원)</span></label>
+          <input type="number" id="annualSales" placeholder="예: 60000000 (6천만원)" value="60000000" oninput="onInputChange()">
+        </div>
+
+        <div class="form-group">
+          <label>업종 선택 <span class="hint">부가가치율이 업종별로 다릅니다</span></label>
+          <select id="industry" onchange="onInputChange()">
+            <option value="0.15" data-label="소매업·재생재료수집판매업">소매업·재생재료수집판매업 (부가가치율 15%)</option>
+            <option value="0.20" data-label="제조업·농림어업·소화물전문운송업">제조업·농림어업·소화물전문운송업 (부가가치율 20%)</option>
+            <option value="0.30" data-label="음식점업" selected>음식점업 (부가가치율 30%)</option>
+            <option value="0.30" data-label="건설업·운수통신업·금융보험업">건설업·운수통신업·금융보험업 (부가가치율 30%)</option>
+            <option value="0.40" data-label="부동산임대업">부동산임대업 (부가가치율 40%)</option>
+            <option value="0.30" data-label="기타 서비스업">기타 서비스업 (부가가치율 30%)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>세금계산서 수취 매입세액 <span class="hint">세금계산서 받은 매입분의 부가세 합계 (원)</span></label>
+          <input type="number" id="inputVat" placeholder="예: 500000 (50만원, 없으면 0)" value="0" oninput="onInputChange()">
+        </div>
+
+        <div class="form-group">
+          <label>신용카드·현금영수증 매출액 <span class="hint">신용카드/현금영수증으로 발행한 매출 합계 (원)</span></label>
+          <input type="number" id="cardSales" placeholder="예: 30000000 (3천만원, 없으면 0)" value="0" oninput="onInputChange()">
+        </div>
+
+        <div class="form-group">
+          <label>일반과세자 매입액 <span class="hint">비교용: 일반과세자라면 공제할 매입 공급가액 (원)</span></label>
+          <input type="number" id="generalPurchase" placeholder="예: 20000000 (2천만원, 비교 생략 시 0)" value="0" oninput="onInputChange()">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <!-- 납부의무 면제 배너 -->
+          <div id="exemptBanner" style="display:none;background:#e8f5e9;border:1.5px solid #43a047;border-radius:8px;padding:14px 16px;margin-bottom:16px;">
+            <div style="font-weight:700;color:#2e7d32;font-size:1.05em;">납부의무 면제 대상입니다</div>
+            <div style="color:#388e3c;margin-top:4px;font-size:0.93em;">연 매출 4,800만원 미만으로 부가가치세를 납부하지 않아도 됩니다. 단, 신고(1월 25일)는 반드시 해야 합니다.</div>
+          </div>
+
+          <!-- 과세자 초과 경고 배너 -->
+          <div id="overLimitBanner" style="display:none;background:#fff3e0;border:1.5px solid #fb8c00;border-radius:8px;padding:14px 16px;margin-bottom:16px;">
+            <div style="font-weight:700;color:#e65100;font-size:1.05em;">일반과세자 전환 기준 초과</div>
+            <div style="color:#ef6c00;margin-top:4px;font-size:0.93em;">연 매출이 1억 400만원 이상이면 다음 해 7월 1일부터 일반과세자로 자동 전환됩니다.</div>
+          </div>
+
+          <div class="result-highlight">
+            <div class="label">간이과세자 납부세액</div>
+            <div class="value" id="rPayment">-</div>
+            <div class="sub" id="rPaymentSub"></div>
+          </div>
+
+          <table class="result-table" id="rTable">
+            <tr><td>연간 매출액 (공급대가)</td><td id="rSales">-</td></tr>
+            <tr><td id="rVatRateLabel">부가가치율</td><td id="rVatRate">-</td></tr>
+            <tr><td>기본 납부세액</td><td id="rBaseTax">-</td></tr>
+            <tr id="rInputVatRow"><td>세금계산서 매입세액 공제</td><td id="rInputVat">-</td></tr>
+            <tr id="rCardRow"><td>신용카드 발행 세액공제 (1.3%)</td><td id="rCardDeduction">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>최종 납부세액</td><td id="rFinalTax">-</td></tr>
+            <tr><td>실효 세율</td><td id="rEffectiveRate">-</td></tr>
+          </table>
+
+          <!-- 일반과세자 비교 -->
+          <div id="compareSection" style="margin-top:20px;">
+            <div style="font-weight:700;font-size:0.97em;margin-bottom:10px;color:#444;">일반과세자였다면?</div>
+            <table class="result-table">
+              <tr><td>일반과세자 매출세액 (매출 ÷ 1.1 × 10%)</td><td id="rGenSalesTax">-</td></tr>
+              <tr><td>일반과세자 매입세액 공제</td><td id="rGenPurchaseTax">-</td></tr>
+              <tr style="border-top:2px solid #e0e0e0;" class="total"><td>일반과세자 납부세액</td><td id="rGenTax">-</td></tr>
+              <tr id="rSavingsRow"><td style="font-weight:700;" id="rSavingsLabel">간이과세자 절세금액</td><td style="font-weight:700;" id="rSavings">-</td></tr>
+            </table>
+            <p style="font-size:0.84em;color:#888;margin-top:8px;" id="rCompareNote"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 업종별 부가가치율 표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 간이과세자 업종별 부가가치율</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>업종</td><td>부가가치율</td><td>실효 세율</td></tr>
+          <tr><td>소매업, 재생재료수집판매업</td><td>15%</td><td>1.5%</td></tr>
+          <tr><td>제조업, 농림어업, 소화물전문운송업</td><td>20%</td><td>2.0%</td></tr>
+          <tr><td>음식점업</td><td>30%</td><td>3.0%</td></tr>
+          <tr><td>건설업, 운수통신업, 금융보험업</td><td>30%</td><td>3.0%</td></tr>
+          <tr><td>기타 서비스업</td><td>30%</td><td>3.0%</td></tr>
+          <tr><td>부동산임대업</td><td>40%</td><td>4.0%</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 납부세액 = 공급대가 × 업종별 부가가치율 × 10%</p>
+      </div>
+
+      <!-- 납부의무 면제 기준 안내 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>간이과세자 납부의무 면제 기준</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>구분</td><td>기준</td><td>효과</td></tr>
+          <tr><td>납부의무 면제</td><td>연 매출 4,800만원 미만</td><td>부가세 납부 불필요 (신고는 필수)</td></tr>
+          <tr><td>세금계산서 발급 가능</td><td>연 매출 4,800만원 이상</td><td>세금계산서 교부 가능</td></tr>
+          <tr><td>일반과세자 전환</td><td>연 매출 1억 400만원 이상</td><td>다음 해 7월부터 일반과세자</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 2026년 기준. 기준금액은 공급대가(부가세 포함 매출액) 기준입니다.</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 상세 설명 콘텐츠 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h2 style="font-size:1.2em;margin-bottom:14px;">간이과세자 부가가치세 완전 가이드</h2>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세자란?</h3>
+        <p style="line-height:1.8;color:#444;">간이과세자는 연간 공급대가(매출액) 합계가 <strong>1억 400만원 미만</strong>인 개인사업자에게 적용되는 간편 부가가치세 납세 제도입니다. 2024년 7월 이전까지는 8,000만원 미만이 기준이었으나, 이후 1억 400만원으로 상향 조정되어 더 많은 소규모 사업자가 혜택을 받게 되었습니다. 단, 부동산임대업, 과세유흥장소, 광업 등 일부 업종은 매출액과 무관하게 간이과세 적용이 배제됩니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세 납부세액 계산 공식</h3>
+        <p style="line-height:1.8;color:#444;">간이과세자의 부가가치세는 일반과세자와 달리 매출·매입 세액을 별도로 계산하지 않고, 매출액에 업종별 부가가치율을 적용해 단순하게 산출합니다.</p>
+        <ul style="line-height:2;color:#444;padding-left:18px;">
+          <li><strong>기본 납부세액</strong> = 공급대가(연 매출) × 업종별 부가가치율 × 10%</li>
+          <li><strong>세금계산서 공제</strong> = 수취한 매입 세금계산서 세액 × 0.5 (공제율 50%)</li>
+          <li><strong>신용카드 공제</strong> = 신용카드·현금영수증 발행액 × 1.3%</li>
+          <li><strong>최종 납부세액</strong> = 기본 납부세액 - 세금계산서 공제 - 신용카드 공제</li>
+        </ul>
+        <p style="line-height:1.8;color:#444;margin-top:8px;">예시: 음식점업(부가가치율 30%), 연 매출 6,000만원, 신용카드 매출 3,000만원인 경우: 기본세액 = 6,000만원 × 30% × 10% = <strong>180만원</strong>. 신용카드 공제 = 3,000만원 × 1.3% = 39만원. 최종 납부세액 = 180만원 - 39만원 = <strong>141만원</strong>.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">납부의무 면제 상세 안내</h3>
+        <p style="line-height:1.8;color:#444;">연간 공급대가가 <strong>4,800만원 미만</strong>인 간이과세자는 부가가치세를 납부하지 않아도 됩니다. 그러나 납부의무 면제는 납세 의무 자체가 사라지는 것이 아닙니다. 매년 1월 25일까지 부가가치세 신고는 반드시 완료해야 합니다. 신고를 하지 않을 경우 무신고 가산세(납부세액의 20%)가 부과됩니다. 간이과세자는 확정신고를 연 1회만 하면 됩니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">신용카드 매출전표 발행 세액공제</h3>
+        <p style="line-height:1.8;color:#444;">간이과세자가 소비자에게 신용카드·직불카드·현금영수증으로 매출을 발행하면 해당 발행금액의 <strong>1.3%</strong>를 납부세액에서 공제받습니다. 이는 현금 거래를 줄이고 카드 거래를 유도하는 세제 혜택입니다. 연간 공제 한도는 1,000만원이며, 공제액이 납부세액을 초과할 수 없습니다. 납부의무 면제 대상자에게는 이 공제가 실질적으로 의미가 없습니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">세금계산서 매입세액 공제</h3>
+        <p style="line-height:1.8;color:#444;">간이과세자도 세금계산서를 받은 경우 <strong>매입세액의 0.5(50%)를 공제</strong>받을 수 있습니다. 일반과세자는 매입세액 100%를 공제받지만, 간이과세자는 절반만 공제됩니다. 예를 들어 100만원 상당의 부가세가 찍힌 세금계산서를 수취했다면 50만원을 납부세액에서 차감합니다. 세금계산서 없이 영수증만 수취한 경우에는 공제가 불가합니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세자 vs 일반과세자: 어느 쪽이 유리한가?</h3>
+        <p style="line-height:1.8;color:#444;">간이과세자가 유리한 경우는 <strong>매입 비율이 낮은 업종</strong>입니다. 서비스업·음식점업처럼 원재료비보다 인건비·임차료 등 비율이 높으면, 일반과세자로서 공제받을 매입세액 자체가 적습니다. 반대로 <strong>제조업·도소매업처럼 매입 비율이 높은 업종</strong>은 일반과세자로서 매입세액을 100% 공제받는 것이 더 유리할 수 있습니다. 이 계산기의 비교 섹션에서 정확한 수치를 확인해 보세요.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세자 → 일반과세자 전환 시점과 절차</h3>
+        <p style="line-height:1.8;color:#444;">직전 연도(1월 1일~12월 31일) 공급대가 합계가 <strong>1억 400만원 이상</strong>이면 국세청이 다음 해 6월에 일반과세자 전환 통지를 발송하고, <strong>7월 1일부터</strong> 일반과세자가 됩니다. 전환 후에는 일반과세자로서 세금계산서 발급 의무가 생기고, 부가세 신고도 연 2회로 늘어납니다. 반대로 연 매출이 1억 400만원 미만이 되면 간이과세 적용 신청서를 제출해 다시 간이과세자로 전환할 수 있습니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세자 부가세 신고 일정</h3>
+        <p style="line-height:1.8;color:#444;">간이과세자는 <strong>연 1회 확정신고</strong>만 합니다. 전년도 1월 1일부터 12월 31일까지의 실적을 다음 해 <strong>1월 25일</strong>까지 홈택스에 신고하고 납부합니다. 일반과세자와 달리 예정신고(4월·10월)가 없으나, 예정고지(직전 연도 납부세액의 50%)가 7월에 나올 수 있습니다. 예정고지액은 확정신고 시 납부세액에서 차감됩니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세자 세금계산서 발급 제한과 허용 범위</h3>
+        <p style="line-height:1.8;color:#444;">연 매출 <strong>4,800만원 미만</strong> 간이과세자는 세금계산서를 발급할 수 없고 영수증만 교부합니다. 연 매출 <strong>4,800만원 이상 1억 400만원 미만</strong> 간이과세자는 세금계산서 발급이 가능합니다. 단, B2B 거래(사업자 간 거래)에서 세금계산서 발급을 요구하는 경우라면 거래처 확보에 불리할 수 있으므로, 납부세액보다 매출 확대를 위해 일반과세자를 선택하는 전략도 있습니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">간이과세 적용 배제 업종</h3>
+        <p style="line-height:1.8;color:#444;">다음 업종은 매출액과 무관하게 간이과세가 적용되지 않습니다: ① 광업, ② 제조업(과자점업·도정업·제분업·양복점업 등 소규모 예외 있음), ③ 도매업(소매 겸업자 제외), ④ 부동산매매업, ⑤ 변호사·공인회계사·세무사 등 전문직, ⑥ 과세유흥장소(나이트클럽 등), ⑦ 일정 규모 이상의 부동산임대업. 본인 업종이 해당하는지 세무사 또는 국세청 홈택스(126)에서 확인하세요.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">가산세 주의사항</h3>
+        <p style="line-height:1.8;color:#444;">간이과세자도 신고·납부 의무를 지킵니다. 무신고 시 <strong>가산세 20%</strong>, 과소신고 시 <strong>10%</strong>, 납부지연 시 <strong>일 0.022%</strong>가 부과됩니다. 납부의무 면제 대상자도 신고는 해야 하며, 신고 미이행 시 가산세가 발생합니다. 기한 내 신고·납부가 절세의 기본입니다.</p>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>계산 공식 요약</h3>
+        <ul>
+          <li><strong>기본 납부세액</strong> =<br>매출액 × 부가가치율 × 10%</li>
+          <li style="margin-top:10px;"><strong>세금계산서 공제</strong> =<br>매입세액 × 0.5</li>
+          <li style="margin-top:10px;"><strong>신용카드 공제</strong> =<br>카드 매출 × 1.3%</li>
+          <li style="margin-top:10px;"><strong>최종 납부세액</strong> =<br>기본세액 - 공제액</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>간이과세자 주요 기준 (2026)</h3>
+        <ul>
+          <li><strong>적용 기준:</strong> 연 매출 1억 400만원 미만</li>
+          <li><strong>납부면제:</strong> 연 매출 4,800만원 미만</li>
+          <li><strong>세금계산서 발급:</strong> 연 매출 4,800만원 이상</li>
+          <li><strong>신고 횟수:</strong> 연 1회 (1월 25일)</li>
+          <li><strong>신용카드 공제:</strong> 발행액 × 1.3%</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 공급대가(부가세 포함 매출) 기준</p>
+      </div>
+      <div class="info-box">
+        <h3>절세 포인트</h3>
+        <ul>
+          <li><strong>신용카드 적극 활용:</strong> 발행액 1.3% 공제 - 현금 거래보다 유리</li>
+          <li><strong>세금계산서 수취:</strong> 매입세액의 50% 공제 가능</li>
+          <li><strong>신고 기한 준수:</strong> 1월 25일, 놓치면 20% 가산세</li>
+          <li><strong>업종 정확 분류:</strong> 부가가치율이 납부세액 결정</li>
+          <li><strong>전환 시점 체크:</strong> 매출 1억 400만원 근접 시 대비</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="vat.html" class="related-link">일반 부가세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ 섹션 -->
+<div class="info-box" style="margin-top:32px;">
+  <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">간이과세자 부가세를 일반과세자보다 적게 내는 이유는?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">일반과세자는 <strong>매출 전체의 10%</strong>가 매출세액이 되고, 여기서 매입세액을 빼야 납부세액이 결정됩니다. 반면 간이과세자는 매출에 업종별 부가가치율(15~40%)을 먼저 곱한 뒤 10%를 적용합니다. 따라서 실효세율이 1.5~4%로 낮습니다. 소매업(부가가치율 15%)이라면 실효세율은 1.5%로, 일반과세자의 10%에서 매입 공제 후 세율보다 훨씬 낮을 수 있습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">간이과세자도 홈택스에서 부가세 신고를 할 수 있나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, 홈택스(hometax.go.kr)에서 간이과세자 부가가치세 확정신고를 온라인으로 할 수 있습니다. 매년 1월 중 홈택스에 간이과세자 신고 메뉴가 활성화되며, 카드사·통신사에서 자동으로 매출 데이터를 불러와 입력 부담을 줄여줍니다. 세무서 방문 없이 스마트폰 손택스 앱으로도 신고 가능합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">간이과세자로 사업자등록 하면 세금계산서를 받을 수 있나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">간이과세자도 공급받는 자(매입)로서 세금계산서를 <strong>수취(받는 것)는 가능</strong>합니다. 그 세금계산서로 매입세액의 50%를 공제받을 수 있습니다. 단, 발급(발행) 가능 여부는 매출액에 따라 다릅니다. 연 매출 4,800만원 미만은 발급 불가, 4,800만원 이상은 발급 가능입니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">프리랜서(프리랜서 개인사업자)도 간이과세자가 될 수 있나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">대부분의 프리랜서 업종(IT, 디자인, 강사, 컨설팅 등)은 <strong>기타 서비스업(부가가치율 30%)</strong>으로 분류되어 간이과세자 신청이 가능합니다. 단, 변호사·공인회계사·세무사·의사·약사 등 법령에서 정한 전문직 사업자는 간이과세 적용이 배제됩니다. 연 매출이 1억 400만원 미만이고 전문직이 아니라면 간이과세자 적용을 받을 수 있습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">간이과세자는 환급을 받을 수 있나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">원칙적으로 <strong>간이과세자는 부가가치세 환급이 없습니다</strong>. 공제액이 납부세액을 초과하더라도 환급이 아닌 0원(납부 없음)으로 처리됩니다. 환급이 필요한 경우(설비 투자 등 대규모 매입)에는 일반과세자로 과세 유형을 변경하는 것을 고려할 수 있습니다. 단, 일반과세자 전환은 신고 전에 국세청에 전환신청서를 제출해야 합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">음식점 연 매출 8,000만원이면 간이과세자인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2026년 기준으로 연 매출 <strong>1억 400만원 미만</strong>이면 간이과세자 적용을 받습니다. 8,000만원이라면 간이과세자입니다. 음식점업 부가가치율 30%를 적용하면 납부세액은 8,000만원 × 30% × 10% = <strong>240만원</strong>입니다. 여기서 신용카드 매출 공제(카드매출 × 1.3%)를 빼면 실제 납부세액은 더 줄어듭니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">간이과세자 적용을 포기하고 일반과세자를 선택할 수 있나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, 간이과세 기준에 해당하더라도 <strong>일반과세자를 선택</strong>할 수 있습니다. 사업자등록 시 또는 매년 1월 1일~12월 31일 중 적용포기 신청서를 세무서에 제출하면 됩니다. 일반과세자를 선택하면 세금계산서 발급·수취가 자유롭고 매입세액 100% 공제가 가능해 B2B 거래에 유리합니다. 단, 한 번 일반과세자를 선택하면 2년간 간이과세로 돌아올 수 없습니다.</p>
+  </details>
+</div>
+
+<!-- 내부 링크 섹션 -->
+<div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+  <h3>다른 계산기도 확인해보세요</h3>
+  <ul>
+    <li><a href="vat.html">일반 부가가치세 계산기</a> - 공급가액·역산·납부세액 자동 계산</li>
+    <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서, 개인사업자 종합소득세 자동 계산</li>
+    <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택·토지·건물 취득세 계산</li>
+    <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 양도소득세 자동 계산</li>
+    <li><a href="gift-tax.html">증여세 계산기</a> - 배우자·자녀 증여세 납부액 계산</li>
+    <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+    <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+  </ul>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세액은 국세청 또는 세무사에게 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+const pct = n => (n * 100).toFixed(1) + '%';
+
+const EXEMPT_THRESHOLD = 48000000;   // 납부의무 면제: 4,800만원
+const OVER_LIMIT = 104000000;        // 일반과세자 전환 기준: 1억 400만원
+const CARD_DEDUCTION_RATE = 0.013;   // 신용카드 발행세액공제 1.3%
+const CARD_DEDUCTION_MAX = 10000000; // 연간 한도 1,000만원
+const INPUT_VAT_RATIO = 0.5;         // 세금계산서 매입세액 공제율 50%
+
+function onInputChange() {
+  // 실시간 계산 (선택적으로 활성화)
+}
+
+function calculate() {
+  const sales = parseFloat(document.getElementById('annualSales').value) || 0;
+  const industryEl = document.getElementById('industry');
+  const vatRate = parseFloat(industryEl.value) || 0.15;
+  const industryLabel = industryEl.options[industryEl.selectedIndex].getAttribute('data-label');
+  const inputVat = parseFloat(document.getElementById('inputVat').value) || 0;
+  const cardSales = parseFloat(document.getElementById('cardSales').value) || 0;
+  const generalPurchase = parseFloat(document.getElementById('generalPurchase').value) || 0;
+
+  // 기본 납부세액
+  const baseTax = Math.round(sales * vatRate * 0.1);
+
+  // 세금계산서 매입세액 공제 (입력된 세액의 50%)
+  const inputVatDeduction = Math.round(inputVat * INPUT_VAT_RATIO);
+
+  // 신용카드 발행 세액공제
+  const cardDeductionRaw = Math.round(cardSales * CARD_DEDUCTION_RATE);
+  const cardDeduction = Math.min(cardDeductionRaw, CARD_DEDUCTION_MAX);
+
+  // 최종 납부세액 (0 미만이면 0으로)
+  const finalTaxRaw = baseTax - inputVatDeduction - cardDeduction;
+  const finalTax = Math.max(0, finalTaxRaw);
+
+  // 실효 세율
+  const effectiveRate = sales > 0 ? finalTax / sales : 0;
+
+  // 납부의무 면제 여부
+  const isExempt = sales < EXEMPT_THRESHOLD;
+  const isOverLimit = sales >= OVER_LIMIT;
+
+  // 일반과세자 비교 계산
+  // 일반과세자: 매출 공급가액 = 공급대가 ÷ 1.1
+  const genSalesSupply = Math.round(sales / 1.1);
+  const genSalesTax = Math.round(genSalesSupply * 0.1);
+  const genPurchaseTax = Math.round(generalPurchase * 0.1);
+  const genFinalTax = Math.max(0, genSalesTax - genPurchaseTax);
+
+  const savings = genFinalTax - finalTax;
+
+  // 배너
+  document.getElementById('exemptBanner').style.display = isExempt ? '' : 'none';
+  document.getElementById('overLimitBanner').style.display = isOverLimit ? '' : 'none';
+
+  // 결과 표시
+  document.getElementById('rPayment').textContent = isExempt ? '납부의무 면제' : fmt(finalTax);
+  document.getElementById('rPaymentSub').textContent =
+    `${industryLabel} | 부가가치율 ${pct(vatRate)} | 실효세율 ${pct(effectiveRate)}`;
+
+  document.getElementById('rSales').textContent = fmt(sales);
+  document.getElementById('rVatRateLabel').textContent = `업종별 부가가치율 (${industryLabel})`;
+  document.getElementById('rVatRate').textContent = pct(vatRate) + ' → 실효세율 ' + pct(vatRate * 0.1);
+  document.getElementById('rBaseTax').textContent = fmt(baseTax);
+
+  if (inputVat > 0) {
+    document.getElementById('rInputVatRow').style.display = '';
+    document.getElementById('rInputVat').textContent = '- ' + fmt(inputVatDeduction) + ' (세액의 50%)';
+  } else {
+    document.getElementById('rInputVatRow').style.display = 'none';
+  }
+
+  if (cardSales > 0) {
+    document.getElementById('rCardRow').style.display = '';
+    document.getElementById('rCardDeduction').textContent = '- ' + fmt(cardDeduction) +
+      (cardDeductionRaw > CARD_DEDUCTION_MAX ? ' (한도 초과, 1,000만원 한도 적용)' : '');
+  } else {
+    document.getElementById('rCardRow').style.display = 'none';
+  }
+
+  document.getElementById('rFinalTax').textContent = isExempt ? '0원 (납부의무 면제)' : fmt(finalTax);
+  document.getElementById('rEffectiveRate').textContent = pct(effectiveRate);
+
+  // 일반과세자 비교
+  document.getElementById('rGenSalesTax').textContent = fmt(genSalesTax) +
+    ` (공급가액 ${fmt(genSalesSupply)} × 10%)`;
+  document.getElementById('rGenPurchaseTax').textContent = generalPurchase > 0
+    ? fmt(genPurchaseTax) + ` (매입 ${fmt(generalPurchase)} × 10%)`
+    : '0원 (매입액 미입력)';
+  document.getElementById('rGenTax').textContent = fmt(genFinalTax);
+
+  const savingsLabel = document.getElementById('rSavingsLabel');
+  const savingsEl = document.getElementById('rSavings');
+  if (savings > 0) {
+    savingsLabel.textContent = '간이과세자 절세금액';
+    savingsLabel.style.color = '#2e7d32';
+    savingsEl.textContent = fmt(savings) + ' 절약';
+    savingsEl.style.color = '#2e7d32';
+    document.getElementById('rCompareNote').textContent =
+      '간이과세자가 일반과세자보다 세금이 적습니다. 소규모 사업자에게 유리합니다.';
+  } else if (savings < 0) {
+    savingsLabel.textContent = '일반과세자 절세금액';
+    savingsLabel.style.color = '#c62828';
+    savingsEl.textContent = fmt(Math.abs(savings)) + ' 절약 (일반과세자 유리)';
+    savingsEl.style.color = '#c62828';
+    document.getElementById('rCompareNote').textContent =
+      '매입 비율이 높아 일반과세자로서 매입세액 공제가 더 유리합니다. 일반과세자 전환을 검토해보세요.';
+  } else {
+    savingsLabel.textContent = '차이';
+    savingsLabel.style.color = '';
+    savingsEl.textContent = '동일';
+    savingsEl.style.color = '';
+    document.getElementById('rCompareNote').textContent = '두 과세 유형의 납부세액이 동일합니다.';
+  }
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

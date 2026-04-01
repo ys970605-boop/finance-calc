@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사업소득세 계산기 - 2026년 프리랜서·자영업자·개인사업자 세금 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="2026년 사업소득세를 자동 계산합니다. 프리랜서, 자영업자, 개인사업자 대상. 업종별 단순경비율·기준경비율 자동 적용, 종합소득 과세표준부터 결정세액·지방소득세까지 한번에 계산.">
+  <link rel="canonical" href="https://calcmoney.kr/business-income-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="사업소득세 계산기 - 2026년 프리랜서·자영업자 세금 자동 계산">
+  <meta property="og:description" content="2026년 사업소득세를 자동 계산합니다. 업종별 단순경비율·기준경비율 자동 적용, 과세표준부터 결정세액·지방소득세까지 한번에.">
+  <meta property="og:url" content="https://calcmoney.kr/business-income-tax">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "사업소득세란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "사업소득세는 프리랜서, 자영업자, 개인사업자가 사업활동으로 얻은 소득에 부과되는 세금입니다. 종합소득세의 일부로, 매년 5월 1일~31일에 전년도 사업소득을 신고·납부합니다. 총수입금액에서 필요경비를 차감한 사업소득금액에 누진세율을 적용해 계산합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "단순경비율과 기준경비율 중 어느 것이 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "대부분의 소규모 사업자·프리랜서에게는 단순경비율이 유리합니다. 단순경비율은 실제 지출 증빙 없이 수입금액에 높은 비율을 일괄 경비로 인정하기 때문입니다. 기준경비율은 실제 주요경비(매입비·임차료·인건비)가 크고 증빙이 철저한 경우에 유리합니다. 수입이 업종별 기준금액 초과 시 기준경비율이 강제 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "프리랜서 사업소득세는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "프리랜서는 총수입금액에서 단순경비율(64.1%) 또는 기준경비율(19.4%)을 적용해 필요경비를 계산하고, 사업소득금액을 구합니다. 소득공제(기본공제, 국민연금 등)를 차감한 과세표준에 누진세율(6%~45%)을 적용하면 산출세액이 나옵니다. 세액공제 후 결정세액을 구하고, 기납부 원천징수세액(3.3%)을 차감하면 최종 납부(환급)세액이 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "간편장부와 복식부기의 차이는 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "간편장부는 수입과 지출을 간단히 기록하는 방식으로, 수입금액이 업종별 복식부기 의무 기준 미만인 소규모 사업자가 사용할 수 있습니다. 복식부기는 차변과 대변으로 모든 거래를 기록하는 정식 회계 방식으로, 일정 규모 이상 사업자에게 의무 적용됩니다. 간편장부 사용 시 기장세액공제(산출세액의 20%, 최대 100만원)를 받을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "사업소득 신고 시 절세 방법은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주요 절세 방법으로는 ① 노란우산공제 가입(연 최대 500만원 소득공제), ② 연금저축·IRP 납입(연 최대 900만원 세액공제 16.5%), ③ 사업 관련 경비 증빙 철저히 수집, ④ 부양가족 인적공제 활용, ⑤ 기장세액공제 적용(간편장부 기장 시 최대 100만원)이 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 사업소득세 세율은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 사업소득세(종합소득세) 세율은 과세표준 1,400만원 이하 6%, 5,000만원 이하 15%, 8,800만원 이하 24%, 1억5,000만원 이하 35%, 3억원 이하 38%, 5억원 이하 40%, 10억원 이하 42%, 10억원 초과 45%의 8단계 누진세율이 적용됩니다. 여기에 지방소득세 10%가 추가됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연 매출 5000만원 자영업자 세금은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "업종에 따라 다르지만 음식점(단순경비율 89.7%)의 경우, 연 매출 5,000만원 기준 사업소득금액 515만원, 기본공제 150만원·국민연금공제 차감 후 과세표준 약 250만원으로 종합소득세 약 15만원(지방세 포함 16.5만원)입니다. 프리랜서(단순경비율 64.1%)는 소득금액 1,795만원, 과세표준 약 1,400만원으로 세액 약 134만원(지방세 포함 147만원)입니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="health-insurance.html">건강보험료</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>사업소득세 계산기</h1>
+        <p class="desc">2026년 기준 사업소득세를 자동 계산합니다. 프리랜서, 자영업자, 개인사업자 모두 사용 가능합니다. 업종 선택 시 경비율이 자동 적용됩니다.</p>
+
+        <!-- 업종 선택 -->
+        <div class="form-group">
+          <label>업종 선택</label>
+          <select id="bizType" onchange="onBizTypeChange()">
+            <optgroup label="서비스·용역">
+              <option value="freelancer">프리랜서·인적용역 (개발, 디자인, 강의 등)</option>
+              <option value="it_sw">IT·소프트웨어 개발</option>
+              <option value="writer">작가·방송·언론</option>
+              <option value="youtuber">유튜버·크리에이터</option>
+              <option value="tutor">학원·강사·교육</option>
+              <option value="consult">컨설팅·경영·법률·회계</option>
+              <option value="beauty">미용·이미용·피부관리</option>
+              <option value="repair">수리·정비업</option>
+            </optgroup>
+            <optgroup label="음식·숙박">
+              <option value="restaurant">음식점업 (한식·중식·일식 등)</option>
+              <option value="cafe">카페·커피숍</option>
+              <option value="accommodation">숙박업 (펜션·게스트하우스 등)</option>
+            </optgroup>
+            <optgroup label="소매·유통">
+              <option value="retail">도·소매업 (오프라인)</option>
+              <option value="online_shop">온라인 쇼핑몰·스마트스토어</option>
+              <option value="convenience">편의점·슈퍼마켓</option>
+            </optgroup>
+            <optgroup label="운수·부동산">
+              <option value="transport">운수업 (택시·배달·화물)</option>
+              <option value="realestate_rent">부동산 임대업</option>
+              <option value="realestate_biz">부동산 매매업</option>
+            </optgroup>
+            <optgroup label="제조·건설">
+              <option value="manufacturing">제조업</option>
+              <option value="construction">건설업</option>
+            </optgroup>
+            <option value="custom">직접 입력 (업종코드 직접 설정)</option>
+          </select>
+        </div>
+
+        <!-- 연간 총수입(매출) -->
+        <div class="form-group">
+          <label>연간 총수입금액(매출액) <span class="hint">만원 단위</span></label>
+          <input type="number" id="totalRevenue" placeholder="예: 5000 (5천만원)" value="5000" oninput="autoUpdateExpenseInfo()">
+        </div>
+
+        <!-- 경비 방식 -->
+        <div class="form-group">
+          <label>필요경비 계산 방식</label>
+          <select id="expenseMethod" onchange="onExpenseMethodChange()">
+            <option value="simple">단순경비율 자동 적용</option>
+            <option value="standard">기준경비율 자동 적용</option>
+            <option value="manual_rate">경비율 직접 입력 (%)</option>
+            <option value="manual_amount">필요경비 금액 직접 입력</option>
+          </select>
+        </div>
+
+        <!-- 경비율 직접 입력 (숨김) -->
+        <div class="form-group" id="grpManualRate" style="display:none;">
+          <label>경비율 (%) <span class="hint">직접 입력</span></label>
+          <input type="number" id="customExpenseRate" placeholder="예: 60.0" value="60.0" step="0.1" min="0" max="100">
+        </div>
+
+        <!-- 필요경비 금액 직접 입력 (숨김) -->
+        <div class="form-group" id="grpManualAmount" style="display:none;">
+          <label>필요경비 <span class="hint">만원 단위</span></label>
+          <input type="number" id="customExpenseAmount" placeholder="예: 2000" value="0" min="0">
+        </div>
+
+        <!-- 경비율 안내 배지 -->
+        <div id="expenseInfoBadge" style="background:#e8f0fe;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:0.9em;color:#1a73e8;display:flex;gap:16px;flex-wrap:wrap;">
+          <span>단순경비율: <strong id="badgeSimple">64.1%</strong></span>
+          <span>기준경비율: <strong id="badgeStandard">19.4%</strong></span>
+          <span style="color:#555;">적용 경비율: <strong id="badgeApplied" style="color:#1a73e8;">64.1%</strong></span>
+        </div>
+
+        <!-- 추가 공제 -->
+        <div class="form-group">
+          <label>부양가족 수 <span class="hint">본인 포함</span></label>
+          <input type="number" id="dependents" value="1" min="1">
+        </div>
+
+        <div class="form-group">
+          <label>20세 이하 자녀 수</label>
+          <input type="number" id="children" value="0" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>70세 이상 경로우대 수</label>
+          <input type="number" id="elderly" value="0" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>노란우산공제 납입액 <span class="hint">만원 단위</span></label>
+          <input type="number" id="yellowUmbrella" placeholder="예: 300 (최대 500만원)" value="0" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>연금저축+IRP 납입액 <span class="hint">만원 단위, 최대 900만원</span></label>
+          <input type="number" id="pension" placeholder="예: 900" value="0" min="0">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">최종 납부(환급)세액</div>
+            <div class="value" id="rFinal">-</div>
+            <div class="sub" id="rFinalSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>연간 총수입(매출)</td><td id="rGross">-</td></tr>
+            <tr><td>필요경비 (<span id="rExpenseRateLabel">-</span>)</td><td id="rExpense">-</td></tr>
+            <tr class="total"><td>사업소득금액</td><td id="rIncome">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;"><td colspan="2" style="font-weight:700;padding-top:12px;color:#5f6368;">소득공제</td></tr>
+            <tr><td>인적공제 (기본)</td><td id="rPersonal">-</td></tr>
+            <tr><td>경로우대공제</td><td id="rElderly">-</td></tr>
+            <tr><td>국민연금 보험료공제</td><td id="rPension">-</td></tr>
+            <tr><td>노란우산공제</td><td id="rYellowUmbrella">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>과세표준</td><td id="rTaxBase">-</td></tr>
+            <tr><td>적용 세율 (한계세율)</td><td id="rRate">-</td></tr>
+            <tr><td>산출세액</td><td id="rTax">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;"><td colspan="2" style="font-weight:700;padding-top:12px;color:#5f6368;">세액공제</td></tr>
+            <tr><td>표준세액공제</td><td id="rStdDeduct">-</td></tr>
+            <tr><td>자녀세액공제</td><td id="rChildCredit">-</td></tr>
+            <tr><td>연금저축+IRP 세액공제</td><td id="rPensionCredit">-</td></tr>
+            <tr><td>기납부세액 (원천징수 3.3%)</td><td id="rWithheld">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>결정세액</td><td id="rDecided">-</td></tr>
+            <tr><td>지방소득세 (10%)</td><td id="rLocal">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>최종 납부(환급)세액</td><td id="rFinalTotal">-</td></tr>
+          </table>
+
+          <div id="effectiveTaxRate" style="background:#f8f9fa;border-radius:8px;padding:12px 16px;margin-top:12px;font-size:0.9em;color:#555;line-height:1.8;display:none;">
+            <strong style="color:#1a73e8;">실효세율 분석</strong><br>
+            <span id="rEffectiveRate"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 세율표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 종합소득세 세율표</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준</td><td>세율</td><td>누진공제</td></tr>
+          <tr><td>1,400만원 이하</td><td>6%</td><td>-</td></tr>
+          <tr><td>5,000만원 이하</td><td>15%</td><td>126만원</td></tr>
+          <tr><td>8,800만원 이하</td><td>24%</td><td>576만원</td></tr>
+          <tr><td>1.5억원 이하</td><td>35%</td><td>1,544만원</td></tr>
+          <tr><td>3억원 이하</td><td>38%</td><td>1,994만원</td></tr>
+          <tr><td>5억원 이하</td><td>40%</td><td>2,594만원</td></tr>
+          <tr><td>10억원 이하</td><td>42%</td><td>3,594만원</td></tr>
+          <tr><td>10억원 초과</td><td>45%</td><td>6,594만원</td></tr>
+        </table>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>업종별 단순/기준경비율</h3>
+        <table style="width:100%;font-size:0.85em;border-collapse:collapse;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td style="padding:6px 8px;">업종</td><td style="padding:6px 8px;text-align:center;">단순</td><td style="padding:6px 8px;text-align:center;">기준</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:5px 8px;">프리랜서·인적용역</td><td style="padding:5px 8px;text-align:center;font-weight:700;">64.1%</td><td style="padding:5px 8px;text-align:center;">19.4%</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:5px 8px;">음식점업</td><td style="padding:5px 8px;text-align:center;font-weight:700;">89.7%</td><td style="padding:5px 8px;text-align:center;">9.1%</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:5px 8px;">도·소매업</td><td style="padding:5px 8px;text-align:center;font-weight:700;">90.1%</td><td style="padding:5px 8px;text-align:center;">11.3%</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:5px 8px;">온라인 쇼핑몰</td><td style="padding:5px 8px;text-align:center;font-weight:700;">86.5%</td><td style="padding:5px 8px;text-align:center;">12.0%</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:5px 8px;">제조업</td><td style="padding:5px 8px;text-align:center;font-weight:700;">88.8%</td><td style="padding:5px 8px;text-align:center;">11.5%</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:5px 8px;">부동산 임대</td><td style="padding:5px 8px;text-align:center;font-weight:700;">42.6%</td><td style="padding:5px 8px;text-align:center;">17.1%</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:5px 8px;">운수업</td><td style="padding:5px 8px;text-align:center;font-weight:700;">78.0%</td><td style="padding:5px 8px;text-align:center;">19.8%</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">숙박업</td><td style="padding:5px 8px;text-align:center;font-weight:700;">85.6%</td><td style="padding:5px 8px;text-align:center;">10.2%</td></tr>
+        </table>
+        <p style="font-size:0.82em;color:#888;margin-top:8px;">* 업종별 상이, 국세청 고시 기준</p>
+      </div>
+      <div class="info-box">
+        <h3>신고 일정</h3>
+        <ul>
+          <li><strong>정기 신고:</strong> 5월 1일 ~ 5월 31일</li>
+          <li><strong>성실신고확인:</strong> 6월 30일까지</li>
+          <li><strong>환급 입금:</strong> 6월 말 ~ 7월 초</li>
+          <li><strong>중간예납:</strong> 11월 (전년도 세액 50%)</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>장부 의무 기준</h3>
+        <ul>
+          <li><strong>복식부기 의무:</strong> 도소매 3억↑, 서비스 1.5억↑, 기타 업종 7,500만↑</li>
+          <li><strong>간편장부:</strong> 복식부기 기준 미달 사업자</li>
+          <li><strong>무기장 가산세:</strong> 산출세액의 20%</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="withholding-tax.html" class="related-link">원천징수세</a>
+          <a href="health-insurance.html" class="related-link">건강보험료</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ 섹션 -->
+<div class="info-box" style="margin-top:32px;">
+  <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">사업소득세란 무엇인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">사업소득세는 프리랜서, 자영업자, 개인사업자가 사업활동으로 얻은 소득에 부과되는 세금입니다. 별도의 세목이 아니라 <strong>종합소득세</strong>의 일부로, 사업소득금액을 다른 소득과 합산해 5월에 신고·납부합니다. 총수입금액에서 필요경비를 차감한 사업소득금액에 6%~45%의 누진세율이 적용됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">단순경비율 vs 기준경비율, 어떻게 다른가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;"><strong>단순경비율</strong>은 수입금액에 경비율을 곱한 금액 전체를 필요경비로 인정합니다. 별도 증빙이 필요 없고 계산이 간단합니다. 프리랜서는 64.1%, 음식점은 89.7% 등 업종별로 다릅니다. <strong>기준경비율</strong>은 주요경비(매입비, 임차료, 인건비)는 실제 지출 증빙에 따라 공제하고, 나머지는 기준경비율로 계산합니다. 수입금액이 업종별 기준을 초과하면 기준경비율이 강제 적용됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">프리랜서 3.3% 원천징수 후에도 신고해야 하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">반드시 신고해야 합니다. 3.3% 원천징수는 임시 세금일 뿐이며, 5월 종합소득세 신고를 통해 최종 세액을 정산합니다. 원천징수된 금액이 실제 세금보다 많으면 <strong>환급</strong>을 받고, 신고를 하지 않으면 환급을 받을 수 없으며 무신고가산세(20%)가 부과됩니다. 연 수입이 낮은 프리랜서일수록 환급 가능성이 높습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">노란우산공제 가입하면 얼마나 절세되나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">노란우산공제는 소기업·소상공인 공제 제도로, 납입 금액을 <strong>소득공제</strong>받습니다. 사업소득 4,000만원 이하 최대 500만원, 4,000만원~1억원 최대 300만원, 1억원 초과 최대 200만원입니다. 과세표준 5,000만원(세율 15%)인 사업자가 500만원 납입 시 절세액 약 75만원(지방세 포함 82.5만원)입니다. 과세표준이 높을수록 절세 효과가 큽니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">간편장부 vs 복식부기, 어느 것을 선택해야 하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;"><strong>복식부기 의무자</strong>는 선택 여지가 없습니다(도소매 수입 3억 이상, 서비스업 1.5억 이상 등). 의무자가 아닌 경우 <strong>간편장부</strong>를 사용하면 기장세액공제(산출세액의 20%, 최대 100만원)를 받을 수 있어 유리합니다. 무기장(장부 미작성)은 추계 신고로 세금을 내지만, 기장세액공제 혜택을 받지 못하고 가산세 위험이 있습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">연 매출 5,000만원 음식점 사업소득세는 얼마인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">음식점업 단순경비율(89.7%) 적용 시 사업소득금액 515만원, 기본공제 150만원 및 국민연금 공제 차감 후 과세표준 약 250만원, <strong>종합소득세 약 15만원</strong>(지방세 포함 16.5만원)입니다. 반면 매출 5,000만원 카페는 비슷한 구조이며, 실제 경비(재료비, 임차료 등)가 많다면 직접 입력 방식으로 계산하는 것이 더 정확합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">사업자 건강보험료는 어떻게 되나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">개인사업자(지역가입자)는 사업소득을 포함한 종합소득으로 건강보험료가 산정됩니다. 2026년 지역가입자 보험료는 소득·재산·자동차 등을 고려한 점수제로 계산합니다. 사업소득이 증가하면 건강보험료도 늘어납니다. 건강보험료(보험료의 50%)는 사업 경비로 인정되어 종합소득세 계산 시 필요경비에 포함할 수 있습니다.</p>
+  </details>
+</div>
+
+<!-- 내부 링크 섹션 -->
+<div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+  <h3>다른 계산기도 확인해보세요</h3>
+  <ul>
+    <li><a href="income-tax.html">종합소득세 계산기</a> - 근로·사업·기타소득 합산 종합소득세 계산</li>
+    <li><a href="withholding-tax.html">원천징수세 계산기</a> - 프리랜서 3.3% 원천징수 세금 계산</li>
+    <li><a href="health-insurance.html">건강보험료 계산기</a> - 사업자 지역가입자 건강보험료 추정</li>
+    <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+    <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 양도소득세 자동 계산</li>
+  </ul>
+</div>
+
+<!-- SEO 콘텐츠 영역 -->
+<div style="max-width:900px;margin:0 auto;padding:0 16px;">
+
+  <!-- 1. 사업소득세 계산 구조 완전 가이드 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">사업소득세 계산 구조 완전 가이드</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:20px;">사업소득세는 총수입금액에서 필요경비를 차감하는 것에서 시작해, 소득공제·세율 적용·세액공제를 거쳐 최종 납부세액이 결정됩니다. 각 단계를 이해하면 절세 포인트를 찾을 수 있습니다.</p>
+
+    <div style="overflow-x:auto;margin-bottom:24px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+        <thead>
+          <tr style="background:#1a73e8;color:#fff;">
+            <th style="padding:12px 10px;text-align:left;">계산 단계</th>
+            <th style="padding:12px 10px;text-align:left;">내용</th>
+            <th style="padding:12px 10px;text-align:left;">절세 포인트</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">① 총수입금액</td>
+            <td style="padding:11px 10px;">해당 연도 사업 관련 모든 수입의 합계</td>
+            <td style="padding:11px 10px;color:#555;">누락 없이 정확히 파악</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">② 필요경비</td>
+            <td style="padding:11px 10px;">경비율(단순/기준) 또는 실제 지출 경비</td>
+            <td style="padding:11px 10px;color:#555;">경비 증빙 철저 수집, 업종별 단순경비율 확인</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">③ 사업소득금액</td>
+            <td style="padding:11px 10px;">총수입금액 - 필요경비</td>
+            <td style="padding:11px 10px;color:#555;">경비율이 높을수록 소득금액 감소</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">④ 소득공제</td>
+            <td style="padding:11px 10px;">기본공제·노란우산·국민연금 등</td>
+            <td style="padding:11px 10px;color:#555;">노란우산공제, 연금저축 최대 활용</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">⑤ 과세표준</td>
+            <td style="padding:11px 10px;">소득금액 - 각종 소득공제</td>
+            <td style="padding:11px 10px;color:#555;">공제를 늘려 세율 구간 낮추기</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">⑥ 산출세액</td>
+            <td style="padding:11px 10px;">과세표준 × 세율 - 누진공제</td>
+            <td style="padding:11px 10px;color:#555;">누진공제 적용으로 실효세율 낮아짐</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">⑦ 세액공제</td>
+            <td style="padding:11px 10px;">자녀세액공제, 연금저축 세액공제, 기장세액공제 등</td>
+            <td style="padding:11px 10px;color:#555;">연금저축 IRP로 최대 148.5만원 공제</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">⑧ 결정세액</td>
+            <td style="padding:11px 10px;">산출세액 - 세액공제</td>
+            <td style="padding:11px 10px;color:#555;">실제 납부해야 할 세금</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:11px 10px;font-weight:700;">⑨ 기납부세액</td>
+            <td style="padding:11px 10px;">원천징수(3.3%), 중간예납 등 이미 납부한 세금</td>
+            <td style="padding:11px 10px;color:#555;">원천징수 과다 납부 시 환급</td>
+          </tr>
+          <tr style="background:#f8f9fa;">
+            <td style="padding:11px 10px;font-weight:700;">⑩ 최종 납부세액</td>
+            <td style="padding:11px 10px;">결정세액 + 지방소득세(10%) - 기납부세액</td>
+            <td style="padding:11px 10px;color:#555;">마이너스면 환급</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 2. 업종별 경비율 상세 표 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">2026년 업종별 단순경비율·기준경비율 상세</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:20px;">경비율은 국세청이 매년 고시하며, 업종 유형에 따라 크게 다릅니다. 단순경비율이 높을수록 소득금액이 줄어 세금이 낮아집니다. 직전연도 수입이 업종별 기준금액을 초과하면 기준경비율이 적용됩니다.</p>
+
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.92em;">
+        <thead>
+          <tr style="background:#1a73e8;color:#fff;">
+            <th style="padding:11px 10px;text-align:left;">업종</th>
+            <th style="padding:11px 10px;text-align:center;">단순경비율</th>
+            <th style="padding:11px 10px;text-align:center;">기준경비율</th>
+            <th style="padding:11px 10px;text-align:left;">단순→기준 전환 기준</th>
+            <th style="padding:11px 10px;text-align:left;">복식부기 의무 기준</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">프리랜서·인적용역</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">64.1%</td><td style="padding:10px;text-align:center;">19.4%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">IT·소프트웨어 개발</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">64.1%</td><td style="padding:10px;text-align:center;">19.4%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">작가·방송</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">72.8%</td><td style="padding:10px;text-align:center;">21.0%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">유튜버·크리에이터</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">59.7%</td><td style="padding:10px;text-align:center;">21.0%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">학원·강사</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">62.4%</td><td style="padding:10px;text-align:center;">21.0%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">컨설팅·경영·법률</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">64.1%</td><td style="padding:10px;text-align:center;">19.4%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">미용·이미용</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">68.6%</td><td style="padding:10px;text-align:center;">23.4%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">수리·정비업</td><td style="padding:10px;text-align:center;font-weight:700;color:#1a73e8;">72.7%</td><td style="padding:10px;text-align:center;">19.4%</td><td style="padding:10px;">3,600만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">음식점업</td><td style="padding:10px;text-align:center;font-weight:700;color:#e67e22;">89.7%</td><td style="padding:10px;text-align:center;">9.1%</td><td style="padding:10px;">6,000만원 이상</td><td style="padding:10px;">3억원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">카페·커피숍</td><td style="padding:10px;text-align:center;font-weight:700;color:#e67e22;">88.5%</td><td style="padding:10px;text-align:center;">9.5%</td><td style="padding:10px;">6,000만원 이상</td><td style="padding:10px;">3억원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">숙박업</td><td style="padding:10px;text-align:center;font-weight:700;color:#e67e22;">85.6%</td><td style="padding:10px;text-align:center;">10.2%</td><td style="padding:10px;">3,600만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">도·소매업</td><td style="padding:10px;text-align:center;font-weight:700;color:#e67e22;">90.1%</td><td style="padding:10px;text-align:center;">11.3%</td><td style="padding:10px;">6,000만원 이상</td><td style="padding:10px;">3억원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">온라인 쇼핑몰</td><td style="padding:10px;text-align:center;font-weight:700;color:#e67e22;">86.5%</td><td style="padding:10px;text-align:center;">12.0%</td><td style="padding:10px;">6,000만원 이상</td><td style="padding:10px;">3억원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">편의점·슈퍼</td><td style="padding:10px;text-align:center;font-weight:700;color:#e67e22;">91.6%</td><td style="padding:10px;text-align:center;">10.8%</td><td style="padding:10px;">6,000만원 이상</td><td style="padding:10px;">3억원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">운수업 (택시·배달)</td><td style="padding:10px;text-align:center;font-weight:700;">78.0%</td><td style="padding:10px;text-align:center;">19.8%</td><td style="padding:10px;">3,600만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">부동산 임대업</td><td style="padding:10px;text-align:center;font-weight:700;">42.6%</td><td style="padding:10px;text-align:center;">17.1%</td><td style="padding:10px;">2,400만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;">부동산 매매업</td><td style="padding:10px;text-align:center;font-weight:700;">90.5%</td><td style="padding:10px;text-align:center;">11.5%</td><td style="padding:10px;">6,000만원 이상</td><td style="padding:10px;">3억원 이상</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;">제조업</td><td style="padding:10px;text-align:center;font-weight:700;color:#e67e22;">88.8%</td><td style="padding:10px;text-align:center;">11.5%</td><td style="padding:10px;">6,000만원 이상</td><td style="padding:10px;">3억원 이상</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:10px;">건설업</td><td style="padding:10px;text-align:center;font-weight:700;">87.8%</td><td style="padding:10px;text-align:center;">14.5%</td><td style="padding:10px;">3,600만원 이상</td><td style="padding:10px;">1억 5,000만원 이상</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background:#fff8e1;border-left:4px solid #f9a825;border-radius:4px;padding:16px;margin-top:20px;">
+      <p style="margin:0;line-height:1.8;color:#444;font-size:0.94em;">
+        <strong>경비율 적용 원칙:</strong><br>
+        직전연도 수입금액이 기준 미만이면 단순경비율, 기준 이상이면 기준경비율을 적용합니다.<br>
+        신규 사업자(당해연도 개업)는 직전연도 수입이 없으므로 단순경비율 적용이 원칙입니다.<br>
+        실제 경비가 단순경비율보다 낮다면 단순경비율 적용이 유리합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. 간편장부 vs 복식부기 비교 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">간편장부 vs 복식부기 vs 무기장 완전 비교</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:20px;">사업자는 장부 작성 방법에 따라 세금 계산 방식이 달라지며, 세금 혜택과 가산세도 차이가 있습니다. 본인에게 맞는 방식을 선택하는 것이 중요합니다.</p>
+
+    <div style="overflow-x:auto;margin-bottom:24px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+        <thead>
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <th style="padding:12px 10px;text-align:left;">구분</th>
+            <th style="padding:12px 10px;text-align:center;color:#1a73e8;">간편장부</th>
+            <th style="padding:12px 10px;text-align:center;color:#e67e22;">복식부기</th>
+            <th style="padding:12px 10px;text-align:center;color:#c0392b;">무기장 (추계신고)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;font-weight:600;">대상자</td><td style="padding:10px;text-align:center;">복식부기 의무 미해당 소규모 사업자</td><td style="padding:10px;text-align:center;">업종별 수입 기준 이상 사업자 (의무)</td><td style="padding:10px;text-align:center;">모든 사업자 가능 (단, 가산세 있음)</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;font-weight:600;">기장 방식</td><td style="padding:10px;text-align:center;">수입·지출 간단 기록</td><td style="padding:10px;text-align:center;">차변/대변 복식 회계</td><td style="padding:10px;text-align:center;">장부 없음 (경비율 추계)</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;font-weight:600;">세액공제</td><td style="padding:10px;text-align:center;color:#1a73e8;font-weight:700;">기장세액공제 20% (최대 100만원)</td><td style="padding:10px;text-align:center;">없음 (의무 이행)</td><td style="padding:10px;text-align:center;color:#c0392b;">없음</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:10px;font-weight:600;">가산세</td><td style="padding:10px;text-align:center;">없음</td><td style="padding:10px;text-align:center;">미작성 시 20% 가산세</td><td style="padding:10px;text-align:center;color:#c0392b;">무기장가산세 20%</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:10px;font-weight:600;">결손금 이월</td><td style="padding:10px;text-align:center;">가능</td><td style="padding:10px;text-align:center;">가능</td><td style="padding:10px;text-align:center;color:#c0392b;">불가</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:10px;font-weight:600;">추천</td><td style="padding:10px;text-align:center;">소규모 사업자, 프리랜서 (강력 추천)</td><td style="padding:10px;text-align:center;">의무 해당자, 세무사 활용 필요</td><td style="padding:10px;text-align:center;">비추천 (가산세 불리)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px;">
+      <div style="border:1px solid #dbe8ff;border-radius:10px;padding:18px;">
+        <h3 style="font-size:1em;font-weight:700;color:#1a73e8;margin-bottom:10px;">복식부기 의무 기준 (2026년)</h3>
+        <ul style="color:#444;line-height:1.9;padding-left:16px;font-size:0.92em;">
+          <li>농업·임업·어업·광업: 3억원 이상</li>
+          <li>도·소매업: 3억원 이상</li>
+          <li>제조·건설·음식·숙박업: 1억 5,000만원 이상</li>
+          <li>부동산임대·서비스업: 7,500만원 이상</li>
+          <li>의사·변호사·세무사 등 전문직: 기준 무관 의무</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #fff3cd;border-radius:10px;padding:18px;">
+        <h3 style="font-size:1em;font-weight:700;color:#e67e22;margin-bottom:10px;">간편장부 기장세액공제 계산 예시</h3>
+        <p style="color:#444;line-height:1.8;font-size:0.92em;">연 매출 3,000만원 프리랜서, 산출세액 100만원인 경우:<br>
+        기장세액공제 = 산출세액 × 20% = 100만원 × 20% = <strong>20만원</strong><br>
+        최대 한도는 100만원이므로, 산출세액이 500만원이라면 공제액은 <strong>100만원</strong>까지 가능합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 매출 구간별 세금 시뮬레이션 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">매출 구간별 사업소득세 시뮬레이션</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:20px;">아래 표는 업종별 대표 경비율을 적용한 사업소득세 예상액입니다. 기본공제(본인 1인, 150만원)와 국민연금 공제만 적용한 기준입니다. 실제 세액은 공제 항목에 따라 달라집니다.</p>
+
+    <h3 style="font-size:1.1em;font-weight:700;margin-bottom:12px;">프리랜서·인적용역 (단순경비율 64.1%)</h3>
+    <div style="overflow-x:auto;margin-bottom:24px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+        <thead>
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <th style="padding:10px;text-align:left;">연 매출</th>
+            <th style="padding:10px;text-align:right;">사업소득금액</th>
+            <th style="padding:10px;text-align:right;">과세표준</th>
+            <th style="padding:10px;text-align:right;">종합소득세</th>
+            <th style="padding:10px;text-align:right;">지방세 포함</th>
+            <th style="padding:10px;text-align:right;">원천징수(3.3%)</th>
+            <th style="padding:10px;text-align:right;">추가납부(환급)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:9px 10px;">1,000만원</td><td style="padding:9px 10px;text-align:right;">359만원</td><td style="padding:9px 10px;text-align:right;">약 167만원</td><td style="padding:9px 10px;text-align:right;">약 10만원</td><td style="padding:9px 10px;text-align:right;">약 11만원</td><td style="padding:9px 10px;text-align:right;">33만원</td><td style="padding:9px 10px;text-align:right;color:#34a853;font-weight:700;">약 -22만원 환급</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:9px 10px;">2,000만원</td><td style="padding:9px 10px;text-align:right;">718만원</td><td style="padding:9px 10px;text-align:right;">약 440만원</td><td style="padding:9px 10px;text-align:right;">약 26만원</td><td style="padding:9px 10px;text-align:right;">약 29만원</td><td style="padding:9px 10px;text-align:right;">66만원</td><td style="padding:9px 10px;text-align:right;color:#34a853;font-weight:700;">약 -37만원 환급</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:9px 10px;">3,000만원</td><td style="padding:9px 10px;text-align:right;">1,077만원</td><td style="padding:9px 10px;text-align:right;">약 790만원</td><td style="padding:9px 10px;text-align:right;">약 47만원</td><td style="padding:9px 10px;text-align:right;">약 52만원</td><td style="padding:9px 10px;text-align:right;">99만원</td><td style="padding:9px 10px;text-align:right;color:#34a853;font-weight:700;">약 -47만원 환급</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:9px 10px;">5,000만원</td><td style="padding:9px 10px;text-align:right;">1,795만원</td><td style="padding:9px 10px;text-align:right;">약 1,445만원</td><td style="padding:9px 10px;text-align:right;">약 134만원</td><td style="padding:9px 10px;text-align:right;">약 147만원</td><td style="padding:9px 10px;text-align:right;">165만원</td><td style="padding:9px 10px;text-align:right;color:#34a853;font-weight:700;">약 -18만원 환급</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:9px 10px;">7,000만원</td><td style="padding:9px 10px;text-align:right;">2,513만원</td><td style="padding:9px 10px;text-align:right;">약 2,050만원</td><td style="padding:9px 10px;text-align:right;">약 228만원</td><td style="padding:9px 10px;text-align:right;">약 251만원</td><td style="padding:9px 10px;text-align:right;">231만원</td><td style="padding:9px 10px;text-align:right;color:#d93025;font-weight:700;">약 +20만원 납부</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:9px 10px;">1억원</td><td style="padding:9px 10px;text-align:right;">5,600만원*</td><td style="padding:9px 10px;text-align:right;">약 5,100만원</td><td style="padding:9px 10px;text-align:right;">약 624만원</td><td style="padding:9px 10px;text-align:right;">약 686만원</td><td style="padding:9px 10px;text-align:right;">330만원</td><td style="padding:9px 10px;text-align:right;color:#d93025;font-weight:700;">약 +356만원 납부</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85em;color:#888;margin-top:-16px;margin-bottom:20px;">* 1억원 초과분은 기준경비율(19.4%) 적용. 기본공제 150만원, 국민연금 적용 기준. 세액공제(연금저축 등) 미반영.</p>
+
+    <h3 style="font-size:1.1em;font-weight:700;margin-bottom:12px;">음식점업 (단순경비율 89.7%)</h3>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
+        <thead>
+          <tr style="background:#f1f3f4;font-weight:700;">
+            <th style="padding:10px;text-align:left;">연 매출</th>
+            <th style="padding:10px;text-align:right;">사업소득금액</th>
+            <th style="padding:10px;text-align:right;">과세표준</th>
+            <th style="padding:10px;text-align:right;">종합소득세</th>
+            <th style="padding:10px;text-align:right;">지방세 포함</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:9px 10px;">3,000만원</td><td style="padding:9px 10px;text-align:right;">309만원</td><td style="padding:9px 10px;text-align:right;">약 90만원</td><td style="padding:9px 10px;text-align:right;">약 5만원</td><td style="padding:9px 10px;text-align:right;">약 6만원</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee;"><td style="padding:9px 10px;">5,000만원</td><td style="padding:9px 10px;text-align:right;">515만원</td><td style="padding:9px 10px;text-align:right;">약 250만원</td><td style="padding:9px 10px;text-align:right;">약 15만원</td><td style="padding:9px 10px;text-align:right;">약 17만원</td></tr>
+          <tr style="border-bottom:1px solid #eee;"><td style="padding:9px 10px;">8,000만원</td><td style="padding:9px 10px;text-align:right;">824만원</td><td style="padding:9px 10px;text-align:right;">약 540만원</td><td style="padding:9px 10px;text-align:right;">약 35만원</td><td style="padding:9px 10px;text-align:right;">약 38만원</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:9px 10px;">1억 5,000만원</td><td style="padding:9px 10px;text-align:right;">7,935만원*</td><td style="padding:9px 10px;text-align:right;">약 7,400만원</td><td style="padding:9px 10px;text-align:right;">약 1,200만원</td><td style="padding:9px 10px;text-align:right;">약 1,320만원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85em;color:#888;margin-top:8px;">* 1억 5,000만원은 기준경비율 전환 가능성 있음. 기본공제 150만원·국민연금 적용 기준.</p>
+  </section>
+
+  <!-- 5. 사업소득세 절세 전략 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">2026년 사업소득세 절세 전략 총정리</h2>
+    <p style="color:#555;line-height:1.8;margin-bottom:20px;">사업소득세는 소득공제·세액공제·경비 처리를 통해 합법적으로 세금을 줄일 수 있습니다. 연말이 되기 전에 미리 준비하는 것이 핵심입니다.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="border:1px solid #dbe8ff;border-radius:10px;padding:18px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#1a73e8;margin-bottom:12px;">소득공제 전략</h3>
+        <ul style="color:#444;line-height:1.9;padding-left:16px;font-size:0.92em;">
+          <li><strong>노란우산공제:</strong> 연 최대 500만원 소득공제, 사업자라면 필수 가입</li>
+          <li><strong>국민연금 임의가입:</strong> 납입 보험료 전액 소득공제</li>
+          <li><strong>기본공제:</strong> 부양가족 1인당 150만원, 장애인·경로우대 추가 공제</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #ffecd8;border-radius:10px;padding:18px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#e67e22;margin-bottom:12px;">세액공제 전략</h3>
+        <ul style="color:#444;line-height:1.9;padding-left:16px;font-size:0.92em;">
+          <li><strong>연금저축+IRP:</strong> 연 최대 900만원 납입, 최대 148.5만원 세액공제</li>
+          <li><strong>기장세액공제:</strong> 간편장부 작성 시 산출세액 20% (최대 100만원) 공제</li>
+          <li><strong>자녀세액공제:</strong> 1명 15만원, 2명 35만원, 3명 이상 추가 30만원</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #e8f5e9;border-radius:10px;padding:18px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#27ae60;margin-bottom:12px;">경비 처리 전략</h3>
+        <ul style="color:#444;line-height:1.9;padding-left:16px;font-size:0.92em;">
+          <li><strong>사업용 카드 사용:</strong> 모든 사업 관련 지출은 사업용 신용카드로 결제</li>
+          <li><strong>세금계산서 수취:</strong> 매입·임차료·인건비 세금계산서 보관</li>
+          <li><strong>차량 비용:</strong> 업무용 차량 유지비(연료비, 보험료, 수리비) 경비 처리</li>
+          <li><strong>장비·소프트웨어:</strong> 업무용 컴퓨터, 카메라, 구독료 경비 처리</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="background:#f0f7ff;border-radius:8px;padding:16px;margin-top:20px;">
+      <p style="margin:0;font-size:0.93em;line-height:1.9;color:#444;">
+        <strong>절세 효과 비교 예시</strong> (과세표준 3,000만원, 세율 15% 구간)<br>
+        노란우산공제 500만원 납입: 세액 절감 약 75만원 (지방세 포함 82.5만원)<br>
+        연금저축+IRP 900만원 납입: 세액공제 148.5만원<br>
+        두 가지 모두 활용 시 총 절세 223.5만원 이상 — 실천만 하면 가능한 합법 절세입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. 사업소득세 FAQ 상세 -->
+  <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:20px;">사업소득세 자주 묻는 질문 (FAQ)</h2>
+
+    <details style="border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:4px 0;font-size:1.02em;color:#1a1a1a;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 사업자등록을 하지 않아도 사업소득세를 내야 하나요?<span style="font-size:0.85em;color:#888;font-weight:400;">▼</span></summary>
+      <div style="padding:14px 0 0 0;color:#444;line-height:1.9;">
+        <p>네, 사업자등록 여부와 무관하게 실제로 사업소득이 발생했다면 종합소득세 신고 의무가 있습니다. 사업자등록을 하지 않고 소득이 발생한 경우에도 국세청 소득 자료(원천징수 등)에 포함되어 세금 신고 안내를 받게 됩니다. 미등록 가산세(수입금액의 0.2%)도 별도로 부과될 수 있으므로, 사업 시작 시 사업자등록을 하는 것이 유리합니다.</p>
+      </div>
+    </details>
+
+    <details style="border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:4px 0;font-size:1.02em;color:#1a1a1a;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 유튜버·크리에이터 수입도 사업소득세 대상인가요?<span style="font-size:0.85em;color:#888;font-weight:400;">▼</span></summary>
+      <div style="padding:14px 0 0 0;color:#444;line-height:1.9;">
+        <p>네, 유튜브 애드센스 수익, 협찬비, 광고 출연료 등 모든 크리에이터 수입은 <strong>사업소득(인적용역)</strong>으로 분류됩니다. 구글 애드센스는 원천징수 없이 지급되므로 전액 수입금액에 포함됩니다. 기업 협찬의 경우 3.3% 원천징수하는 경우가 있습니다. 해외 수익(유튜브 애드센스, 후원 플랫폼 등)도 국내 거주자는 신고 의무가 있습니다. 사용 장비, 편집 소프트웨어, 스튜디오 임차료 등은 경비로 처리할 수 있습니다.</p>
+      </div>
+    </details>
+
+    <details style="border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:4px 0;font-size:1.02em;color:#1a1a1a;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 직장 다니면서 부업 수입이 있으면 어떻게 하나요?<span style="font-size:0.85em;color:#888;font-weight:400;">▼</span></summary>
+      <div style="padding:14px 0 0 0;color:#444;line-height:1.9;">
+        <p>직장인의 경우 근로소득(연말정산 완료)과 부업 사업소득을 합산하여 5월에 종합소득세를 신고해야 합니다. 부업 사업소득이 있으면 직장에서 연말정산만으로 납세 의무가 종결되지 않습니다. 부업 수입에 3.3% 원천징수된 경우 기납부세액으로 공제됩니다. 부업 수입이 연 300만원 이하인 기타소득은 분리과세(22%)로 종결을 선택할 수 있으나, 사업소득(프리랜서)은 금액과 무관하게 합산 신고가 원칙입니다.</p>
+      </div>
+    </details>
+
+    <details style="border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:4px 0;font-size:1.02em;color:#1a1a1a;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 배달기사·대리기사 사업소득세는 어떻게 계산하나요?<span style="font-size:0.85em;color:#888;font-weight:400;">▼</span></summary>
+      <div style="padding:14px 0 0 0;color:#444;line-height:1.9;">
+        <p>배달·대리기사는 운수업(인적용역)으로 단순경비율 78.0%를 적용합니다. 플랫폼에서 3.3% 원천징수한 경우 기납부세액으로 공제됩니다. 연 수입 3,600만원 미만은 단순경비율, 초과분은 기준경비율(19.8%)이 적용됩니다. 차량 연료비, 보험료, 수리비 등은 실제 경비로 처리 가능하며 증빙을 갖춰야 합니다.</p>
+      </div>
+    </details>
+
+    <details style="border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:4px 0;font-size:1.02em;color:#1a1a1a;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 사업소득세 납부기한을 지키지 못하면?<span style="font-size:0.85em;color:#888;font-weight:400;">▼</span></summary>
+      <div style="padding:14px 0 0 0;color:#444;line-height:1.9;">
+        <p>5월 31일(성실신고확인 대상자 6월 30일) 신고 기한을 넘기면 <strong>무신고가산세 20%</strong>(납세고지 전 자진신고 시)와 <strong>납부지연가산세</strong>(1일 0.022%)가 부과됩니다. 단, 기한 후 신고 시 신고 시점에 따라 무신고가산세를 감면받을 수 있습니다. 기한 후 1개월 이내 50% 감면, 1~3개월 이내 30% 감면, 3~6개월 이내 20% 감면이 적용됩니다. 환급받을 금액이 있는 경우에도 신고해야 환급이 가능합니다.</p>
+      </div>
+    </details>
+
+    <details style="border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:4px 0;font-size:1.02em;color:#1a1a1a;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 홈택스에서 사업소득 신고는 어떻게 하나요?<span style="font-size:0.85em;color:#888;font-weight:400;">▼</span></summary>
+      <div style="padding:14px 0 0 0;color:#444;line-height:1.9;">
+        <ol style="padding-left:18px;">
+          <li>홈택스(www.hometax.go.kr) 로그인 (공동인증서·간편인증)</li>
+          <li>[신고/납부] → [세금신고] → [종합소득세 신고] 클릭</li>
+          <li>신고 유형 선택: 단순경비율 대상자는 <strong>모두채움 신고</strong> 또는 <strong>정기신고(A형)</strong></li>
+          <li>소득 내역 확인 — 국세청이 자동 수집한 원천징수 소득 자료 확인</li>
+          <li>공제 항목 입력 (부양가족, 노란우산, 연금저축, 국민연금 등)</li>
+          <li>필요경비 입력 (단순경비율 적용 또는 실제 경비 입력)</li>
+          <li>세액 계산 확인 후 신고서 제출</li>
+          <li>납부 또는 환급 계좌 입력</li>
+        </ol>
+      </div>
+    </details>
+
+    <details style="padding-bottom:4px;">
+      <summary style="font-weight:700;cursor:pointer;padding:4px 0;font-size:1.02em;color:#1a1a1a;list-style:none;display:flex;justify-content:space-between;align-items:center;">Q. 사업소득과 기타소득의 차이는 무엇인가요?<span style="font-size:0.85em;color:#888;font-weight:400;">▼</span></summary>
+      <div style="padding:14px 0 0 0;color:#444;line-height:1.9;">
+        <p><strong>사업소득</strong>은 계속·반복적으로 사업활동을 통해 얻은 소득입니다. 프리랜서, 자영업자, 개인사업자 수입이 해당됩니다. 금액에 무관하게 종합소득세 합산 신고 의무가 있습니다.</p>
+        <p><strong>기타소득</strong>은 일시적·비계속적으로 발생한 소득입니다. 강연료, 원고료, 경품, 복권 등이 해당됩니다. 연간 합계 300만원 이하이면 분리과세(22% 원천징수)로 종결을 선택할 수 있습니다. 같은 강의료라도 강사가 계속·반복적으로 강의하면 사업소득, 일회성이면 기타소득으로 구분됩니다. 국세청에서 소득 구분이 불명확할 경우 담당 세무사 또는 국세청 상담(126)을 통해 확인하는 것이 좋습니다.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- 절세 체크리스트 -->
+  <section style="background:linear-gradient(135deg,#1a73e8 0%,#0d47a1 100%);border-radius:12px;padding:32px;margin-bottom:28px;color:#fff;">
+    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:16px;color:#fff;">2026년 사업소득세 절세 핵심 체크리스트</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:8px;">신고 전 필수 준비</div>
+        <ul style="margin:0;padding-left:16px;line-height:1.9;font-size:0.93em;">
+          <li>원천징수영수증 수집</li>
+          <li>사업 관련 지출 영수증 정리</li>
+          <li>부양가족 공제 요건 확인</li>
+          <li>홈택스 자동수집 소득 검토</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:8px;">절세 상품 활용</div>
+        <ul style="margin:0;padding-left:16px;line-height:1.9;font-size:0.93em;">
+          <li>노란우산공제 (소득공제 최대 500만원)</li>
+          <li>연금저축+IRP (세액공제 최대 148.5만원)</li>
+          <li>개인형 IRP 300만원 추가 납입</li>
+          <li>간편장부 기장 (세액공제 최대 100만원)</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,0.12);border-radius:8px;padding:16px;">
+        <div style="font-weight:700;margin-bottom:8px;">경비 처리 체크</div>
+        <ul style="margin:0;padding-left:16px;line-height:1.9;font-size:0.93em;">
+          <li>사업용 카드 분리 사용</li>
+          <li>임차료·인건비 세금계산서</li>
+          <li>업무용 차량 비용 증빙</li>
+          <li>소프트웨어·장비 구입 영수증</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- /SEO 콘텐츠 영역 -->
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세금은 세무사 상담 또는 홈택스를 이용하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+// 업종별 경비율 데이터
+const BIZ_RATE = {
+  freelancer:     { simple: 64.1, standard: 19.4, label: '프리랜서·인적용역' },
+  it_sw:          { simple: 64.1, standard: 19.4, label: 'IT·소프트웨어 개발' },
+  writer:         { simple: 72.8, standard: 21.0, label: '작가·방송' },
+  youtuber:       { simple: 59.7, standard: 21.0, label: '유튜버·크리에이터' },
+  tutor:          { simple: 62.4, standard: 21.0, label: '학원·강사' },
+  consult:        { simple: 64.1, standard: 19.4, label: '컨설팅·경영·법률' },
+  beauty:         { simple: 68.6, standard: 23.4, label: '미용·이미용' },
+  repair:         { simple: 72.7, standard: 19.4, label: '수리·정비업' },
+  restaurant:     { simple: 89.7, standard: 9.1,  label: '음식점업' },
+  cafe:           { simple: 88.5, standard: 9.5,  label: '카페·커피숍' },
+  accommodation:  { simple: 85.6, standard: 10.2, label: '숙박업' },
+  retail:         { simple: 90.1, standard: 11.3, label: '도·소매업' },
+  online_shop:    { simple: 86.5, standard: 12.0, label: '온라인 쇼핑몰' },
+  convenience:    { simple: 91.6, standard: 10.8, label: '편의점·슈퍼' },
+  transport:      { simple: 78.0, standard: 19.8, label: '운수업' },
+  realestate_rent:{ simple: 42.6, standard: 17.1, label: '부동산 임대업' },
+  realestate_biz: { simple: 90.5, standard: 11.5, label: '부동산 매매업' },
+  manufacturing:  { simple: 88.8, standard: 11.5, label: '제조업' },
+  construction:   { simple: 87.8, standard: 14.5, label: '건설업' },
+  custom:         { simple: 60.0, standard: 20.0, label: '직접 입력' }
+};
+
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+const fmtW = n => {
+  const abs = Math.abs(Math.round(n / 10000));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '만원';
+};
+const fmtPct = (n, d) => d > 0 ? (n / d * 100).toFixed(1) + '%' : '-';
+
+// 2026 종합소득세 누진세율
+function calcTax(taxBase) {
+  if (taxBase <= 0)          return { tax: 0, rate: '0%' };
+  if (taxBase <= 14000000)   return { tax: taxBase * 0.06,              rate: '6%' };
+  if (taxBase <= 50000000)   return { tax: taxBase * 0.15 - 1260000,   rate: '15%' };
+  if (taxBase <= 88000000)   return { tax: taxBase * 0.24 - 5760000,   rate: '24%' };
+  if (taxBase <= 150000000)  return { tax: taxBase * 0.35 - 15440000,  rate: '35%' };
+  if (taxBase <= 300000000)  return { tax: taxBase * 0.38 - 19940000,  rate: '38%' };
+  if (taxBase <= 500000000)  return { tax: taxBase * 0.40 - 25940000,  rate: '40%' };
+  if (taxBase <= 1000000000) return { tax: taxBase * 0.42 - 35940000,  rate: '42%' };
+  return                            { tax: taxBase * 0.45 - 65940000,  rate: '45%' };
+}
+
+// 업종 변경 시 경비율 배지 업데이트
+function onBizTypeChange() {
+  autoUpdateExpenseInfo();
+}
+
+function autoUpdateExpenseInfo() {
+  const bizType = document.getElementById('bizType').value;
+  const rates = BIZ_RATE[bizType] || BIZ_RATE.freelancer;
+  const method = document.getElementById('expenseMethod').value;
+
+  document.getElementById('badgeSimple').textContent = rates.simple + '%';
+  document.getElementById('badgeStandard').textContent = rates.standard + '%';
+
+  let appliedRate;
+  if (method === 'simple')       appliedRate = rates.simple + '%';
+  else if (method === 'standard') appliedRate = rates.standard + '%';
+  else if (method === 'manual_rate') {
+    const r = parseFloat(document.getElementById('customExpenseRate').value) || 0;
+    appliedRate = r + '%';
+  } else {
+    const rev = (parseFloat(document.getElementById('totalRevenue').value) || 0) * 10000;
+    const exp = (parseFloat(document.getElementById('customExpenseAmount').value) || 0) * 10000;
+    appliedRate = rev > 0 ? (exp / rev * 100).toFixed(1) + '%' : '-';
+  }
+  document.getElementById('badgeApplied').textContent = appliedRate;
+}
+
+function onExpenseMethodChange() {
+  const method = document.getElementById('expenseMethod').value;
+  document.getElementById('grpManualRate').style.display   = (method === 'manual_rate')   ? '' : 'none';
+  document.getElementById('grpManualAmount').style.display = (method === 'manual_amount') ? '' : 'none';
+  autoUpdateExpenseInfo();
+}
+
+function calculate() {
+  const bizType    = document.getElementById('bizType').value;
+  const rates      = BIZ_RATE[bizType] || BIZ_RATE.freelancer;
+  const revenueMan = parseFloat(document.getElementById('totalRevenue').value) || 0;
+  const revenue    = revenueMan * 10000;
+
+  const method = document.getElementById('expenseMethod').value;
+  let expense = 0;
+  let expRateLabel = '';
+
+  if (method === 'simple') {
+    expense = revenue * (rates.simple / 100);
+    expRateLabel = '단순경비율 ' + rates.simple + '%';
+  } else if (method === 'standard') {
+    expense = revenue * (rates.standard / 100);
+    expRateLabel = '기준경비율 ' + rates.standard + '%';
+  } else if (method === 'manual_rate') {
+    const r = parseFloat(document.getElementById('customExpenseRate').value) || 0;
+    expense = revenue * (r / 100);
+    expRateLabel = '직접 입력 ' + r + '%';
+  } else {
+    expense = (parseFloat(document.getElementById('customExpenseAmount').value) || 0) * 10000;
+    expRateLabel = revenue > 0 ? '직접 입력 ' + (expense / revenue * 100).toFixed(1) + '%' : '직접 입력';
+  }
+
+  const income = Math.max(0, revenue - expense);
+
+  // 소득공제
+  const dependents = parseInt(document.getElementById('dependents').value) || 1;
+  const children   = parseInt(document.getElementById('children').value)   || 0;
+  const elderly    = parseInt(document.getElementById('elderly').value)    || 0;
+  const yellowMan  = parseFloat(document.getElementById('yellowUmbrella').value) || 0;
+  const pensionSavingMan = parseFloat(document.getElementById('pension').value) || 0;
+
+  const personalDeduct  = dependents * 1500000;
+  const elderlyDeduct   = elderly * 1000000;
+  // 국민연금: 사업소득의 9% 중 본인부담 4.5%, 상한 304만원
+  const pensionDeduct   = Math.min(income * 0.045, 3040200);
+  // 노란우산공제 (최대: 4천만 이하 500만, 4천~1억 300만, 1억 초과 200만)
+  const incomeW = income / 10000;
+  const yellowMax = incomeW <= 4000 ? 5000000 : incomeW <= 10000 ? 3000000 : 2000000;
+  const yellowDeduct = Math.min(yellowMan * 10000, yellowMax);
+
+  const taxBase = Math.max(0, income - personalDeduct - elderlyDeduct - pensionDeduct - yellowDeduct);
+
+  // 산출세액
+  const { tax: rawTax, rate } = calcTax(taxBase);
+
+  // 세액공제
+  const stdDeduct = 70000;
+  let childCredit = 0;
+  if (children === 1) childCredit = 150000;
+  else if (children === 2) childCredit = 350000;
+  else if (children >= 3) childCredit = 350000 + (children - 2) * 300000;
+
+  // 연금저축+IRP 세액공제 (종합소득 4,500만 이하 16.5%, 초과 13.2%, 상한 900만)
+  const pensionSaving = Math.min(pensionSavingMan * 10000, 9000000);
+  const pensionCreditRate = income <= 45000000 ? 0.165 : 0.132;
+  const pensionCredit = pensionSaving * pensionCreditRate;
+
+  const decidedTax = Math.max(0, rawTax - stdDeduct - childCredit - pensionCredit);
+
+  // 기납부 원천징수 (프리랜서 계열만 3.3% 적용)
+  const freelancerTypes = ['freelancer', 'it_sw', 'writer', 'tutor', 'consult'];
+  const withheld = freelancerTypes.includes(bizType) ? revenue * 0.033 : 0;
+
+  const localTax = decidedTax * 0.1;
+  const finalTax = decidedTax + localTax - withheld;
+
+  // 결과 표시
+  document.getElementById('rGross').textContent          = fmtW(revenue);
+  document.getElementById('rExpenseRateLabel').textContent = expRateLabel;
+  document.getElementById('rExpense').textContent        = fmtW(expense);
+  document.getElementById('rIncome').textContent         = fmtW(income);
+  document.getElementById('rPersonal').textContent       = fmtW(personalDeduct);
+  document.getElementById('rElderly').textContent        = elderly > 0 ? fmtW(elderlyDeduct) : '-';
+  document.getElementById('rPension').textContent        = fmtW(pensionDeduct);
+  document.getElementById('rYellowUmbrella').textContent = yellowDeduct > 0 ? fmtW(yellowDeduct) : '-';
+  document.getElementById('rTaxBase').textContent        = fmtW(taxBase);
+  document.getElementById('rRate').textContent           = rate;
+  document.getElementById('rTax').textContent            = fmt(rawTax);
+  document.getElementById('rStdDeduct').textContent      = fmt(stdDeduct);
+  document.getElementById('rChildCredit').textContent    = children > 0 ? fmt(childCredit) : '-';
+  document.getElementById('rPensionCredit').textContent  = pensionCredit > 0 ? fmt(pensionCredit) : '-';
+  document.getElementById('rWithheld').textContent       = withheld > 0 ? fmt(withheld) : '-';
+  document.getElementById('rDecided').textContent        = fmt(decidedTax);
+  document.getElementById('rLocal').textContent          = fmt(localTax);
+  document.getElementById('rFinalTotal').textContent     = fmt(finalTax);
+
+  // 최종 강조 표시
+  const finalEl = document.getElementById('rFinal');
+  finalEl.textContent = fmt(finalTax);
+  if (finalTax < 0) {
+    finalEl.style.color = '#34a853';
+    document.getElementById('rFinalSub').textContent = '환급 예상';
+  } else if (finalTax === 0) {
+    finalEl.style.color = '#1a73e8';
+    document.getElementById('rFinalSub').textContent = '추가 납부 없음';
+  } else {
+    finalEl.style.color = '#d93025';
+    document.getElementById('rFinalSub').textContent = '추가 납부 예상';
+  }
+
+  // 실효세율 분석
+  if (revenue > 0 && rawTax > 0) {
+    const effectiveRateOnRevenue = (decidedTax + localTax) / revenue * 100;
+    const effectiveRateOnIncome  = taxBase > 0 ? (rawTax / taxBase * 100) : 0;
+    document.getElementById('rEffectiveRate').innerHTML =
+      '매출 대비 실효세율(지방세 포함): <strong>' + effectiveRateOnRevenue.toFixed(1) + '%</strong> &nbsp;|&nbsp; ' +
+      '과세표준 대비 실효세율: <strong>' + effectiveRateOnIncome.toFixed(1) + '%</strong>';
+    document.getElementById('effectiveTaxRate').style.display = '';
+  }
+
+  document.getElementById('result').classList.add('show');
+
+  // 배지 동기화
+  autoUpdateExpenseInfo();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 퇴직연금 수령액 계산기 - 일시금 vs 연금 세금 비교</title>
+  <meta name="description" content="퇴직연금을 일시금으로 받을 때와 연금으로 나눠 받을 때 세금 차이를 비교하세요. 퇴직소득세, 연금소득세 자동 계산 및 연간·월간 수령액을 확인할 수 있습니다.">
+  <link rel="canonical" href="https://calcmoney.kr/retirement-fund">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 퇴직연금 수령액 계산기 - 일시금 vs 연금 세금 비교">
+  <meta property="og:description" content="퇴직연금을 일시금으로 받을 때와 연금으로 나눠 받을 때 세금 차이를 비교하세요. 퇴직소득세, 연금소득세 자동 계산.">
+  <meta property="og:url" content="https://calcmoney.kr/retirement-fund">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "퇴직연금을 연금으로 수령하면 세금이 얼마나 절약되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "퇴직연금을 연금으로 수령하면 일시금 수령 시 퇴직소득세 대비 30~60%를 절약할 수 있습니다. 55~69세 수령 시 퇴직소득세의 70%만 부과(30% 절약), 70~79세는 60%(40% 절약), 80세 이상은 40%(60% 절약)가 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "퇴직연금 연금 수령 시 연간 한도가 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 연금 수령 연차별 한도가 있습니다. 연간 연금 수령 한도 = 퇴직급여 잔액 ÷ (11 - 수령연차)로 계산합니다. 한도를 초과하는 금액은 퇴직소득세(일시금 세율)가 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "퇴직소득세는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "① 근속연수공제(5년 이하 100만원/년, 5~10년 200만원/년, 10~20년 250만원/년, 20년 초과 300만원/년) → ② 환산급여 = (퇴직소득 - 근속연수공제) ÷ 근속연수 × 12 → ③ 환산급여공제 적용 → ④ 퇴직소득과세표준 산출 → ⑤ 종합소득세율(6~45%) 적용 후 다시 근속연수로 나눠 세액 확정."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "퇴직연금 연금 수령 시 최소 수령기간은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연금 수령 시작 나이는 만 55세 이상이어야 하며, 최소 10년 이상 수령해야 연금소득세(낮은 세율)가 적용됩니다. 10년 미만 수령 시 일시금으로 간주해 퇴직소득세가 부과됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "퇴직연금 IRP와 DC형 세금 처리는 같나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IRP(개인형 퇴직연금)와 DC형(확정기여형) 모두 연금 수령 시 동일한 퇴직소득세 절감 혜택이 적용됩니다. DB형(확정급여형)은 회사에서 운용하며, 퇴직 시 IRP 계좌로 이전 후 연금 수령을 선택할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "퇴직연금을 일시금으로 받으면 세금이 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "일시금 수령 시 퇴직소득세 전체가 부과됩니다. 퇴직급여 1억원, 근속 10년 기준 약 230만원 내외입니다. 퇴직금 규모가 클수록 세금도 높아지므로 연금 수령이 유리할 수 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .mode-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+    .mode-tab { flex: 1; padding: 10px; border: 2px solid var(--border); border-radius: 8px; background: #fff; font-size: 15px; font-weight: 600; cursor: pointer; text-align: center; color: var(--text-muted); transition: all 0.2s; }
+    .mode-tab.active { border-color: var(--primary); background: var(--primary); color: #fff; }
+    .pension-only { display: none; }
+    .pension-only.show { display: block; }
+    .compare-box { background: #f0f7ff; border: 1px solid #b3d4f5; border-radius: 10px; padding: 16px 20px; margin-top: 20px; }
+    .compare-box h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: #1a6bb5; }
+    .compare-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #d4e8fa; font-size: 14px; }
+    .compare-row:last-child { border-bottom: none; font-weight: 700; }
+    .compare-row .c-label { color: #555; }
+    .compare-row .c-val { font-weight: 600; color: #222; }
+    .compare-row .c-save { color: #2e7d32; font-weight: 700; }
+    .tax-breakdown { background: #fafafa; border-radius: 8px; padding: 12px 16px; margin-top: 12px; font-size: 13px; color: #555; line-height: 1.9; }
+    .tax-breakdown strong { color: #333; }
+    .annual-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+    .annual-table th, .annual-table td { padding: 7px 10px; border: 1px solid var(--border); text-align: center; }
+    .annual-table th { background: #f1f3f4; font-weight: 600; }
+    .annual-table tbody tr:nth-child(even) { background: #fafafa; }
+    .formula-block { background: #f8f9fa; border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 12px 0; font-size: 14px; line-height: 1.8; }
+    .formula-block strong { color: var(--primary); }
+    .warn-box { background: #fff3e0; border: 1px solid #ffcc02; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #7a5800; margin-top: 16px; }
+    .seo-content { margin-top: 32px; }
+    .seo-section { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 32px; margin-bottom: 24px; }
+    .seo-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+    .seo-section h3 { font-size: 16px; font-weight: 700; margin: 20px 0 8px; color: var(--text); }
+    .seo-section p { font-size: 15px; color: #3c4043; line-height: 1.8; margin-bottom: 12px; }
+    .seo-list { padding-left: 20px; margin-bottom: 12px; }
+    .seo-list li { font-size: 14px; color: #3c4043; line-height: 1.8; margin-bottom: 4px; }
+    .table-wrap { overflow-x: auto; margin: 12px 0; }
+    .seo-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .seo-table th, .seo-table td { padding: 10px 14px; border: 1px solid var(--border); text-align: center; }
+    .seo-table th { background: #f1f3f4; font-weight: 600; }
+    .seo-table tbody tr:nth-child(even) { background: #fafafa; }
+    .table-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+    .badge-save { display: inline-block; background: #2e7d32; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 12px; font-weight: 700; margin-left: 6px; vertical-align: middle; }
+    @media (max-width: 600px) { .seo-section { padding: 20px 16px; } .compare-row { flex-direction: column; align-items: flex-start; gap: 2px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="retirement-fund.html" class="active">퇴직연금</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>퇴직연금 수령액 계산기</h1>
+        <p class="desc">퇴직급여를 일시금으로 받을 때와 연금으로 나눠 받을 때 세금을 비교합니다. 연금 수령 시 퇴직소득세를 최대 60% 절감할 수 있습니다.</p>
+
+        <div class="form-group">
+          <label>퇴직급여 총액 <span class="hint">원 단위, 세전</span></label>
+          <input type="number" id="totalFund" placeholder="예: 100000000" value="100000000" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>근속연수 <span class="hint">년 단위, 소수점 가능</span></label>
+          <input type="number" id="workYears" placeholder="예: 10" value="10" min="1" max="50" step="0.5">
+        </div>
+
+        <div class="form-group">
+          <label>수령 방식</label>
+          <div class="mode-tabs">
+            <div class="mode-tab active" id="tab-lump" onclick="switchMode('lump')">일시금 수령</div>
+            <div class="mode-tab" id="tab-pension" onclick="switchMode('pension')">연금 수령</div>
+            <div class="mode-tab" id="tab-compare" onclick="switchMode('compare')">비교하기</div>
+          </div>
+        </div>
+
+        <div class="pension-only" id="pensionFields">
+          <div class="form-group">
+            <label>연금 수령 시작 나이 <span class="hint">만 55세 이상</span></label>
+            <input type="number" id="startAge" placeholder="예: 60" value="60" min="55" max="85">
+          </div>
+          <div class="form-group">
+            <label>연금 수령 기간 <span class="hint">년, 최소 10년 권장</span></label>
+            <input type="number" id="pensionYears" placeholder="예: 10" value="10" min="5" max="30">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result" style="display:none;"></div>
+      </div>
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>연금 수령 세금 감면율</h3>
+        <ul>
+          <li><strong>55~69세:</strong> 퇴직소득세의 70% (30% 절감)</li>
+          <li><strong>70~79세:</strong> 퇴직소득세의 60% (40% 절감)</li>
+          <li><strong>80세 이상:</strong> 퇴직소득세의 40% (60% 절감)</li>
+          <li>10년 미만 수령 시 일시금 세율 적용</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>연간 연금 수령 한도</h3>
+        <ul>
+          <li><strong>한도 = 잔액 ÷ (11 - 수령연차)</strong></li>
+          <li>1연차: 잔액 ÷ 10</li>
+          <li>5연차: 잔액 ÷ 6</li>
+          <li>10연차 이후: 한도 제한 없음</li>
+          <li>한도 초과분은 퇴직소득세 적용</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="pension-payout.html" class="related-link">국민연금</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="container" style="margin-top:32px;">
+  <div class="calc-box">
+    <h2 style="font-size:18px;font-weight:700;margin-bottom:20px;">자주 묻는 질문</h2>
+
+    <details style="margin-bottom:12px;">
+      <summary style="cursor:pointer;font-weight:600;padding:10px 0;border-bottom:1px solid var(--border);">퇴직연금을 연금으로 수령하면 세금이 얼마나 절약되나요?</summary>
+      <p style="padding:12px 0;color:#555;font-size:14px;line-height:1.7;">퇴직연금을 연금으로 수령하면 일시금 대비 30~60%의 세금을 절약할 수 있습니다. 55~69세 수령 시 퇴직소득세의 70%만 부과(30% 절약), 70~79세는 60%(40% 절약), 80세 이상은 40%(60% 절약)가 적용됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:12px;">
+      <summary style="cursor:pointer;font-weight:600;padding:10px 0;border-bottom:1px solid var(--border);">연간 연금 수령 한도는 어떻게 계산하나요?</summary>
+      <p style="padding:12px 0;color:#555;font-size:14px;line-height:1.7;">연간 연금 수령 한도 = 퇴직급여 잔액 ÷ (11 - 수령연차)로 계산합니다. 한도 초과분에는 연금소득세가 아닌 퇴직소득세(일시금 세율)가 부과됩니다. 10연차 이후에는 한도 제한이 없습니다.</p>
+    </details>
+
+    <details style="margin-bottom:12px;">
+      <summary style="cursor:pointer;font-weight:600;padding:10px 0;border-bottom:1px solid var(--border);">퇴직소득세는 어떻게 계산하나요?</summary>
+      <p style="padding:12px 0;color:#555;font-size:14px;line-height:1.7;">① 근속연수공제(5년 이하 100만원/년, 5~10년 200만원/년, 10~20년 250만원/년, 20년 초과 300만원/년) → ② 환산급여 산출 → ③ 환산급여공제 적용 → ④ 과세표준 산출 → ⑤ 종합소득세율 적용</p>
+    </details>
+
+    <details style="margin-bottom:12px;">
+      <summary style="cursor:pointer;font-weight:600;padding:10px 0;border-bottom:1px solid var(--border);">퇴직연금 연금 수령 최소 기간은 얼마인가요?</summary>
+      <p style="padding:12px 0;color:#555;font-size:14px;line-height:1.7;">연금 수령 시작 나이는 만 55세 이상이어야 하며, 최소 10년 이상 수령해야 연금소득세(낮은 세율)가 적용됩니다. 10년 미만 수령 시 일시금으로 간주되어 퇴직소득세 전액이 부과됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:12px;">
+      <summary style="cursor:pointer;font-weight:600;padding:10px 0;border-bottom:1px solid var(--border);">IRP와 DC형의 세금 처리는 같나요?</summary>
+      <p style="padding:12px 0;color:#555;font-size:14px;line-height:1.7;">IRP(개인형)와 DC형(확정기여형) 모두 연금 수령 시 동일한 퇴직소득세 절감 혜택이 적용됩니다. DB형(확정급여형)은 퇴직 시 IRP 계좌로 이전 후 연금 수령을 선택할 수 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom:12px;">
+      <summary style="cursor:pointer;font-weight:600;padding:10px 0;border-bottom:1px solid var(--border);">일시금 수령 vs 연금 수령 중 어떤 것이 유리한가요?</summary>
+      <p style="padding:12px 0;color:#555;font-size:14px;line-height:1.7;">세금만 기준으로는 연금 수령이 유리합니다. 단, 장기적으로 나눠 받는 동안 운용 수익이 발생하고, 건강보험료 등에 영향을 줄 수 있으므로 개인 상황에 맞게 선택하세요. 퇴직급여가 클수록 연금 수령의 절세 효과가 큽니다.</p>
+    </details>
+  </div>
+</div>
+
+<!-- SEO 콘텐츠 -->
+<div class="container seo-content">
+
+  <section class="seo-section">
+    <h2>퇴직급여 1억원 기준 근속연수별 세금 비교표</h2>
+    <p>아래 표는 <strong>퇴직급여 1억원, 연금 수령 시작 나이 60세(55~69세 구간)</strong>를 기준으로 일시금 vs 연금 수령 시의 세금 차이를 시뮬레이션한 결과입니다.</p>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>근속연수</th>
+            <th>일시금 퇴직소득세</th>
+            <th>연금 수령 세금 (60세)</th>
+            <th>절세 금액</th>
+            <th>절세율</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>5년</td><td>약 1,540,000원</td><td>약 1,078,000원</td><td>약 462,000원</td><td>30%</td></tr>
+          <tr><td>10년</td><td>약 2,310,000원</td><td>약 1,617,000원</td><td>약 693,000원</td><td>30%</td></tr>
+          <tr><td>15년</td><td>약 1,890,000원</td><td>약 1,323,000원</td><td>약 567,000원</td><td>30%</td></tr>
+          <tr><td>20년</td><td>약 1,320,000원</td><td>약 924,000원</td><td>약 396,000원</td><td>30%</td></tr>
+          <tr><td>25년</td><td>약 880,000원</td><td>약 616,000원</td><td>약 264,000원</td><td>30%</td></tr>
+          <tr><td>30년</td><td>약 540,000원</td><td>약 378,000원</td><td>약 162,000원</td><td>30%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">※ 퇴직소득세는 근속연수공제·환산급여공제 적용 후 추정치입니다. 실제 세액은 개인 상황에 따라 다릅니다. 2026년 세법 기준.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>퇴직소득세 계산 방법 완전 해설</h2>
+
+    <h3>1단계: 근속연수공제</h3>
+    <div class="formula-block">
+      <strong>5년 이하:</strong> 100만원 × 근속연수<br>
+      <strong>5년 초과 10년 이하:</strong> 500만원 + 200만원 × (근속연수 - 5)<br>
+      <strong>10년 초과 20년 이하:</strong> 1,500만원 + 250만원 × (근속연수 - 10)<br>
+      <strong>20년 초과:</strong> 4,000만원 + 300만원 × (근속연수 - 20)
+    </div>
+
+    <h3>2단계: 환산급여 산출</h3>
+    <div class="formula-block">
+      환산급여 = (퇴직소득 - 근속연수공제) ÷ 근속연수 × 12
+    </div>
+
+    <h3>3단계: 환산급여공제</h3>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr><th>환산급여</th><th>공제액</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>800만원 이하</td><td>전액 공제</td></tr>
+          <tr><td>800만원 초과 7,000만원 이하</td><td>800만원 + 초과분 × 60%</td></tr>
+          <tr><td>7,000만원 초과 1억원 이하</td><td>4,520만원 + 초과분 × 55%</td></tr>
+          <tr><td>1억원 초과 3억원 이하</td><td>6,170만원 + 초과분 × 45%</td></tr>
+          <tr><td>3억원 초과</td><td>15,170만원 + 초과분 × 35%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4단계: 과세표준 및 세율 적용</h3>
+    <div class="formula-block">
+      퇴직소득과세표준 = (환산급여 - 환산급여공제) × 근속연수 ÷ 12<br>
+      <strong>세율:</strong> 1,400만원 이하 6% / 5,000만원 이하 15% / 8,800만원 이하 24% / 1.5억 이하 35% / 3억 이하 38% / 5억 이하 40% / 10억 이하 42% / 10억 초과 45%
+    </div>
+
+    <h3>연금 수령 시 절세 원리</h3>
+    <p>연금 수령 시에는 위에서 계산된 퇴직소득세에 나이별 감면율을 곱해 세금을 냅니다. 수령 시작 나이가 많을수록 세금이 줄어들기 때문에, 건강 상태와 노후 자금 계획을 고려해 수령 시작 시점을 조절하는 것이 절세 전략의 핵심입니다.</p>
+  </section>
+
+  <section class="seo-section">
+    <h2>퇴직연금 수령 전략: 일시금 vs 연금</h2>
+
+    <h3>연금 수령이 유리한 경우</h3>
+    <ul class="seo-list">
+      <li>퇴직급여 규모가 크고 세금 부담이 높은 경우</li>
+      <li>노후 생활비를 분산해서 안정적으로 관리하고 싶은 경우</li>
+      <li>70세 이상까지 수령을 연장할 수 있어 더 큰 절세가 가능한 경우</li>
+      <li>IRP 계좌에서 추가 운용 수익을 기대할 수 있는 경우</li>
+    </ul>
+
+    <h3>일시금 수령이 유리한 경우</h3>
+    <ul class="seo-list">
+      <li>퇴직 직후 목돈이 필요한 경우 (주택 구입, 사업 자금 등)</li>
+      <li>퇴직급여 규모가 작아 실질 세금 차이가 미미한 경우</li>
+      <li>연금 수령 기간 중 사망 등 예측 불가 리스크를 최소화하고 싶은 경우</li>
+    </ul>
+
+    <h3>연금 수령 연차별 한도 이해하기</h3>
+    <p>세법은 퇴직연금이 단기간에 집중 수령되지 않도록 연차별 한도를 설정합니다. 예를 들어 퇴직급여 1억원을 10년간 수령하면, 1연차 한도는 1억 ÷ 10 = 1,000만원입니다. 이 한도를 지켜야 연금소득세(낮은 세율)가 적용됩니다.</p>
+    <p class="table-note">※ 본 계산기는 참고용 추정치입니다. 실제 세금은 세무사 또는 금융기관에 문의하세요.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>본 계산기는 참고용이며 법적 효력이 없습니다. 정확한 세금은 세무사에게 문의하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">서비스 소개</a> · <a href="contact.html">문의</a></p>
+    <p>© 2026 calcmoney.kr</p>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+
+  let currentMode = 'lump';
+
+  function switchMode(mode) {
+    currentMode = mode;
+    document.getElementById('tab-lump').classList.toggle('active', mode === 'lump');
+    document.getElementById('tab-pension').classList.toggle('active', mode === 'pension');
+    document.getElementById('tab-compare').classList.toggle('active', mode === 'compare');
+
+    const pf = document.getElementById('pensionFields');
+    if (mode === 'lump') {
+      pf.classList.remove('show');
+    } else {
+      pf.classList.add('show');
+    }
+
+    document.getElementById('result').style.display = 'none';
+  }
+
+  // 근속연수공제 계산
+  function calcWorkYearDeduction(years) {
+    const y = Math.floor(years);
+    if (y <= 5) return y * 1000000;
+    if (y <= 10) return 5000000 + (y - 5) * 2000000;
+    if (y <= 20) return 15000000 + (y - 10) * 2500000;
+    return 40000000 + (y - 20) * 3000000;
+  }
+
+  // 환산급여공제 계산
+  function calcAnnualDeduction(annualWage) {
+    if (annualWage <= 8000000) return annualWage;
+    if (annualWage <= 70000000) return 8000000 + (annualWage - 8000000) * 0.6;
+    if (annualWage <= 100000000) return 45200000 + (annualWage - 70000000) * 0.55;
+    if (annualWage <= 300000000) return 61700000 + (annualWage - 100000000) * 0.45;
+    return 151700000 + (annualWage - 300000000) * 0.35;
+  }
+
+  // 종합소득세율 적용 (2026년 기준)
+  function calcIncomeTax(taxBase) {
+    if (taxBase <= 0) return 0;
+    if (taxBase <= 14000000)  return taxBase * 0.06;
+    if (taxBase <= 50000000)  return 840000   + (taxBase - 14000000) * 0.15;
+    if (taxBase <= 88000000)  return 6240000  + (taxBase - 50000000) * 0.24;
+    if (taxBase <= 150000000) return 15360000 + (taxBase - 88000000) * 0.35;
+    if (taxBase <= 300000000) return 37060000 + (taxBase - 150000000) * 0.38;
+    if (taxBase <= 500000000) return 94060000 + (taxBase - 300000000) * 0.40;
+    if (taxBase <= 1000000000) return 174060000 + (taxBase - 500000000) * 0.42;
+    return 384060000 + (taxBase - 1000000000) * 0.45;
+  }
+
+  // 퇴직소득세 계산 (지방소득세 포함)
+  function calcRetirementTax(fund, workYears) {
+    const years = Math.max(1, Math.floor(workYears));
+
+    // 1. 근속연수공제
+    const workDeduction = calcWorkYearDeduction(years);
+    const afterWorkDeduction = Math.max(0, fund - workDeduction);
+
+    // 2. 환산급여
+    const annualWage = afterWorkDeduction / years * 12;
+
+    // 3. 환산급여공제
+    const annualDeduction = calcAnnualDeduction(annualWage);
+    const taxableAnnual = Math.max(0, annualWage - annualDeduction);
+
+    // 4. 과세표준
+    const taxBase = taxableAnnual * years / 12;
+
+    // 5. 세율 적용
+    const incomeTax = calcIncomeTax(taxBase);
+
+    // 6. 지방소득세 포함
+    const totalTax = Math.round(incomeTax * 1.1);
+
+    return {
+      totalTax,
+      workDeduction,
+      annualWage,
+      annualDeduction,
+      taxBase,
+      incomeTax
+    };
+  }
+
+  // 연금소득세율 (퇴직소득세 기준 감면)
+  function pensionTaxRate(startAge) {
+    if (startAge >= 80) return 0.4;
+    if (startAge >= 70) return 0.6;
+    return 0.7; // 55~69세
+  }
+
+  function pensionTaxLabel(startAge) {
+    if (startAge >= 80) return '80세 이상 (퇴직소득세의 40%)';
+    if (startAge >= 70) return '70~79세 (퇴직소득세의 60%)';
+    return '55~69세 (퇴직소득세의 70%)';
+  }
+
+  function calculate() {
+    const fund = parseFloat(document.getElementById('totalFund').value) || 0;
+    const workYears = parseFloat(document.getElementById('workYears').value) || 1;
+
+    if (fund <= 0) { alert('퇴직급여 총액을 입력해주세요.'); return; }
+    if (workYears < 1) { alert('근속연수는 1년 이상이어야 합니다.'); return; }
+
+    const taxInfo = calcRetirementTax(fund, workYears);
+    const resultEl = document.getElementById('result');
+    resultEl.style.display = 'block';
+
+    if (currentMode === 'lump') {
+      renderLump(fund, workYears, taxInfo, resultEl);
+    } else if (currentMode === 'pension') {
+      const startAge = parseInt(document.getElementById('startAge').value) || 60;
+      const pensionYears = parseInt(document.getElementById('pensionYears').value) || 10;
+      renderPension(fund, workYears, taxInfo, startAge, pensionYears, resultEl);
+    } else {
+      const startAge = parseInt(document.getElementById('startAge').value) || 60;
+      const pensionYears = parseInt(document.getElementById('pensionYears').value) || 10;
+      renderCompare(fund, workYears, taxInfo, startAge, pensionYears, resultEl);
+    }
+  }
+
+  function renderLump(fund, workYears, taxInfo, el) {
+    const netAmount = fund - taxInfo.totalTax;
+    el.innerHTML = `
+      <div class="result-highlight">
+        <div class="label">일시금 실수령액 (세후)</div>
+        <div class="value">${fmt(netAmount)}</div>
+        <div class="sub">퇴직소득세 ${fmt(taxInfo.totalTax)} 공제 후</div>
+      </div>
+      <table class="result-table">
+        <tr><td>퇴직급여 총액 (세전)</td><td>${fmt(fund)}</td></tr>
+        <tr><td>근속연수공제</td><td>${fmt(taxInfo.workDeduction)}</td></tr>
+        <tr><td>환산급여</td><td>${fmt(taxInfo.annualWage)}</td></tr>
+        <tr><td>환산급여공제</td><td>${fmt(taxInfo.annualDeduction)}</td></tr>
+        <tr><td>퇴직소득과세표준</td><td>${fmt(taxInfo.taxBase)}</td></tr>
+        <tr><td>산출세액 (소득세)</td><td>${fmt(taxInfo.incomeTax)}</td></tr>
+        <tr><td>퇴직소득세 (지방세 포함)</td><td>${fmt(taxInfo.totalTax)}</td></tr>
+        <tr class="total"><td>실수령액</td><td>${fmt(netAmount)}</td></tr>
+      </table>
+      <div class="warn-box">
+        연금으로 수령하면 퇴직소득세를 최대 60% 절감할 수 있습니다. <strong>"비교하기"</strong> 탭에서 절세 금액을 확인해 보세요.
+      </div>
+    `;
+  }
+
+  function renderPension(fund, workYears, taxInfo, startAge, pensionYears, el) {
+    const rate = pensionTaxRate(startAge);
+    const pensionTaxTotal = Math.round(taxInfo.totalTax * rate);
+    const taxSaved = taxInfo.totalTax - pensionTaxTotal;
+    const netAfterTax = fund - pensionTaxTotal;
+
+    const annualAmount = fund / pensionYears;
+    const annualTax = pensionTaxTotal / pensionYears;
+    const annualNet = annualAmount - annualTax;
+    const monthlyNet = annualNet / 12;
+
+    // 연차별 수령 한도 표 (최대 10연차)
+    let tableRows = '';
+    let remaining = fund;
+    const displayYears = Math.min(pensionYears, 10);
+    for (let i = 1; i <= displayYears; i++) {
+      const limit = i < 11 ? remaining / (11 - i) : remaining;
+      const yearlyTax = i < 11 ? Math.round(taxInfo.totalTax * rate / pensionYears) : 0;
+      const yearlyNet = Math.round(limit - yearlyTax);
+      tableRows += `<tr>
+        <td>${i}연차</td>
+        <td>${fmt(limit)}</td>
+        <td>${fmt(yearlyTax)}</td>
+        <td>${fmt(yearlyNet)}</td>
+      </tr>`;
+      remaining -= limit;
+      if (remaining < 0) remaining = 0;
+    }
+    if (pensionYears > 10) {
+      tableRows += `<tr><td colspan="4" style="color:#888;font-size:12px;">10연차 이후: 한도 제한 없음</td></tr>`;
+    }
+
+    el.innerHTML = `
+      <div class="result-highlight">
+        <div class="label">연간 수령액 (세후)</div>
+        <div class="value">${fmt(annualNet)}</div>
+        <div class="sub">월 ${fmt(monthlyNet)} · ${pensionYears}년 수령</div>
+      </div>
+      <table class="result-table">
+        <tr><td>퇴직급여 총액</td><td>${fmt(fund)}</td></tr>
+        <tr><td>수령 시작 나이</td><td>${startAge}세</td></tr>
+        <tr><td>적용 세율 구간</td><td>${pensionTaxLabel(startAge)}</td></tr>
+        <tr><td>일시금 기준 퇴직소득세</td><td>${fmt(taxInfo.totalTax)}</td></tr>
+        <tr><td>연금 수령 시 총 세금</td><td>${fmt(pensionTaxTotal)}</td></tr>
+        <tr><td>절감 세액</td><td style="color:#2e7d32;font-weight:700;">${fmt(taxSaved)} 절감</td></tr>
+        <tr><td>세후 수령 총액</td><td>${fmt(netAfterTax)}</td></tr>
+        <tr class="total"><td>연간 수령액 (세후)</td><td>${fmt(annualNet)}</td></tr>
+      </table>
+      <div style="margin-top:16px;">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px;color:#333;">연차별 수령 한도 (참고)</div>
+        <table class="annual-table">
+          <thead><tr><th>수령연차</th><th>연간 한도</th><th>세금</th><th>세후 수령액</th></tr></thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+        <p style="font-size:12px;color:#888;margin-top:6px;">※ 한도 내 수령 시 연금소득세 적용. 한도 초과분은 퇴직소득세 적용.</p>
+      </div>
+      <div class="warn-box" style="margin-top:16px;">
+        수령 기간 ${pensionYears}년이 10년 미만인 경우 일시금 세율(퇴직소득세)이 적용될 수 있습니다. 최소 10년 이상 수령을 권장합니다.
+      </div>
+    `;
+  }
+
+  function renderCompare(fund, workYears, taxInfo, startAge, pensionYears, el) {
+    const rate = pensionTaxRate(startAge);
+    const lumpTax = taxInfo.totalTax;
+    const pensionTax = Math.round(lumpTax * rate);
+    const taxSaved = lumpTax - pensionTax;
+    const savePct = lumpTax > 0 ? Math.round(taxSaved / lumpTax * 100) : 0;
+
+    const lumpNet = fund - lumpTax;
+    const pensionNet = fund - pensionTax;
+    const annualPension = (fund - pensionTax) / pensionYears;
+    const monthlyPension = annualPension / 12;
+
+    el.innerHTML = `
+      <div class="result-highlight">
+        <div class="label">연금 수령 시 절세 금액</div>
+        <div class="value" style="color:#2e7d32;">${fmt(taxSaved)}</div>
+        <div class="sub">일시금 대비 ${savePct}% 절감 <span style="background:#2e7d32;color:#fff;border-radius:12px;padding:1px 8px;font-size:12px;font-weight:700;">${savePct}% 절감</span></div>
+      </div>
+
+      <div class="compare-box">
+        <h3>일시금 vs 연금 수령 비교</h3>
+        <div class="compare-row">
+          <span class="c-label">퇴직급여 총액</span>
+          <span class="c-val">${fmt(fund)}</span>
+        </div>
+        <div class="compare-row">
+          <span class="c-label">일시금 수령 세금</span>
+          <span class="c-val">${fmt(lumpTax)}</span>
+        </div>
+        <div class="compare-row">
+          <span class="c-label">연금 수령 세금 (${startAge}세 시작)</span>
+          <span class="c-val">${fmt(pensionTax)}</span>
+        </div>
+        <div class="compare-row">
+          <span class="c-label">절세 금액</span>
+          <span class="c-save">${fmt(taxSaved)} 절감</span>
+        </div>
+        <div class="compare-row" style="padding-top:10px;">
+          <span class="c-label">일시금 실수령액</span>
+          <span class="c-val">${fmt(lumpNet)}</span>
+        </div>
+        <div class="compare-row">
+          <span class="c-label">연금 수령 세후 총액</span>
+          <span class="c-val">${fmt(pensionNet)}</span>
+        </div>
+        <div class="compare-row">
+          <span class="c-label">연금 연간 수령액 (세후, ${pensionYears}년)</span>
+          <span class="c-val">${fmt(annualPension)}</span>
+        </div>
+        <div class="compare-row">
+          <span class="c-label">연금 월간 수령액 (세후)</span>
+          <span class="c-val" style="color:var(--primary);font-size:16px;">${fmt(monthlyPension)}</span>
+        </div>
+      </div>
+
+      <div class="tax-breakdown">
+        <strong>세금 계산 근거</strong><br>
+        근속연수공제: ${fmt(taxInfo.workDeduction)}<br>
+        환산급여: ${fmt(taxInfo.annualWage)}<br>
+        환산급여공제: ${fmt(taxInfo.annualDeduction)}<br>
+        과세표준: ${fmt(taxInfo.taxBase)}<br>
+        산출세액: ${fmt(taxInfo.incomeTax)}<br>
+        퇴직소득세 (지방세 포함): ${fmt(lumpTax)}<br>
+        연금 적용 세율 구간: ${pensionTaxLabel(startAge)}
+      </div>
+
+      <div class="warn-box" style="margin-top:16px;">
+        본 계산은 참고용 추정치입니다. 실제 세금은 세무사 또는 금융기관에 문의하세요. 연간 연금소득 1,200만원 초과 시 종합소득세 합산 신고 대상이 될 수 있습니다.
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 교육비세액공제 계산기 - 유치원·초중고·대학 교육비 공제한도 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="본인·자녀 교육비를 입력하면 학교급별 한도(300만/900만원), 교복·체험학습비까지 반영한 교육비세액공제를 자동 계산합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/education-expense-deduction">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 교육비세액공제 계산기 - 유치원·초중고·대학 공제한도 자동 계산">
+  <meta property="og:description" content="본인·자녀 교육비 입력 → 학교급별 한도(300만/900만원), 교복·체험학습비 포함 교육비세액공제 즉시 계산.">
+  <meta property="og:url" content="https://calcmoney.kr/education-expense-deduction">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "교육비 세액공제 대상은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "교육비 세액공제 대상: 본인(대학원·직업능력개발훈련·학자금대출 상환 제외), 취학전 아동(어린이집·유치원·학원·체육시설), 초·중·고등학생(수업료·입학금·방과후학교·교과서대금·급식비), 대학생(입학금·수업료·기성회비), 장애인(특수교육비 한도 없음)입니다. 공제율은 15%이며, 학자금 대출 상환액은 공제 대상에서 제외됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "학원비도 교육비 세액공제가 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "취학전 아동(만 6세 이하)의 학원비와 체육시설 이용료는 교육비 세액공제 대상입니다. 1인당 연 300만원 한도 내에서 15% 세액공제를 받을 수 있습니다. 그러나 초·중·고등학생의 일반 학원비(태권도, 피아노, 미술학원 등)는 공제 대상이 아닙니다. 초·중·고는 학교 정규수업, 방과후학교, 교과서, 급식비만 해당됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "대학등록금 교육비 공제 한도는 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "대학생(대학교) 교육비 세액공제 한도는 1인당 연 900만원입니다. 입학금, 수업료, 기성회비가 대상이며, 지출액이 900만원을 초과해도 900만원까지만 적용됩니다. 공제율 15%를 적용하면 최대 135만원(900만원 × 15%)의 세액공제를 받을 수 있습니다. 단, 학자금 대출(든든학자금·일반상환학자금) 상환액은 공제 대상에서 제외됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "교복 구입비도 공제받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "중학생·고등학생 교복 구입비는 교육비 세액공제 대상입니다. 1인당 연 50만원 한도로 공제 가능하며, 공제율 15%를 적용하면 최대 7만 5천원을 절세할 수 있습니다. 교복 구입 영수증은 교복업체에서 교육비 납입 증명서를 발급받아 연말정산 시 제출해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "유치원비(원비)는 교육비 공제가 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "유치원비(원비)는 교육비 세액공제 대상입니다. 취학전 아동 1인당 연 300만원 한도 내에서 15% 세액공제를 받을 수 있습니다. 어린이집, 유치원, 학원, 체육시설 이용료가 모두 포함됩니다. 기관에서 교육비 납입 증명서를 발급받아 연말정산 시 제출하면 됩니다. 국공립·사립 모두 해당됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "학자금 대출 상환액은 교육비 공제가 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "학자금 대출 상환액은 교육비 세액공제 대상이 아닙니다. 한국장학재단의 든든학자금(취업 후 상환)이나 일반상환학자금을 상환하더라도 교육비 세액공제를 받을 수 없습니다. 단, 학자금 대출을 받아 직접 납부한 등록금은 대출받은 연도에 공제 가능하며, 이후 상환 시에는 공제가 불가합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "체험학습비는 어디까지 공제되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "초·중·고등학생의 학교에서 실시하는 교육과정 중 현장 체험학습비는 1인당 연 30만원 한도로 교육비 세액공제 대상입니다. 공제율 15%를 적용하면 최대 4만 5천원을 절세할 수 있습니다. 단, 학교 외 개인적으로 다녀온 여행·체험 비용은 해당되지 않으며, 학교가 공식 교육과정으로 운영하는 현장학습이어야 합니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .deduction-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+    .deduction-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
+    .deduction-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .deduction-card .dlabel { font-size: 0.78em; color: #666; margin-bottom: 4px; }
+    .deduction-card .dvalue { font-size: 1.15em; font-weight: 800; color: #1a73e8; }
+    .total-deduction-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-deduction-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-deduction-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .total-deduction-box .tsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .section-title { font-size: 0.92em; font-weight: 700; color: #1a73e8; background: #e8f0fe; border-radius: 6px; padding: 6px 12px; margin: 20px 0 12px; }
+    .section-divider { border: none; border-top: 1px dashed #ddd; margin: 20px 0; }
+    .breakdown-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.88em; }
+    .breakdown-table th { background: #f0f4ff; color: #333; font-size: 0.85em; padding: 10px 12px; text-align: left; border-bottom: 2px solid #c5cae9; }
+    .breakdown-table th:last-child { text-align: right; }
+    .breakdown-table td { padding: 9px 12px; border-bottom: 1px solid #f0f0f0; }
+    .breakdown-table td:last-child { text-align: right; font-weight: 600; color: #1a73e8; }
+    .breakdown-table tr.total-row td { font-weight: 700; font-size: 1em; color: #0d47a1; border-top: 2px solid #c5cae9; border-bottom: none; }
+    .breakdown-table tr:hover td { background: #f8f9fa; }
+    .notice-box { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 16px 0; font-size: 0.85em; color: #555; line-height: 1.7; }
+    .notice-box strong { color: #e65100; }
+    .faq-list { margin-top: 8px; }
+    .faq-item { border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .faq-item summary { padding: 14px 16px; font-size: 0.93em; font-weight: 600; cursor: pointer; list-style: none; background: #fafafa; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: ' ▾'; color: #1a73e8; }
+    .faq-item[open] summary { background: #e8f0fe; color: #1a73e8; }
+    .faq-item[open] summary::after { content: ' ▴'; }
+    .faq-item p { padding: 14px 16px; font-size: 0.88em; color: #555; line-height: 1.7; margin: 0; background: #fff; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>교육비세액공제 계산기</h1>
+        <p class="desc">2026년 기준 본인 및 자녀 교육비를 입력하면 학교급별 한도(취학전·초중고 300만원, 대학 900만원)와 교복·체험학습비를 반영한 교육비세액공제 총액을 자동으로 계산합니다.</p>
+
+        <!-- 본인 교육비 -->
+        <div class="section-title">본인 교육비 (한도 없음)</div>
+        <div class="form-group">
+          <label>본인 교육비 <span class="hint">원 (대학원, 직업능력개발훈련 등 — 한도 없음)</span></label>
+          <input type="number" id="selfEdu" placeholder="예: 5000000" value="0" min="0">
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- 취학전 아동 -->
+        <div class="section-title">취학전 아동 (1인당 연 300만원 한도)</div>
+        <p style="font-size:0.82em;color:#888;margin:-8px 0 12px;">어린이집·유치원·학원·체육시설 이용료 포함</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>취학전 아동 수 <span class="hint">명</span></label>
+            <input type="number" id="preSchoolCount" placeholder="예: 1" value="0" min="0" max="10" onchange="updatePreSchoolRows()">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div id="preSchoolHint" style="font-size:0.82em;color:#888;padding:13px 0;">자녀 수 입력 시 각 자녀별 입력란이 표시됩니다</div>
+          </div>
+        </div>
+        <div id="preSchoolRows"></div>
+
+        <hr class="section-divider">
+
+        <!-- 초·중·고 -->
+        <div class="section-title">초·중·고등학생 (1인당 연 300만원 한도)</div>
+        <p style="font-size:0.82em;color:#888;margin:-8px 0 12px;">수업료·입학금·방과후학교·교과서대금·급식비 포함 (일반 학원비 제외)</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>초·중·고 자녀 수 <span class="hint">명</span></label>
+            <input type="number" id="k12Count" placeholder="예: 1" value="0" min="0" max="10" onchange="updateK12Rows()">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div id="k12Hint" style="font-size:0.82em;color:#888;padding:13px 0;">자녀 수 입력 시 각 자녀별 입력란이 표시됩니다</div>
+          </div>
+        </div>
+        <div id="k12Rows"></div>
+
+        <hr class="section-divider">
+
+        <!-- 대학생 -->
+        <div class="section-title">대학생 (1인당 연 900만원 한도)</div>
+        <p style="font-size:0.82em;color:#888;margin:-8px 0 12px;">입학금·수업료·기성회비 포함 (학자금 대출 상환액 제외)</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>대학생 자녀 수 <span class="hint">명</span></label>
+            <input type="number" id="univCount" placeholder="예: 1" value="0" min="0" max="10" onchange="updateUnivRows()">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div id="univHint" style="font-size:0.82em;color:#888;padding:13px 0;">자녀 수 입력 시 각 자녀별 입력란이 표시됩니다</div>
+          </div>
+        </div>
+        <div id="univRows"></div>
+
+        <hr class="section-divider">
+
+        <!-- 장애인 특수교육비 -->
+        <div class="section-title">장애인 특수교육비 (한도 없음)</div>
+        <div class="form-group">
+          <label>장애인 특수교육비 <span class="hint">원 (한도 없음, 공제율 15%)</span></label>
+          <input type="number" id="specialEdu" placeholder="예: 2000000" value="0" min="0">
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- 교복·체험학습비 -->
+        <div class="section-title">교복구입비 · 체험학습비</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>교복 구입비 합계 <span class="hint">원 (중·고생, 1인당 50만원 한도)</span></label>
+            <input type="number" id="uniformFee" placeholder="예: 500000" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>교복 해당 자녀 수 <span class="hint">명</span></label>
+            <input type="number" id="uniformCount" placeholder="예: 1" value="1" min="1" max="10">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>체험학습비 합계 <span class="hint">원 (초·중·고, 1인당 30만원 한도)</span></label>
+            <input type="number" id="fieldTripFee" placeholder="예: 300000" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>체험학습 해당 자녀 수 <span class="hint">명</span></label>
+            <input type="number" id="fieldTripCount" placeholder="예: 1" value="1" min="1" max="10">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">교육비 세액공제 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총 공제액 -->
+          <div class="total-deduction-box">
+            <div class="tlabel">연간 교육비 세액공제 총액 (공제율 15%)</div>
+            <div class="tvalue" id="totalCredit"></div>
+            <div class="tsub" id="totalSub"></div>
+          </div>
+
+          <!-- 항목별 카드 -->
+          <div class="deduction-cards" id="deductionCards"></div>
+
+          <!-- 항목별 상세 내역 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">항목별 공제 상세 내역</div>
+          <table class="breakdown-table" id="breakdownTable">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>실지출액</th>
+                <th>공제대상액 (한도 적용)</th>
+                <th>세액공제액 (×15%)</th>
+              </tr>
+            </thead>
+            <tbody id="breakdownBody"></tbody>
+          </table>
+
+          <div class="notice-box">
+            <strong>안내:</strong> 학자금 대출 상환액은 공제 대상에서 제외됩니다. 교육비 세액공제는 해당 연도에 실제 납부한 금액만 적용되며, 공제 후 결정세액이 0이 되면 남은 금액은 환급·이월되지 않습니다.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">교육비세액공제 핵심 용어 정리</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">교육비세액공제란?</h3>
+        <p>교육비세액공제는 소득세법 제59조의4에 따라 근로자 본인 및 기본공제 대상 부양가족의 교육비 지출액에 대해 산출세액에서 직접 차감하는 세액공제 제도입니다. 소득공제와 달리 세액에서 직접 차감하므로 세율이 낮은 저소득자도 동일한 공제율(15%)을 적용받습니다. 교육 단계별 한도가 상이하며, 본인 교육비(대학원 등)와 장애인 특수교육비는 한도가 없습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 교육비세액공제 한도표</h3>
+        <p>① 본인(대학원·직업능력개발훈련 등): 한도 없음 · ② 취학전 아동: 1인당 연 300만원 (어린이집, 유치원, 학원, 체육시설) · ③ 초·중·고등학생: 1인당 연 300만원 (수업료, 입학금, 방과후학교, 교과서대금, 급식비) · ④ 대학생: 1인당 연 900만원 (입학금, 수업료, 기성회비) · ⑤ 장애인 특수교육비: 한도 없음 · ⑥ 교복구입비: 중·고생 1인당 연 50만원 · ⑦ 체험학습비: 초·중·고 1인당 연 30만원. 공제율은 모두 15%입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">취학전 아동 교육비 공제 대상</h3>
+        <p>취학전 아동(만 6세 이하)의 교육비는 어린이집, 유치원, 학원(학원법에 따른 학원), 체육시설(체육시설의 설치·이용에 관한 법률에 따른 체육시설)에 지출한 비용이 대상입니다. 1인당 연 300만원 한도이며, 태권도·발레·피아노 학원비도 포함됩니다. 단, 초등학교 입학 이후에는 일반 학원비 공제 불가합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">초·중·고 교육비 공제 범위</h3>
+        <p>초·중·고등학생의 교육비 공제 대상: 수업료, 입학금, 방과후학교 수업료(교재비 제외), 교과서 구입비(학교에서 구입), 급식비, 교복구입비(중·고 1인당 50만원 한도), 현장체험학습비(1인당 30만원 한도). 주의: 일반 학원비(보습학원, 예체능 학원 등), 개인 과외비, 교재·문제집 구입비는 공제 대상이 아닙니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">대학생 교육비 공제 및 학자금 대출 주의사항</h3>
+        <p>대학교(전문대 포함) 입학금, 수업료, 기성회비가 공제 대상이며, 1인당 연 900만원까지 공제할 수 있습니다(최대 절세액 135만원). 학자금 대출(든든학자금, 일반상환학자금)을 받아 납부한 등록금은 대출받은 연도에 공제 가능합니다. 그러나 이후 대출 상환액은 공제되지 않으므로 주의해야 합니다. 대학원 등록금은 본인 명의만 해당되며 자녀 대학원비는 공제 불가합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">장애인 특수교육비</h3>
+        <p>기본공제 대상 장애인(세법상 장애인)의 특수교육기관 교육비는 한도 없이 전액 15% 세액공제됩니다. 사회복지시설, 장애인복지관, 특수교육학교 등의 비용이 해당됩니다. 장애인 자녀의 일반 학교 교육비는 학교 급별 한도를 따르며, 특수교육비와 중복 적용 시에는 한도가 없는 특수교육비로만 공제됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">교육비 세액공제 신청 방법</h3>
+        <p>연말정산 시 각 교육기관에서 발급한 교육비 납입 증명서를 회사에 제출합니다. 국세청 홈택스에서 온라인으로 조회·출력할 수 있으며, 연말정산 간소화 서비스를 통해 자동으로 불러올 수 있습니다. 일부 학원·체육시설은 간소화 서비스에서 누락될 수 있으므로, 직접 발급받아 제출해야 합니다. 맞벌이 부부는 교육비 공제 대상 자녀를 각각 다르게 등록할 수 있습니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>맞벌이 부부는 교육비를 누가 공제받는 게 유리한가요?</summary>
+            <p>교육비 세액공제율은 15%로 동일하므로, 총급여가 높아 세율이 높은 배우자가 공제받는 것이 실질적인 절세 효과가 더 큽니다. 단, 공제받는 배우자가 해당 자녀를 기본공제에 등록해야 교육비 공제도 받을 수 있습니다. 맞벌이의 경우 자녀를 누구에게 올리느냐에 따라 교육비·의료비·자녀세액공제가 함께 달라지므로, 유리한 쪽으로 사전에 협의하는 것이 좋습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>자녀 대학원 교육비도 공제받을 수 있나요?</summary>
+            <p>자녀(부양가족)의 대학원 교육비는 공제 대상이 아닙니다. 대학원 교육비는 본인 명의로 지출한 경우에만 한도 없이 공제받을 수 있습니다. 따라서 대학원에 다니는 자녀의 등록금을 부모가 납부해도 공제 불가하며, 자녀 본인이 근로소득이 있는 경우 스스로 본인 교육비로 공제해야 합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>유치원을 다니면서 학원도 다니는 경우 한도는 어떻게 되나요?</summary>
+            <p>취학전 아동의 유치원비와 학원비는 합산하여 1인당 연 300만원 한도가 적용됩니다. 즉, 유치원비가 200만원이고 학원비가 200만원이라면, 합산 400만원 중 300만원까지만 공제 대상이 됩니다. 15% 공제율 적용 시 최대 45만원(300만원 × 15%)을 절세할 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>교육비 세액공제는 소득공제와 어떻게 다른가요?</summary>
+            <p>소득공제는 과세표준(소득)을 줄여주는 방식으로, 세율 구간이 높을수록 절세 효과가 큽니다. 반면 세액공제는 산출된 세액에서 직접 차감하므로 소득 수준과 무관하게 동일한 금액(공제액 × 15%)만큼 세금이 줄어듭니다. 교육비는 세액공제 방식이라 저소득자도 고소득자와 동일한 비율로 절세 혜택을 받습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>해외 유학 교육비도 공제받을 수 있나요?</summary>
+            <p>해외 교육기관에 지출한 교육비는 국내법에 따른 교육기관이 아니므로 원칙적으로 교육비 세액공제 대상이 아닙니다. 단, 국외 유학에 관한 규정에 따라 자비 유학자격이 인정되는 학생의 교육비(초·중·고 300만원, 대학 900만원 한도)는 공제 가능합니다. 유학 허가서 등 관련 서류를 준비해야 하며, 국세청 홈택스에서 조회되지 않으므로 직접 서류를 제출해야 합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>교육비 공제를 놓쳤을 때 환급받을 수 있나요?</summary>
+            <p>연말정산 시 교육비 공제를 누락한 경우, 5년 이내에 경정청구를 통해 환급받을 수 있습니다. 국세청 홈택스에서 '경정청구서'를 제출하거나, 관할 세무서에 직접 방문해 신청할 수 있습니다. 2021년 이후 연말정산분부터 경정청구 가능하며, 환급 결정까지 통상 2~3개월 소요됩니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>교육비 공제 한도 요약</h3>
+        <ul>
+          <li><strong>본인</strong>: 한도 없음 (대학원 등)</li>
+          <li><strong>취학전 아동</strong>: 1인당 300만원</li>
+          <li><strong>초·중·고</strong>: 1인당 300만원</li>
+          <li><strong>대학생</strong>: 1인당 900만원</li>
+          <li><strong>장애인 특수교육</strong>: 한도 없음</li>
+          <li><strong>교복구입비</strong>: 중·고생 1인당 50만원</li>
+          <li><strong>체험학습비</strong>: 초중고 1인당 30만원</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 공제율 15% 일괄 적용</p>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>최대 절세액 예시</h3>
+        <ul>
+          <li><strong>취학전 1명</strong>: 최대 45만원</li>
+          <li><strong>초중고 1명</strong>: 최대 45만원</li>
+          <li><strong>대학생 1명</strong>: 최대 135만원</li>
+          <li><strong>교복 (1명)</strong>: 최대 7.5만원</li>
+          <li><strong>체험학습 (1명)</strong>: 최대 4.5만원</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 한도 초과 지출 시 기준</p>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);">관련 계산기</h3>
+        <div class="related-grid">
+          <a href="child-tax-deduction.html" class="related-link">자녀세액공제</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="income-tax-refund.html" class="related-link">소득세 환급</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 국세청 홈택스 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  // 취학전 아동 입력란 동적 생성
+  function updatePreSchoolRows() {
+    const count = parseInt(document.getElementById('preSchoolCount').value) || 0;
+    const container = document.getElementById('preSchoolRows');
+    const hint = document.getElementById('preSchoolHint');
+    container.innerHTML = '';
+    hint.style.display = 'none';
+    for (let i = 1; i <= count; i++) {
+      container.innerHTML += `
+        <div class="form-group">
+          <label>취학전 ${i}번째 자녀 교육비 <span class="hint">원 (한도 300만원/년)</span></label>
+          <input type="number" id="preschool_${i}" placeholder="예: 2400000" value="0" min="0">
+        </div>`;
+    }
+    if (count === 0) hint.style.display = 'block';
+  }
+
+  // 초·중·고 입력란 동적 생성
+  function updateK12Rows() {
+    const count = parseInt(document.getElementById('k12Count').value) || 0;
+    const container = document.getElementById('k12Rows');
+    const hint = document.getElementById('k12Hint');
+    container.innerHTML = '';
+    hint.style.display = 'none';
+    for (let i = 1; i <= count; i++) {
+      container.innerHTML += `
+        <div class="form-group">
+          <label>초·중·고 ${i}번째 자녀 교육비 <span class="hint">원 (한도 300만원/년, 교복·체험학습비 별도)</span></label>
+          <input type="number" id="k12_${i}" placeholder="예: 1500000" value="0" min="0">
+        </div>`;
+    }
+    if (count === 0) hint.style.display = 'block';
+  }
+
+  // 대학생 입력란 동적 생성
+  function updateUnivRows() {
+    const count = parseInt(document.getElementById('univCount').value) || 0;
+    const container = document.getElementById('univRows');
+    const hint = document.getElementById('univHint');
+    container.innerHTML = '';
+    hint.style.display = 'none';
+    for (let i = 1; i <= count; i++) {
+      container.innerHTML += `
+        <div class="form-group">
+          <label>대학생 ${i}번째 자녀 교육비 <span class="hint">원 (한도 900만원/년)</span></label>
+          <input type="number" id="univ_${i}" placeholder="예: 6000000" value="0" min="0">
+        </div>`;
+    }
+    if (count === 0) hint.style.display = 'block';
+  }
+
+  function calculate() {
+    // 본인 교육비 (한도 없음)
+    const selfEdu = parseFloat(document.getElementById('selfEdu').value) || 0;
+
+    // 취학전 아동
+    const preSchoolCount = parseInt(document.getElementById('preSchoolCount').value) || 0;
+    let preSchoolTotal = 0;
+    let preSchoolCapped = 0;
+    for (let i = 1; i <= preSchoolCount; i++) {
+      const val = parseFloat(document.getElementById('preschool_' + i)?.value) || 0;
+      preSchoolTotal += val;
+      preSchoolCapped += Math.min(val, 3000000);
+    }
+
+    // 초·중·고
+    const k12Count = parseInt(document.getElementById('k12Count').value) || 0;
+    let k12Total = 0;
+    let k12Capped = 0;
+    for (let i = 1; i <= k12Count; i++) {
+      const val = parseFloat(document.getElementById('k12_' + i)?.value) || 0;
+      k12Total += val;
+      k12Capped += Math.min(val, 3000000);
+    }
+
+    // 대학생
+    const univCount = parseInt(document.getElementById('univCount').value) || 0;
+    let univTotal = 0;
+    let univCapped = 0;
+    for (let i = 1; i <= univCount; i++) {
+      const val = parseFloat(document.getElementById('univ_' + i)?.value) || 0;
+      univTotal += val;
+      univCapped += Math.min(val, 9000000);
+    }
+
+    // 장애인 특수교육비 (한도 없음)
+    const specialEdu = parseFloat(document.getElementById('specialEdu').value) || 0;
+
+    // 교복구입비 (중·고 1인당 50만원 한도)
+    const uniformFee = parseFloat(document.getElementById('uniformFee').value) || 0;
+    const uniformCount = parseInt(document.getElementById('uniformCount').value) || 1;
+    const uniformCap = uniformCount * 500000;
+    const uniformCapped = Math.min(uniformFee, uniformCap);
+
+    // 체험학습비 (초·중·고 1인당 30만원 한도)
+    const fieldTripFee = parseFloat(document.getElementById('fieldTripFee').value) || 0;
+    const fieldTripCount = parseInt(document.getElementById('fieldTripCount').value) || 1;
+    const fieldTripCap = fieldTripCount * 300000;
+    const fieldTripCapped = Math.min(fieldTripFee, fieldTripCap);
+
+    // 공제 대상 합계
+    const totalDeductible = selfEdu + preSchoolCapped + k12Capped + univCapped + specialEdu + uniformCapped + fieldTripCapped;
+
+    // 세액공제액 (15%)
+    const totalCredit = totalDeductible * 0.15;
+
+    // 결과 표시
+    document.getElementById('totalCredit').textContent = fmt(totalCredit);
+    document.getElementById('totalSub').textContent =
+      '공제대상 교육비 합계: ' + fmt(totalDeductible) + ' × 15%';
+
+    // 항목별 카드
+    const cards = [];
+    if (selfEdu > 0) cards.push({ label: '본인 교육비', value: fmt(selfEdu * 0.15) });
+    if (preSchoolCapped > 0) cards.push({ label: `취학전 ${preSchoolCount}명`, value: fmt(preSchoolCapped * 0.15) });
+    if (k12Capped > 0) cards.push({ label: `초·중·고 ${k12Count}명`, value: fmt(k12Capped * 0.15) });
+    if (univCapped > 0) cards.push({ label: `대학생 ${univCount}명`, value: fmt(univCapped * 0.15) });
+    if (specialEdu > 0) cards.push({ label: '장애인 특수교육', value: fmt(specialEdu * 0.15) });
+    if (uniformCapped > 0) cards.push({ label: '교복구입비', value: fmt(uniformCapped * 0.15) });
+    if (fieldTripCapped > 0) cards.push({ label: '체험학습비', value: fmt(fieldTripCapped * 0.15) });
+    if (cards.length === 0) cards.push({ label: '공제 항목 없음', value: '0원' });
+
+    document.getElementById('deductionCards').innerHTML = cards.map((c, i) =>
+      `<div class="deduction-card ${i === 0 && totalCredit > 0 ? 'highlight' : ''}"><div class="dlabel">${c.label}</div><div class="dvalue">${c.value}</div></div>`
+    ).join('');
+
+    // 상세 내역 테이블
+    const rows = [];
+    if (selfEdu > 0) {
+      rows.push({ label: '본인 교육비 (한도 없음)', actual: selfEdu, capped: selfEdu, credit: selfEdu * 0.15 });
+    }
+    if (preSchoolCount > 0 || preSchoolTotal > 0) {
+      rows.push({ label: `취학전 아동 ${preSchoolCount}명 (1인당 300만원)`, actual: preSchoolTotal, capped: preSchoolCapped, credit: preSchoolCapped * 0.15 });
+    }
+    if (k12Count > 0 || k12Total > 0) {
+      rows.push({ label: `초·중·고등학생 ${k12Count}명 (1인당 300만원)`, actual: k12Total, capped: k12Capped, credit: k12Capped * 0.15 });
+    }
+    if (univCount > 0 || univTotal > 0) {
+      rows.push({ label: `대학생 ${univCount}명 (1인당 900만원)`, actual: univTotal, capped: univCapped, credit: univCapped * 0.15 });
+    }
+    if (specialEdu > 0) {
+      rows.push({ label: '장애인 특수교육비 (한도 없음)', actual: specialEdu, capped: specialEdu, credit: specialEdu * 0.15 });
+    }
+    if (uniformFee > 0 || uniformCount > 0) {
+      rows.push({ label: `교복구입비 (${uniformCount}명 × 50만원)`, actual: uniformFee, capped: uniformCapped, credit: uniformCapped * 0.15 });
+    }
+    if (fieldTripFee > 0 || fieldTripCount > 0) {
+      rows.push({ label: `체험학습비 (${fieldTripCount}명 × 30만원)`, actual: fieldTripFee, capped: fieldTripCapped, credit: fieldTripCapped * 0.15 });
+    }
+
+    const tbody = document.getElementById('breakdownBody');
+    tbody.innerHTML = rows.map(r =>
+      `<tr>
+        <td>${r.label}</td>
+        <td style="text-align:right;">${fmt(r.actual)}</td>
+        <td style="text-align:right;">${fmt(r.capped)}</td>
+        <td style="text-align:right;color:#1a73e8;font-weight:600;">${fmt(r.credit)}</td>
+      </tr>`
+    ).join('') +
+    `<tr class="total-row">
+      <td><strong>합계</strong></td>
+      <td style="text-align:right;"><strong>${fmt(rows.reduce((s, r) => s + r.actual, 0))}</strong></td>
+      <td style="text-align:right;"><strong>${fmt(totalDeductible)}</strong></td>
+      <td style="text-align:right;color:#0d47a1;"><strong>${fmt(totalCredit)}</strong></td>
+    </tr>`;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주택담보대출 한도 계산기 - 2026년 LTV·DTI·DSR 자동 계산</title>
+  <meta name="description" content="2026년 기준 주택담보대출 가능 한도를 자동 계산합니다. LTV·DTI·DSR·스트레스DSR 3단계 반영, 지역별·보유수별 한도 확인. 실제 대출 가능 금액을 즉시 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/mortgage-limit">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="주택담보대출 한도 계산기 - 2026년 LTV·DTI·DSR 자동 계산">
+  <meta property="og:description" content="2026년 기준 주택담보대출 한도를 LTV·DTI·DSR 기준으로 자동 계산합니다. 스트레스 DSR 3단계 가산금리 반영.">
+  <meta property="og:url" content="https://calcmoney.kr/mortgage-limit">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "주택담보대출 한도는 어떻게 결정되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택담보대출 한도는 LTV(주택가격 대비 대출비율), DTI(소득 대비 부채상환비율), DSR(전체 금융부채 원리금 상환비율) 세 가지 규제를 모두 적용한 후 가장 낮은 금액으로 결정됩니다. 2026년에는 스트레스 DSR 3단계가 적용되어 변동·혼합금리 대출에 연 0.75%의 가산금리가 추가됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 LTV 규제 기준은 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 LTV 기준은 지역 및 보유 주택 수에 따라 다릅니다. 투기·투기과열지구 무주택자 40%, 조정대상지역 무주택자 50%(1주택 40%), 비규제지역 무주택자 70%(1주택 60%)입니다. 생애최초 구입자는 6억 이하 주택에 한해 80% 적용(한도 5억)이 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DSR 40%란 무엇을 의미하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DSR(Debt Service Ratio) 40%는 연간 총 금융부채 원리금 상환액이 연소득의 40%를 초과할 수 없다는 규제입니다. 주택담보대출뿐 아니라 신용대출, 카드론, 자동차할부 등 모든 금융부채의 원리금이 합산됩니다. 대출 1억 초과 시 적용되며, 은행권 기준입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "스트레스 DSR 3단계란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "스트레스 DSR은 향후 금리 상승 위험을 사전에 반영하는 제도입니다. 2024년 9월부터 2단계, 2025년 7월부터 3단계가 적용됩니다. 3단계에서는 변동금리·혼합금리 대출 시 실제 대출금리에 연 0.75%를 가산하여 DSR을 계산합니다. 이로 인해 대출 가능 한도가 줄어들 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "생애최초 주택 구입자는 LTV 혜택이 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 생애최초 주택 구입자는 주택가격 6억 이하인 경우 LTV 80% 적용이 가능하며, 대출 한도 상한은 5억원입니다. 이는 규제지역 여부와 관계없이 적용됩니다. 단, 기존에 주택을 소유한 적이 없어야 하며 부부 합산 기준입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DTI와 DSR의 차이는 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DTI(총부채상환비율)는 연소득 대비 주택담보대출 원리금 + 기타 대출 이자상환액의 비율입니다. DSR(총부채원리금상환비율)은 연소득 대비 모든 금융부채(주담대 포함)의 원리금 전체 상환액 비율입니다. DSR이 더 엄격한 기준으로, 신용대출 등 다른 대출의 원금까지 포함하여 계산합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "투기과열지구와 조정대상지역의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "투기과열지구는 주택가격 상승률이 물가상승률의 2배 이상이거나 청약 경쟁률이 높은 지역으로 지정되며, LTV 40% 등 가장 강한 규제를 받습니다. 조정대상지역은 주택가격이 급등하거나 청약 과열이 우려되는 지역으로 LTV 50%가 적용됩니다. 2026년 현재 서울 일부 지역이 투기과열지구, 수도권 일부가 조정대상지역으로 지정되어 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주담대 월 상환액은 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "원리금균등 방식의 월 상환액은 'P × r(1+r)^n / ((1+r)^n - 1)' 공식으로 계산합니다. 여기서 P는 대출 원금, r은 월 이자율(연금리÷12), n은 총 상환 개월 수입니다. 예를 들어 3억원을 연 4%, 30년 조건으로 대출받으면 월 상환액은 약 143만원입니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="car-tax.html">자동차세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>주택담보대출 한도 계산기</h1>
+        <p class="desc">2026년 기준 주택담보대출 가능 한도를 LTV·DTI·DSR(스트레스 DSR 3단계) 기준으로 자동 계산합니다. 지역, 주택 보유 수, 소득 정보를 입력하면 실제 대출 가능 금액을 즉시 확인할 수 있습니다.</p>
+
+        <div class="form-group">
+          <label>주택 가격 <span class="hint">억원 단위</span></label>
+          <input type="number" id="housePrice" placeholder="예: 5 (5억원)" value="5" min="0" step="0.1">
+        </div>
+
+        <div class="form-group">
+          <label>지역 규제</label>
+          <select id="region">
+            <option value="speculative">투기·투기과열지구</option>
+            <option value="adjusted" selected>조정대상지역</option>
+            <option value="normal">비규제지역</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>주택 보유 수</label>
+          <select id="houseCount">
+            <option value="0" selected>무주택 (0주택)</option>
+            <option value="1">1주택</option>
+            <option value="2">2주택 이상</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:8px;">
+            <input type="checkbox" id="firstHome" style="width:auto;margin:0;">
+            생애최초 주택 구입 여부
+          </label>
+          <p style="font-size:0.84em;color:#888;margin-top:4px;">* 6억 이하 주택, LTV 80% (한도 5억) 적용</p>
+        </div>
+
+        <div class="form-group">
+          <label>연 소득 <span class="hint">만원 단위 (세전 기준)</span></label>
+          <input type="number" id="annualIncome" placeholder="예: 5000 (5,000만원)" value="5000" min="0" step="100">
+        </div>
+
+        <div class="form-group">
+          <label>기존 대출 연 원리금 상환액 <span class="hint">만원 단위</span></label>
+          <input type="number" id="existingDebt" placeholder="예: 600 (월 50만원×12)" value="0" min="0" step="10">
+        </div>
+
+        <div class="form-group">
+          <label>대출 금리 <span class="hint">% 연율</span></label>
+          <input type="number" id="loanRate" placeholder="예: 4.0" value="4.0" min="0.1" max="20" step="0.1">
+        </div>
+
+        <div class="form-group">
+          <label>대출 기간 <span class="hint">년</span></label>
+          <input type="number" id="loanTerm" placeholder="예: 30" value="30" min="1" max="50" step="1">
+        </div>
+
+        <div class="form-group">
+          <label>금리 유형</label>
+          <select id="rateType">
+            <option value="fixed">고정금리</option>
+            <option value="mixed" selected>혼합금리 (5년 고정 후 변동)</option>
+            <option value="variable">변동금리</option>
+          </select>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">실제 대출 가능 한도</div>
+            <div class="value" id="rLimit">-</div>
+            <div class="sub" id="rLimitSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>LTV 한도</td><td id="rLTV">-</td></tr>
+            <tr><td>적용 LTV 비율</td><td id="rLTVPct">-</td></tr>
+            <tr><td>DTI 한도</td><td id="rDTI">-</td></tr>
+            <tr><td>적용 DTI 비율</td><td id="rDTIPct">-</td></tr>
+            <tr><td>DSR 한도</td><td id="rDSR">-</td></tr>
+            <tr><td>적용 DSR 비율</td><td id="rDSRPct">-</td></tr>
+            <tr><td>스트레스 가산금리</td><td id="rStress">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>예상 월 상환액</td><td id="rMonthly">-</td></tr>
+          </table>
+          <p style="font-size:0.83em;color:#888;margin-top:10px;" id="rNote"></p>
+        </div>
+      </div>
+
+      <!-- 지역별 LTV 기준표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 지역별·보유수별 LTV 기준</h3>
+        <table class="result-table" style="font-size:0.91em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>지역</td><td>무주택</td><td>1주택</td><td>2주택+</td></tr>
+          <tr><td>투기·투기과열지구</td><td>40%</td><td>불가*</td><td>불가</td></tr>
+          <tr><td>조정대상지역</td><td>50%</td><td>40%</td><td>불가</td></tr>
+          <tr><td>비규제지역</td><td>70%</td><td>60%</td><td>60%</td></tr>
+          <tr style="background:#fff8e1;"><td>생애최초 (6억↓)</td><td colspan="3" style="text-align:center;">80% (한도 5억원)</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 투기과열지구 1주택: 처분 조건부·예외 인정 시 일부 가능. 본 계산기에서는 불가로 처리.</p>
+      </div>
+
+      <!-- DSR 규제 기준표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 DSR·DTI 규제 기준</h3>
+        <table class="result-table" style="font-size:0.91em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>구분</td><td>은행권</td><td>비은행권</td></tr>
+          <tr><td>DSR (가계대출 1억 초과)</td><td>40%</td><td>50%</td></tr>
+          <tr><td>DTI (규제지역)</td><td>40%</td><td>-</td></tr>
+          <tr><td>DTI (비규제지역)</td><td>50%</td><td>-</td></tr>
+          <tr><td>스트레스 가산금리 (3단계)</td><td colspan="2" style="text-align:center;">변동·혼합: +0.75% / 고정: 없음</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 2026년 기준 은행권 적용. 스트레스 DSR 3단계는 2025년 7월부터 시행.</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>LTV 계산 방법</h3>
+        <ul>
+          <li><strong>LTV 한도</strong><br>주택가격 × LTV비율</li>
+          <li style="margin-top:10px;"><strong>DTI 한도 역산</strong><br>(연소득 × DTI비율 - 기존부채이자) / 12 → 월 납부 가능액 → 대출 원금 역산</li>
+          <li style="margin-top:10px;"><strong>DSR 한도 역산</strong><br>(연소득 × DSR비율 - 기존원리금) / 12 → 월 납부 가능액 → 대출 원금 역산</li>
+          <li style="margin-top:10px;"><strong>실제 한도</strong><br>min(LTV한도, DTI한도, DSR한도)</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 스트레스 DSR: 변동·혼합 시 금리 +0.75% 가산 후 계산</p>
+      </div>
+      <div class="info-box">
+        <h3>주요 용어 설명</h3>
+        <ul>
+          <li><strong>LTV:</strong> Loan to Value. 주택가격 대비 대출 비율</li>
+          <li style="margin-top:8px;"><strong>DTI:</strong> Debt to Income. 연소득 대비 부채 상환 비율</li>
+          <li style="margin-top:8px;"><strong>DSR:</strong> Debt Service Ratio. 전체 금융부채 원리금 상환 비율</li>
+          <li style="margin-top:8px;"><strong>스트레스 DSR:</strong> 금리 상승 위험 반영 DSR 규제</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- FAQ 섹션 -->
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">주택담보대출 한도를 결정하는 3가지 기준은 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">주택담보대출 한도는 <strong>LTV(담보인정비율), DTI(총부채상환비율), DSR(총부채원리금상환비율)</strong> 세 가지 기준 중 가장 낮은 금액으로 결정됩니다. LTV는 주택 가격 대비 대출 비율 제한, DTI는 소득 대비 연간 부채 상환액 비율 제한, DSR은 모든 금융부채 원리금을 포함한 총합 비율 제한입니다. 2026년에는 스트레스 DSR 3단계가 추가로 적용됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">연소득 5,000만원이면 주담대 한도가 얼마나 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">연소득 5,000만원, 기존 부채 없음, 금리 4%, 30년 기준으로 계산하면 DSR 40% 적용 시 연간 원리금 상환 가능액은 2,000만원(월 약 167만원)입니다. 이를 역산하면 대출 원금 약 3억 4,900만원이 DSR 기준 한도입니다. 여기에 LTV 규제가 추가로 적용되므로 실제 한도는 주택 가격과 지역에 따라 달라집니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">1주택자도 추가로 주담대를 받을 수 있나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">1주택자의 추가 주담대는 지역에 따라 다릅니다. <strong>투기·투기과열지구</strong>에서는 원칙적으로 불가능합니다(처분 조건부 일부 예외). <strong>조정대상지역</strong>은 LTV 40% 적용되며 기존 주택 처분 조건이 붙습니다. <strong>비규제지역</strong>은 LTV 60%까지 가능합니다. 모든 경우에 DSR 40% 규제를 충족해야 합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">스트레스 DSR로 대출 한도가 얼마나 줄어드나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">스트레스 DSR 3단계(가산금리 +0.75%)를 적용하면 변동·혼합금리 대출의 계산용 금리가 높아져 월 상환액이 늘어납니다. 예를 들어 금리 4%, 30년 기준에서 스트레스 금리는 4.75%로 적용됩니다. 이 경우 동일한 DSR 한도 내에서 대출 가능 원금이 약 6~8% 줄어듭니다. 고정금리 대출을 선택하면 스트레스 가산금리가 적용되지 않아 한도가 더 높게 산정됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">생애최초 주택 구입 시 LTV 80% 적용 조건은?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">생애최초 주택 구입 우대 LTV 80%는 <strong>① 본인·배우자 합산 무주택</strong>이어야 하고, <strong>② 주택 가격이 6억원 이하</strong>여야 합니다. 최대 대출 한도는 5억원입니다. 규제지역 여부와 상관없이 적용되므로 투기과열지구에서도 80%까지 대출 가능합니다. 단, DSR 40% 요건은 별도로 충족해야 합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">신혼부부 주담대 우대 혜택은 어떻게 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">신혼부부(혼인 7년 이내)는 LTV 70~80% 우대 적용이 가능합니다. 디딤돌대출(구입) 또는 버팀목대출(전세) 정책자금을 이용하면 시중은행보다 낮은 금리(2026년 기준 연 1.85~3.3%)가 적용됩니다. 주택 가격, 소득 요건 등 세부 조건은 주택도시기금 홈페이지(nhuf.molit.go.kr)에서 확인하세요.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">원리금균등 방식의 월 상환액은 어떻게 계산하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">원리금균등 월 상환액은 <strong>P × r(1+r)^n / ((1+r)^n - 1)</strong> 공식으로 계산합니다. P는 대출 원금, r은 월 이자율(연금리÷12), n은 총 상환 개월 수입니다. 예시: 3억원 대출, 금리 4%, 30년 → r = 0.04/12 ≈ 0.003333, n = 360개월 → 월 상환액 ≈ 143만 2천원. 원금균등 방식은 초기 상환액이 높고 갈수록 줄어드는 구조입니다.</p>
+    </details>
+  </div>
+
+  <!-- 주택담보대출 가이드 섹션 -->
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.4em;margin-bottom:20px;">2026년 주택담보대출 한도 완벽 가이드</h2>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">주택담보대출 한도 규제 체계 개요</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">주택담보대출(이하 주담대) 한도는 단순히 은행이 자체적으로 정하는 것이 아니라, 금융당국이 부동산 시장 안정과 가계부채 관리를 위해 설정한 복수의 규제 기준에 의해 결정됩니다. 2026년 현재 적용되는 핵심 규제는 LTV(담보인정비율), DTI(총부채상환비율), DSR(총부채원리금상환비율)의 세 가지이며, 이 중 가장 낮은 금액이 최종 대출 가능 한도가 됩니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">2026년에는 특히 <strong>스트레스 DSR 3단계</strong>가 완전히 정착된 첫 해로, 변동금리·혼합금리 대출 신청자에게 연 0.75%의 가산금리가 DSR 계산에 반영됩니다. 이는 금리 상승 시 차주의 상환 부담 증가를 미리 고려하는 안전장치입니다. 고정금리를 선택하면 스트레스 가산금리가 적용되지 않아 대출 한도가 다소 높게 산정되는 이점이 있습니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">LTV(담보인정비율) 상세 기준</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">LTV는 주택 담보 가치 대비 대출 가능 비율입니다. 주택 가격(KB시세 또는 감정가 중 낮은 값 기준)에 LTV 비율을 곱한 금액이 LTV 기준 대출 한도입니다. LTV 기준은 지역 규제 수준과 보유 주택 수에 따라 크게 달라집니다.</p>
+
+    <table class="result-table" style="font-size:0.91em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>지역 구분</td><td>무주택</td><td>1주택</td><td>2주택+</td></tr>
+      <tr><td>투기지구·투기과열지구</td><td>40%</td><td>불가 (예외 있음)</td><td>불가</td></tr>
+      <tr><td>조정대상지역</td><td>50%</td><td>40% (처분 조건)</td><td>불가</td></tr>
+      <tr><td>비규제지역</td><td>70%</td><td>60%</td><td>60%</td></tr>
+      <tr style="background:#fff8e1;"><td>생애최초 (6억 이하)</td><td>80% (한도 5억)</td><td>-</td><td>-</td></tr>
+      <tr style="background:#e8f5e9;"><td>신혼부부 우대</td><td>70~80%</td><td>-</td><td>-</td></tr>
+    </table>
+    <p style="font-size:0.85em;color:#888;margin-bottom:20px;">* 2026년 기준. 정부 정책 변경에 따라 변동될 수 있습니다.</p>
+
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">투기지구와 투기과열지구는 주로 서울 강남 3구, 용산구 등 집값 상승이 두드러진 지역이 지정됩니다. 조정대상지역은 서울 전역, 수도권 주요 도시 등이 포함되는 경우가 많습니다. 비규제지역은 지방 중소도시나 인구 감소 지역이 해당됩니다. 지역 지정 현황은 국토교통부 공고를 통해 수시로 변경되므로, 대출 신청 전 반드시 최신 정보를 확인해야 합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">DTI(총부채상환비율) 계산법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">DTI는 연간 소득 대비 주택담보대출 원리금과 기타 대출 이자 상환액의 합계 비율입니다. 규제지역(투기·투기과열·조정대상)에서는 DTI 40%, 비규제지역에서는 50%가 적용됩니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">DTI 역산을 통한 대출 한도 계산: <strong>DTI 한도액 = (연소득 × DTI비율 - 기타대출 연간 이자) ÷ 12 = 월 납부 가능액</strong>. 이 월 납부 가능액으로 원리금균등 방식의 역산 공식을 적용해 대출 원금을 산출합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">DTI와 DSR의 주요 차이는 다른 대출의 취급 방식입니다. DTI는 기타 대출의 '이자'만 계산에 포함하지만, DSR은 기타 대출의 '원금+이자(원리금)' 전체를 포함합니다. 따라서 신용대출이나 자동차할부가 있는 경우 DTI보다 DSR이 훨씬 빡빡하게 작용합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">DSR(총부채원리금상환비율) 및 스트레스 DSR</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">DSR은 2022년 7월부터 총 대출액 1억원 초과 시 40% 규제가 전면 적용되었습니다. 2026년에는 스트레스 DSR 3단계가 완전 시행 중으로, 변동금리 또는 혼합금리(고정기간 5년 이하) 대출에 대해 연 0.75%의 가산금리를 적용하여 DSR을 계산합니다.</p>
+
+    <table class="result-table" style="font-size:0.91em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>금리 유형</td><td>스트레스 가산금리</td><td>비고</td></tr>
+      <tr><td>고정금리 (전 기간)</td><td>0% (가산 없음)</td><td>DSR 계산 유리</td></tr>
+      <tr><td>혼합금리 (5년 고정 후 변동)</td><td>+0.75%</td><td>3단계 적용</td></tr>
+      <tr><td>변동금리</td><td>+0.75%</td><td>3단계 적용</td></tr>
+    </table>
+
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">스트레스 DSR의 실질적 영향을 예시로 설명하겠습니다. 연소득 6,000만원, 기존 대출 없음, 대출 기간 30년 기준으로, 금리 4% 변동금리 선택 시 스트레스 금리 4.75% 적용 DSR 역산 → 대출 한도 약 3억 8,600만원. 동일 조건 고정금리 선택 시 스트레스 없이 4% 적용 → 대출 한도 약 4억 1,900만원. 즉, 금리 유형 하나만 바꿔도 약 3,300만원의 한도 차이가 발생합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">생애최초 주택 구입자 특별 우대</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">생애최초 주택 구입자에게는 LTV 80%의 특별 우대가 적용됩니다. 적용 조건은 다음과 같습니다.</p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li>본인과 배우자 모두 생애 최초로 주택을 구입하는 경우 (무주택자)</li>
+      <li>구입 주택 가격이 6억원 이하인 경우</li>
+      <li>대출 한도 상한: 5억원</li>
+      <li>규제지역 여부 관계없이 전국 적용</li>
+    </ul>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">생애최초 LTV 80%는 규제지역에서도 적용되므로, 투기과열지구에서 4억원짜리 주택을 생애최초로 구입한다면 LTV 기준 3억 2,000만원까지 대출이 가능합니다(일반 LTV 40% 적용 시 1억 6,000만원 대비 2배). 단, DSR 40% 요건은 별도로 충족해야 하므로 소득이 충분해야 합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">신혼부부 주담대 우대 조건</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">신혼부부(혼인신고일로부터 7년 이내)는 시중은행 주담대에서 LTV 70~80% 우대를 받을 수 있으며, 정책 모기지(디딤돌·보금자리론)를 이용하면 더욱 유리한 조건이 제공됩니다. 주요 정책 모기지의 2026년 기준 상품은 다음과 같습니다.</p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li><strong>디딤돌대출 (신혼부부):</strong> 금리 연 1.85~3.3%, 주택가격 5억 이하, 소득 7,000만원 이하 (부부합산)</li>
+      <li><strong>보금자리론:</strong> 금리 연 3.65% 내외, 주택가격 6억 이하, LTV 70% (신혼 80%)</li>
+      <li><strong>특례보금자리론:</strong> 한시 운영 여부 확인 필요 (시행 기간 확인 권장)</li>
+    </ul>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">정책 모기지는 주택도시기금(nhuf.molit.go.kr)이나 은행 창구를 통해 신청 가능하며, 신청 시기에 따라 금리와 조건이 변동되므로 반드시 최신 공고를 확인하시기 바랍니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">원리금균등 vs 원금균등 상환 방식 비교</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">주담대 상환 방식은 크게 원리금균등, 원금균등, 만기일시 세 가지가 있습니다. 각 방식의 특징을 이해해야 DSR 계산에 유리한 방식을 선택할 수 있습니다.</p>
+
+    <table class="result-table" style="font-size:0.91em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>상환 방식</td><td>월 납부액</td><td>총 이자</td><td>DSR 계산 기준</td></tr>
+      <tr><td>원리금균등</td><td>매월 동일</td><td>중간</td><td>균등한 월 상환액</td></tr>
+      <tr><td>원금균등</td><td>초기 높음→감소</td><td>가장 적음</td><td>초기 상환액 기준</td></tr>
+      <tr><td>만기일시</td><td>이자만 납부</td><td>가장 많음</td><td>이자+원금 환산</td></tr>
+    </table>
+
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">DSR 계산 시 원리금균등 방식이 가장 일반적으로 쓰입니다. 원금균등 방식은 초기 월 납부액이 높아 DSR 계산 시 불리할 수 있으나, 총 이자 부담은 적습니다. 장기적으로 총 이자 절약을 원하면 원금균등을, 안정적인 납부를 원하면 원리금균등을 선택하는 것이 일반적입니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">주담대 한도를 늘리는 합법적인 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">주담대 한도가 부족할 경우 다음과 같은 방법을 검토할 수 있습니다.</p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li><strong>고정금리 선택:</strong> 스트레스 DSR 가산금리(0.75%)가 적용되지 않아 DSR 한도 증가</li>
+      <li><strong>대출 기간 연장:</strong> 30년→40년으로 늘리면 월 상환액 감소 → DSR 여유 증가</li>
+      <li><strong>기존 대출 상환:</strong> 신용대출·카드론 등 기상환 시 DSR 여유 확보</li>
+      <li><strong>생애최초 자격 확인:</strong> 조건 충족 시 LTV 80% 적용 가능</li>
+      <li><strong>정책 모기지 활용:</strong> 디딤돌·보금자리론 등 정책 상품은 별도 기준 적용</li>
+      <li><strong>공동명의:</strong> 배우자와 공동 차주 구성 시 합산 소득으로 DTI·DSR 산정 가능</li>
+    </ul>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">특히 공동 차주(공동 명의) 구성은 단독 소득으로 한도가 부족한 경우 효과적입니다. 배우자의 소득을 합산하면 DTI·DSR 기준 대출 한도가 크게 늘어납니다. 단, 공동 명의는 세금(취득세·양도세·종합부동산세 등) 및 다주택 여부 판단에도 영향을 미치므로 전반적인 득실을 따져보는 것이 중요합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">주담대 금리 유형별 장단점</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">2026년 주담대 금리는 크게 고정금리, 혼합금리(5년 고정 후 변동), 변동금리로 나뉩니다. 각 유형의 특징은 다음과 같습니다.</p>
+
+    <table class="result-table" style="font-size:0.91em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>금리 유형</td><td>장점</td><td>단점</td><td>스트레스 DSR</td></tr>
+      <tr><td>고정금리</td><td>금리 변동 위험 없음, 한도 유리</td><td>초기 금리 다소 높을 수 있음</td><td>미적용</td></tr>
+      <tr><td>혼합금리</td><td>초기 5년 금리 안정</td><td>이후 변동 위험</td><td>+0.75% 적용</td></tr>
+      <tr><td>변동금리</td><td>금리 하락 시 이익</td><td>금리 상승 시 부담 급증</td><td>+0.75% 적용</td></tr>
+    </table>
+
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">2026년 시점에서 시장 금리가 높은 수준을 유지하고 있다면, 단기적으로는 변동금리가 유리하게 보일 수 있습니다. 그러나 30년 장기 대출이라는 점에서 금리 변동 리스크를 충분히 고려해야 합니다. 또한 스트레스 DSR 때문에 변동·혼합금리를 선택할 때 한도가 줄어드는 점도 감안해야 합니다. 개인 상황에 따라 금융기관 상담을 통해 최적의 금리 유형을 선택하시기 바랍니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">주담대 신청 전 체크리스트</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">주택담보대출 신청 전 아래 사항을 미리 확인하면 대출 심사를 보다 원활하게 진행할 수 있습니다.</p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li><strong>주택 가격 확인:</strong> KB부동산 시세 또는 감정평가 기준 가격 파악 (LTV 산정 기준)</li>
+      <li><strong>지역 규제 확인:</strong> 해당 주택 소재지의 규제 지역 여부 (국토교통부 공고 확인)</li>
+      <li><strong>소득 증빙 서류 준비:</strong> 근로소득원천징수영수증, 건강보험료 납부확인서, 사업소득자는 소득 확인서</li>
+      <li><strong>기존 부채 현황 파악:</strong> 전 금융기관 대출 잔액 및 월 상환액 확인 (DSR 계산 필요)</li>
+      <li><strong>신용점수 확인:</strong> 나이스(NICE)·올크레딧(KCB) 신용점수 조회 (금리 우대 요건)</li>
+      <li><strong>생애최초 자격 확인:</strong> 본인·배우자 주택 소유 이력 조회 (정부24 또는 법원 등기소)</li>
+      <li><strong>정책 모기지 적합 여부:</strong> 소득·가격 요건 충족 시 디딤돌·보금자리론 우선 검토</li>
+    </ul>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">2026년 주담대 관련 주요 정책 변화</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">2026년에 적용되는 주요 주담대 정책 변화를 정리합니다.</p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li><strong>스트레스 DSR 3단계 완전 시행:</strong> 2025년 7월부터 변동·혼합금리에 연 0.75% 가산</li>
+      <li><strong>가계부채 관리 강화:</strong> 은행권 전반적 가계대출 총량 관리 지속</li>
+      <li><strong>생애최초 LTV 80% 유지:</strong> 정부 주거사다리 정책 일환으로 지속 적용</li>
+      <li><strong>정책 모기지 금리 조정:</strong> 기준금리 변동에 따른 디딤돌·보금자리론 금리 조정 (최신 공고 확인 필요)</li>
+    </ul>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">주담대 규제는 부동산 시장 상황에 따라 수시로 변경될 수 있습니다. 본 계산기는 2026년 3월 기준 규제를 반영하고 있으며, 실제 대출 신청 전에는 반드시 해당 금융기관 및 금융감독원 파인(fine.fss.or.kr)에서 최신 규제 내용을 확인하시기 바랍니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">주담대 한도 계산 시 주의사항</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">본 계산기는 이해를 돕기 위한 참고용 계산 도구입니다. 실제 대출 한도는 아래 요인에 따라 달라질 수 있습니다.</p>
+    <ul style="line-height:1.8;color:#444;margin-bottom:12px;padding-left:20px;">
+      <li>금융기관별 자체 심사 기준 (내부 신용평가, 직업 안정성 등)</li>
+      <li>주택 감정평가 결과 (시세와 감정가가 다를 수 있음)</li>
+      <li>차주 신용등급 및 거래 이력</li>
+      <li>해당 시점 금융기관의 대출 여력 및 총량 규제</li>
+      <li>임차인 존재 여부 및 선순위 채권 여부 (전세 보증금 공제)</li>
+      <li>건물 노후도 및 재개발·재건축 구역 여부</li>
+    </ul>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">특히 임차인이 있는 주택을 담보로 대출 시, 전세 보증금 등 선순위 채권이 LTV 계산에서 공제됩니다. 예를 들어 5억원짜리 주택에 전세 2억원이 있다면 LTV 50% 기준 대출 가능 금액은 5억 × 50% - 2억 = 5,000만원이 됩니다. 이 점을 반드시 감안하시기 바랍니다.</p>
+  </div>
+
+  <!-- 내부 링크 섹션 -->
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 상환 방식별 이자 계산</li>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택 취득 시 취득세 자동 계산 (1~3주택 기준)</li>
+      <li><a href="capital-gains.html">양도세 계산기</a> - 주택 매도 시 양도소득세 자동 계산</li>
+      <li><a href="gift-tax.html">증여세 계산기</a> - 부모·자녀 간 부동산 증여세 계산</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 임대소득 포함 종합소득세 계산</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액 확인</li>
+    </ul>
+  </div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 대출 한도는 금융기관 상담 또는 금융감독원 파인(fine.fss.or.kr)에서 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+const fmtEok = n => {
+  if (n === null || n === undefined || !isFinite(n)) return '계산 불가';
+  const man = Math.round(n / 10000);
+  if (man >= 10000) {
+    const eok = Math.floor(man / 10000);
+    const rem = man % 10000;
+    if (rem === 0) return eok + '억원';
+    return eok + '억 ' + rem.toLocaleString('ko-KR') + '만원';
+  }
+  return man.toLocaleString('ko-KR') + '만원';
+};
+
+// 역산: 월 납부 가능액 → 대출 원금 (원리금균등)
+function calcPrincipal(monthlyPayment, annualRate, termYears) {
+  const r = annualRate / 100 / 12;
+  const n = termYears * 12;
+  if (r === 0) return monthlyPayment * n;
+  const factor = Math.pow(1 + r, n);
+  return monthlyPayment * (factor - 1) / (r * factor);
+}
+
+// 원리금균등 월 납부액 계산
+function calcMonthly(principal, annualRate, termYears) {
+  const r = annualRate / 100 / 12;
+  const n = termYears * 12;
+  if (r === 0) return principal / n;
+  const factor = Math.pow(1 + r, n);
+  return principal * r * factor / (factor - 1);
+}
+
+function calculate() {
+  const housePrice = parseFloat(document.getElementById('housePrice').value) || 0; // 억원
+  const region = document.getElementById('region').value;
+  const houseCount = parseInt(document.getElementById('houseCount').value);
+  const firstHome = document.getElementById('firstHome').checked;
+  const annualIncome = parseFloat(document.getElementById('annualIncome').value) || 0; // 만원
+  const existingDebt = parseFloat(document.getElementById('existingDebt').value) || 0; // 만원/년
+  const loanRate = parseFloat(document.getElementById('loanRate').value) || 4.0; // %
+  const loanTerm = parseInt(document.getElementById('loanTerm').value) || 30; // 년
+  const rateType = document.getElementById('rateType').value;
+
+  const housePriceWon = housePrice * 100000000; // 원 단위
+  const housePriceMan = housePrice * 10000; // 만원 단위
+  const annualIncomeWon = annualIncome * 10000; // 원 단위
+  const existingDebtWon = existingDebt * 10000; // 원/년
+
+  // --- LTV 계산 ---
+  let ltvPct = 0;
+  let ltvNote = '';
+  let impossible = false;
+
+  if (firstHome && housePrice <= 6) {
+    // 생애최초 6억 이하
+    ltvPct = 80;
+    ltvNote = '생애최초 LTV 80% 적용 (6억 이하)';
+  } else {
+    if (region === 'speculative') {
+      if (houseCount === 0) {
+        ltvPct = 40;
+        ltvNote = '투기·투기과열지구 무주택 LTV 40%';
+      } else {
+        impossible = true;
+        ltvNote = '투기·투기과열지구 1주택 이상 대출 불가';
+      }
+    } else if (region === 'adjusted') {
+      if (houseCount === 0) {
+        ltvPct = 50;
+        ltvNote = '조정대상지역 무주택 LTV 50%';
+      } else if (houseCount === 1) {
+        ltvPct = 40;
+        ltvNote = '조정대상지역 1주택 LTV 40% (처분 조건)';
+      } else {
+        impossible = true;
+        ltvNote = '조정대상지역 2주택 이상 대출 불가';
+      }
+    } else { // normal
+      if (houseCount === 0) {
+        ltvPct = 70;
+        ltvNote = '비규제지역 무주택 LTV 70%';
+      } else {
+        ltvPct = 60;
+        ltvNote = '비규제지역 1주택+ LTV 60%';
+      }
+    }
+  }
+
+  if (impossible) {
+    document.getElementById('rLTV').textContent = '대출 불가';
+    document.getElementById('rLTVPct').textContent = ltvNote;
+    document.getElementById('rDTI').textContent = '-';
+    document.getElementById('rDTIPct').textContent = '-';
+    document.getElementById('rDSR').textContent = '-';
+    document.getElementById('rDSRPct').textContent = '-';
+    document.getElementById('rStress').textContent = '-';
+    document.getElementById('rMonthly').textContent = '-';
+    document.getElementById('rLimit').textContent = '대출 불가';
+    document.getElementById('rLimitSub').textContent = ltvNote;
+    document.getElementById('rNote').textContent = '해당 지역·보유 조건에서는 주택담보대출이 불가합니다.';
+    document.getElementById('result').classList.add('show');
+    return;
+  }
+
+  let ltvLimit = housePriceWon * (ltvPct / 100);
+  // 생애최초 한도 상한 5억
+  if (firstHome && housePrice <= 6) {
+    ltvLimit = Math.min(ltvLimit, 500000000);
+  }
+
+  // --- DTI 계산 ---
+  let dtiPct = (region === 'normal') ? 50 : 40;
+  // DTI = (주담대 원리금 + 기타대출 이자) / 연소득 ≤ dtiPct%
+  // 역산: 주담대 월 납부 가능액 = (연소득 × dtiPct% - 기존이자추정) / 12
+  // 기존 부채: DTI에서는 기존 대출 이자만 포함 (원리금의 약 60%를 이자로 가정, 실무상 단순화)
+  const existingInterestEst = existingDebtWon * 0.6; // 이자 추정
+  const dtiAnnualAllowed = annualIncomeWon * (dtiPct / 100) - existingInterestEst;
+  let dtiLimit = 0;
+  let dtiNote = '';
+  if (dtiAnnualAllowed <= 0) {
+    dtiNote = '기존 부채로 DTI 한도 초과';
+    dtiLimit = 0;
+  } else {
+    const dtiMonthly = dtiAnnualAllowed / 12;
+    dtiLimit = calcPrincipal(dtiMonthly, loanRate, loanTerm);
+    dtiNote = `DTI ${dtiPct}% 기준`;
+  }
+
+  // --- DSR 계산 (스트레스 적용) ---
+  let stressAddon = 0;
+  let stressNote = '';
+  if (rateType === 'variable' || rateType === 'mixed') {
+    stressAddon = 0.75;
+    stressNote = `스트레스 가산 +0.75% 적용 (${rateType === 'variable' ? '변동금리' : '혼합금리'})`;
+  } else {
+    stressNote = '고정금리 - 스트레스 가산금리 없음';
+  }
+  const dsrRate = loanRate + stressAddon; // DSR 계산용 금리
+
+  const dsrPct = 40;
+  const dsrAnnualAllowed = annualIncomeWon * (dsrPct / 100) - existingDebtWon;
+  let dsrLimit = 0;
+  let dsrNote = '';
+  if (dsrAnnualAllowed <= 0) {
+    dsrNote = '기존 원리금으로 DSR 한도 초과';
+    dsrLimit = 0;
+  } else {
+    const dsrMonthly = dsrAnnualAllowed / 12;
+    dsrLimit = calcPrincipal(dsrMonthly, dsrRate, loanTerm);
+    dsrNote = `DSR 40% 기준 (금리 ${dsrRate.toFixed(2)}% 적용)`;
+  }
+
+  // --- 실제 한도 ---
+  const actualLimit = Math.min(ltvLimit, dtiLimit > 0 ? dtiLimit : Infinity, dsrLimit > 0 ? dsrLimit : Infinity);
+  const finalLimit = Math.max(actualLimit, 0);
+
+  // 한도 결정 요인
+  let limitFactor = '';
+  if (finalLimit === ltvLimit) limitFactor = 'LTV 한도 기준';
+  else if (finalLimit === dtiLimit) limitFactor = 'DTI 한도 기준';
+  else if (finalLimit === dsrLimit) limitFactor = 'DSR 한도 기준 (스트레스 DSR 반영)';
+
+  // 예상 월 상환액 (실제 금리 기준)
+  const monthlyPayment = finalLimit > 0 ? calcMonthly(finalLimit, loanRate, loanTerm) : 0;
+
+  // 결과 표시
+  document.getElementById('rLTV').textContent = fmtEok(ltvLimit);
+  document.getElementById('rLTVPct').textContent = `LTV ${ltvPct}% | ${ltvNote}`;
+  document.getElementById('rDTI').textContent = dtiLimit > 0 ? fmtEok(dtiLimit) : '한도 없음 (기존 부채 초과)';
+  document.getElementById('rDTIPct').textContent = `DTI ${dtiPct}% | ${dtiNote}`;
+  document.getElementById('rDSR').textContent = dsrLimit > 0 ? fmtEok(dsrLimit) : '한도 없음 (기존 원리금 초과)';
+  document.getElementById('rDSRPct').textContent = `DSR ${dsrPct}% | ${dsrNote}`;
+  document.getElementById('rStress').textContent = stressNote;
+  document.getElementById('rMonthly').textContent = finalLimit > 0 ? fmt(Math.round(monthlyPayment)) + ' / 월' : '-';
+  document.getElementById('rLimit').textContent = finalLimit > 0 ? fmtEok(finalLimit) : '대출 불가';
+  document.getElementById('rLimitSub').textContent = finalLimit > 0
+    ? `${limitFactor} | 금리 ${loanRate}% ${loanTerm}년`
+    : '입력한 조건에서 대출이 불가합니다.';
+  document.getElementById('rNote').textContent =
+    '본 계산 결과는 참고용입니다. 실제 한도는 금융기관 심사 기준에 따라 달라질 수 있습니다. 정책 모기지(디딤돌·보금자리론) 이용 시 별도 기준이 적용됩니다.';
+
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

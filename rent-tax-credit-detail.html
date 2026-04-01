@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 월세 세액공제 계산기 - 자격조건·공제율·현금영수증 비교 시뮬레이션 | calcmoney.kr</title>
+  <meta name="description" content="총급여·월세액·주택조건을 입력하면 월세 세액공제 자격 판정, 공제율(15%/17%), 현금영수증 소득공제 비교까지 한 번에 계산합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/rent-tax-credit-detail">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 월세 세액공제 상세 계산기 - 자격판정·공제율·현금영수증 비교">
+  <meta property="og:description" content="총급여·월세·주택 기준시가·면적·무주택 여부 입력 → 세액공제 자격 판정 + 공제율(15%/17%) + 현금영수증 소득공제 비교까지 한 번에.">
+  <meta property="og:url" content="https://calcmoney.kr/rent-tax-credit-detail">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026년 월세 세액공제 자격 조건은 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 월세 세액공제 자격 조건은 4가지입니다. ①무주택 세대주 또는 무주택 세대원(세대주가 주택 관련 공제 미신청 시), ②총급여 8,000만원 이하(종합소득금액 7,000만원 이하), ③임차 주택 기준시가 4억원 이하, ④전용면적 85㎡ 이하(수도권 외 읍·면 지역 100㎡ 이하). 4가지 조건을 모두 충족해야 공제를 받을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택 기준시가는 어디서 확인하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택 기준시가는 국세청 홈택스(hometax.go.kr) → [조회/발급] → [기준시가 조회]에서 확인할 수 있습니다. 아파트·연립주택은 국토교통부 공동주택가격 공시, 단독주택은 개별주택가격 공시를 참고하면 됩니다. 임차 시점의 기준시가가 4억원을 초과하면 세액공제 대상에서 제외됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "세대원도 월세 세액공제를 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "가능합니다. 세대주가 해당 연도에 월세 세액공제, 주택임차 차입금 원리금 상환액 소득공제 등 주택 관련 공제를 신청하지 않은 경우, 무주택 세대원도 월세 세액공제를 받을 수 있습니다. 단, 세대원 본인이 임대차계약서의 임차인이어야 하고, 세대 전체가 무주택이어야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월세 세액공제와 현금영수증 소득공제 중 어느 쪽이 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "총급여 8,000만원 이하 무주택자는 거의 대부분 월세 세액공제가 유리합니다. 세액공제는 세금에서 직접 차감(공제율 15~17%)하는 반면, 현금영수증 소득공제는 소득에서 차감 후 세율을 곱하는 방식(실질 절세율 = 소득공제율 30% × 세율)입니다. 세율이 6%인 경우 현금영수증 절세율은 약 1.8%에 불과해 세액공제 15~17%보다 크게 불리합니다. 총급여 8,000만원 초과자는 세액공제 대상에서 제외되므로 현금영수증 소득공제를 활용해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "전입신고가 반드시 필요한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 전입신고는 필수입니다. 월세 세액공제를 받으려면 임차 주택에 주민등록(전입신고)이 되어 있어야 합니다. 주민등록상 주소와 임대차계약서상 주소가 일치해야 하며, 전입신고 없이는 공제 신청이 불가합니다. 단, 임차 기간 중 이사한 경우 이사 후 전입신고일을 기준으로 공제 기간이 산정됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "집주인(임대인) 동의 없이도 월세 현금영수증을 발급받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 집주인 동의 없이도 가능합니다. 국세청 홈택스(hometax.go.kr)에서 '현금영수증 발급 신청(주택임차료)'을 통해 임차인이 직접 월세 현금영수증을 자진 신청할 수 있습니다. 이 경우 임대인의 동의나 협조가 필요 없으며, 임대인의 사업자등록 여부와 무관하게 신청 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "오피스텔·고시원도 월세 세액공제 대상인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "오피스텔과 고시원도 주거 목적으로 사용하는 경우 월세 세액공제 대상이 될 수 있습니다. 오피스텔은 주거용으로 임차하고, 기준시가 4억원 이하 및 전용면적 85㎡ 이하 요건을 충족해야 합니다. 고시원은 면적 기준 없이 주거 목적 사용 시 가능합니다. 단, 사무용·상업용으로 임차한 오피스텔은 대상에서 제외됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .eligibility-badge { display: inline-block; border-radius: 20px; padding: 4px 14px; font-size: 0.82em; font-weight: 700; margin-left: 8px; }
+    .badge-ok { background: #e8f5e9; color: #2e7d32; border: 1.5px solid #4caf50; }
+    .badge-ng { background: #fce4ec; color: #c62828; border: 1.5px solid #e57373; }
+    .condition-list { list-style: none; padding: 0; margin: 12px 0; }
+    .condition-list li { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; font-size: 0.87em; border-bottom: 1px solid #f0f0f0; }
+    .condition-list li:last-child { border-bottom: none; }
+    .cicon { font-size: 1em; flex-shrink: 0; margin-top: 1px; }
+    .cicon.ok { color: #4caf50; }
+    .cicon.ng { color: #e53935; }
+    .cicon.warn { color: #ff9800; }
+    .result-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+    .result-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
+    .result-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .result-card.success { border-color: #4caf50; background: #e8f5e9; }
+    .result-card .rlabel { font-size: 0.78em; color: #666; margin-bottom: 4px; }
+    .result-card .rvalue { font-size: 1.2em; font-weight: 800; color: #1a73e8; }
+    .result-card.success .rvalue { color: #2e7d32; }
+    .total-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .total-box .tsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .compare-table th { background: #f0f4ff; color: #333; font-size: 0.85em; padding: 10px 12px; text-align: left; border-bottom: 2px solid #c5cae9; }
+    .compare-table td { padding: 9px 12px; font-size: 0.88em; border-bottom: 1px solid #f0f0f0; }
+    .compare-table tr:hover td { background: #f8f9fa; }
+    .compare-table .winner { background: #e8f5e9; font-weight: 700; color: #2e7d32; }
+    .recommend-box { background: #e3f2fd; border-left: 4px solid #1a73e8; border-radius: 0 10px 10px 0; padding: 16px; margin: 16px 0; }
+    .recommend-box h4 { margin: 0 0 8px; font-size: 0.92em; color: #0d47a1; }
+    .recommend-box p { margin: 0; font-size: 0.85em; color: #1565c0; line-height: 1.7; }
+    .ineligible-box { background: #fff3e0; border: 1.5px solid #ffb74d; border-radius: 10px; padding: 18px; margin: 16px 0; }
+    .ineligible-box .ing-title { font-weight: 700; font-size: 1em; color: #e65100; margin-bottom: 10px; }
+    .ineligible-box .ing-reason { font-size: 0.87em; color: #bf360c; line-height: 1.8; }
+    .section-tag { font-size: 0.72em; background: #1a73e8; color: white; border-radius: 4px; padding: 2px 7px; margin-right: 6px; vertical-align: middle; }
+    .sim-row { display: flex; gap: 10px; align-items: center; margin: 6px 0; font-size: 0.88em; }
+    .sim-label { min-width: 140px; color: #555; }
+    .sim-bar-wrap { flex: 1; background: #f0f0f0; border-radius: 6px; height: 14px; overflow: hidden; }
+    .sim-bar { height: 14px; border-radius: 6px; transition: width 0.4s; }
+    .sim-val { min-width: 80px; text-align: right; font-weight: 700; color: #333; }
+    .bar-blue { background: #1a73e8; }
+    .bar-green { background: #4caf50; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>월세 세액공제 상세 계산기</h1>
+        <p class="desc">2026년 기준 월세 세액공제 자격 판정 + 공제율(15%/17%) + 현금영수증 소득공제 비교까지 한 번에 계산합니다. 총급여·월세액·주택 조건을 모두 입력하세요.</p>
+
+        <!-- 소득 정보 -->
+        <div class="input-section-title">소득 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>소득 유형 <span class="hint">근로소득 또는 종합소득</span></label>
+            <select id="incomeType" onchange="toggleIncomeInput()">
+              <option value="salary">근로소득 (총급여 기준)</option>
+              <option value="comprehensive">종합소득 (종합소득금액 기준)</option>
+            </select>
+          </div>
+          <div class="form-group" id="salaryGroup">
+            <label>총급여 <span class="hint">원 (세전 연봉, 비과세 제외)</span></label>
+            <input type="number" id="totalSalary" placeholder="예: 45000000" value="45000000">
+          </div>
+          <div class="form-group" id="compGroup" style="display:none;">
+            <label>종합소득금액 <span class="hint">원 (필요경비 공제 후)</span></label>
+            <input type="number" id="compIncome" placeholder="예: 60000000" value="">
+          </div>
+        </div>
+
+        <!-- 월세 정보 -->
+        <hr class="section-divider">
+        <div class="input-section-title">월세 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>월세액 <span class="hint">원/월 (실제 납부하는 월 임차료)</span></label>
+            <input type="number" id="monthlyRent" placeholder="예: 700000" value="700000">
+          </div>
+          <div class="form-group">
+            <label>임대차 계약 기간 <span class="hint">개월 수 (해당 연도 실납부 기간)</span></label>
+            <input type="number" id="rentMonths" placeholder="12" value="12" min="1" max="12">
+          </div>
+        </div>
+
+        <!-- 주택 조건 -->
+        <hr class="section-divider">
+        <div class="input-section-title">주택 조건</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>주택 기준시가 <span class="hint">공시가격 기준</span></label>
+            <select id="houseValue">
+              <option value="under4">4억원 이하</option>
+              <option value="over4">4억원 초과</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>전용면적 <span class="hint">㎡ (등기부등본 또는 계약서 확인)</span></label>
+            <input type="number" id="area" placeholder="예: 59" value="59">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>지역 <span class="hint">면적 기준 적용에 영향</span></label>
+            <select id="region">
+              <option value="metro">수도권 및 광역시 (85㎡ 이하)</option>
+              <option value="rural">수도권 외 읍·면 지역 (100㎡ 이하)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>주택 유형 <span class="hint">참고용</span></label>
+            <select id="houseType">
+              <option value="apt">아파트·연립·다세대</option>
+              <option value="officetel">오피스텔 (주거용)</option>
+              <option value="gosiwon">고시원</option>
+              <option value="etc">기타 주택</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 자격 조건 -->
+        <hr class="section-divider">
+        <div class="input-section-title">자격 조건</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>주택 보유 여부 <span class="hint">세대 전체 기준</span></label>
+            <select id="hasHouse">
+              <option value="no">무주택 (공제 가능)</option>
+              <option value="yes">주택 보유 (공제 불가)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>세대 내 지위 <span class="hint">주민등록 기준</span></label>
+            <select id="householderType">
+              <option value="head">세대주</option>
+              <option value="member">세대원 (세대주가 주택공제 미신청 시)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">자격 판정 + 공제액 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 자격 판정 -->
+          <div id="eligibilitySection"></div>
+
+          <!-- 공제 결과 (적격자만) -->
+          <div id="creditSection" style="display:none;">
+
+            <!-- 총 세액공제액 -->
+            <div class="total-box">
+              <div class="tlabel">연간 월세 세액공제액</div>
+              <div class="tvalue" id="totalCredit">-</div>
+              <div class="tsub" id="totalCreditSub">-</div>
+            </div>
+
+            <!-- 세부 카드 -->
+            <div class="result-cards" id="resultCards"></div>
+
+            <!-- 현금영수증 비교 -->
+            <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">
+              <span class="section-tag">비교</span>세액공제 vs 현금영수증 소득공제
+            </div>
+            <table class="compare-table" id="compareTable">
+              <thead>
+                <tr>
+                  <th>항목</th>
+                  <th>월세 세액공제</th>
+                  <th>현금영수증 소득공제</th>
+                </tr>
+              </thead>
+              <tbody id="compareBody"></tbody>
+            </table>
+
+            <!-- 절세 시각화 -->
+            <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 10px;">
+              <span class="section-tag">시뮬레이션</span>연간 절세액 비교
+            </div>
+            <div id="simChart"></div>
+
+            <!-- 추천 -->
+            <div class="recommend-box" id="recommendBox"></div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">월세 세액공제 핵심 개념 정리</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">월세 세액공제란?</h3>
+        <p>월세 세액공제는 소득세법 제95조의2에 따라 무주택 세대주(또는 세대원)가 주거 목적으로 임차한 주택의 월세액에 대해 산출세액에서 직접 차감하는 공제 제도입니다. 2026년 기준 공제율은 총급여 5,500만원 이하 17%, 5,500만~8,000만원 이하 15%이며, 연간 공제 대상 한도는 1,000만원입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 자격 조건 4가지</h3>
+        <p>①무주택 세대주(세대주가 공제 미신청 시 세대원도 가능), ②총급여 8,000만원 이하(종합소득금액 7,000만원 이하), ③임차 주택 기준시가 4억원 이하, ④전용면적 85㎡ 이하(수도권 외 읍·면 100㎡ 이하). 오피스텔·고시원도 주거용 사용 시 포함됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">공제율 구조 (2026년 기준)</h3>
+        <p>총급여 5,500만원 이하(종합소득 4,500만원 이하): 공제율 17%. 총급여 5,500만원 초과~8,000만원 이하(종합소득 4,500만원 초과~7,000만원 이하): 공제율 15%. 공제 대상 연 월세 상한은 1,000만원이므로, 연 월세가 1,000만원을 초과해도 1,000만원 기준으로 공제액이 결정됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">세액공제 vs 현금영수증 소득공제 비교</h3>
+        <p>월세 세액공제는 계산된 세금에서 직접 깎아주는 방식으로, 세율 구간에 관계없이 동일한 금액을 절약합니다. 현금영수증 소득공제는 과세표준에서 차감 후 세율을 곱하므로, 세율이 낮을수록 절세 효과가 줄어듭니다. 예를 들어 총급여 4,000만원(세율 15%) 납세자가 월세 70만원을 낼 때: 세액공제는 연 142만 8천원 절약(17%), 현금영수증은 연 약 37만 8천원 절약(소득공제 30% × 세율 15%)으로 세액공제가 약 3.8배 유리합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">월세 현금영수증 발급 방법</h3>
+        <p>국세청 홈택스(hometax.go.kr) → 상담/제보 → 현금영수증 민원신고 → '주택임차료 현금영수증 발급 신청'에서 집주인 동의 없이 임차인이 직접 신청 가능합니다. 신청 후 14일 이내에 현금영수증이 발급됩니다. 단, 세액공제를 받는 연도의 동일 월세에 대해 세액공제와 현금영수증 소득공제를 중복으로 적용받을 수 없습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">신청 필요 서류</h3>
+        <p>①임대차계약서 사본, ②월세 이체 확인 내역(계좌이체 확인서, 무통장 영수증 등), ③주민등록등본(세대주 여부 확인). 연말정산 시 회사에 제출하거나, 5월 종합소득세 신고 기간에 홈택스에서 직접 경정청구할 수 있습니다. 최대 5년 이내 소급 청구 가능합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주택 기준시가 확인 방법</h3>
+        <p>홈택스(hometax.go.kr) → 조회/발급 → 기준시가 조회에서 주소를 입력하면 확인할 수 있습니다. 아파트는 국토교통부 공동주택가격공시, 단독·연립주택은 개별주택가격공시를 기준으로 합니다. 임차 계약일 기준 기준시가를 확인해야 합니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>세대주가 아닌 부모님 집에 살면 월세 공제를 받을 수 없나요?</summary>
+            <p>가족 소유 주택을 무상으로 거주하거나 임차하더라도, 실제 월세를 지급하고 임대차계약서가 있는 경우 공제 대상이 될 수 있습니다. 단, 세대 전체가 무주택이어야 하므로, 부모님이 해당 주택을 소유하고 있다면 세대 분리가 안 된 경우 무주택 요건을 충족하지 못할 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>연도 중간에 이사하면 어떻게 계산하나요?</summary>
+            <p>이사 전 주택과 이사 후 주택에서 납부한 월세를 각각 합산하여 연간 총 월세를 계산합니다. 각 주택이 모두 공제 요건(기준시가 4억원 이하, 면적 기준 충족)을 만족해야 하며, 합산 금액이 연 1,000만원을 초과하면 한도인 1,000만원 기준으로 공제액이 결정됩니다. 두 주소 모두 전입신고가 필요합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>월세를 현금으로 내면 증빙이 어렵지 않나요?</summary>
+            <p>현금으로 지급한 경우에도 무통장 영수증, 현금영수증, 임대인 서명이 있는 영수증 등으로 증빙이 가능합니다. 가장 안전한 방법은 계좌이체를 통해 월세를 납부하는 것입니다. 계좌이체 내역이 가장 강력한 증빙 자료가 됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>월세 세액공제와 주택임차 차입금 원리금 공제를 동시에 받을 수 있나요?</summary>
+            <p>동일 주택에 대해 두 공제를 동시에 적용받을 수 없습니다. 월세 세액공제(한도 1,000만원, 공제율 15~17%)와 주택임차 차입금 원리금 상환액 소득공제(한도 400만원)는 선택 적용입니다. 대부분의 경우 월세 세액공제가 더 유리하지만, 개인 상황에 따라 비교 후 선택하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>외국인도 월세 세액공제를 받을 수 있나요?</summary>
+            <p>외국인 근로자도 국내에서 근로소득이 있고, 내국인과 동일한 자격 요건(무주택, 총급여 기준, 주택 요건)을 충족하면 월세 세액공제를 신청할 수 있습니다. 외국인등록증상 주소와 임대차계약서 주소가 일치해야 합니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>2026년 월세 세액공제 요건</h3>
+        <ul>
+          <li><strong>소득:</strong> 총급여 8,000만원 이하 (종합소득 7,000만원 이하)</li>
+          <li><strong>주택자격:</strong> 무주택 세대주 (세대원도 가능)</li>
+          <li><strong>기준시가:</strong> 4억원 이하</li>
+          <li><strong>전용면적:</strong> 85㎡ 이하 (읍·면 100㎡)</li>
+          <li><strong>한도:</strong> 연 1,000만원</li>
+        </ul>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>공제율표</h3>
+        <ul>
+          <li><strong>총급여 ~5,500만원:</strong> 17%</li>
+          <li><strong>5,500만~8,000만원:</strong> 15%</li>
+          <li><strong>8,000만원 초과:</strong> 세액공제 불가</li>
+          <li style="margin-top:6px;font-size:0.82em;color:#888;">* 현금영수증 소득공제 30%로 대체 가능</li>
+        </ul>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>월세별 예상 공제액 (17%)</h3>
+        <ul>
+          <li><strong>30만원:</strong> 연 61.2만원</li>
+          <li><strong>50만원:</strong> 연 102만원</li>
+          <li><strong>70만원:</strong> 연 142.8만원</li>
+          <li><strong>100만원:</strong> 연 204만원</li>
+          <li><strong>150만원:</strong> 연 306만원</li>
+        </ul>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div>
+          <a href="rent-tax-credit.html" class="related-link">월세 세액공제 (간편)</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="rental-income-tax.html" class="related-link">임대소득세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 국세청 홈택스 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+  function fmtWan(n) {
+    const abs = Math.abs(n);
+    if (abs >= 100000000) return (n / 100000000).toFixed(1) + '억원';
+    if (abs >= 10000) return Math.round(n / 10000) + '만원';
+    return fmt(n);
+  }
+
+  function toggleIncomeInput() {
+    const type = document.getElementById('incomeType').value;
+    document.getElementById('salaryGroup').style.display = type === 'salary' ? '' : 'none';
+    document.getElementById('compGroup').style.display = type === 'comprehensive' ? '' : 'none';
+  }
+
+  function calculate() {
+    const incomeType = document.getElementById('incomeType').value;
+    const salary = parseFloat(document.getElementById('totalSalary').value) || 0;
+    const compIncome = parseFloat(document.getElementById('compIncome').value) || 0;
+    const monthlyRent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+    const rentMonths = Math.min(parseInt(document.getElementById('rentMonths').value) || 12, 12);
+    const houseValue = document.getElementById('houseValue').value;
+    const area = parseFloat(document.getElementById('area').value) || 0;
+    const region = document.getElementById('region').value;
+    const hasHouse = document.getElementById('hasHouse').value;
+    const householderType = document.getElementById('householderType').value;
+    const houseType = document.getElementById('houseType').value;
+
+    // 연간 월세
+    const annualRent = monthlyRent * rentMonths;
+
+    // 소득 기준값
+    const effectiveSalary = incomeType === 'salary' ? salary : 0;
+    const effectiveComp = incomeType === 'comprehensive' ? compIncome : 0;
+
+    // 자격 판정
+    const conditions = [];
+    let eligible = true;
+
+    // 1. 무주택 여부
+    if (hasHouse === 'yes') {
+      conditions.push({ ok: false, text: '주택 보유 세대: 무주택 요건 미충족 (공제 불가)' });
+      eligible = false;
+    } else {
+      conditions.push({ ok: true, text: '무주택 세대: 충족' });
+    }
+
+    // 2. 세대원 여부 (경고)
+    if (householderType === 'member') {
+      conditions.push({ ok: 'warn', text: '세대원: 세대주가 주택 관련 공제 미신청 시에만 가능 (확인 필요)' });
+    } else {
+      conditions.push({ ok: true, text: '세대주: 충족' });
+    }
+
+    // 3. 소득 기준
+    let incomeOk = false;
+    let incomeMsg = '';
+    if (incomeType === 'salary') {
+      if (salary <= 80000000) {
+        incomeOk = true;
+        incomeMsg = `총급여 ${fmtWan(salary)}: 8,000만원 이하 충족`;
+      } else {
+        incomeMsg = `총급여 ${fmtWan(salary)}: 8,000만원 초과 — 세액공제 불가 (현금영수증 활용 가능)`;
+      }
+    } else {
+      if (compIncome <= 70000000) {
+        incomeOk = true;
+        incomeMsg = `종합소득금액 ${fmtWan(compIncome)}: 7,000만원 이하 충족`;
+      } else {
+        incomeMsg = `종합소득금액 ${fmtWan(compIncome)}: 7,000만원 초과 — 세액공제 불가`;
+      }
+    }
+    conditions.push({ ok: incomeOk, text: incomeMsg });
+    if (!incomeOk) eligible = false;
+
+    // 4. 기준시가
+    if (houseValue === 'over4') {
+      conditions.push({ ok: false, text: '기준시가 4억원 초과: 주택 요건 미충족 (공제 불가)' });
+      eligible = false;
+    } else {
+      conditions.push({ ok: true, text: '기준시가 4억원 이하: 충족' });
+    }
+
+    // 5. 면적
+    const areaLimit = region === 'rural' ? 100 : 85;
+    let areaOk = false;
+    let areaMsg = '';
+    if (houseType === 'gosiwon') {
+      areaOk = true;
+      areaMsg = '고시원: 면적 제한 없음 — 충족';
+    } else if (area > 0 && area <= areaLimit) {
+      areaOk = true;
+      areaMsg = `전용면적 ${area}㎡: ${areaLimit}㎡ 이하 충족`;
+    } else if (area > areaLimit) {
+      areaMsg = `전용면적 ${area}㎡: ${areaLimit}㎡ 초과 — 주택 요건 미충족`;
+    } else {
+      areaOk = true;
+      areaMsg = '면적 미입력: 계약서 확인 필요 (85㎡ 이하 조건)';
+    }
+    conditions.push({ ok: areaOk ? true : false, text: areaMsg });
+    if (!areaOk && area > areaLimit) eligible = false;
+
+    // 공제율 결정
+    let creditRate = 0;
+    let creditRateLabel = '';
+    if (eligible) {
+      if (incomeType === 'salary') {
+        if (salary <= 55000000) { creditRate = 0.17; creditRateLabel = '17% (총급여 5,500만원 이하)'; }
+        else { creditRate = 0.15; creditRateLabel = '15% (총급여 5,500만~8,000만원)'; }
+      } else {
+        if (compIncome <= 45000000) { creditRate = 0.17; creditRateLabel = '17% (종합소득 4,500만원 이하)'; }
+        else { creditRate = 0.15; creditRateLabel = '15% (종합소득 4,500만~7,000만원)'; }
+      }
+    }
+
+    // 세액공제 계산
+    const LIMIT = 10000000; // 1,000만원
+    const creditBase = Math.min(annualRent, LIMIT);
+    const taxCredit = eligible ? Math.round(creditBase * creditRate) : 0;
+
+    // 현금영수증 소득공제 계산
+    // 소득공제율 30%, 한도 300만원
+    const CASH_LIMIT = 3000000;
+    const cashDeductionBase = Math.min(annualRent, CASH_LIMIT / 0.30); // 역산
+    const cashDeduction = Math.min(annualRent * 0.30, CASH_LIMIT);
+
+    // 세율 추정 (총급여 기반)
+    let estimatedTaxRate = 0.06;
+    const incomeForRate = incomeType === 'salary' ? salary : compIncome;
+    if (incomeForRate <= 14000000) estimatedTaxRate = 0.06;
+    else if (incomeForRate <= 50000000) estimatedTaxRate = 0.15;
+    else if (incomeForRate <= 88000000) estimatedTaxRate = 0.24;
+    else if (incomeForRate <= 150000000) estimatedTaxRate = 0.35;
+    else estimatedTaxRate = 0.38;
+
+    const cashTaxSaving = Math.round(cashDeduction * estimatedTaxRate);
+
+    // 결과 렌더링
+    const resultEl = document.getElementById('result');
+    resultEl.style.display = '';
+
+    // 자격 판정 섹션
+    const eligEl = document.getElementById('eligibilitySection');
+    const badge = eligible
+      ? '<span class="eligibility-badge badge-ok">적격</span>'
+      : '<span class="eligibility-badge badge-ng">부적격</span>';
+    let condHtml = `<div style="font-weight:700;font-size:0.95em;color:#333;margin-bottom:10px;">자격 판정 결과 ${badge}</div>`;
+    condHtml += '<ul class="condition-list">';
+    conditions.forEach(c => {
+      let icon, cls;
+      if (c.ok === true) { icon = '✓'; cls = 'ok'; }
+      else if (c.ok === 'warn') { icon = '△'; cls = 'warn'; }
+      else { icon = '✗'; cls = 'ng'; }
+      condHtml += `<li><span class="cicon ${cls}">${icon}</span><span>${c.text}</span></li>`;
+    });
+    condHtml += '</ul>';
+    eligEl.innerHTML = condHtml;
+
+    // 적격 시 공제 결과
+    const creditSection = document.getElementById('creditSection');
+    if (eligible) {
+      creditSection.style.display = '';
+
+      // 총 공제액
+      document.getElementById('totalCredit').textContent = fmt(taxCredit);
+      document.getElementById('totalCreditSub').textContent =
+        `연간 월세 ${fmt(annualRent)} × 공제율 ${creditRate * 100}% (한도 적용: ${fmt(creditBase)}) / 월 절약 ${fmt(Math.round(taxCredit / 12))}`;
+
+      // 세부 카드
+      const cards = [
+        { label: '적용 공제율', value: (creditRate * 100) + '%', highlight: true },
+        { label: '공제 대상 연간 월세', value: fmt(creditBase), highlight: false },
+        { label: '연간 세액공제액', value: fmt(taxCredit), highlight: true },
+        { label: '월 실질 절약', value: fmt(Math.round(taxCredit / 12)), highlight: false },
+      ];
+      const cardsEl = document.getElementById('resultCards');
+      cardsEl.innerHTML = cards.map(c =>
+        `<div class="result-card ${c.highlight ? 'highlight' : ''}">
+          <div class="rlabel">${c.label}</div>
+          <div class="rvalue">${c.value}</div>
+        </div>`
+      ).join('');
+
+      // 비교 테이블
+      const isCreditBetter = taxCredit >= cashTaxSaving;
+      document.getElementById('compareBody').innerHTML = `
+        <tr>
+          <td>공제 방식</td>
+          <td class="${isCreditBetter ? 'winner' : ''}">세액공제 (세금 직접 차감)</td>
+          <td class="${!isCreditBetter ? 'winner' : ''}">소득공제 후 세율 적용</td>
+        </tr>
+        <tr>
+          <td>공제율/공제비율</td>
+          <td class="${isCreditBetter ? 'winner' : ''}">${creditRate * 100}%</td>
+          <td>30% (소득공제) × 세율 ${Math.round(estimatedTaxRate * 100)}%</td>
+        </tr>
+        <tr>
+          <td>공제 대상 한도</td>
+          <td>연 1,000만원</td>
+          <td>연 300만원</td>
+        </tr>
+        <tr>
+          <td>연간 절세액 (추정)</td>
+          <td class="${isCreditBetter ? 'winner' : ''}">${fmt(taxCredit)}</td>
+          <td class="${!isCreditBetter ? 'winner' : ''}">${fmt(cashTaxSaving)}</td>
+        </tr>
+        <tr>
+          <td>월 절약 효과</td>
+          <td class="${isCreditBetter ? 'winner' : ''}">${fmt(Math.round(taxCredit / 12))}</td>
+          <td class="${!isCreditBetter ? 'winner' : ''}">${fmt(Math.round(cashTaxSaving / 12))}</td>
+        </tr>
+        <tr>
+          <td>집주인 동의 필요</td>
+          <td>불필요</td>
+          <td>불필요 (홈택스 자진신청)</td>
+        </tr>
+        <tr>
+          <td>중복 적용</td>
+          <td colspan="2" style="text-align:center;color:#888;font-size:0.85em;">동일 월세에 중복 적용 불가 — 하나만 선택</td>
+        </tr>
+      `;
+
+      // 시각화 바 차트
+      const maxVal = Math.max(taxCredit, cashTaxSaving, 1);
+      const creditPct = Math.round((taxCredit / maxVal) * 100);
+      const cashPct = Math.round((cashTaxSaving / maxVal) * 100);
+      document.getElementById('simChart').innerHTML = `
+        <div class="sim-row">
+          <div class="sim-label">세액공제 절세액</div>
+          <div class="sim-bar-wrap"><div class="sim-bar bar-blue" style="width:${creditPct}%"></div></div>
+          <div class="sim-val">${fmt(taxCredit)}</div>
+        </div>
+        <div class="sim-row">
+          <div class="sim-label">현금영수증 절세액</div>
+          <div class="sim-bar-wrap"><div class="sim-bar bar-green" style="width:${cashPct}%"></div></div>
+          <div class="sim-val">${fmt(cashTaxSaving)}</div>
+        </div>
+        <p style="font-size:0.78em;color:#888;margin:6px 0 0;">* 현금영수증 절세액은 추정 세율 ${Math.round(estimatedTaxRate * 100)}% 기준. 실제 세율과 다를 수 있음.</p>
+      `;
+
+      // 추천 박스
+      const diff = taxCredit - cashTaxSaving;
+      const recommendEl = document.getElementById('recommendBox');
+      if (isCreditBetter) {
+        recommendEl.innerHTML = `<h4>월세 세액공제를 선택하세요</h4>
+          <p>세액공제 시 연 <strong>${fmt(taxCredit)}</strong> 절약으로, 현금영수증 소득공제(연 ${fmt(cashTaxSaving)})보다 <strong>${fmt(diff)} 더 유리</strong>합니다.
+          연말정산 시 임대차계약서 + 이체 내역을 회사에 제출하세요. 미신청 시 5월 경정청구로 최대 5년 소급 가능합니다.</p>`;
+      } else {
+        recommendEl.innerHTML = `<h4>현금영수증 소득공제를 선택하세요</h4>
+          <p>현금영수증 소득공제 시 연 <strong>${fmt(cashTaxSaving)}</strong> 절약으로 세액공제(연 ${fmt(taxCredit)})보다 유리합니다.
+          홈택스에서 '주택임차료 현금영수증 자진신청'을 이용하세요. 집주인 동의 불필요.</p>`;
+      }
+
+    } else {
+      creditSection.style.display = 'none';
+
+      // 부적격자도 현금영수증 안내 (소득 초과 제외, 다른 사유 초과분 처리)
+      const incomeOver = (incomeType === 'salary' && salary > 80000000) || (incomeType === 'comprehensive' && compIncome > 70000000);
+      if (incomeOver && hasHouse === 'no') {
+        const ineligEl = document.createElement('div');
+        ineligEl.className = 'ineligible-box';
+        ineligEl.innerHTML = `
+          <div class="ing-title">세액공제 불가 — 현금영수증 소득공제 활용 가능</div>
+          <div class="ing-reason">
+            총급여/종합소득이 세액공제 한도를 초과하지만, <strong>월세 현금영수증 소득공제(공제율 30%, 한도 연 300만원)</strong>를 활용할 수 있습니다.<br><br>
+            예상 현금영수증 소득공제액: <strong>${fmt(cashDeduction)}</strong><br>
+            예상 절세액 (세율 ${Math.round(estimatedTaxRate * 100)}% 적용): <strong>${fmt(cashTaxSaving)}</strong><br><br>
+            홈택스 → 상담/제보 → 현금영수증 민원신고 → '주택임차료 현금영수증 발급 신청'에서 집주인 동의 없이 신청하세요.
+          </div>`;
+        eligEl.appendChild(ineligEl);
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

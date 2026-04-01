@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>적금 이자 계산기 - 2026년 세전·세후 이자 자동 계산 | 비과세·세금우대</title>
+  <meta name="description" content="월 납입액, 연이율, 기간을 입력하면 적금 만기 수령액과 세전·세후 이자를 자동 계산합니다. 비과세·세금우대·일반과세 비교, 월별 상세 내역 제공.">
+  <link rel="canonical" href="https://calcmoney.kr/savings-interest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="적금 이자 계산기 - 2026년 세전·세후 이자 자동 계산 | 비과세·세금우대">
+  <meta property="og:description" content="월 납입액, 연이율, 기간을 입력하면 적금 만기 수령액과 세전·세후 이자를 자동 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/savings-interest">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "적금 이자는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "정기적금 이자는 '월납입액 × 연이율/12 × (n+1)/2' 공식으로 계산합니다. 매월 납입한 금액마다 남은 기간에 비례해 이자가 붙기 때문에, 첫 달 납입금은 전체 기간 이자를, 마지막 달 납입금은 1개월치 이자만 받습니다. n은 총 납입 개월 수입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "적금 이자 세금은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "일반과세는 이자소득세 14% + 지방소득세 1.4% = 총 15.4%입니다. 비과세 상품은 세금이 없습니다(0%). 세금우대는 농어촌특별세 1.4% + 이자소득세 8.1% = 9.5%입니다. 세금우대는 저축은행·신협·새마을금고 등 상호금융권에서 한도 내 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "적금과 예금의 이자 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "같은 금리라면 적금이 예금보다 실수령 이자가 적습니다. 예금은 전액을 처음부터 맡기므로 기간 내내 이자가 붙지만, 적금은 매달 돈을 넣기 때문에 나중에 넣은 돈은 이자 기간이 짧습니다. 적금의 실효이자는 같은 금리 예금의 약 절반 수준입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "예금자보호는 얼마까지 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "예금자보호법에 따라 1개 금융기관당 원금과 이자를 합산하여 최대 5,000만 원까지 보호됩니다. 은행, 저축은행, 보험사 등 금융기관별로 각각 5,000만 원 한도가 적용됩니다. 농협·수협·신협·새마을금고는 자체 기금으로 보호합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "비과세 종합저축 가입 조건은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "만 65세 이상, 장애인, 국가유공자 등이 가입할 수 있습니다. 1인당 5,000만 원 한도이며, 이자·배당소득에 세금이 전혀 없습니다. 기존 세금우대 저축이 2015년 폐지된 후 현재는 비과세종합저축이 대표적인 세제혜택 상품입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "금리 인상 시 적금을 중도해지하면 이자가 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "적금을 중도해지하면 약정금리 대신 중도해지이율이 적용됩니다. 중도해지이율은 가입 기간에 따라 다르지만 통상 약정금리의 20~70% 수준에 불과합니다. 금리가 크게 올랐더라도 중도해지 손해가 클 수 있으니, 만기 후 재가입이 유리한지 비교해보는 것이 좋습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "자유적립식 적금과 정기적금의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "정기적금은 매월 일정 금액을 납입하는 방식이고, 자유적립식 적금은 원하는 시기에 원하는 금액을 자유롭게 납입합니다. 정기적금이 금리가 더 높은 경우가 많습니다. 이 계산기는 매월 동일 금액을 납입하는 정기적금 기준으로 계산합니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="savings-interest.html" class="active">적금이자</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>적금 이자 계산기</h1>
+        <p class="desc">월 납입액과 연이율, 기간을 입력하면 만기 수령액과 세전·세후 이자를 자동으로 계산합니다. 비과세·세금우대 비교도 가능합니다.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>월 납입액 <span class="hint">원</span></label>
+            <input type="number" id="monthly" placeholder="예: 500000" value="500000" min="1">
+          </div>
+          <div class="form-group">
+            <label>연이율 <span class="hint">%</span></label>
+            <input type="number" id="rate" placeholder="예: 4.5" value="4.5" step="0.01" min="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>적금 기간 <span class="hint">개월</span></label>
+            <input type="number" id="months" placeholder="예: 12" value="12" min="1" max="120">
+          </div>
+          <div class="form-group">
+            <label>이자 과세 유형</label>
+            <select id="taxType">
+              <option value="0.154">일반과세 (15.4%)</option>
+              <option value="0">비과세 (0%)</option>
+              <option value="0.095">세금우대 (9.5%)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result" style="display:none;">
+          <div class="result-highlight">
+            <div class="label">만기 수령액 (세후)</div>
+            <div class="value" id="rFinal">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr>
+              <td>총 납입 원금</td>
+              <td id="rPrincipal">-</td>
+            </tr>
+            <tr>
+              <td>세전 이자</td>
+              <td id="rGrossInterest">-</td>
+            </tr>
+            <tr>
+              <td>세금 <span id="rTaxLabel" style="font-size:12px;color:#888;"></span></td>
+              <td id="rTax">-</td>
+            </tr>
+            <tr class="total">
+              <td>세후 이자</td>
+              <td id="rNetInterest">-</td>
+            </tr>
+          </table>
+
+          <!-- 월별 상세 테이블 -->
+          <div style="margin-top:24px;">
+            <div class="tab-btns">
+              <button class="tab-btn active" onclick="showTab('monthly')">월별 상세</button>
+              <button class="tab-btn" onclick="showTab('compare')">과세 유형 비교</button>
+            </div>
+            <div id="tab-monthly">
+              <div class="amort-table-wrap">
+                <table class="amort-table" id="monthlyTable">
+                  <thead>
+                    <tr>
+                      <th>회차</th>
+                      <th>납입원금 누계</th>
+                      <th>이자 누계 (세전)</th>
+                      <th>잔액 (원금+이자)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="monthlyBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div id="tab-compare" style="display:none;">
+              <div class="amort-table-wrap">
+                <table class="amort-table">
+                  <thead>
+                    <tr>
+                      <th>과세 유형</th>
+                      <th>세율</th>
+                      <th>세금</th>
+                      <th>세후 이자</th>
+                      <th>만기 수령액</th>
+                    </tr>
+                  </thead>
+                  <tbody id="compareBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 안내 박스 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>예금자보호 안내</h3>
+        <ul>
+          <li><strong>예금자보호 한도: 1개 금융기관당 원금 + 이자 합산 5,000만 원</strong></li>
+          <li>은행, 저축은행, 보험사, 증권사 등 금융기관별로 각각 적용</li>
+          <li>농협·수협·신협·새마을금고는 자체 기금으로 별도 보호</li>
+          <li>5,000만 원 초과 납입 시 분산 가입 권장</li>
+        </ul>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>적금 이자 계산 공식</h3>
+        <ul>
+          <li><strong>세전 이자 = 월납입액 × (연이율/12) × (n+1)/2</strong></li>
+          <li>n = 납입 개월 수 (기간)</li>
+          <li>일반과세: 이자소득세 14% + 지방소득세 1.4% = <strong>15.4%</strong></li>
+          <li>비과세: <strong>0%</strong> (조건 충족 시)</li>
+          <li>세금우대: 농특세 1.4% + 이자소득세 8.1% = <strong>9.5%</strong></li>
+          <li>만기 수령액 = 총 납입 원금 + 세후 이자</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>금리별 1년 이자 예상 (월 50만원 기준)</h3>
+        <ul>
+          <li>연 2.0% → 세후 약 <strong>56,490원</strong></li>
+          <li>연 3.0% → 세후 약 <strong>84,735원</strong></li>
+          <li>연 4.0% → 세후 약 <strong>112,980원</strong></li>
+          <li>연 5.0% → 세후 약 <strong>141,225원</strong></li>
+          <li>연 6.0% → 세후 약 <strong>169,470원</strong></li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="health-insurance.html" class="related-link">건강보험료</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO 콘텐츠 섹션 -->
+<div class="container seo-content">
+
+  <!-- 1. 금리별 적금 이자 예상표 -->
+  <section class="seo-section">
+    <h2>월 납입액별·금리별 적금 만기 수령액 비교표 (12개월 기준, 일반과세)</h2>
+    <p>아래 표는 <strong>정기적금 12개월 만기, 일반과세(15.4%) 기준</strong>으로 월 납입액과 연이율에 따른 만기 수령액을 시뮬레이션한 결과입니다. 세전 이자 = 월납입액 × (연이율/12) × 6.5 공식을 적용했습니다.</p>
+
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>월 납입액</th>
+            <th>연이율 3%</th>
+            <th>연이율 4%</th>
+            <th>연이율 5%</th>
+            <th>연이율 6%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10만원</td>
+            <td>1,216,954원</td>
+            <td>1,222,596원</td>
+            <td>1,228,245원</td>
+            <td>1,233,894원</td>
+          </tr>
+          <tr>
+            <td>30만원</td>
+            <td>3,650,863원</td>
+            <td>3,667,788원</td>
+            <td>3,684,735원</td>
+            <td>3,701,682원</td>
+          </tr>
+          <tr>
+            <td>50만원</td>
+            <td>6,084,735원</td>
+            <td>6,112,980원</td>
+            <td>6,141,225원</td>
+            <td>6,169,470원</td>
+          </tr>
+          <tr>
+            <td>100만원</td>
+            <td>12,169,470원</td>
+            <td>12,225,960원</td>
+            <td>12,282,450원</td>
+            <td>12,338,940원</td>
+          </tr>
+          <tr>
+            <td>200만원</td>
+            <td>24,338,940원</td>
+            <td>24,451,920원</td>
+            <td>24,564,900원</td>
+            <td>24,677,880원</td>
+          </tr>
+          <tr>
+            <td>300만원</td>
+            <td>36,508,410원</td>
+            <td>36,677,880원</td>
+            <td>36,847,350원</td>
+            <td>37,016,820원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">※ 위 표는 참고용이며, 실제 이자는 금융기관 약관과 복리/단리 조건에 따라 다를 수 있습니다. 정확한 금액은 위 계산기를 이용하세요.</p>
+  </section>
+
+  <!-- 2. 과세 유형 비교 -->
+  <section class="seo-section">
+    <h2>이자 과세 유형별 세후 수령액 비교 (월 50만원 × 12개월 × 연 5%)</h2>
+    <p>동일한 조건에서 세금 유형에 따라 실수령 이자가 크게 달라집니다.</p>
+
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>과세 유형</th>
+            <th>세율</th>
+            <th>세전 이자</th>
+            <th>세금</th>
+            <th>세후 이자</th>
+            <th>만기 수령액</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>일반과세</td>
+            <td>15.4%</td>
+            <td>162,500원</td>
+            <td>25,025원</td>
+            <td>137,475원</td>
+            <td>6,137,475원</td>
+          </tr>
+          <tr>
+            <td>세금우대</td>
+            <td>9.5%</td>
+            <td>162,500원</td>
+            <td>15,438원</td>
+            <td>147,062원</td>
+            <td>6,147,062원</td>
+          </tr>
+          <tr>
+            <td>비과세</td>
+            <td>0%</td>
+            <td>162,500원</td>
+            <td>0원</td>
+            <td>162,500원</td>
+            <td>6,162,500원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>비과세와 일반과세의 차이는 이 예시에서 25,025원이지만, 납입 금액이 클수록 차이가 커집니다. 월 300만원씩 24개월 적금 기준으로는 비과세 혜택이 수십만 원 이상 차이날 수 있습니다.</p>
+  </section>
+
+  <!-- 3. 적금 이자 계산 공식 상세 -->
+  <section class="seo-section">
+    <h2>적금 이자 계산 공식 완전 해설</h2>
+
+    <h3>정기적금 이자 산출 원리</h3>
+    <p>정기적금은 매달 일정 금액을 넣는 상품입니다. 1회차에 넣은 돈은 만기까지 n개월 동안 이자가 붙고, 2회차에 넣은 돈은 (n-1)개월, … n회차에 넣은 돈은 1개월치 이자만 받습니다. 이를 합산하면 다음 공식이 도출됩니다.</p>
+
+    <div class="formula-box">
+      <strong>세전 이자 = 월납입액 × (연이율 ÷ 12) × n×(n+1) ÷ 2 ÷ n</strong><br>
+      = 월납입액 × (연이율 ÷ 12) × (n+1) ÷ 2
+    </div>
+
+    <p>예시: 월 50만원, 연 5%, 12개월</p>
+    <div class="formula-box">
+      이자 = 500,000 × (0.05 ÷ 12) × (12+1) ÷ 2<br>
+      = 500,000 × 0.004167 × 6.5<br>
+      = 500,000 × 0.027083<br>
+      ≈ 135,417원 (세전, 원 단위 절사)
+    </div>
+
+    <h3>세금 계산 상세</h3>
+    <p>이자소득에는 이자소득세와 지방소득세(이자소득세의 10%)가 부과됩니다.</p>
+
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr><th>구분</th><th>이자소득세</th><th>지방소득세</th><th>합계 세율</th><th>비고</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>일반과세</td><td>14%</td><td>1.4%</td><td><strong>15.4%</strong></td><td>기본 세율</td></tr>
+          <tr><td>세금우대</td><td>8.1%</td><td>1.4% (농특세)</td><td><strong>9.5%</strong></td><td>상호금융권, 한도 3,000만원</td></tr>
+          <tr><td>비과세</td><td>0%</td><td>0%</td><td><strong>0%</strong></td><td>만 65세 이상 등 조건 충족 시</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>단리 vs 복리</h3>
+    <p>국내 대부분의 정기적금은 <strong>단리</strong> 방식을 적용합니다. 복리는 이자에 이자가 붙는 방식으로, 장기 상품이나 일부 특수 상품에서 적용됩니다. 이 계산기는 단리 기준으로 계산합니다.</p>
+    <ul class="seo-list">
+      <li><strong>단리:</strong> 원금에 대해서만 이자 계산. 이자가 원금에 합산되지 않음.</li>
+      <li><strong>복리:</strong> 발생한 이자가 원금에 더해져 다음 기간 이자의 기준이 됨. 장기일수록 유리.</li>
+      <li>1년 이하 단기 적금은 단리와 복리의 차이가 매우 작습니다.</li>
+    </ul>
+  </section>
+
+  <!-- 4. 세금우대·비과세 가입 조건 -->
+  <section class="seo-section">
+    <h2>비과세 종합저축·세금우대 가입 조건 정리</h2>
+
+    <h3>비과세 종합저축 (2026년 기준)</h3>
+    <ul class="seo-list">
+      <li><strong>가입 대상:</strong> 만 65세 이상, 장애인복지법상 장애인, 독립유공자 및 그 유족, 기초생활수급자, 고엽제후유증 환자 등</li>
+      <li><strong>가입 한도:</strong> 1인당 5,000만 원 (원금 기준, 모든 금융기관 합산)</li>
+      <li><strong>혜택:</strong> 이자·배당소득 전액 비과세 (세율 0%)</li>
+      <li><strong>가입 가능 상품:</strong> 예금, 적금, 펀드, 보험 등 대부분의 금융상품</li>
+      <li><strong>주의:</strong> 한도 초과분은 일반과세 적용</li>
+    </ul>
+
+    <h3>상호금융 세금우대 (신협·새마을금고·농협·수협 등)</h3>
+    <ul class="seo-list">
+      <li><strong>가입 대상:</strong> 해당 금융기관 조합원·준조합원 (가입 요건 충족 시)</li>
+      <li><strong>가입 한도:</strong> 3,000만 원 (원금 기준)</li>
+      <li><strong>세율:</strong> 농어촌특별세 1.4% (이자소득세·지방소득세 면제)</li>
+      <li><strong>실효 세율:</strong> 약 1.4% (일반과세 15.4% 대비 약 14%포인트 절감)</li>
+      <li><strong>주의:</strong> 한도 초과분은 일반과세 적용. 기관마다 한도가 별도 적용됨.</li>
+    </ul>
+
+    <h3>ISA(개인종합자산관리계좌) 활용</h3>
+    <p>ISA는 예·적금, 펀드, ELS 등을 한 계좌에서 운용하며 <strong>200만~400만 원 비과세 + 초과분 9.9% 분리과세</strong> 혜택을 제공합니다. 만기(3년 이상) 후 연금계좌로 이전 시 추가 세액공제도 가능합니다.</p>
+    <ul class="seo-list">
+      <li>일반형: 비과세 한도 200만 원, 초과분 9.9% 분리과세</li>
+      <li>서민형·농어민형: 비과세 한도 400만 원, 초과분 9.9% 분리과세</li>
+      <li>가입 한도: 연 2,000만 원, 총 1억 원</li>
+    </ul>
+  </section>
+
+  <!-- 5. 고금리 적금 상품 선택 요령 -->
+  <section class="seo-section">
+    <h2>고금리 적금 상품 고르는 법 (2026년 실전 가이드)</h2>
+
+    <h3>1단계: 금리 유형 확인</h3>
+    <p>적금 광고의 금리가 실제 받는 금리와 다를 수 있습니다. 우대금리 조건을 꼼꼼히 확인하세요.</p>
+    <ul class="seo-list">
+      <li><strong>기본금리:</strong> 조건 없이 적용되는 금리. 실질적으로 받는 최소 금리.</li>
+      <li><strong>우대금리:</strong> 급여이체, 카드 실적, 자동이체 등 조건 충족 시 추가되는 금리. 조건 불충족 시 기본금리만 적용.</li>
+      <li><strong>특판금리:</strong> 한시적·한정 수량으로 제공하는 고금리. 조기 마감 주의.</li>
+    </ul>
+
+    <h3>2단계: 금융기관별 특징 파악</h3>
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr><th>금융기관 유형</th><th>금리 수준</th><th>예금자 보호</th><th>특징</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>시중은행</td><td>보통</td><td>예금보험공사 5,000만원</td><td>안정적, 앱 편의성 우수</td></tr>
+          <tr><td>저축은행</td><td>높음</td><td>예금보험공사 5,000만원</td><td>금리 높으나 건전성 확인 필요</td></tr>
+          <tr><td>인터넷은행</td><td>높음</td><td>예금보험공사 5,000만원</td><td>비대면, 특판 자주 진행</td></tr>
+          <tr><td>신협·새마을금고</td><td>높음</td><td>자체 보호기금 5,000만원</td><td>세금우대 혜택 가능</td></tr>
+          <tr><td>농협·수협</td><td>보통~높음</td><td>자체 보호기금</td><td>세금우대 혜택 가능</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3단계: 세후 실수익률 비교</h3>
+    <p>금리만 비교하지 말고 세금을 고려한 세후 실수익률을 비교해야 합니다. 예를 들어 일반과세 6% 상품보다 비과세 5% 상품의 실수익이 더 높을 수 있습니다.</p>
+    <div class="formula-box">
+      세후 실수익률 = 명목금리 × (1 - 세율)<br>
+      일반과세 6% → 6% × (1 - 0.154) = 약 5.076%<br>
+      비과세 5% → 5% × (1 - 0) = 5.000%<br>
+      → 일반과세 6% 상품이 세후 기준으로 더 유리
+    </div>
+
+    <h3>4단계: 중도해지 규정 확인</h3>
+    <p>예상치 못한 상황으로 중도해지가 필요할 수 있습니다. 중도해지 시 적용 이율을 미리 확인하고, 만기 유지가 어려울 것 같으면 단기 상품이나 자유적립식 상품을 선택하는 것이 유리합니다.</p>
+  </section>
+
+  <!-- 6. 적금 vs 예금 차이 -->
+  <section class="seo-section">
+    <h2>적금과 예금의 이자 차이 - 왜 같은 금리인데 이자가 다를까?</h2>
+
+    <p>은행에서 "연 5% 예금"과 "연 5% 적금"을 비교할 때, 같은 원금을 기준으로 하면 <strong>예금의 실수령 이자가 약 2배</strong>입니다. 이유는 간단합니다.</p>
+
+    <div class="formula-box">
+      <strong>[예금]</strong> 600만원 × 5% × 1년 = 300,000원 (세전)<br>
+      <strong>[적금]</strong> 월 50만원 × 12개월 = 600만원 납입 → 이자 약 162,500원 (세전)
+    </div>
+
+    <p>예금은 처음부터 전액을 맡기므로 12개월 내내 600만원 전체에 이자가 붙습니다. 반면 적금은 1회차에 50만원을 맡기고, 그 돈에는 12개월치 이자가 붙지만 12회차에 맡긴 50만원에는 1개월치 이자만 붙습니다. 평균적으로 6.5개월치 이자만 받는 셈입니다.</p>
+
+    <div class="table-wrap">
+      <table class="seo-table">
+        <thead>
+          <tr><th>구분</th><th>납입 방식</th><th>이자 기준</th><th>세전 이자 (5%, 600만원)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>정기예금</td><td>일시납 600만원</td><td>전액 12개월</td><td>300,000원</td></tr>
+          <tr><td>정기적금</td><td>월 50만원 × 12회</td><td>평균 6.5개월</td><td>약 162,500원</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>따라서 목돈이 있다면 예금이, 매달 저축할 금액이 있다면 적금이 적합한 상품입니다. 적금은 저축 습관을 만들고 목돈을 모으는 데 최적화된 상품입니다.</p>
+  </section>
+
+  <!-- FAQ HTML -->
+  <section class="seo-section">
+    <h2>적금 이자 계산기 자주 묻는 질문</h2>
+
+    <details>
+      <summary>적금 이자는 어떻게 계산하나요?</summary>
+      <p>정기적금 이자는 '월납입액 × (연이율/12) × (n+1)/2' 공식으로 계산합니다. 매월 납입한 금액마다 남은 기간에 비례해 이자가 붙기 때문에, 첫 달 납입금은 전체 기간 이자를, 마지막 달 납입금은 1개월치 이자만 받습니다. n은 총 납입 개월 수입니다. 예를 들어 월 50만원, 연 5%, 12개월이면 세전 이자는 500,000 × (0.05/12) × 6.5 ≈ 135,417원입니다.</p>
+    </details>
+
+    <details>
+      <summary>적금 이자에 세금이 얼마나 붙나요?</summary>
+      <p>일반과세는 이자소득세 14% + 지방소득세 1.4% = 총 15.4%입니다. 비과세 상품은 세금이 없습니다(0%). 세금우대는 농어촌특별세 1.4% + 이자소득세 8.1% = 9.5%입니다. 세금우대는 저축은행·신협·새마을금고 등 상호금융권에서 한도 내 적용됩니다.</p>
+    </details>
+
+    <details>
+      <summary>적금과 예금의 이자 차이는?</summary>
+      <p>같은 금리라면 적금이 예금보다 실수령 이자가 적습니다. 예금은 전액을 처음부터 맡기므로 기간 내내 이자가 붙지만, 적금은 매달 돈을 넣기 때문에 나중에 넣은 돈은 이자 기간이 짧습니다. 월 50만원 × 12개월(총 600만원)을 적금으로 넣으면, 예금에 600만원 일시 예치할 때 대비 이자가 약 절반 수준입니다.</p>
+    </details>
+
+    <details>
+      <summary>예금자보호는 얼마까지 되나요?</summary>
+      <p>예금자보호법에 따라 1개 금융기관당 원금과 이자를 합산하여 최대 5,000만 원까지 보호됩니다. 은행, 저축은행, 보험사 등 금융기관별로 각각 5,000만 원 한도가 적용됩니다. 농협·수협·신협·새마을금고는 자체 기금으로 보호합니다. 5,000만 원 초과 납입 시 여러 금융기관에 분산 가입을 권장합니다.</p>
+    </details>
+
+    <details>
+      <summary>비과세 종합저축 가입 조건은?</summary>
+      <p>만 65세 이상, 장애인, 국가유공자 등이 가입할 수 있습니다. 1인당 5,000만 원 한도이며, 이자·배당소득에 세금이 전혀 없습니다. 기존 세금우대 저축이 2015년 폐지된 후 현재는 비과세종합저축이 대표적인 세제혜택 상품입니다.</p>
+    </details>
+
+    <details>
+      <summary>금리 인상 시 적금을 중도해지하면 이자가 어떻게 되나요?</summary>
+      <p>적금을 중도해지하면 약정금리 대신 중도해지이율이 적용됩니다. 중도해지이율은 가입 기간에 따라 다르지만 통상 약정금리의 20~70% 수준에 불과합니다. 금리가 크게 올랐더라도 중도해지 손해가 클 수 있으니, 만기 후 재가입이 유리한지 비교해보는 것이 좋습니다.</p>
+    </details>
+
+    <details>
+      <summary>자유적립식 적금과 정기적금의 차이는?</summary>
+      <p>정기적금은 매월 일정 금액을 납입하는 방식이고, 자유적립식 적금은 원하는 시기에 원하는 금액을 자유롭게 납입합니다. 정기적금이 금리가 더 높은 경우가 많습니다. 이 계산기는 매월 동일 금액을 납입하는 정기적금 기준으로 계산합니다. 자유적립식의 경우 실제 납입 금액과 날짜에 따라 이자가 달라집니다.</p>
+    </details>
+  </section>
+
+  <!-- 다른 계산기 링크 -->
+  <section class="seo-section">
+    <h2>다른 금융 계산기</h2>
+    <ul class="related-list">
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등·원금균등·만기일시상환 월 상환액 계산</li>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택 취득세율 자동 계산</li>
+      <li><a href="severance.html">퇴직금 계산기</a> - 법정 퇴직금 자동 계산</li>
+      <li><a href="capital-gains.html">양도세 계산기</a> - 부동산 양도소득세 계산</li>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 사업소득 세금 계산</li>
+      <li><a href="health-insurance.html">건강보험료 계산기</a> - 직장·지역 건강보험료 계산</li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="privacy.html">개인정보처리방침</a>
+    <a href="about.html">소개</a>
+    <a href="contact.html">문의</a>
+    <p>© 2026 calcmoney.kr · 본 계산기는 참고용이며 실제 금융상품과 차이가 있을 수 있습니다.</p>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+
+  function calcInterest(monthly, rate, n) {
+    // 세전 이자 = 월납입액 × (연이율/12) × (n+1)/2
+    const monthlyRate = rate / 100 / 12;
+    return monthly * monthlyRate * n * (n + 1) / 2;
+  }
+
+  function showTab(tab) {
+    document.getElementById('tab-monthly').style.display = tab === 'monthly' ? '' : 'none';
+    document.getElementById('tab-compare').style.display = tab === 'compare' ? '' : 'none';
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', (tab === 'monthly' && i === 0) || (tab === 'compare' && i === 1));
+    });
+  }
+
+  function calculate() {
+    const monthly = parseFloat(document.getElementById('monthly').value);
+    const rate = parseFloat(document.getElementById('rate').value);
+    const n = parseInt(document.getElementById('months').value);
+    const taxRate = parseFloat(document.getElementById('taxType').value);
+
+    if (!monthly || monthly <= 0 || !rate || rate <= 0 || !n || n <= 0) {
+      alert('모든 항목을 올바르게 입력해주세요.');
+      return;
+    }
+
+    const principal = monthly * n;
+    const grossInterest = calcInterest(monthly, rate, n);
+    const tax = Math.floor(grossInterest * taxRate);
+    const netInterest = Math.floor(grossInterest) - tax;
+    const finalAmount = principal + netInterest;
+
+    // 결과 출력
+    document.getElementById('rFinal').textContent = fmt(finalAmount);
+    document.getElementById('rSub').textContent = `총 납입 원금 ${fmt(principal)} + 세후 이자 ${fmt(netInterest)}`;
+    document.getElementById('rPrincipal').textContent = fmt(principal);
+    document.getElementById('rGrossInterest').textContent = fmt(Math.floor(grossInterest));
+    document.getElementById('rTax').textContent = fmt(tax);
+    const taxLabel = taxRate === 0 ? '비과세' : taxRate === 0.095 ? '세금우대 9.5%' : '일반과세 15.4%';
+    document.getElementById('rTaxLabel').textContent = taxLabel;
+    document.getElementById('rNetInterest').textContent = fmt(netInterest);
+
+    // 월별 상세 테이블
+    const tbody = document.getElementById('monthlyBody');
+    tbody.innerHTML = '';
+    const monthlyRate = rate / 100 / 12;
+    let cumulativePrincipal = 0;
+    let cumulativeInterest = 0;
+
+    for (let i = 1; i <= n; i++) {
+      cumulativePrincipal += monthly;
+      // i회차 납입금의 이자: monthly × monthlyRate × (n - i + 1) / n × i ÷ i
+      // 회차별 이자 누계 = 월납입 × monthlyRate × (n×(n+1)/2 - (n-i)×(n-i+1)/2) / n
+      // 간단하게: i회차까지의 세전 이자 누계
+      // 각 회차 납입금이 받는 이자: k회차 납입 → (n-k+1)개월치 이자
+      // i회차까지 누적: Σ(k=1 to i) monthly × monthlyRate × (n-k+1)
+      // = monthly × monthlyRate × Σ(k=1 to i)(n-k+1)
+      // = monthly × monthlyRate × (i×n - i×(i-1)/2)
+      const sumMonths = i * n - i * (i - 1) / 2;
+      cumulativeInterest = monthly * monthlyRate * sumMonths;
+
+      const balance = cumulativePrincipal + Math.floor(cumulativeInterest);
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${i}회</td>
+        <td>${fmt(cumulativePrincipal)}</td>
+        <td>${fmt(Math.floor(cumulativeInterest))}</td>
+        <td>${fmt(balance)}</td>
+      `;
+      if (i === n) tr.classList.add('total');
+      tbody.appendChild(tr);
+    }
+
+    // 과세 비교 테이블
+    const compareBody = document.getElementById('compareBody');
+    compareBody.innerHTML = '';
+    const taxTypes = [
+      { name: '일반과세', rate: 0.154 },
+      { name: '세금우대', rate: 0.095 },
+      { name: '비과세', rate: 0 }
+    ];
+    taxTypes.forEach(t => {
+      const tTax = Math.floor(grossInterest * t.rate);
+      const tNet = Math.floor(grossInterest) - tTax;
+      const tFinal = principal + tNet;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${t.name}</td>
+        <td>${(t.rate * 100).toFixed(1)}%</td>
+        <td>${fmt(tTax)}</td>
+        <td>${fmt(tNet)}</td>
+        <td>${fmt(tFinal)}</td>
+      `;
+      compareBody.appendChild(tr);
+    });
+
+    document.getElementById('result').style.display = '';
+    showTab('monthly');
+  }
+
+  // 엔터키 지원
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') calculate();
+  });
+
+  // 기본값으로 초기 계산
+  window.addEventListener('load', function() {
+    calculate();
+  });
+</script>
+
+</body>
+</html>

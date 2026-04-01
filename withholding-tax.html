@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.3% 원천징수 계산기 - 프리랜서 세전·실수령액 자동 계산 | 2026년 기준</title>
+  <meta name="description" content="프리랜서·사업소득 3.3% 원천징수 계산기. 세전금액→실수령액, 실수령액→세전 역산, 연간 종합소득세 예상까지 자동 계산. 소득세 3% + 지방소득세 0.3% 완벽 반영.">
+  <link rel="canonical" href="https://calcmoney.kr/withholding-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="3.3% 원천징수 계산기 - 프리랜서 세전·실수령액 자동 계산 | 2026년 기준">
+  <meta property="og:description" content="프리랜서·사업소득 3.3% 원천징수 계산기. 세전→실수령, 역산, 연간 종합소득세 예상까지 한 번에 계산합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/withholding-tax">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "3.3% 원천징수란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "3.3% 원천징수는 프리랜서·사업소득자에게 용역비를 지급할 때 원천징수의무자(사업자)가 대신 떼어 납부하는 세금입니다. 소득세 3%와 지방소득세(소득세의 10%) 0.3%를 합산한 세율로, 세전금액의 3.3%를 공제한 나머지를 실수령액으로 지급합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "3.3% 원천징수 계산 방법은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "원천징수액 = 세전금액 × 3.3%, 실수령액 = 세전금액 × 96.7%(= 세전금액 - 원천징수액)입니다. 반대로 실수령액에서 세전금액을 역산할 때는 세전금액 = 실수령액 ÷ 0.967입니다. 예시: 세전 100만원 → 원천징수 3만 3천원 → 실수령 96만 7천원."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "원천징수 후 종합소득세 신고도 해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네. 3.3% 원천징수는 확정세액이 아닌 임시 납부세액입니다. 다음 해 5월에 종합소득세를 신고할 때 연간 소득을 합산하여 정산합니다. 소득공제 후 실제 세율이 3.3%보다 낮으면 환급받고, 높으면 추가 납부해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "프리랜서 단순경비율이란?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "단순경비율은 장부 기장 없이 일정 비율을 필요경비로 인정받는 추계 방식입니다. 업종별로 다르며 주요 프리랜서 업종은 기타 서비스업 64.1%, 인적용역(강사·작가·번역) 61.1%, IT·소프트웨어 63.1%, 예술인 72.6% 수준입니다. 단순경비율 대상자는 직전연도 수입금액이 일정 기준 미만인 경우에 해당합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "3.3% 원천징수는 어떤 소득에 적용되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "사업소득(프리랜서) 중 인적용역 제공에 대한 대가에 적용됩니다. 강사료, 원고료, 번역료, IT 개발 용역비, 디자인비 등이 해당합니다. 단, 상용직 근로자라면 갑종근로소득(간이세액표 기준)이 적용되고, 일용직은 2.7%가 적용되므로 주의해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "3.3%와 8.8% 원천징수의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "3.3%는 사업소득(프리랜서 인적용역)에 적용되는 세율이고, 8.8%는 기타소득(일시적·우발적 소득)에 적용됩니다. 기타소득은 필요경비 60%를 공제한 후 나머지 40%에 22%를 곱하면 8.8%가 됩니다. 소득 성격에 따라 구분되므로 정기적으로 용역을 제공하면 사업소득(3.3%)으로 처리하는 것이 일반적입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "원천징수세액은 언제 납부하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "원천징수의무자(지급 사업자)는 지급한 달의 다음 달 10일까지 원천징수세액을 납부해야 합니다. 단, 직전연도 상반기 원천징수 납부세액이 1,000만원 미만인 반기납부 승인 사업자는 1월~6월분을 7월 10일, 7월~12월분을 다음 해 1월 10일까지 납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "건당 금액이 10만원 미만이면 원천징수를 안 해도 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "아닙니다. 사업소득에는 금액 기준 면제 규정이 없습니다. 단 1원을 지급해도 3.3%를 원천징수해야 합니다. 다만 기타소득은 건당 5만원 이하인 경우 원천징수가 면제됩니다. 사업소득과 기타소득을 혼동하지 않도록 주의해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "세금계산서를 발행하면 원천징수를 안 해도 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "과세사업자가 세금계산서를 발행하는 경우 원천징수 의무가 면제됩니다. 즉, 프리랜서가 사업자등록을 하고 세금계산서를 발급하면 발주처는 3.3%를 공제하지 않고 전액을 지급합니다. 대신 프리랜서 본인이 직접 부가세 신고와 종합소득세 신고를 해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연간 소득이 얼마 이하면 종합소득세를 내지 않아도 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종합소득세는 소득이 있으면 신고 의무가 있습니다. 다만 기본공제(150만원) 및 각종 공제를 적용한 결과 과세표준이 0이 되면 납부세액이 없을 수 있습니다. 근로소득 외 타 소득이 연 300만원 이하인 경우 분리과세 선택이 가능하나, 사업소득(프리랜서)은 분리과세 불가이므로 반드시 종합소득세 신고가 필요합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "원천징수영수증이란 무엇이며 어디서 받나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "원천징수영수증은 지급자가 소득자에게 지급한 금액과 원천징수한 세액을 증명하는 문서입니다. 프리랜서는 용역을 의뢰한 회사에 요청하거나, 국세청 홈택스(hometax.go.kr) → '지급명세서'에서 직접 조회할 수 있습니다. 종합소득세 신고 시 해당 내역이 자동 반영됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월 얼마 이상 벌면 종합소득세를 더 내게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 종합소득세 세율 구간은 과세표준 1,400만원 이하 6%, 5,000만원 이하 15%, 8,800만원 이하 24%, 1억5천만원 이하 35%, 3억원 이하 38%, 5억원 이하 40%, 10억원 이하 42%, 10억원 초과 45%입니다. 기본공제·단순경비율 등을 적용한 과세표준 기준이며, 원천징수 3.3%(= 과세표준 대비 약 6% 내외)보다 실효세율이 높으면 추가 납부가 발생합니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="gift-tax.html">증여세</a>
+      <a href="vat.html">부가세</a>
+      <a href="withholding-tax.html" class="active">원천징수</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>3.3% 원천징수 계산기</h1>
+        <p class="desc">프리랜서·사업소득 원천징수 계산기. 세전금액→실수령액, 실수령액→세전 역산, 연간 종합소득세 예상액까지 자동 계산합니다. 소득세 3% + 지방소득세 0.3% = 3.3% 반영.</p>
+
+        <div class="form-group">
+          <label>계산 방식</label>
+          <select id="calcMode" onchange="toggleMode()">
+            <option value="gross">세전금액 → 실수령액 (원천징수액 계산)</option>
+            <option value="net">실수령액 → 세전금액 역산</option>
+            <option value="annual">연간 합산 → 종합소득세 예상</option>
+          </select>
+        </div>
+
+        <!-- 세전→실수령 입력 -->
+        <div id="grossGroup">
+          <div class="form-group">
+            <label>세전 금액 <span class="hint">원천징수 전 계약금액 (원)</span></label>
+            <input type="number" id="grossAmount" placeholder="예: 1000000 (100만원)" value="1000000">
+          </div>
+          <div class="form-group">
+            <label>단위 선택</label>
+            <select id="grossUnit">
+              <option value="1">건 단위 (1회 지급금액)</option>
+              <option value="month">월 단위 (월 수령액으로 연간 합산)</option>
+            </select>
+          </div>
+          <div class="form-group" id="grossMonthGroup" style="display:none;">
+            <label>월 수 <span class="hint">연간 몇 개월 지급받는지 입력</span></label>
+            <input type="number" id="grossMonths" placeholder="예: 12" value="12" min="1" max="12">
+          </div>
+        </div>
+
+        <!-- 역산 입력 -->
+        <div id="netGroup" style="display:none;">
+          <div class="form-group">
+            <label>실수령액 <span class="hint">원천징수 후 실제 받은 금액 (원)</span></label>
+            <input type="number" id="netAmount" placeholder="예: 967000 (96만 7천원)" value="967000">
+          </div>
+          <div class="form-group">
+            <label>단위 선택</label>
+            <select id="netUnit">
+              <option value="1">건 단위</option>
+              <option value="month">월 단위</option>
+            </select>
+          </div>
+          <div class="form-group" id="netMonthGroup" style="display:none;">
+            <label>월 수 <span class="hint">연간 몇 개월치인지 입력</span></label>
+            <input type="number" id="netMonths" placeholder="예: 12" value="12" min="1" max="12">
+          </div>
+        </div>
+
+        <!-- 연간 합산 입력 -->
+        <div id="annualGroup" style="display:none;">
+          <div class="form-group">
+            <label>연간 세전 총수입 <span class="hint">1년간 원천징수 전 총 계약금액 (원)</span></label>
+            <input type="number" id="annualGross" placeholder="예: 30000000 (3천만원)" value="30000000">
+          </div>
+          <div class="form-group">
+            <label>업종 (단순경비율)</label>
+            <select id="industryType">
+              <option value="0.641">기타 서비스업 (단순경비율 64.1%)</option>
+              <option value="0.611">인적용역 - 강사·작가·번역 (61.1%)</option>
+              <option value="0.631">IT·소프트웨어 개발 (63.1%)</option>
+              <option value="0.726">예술인·창작활동 (72.6%)</option>
+              <option value="0.900">농업·임업·어업 (90.0%)</option>
+              <option value="0.870">소매·도매업 (87.0%)</option>
+              <option value="0.750">음식점업 (75.0%)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>인적공제 수 <span class="hint">본인 포함 기본공제 대상자 수</span></label>
+            <select id="deductionCount">
+              <option value="1">1명 (본인만)</option>
+              <option value="2">2명 (본인 + 1인)</option>
+              <option value="3">3명 (본인 + 2인)</option>
+              <option value="4">4명 (본인 + 3인)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <!-- 메인 하이라이트 -->
+          <div class="result-highlight">
+            <div class="label" id="rMainLabel">실수령액</div>
+            <div class="value" id="rMainValue">-</div>
+            <div class="sub" id="rMainSub"></div>
+          </div>
+
+          <!-- 세전→실수령 결과 -->
+          <table class="result-table" id="rTableGross">
+            <tr><td>세전 금액 (계약금액)</td><td id="rGross">-</td></tr>
+            <tr><td>소득세 (3%)</td><td id="rIncomeTax">-</td></tr>
+            <tr><td>지방소득세 (0.3%)</td><td id="rLocalTax">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>원천징수 합계 (3.3%)</td><td id="rWithholdTotal">-</td></tr>
+            <tr class="total"><td>실수령액</td><td id="rNet">-</td></tr>
+          </table>
+
+          <!-- 역산 결과 -->
+          <table class="result-table" id="rTableNet" style="display:none;">
+            <tr><td>실수령액 (입력)</td><td id="rNetInput">-</td></tr>
+            <tr><td>세전 금액 (÷0.967)</td><td id="rGrossReverse">-</td></tr>
+            <tr><td>소득세 (3%)</td><td id="rIncomeTaxReverse">-</td></tr>
+            <tr><td>지방소득세 (0.3%)</td><td id="rLocalTaxReverse">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>원천징수 합계 (3.3%)</td><td id="rWithholdReverse">-</td></tr>
+          </table>
+
+          <!-- 연간 종합소득세 결과 -->
+          <table class="result-table" id="rTableAnnual" style="display:none;">
+            <tr><td>연간 세전 총수입</td><td id="rAnnualGross">-</td></tr>
+            <tr><td>원천징수액 합계 (3.3%)</td><td id="rAnnualWithhold">-</td></tr>
+            <tr><td>실수령액 합계</td><td id="rAnnualNet">-</td></tr>
+            <tr style="border-top:1px solid #e0e0e0;"><td id="rExpenseLabel">필요경비 (단순경비율)</td><td id="rExpense">-</td></tr>
+            <tr><td>소득금액 (수입 - 경비)</td><td id="rIncomeAmount">-</td></tr>
+            <tr><td>기본공제</td><td id="rPersonalDeduction">-</td></tr>
+            <tr><td>표준세액공제</td><td id="rStandardDeduction">-</td></tr>
+            <tr><td>과세표준</td><td id="rTaxBase">-</td></tr>
+            <tr><td>산출세액</td><td id="rCalculatedTax">-</td></tr>
+            <tr><td>기납부 원천징수액</td><td id="rPrepaidTax">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td id="rFinalLabel">추가 납부 / 환급</td><td id="rFinalTax">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 원천징수 세율 안내표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>소득 유형별 원천징수 세율 비교</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>소득 유형</td><td>세율</td><td>해당 대상</td></tr>
+          <tr><td>사업소득 (인적용역)</td><td>3.3%</td><td>프리랜서, 강사, 작가, 개발자</td></tr>
+          <tr><td>기타소득</td><td>8.8%</td><td>일시적 강연, 원고, 상금</td></tr>
+          <tr><td>근로소득 (일용직)</td><td>2.7%</td><td>일당 15만원 초과분 기준</td></tr>
+          <tr><td>이자·배당소득</td><td>15.4%</td><td>금융소득 2,000만원 이하</td></tr>
+          <tr><td>퇴직소득</td><td>별도 계산</td><td>근속연수 공제 후 누진세율</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 사업소득 3.3% = 소득세 3% + 지방소득세 0.3% (소득세의 10%)</p>
+      </div>
+
+      <!-- 단순경비율 안내표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 주요 프리랜서 업종 단순경비율</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>업종</td><td>단순경비율</td><td>적용 소득률</td></tr>
+          <tr><td>기타 서비스업</td><td>64.1%</td><td>수입의 35.9%</td></tr>
+          <tr><td>인적용역 (강사·작가·번역)</td><td>61.1%</td><td>수입의 38.9%</td></tr>
+          <tr><td>IT·소프트웨어 개발</td><td>63.1%</td><td>수입의 36.9%</td></tr>
+          <tr><td>예술인·창작활동</td><td>72.6%</td><td>수입의 27.4%</td></tr>
+          <tr><td>음식점업</td><td>75.0%</td><td>수입의 25.0%</td></tr>
+          <tr><td>소매·도매업</td><td>87.0%</td><td>수입의 13.0%</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 단순경비율 적용 대상: 직전연도 수입금액 기준 서비스업 2,400만원 미만 등 / 국세청 고시에 따라 매년 변경 가능</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 상세 설명 콘텐츠 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h2 style="font-size:1.2em;margin-bottom:14px;">3.3% 원천징수 완전 가이드</h2>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">3.3% 원천징수란?</h3>
+        <p style="line-height:1.8;color:#444;">3.3% 원천징수는 <strong>프리랜서·사업소득자</strong>에게 인적용역 대가를 지급할 때 발주처(원천징수의무자)가 소득세와 지방소득세를 미리 공제하는 제도입니다. 소득세 3%와 지방소득세(소득세의 10%) 0.3%를 합산한 세율이 3.3%입니다. 이 세금은 확정세액이 아니며, 다음 해 5월 종합소득세 신고 시 정산됩니다.</p>
+        <ul style="line-height:2;color:#444;padding-left:18px;margin-top:8px;">
+          <li>소득세: 세전금액 × 3%</li>
+          <li>지방소득세: 세전금액 × 0.3% (소득세의 10%)</li>
+          <li>원천징수 합계: 세전금액 × 3.3%</li>
+          <li>실수령액: 세전금액 × 96.7%</li>
+        </ul>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">세전금액 vs 실수령액 계산</h3>
+        <p style="line-height:1.8;color:#444;">프리랜서라면 계약서에 표기된 금액이 세전인지 세후인지 반드시 확인해야 합니다. <strong>세전 기준</strong>이라면 실수령액 = 세전 × 96.7%로 계산합니다. <strong>세후(실수령) 기준</strong>으로 계약했다면 실제 청구해야 할 세전금액 = 실수령 ÷ 0.967로 역산합니다.</p>
+        <ul style="line-height:2;color:#444;padding-left:18px;margin-top:8px;">
+          <li>세전 100만원 → 원천징수 33,000원 → 실수령 967,000원</li>
+          <li>세전 300만원 → 원천징수 99,000원 → 실수령 2,901,000원</li>
+          <li>실수령 100만원 → 세전 = 1,000,000 ÷ 0.967 ≈ 1,034,127원</li>
+        </ul>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">종합소득세 신고와 정산</h3>
+        <p style="line-height:1.8;color:#444;">매년 <strong>5월 1일~31일</strong>에 종합소득세를 신고합니다. 3.3% 원천징수는 기납부세액으로 처리되어 최종 세액에서 차감됩니다. 실제 소득공제·세액공제 적용 후 산출세액이 기납부 원천징수액보다 적으면 환급, 많으면 추가 납부합니다.</p>
+        <p style="line-height:1.8;color:#444;margin-top:8px;">단순경비율 계산 흐름: 총수입 → 필요경비(단순경비율) 공제 → 소득금액 → 기본공제 등 소득공제 → 과세표준 → 세율 적용 → 산출세액 → 세액공제 → 결정세액 → 기납부 원천징수액 차감 → 납부 또는 환급.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">2026년 종합소득세 세율표</h3>
+        <table class="result-table" style="font-size:0.92em;margin-top:8px;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준</td><td>세율</td><td>누진공제</td></tr>
+          <tr><td>1,400만원 이하</td><td>6%</td><td>-</td></tr>
+          <tr><td>1,400만원 초과 ~ 5,000만원 이하</td><td>15%</td><td>126만원</td></tr>
+          <tr><td>5,000만원 초과 ~ 8,800만원 이하</td><td>24%</td><td>576만원</td></tr>
+          <tr><td>8,800만원 초과 ~ 1억 5,000만원 이하</td><td>35%</td><td>1,544만원</td></tr>
+          <tr><td>1억 5,000만원 초과 ~ 3억원 이하</td><td>38%</td><td>1,994만원</td></tr>
+          <tr><td>3억원 초과 ~ 5억원 이하</td><td>40%</td><td>2,594만원</td></tr>
+          <tr><td>5억원 초과 ~ 10억원 이하</td><td>42%</td><td>3,594만원</td></tr>
+          <tr><td>10억원 초과</td><td>45%</td><td>6,594만원</td></tr>
+        </table>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">사업자등록 여부에 따른 차이</h3>
+        <p style="line-height:1.8;color:#444;"><strong>사업자등록 없는 프리랜서</strong>는 원천징수 3.3%가 자동 적용되며 세금계산서 발급이 불가합니다. <strong>과세사업자로 등록한 프리랜서</strong>는 세금계산서를 발급하고 부가세 신고를 별도로 해야 하지만, 원천징수 3.3%는 면제됩니다. <strong>면세사업자(소득세법 제127조 3항)</strong>는 사업자등록 후에도 원천징수 3.3%가 적용됩니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">원천징수 영수증 발급과 홈택스 조회</h3>
+        <p style="line-height:1.8;color:#444;">발주처는 다음 해 2월(또는 3월) 말까지 원천징수영수증을 발급해야 합니다. 프리랜서는 국세청 <strong>홈택스(hometax.go.kr)</strong> → 조회/발급 → 지급명세서에서 본인이 직접 확인할 수 있습니다. 5월 종합소득세 신고 시 이 금액이 자동 불러오기 됩니다.</p>
+
+        <h3 style="font-size:1.05em;margin:18px 0 8px;">절세 전략: 프리랜서가 세금을 줄이는 법</h3>
+        <ul style="line-height:2;color:#444;padding-left:18px;">
+          <li><strong>기장 신고:</strong> 실제 지출 비용이 단순경비율보다 높다면 장부를 작성하여 실비용으로 공제 가능</li>
+          <li><strong>노란우산공제:</strong> 소기업·소상공인 공제부금으로 최대 500만원 소득공제</li>
+          <li><strong>개인형 IRP·연금저축:</strong> 연 900만원 한도 세액공제 (공제율 13.2%~16.5%)</li>
+          <li><strong>신용카드·현금영수증:</strong> 총급여(사업소득) 25% 초과분에 대해 소득공제</li>
+          <li><strong>국민연금 임의가입:</strong> 납부한 국민연금 보험료 전액 소득공제</li>
+          <li><strong>건강보험료:</strong> 지역가입자로 납부한 건강보험료도 소득공제 대상</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>계산 공식 요약</h3>
+        <ul>
+          <li><strong>원천징수액</strong> =<br>세전금액 × 3.3%</li>
+          <li style="margin-top:10px;"><strong>실수령액</strong> =<br>세전금액 × 96.7%</li>
+          <li style="margin-top:10px;"><strong>역산 세전금액</strong> =<br>실수령액 ÷ 0.967</li>
+          <li style="margin-top:10px;"><strong>소득세</strong> =<br>세전금액 × 3%</li>
+          <li style="margin-top:10px;"><strong>지방소득세</strong> =<br>세전금액 × 0.3%</li>
+          <li style="margin-top:10px;"><strong>종합소득세 과세표준</strong> =<br>수입 - 경비 - 소득공제</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>3.3% 원천징수 적용 대상</h3>
+        <ul>
+          <li><strong>프리랜서 용역비:</strong> IT개발, 디자인, 강의, 번역, 원고</li>
+          <li><strong>강사료:</strong> 학원, 기업 교육, 공공기관 강의</li>
+          <li><strong>작가·번역료:</strong> 출판사, 방송국, 콘텐츠 제작</li>
+          <li><strong>인적용역:</strong> 모델, 배우, 운동선수 활동비</li>
+          <li><strong>보험설계사:</strong> 수수료 소득</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 사업자 세금계산서 발급 시 원천징수 면제</p>
+      </div>
+      <div class="info-box">
+        <h3>신고 일정</h3>
+        <ul>
+          <li><strong>원천세 납부:</strong> 지급월 다음달 10일</li>
+          <li><strong>지급명세서 제출:</strong> 다음 해 3월 10일</li>
+          <li><strong>종합소득세 신고:</strong> 5월 1~31일</li>
+          <li><strong>성실신고 확인:</strong> 6월 30일 (대상자)</li>
+          <li><strong>중간예납:</strong> 11월 (세금 많은 경우)</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="vat.html" class="related-link">부가가치세</a>
+          <a href="capital-gains.html" class="related-link">양도소득세</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ 섹션 -->
+<div class="info-box" style="margin-top:32px;">
+  <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">3.3%는 어떻게 계산되나요? 소득세와 지방소득세 구분</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">3.3%는 <strong>소득세 3%</strong>와 <strong>지방소득세 0.3%</strong>의 합산입니다. 지방소득세는 소득세의 10%에 해당합니다. 예를 들어 세전 100만원을 받는 경우 소득세 3만원, 지방소득세 3,000원, 합계 3만 3,000원이 원천징수되어 실수령액은 96만 7,000원이 됩니다. 이 금액은 발주처가 세무서에 대신 납부합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">원천징수 3.3%와 실제 소득세율의 차이는?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">3.3%는 최종 세율이 아닌 <strong>임시 납부세율</strong>입니다. 종합소득세 신고 시 소득공제, 경비 공제 등을 반영하여 실제 세액을 확정합니다. 연소득이 적거나 공제 항목이 많은 프리랜서는 원천징수액의 상당 부분을 환급받습니다. 반대로 고소득 프리랜서는 추가 납부가 발생할 수 있습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">발주처가 3.3%를 떼지 않고 전액 지급했을 때 대처 방법은?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">발주처의 원천징수 누락이라도 납세 의무는 소득자(프리랜서)에게 있습니다. 5월 종합소득세 신고 시 해당 소득을 신고하면 됩니다. 단, 원천징수를 하지 않은 발주처는 세무 가산세가 부과될 수 있으므로, 발주처에 원천징수영수증 발급을 요청하거나 담당 세무서에 문의하는 것이 좋습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">월 200만원 실수령을 원하면 세전으로 얼마를 청구해야 하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">실수령액 역산 공식: 세전금액 = 실수령액 ÷ 0.967입니다. 월 200만원 실수령을 원한다면 200만원 ÷ 0.967 ≈ <strong>2,069,389원</strong>을 세전금액으로 청구해야 합니다. 이 금액에서 3.3%(= 약 68,290원)를 공제하면 실수령액이 200만원이 됩니다. 이 계산기의 '역산 모드'로 자동 계산이 가능합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">연소득 2,000만원 프리랜서의 종합소득세는 얼마인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">기타 서비스업 단순경비율 64.1% 적용 시: 소득금액 = 2,000만원 × (1 - 0.641) = 718만원. 기본공제 150만원(본인) 차감 시 과세표준 = 568만원. 세율 15% 적용 → 산출세액 = 568만원 × 15% - 126만원(누진공제) ≈ <strong>약 73만원</strong>. 기납부 원천징수액 = 2,000만원 × 3.3% = 66만원. 추가 납부세액 ≈ 7만원 수준입니다. (지방소득세 10% 별도)</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">프리랜서도 건강보험료를 내야 하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네. 직장 피부양자가 아닌 프리랜서는 <strong>지역가입자</strong>로 건강보험료를 납부해야 합니다. 보험료는 소득, 재산, 자동차 등을 기준으로 산정됩니다. 종합소득세 신고 후 소득 내역이 건보공단에 전달되어 다음 해 보험료에 반영됩니다. 납부한 건강보험료는 전액 소득공제 대상이므로 종합소득세 신고 시 반드시 반영하세요.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">프리랜서의 국민연금 납부 방법은?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">프리랜서는 <strong>지역가입자</strong>로 국민연금에 가입합니다. 소득신고를 기준으로 보험료를 결정하며, 소득의 9%(본인 전액 부담)를 납부합니다. 납부한 국민연금 보험료는 전액 소득공제를 받을 수 있어 절세 효과가 있습니다. 임의가입(저소득 기준) 또는 임의계속가입도 가능합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">3.3% 원천징수를 안 해도 되는 경우가 있나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">①과세사업자(일반·간이)로 사업자등록하고 <strong>세금계산서를 발급</strong>하는 경우, ②발주처가 개인(사업자 아닌 개인)인 경우, ③해외 발주처인 경우에는 3.3% 원천징수가 적용되지 않습니다. 단 면세사업자(의료, 학원 등 일부 업종)는 사업자등록을 해도 원천징수 3.3%가 적용됩니다. 본인 상황에 따라 세무사와 상담하는 것이 정확합니다.</p>
+  </details>
+</div>
+
+<!-- 내부 링크 섹션 -->
+<div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+  <h3>다른 계산기도 확인해보세요</h3>
+  <ul>
+    <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서, 개인사업자 종합소득세 자동 계산</li>
+    <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+    <li><a href="vat.html">부가가치세 계산기</a> - 공급가액·역산·납부세액 자동 계산</li>
+    <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 양도소득세 자동 계산</li>
+    <li><a href="gift-tax.html">증여세 계산기</a> - 배우자·자녀 증여세 납부액 계산</li>
+    <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+  </ul>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세액은 국세청 또는 세무사에게 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+const WH_RATE = 0.033;
+const IT_RATE = 0.030;
+const LT_RATE = 0.003;
+
+function toggleMode() {
+  const mode = document.getElementById('calcMode').value;
+  document.getElementById('grossGroup').style.display = mode === 'gross' ? '' : 'none';
+  document.getElementById('netGroup').style.display = mode === 'net' ? '' : 'none';
+  document.getElementById('annualGroup').style.display = mode === 'annual' ? '' : 'none';
+  document.getElementById('result').classList.remove('show');
+}
+
+// 월 단위 선택 시 개월 수 입력 필드 토글
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('grossUnit').addEventListener('change', function() {
+    document.getElementById('grossMonthGroup').style.display = this.value === 'month' ? '' : 'none';
+  });
+  document.getElementById('netUnit').addEventListener('change', function() {
+    document.getElementById('netMonthGroup').style.display = this.value === 'month' ? '' : 'none';
+  });
+});
+
+// 종합소득세 계산 (누진세율)
+function calcIncomeTax(taxBase) {
+  if (taxBase <= 0) return 0;
+  if (taxBase <= 14000000) return taxBase * 0.06;
+  if (taxBase <= 50000000) return taxBase * 0.15 - 1260000;
+  if (taxBase <= 88000000) return taxBase * 0.24 - 5760000;
+  if (taxBase <= 150000000) return taxBase * 0.35 - 15440000;
+  if (taxBase <= 300000000) return taxBase * 0.38 - 19940000;
+  if (taxBase <= 500000000) return taxBase * 0.40 - 25940000;
+  if (taxBase <= 1000000000) return taxBase * 0.42 - 35940000;
+  return taxBase * 0.45 - 65940000;
+}
+
+function calculate() {
+  const mode = document.getElementById('calcMode').value;
+
+  // 테이블 초기화
+  document.getElementById('rTableGross').style.display = 'none';
+  document.getElementById('rTableNet').style.display = 'none';
+  document.getElementById('rTableAnnual').style.display = 'none';
+
+  if (mode === 'gross') {
+    let amt = parseFloat(document.getElementById('grossAmount').value) || 0;
+    const unit = document.getElementById('grossUnit').value;
+    if (unit === 'month') {
+      const months = parseInt(document.getElementById('grossMonths').value) || 1;
+      amt = amt * months;
+    }
+
+    const incomeTax = Math.round(amt * IT_RATE);
+    const localTax = Math.round(amt * LT_RATE);
+    const withholdTotal = incomeTax + localTax;
+    const net = amt - withholdTotal;
+
+    document.getElementById('rMainLabel').textContent = '실수령액';
+    document.getElementById('rMainValue').textContent = fmt(net);
+    document.getElementById('rMainSub').textContent = `세전 ${fmt(amt)} × 96.7%`;
+
+    document.getElementById('rGross').textContent = fmt(amt);
+    document.getElementById('rIncomeTax').textContent = fmt(incomeTax);
+    document.getElementById('rLocalTax').textContent = fmt(localTax);
+    document.getElementById('rWithholdTotal').textContent = fmt(withholdTotal);
+    document.getElementById('rNet').textContent = fmt(net);
+    document.getElementById('rTableGross').style.display = '';
+
+  } else if (mode === 'net') {
+    let amt = parseFloat(document.getElementById('netAmount').value) || 0;
+    const unit = document.getElementById('netUnit').value;
+    if (unit === 'month') {
+      const months = parseInt(document.getElementById('netMonths').value) || 1;
+      amt = amt * months;
+    }
+
+    const gross = Math.round(amt / 0.967);
+    const incomeTax = Math.round(gross * IT_RATE);
+    const localTax = Math.round(gross * LT_RATE);
+    const withholdTotal = incomeTax + localTax;
+
+    document.getElementById('rMainLabel').textContent = '세전 금액 (역산)';
+    document.getElementById('rMainValue').textContent = fmt(gross);
+    document.getElementById('rMainSub').textContent = `실수령 ${fmt(amt)} ÷ 0.967`;
+
+    document.getElementById('rNetInput').textContent = fmt(amt);
+    document.getElementById('rGrossReverse').textContent = fmt(gross);
+    document.getElementById('rIncomeTaxReverse').textContent = fmt(incomeTax);
+    document.getElementById('rLocalTaxReverse').textContent = fmt(localTax);
+    document.getElementById('rWithholdReverse').textContent = fmt(withholdTotal);
+    document.getElementById('rTableNet').style.display = '';
+
+  } else {
+    // 연간 합산 → 종합소득세 예상
+    const annualGross = parseFloat(document.getElementById('annualGross').value) || 0;
+    const expenseRate = parseFloat(document.getElementById('industryType').value) || 0.641;
+    const deductionCount = parseInt(document.getElementById('deductionCount').value) || 1;
+
+    const withholdPaid = Math.round(annualGross * WH_RATE);
+    const annualNet = annualGross - withholdPaid;
+
+    // 필요경비 (단순경비율)
+    const expense = Math.round(annualGross * expenseRate);
+    // 소득금액
+    const incomeAmount = annualGross - expense;
+    // 기본공제 (1인당 150만원)
+    const personalDeduction = deductionCount * 1500000;
+    // 표준세액공제 (사업소득자 7만원)
+    const standardDeductionAmt = 70000;
+    // 과세표준
+    const taxBase = Math.max(0, incomeAmount - personalDeduction);
+    // 산출세액
+    const calculatedTax = Math.round(calcIncomeTax(taxBase));
+    // 결정세액 (표준세액공제 차감)
+    const finalTax = Math.max(0, calculatedTax - standardDeductionAmt);
+    // 지방소득세 포함 최종세액
+    const finalTaxWithLocal = Math.round(finalTax * 1.1);
+    // 추가납부 or 환급
+    const diff = finalTaxWithLocal - withholdPaid;
+
+    document.getElementById('rMainLabel').textContent = diff >= 0 ? '추가 납부세액 (예상)' : '환급 예상액';
+    document.getElementById('rMainValue').textContent = fmt(Math.abs(diff));
+    document.getElementById('rMainSub').textContent = diff >= 0
+      ? `기납부 ${fmt(withholdPaid)} 초과 납부 발생`
+      : `기납부 ${fmt(withholdPaid)} 중 ${fmt(Math.abs(diff))} 환급 예상`;
+
+    document.getElementById('rAnnualGross').textContent = fmt(annualGross);
+    document.getElementById('rAnnualWithhold').textContent = fmt(withholdPaid);
+    document.getElementById('rAnnualNet').textContent = fmt(annualNet);
+    document.getElementById('rExpenseLabel').textContent = `필요경비 (단순경비율 ${Math.round(expenseRate * 1000) / 10}%)`;
+    document.getElementById('rExpense').textContent = fmt(expense);
+    document.getElementById('rIncomeAmount').textContent = fmt(incomeAmount);
+    document.getElementById('rPersonalDeduction').textContent = fmt(personalDeduction);
+    document.getElementById('rStandardDeduction').textContent = fmt(standardDeductionAmt);
+    document.getElementById('rTaxBase').textContent = fmt(taxBase);
+    document.getElementById('rCalculatedTax').textContent = fmt(finalTaxWithLocal);
+    document.getElementById('rPrepaidTax').textContent = fmt(withholdPaid);
+    document.getElementById('rFinalLabel').textContent = diff >= 0 ? '추가 납부 (예상)' : '환급 예상';
+    document.getElementById('rFinalTax').textContent = (diff >= 0 ? '' : '-') + fmt(Math.abs(diff));
+    document.getElementById('rTableAnnual').style.display = '';
+  }
+
+  document.getElementById('result').classList.add('show');
+}
+
+// 초기화
+toggleMode();
+</script>
+</body>
+</html>

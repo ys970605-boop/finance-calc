@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 소득세 환급액 계산기 - 연말정산 환급금·추납세액 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="2026년 기준 근로소득공제, 인적공제, 신용카드·의료비·교육비·기부금 세액공제를 반영해 연말정산 환급액 또는 추납세액을 자동 계산합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/income-tax-refund">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 소득세 환급액 계산기 - 연말정산 환급금 자동 계산">
+  <meta property="og:description" content="총급여, 기납부세액, 부양가족, 신용카드·의료비·교육비·기부금 입력 → 환급액 또는 추납세액 즉시 계산.">
+  <meta property="og:url" content="https://calcmoney.kr/income-tax-refund">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "연말정산 환급액은 어떻게 계산되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연말정산 환급액 = 기납부세액(원천징수) - 결정세액입니다. 결정세액이 기납부세액보다 작으면 차액을 환급받고, 크면 추가 납부합니다. 결정세액은 총급여에서 근로소득공제·인적공제·특별공제 등을 차감한 과세표준에 세율을 적용한 뒤, 세액공제를 뺀 금액입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 소득세율 구간은 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 근로소득세율: 1,400만원 이하 6%, 1,400만~5,000만원 15%, 5,000만~8,800만원 24%, 8,800만~1.5억원 35%, 1.5억~3억원 38%, 3억~5억원 40%, 5억~10억원 42%, 10억 초과 45%입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "신용카드 소득공제는 얼마나 받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "신용카드 사용액이 총급여의 25%를 초과하는 금액의 15%(신용카드), 30%(체크카드·현금영수증)를 공제합니다. 공제한도는 총급여 7,000만원 이하 300만원, 7,000만~1.2억원 250만원, 1.2억 초과 200만원입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "의료비 세액공제는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "의료비 세액공제 = (의료비 지출액 - 총급여×3%) × 15%입니다. 단, 총급여의 3% 미만이면 공제 불가입니다. 의료비 공제한도는 700만원(난임시술비 별도 추가)이며, 공제율은 15%입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "교육비 세액공제 대상과 한도는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "교육비 세액공제는 공제대상 교육비의 15%입니다. 한도: 취학전 아동·초중고 1인당 300만원, 대학생 1인당 900만원, 본인 한도 없음(대학원 포함). 학원비는 취학전 아동만 공제 대상입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "기부금 세액공제율은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "법정기부금·지정기부금 모두 1,000만원 이하 15%, 1,000만원 초과분 30%의 세액공제를 받습니다. 정치자금기부금은 10만원 이하 전액(110/100), 10만원 초과분 15%/25%(3,000만원 초과)입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "부양가족 인적공제 금액은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "기본공제: 본인·배우자·부양가족 1인당 150만원입니다. 추가공제: 경로우대(만 70세 이상) 100만원, 장애인 200만원, 한부모 100만원, 부녀자 50만원(중복 불가)입니다. 부양가족 요건은 연간 소득금액 100만원 이하(근로소득만 있으면 500만원 이하)입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "근로소득세액공제는 얼마나 받나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "산출세액 130만원 이하: 55% 공제. 130만원 초과: 71만5천원 + 초과분의 30% 공제. 공제한도: 총급여 3,300만원 이하 74만원, 3,300만~7,000만원 66만원, 7,000만원 초과 50만원입니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .step-flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .step-item { background: #e8f0fe; border-radius: 8px; padding: 8px 14px; font-size: 0.85em; color: #1a73e8; font-weight: 600; }
+    .step-arrow { display: flex; align-items: center; color: #aaa; font-size: 1.1em; }
+    .refund-result { background: #e8f5e9; border: 2px solid #34a853; border-radius: 10px; padding: 20px; text-align: center; margin: 16px 0; }
+    .refund-result.pay { background: #fce8e6; border-color: #ea4335; }
+    .refund-label { font-size: 0.9em; color: #555; margin-bottom: 6px; }
+    .refund-amount { font-size: 2em; font-weight: 800; color: #1e8e3e; }
+    .refund-result.pay .refund-amount { color: #ea4335; }
+    .calc-steps { background: #f8f9fa; border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .calc-step-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e0e0e0; font-size: 0.9em; }
+    .calc-step-row:last-child { border-bottom: none; font-weight: 700; font-size: 1em; }
+    .calc-step-label { color: #555; }
+    .calc-step-value { font-weight: 600; color: #333; }
+    .calc-step-op { color: #aaa; margin: 0 8px; }
+    .tip-box { background: #fff8e1; border-left: 4px solid #fbbc04; border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 12px 0; }
+    .tip-box h4 { margin: 0 0 8px; font-size: 0.9em; color: #f57c00; }
+    .tip-box ul { margin: 0; padding-left: 18px; font-size: 0.85em; color: #555; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>소득세 환급액 계산기</h1>
+        <p class="desc">총급여, 기납부세액, 부양가족 수, 각종 공제 항목을 입력하면 2026년 기준으로 연말정산 환급액 또는 추납세액을 자동 계산합니다.</p>
+
+        <!-- 계산 흐름 -->
+        <div class="step-flow">
+          <div class="step-item">총급여</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">근로소득공제</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">소득공제</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">과세표준</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">산출세액</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">세액공제</div>
+          <div class="step-arrow">→</div>
+          <div class="step-item">결정세액</div>
+        </div>
+
+        <!-- 기본 정보 -->
+        <div class="input-section-title">기본 정보</div>
+        <div class="form-group">
+          <label>총급여 <span class="hint">세전 연간 급여 (원)</span></label>
+          <input type="number" id="totalSalary" placeholder="예: 50000000 (5천만원)" value="50000000" min="0">
+        </div>
+        <div class="form-group">
+          <label>기납부세액(원천징수) <span class="hint">원천징수영수증 결정세액 위 항목 (원)</span></label>
+          <input type="number" id="prepaidTax" placeholder="예: 2000000 (200만원)" value="2000000" min="0">
+        </div>
+
+        <!-- 인적공제 -->
+        <hr class="section-divider">
+        <div class="input-section-title">인적공제 (부양가족)</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>본인 포함 부양가족 수 <span class="hint">명 (소득 100만원 이하)</span></label>
+            <input type="number" id="dependents" placeholder="예: 3" value="1" min="1" max="20">
+          </div>
+          <div class="form-group">
+            <label>경로우대(70세+) 수 <span class="hint">명, 1인당 100만원 추가공제</span></label>
+            <input type="number" id="elderly" placeholder="예: 1" value="0" min="0" max="10">
+          </div>
+        </div>
+
+        <!-- 소득공제 -->
+        <hr class="section-divider">
+        <div class="input-section-title">소득공제 항목</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>신용카드 연간 사용액 <span class="hint">원</span></label>
+            <input type="number" id="creditCard" placeholder="예: 15000000" value="15000000" min="0">
+          </div>
+          <div class="form-group">
+            <label>체크카드/현금영수증 <span class="hint">원</span></label>
+            <input type="number" id="debitCard" placeholder="예: 5000000" value="3000000" min="0">
+          </div>
+        </div>
+
+        <!-- 세액공제 -->
+        <hr class="section-divider">
+        <div class="input-section-title">세액공제 항목</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>의료비 지출액 <span class="hint">원 (본인·부양가족)</span></label>
+            <input type="number" id="medicalFee" placeholder="예: 3000000" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>교육비 지출액 <span class="hint">원 (본인·자녀)</span></label>
+            <input type="number" id="educationFee" placeholder="예: 2000000" value="0" min="0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>기부금 <span class="hint">원 (법정·지정 기부금)</span></label>
+            <input type="number" id="donation" placeholder="예: 500000" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>연금저축/IRP 납입액 <span class="hint">원</span></label>
+            <input type="number" id="pension" placeholder="예: 4000000" value="0" min="0">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">환급액 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <div class="refund-result" id="refundBox">
+            <div class="refund-label" id="refundLabel"></div>
+            <div class="refund-amount" id="refundAmount"></div>
+            <div style="font-size:0.82em;color:#666;margin-top:6px;" id="refundSub"></div>
+          </div>
+
+          <!-- 계산 단계 -->
+          <div class="calc-steps">
+            <div style="font-weight:700;font-size:0.95em;color:#333;margin-bottom:10px;">계산 단계별 상세</div>
+            <div class="calc-step-row"><span class="calc-step-label">총급여</span><span class="calc-step-value" id="r_salary"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 근로소득공제</span><span class="calc-step-value" id="r_workDeduct"></span></div>
+            <div class="calc-step-row" style="background:#f0f4ff;border-radius:6px;padding:8px;"><span class="calc-step-label" style="font-weight:600;">근로소득금액</span><span class="calc-step-value" id="r_workIncome"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 인적공제</span><span class="calc-step-value" id="r_personal"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 신용카드 소득공제</span><span class="calc-step-value" id="r_cardDeduct"></span></div>
+            <div class="calc-step-row" style="background:#f0f4ff;border-radius:6px;padding:8px;"><span class="calc-step-label" style="font-weight:600;">과세표준</span><span class="calc-step-value" id="r_taxBase"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">적용 세율</span><span class="calc-step-value" id="r_taxRate"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">산출세액</span><span class="calc-step-value" id="r_calcTax"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 근로소득세액공제</span><span class="calc-step-value" id="r_workTaxCredit"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 의료비 세액공제</span><span class="calc-step-value" id="r_medCredit"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 교육비 세액공제</span><span class="calc-step-value" id="r_eduCredit"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 기부금 세액공제</span><span class="calc-step-value" id="r_donCredit"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">(-) 연금저축 세액공제</span><span class="calc-step-value" id="r_penCredit"></span></div>
+            <div class="calc-step-row" style="background:#fff3e0;border-radius:6px;padding:8px;"><span class="calc-step-label" style="font-weight:700;">결정세액</span><span class="calc-step-value" id="r_finalTax"></span></div>
+            <div class="calc-step-row"><span class="calc-step-label">기납부세액(원천징수)</span><span class="calc-step-value" id="r_prepaid"></span></div>
+          </div>
+
+          <!-- 절세 팁 -->
+          <div class="tip-box" id="tipBox"></div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">연말정산 핵심 용어 정리</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연말정산이란?</h3>
+        <p>연말정산은 1년간 근로자가 납부한 소득세(원천징수)와 실제 납부해야 할 세액(결정세액)을 비교해 차액을 정산하는 절차입니다. 매년 1~2월에 직장인이 회사를 통해 진행하며, 결정세액이 기납부세액보다 적으면 환급, 많으면 추납합니다. "13월의 월급"이라는 말이 있지만 환급은 이미 낸 세금을 돌려받는 것이지 보너스가 아닙니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">총급여와 근로소득금액</h3>
+        <p>총급여는 연간 근로소득 총액에서 비과세 소득(식대 월 20만원, 차량유지비 월 20만원 등)을 뺀 금액입니다. 근로소득금액은 총급여에서 근로소득공제를 차감한 금액으로, 소득공제 계산의 기준이 됩니다. 근로소득공제율은 총급여 500만원 이하 70%, 500만~1,500만원 40%(+350만원), 1,500만~4,500만원 15%(+750만원), 4,500만~1억원 5%(+1,200만원), 1억 초과 2%(+1,475만원)이며 한도는 2,000만원입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 소득세율 구간</h3>
+        <p>과세표준에 따른 세율: ①1,400만원 이하 6%, ②1,400만~5,000만원 15%(누진공제 126만원), ③5,000만~8,800만원 24%(누진공제 576만원), ④8,800만~1.5억원 35%(누진공제 1,544만원), ⑤1.5억~3억원 38%(누진공제 1,994만원), ⑥3억~5억원 40%(누진공제 2,594만원), ⑦5억~10억원 42%(누진공제 3,594만원), ⑧10억 초과 45%(누진공제 6,594만원). 지방소득세는 산출세액의 10%를 별도 납부합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">인적공제 (기본공제·추가공제)</h3>
+        <p>기본공제는 본인·배우자·부양가족 1인당 연 150만원을 소득에서 공제합니다. 부양가족 요건은 ①연간 소득금액 100만원 이하(근로소득만 있는 경우 총급여 500만원 이하), ②나이 요건(직계존속 만 60세 이상, 자녀·형제자매 만 20세 이하). 추가공제는 경로우대(만 70세 이상) 100만원, 장애인 200만원, 한부모 100만원(부녀자공제와 중복 불가), 부녀자 50만원입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">신용카드 소득공제</h3>
+        <p>신용카드 등 사용금액이 총급여의 25%를 초과하는 경우, 초과분에 대해 공제율을 적용합니다. 신용카드 15%, 체크카드·현금영수증 30%, 전통시장·대중교통 40%입니다. 공제한도는 총급여 7,000만원 이하 300만원, 7,000만~1.2억원 250만원, 1.2억 초과 200만원이며, 전통시장·대중교통·도서·공연비는 각각 100만원 한도 추가 공제가 가능합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">의료비 세액공제</h3>
+        <p>공제금액 = (의료비 지출액 - 총급여×3%) × 15%. 총급여의 3% 초과분부터 공제되며, 한도는 700만원(본인·65세 이상·장애인은 한도 없음)입니다. 난임시술비는 30% 공제율, 미숙아·선천성이상아는 20% 공제율이 적용됩니다. 의료비 공제는 소득 기준 없이 모든 부양가족의 의료비를 합산 적용합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">교육비 세액공제</h3>
+        <p>공제금액 = 교육비 지출액 × 15%. 공제 대상: 취학전 아동·초중고(1인당 300만원 한도), 대학생(1인당 900만원 한도), 본인(한도 없음, 대학원 포함). 학원비는 취학전 아동만 공제 대상이며, 학교급식비·교과서 구입비·방과후 수업료도 공제 대상에 포함됩니다. 장애인 특수교육비는 소득·나이 제한 없이 전액 공제합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">기부금 세액공제</h3>
+        <p>법정기부금(국가·지방자치단체·국방헌금 등)과 지정기부금(사회복지·문화·종교단체 등) 모두 1,000만원 이하 15%, 1,000만원 초과 30% 세액공제를 받습니다. 공제 한도: 법정기부금은 근로소득금액의 100%, 지정기부금(종교단체)은 10%, 비종교단체는 30%입니다. 이월공제는 10년(법정), 10년(지정)입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">연금저축·IRP 세액공제</h3>
+        <p>연금저축(펀드·보험·신탁)과 IRP 납입액에 대해 세액공제 혜택이 있습니다. 공제 한도: 연금저축 400만원 + IRP 합산 700만원(총급여 1.2억 초과 또는 종합소득 1억 초과 시 연금저축 300만원 + 합산 700만원). 공제율: 총급여 5,500만원 이하 16.5%(지방세 포함), 초과 시 13.2%(지방세 포함). 최대 연 115.5만원 세액공제 가능합니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>환급금이 왜 적게 나오나요?</summary>
+            <p>환급액은 내가 이미 낸 세금(기납부세액)과 실제 내야 할 세금(결정세액)의 차이입니다. 원천징수 시 공제 항목을 충분히 반영하지 못해 이미 세금을 너무 적게 냈다면 환급이 적거나 오히려 추납이 발생합니다. 부양가족 공제, 신용카드 공제, 의료비 등을 빠짐없이 제출했는지 확인하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>맞벌이 부부는 어떻게 공제를 나눠야 유리한가요?</summary>
+            <p>원칙적으로 부양가족 공제는 한 사람에게만 적용됩니다. 세율 구간이 높은 배우자에게 공제 항목을 몰아주면 절세 효과가 더 큽니다. 의료비는 예외로, 배우자가 의료비를 지출하더라도 소득이 없는 배우자 명의 의료비를 본인 공제에 합산할 수 있습니다. 연간 시뮬레이션으로 두 사람의 합산 세액이 최소가 되는 방향으로 배분하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>중도 퇴사자는 연말정산을 어떻게 하나요?</summary>
+            <p>중도 퇴사 시 퇴사 월에 회사가 연말정산(퇴직 시 정산)을 진행합니다. 이 때 인적공제는 본인 공제만 적용됩니다. 연도 중 재취업한 경우 새 직장에서 전 직장 근로소득원천징수영수증을 합산해 연말정산을 진행합니다. 재취업하지 않은 경우 다음 해 5월 종합소득세 신고 기간에 직접 신고해야 합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>연말정산 간소화 서비스에서 누락되는 항목은?</summary>
+            <p>국세청 연말정산 간소화 서비스(홈택스)에서 자동으로 수집되지 않는 항목이 있습니다: ①학원비(초중고 이하 자녀), ②교복·체육복 구입비, ③취약계층 사회적기업 이용료, ④종교단체 기부금(일부), ⑤장애인 특수교육비 등입니다. 이런 항목은 직접 영수증을 수집해 회사에 제출해야 공제받을 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>월세 세액공제는 어떻게 받나요?</summary>
+            <p>총급여 8,000만원 이하(종합소득 7,000만원 이하) 무주택 세대주가 국민주택규모(85㎡) 이하 주택의 월세를 지급한 경우 세액공제 받을 수 있습니다. 공제율: 총급여 5,500만원 이하 17%, 초과 15%. 한도: 연 1,000만원(공제액 최대 170만원). 임대차계약서 사본, 주민등록등본, 계좌이체 내역을 회사에 제출하면 됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>주택담보대출 이자상환액도 공제되나요?</summary>
+            <p>장기주택저당차입금 이자상환액은 소득공제 가능합니다. 요건: ①무주택 또는 1주택 세대주, ②취득 당시 기준시가 6억원 이하 주택, ③만기 15년 이상 대출. 공제 한도는 대출 조건에 따라 300만~2,000만원으로 다양합니다. 고정금리+비거치식 분할상환이면 2,000만원, 그 외는 500만원~1,800만원입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>출산·보육수당도 비과세 혜택이 있나요?</summary>
+            <p>2026년 기준 6세 이하 자녀의 보육 목적으로 지급받는 보육수당은 월 20만원까지 비과세입니다. 출산 관련 급여는 출산휴가급여, 배우자 출산휴가급여 등이 비과세 처리됩니다. 또한 자녀세액공제(기본 15~35만원) 외에 6세 이하 자녀를 위한 자녀보육비도 연말정산에서 별도 세액공제를 받을 수 있으니 빠뜨리지 마세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>회사 복지포인트도 연말정산에 영향을 주나요?</summary>
+            <p>회사 복지포인트(선택적 복지포인트)는 근로소득에 포함되어 과세됩니다. 다만 복지포인트를 의료비·교육비 등 공제 대상 항목에 사용한 경우 해당 항목의 세액공제를 받을 수 있습니다. 복지포인트 사용 내역을 연말정산 간소화 서비스에서 확인하고, 공제 가능한 항목은 빠짐없이 신청하세요.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>2026년 세율 요약</h3>
+        <ul>
+          <li><strong>~1,400만원</strong>: 6%</li>
+          <li><strong>~5,000만원</strong>: 15%</li>
+          <li><strong>~8,800만원</strong>: 24%</li>
+          <li><strong>~1.5억원</strong>: 35%</li>
+          <li><strong>~3억원</strong>: 38%</li>
+          <li><strong>~5억원</strong>: 40%</li>
+          <li><strong>~10억원</strong>: 42%</li>
+          <li><strong>10억 초과</strong>: 45%</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 지방소득세(10%) 별도</p>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>주요 세액공제 요약</h3>
+        <ul>
+          <li>의료비: <strong>15%</strong> (총급여×3% 초과분)</li>
+          <li>교육비: <strong>15%</strong></li>
+          <li>기부금: <strong>15%/30%</strong></li>
+          <li>연금저축: <strong>13.2%~16.5%</strong></li>
+          <li>월세: <strong>15%~17%</strong></li>
+        </ul>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="child-tax-deduction.html" class="related-link">자녀세액공제</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 국세청 홈택스 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  // 근로소득공제 계산
+  function calcWorkDeduction(salary) {
+    if (salary <= 5000000) return salary * 0.7;
+    if (salary <= 15000000) return 3500000 + (salary - 5000000) * 0.4;
+    if (salary <= 45000000) return 7500000 + (salary - 15000000) * 0.15;
+    if (salary <= 100000000) return 12000000 + (salary - 45000000) * 0.05;
+    return 14750000 + (salary - 100000000) * 0.02;
+  }
+
+  // 소득세 계산 (누진공제 방식)
+  function calcIncomeTax(base) {
+    if (base <= 14000000) return base * 0.06;
+    if (base <= 50000000) return base * 0.15 - 1260000;
+    if (base <= 88000000) return base * 0.24 - 5760000;
+    if (base <= 150000000) return base * 0.35 - 15440000;
+    if (base <= 300000000) return base * 0.38 - 19940000;
+    if (base <= 500000000) return base * 0.40 - 25940000;
+    if (base <= 1000000000) return base * 0.42 - 35940000;
+    return base * 0.45 - 65940000;
+  }
+
+  // 세율 표시
+  function getTaxRateLabel(base) {
+    if (base <= 14000000) return '6%';
+    if (base <= 50000000) return '15%';
+    if (base <= 88000000) return '24%';
+    if (base <= 150000000) return '35%';
+    if (base <= 300000000) return '38%';
+    if (base <= 500000000) return '40%';
+    if (base <= 1000000000) return '42%';
+    return '45%';
+  }
+
+  // 근로소득세액공제
+  function calcWorkTaxCredit(calcTax, salary) {
+    let credit = calcTax <= 1300000 ? calcTax * 0.55 : 715000 + (calcTax - 1300000) * 0.30;
+    let limit = salary <= 33000000 ? 740000 : salary <= 70000000 ? 660000 : 500000;
+    return Math.min(credit, limit);
+  }
+
+  function calculate() {
+    const salary = parseFloat(document.getElementById('totalSalary').value) || 0;
+    const prepaid = parseFloat(document.getElementById('prepaidTax').value) || 0;
+    const dependents = parseInt(document.getElementById('dependents').value) || 1;
+    const elderly = parseInt(document.getElementById('elderly').value) || 0;
+    const creditCard = parseFloat(document.getElementById('creditCard').value) || 0;
+    const debitCard = parseFloat(document.getElementById('debitCard').value) || 0;
+    const medical = parseFloat(document.getElementById('medicalFee').value) || 0;
+    const education = parseFloat(document.getElementById('educationFee').value) || 0;
+    const donation = parseFloat(document.getElementById('donation').value) || 0;
+    const pensionAmt = parseFloat(document.getElementById('pension').value) || 0;
+
+    // 1. 근로소득공제
+    const workDeduct = Math.min(calcWorkDeduction(salary), 20000000);
+    const workIncome = Math.max(salary - workDeduct, 0);
+
+    // 2. 인적공제
+    const personalDeduct = dependents * 1500000 + elderly * 1000000;
+
+    // 3. 신용카드 소득공제
+    const totalCard = creditCard + debitCard;
+    const threshold = salary * 0.25;
+    let cardDeduct = 0;
+    if (totalCard > threshold) {
+      const excess = totalCard - threshold;
+      // 신용카드 초과분 vs 체크카드
+      const creditExcess = Math.max(creditCard - threshold, 0);
+      const debitPart = Math.min(debitCard, excess);
+      const creditPart = excess - debitPart;
+      cardDeduct = debitPart * 0.30 + creditPart * 0.15;
+    }
+    const cardLimit = salary <= 70000000 ? 3000000 : salary <= 120000000 ? 2500000 : 2000000;
+    cardDeduct = Math.min(cardDeduct, cardLimit);
+
+    // 4. 과세표준
+    const taxBase = Math.max(workIncome - personalDeduct - cardDeduct, 0);
+
+    // 5. 산출세액
+    const calcTax = calcIncomeTax(taxBase);
+
+    // 6. 세액공제들
+    const workTaxCredit = calcWorkTaxCredit(calcTax, salary);
+
+    // 의료비 세액공제
+    const medExcess = Math.max(medical - salary * 0.03, 0);
+    const medCredit = Math.min(medExcess, 7000000) * 0.15;
+
+    // 교육비 세액공제
+    const eduCredit = education * 0.15;
+
+    // 기부금 세액공제
+    let donCredit = 0;
+    if (donation <= 10000000) donCredit = donation * 0.15;
+    else donCredit = 1500000 + (donation - 10000000) * 0.30;
+
+    // 연금저축 세액공제
+    const penLimit = salary <= 55000000 ? 700000 * (salary <= 120000000 ? 1 : 0) : 700000;
+    const penBase = Math.min(pensionAmt, 7000000);
+    const penRate = salary <= 55000000 ? 0.165 : 0.132;
+    const penCredit = penBase * penRate;
+
+    // 7. 결정세액
+    const totalCredits = workTaxCredit + medCredit + eduCredit + donCredit + penCredit;
+    const finalTax = Math.max(calcTax - totalCredits, 0);
+
+    // 8. 환급/추납
+    const diff = prepaid - finalTax;
+
+    // 결과 표시
+    const refundBox = document.getElementById('refundBox');
+    if (diff >= 0) {
+      refundBox.className = 'refund-result';
+      document.getElementById('refundLabel').textContent = '환급 예상액';
+      document.getElementById('refundAmount').textContent = fmt(diff);
+      document.getElementById('refundSub').textContent = `결정세액 ${fmt(finalTax)} < 기납부세액 ${fmt(prepaid)}`;
+    } else {
+      refundBox.className = 'refund-result pay';
+      document.getElementById('refundLabel').textContent = '추가 납부 예상액';
+      document.getElementById('refundAmount').textContent = fmt(Math.abs(diff));
+      document.getElementById('refundSub').textContent = `결정세액 ${fmt(finalTax)} > 기납부세액 ${fmt(prepaid)}`;
+    }
+
+    // 단계별 상세
+    document.getElementById('r_salary').textContent = fmt(salary);
+    document.getElementById('r_workDeduct').textContent = fmt(workDeduct);
+    document.getElementById('r_workIncome').textContent = fmt(workIncome);
+    document.getElementById('r_personal').textContent = fmt(personalDeduct);
+    document.getElementById('r_cardDeduct').textContent = fmt(cardDeduct);
+    document.getElementById('r_taxBase').textContent = fmt(taxBase);
+    document.getElementById('r_taxRate').textContent = getTaxRateLabel(taxBase);
+    document.getElementById('r_calcTax').textContent = fmt(calcTax);
+    document.getElementById('r_workTaxCredit').textContent = fmt(workTaxCredit);
+    document.getElementById('r_medCredit').textContent = fmt(medCredit);
+    document.getElementById('r_eduCredit').textContent = fmt(eduCredit);
+    document.getElementById('r_donCredit').textContent = fmt(donCredit);
+    document.getElementById('r_penCredit').textContent = fmt(penCredit);
+    document.getElementById('r_finalTax').textContent = fmt(finalTax);
+    document.getElementById('r_prepaid').textContent = fmt(prepaid);
+
+    // 절세 팁
+    const tips = [];
+    if (pensionAmt < 7000000) tips.push(`연금저축·IRP를 ${fmt(7000000 - pensionAmt)} 더 납입하면 최대 ${fmt((7000000 - pensionAmt) * penRate)} 추가 절세 가능`);
+    if (medExcess === 0) tips.push('의료비가 총급여의 3% 미만입니다. 미용·성형 제외 의료비 증빙을 꼭 챙기세요.');
+    if (cardDeduct < cardLimit * 0.5) tips.push('신용카드 공제 한도 대비 사용액이 적습니다. 체크카드·현금영수증 비중을 높이면 공제율 30% 적용.');
+    if (donation === 0) tips.push('지정기부금 납부 시 1,000만원 이하 15% 세액공제. 고향사랑기부제(10만원 전액공제+답례품)도 활용 가능.');
+    if (tips.length === 0) tips.push('공제 항목을 잘 활용하고 계십니다. 연금저축 최대 한도 납입으로 추가 절세하세요.');
+
+    document.getElementById('tipBox').innerHTML = `<h4>절세 팁</h4><ul>${tips.map(t => `<li>${t}</li>`).join('')}</ul>`;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

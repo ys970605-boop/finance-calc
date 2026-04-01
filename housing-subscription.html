@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 주택청약저축 계산기 - 만기금액·1순위 조건·소득공제 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="2026년 기준 주택청약저축 만기 예상금액, 청약 1순위 조건 충족 여부, 연말정산 소득공제 혜택을 자동 계산합니다. 월납입금과 납입기간만 입력하면 됩니다.">
+  <link rel="canonical" href="https://calcmoney.kr/housing-subscription">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 주택청약저축 계산기 - 만기금액·1순위·소득공제 자동 계산">
+  <meta property="og:description" content="주택청약저축 만기 예상금액, 1순위 조건 충족 여부, 소득공제 혜택을 자동 계산. 2026년 기준 금리 2.8% 적용.">
+  <meta property="og:url" content="https://calcmoney.kr/housing-subscription">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "주택청약저축 1순위 조건은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 주택청약저축 1순위 조건: ①가입기간 24개월 이상, ②납입횟수 24회 이상(매월 납입 기준), ③지역별 예치금 기준 충족. 수도권(서울·경기·인천)은 300만원, 광역시는 250만원, 기타 지역은 200만원입니다. 단, 무주택 세대주여야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주택청약저축 소득공제는 얼마나 받나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "무주택 세대주로 총급여 7,000만원 이하인 근로자는 연간 납입액의 40%를 소득공제 받을 수 있습니다. 공제 한도는 연 납입액 300만원(공제액 최대 120만원)입니다. 소득세율 15% 기준으로 연 최대 18만원, 소득세율 24% 기준으로 연 최대 28.8만원 절세 효과가 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 주택청약저축 금리는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 주택청약저축 금리는 연 2.8%입니다. 2년 이상 유지 시 적용되는 우대금리 포함 기준입니다. 기간별 금리: 1개월 미만 무이자, 1개월 이상~1년 미만 연 1.0%, 1년 이상~2년 미만 연 2.0%, 2년 이상 연 2.8%. 주택도시기금 관리 상품으로 시중 금리 변동과 무관하게 안정적입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "청약통장은 얼마를 납입해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "월 최소 2만원에서 최대 50만원까지 납입 가능합니다. 청약 가점 산정 시 월 납입 인정금액은 10만원까지입니다. 따라서 가점을 높이려면 월 10만원 이상 납입이 권장되지만, 소득공제 혜택을 최대로 받으려면 월 25만원(연 300만원) 납입이 최적입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중도 해지하면 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "가입 후 2년 이내 해지 시 이율이 낮아집니다(1년 미만 연 1.0%). 소득공제를 받은 경우 해지 시 납입금액의 6%를 추징세로 납부해야 합니다. 1주택 이상 보유자가 되면 소득공제 대상에서 제외됩니다. 청약 당첨 후 해지가 원칙이나, 장기 미당첨 시 부금 전환도 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "청약 당첨 확률을 높이는 방법은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "청약 당첨 확률을 높이려면: ①가입기간과 납입횟수를 최대한 늘려 가점을 높임, ②무주택 기간 유지, ③부양가족 수 증가(결혼·출산), ④청쟁이 적은 지역·단지 선택, ⑤특별공급 활용(신혼부부, 생애최초, 다자녀 등). 가점제 84점 만점 기준 50점 이상이면 서울 주요 지역 당첨 가능성이 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "청약 예치금 기준과 지역별 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "민영주택 청약 예치금 기준(2026): 서울·부산 기준 전용 85㎡ 이하 300만원, 102㎡ 이하 600만원, 135㎡ 이하 1,000만원, 모든 면적 1,500만원. 기타 광역시: 250만원/400만원/700만원/1,000만원. 기타 시/군: 200만원/300만원/400만원/500만원. 국민주택(공공)은 예치금 관계없이 납입횟수와 금액으로 당첨 결정."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "공공주택과 민영주택 청약 방식의 차이는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "국민주택(공공주택): 매월 납입 누적금액이 많을수록 유리. 월 10만원씩 꾸준히 납입한 장기 가입자 우선. 청약통장 종류 무관하게 납입금 순으로 우선순위 결정. 민영주택: 청약 가점제(가점 높은 순)와 추첨제 혼용. 가점제는 무주택기간(32점) + 부양가족수(35점) + 청약통장 가입기간(17점) = 84점 만점."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .status-badge {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.82em;
+      font-weight: 700;
+    }
+    .status-badge.ok { background: #e8f5e9; color: #1e7e34; }
+    .status-badge.warn { background: #ffebee; color: #c62828; }
+    .status-badge.partial { background: #fff8e1; color: #e65100; }
+    .priority-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.88em; }
+    .priority-table th { background: #f1f3f4; padding: 8px 10px; text-align: left; font-weight: 700; color: #444; }
+    .priority-table td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+    .priority-table tr.ok-row td:last-child { color: #1e7e34; font-weight: 700; }
+    .priority-table tr.fail-row td:last-child { color: #d32f2f; font-weight: 700; }
+    .amount-box {
+      background: linear-gradient(135deg, #e8f0fe, #f0f4ff);
+      border: 2px solid #4285f4;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .amount-box h4 { margin: 0 0 8px; color: #1a73e8; font-size: 0.95em; }
+    .amount-value { font-size: 2.2em; font-weight: 800; color: #1a73e8; }
+    .amount-sub { font-size: 0.85em; color: #555; margin-top: 6px; }
+    .tax-deduction-box {
+      background: #fff8e1;
+      border: 1px solid #f9a825;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .tax-deduction-box h4 { margin: 0 0 10px; color: #f57f17; font-size: 0.95em; }
+    .deposit-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.86em; }
+    .deposit-table th { background: #f1f3f4; padding: 7px 10px; text-align: center; font-weight: 700; color: #444; }
+    .deposit-table td { padding: 7px 10px; border-bottom: 1px solid #eee; text-align: center; }
+    .deposit-table td:first-child { text-align: left; }
+    .deposit-table tr.met td { color: #1e7e34; }
+    .deposit-table tr.unmet td { color: #d32f2f; }
+    .input-section-title {
+      font-size: 0.9em; font-weight: 700; color: #666;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin: 20px 0 8px; padding-bottom: 6px;
+      border-bottom: 2px solid #e8f0fe;
+    }
+    .section-divider { border: none; border-top: 2px dashed #e0e0e0; margin: 22px 0 18px; }
+    .milestone-list { list-style: none; padding: 0; margin: 12px 0; }
+    .milestone-list li {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid #f0f0f0;
+      font-size: 0.88em;
+    }
+    .milestone-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .milestone-dot.reached { background: #1e7e34; }
+    .milestone-dot.future { background: #e0e0e0; }
+    @media (max-width: 600px) {
+      .amount-value { font-size: 1.7em; }
+      .deposit-table { font-size: 0.78em; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>주택청약저축 계산기</h1>
+        <p class="desc">월납입금과 납입기간을 입력하면 만기 예상금액, 청약 1순위 조건 충족 여부, 연말정산 소득공제 혜택을 자동 계산합니다.</p>
+
+        <!-- 기본 정보 -->
+        <div class="input-section-title">납입 정보</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>월납입금 <span class="hint">만원 (2~50만원)</span></label>
+            <input type="number" id="monthlyPayment" placeholder="예: 10" value="10" min="2" max="50">
+          </div>
+          <div class="form-group">
+            <label>이미 납입한 기간 <span class="hint">개월</span></label>
+            <input type="number" id="alreadyMonths" placeholder="예: 0" value="0" min="0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>목표 납입기간 <span class="hint">개월 (총 가입기간)</span></label>
+            <input type="number" id="targetMonths" placeholder="예: 36" value="36" min="1">
+          </div>
+          <div class="form-group">
+            <label>연 금리 <span class="hint">% (기본 2.8%)</span></label>
+            <input type="number" id="interestRate" placeholder="예: 2.8" value="2.8" step="0.1" min="0">
+          </div>
+        </div>
+
+        <!-- 소득공제 조건 -->
+        <hr class="section-divider">
+        <div class="input-section-title">소득공제 조건</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>연소득 (총급여) <span class="hint">만원</span></label>
+            <input type="number" id="annualIncome" placeholder="예: 5000" value="5000" min="0">
+          </div>
+          <div class="form-group">
+            <label>무주택 세대주 여부</label>
+            <select id="noHouseOwner">
+              <option value="yes">예 (무주택 세대주)</option>
+              <option value="no">아니오</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 청약 1순위 조건 -->
+        <hr class="section-divider">
+        <div class="input-section-title">청약 조건 확인</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>지역</label>
+            <select id="region">
+              <option value="seoul">서울·인천·경기 (수도권)</option>
+              <option value="metro">광역시 (부산·대구·광주·대전·울산)</option>
+              <option value="other">기타 시·군</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>신청 주택 면적</label>
+            <select id="houseSize">
+              <option value="85">전용 85㎡ 이하</option>
+              <option value="102">전용 102㎡ 이하</option>
+              <option value="135">전용 135㎡ 이하</option>
+              <option value="999">모든 면적</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 만기 예상금액 -->
+          <div class="amount-box">
+            <h4>만기 예상 수령액 (세전)</h4>
+            <div class="amount-value" id="maturityAmount">-</div>
+            <div class="amount-sub" id="maturitySub"></div>
+          </div>
+
+          <!-- 청약 1순위 조건 -->
+          <div style="font-weight:700;margin:20px 0 8px;color:#333;">청약 1순위 조건 확인</div>
+          <table class="priority-table" id="priorityTable">
+            <thead>
+              <tr><th>조건</th><th>기준</th><th>현재 상태</th><th>결과</th></tr>
+            </thead>
+            <tbody id="priorityBody"></tbody>
+          </table>
+
+          <!-- 전체 충족 여부 -->
+          <div style="margin-top:12px;font-size:0.95em;" id="prioritySummary"></div>
+
+          <!-- 납입 현황 테이블 -->
+          <table class="result-table" style="margin-top:16px;">
+            <tr><td>총 납입기간</td><td id="rTotalMonths">-</td></tr>
+            <tr><td>총 납입 횟수</td><td id="rPayCount">-</td></tr>
+            <tr><td>총 납입 원금</td><td id="rTotalPrincipal">-</td></tr>
+            <tr><td>이자 합계</td><td id="rTotalInterest">-</td></tr>
+            <tr class="total"><td>만기 수령액</td><td id="rMaturity">-</td></tr>
+          </table>
+
+          <!-- 예치금 기준 -->
+          <div style="font-weight:700;margin:20px 0 8px;color:#333;">민영주택 예치금 기준 (지역별)</div>
+          <table class="deposit-table" id="depositTable">
+            <thead>
+              <tr><th>면적</th><th>수도권</th><th>광역시</th><th>기타</th><th>현재 잔액</th><th>충족여부</th></tr>
+            </thead>
+            <tbody id="depositBody"></tbody>
+          </table>
+
+          <!-- 소득공제 혜택 -->
+          <div class="tax-deduction-box">
+            <h4>연말정산 소득공제 혜택</h4>
+            <div id="taxDeductionContent"></div>
+          </div>
+
+          <!-- 주요 마일스톤 -->
+          <div style="font-weight:700;margin:20px 0 8px;color:#333;">납입 마일스톤</div>
+          <ul class="milestone-list" id="milestoneList"></ul>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">주택청약저축 핵심 정보</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주택청약저축이란?</h3>
+        <p>주택청약저축은 공공주택(국민주택) 및 민영주택 청약을 위한 금융상품으로, 국토교통부 산하 주택도시기금이 운용합니다. 만 19세 이상 대한민국 국민 누구나 1인 1계좌 개설이 가능하며, 시중은행(KB국민·신한·우리·하나·농협 등)에서 가입할 수 있습니다. 2009년 출시 이후 청약예금·청약부금·청약저축을 통합한 상품입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 금리 체계</h3>
+        <p>주택청약저축의 2026년 기준 이자율은 다음과 같습니다: ①1개월 미만: 무이자, ②1개월 이상~1년 미만: 연 1.0%, ③1년 이상~2년 미만: 연 2.0%, ④2년 이상: 연 2.8%. 단리 방식으로 계산하며, 해지 시 기간별 이율이 적용됩니다. 연 2.8%는 시중 보통예금 대비 높은 편이나, 만기가 없어 장기 유지 시 적금보다 수익이 낮을 수 있습니다. 이자소득세 15.4% 원천징수 후 수령합니다(비과세 혜택 없음).</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">청약 1순위 조건 (2026년 기준)</h3>
+        <p><strong>공통 조건:</strong> 무주택 세대주, 가입기간 2년 이상, 납입횟수 24회 이상. 투기과열지구·조정대상지역에서는 가입기간 2년, 납입횟수 24회 이상이 추가로 필요합니다.</p>
+        <p><strong>민영주택 예치금 기준:</strong> 면적별 예치금 이상 적립 시 1순위 신청 가능. 수도권: 85㎡ 이하 300만원 / 102㎡ 이하 600만원 / 135㎡ 이하 1,000만원 / 모든 면적 1,500만원. 기타 지역: 각 250·400·700·1,000만원(광역시), 200·300·400·500만원(기타 시·군).</p>
+        <p><strong>공공주택 기준:</strong> 매월 약정납입일에 납입한 금액 합계가 클수록 당첨 가능성 높음. 월 납입 인정금액은 10만원 한도. 납입 총액 순으로 1순위 내 당첨자 결정.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">소득공제 혜택 (2026년)</h3>
+        <p><strong>대상:</strong> 무주택 세대주, 총급여 7,000만원 이하 근로소득자. <strong>공제율:</strong> 납입액의 40%. <strong>납입 한도:</strong> 연간 300만원 (공제 한도 120만원). <strong>세금 절감 예시:</strong> 세율 6.6%(과표 1,400만원 이하) 시 연 7.9만원, 세율 16.5%(과표 5,000만원 이하) 시 연 19.8만원, 세율 26.4%(과표 8,800만원 이하) 시 연 31.7만원 절세 효과.</p>
+        <p><strong>추징세 주의:</strong> 소득공제를 받은 후 5년 이내 해지 또는 국민주택규모 초과 주택 구매 시, 납입 원금의 6%를 추징세로 납부해야 합니다. 중도 해지 전 반드시 세금 효과를 비교해야 합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">청약 가점제 계산 방식</h3>
+        <p>민영주택 가점제는 총 84점 만점으로 구성됩니다:</p>
+        <ul>
+          <li><strong>무주택 기간 (32점):</strong> 30세 미만 무주택 0점, 1년 미만 2점, 1년마다 2점 추가, 15년 이상 32점</li>
+          <li><strong>부양가족 수 (35점):</strong> 0명 5점, 1명 10점, 2명 15점, 3명 20점, 4명 25점, 5명 30점, 6명 이상 35점</li>
+          <li><strong>청약통장 가입기간 (17점):</strong> 6개월 미만 1점, 6개월~1년 2점, 1~2년 3점, 2~3년 4점, 3~4년 5점, 4~5년 6점, 5~6년 7점, 6~7년 8점, 7~8년 9점, 8~9년 10점, 9~10년 11점, 10~11년 12점, 11~12년 13점, 12~13년 14점, 13~14년 15점, 14~15년 16점, 15년 이상 17점</li>
+        </ul>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">특별공급 종류 및 조건</h3>
+        <p>일반공급 가점이 낮더라도 특별공급을 통해 당첨 기회를 높일 수 있습니다: ①<strong>신혼부부 특별공급:</strong> 혼인 7년 이내, 소득 기준 이하. ②<strong>생애최초 특별공급:</strong> 생애 최초 주택 구매자, 소득 기준 이하, 5년 이상 소득세 납부. ③<strong>다자녀가구 특별공급:</strong> 미성년 자녀 3명 이상. ④<strong>노부모 부양 특별공급:</strong> 65세 이상 노부모 3년 이상 부양. ⑤<strong>기관추천 특별공급:</strong> 국가유공자, 장애인, 철거민 등.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">최적 납입 전략</h3>
+        <p><strong>소득공제 최대화:</strong> 월 25만원(연 300만원) 납입 시 소득공제 한도 최대 활용. <strong>가점 최대화:</strong> 월 10만원 이상 꾸준히 납입. 10만원 초과분은 청약 가점에 영향 없으나 예치금 기준 충족에 도움. <strong>납입 중단 방지:</strong> 자동이체 설정으로 납입 횟수 유지. 납입 중단 시에도 계좌는 유지되며 이미 쌓인 납입 횟수는 보존.</p>
+
+        <details style="margin-top:16px;">
+          <summary>청약통장 명의변경이 가능한가요?</summary>
+          <p>청약통장은 원칙적으로 명의변경이 불가합니다. 다만 상속의 경우에만 예외적으로 인정됩니다. 증여를 통한 명의변경은 불가하며, 새로 개설해야 합니다. 따라서 자녀 명의로 청약통장을 일찍 개설해 오래 유지하는 것이 유리합니다.</p>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary>청년우대형 청약통장과의 차이는?</summary>
+          <p>청년우대형 주택청약저축은 만 19~34세 무주택 청년 대상으로, 기본 주택청약저축의 청약 기능에 더해 최대 연 4.3%의 우대금리(일반 2.8% + 우대 1.5%p)와 이자소득 비과세(500만원 한도) 혜택을 제공합니다. 소득 요건(직전년도 신고소득 3,600만원 이하)을 충족하는 청년이라면 청년우대형 가입을 먼저 검토하는 것이 유리합니다. 2026년에도 동일 조건으로 유지 중입니다.</p>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary>주택청약저축 담보대출이 가능한가요?</summary>
+          <p>주택청약저축을 담보로 한 대출(청약통장 담보대출)은 일부 은행에서 가능합니다. 대출 한도는 납입 원금의 95% 내외, 금리는 통장 금리+1~2%p 수준입니다. 다만 담보 제공 기간 동안 청약 신청이 제한될 수 있으므로 청약 일정을 고려해야 합니다.</p>
+        </details>
+      </div>
+
+      <!-- FAQ -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">자주 묻는 질문</h2>
+
+        <details>
+          <summary>청약통장 월 얼마씩 넣어야 가장 유리한가요?</summary>
+          <p>목적에 따라 다릅니다. ①소득공제 최대화: 월 25만원(연 300만원 한도 채우기). ②가점 및 공공주택 당첨 가능성: 월 10만원(인정 한도). ③최소 유지: 월 2만원(1순위 요건 충족만). 소득공제를 받는 직장인이라면 월 25만원이 세금 혜택과 당첨 가능성 모두 고려한 최적 금액입니다.</p>
+        </details>
+
+        <details>
+          <summary>이미 주택이 있어도 청약통장 유지해야 하나요?</summary>
+          <p>1주택 이상 보유 시 소득공제 혜택은 없어지지만, 청약통장 자체는 계속 유지 가능합니다. 주택 처분 후 무주택 기간이 쌓이면 다시 청약 자격을 회복할 수 있습니다. 또한 청약통장을 해지하면 재가입 시 가입기간이 리셋되므로, 장기 보유 통장은 해지하지 않는 것이 유리합니다.</p>
+        </details>
+
+        <details>
+          <summary>청약통장 없이 청약 가능한 경우도 있나요?</summary>
+          <p>일부 임대주택(행복주택, 영구임대 등)은 청약통장 없이 신청 가능한 경우가 있습니다. 또한 신혼희망타운 등 일부 공공분양도 별도 신청 조건이 있습니다. 하지만 일반적인 분양 아파트 청약은 반드시 청약통장이 필요합니다.</p>
+        </details>
+
+        <details>
+          <summary>2026년 청약시장 전망은 어떤가요?</summary>
+          <p>2026년에는 금리 안정화와 함께 수도권 주요 택지지구(3기 신도시 등) 물량이 본격 공급될 예정입니다. 경쟁률이 높은 수도권 인기 단지의 경우 50점 이상의 가점이 당첨 커트라인이 될 것으로 예상됩니다. 생애최초 특별공급 확대로 30~40대 실수요자의 기회도 늘어날 전망입니다.</p>
+        </details>
+
+        <details>
+          <summary>청약 당첨 후 계약 포기하면 불이익이 있나요?</summary>
+          <p>분양가상한제 적용 주택 당첨 후 계약 포기 시 최대 10년간 재당첨 제한이 적용됩니다. 투기과열지구·조정대상지역은 더 긴 제한 기간이 적용됩니다. 계약 포기 시 납입한 청약통장 납입 실적도 소멸됩니다. 당첨 후 계약 포기는 매우 신중하게 결정해야 합니다.</p>
+        </details>
+
+        <details>
+          <summary>부부 공동명의로 청약 신청이 가능한가요?</summary>
+          <p>청약은 개인 단위로 신청하며, 부부 공동명의 신청은 불가합니다. 배우자가 있는 경우 세대를 합산하여 무주택 여부를 판단하고, 세대주 명의로 신청합니다. 맞벌이 부부의 경우 가점이 높은 쪽이 세대주가 되어 신청하는 것이 유리합니다.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>2026 금리 체계</h3>
+        <ul>
+          <li>1개월 미만: 무이자</li>
+          <li>1개월~1년: 연 <strong>1.0%</strong></li>
+          <li>1~2년: 연 <strong>2.0%</strong></li>
+          <li>2년 이상: 연 <strong>2.8%</strong></li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>1순위 조건 요약</h3>
+        <ul>
+          <li>가입기간 <strong>24개월+</strong></li>
+          <li>납입횟수 <strong>24회+</strong></li>
+          <li>무주택 세대주</li>
+          <li>지역별 예치금 충족</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>소득공제 요약</h3>
+        <ul>
+          <li>공제율: 납입액 <strong>40%</strong></li>
+          <li>납입 한도: 연 <strong>300만원</strong></li>
+          <li>최대 공제: 연 <strong>120만원</strong></li>
+          <li>총급여 7,000만원 이하만</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="subscription.html" class="related-link">청약가점</a>
+          <a href="mortgage-limit.html" class="related-link">주담대한도</a>
+          <a href="dti-dsr.html" class="related-link">DTI/DSR</a>
+          <a href="lease-vs-rent.html" class="related-link">리스 vs 렌트</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 실제 청약 결과는 관할 기관에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  const fmtMan = n => {
+    const man = Math.round(n);
+    if (man >= 10000) return (man / 10000).toFixed(2).replace(/\.?0+$/, '') + '억원';
+    return man.toLocaleString('ko-KR') + '만원';
+  };
+
+  // 2026년 주택청약저축 이자 계산 (단리, 기간별 금리 적용)
+  function calcSubscriptionInterest(monthlyPayment, totalMonths, annualRate) {
+    // 단순화: 전체 기간에 해당하는 금리로 계산
+    // 정확한 방식: 각 납입분에 대해 잔여기간 이자 누적
+    let principal = 0;
+    let interest = 0;
+    const monthlyRate = annualRate / 100 / 12;
+    for (let i = 0; i < totalMonths; i++) {
+      principal += monthlyPayment;
+      // 각 납입분의 잔여 기간 동안 이자 발생
+      const remainingMonths = totalMonths - i;
+      interest += monthlyPayment * monthlyRate * remainingMonths;
+    }
+    return { principal, interest, total: principal + interest };
+  }
+
+  // 예치금 기준 데이터 (만원)
+  const DEPOSIT_TABLE = {
+    85:  { seoul: 300, metro: 250, other: 200 },
+    102: { seoul: 600, metro: 400, other: 300 },
+    135: { seoul: 1000, metro: 700, other: 400 },
+    999: { seoul: 1500, metro: 1000, other: 500 },
+  };
+
+  function calculate() {
+    const monthlyPayment  = parseFloat(document.getElementById('monthlyPayment').value) || 0;
+    const alreadyMonths   = parseInt(document.getElementById('alreadyMonths').value) || 0;
+    const targetMonths    = parseInt(document.getElementById('targetMonths').value) || 36;
+    const interestRate    = parseFloat(document.getElementById('interestRate').value) || 2.8;
+    const annualIncome    = parseFloat(document.getElementById('annualIncome').value) || 0;
+    const noHouseOwner    = document.getElementById('noHouseOwner').value;
+    const region          = document.getElementById('region').value;
+    const houseSize       = parseInt(document.getElementById('houseSize').value) || 85;
+
+    if (monthlyPayment < 2 || monthlyPayment > 50) {
+      alert('월납입금은 2만원~50만원 사이로 입력해주세요.');
+      return;
+    }
+
+    const totalMonths = targetMonths;
+    const payCount = totalMonths; // 매월 납입 가정
+
+    // 만기 예상 금액 계산 (단리)
+    const { principal, interest, total } = calcSubscriptionInterest(monthlyPayment, totalMonths, interestRate);
+
+    // 세후 이자
+    const taxRate = 0.154; // 이자소득세 15.4%
+    const afterTaxInterest = interest * (1 - taxRate);
+    const afterTaxTotal = principal + afterTaxInterest;
+
+    // 현재 예치 잔액 (이미 납입한 기간 기준)
+    let currentBalance = monthlyPayment * alreadyMonths;
+
+    // 결과 - 만기금액
+    document.getElementById('maturityAmount').textContent = fmtMan(afterTaxTotal);
+    document.getElementById('maturitySub').textContent =
+      `원금 ${fmtMan(principal)} + 세후 이자 ${fmtMan(afterTaxInterest)} | 연 ${interestRate}% 단리, 이자소득세 15.4% 제외`;
+
+    // 납입 현황
+    document.getElementById('rTotalMonths').textContent = `${totalMonths}개월 (${Math.floor(totalMonths/12)}년 ${totalMonths%12}개월)`;
+    document.getElementById('rPayCount').textContent = `${payCount}회`;
+    document.getElementById('rTotalPrincipal').textContent = fmtMan(principal);
+    document.getElementById('rTotalInterest').textContent = fmtMan(afterTaxInterest) + ' (세후)';
+    document.getElementById('rMaturity').textContent = fmtMan(afterTaxTotal) + ' (세후)';
+
+    // ---- 청약 1순위 조건 ----
+    const cond1Met = totalMonths >= 24;
+    const cond2Met = payCount >= 24;
+
+    // 예치금 기준
+    const reqDeposit = DEPOSIT_TABLE[houseSize] ? DEPOSIT_TABLE[houseSize][region] : 300;
+    const accBalance = principal; // 납입 원금 = 잔액 (인출 없음 가정)
+    const cond3Met = accBalance >= reqDeposit;
+
+    const conditions = [
+      { label: '가입기간', standard: '24개월 이상', current: `${totalMonths}개월`, met: cond1Met },
+      { label: '납입횟수', standard: '24회 이상', current: `${payCount}회`, met: cond2Met },
+      { label: '무주택 세대주', standard: '무주택 세대주', current: noHouseOwner === 'yes' ? '해당' : '해당없음', met: noHouseOwner === 'yes' },
+      { label: '예치금 기준', standard: `${fmtMan(reqDeposit)} 이상`, current: `${fmtMan(accBalance)} (납입 원금)`, met: cond3Met },
+    ];
+
+    let priorityHtml = '';
+    conditions.forEach(c => {
+      const rowClass = c.met ? 'ok-row' : 'fail-row';
+      priorityHtml += `<tr class="${rowClass}">
+        <td>${c.label}</td>
+        <td>${c.standard}</td>
+        <td>${c.current}</td>
+        <td>${c.met ? '✅ 충족' : '❌ 미충족'}</td>
+      </tr>`;
+    });
+    document.getElementById('priorityBody').innerHTML = priorityHtml;
+
+    const allMet = conditions.every(c => c.met);
+    const metCount = conditions.filter(c => c.met).length;
+    const summaryEl = document.getElementById('prioritySummary');
+    if (allMet) {
+      summaryEl.innerHTML = `<span class="status-badge ok">✅ 1순위 조건 모두 충족 (${metCount}/${conditions.length})</span> — 청약 신청 가능합니다.`;
+    } else {
+      const unmet = conditions.filter(c => !c.met).map(c => c.label).join(', ');
+      summaryEl.innerHTML = `<span class="status-badge ${metCount >= 2 ? 'partial' : 'warn'}">⚠ 1순위 미충족 (${metCount}/${conditions.length})</span> — 미충족 항목: <strong>${unmet}</strong>`;
+    }
+
+    // ---- 예치금 기준 테이블 ----
+    const sizes = [85, 102, 135, 999];
+    const sizeLabels = { 85: '85㎡ 이하', 102: '102㎡ 이하', 135: '135㎡ 이하', 999: '모든 면적' };
+    let depositHtml = '';
+    sizes.forEach(s => {
+      const dep = DEPOSIT_TABLE[s];
+      const isMet_s = accBalance >= dep[region];
+      const rowClass = isMet_s ? 'met' : 'unmet';
+      depositHtml += `<tr class="${rowClass}">
+        <td>${sizeLabels[s]}</td>
+        <td>${fmtMan(dep.seoul)}</td>
+        <td>${fmtMan(dep.metro)}</td>
+        <td>${fmtMan(dep.other)}</td>
+        <td>${fmtMan(accBalance)}</td>
+        <td>${isMet_s ? '✅' : '❌'}</td>
+      </tr>`;
+    });
+    document.getElementById('depositBody').innerHTML = depositHtml;
+
+    // ---- 소득공제 혜택 ----
+    const isEligible = noHouseOwner === 'yes' && annualIncome <= 7000 && annualIncome > 0;
+    const annualPayment = monthlyPayment * 12; // 연 납입액 (만원)
+    const deductibleAmount = Math.min(annualPayment, 300); // 공제 대상 연 납입액 (최대 300만원)
+    const deductionAmount = deductibleAmount * 0.4; // 공제 금액 (40%)
+
+    // 소득세율 추정 (간이)
+    let taxRate2 = 0;
+    if (annualIncome <= 1400) taxRate2 = 0.066;
+    else if (annualIncome <= 5000) taxRate2 = 0.165;
+    else if (annualIncome <= 8800) taxRate2 = 0.264;
+    else taxRate2 = 0.385;
+
+    const annualTaxSaving = deductionAmount * taxRate2; // 연간 절세액 (만원)
+    const totalTaxSaving = annualTaxSaving * (totalMonths / 12); // 전체 기간 절세액
+
+    let taxContent = '';
+    if (!isEligible) {
+      if (noHouseOwner !== 'yes') {
+        taxContent = '<strong>무주택 세대주가 아닌 경우</strong> 소득공제 대상이 아닙니다.';
+      } else if (annualIncome > 7000) {
+        taxContent = `<strong>총급여 ${fmtMan(annualIncome)}원</strong>은 소득공제 한도(7,000만원)를 초과하여 공제 대상이 아닙니다.`;
+      } else {
+        taxContent = '소득 정보를 입력하면 소득공제 혜택을 계산합니다.';
+      }
+    } else {
+      taxContent = `
+        <table style="width:100%;font-size:0.88em;border-collapse:collapse;">
+          <tr><td style="padding:5px 0;">연간 납입액</td><td style="font-weight:700;">${fmtMan(annualPayment)}</td></tr>
+          <tr><td style="padding:5px 0;">공제 대상 납입액 (연 300만원 한도)</td><td style="font-weight:700;">${fmtMan(deductibleAmount)}</td></tr>
+          <tr><td style="padding:5px 0;">소득공제 금액 (40%)</td><td style="font-weight:700;color:#f57f17;">${fmtMan(deductionAmount)}/년</td></tr>
+          <tr><td style="padding:5px 0;">예상 적용 세율</td><td>${(taxRate2 * 100).toFixed(1)}%</td></tr>
+          <tr><td style="padding:5px 0;">연간 절세 효과</td><td style="font-weight:700;color:#1a73e8;">${fmtMan(annualTaxSaving)}/년</td></tr>
+          <tr><td style="padding:5px 0;">${Math.floor(totalMonths/12)}년 총 절세 효과</td><td style="font-weight:800;color:#1a73e8;font-size:1.1em;">${fmtMan(totalTaxSaving)}</td></tr>
+        </table>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 세율은 과세표준 기준 추정치입니다. 실제 절세액은 연말정산 공제 항목에 따라 달라집니다.</p>
+      `;
+    }
+    document.getElementById('taxDeductionContent').innerHTML = taxContent;
+
+    // ---- 납입 마일스톤 ----
+    const milestones = [
+      { months: 12, label: '12개월 — 이자율 연 1.0% 적용 시작' },
+      { months: 24, label: '24개월 — 청약 1순위 가입기간·납입횟수 충족 (이자율 연 2.0%)' },
+      { months: 24, label: `24개월 — 예치금 ${fmtMan(reqDeposit)} 달성 (${fmtMan(monthlyPayment*24)} 납입)` },
+      { months: 24, label: '24개월 — 이자율 연 2.8% 적용 시작 (2년 이상)' },
+      { months: 60, label: '60개월 — 청약 가점 통장 가입기간 6점 (5년 이상)' },
+      { months: 120, label: '120개월 — 청약 가점 통장 가입기간 11점 (10년 이상)' },
+      { months: 180, label: '180개월 — 청약 가점 통장 가입기간 16점 (15년 이상)' },
+    ];
+    let milestoneHtml = '';
+    milestones.forEach(m => {
+      const reached = totalMonths >= m.months;
+      milestoneHtml += `<li>
+        <span class="milestone-dot ${reached ? 'reached' : 'future'}"></span>
+        <span style="color:${reached ? '#1e7e34' : '#999'};">${m.label}</span>
+      </li>`;
+    });
+    document.getElementById('milestoneList').innerHTML = milestoneHtml;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

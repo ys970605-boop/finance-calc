@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재산세 계산기 - 2026년 주택 공시가격별 자동 계산 | 1세대1주택 특례</title>
+  <meta name="description" content="2026년 재산세를 공시가격, 주택 수, 용도별로 자동 계산합니다. 도시지역분, 지방교육세, 재산세 합계까지 한눈에 확인. 1세대 1주택 특례(0.05% 감면) 적용.">
+  <link rel="canonical" href="https://calcmoney.kr/property-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="재산세 계산기 - 2026년 주택 공시가격별 자동 계산 | 1세대1주택 특례">
+  <meta property="og:description" content="2026년 재산세를 공시가격, 주택 수, 용도별로 자동 계산합니다. 도시지역분, 지방교육세 포함 합계 확인.">
+  <meta property="og:url" content="https://calcmoney.kr/property-tax">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"재산세란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"재산세는 매년 6월 1일 기준으로 토지, 건물, 주택 등을 보유하고 있는 사람에게 부과되는 지방세입니다. 주택의 경우 공시가격의 60%(공정시장가액비율)를 과세표준으로 하여 세율을 적용합니다."}},
+      {"@type":"Question","name":"재산세 과세표준은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"주택 재산세의 과세표준은 공시가격 × 공정시장가액비율(60%)로 계산합니다. 예를 들어 공시가격 3억원 주택의 과세표준은 3억 × 60% = 1억 8,000만원이 됩니다."}},
+      {"@type":"Question","name":"1세대 1주택 재산세 특례는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"1세대 1주택자(공시가격 9억원 이하)는 재산세 세율이 0.05%p 감면됩니다. 구체적으로 과세표준 3억원 이하는 0.05%, 3억~6억은 0.1%, 6억 초과는 0.35%의 특례세율이 적용됩니다."}},
+      {"@type":"Question","name":"재산세 납부 시기는 언제인가요?","acceptedAnswer":{"@type":"Answer","text":"재산세는 연 2회 분납합니다. 7월에 1기분(건물분 + 주택분의 1/2), 9월에 2기분(토지분 + 주택분의 1/2)을 납부합니다. 20만원 이하인 경우 7월에 전액 납부합니다."}},
+      {"@type":"Question","name":"도시지역분이란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"도시지역분은 도시지역 내 토지와 건축물에 부과되는 세금으로, 재산세 과세표준의 0.14%가 부과됩니다. 재산세와 함께 고지되며 납부합니다."}},
+      {"@type":"Question","name":"지방교육세는 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"지방교육세는 재산세액의 20%가 부과됩니다. 예를 들어 재산세가 10만원이면 지방교육세 2만원이 추가됩니다."}},
+      {"@type":"Question","name":"공시가격 5억원 주택의 재산세는 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"공시가격 5억원 주택(1세대 1주택 특례 미적용 기준)의 과세표준은 3억원입니다. 재산세는 57만원, 도시지역분 42만원, 지방교육세 11.4만원으로 합계 약 110만원입니다. 1세대 1주택 특례 적용 시 더 낮아집니다."}}
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="property-tax.html" class="active">재산세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>재산세 계산기</h1>
+        <p class="desc">2026년 기준 주택·토지·건물 재산세를 공시가격으로 자동 계산합니다. 도시지역분·지방교육세 포함 합계까지 한눈에 확인하세요.</p>
+
+        <div class="form-group">
+          <label>용도 선택</label>
+          <div class="radio-group">
+            <label><input type="radio" name="propertyType" value="house" checked><span>주택</span></label>
+            <label><input type="radio" name="propertyType" value="land"><span>토지</span></label>
+            <label><input type="radio" name="propertyType" value="building"><span>건물(상가·공장 등)</span></label>
+          </div>
+        </div>
+
+        <div class="form-group" id="houseCountGroup">
+          <label>주택 수 <span class="hint">(1세대 기준)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="houseCount" value="1" checked><span>1주택</span></label>
+            <label><input type="radio" name="houseCount" value="2"><span>2주택</span></label>
+            <label><input type="radio" name="houseCount" value="3"><span>3주택 이상</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>공시가격 <span class="hint">만원 단위 입력</span></label>
+          <input type="number" id="publicPrice" placeholder="예: 50000 (5억)" value="50000" min="0">
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">재산세 계산하기</button>
+
+        <div class="result-box" id="result" style="display:none;">
+          <div class="result-highlight">
+            <div class="label">총 납부 세금 (재산세 + 도시지역분 + 지방교육세)</div>
+            <div class="value" id="rTotal">-</div>
+            <div class="sub" id="rSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr>
+              <td>공시가격</td>
+              <td id="rPublicPrice">-</td>
+            </tr>
+            <tr>
+              <td>과세표준 <span style="font-size:12px;color:#888;">(공시가 × 60%)</span></td>
+              <td id="rTaxBase">-</td>
+            </tr>
+            <tr>
+              <td>적용 세율</td>
+              <td id="rRate">-</td>
+            </tr>
+            <tr>
+              <td>재산세</td>
+              <td id="rPropertyTax">-</td>
+            </tr>
+            <tr>
+              <td>도시지역분 <span style="font-size:12px;color:#888;">(과세표준 × 0.14%)</span></td>
+              <td id="rUrban">-</td>
+            </tr>
+            <tr>
+              <td>지방교육세 <span style="font-size:12px;color:#888;">(재산세 × 20%)</span></td>
+              <td id="rEdu">-</td>
+            </tr>
+            <tr class="total">
+              <td>합계</td>
+              <td id="rSum">-</td>
+            </tr>
+          </table>
+
+          <div id="paymentInfo" style="margin-top:16px;padding:12px;background:#e8f5e9;border-radius:8px;font-size:13px;color:#2e7d32;"></div>
+
+          <div style="margin-top:12px;padding:12px;background:#fff8e1;border-radius:8px;font-size:13px;color:#795548;">
+            <strong>참고:</strong> 이 계산기는 도시지역 내 주택 기준입니다. 비도시지역은 도시지역분이 부과되지 않을 수 있습니다. 정확한 세액은 관할 시·군·구청 또는 위택스(wetax.go.kr)에서 확인하세요.
+          </div>
+        </div>
+      </div>
+
+      <!-- 세율표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 주택 재산세 세율표</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;">
+            <thead>
+              <tr style="background:#1a73e8;color:#fff;">
+                <th style="padding:10px 14px;text-align:left;border:1px solid #1557b0;">과세표준 구간</th>
+                <th style="padding:10px 14px;text-align:center;border:1px solid #1557b0;">일반세율</th>
+                <th style="padding:10px 14px;text-align:center;border:1px solid #1557b0;">1주택 특례</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f8faff;">
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">6,000만원 이하</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">0.1%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">0.05%</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">6,000만원 초과 ~ 1.5억원 이하</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">60,000원 + 초과분 × 0.15%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">30,000원 + 초과분 × 0.1%</td>
+              </tr>
+              <tr style="background:#f8faff;">
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">1.5억원 초과 ~ 3억원 이하</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">195,000원 + 초과분 × 0.25%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">120,000원 + 초과분 × 0.2%</td>
+              </tr>
+              <tr>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;">3억원 초과</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;">570,000원 + 초과분 × 0.4%</td>
+                <td style="padding:9px 14px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">420,000원 + 초과분 × 0.35%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px;color:#666;margin-top:10px;">※ 1주택 특례: 공시가격 9억원 이하 1세대 1주택자에게 적용</p>
+      </div>
+
+      <!-- 과세표준 설명 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>과세표준 계산 방법</h3>
+        <ul>
+          <li><strong>주택:</strong> 공시가격 × 공정시장가액비율(60%)</li>
+          <li><strong>토지:</strong> 공시지가 × 공정시장가액비율(70%)</li>
+          <li><strong>건물(상가·공장):</strong> 시가표준액 × 공정시장가액비율(70%)</li>
+          <li><strong>도시지역분:</strong> 과세표준 × 0.14% (도시지역 내 토지·건물·주택)</li>
+          <li><strong>지방교육세:</strong> 재산세액 × 20%</li>
+        </ul>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>재산세 계산 공식</h3>
+        <ul>
+          <li><strong>과세표준</strong> = 공시가격 × 60%</li>
+          <li><strong>재산세</strong> = 세율 구간별 누진 계산</li>
+          <li><strong>도시지역분</strong> = 과세표준 × 0.14%</li>
+          <li><strong>지방교육세</strong> = 재산세 × 20%</li>
+          <li><strong>합계</strong> = 재산세 + 도시지역분 + 지방교육세</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>재산세 납부 시기</h3>
+        <ul>
+          <li><strong>7월 (1기분):</strong><br>건물분 전액 + 주택분 1/2</li>
+          <li><strong>9월 (2기분):</strong><br>토지분 전액 + 주택분 1/2</li>
+          <li style="margin-top:8px;color:#666;font-size:13px;">※ 재산세 20만원 이하: 7월에 전액 납부</li>
+          <li style="color:#666;font-size:13px;">※ 과세기준일: 매년 6월 1일</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="severance.html" class="related-link">퇴직금</a>
+          <a href="jeonse-monthly.html" class="related-link">전월세전환</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="info-box" style="margin-top:32px;">
+  <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">재산세란 무엇인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">재산세는 매년 <strong>6월 1일 기준</strong>으로 토지·건물·주택 등을 보유한 사람에게 부과되는 지방세입니다. 주택의 경우 공시가격의 60%(공정시장가액비율)를 과세표준으로 하여 세율을 적용하며, 세수는 지방자치단체 재정에 사용됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">재산세 과세표준은 어떻게 계산하나요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">주택 재산세 과세표준 = <strong>공시가격 × 60%(공정시장가액비율)</strong>입니다. 공시가격 5억원 주택이라면 과세표준은 5억 × 60% = <strong>3억원</strong>이 됩니다. 토지·건물(상가 등)은 공정시장가액비율이 70%입니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">1세대 1주택 재산세 특례는 무엇인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">공시가격 <strong>9억원 이하</strong> 1세대 1주택자는 재산세 세율이 0.05%p 감면됩니다. 구간별로 ▲6천만원 이하 0.05%, ▲6천만~1.5억 초과분 0.1%, ▲1.5억~3억 초과분 0.2%, ▲3억 초과분 0.35%의 특례세율이 적용됩니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">재산세 납부 시기는 언제인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">재산세는 연 2회 분납합니다. <strong>7월에 1기분</strong>(건물분 전액 + 주택분 1/2), <strong>9월에 2기분</strong>(토지분 전액 + 주택분 1/2)을 납부합니다. 단, 주택 재산세 합계가 20만원 이하이면 7월에 전액을 한 번만 납부합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">도시지역분이란 무엇인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">도시지역분은 도시계획구역(도시지역) 내 부동산에 부과되는 목적세로, 재산세 <strong>과세표준의 0.14%</strong>가 부과됩니다. 재산세 고지서에 함께 합산되어 나오며, 도로·공원 등 도시 기반시설 비용에 충당됩니다. 도시지역이 아닌 경우 면제될 수 있습니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">지방교육세는 얼마인가요?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">지방교육세는 <strong>재산세액의 20%</strong>가 부과됩니다. 재산세가 50만원이라면 지방교육세 10만원이 추가됩니다. 재산세 고지서에 함께 표시되며 동시에 납부합니다.</p>
+  </details>
+
+  <details style="margin-bottom:14px;">
+    <summary style="font-weight:700;cursor:pointer;padding:8px 0;">공시가격 5억원 주택의 재산세 총액은?</summary>
+    <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">공시가격 5억원 주택(1주택 특례 미적용 기준): 과세표준 3억원. 재산세 57만원, 도시지역분 42만원, 지방교육세 11.4만원으로 <strong>합계 약 110만 4천원</strong>입니다. 1세대 1주택 특례(공시가 9억 이하) 적용 시 재산세가 낮아집니다.</p>
+  </details>
+</div>
+
+<!-- SEO 콘텐츠 -->
+<div style="max-width:900px;margin:0 auto 48px;padding:0 16px;">
+
+  <section style="margin-bottom:48px;">
+    <h2 style="font-size:1.5em;font-weight:700;color:#1a1a2e;border-left:4px solid #1a73e8;padding-left:14px;margin-bottom:20px;">2026년 재산세 완전 정리</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:20px;">
+      재산세는 토지·건물·주택 등 부동산을 소유하고 있는 사람에게 매년 부과되는 지방세입니다. 매년 <strong>6월 1일</strong>이 과세기준일이므로, 6월 1일 현재 소유자가 해당 연도 재산세 납세의무자가 됩니다. 부동산 매매 계약 시 6월 1일 전후 잔금 납부 여부에 따라 세금 부담이 달라지므로 주의가 필요합니다.
+    </p>
+
+    <h3 style="font-size:1.15em;font-weight:700;color:#1a1a2e;margin-bottom:12px;">주택 재산세 세율 (2026년 기준)</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      주택 재산세는 과세표준 구간에 따라 0.1%~0.4%의 누진세율이 적용됩니다. 1세대 1주택자로서 공시가격 9억원 이하이면 세율이 0.05%p 낮아지는 특례가 적용됩니다.
+    </p>
+    <div style="overflow-x:auto;margin-bottom:24px;">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead>
+          <tr style="background:#1a73e8;color:#fff;">
+            <th style="padding:12px 16px;text-align:left;border:1px solid #1557b0;">과세표준</th>
+            <th style="padding:12px 16px;text-align:center;border:1px solid #1557b0;">일반세율</th>
+            <th style="padding:12px 16px;text-align:center;border:1px solid #1557b0;">1주택 특례세율</th>
+            <th style="padding:12px 16px;text-align:center;border:1px solid #1557b0;">산출방법</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f8faff;">
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-weight:600;">6,000만원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">0.1%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">0.05%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-size:13px;">과세표준 × 세율</td>
+          </tr>
+          <tr>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-weight:600;">6천만원 초과<br>~ 1.5억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">0.15%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">0.1%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-size:13px;">60,000원 + 초과분 × 0.15%<br><span style="color:#1a73e8;">(특례: 30,000원 + 초과분 × 0.1%)</span></td>
+          </tr>
+          <tr style="background:#f8faff;">
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-weight:600;">1.5억원 초과<br>~ 3억원 이하</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">0.25%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">0.2%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-size:13px;">195,000원 + 초과분 × 0.25%<br><span style="color:#1a73e8;">(특례: 120,000원 + 초과분 × 0.2%)</span></td>
+          </tr>
+          <tr>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-weight:600;">3억원 초과</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;">0.4%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;text-align:center;color:#1a73e8;font-weight:600;">0.35%</td>
+            <td style="padding:11px 16px;border:1px solid #dde6ff;font-size:13px;">570,000원 + 초과분 × 0.4%<br><span style="color:#1a73e8;">(특례: 420,000원 + 초과분 × 0.35%)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px 20px;">
+      <strong style="color:#1e40af;">참고:</strong>
+      <span style="color:#1e40af;font-size:14px;line-height:1.7;"> 공시가격은 국토교통부 부동산공시가격알리미(realtyprice.kr)에서 확인할 수 있습니다. 공동주택(아파트)은 매년 4월 말~5월 초 공시됩니다.</span>
+    </div>
+  </section>
+
+  <section style="margin-bottom:48px;">
+    <h2 style="font-size:1.5em;font-weight:700;color:#1a1a2e;border-left:4px solid #10b981;padding-left:14px;margin-bottom:20px;">재산세 절세 방법</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:20px;">
+      재산세를 합법적으로 줄이는 대표적인 방법들을 소개합니다.
+    </p>
+
+    <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:20px 24px;margin-bottom:20px;">
+      <h3 style="font-size:1.1em;font-weight:700;color:#065f46;margin-bottom:10px;">1세대 1주택 특례 적용</h3>
+      <ul style="list-style:none;padding:0;margin:0;color:#444;line-height:1.9;">
+        <li>✔ 공시가격 9억원 이하 1세대 1주택자에게 세율 0.05%p 감면</li>
+        <li>✔ 별도 신청 없이 자동 적용 (과세청에서 확인 후 부과)</li>
+        <li>✔ 6월 1일 현재 1주택 소유 상태여야 함</li>
+        <li>✔ 공시가격 9억 초과 주택은 특례 미적용</li>
+      </ul>
+    </div>
+
+    <div style="background:#fef9c3;border:1px solid #fef08a;border-radius:10px;padding:20px 24px;margin-bottom:20px;">
+      <h3 style="font-size:1.1em;font-weight:700;color:#78350f;margin-bottom:10px;">6월 1일 전 잔금 납부 여부 확인</h3>
+      <ul style="list-style:none;padding:0;margin:0;color:#444;line-height:1.9;">
+        <li>✔ 매도인: 6월 1일 이전 잔금 수령 → 매수인이 납세의무자</li>
+        <li>✔ 매수인: 6월 2일 이후 잔금 납부 → 해당 연도 재산세 부담 없음</li>
+        <li>✔ 부동산 매매 계약 시 잔금일 조정으로 세금 절약 가능</li>
+      </ul>
+    </div>
+
+    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:20px 24px;">
+      <h3 style="font-size:1.1em;font-weight:700;color:#1e3a8a;margin-bottom:10px;">재산세 분할납부 제도</h3>
+      <ul style="list-style:none;padding:0;margin:0;color:#444;line-height:1.9;">
+        <li>✔ 재산세가 500만원 초과 시 분할납부 신청 가능</li>
+        <li>✔ 납부기한 후 2개월 이내 분할납부</li>
+        <li>✔ 분할납부 시 가산금·이자 없음</li>
+        <li>✔ 관할 시·군·구청 세무과에 납부기한 전 신청</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+  <h3>다른 계산기도 확인해보세요</h3>
+  <ul>
+    <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택 구매 시 취득세 자동 계산</li>
+    <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 매도 시 양도세 계산</li>
+    <li><a href="loan.html">대출이자 계산기</a> - 주택담보대출 이자 계산</li>
+    <li><a href="income-tax.html">종합소득세 계산기</a> - 사업소득·임대소득 세금 계산</li>
+    <li><a href="jeonse-monthly.html">전월세 전환 계산기</a> - 전세·월세 전환율 계산</li>
+    <li><a href="severance.html">퇴직금 계산기</a> - 법정 퇴직금 계산</li>
+  </ul>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세액은 관할 기관에 문의하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+
+  // 주택 재산세 계산 (일반세율)
+  function calcHouseTax(base) {
+    if (base <= 60000000) {
+      return base * 0.001;
+    } else if (base <= 150000000) {
+      return 60000 + (base - 60000000) * 0.0015;
+    } else if (base <= 300000000) {
+      return 195000 + (base - 150000000) * 0.0025;
+    } else {
+      return 570000 + (base - 300000000) * 0.004;
+    }
+  }
+
+  // 1세대 1주택 특례세율 (공시가격 9억 이하)
+  function calcHouseTaxSpecial(base) {
+    if (base <= 60000000) {
+      return base * 0.0005;
+    } else if (base <= 150000000) {
+      return 30000 + (base - 60000000) * 0.001;
+    } else if (base <= 300000000) {
+      return 120000 + (base - 150000000) * 0.002;
+    } else {
+      return 420000 + (base - 300000000) * 0.0035;
+    }
+  }
+
+  // 토지 재산세 (일반 세율 - 분리과세 종합합산 기준: 0.2%~0.5%)
+  function calcLandTax(base) {
+    if (base <= 50000000) {
+      return base * 0.002;
+    } else if (base <= 100000000) {
+      return 100000 + (base - 50000000) * 0.003;
+    } else {
+      return 250000 + (base - 100000000) * 0.005;
+    }
+  }
+
+  // 건물(상가·공장 등) 재산세: 0.25% 단일세율
+  function calcBuildingTax(base) {
+    return base * 0.0025;
+  }
+
+  function getRateLabel(type, base, isSpecial) {
+    if (type === 'land') {
+      if (base <= 50000000) return '0.2%';
+      if (base <= 100000000) return '0.2~0.3% 누진';
+      return '0.5% (최고구간)';
+    }
+    if (type === 'building') return '0.25%';
+    // house
+    const prefix = isSpecial ? '[1주택특례] ' : '';
+    if (base <= 60000000) return prefix + (isSpecial ? '0.05%' : '0.1%');
+    if (base <= 150000000) return prefix + (isSpecial ? '0.1%' : '0.15%') + ' (누진)';
+    if (base <= 300000000) return prefix + (isSpecial ? '0.2%' : '0.25%') + ' (누진)';
+    return prefix + (isSpecial ? '0.35%' : '0.4%') + ' (누진)';
+  }
+
+  function calculate() {
+    const publicPriceMan = parseFloat(document.getElementById('publicPrice').value);
+    if (!publicPriceMan || publicPriceMan <= 0) {
+      alert('공시가격을 입력해주세요.');
+      return;
+    }
+
+    const publicPrice = publicPriceMan * 10000; // 만원 → 원
+    const propertyType = document.querySelector('input[name="propertyType"]:checked').value;
+    const houseCount = propertyType === 'house'
+      ? parseInt(document.querySelector('input[name="houseCount"]:checked').value)
+      : 0;
+
+    // 공정시장가액비율
+    const ratio = (propertyType === 'house') ? 0.6 : 0.7;
+    const taxBase = publicPrice * ratio;
+
+    let propertyTax = 0;
+    let isSpecial = false;
+
+    if (propertyType === 'house') {
+      // 1주택 + 공시가격 9억 이하 → 특례 적용
+      if (houseCount === 1 && publicPrice <= 900000000) {
+        propertyTax = calcHouseTaxSpecial(taxBase);
+        isSpecial = true;
+      } else {
+        propertyTax = calcHouseTax(taxBase);
+      }
+    } else if (propertyType === 'land') {
+      propertyTax = calcLandTax(taxBase);
+    } else {
+      propertyTax = calcBuildingTax(taxBase);
+    }
+
+    const urbanTax = taxBase * 0.0014;         // 도시지역분
+    const eduTax = propertyTax * 0.2;          // 지방교육세
+    const total = propertyTax + urbanTax + eduTax;
+
+    // 납부 분기 안내
+    let paymentText = '';
+    if (propertyType === 'house') {
+      const half = propertyTax / 2;
+      const halfUrban = urbanTax / 2;
+      const halfEdu = eduTax / 2;
+      if (propertyTax <= 200000) {
+        paymentText = `재산세 20만원 이하로 7월에 전액(${fmt(total)}) 납부합니다.`;
+      } else {
+        const jul = half + halfUrban + halfEdu;
+        const sep = half + halfUrban + halfEdu;
+        paymentText = `7월 납부(1기분): ${fmt(jul)} / 9월 납부(2기분): ${fmt(sep)}`;
+      }
+    } else if (propertyType === 'building') {
+      paymentText = `7월에 전액(${fmt(total)}) 납부합니다. (건물분 재산세)`;
+    } else {
+      paymentText = `9월에 전액(${fmt(total)}) 납부합니다. (토지분 재산세)`;
+    }
+
+    // 결과 표시
+    document.getElementById('rPublicPrice').textContent = fmt(publicPrice);
+    document.getElementById('rTaxBase').textContent = fmt(taxBase);
+    document.getElementById('rRate').textContent = getRateLabel(propertyType, taxBase, isSpecial);
+    document.getElementById('rPropertyTax').textContent = fmt(propertyTax);
+    document.getElementById('rUrban').textContent = fmt(urbanTax);
+    document.getElementById('rEdu').textContent = fmt(eduTax);
+    document.getElementById('rSum').textContent = fmt(total);
+    document.getElementById('rTotal').textContent = fmt(total);
+
+    const subParts = [
+      `재산세 ${fmt(propertyTax)}`,
+      `도시지역분 ${fmt(urbanTax)}`,
+      `지방교육세 ${fmt(eduTax)}`
+    ];
+    document.getElementById('rSub').textContent = subParts.join(' + ');
+    document.getElementById('paymentInfo').textContent = '납부 안내: ' + paymentText;
+
+    const resultEl = document.getElementById('result');
+    resultEl.style.display = 'block';
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 용도 변경 시 주택 수 그룹 토글
+  document.querySelectorAll('input[name="propertyType"]').forEach(radio => {
+    radio.addEventListener('change', function () {
+      document.getElementById('houseCountGroup').style.display =
+        this.value === 'house' ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 주민세 계산기 - 균등분·소득분·재산분·종업원분 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="주민세 균등분(개인·개인사업자·법인), 소득분(종합소득세의 10%), 재산분(1㎡당 250원), 종업원분(급여총액 0.5%)을 2026년 기준으로 자동 계산합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/resident-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 주민세 계산기 - 균등분·소득분·재산분·종업원분 자동 계산">
+  <meta property="og:description" content="주민세 4가지 유형별 세액을 2026년 기준으로 자동 계산. 균등분·소득분·재산분·종업원분 + 지방교육세 포함.">
+  <meta property="og:url" content="https://calcmoney.kr/resident-tax">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026년 주민세 균등분은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 주민세 균등분은 개인 1만원 이내(지자체별 상이, 보통 6,000~10,000원), 개인사업자 50,000~500,000원, 법인 50,000~500,000원(자본금·종업원 수 기준)입니다. 매년 8월에 부과되며 지방교육세 25%가 추가됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "종합소득세분 주민세는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종합소득세분 주민세(소득분)는 소득세 납부세액의 10%입니다. 종합소득세 확정신고 시 함께 신고·납부하며, 소득세가 100만원이면 주민세는 10만원입니다. 지방소득세라고도 불립니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주민세 재산분은 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주민세 재산분은 사업소 연면적 330㎡ 초과 부분에 대해 1㎡당 250원이 부과됩니다. 예를 들어 500㎡ 사업장이면 (500-330) × 250 = 42,500원입니다. 매년 7월에 신고·납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주민세 종업원분은 어떤 사업장에 부과되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종업원분 주민세는 최근 1년간 월평균 종업원 수가 50명을 초과하는 사업장에 부과됩니다. 해당 월 급여총액(비과세 제외)의 0.5%를 매월 납부합니다. 50명 이하 사업장은 면세입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주민세에 지방교육세가 추가로 붙나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주민세 균등분에는 지방교육세 25%가 추가됩니다. 예를 들어 균등분이 10,000원이면 지방교육세 2,500원이 추가되어 총 12,500원을 납부합니다. 소득분·재산분·종업원분에는 별도 지방교육세가 부과되지 않습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주민세 납부 기한은 언제인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "균등분은 매년 8월 16일~31일, 재산분은 매년 7월 1일~31일, 소득분(지방소득세)은 종합소득세 신고 시(5월 또는 6월), 종업원분은 급여 지급월의 다음 달 10일까지 납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "주민세 균등분 면세 기준이 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "개인 균등분은 세대주에게만 부과되며, 미성년자인 세대주(세대원인 경우 제외), 기초생활수급자, 미성년자로만 구성된 세대는 면세됩니다. 또한 해당 과세기준일(8월 1일) 현재 주소지가 아닌 곳에서는 부과되지 않습니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .input-section-title { font-size: 0.95em; font-weight: 700; color: #333; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #e0e0e0; }
+    .section-divider { border: none; border-top: 1px dashed #e0e0e0; margin: 20px 0; }
+    .tax-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 16px 0; }
+    .tax-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 12px; text-align: center; }
+    .tax-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .tax-card.discount { border-color: #34a853; background: #e6f4ea; }
+    .tax-card .tlabel { font-size: 0.76em; color: #666; margin-bottom: 4px; }
+    .tax-card .tval { font-size: 1.15em; font-weight: 800; color: #1a73e8; }
+    .tax-card.discount .tval { color: #34a853; }
+    .total-tax-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-tax-box .ttlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-tax-box .ttvalue { font-size: 2.2em; font-weight: 800; }
+    .total-tax-box .ttsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .notice-box { background: #fff8e1; border-left: 4px solid #ffb300; border-radius: 0 10px 10px 0; padding: 14px 16px; margin: 14px 0; font-size: 0.85em; color: #555; line-height: 1.7; }
+    .notice-box strong { color: #e65100; }
+    .faq-list { margin-top: 12px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .faq-item summary { padding: 14px 16px; font-weight: 600; font-size: 14px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::after { content: '+'; font-size: 18px; color: var(--text-muted); }
+    .faq-item[open] summary::after { content: '\2212'; }
+    .faq-item p { padding: 0 16px 14px; font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+    .tab-container { display: flex; gap: 0; margin-bottom: 0; }
+    .tab-btn { flex: 1; padding: 12px 8px; border: 2px solid var(--border); background: #f8f9fa; cursor: pointer; font-size: 14px; font-weight: 600; text-align: center; transition: all 0.2s; color: #666; }
+    .tab-btn:first-child { border-radius: 10px 0 0 0; }
+    .tab-btn:last-child { border-radius: 0 10px 0 0; }
+    .tab-btn.active { background: #e8f0fe; color: var(--primary); border-color: var(--primary); border-bottom-color: #e8f0fe; }
+    .tab-panel { display: none; border: 2px solid var(--primary); border-top: none; border-radius: 0 0 10px 10px; padding: 20px; background: #fafbfc; }
+    .tab-panel.active { display: block; }
+    .rate-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.88em; }
+    .rate-table th, .rate-table td { padding: 8px 10px; border: 1px solid #e0e0e0; text-align: center; }
+    .rate-table th { background: #f0f4f8; font-weight: 700; color: #333; }
+    .rate-table td { color: #444; }
+    .rate-table tr:nth-child(even) td { background: #fafafa; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>주민세 계산기</h1>
+        <p class="desc">2026년 기준 주민세 4가지 유형(균등분·소득분·재산분·종업원분)을 선택하여 납부 세액을 자동 계산합니다. 지방교육세 포함.</p>
+
+        <!-- 탭 선택 -->
+        <div class="tab-container">
+          <button class="tab-btn active" onclick="switchTab('equal')">균등분</button>
+          <button class="tab-btn" onclick="switchTab('income')">소득분</button>
+          <button class="tab-btn" onclick="switchTab('property')">재산분</button>
+          <button class="tab-btn" onclick="switchTab('employee')">종업원분</button>
+        </div>
+
+        <!-- 균등분 탭 -->
+        <div class="tab-panel active" id="panel-equal">
+          <div class="input-section-title">균등분 주민세 (매년 8월 부과)</div>
+          <div class="form-group">
+            <label>납세 의무자 유형</label>
+            <select id="equalType">
+              <option value="individual">개인 (세대주)</option>
+              <option value="sole">개인사업자</option>
+              <option value="corp">법인</option>
+            </select>
+          </div>
+          <div class="form-group" id="equalCorpGroup" style="display:none;">
+            <label>법인 자본금 / 종업원 수 기준</label>
+            <select id="corpScale">
+              <option value="50000">자본금 100억 이하 + 종업원 100명 이하 (5만원)</option>
+              <option value="100000">자본금 100억 이하 + 종업원 100명 초과 (10만원)</option>
+              <option value="200000">자본금 100억 초과 + 종업원 100명 이하 (20만원)</option>
+              <option value="500000">자본금 100억 초과 + 종업원 100명 초과 (50만원)</option>
+            </select>
+          </div>
+          <div class="form-group" id="equalSoleGroup" style="display:none;">
+            <label>개인사업자 직전년도 부가가치세 과세표준</label>
+            <select id="soleScale">
+              <option value="50000">4,800만원 이상 (50,000원)</option>
+              <option value="0">4,800만원 미만 (개인 균등분과 동일)</option>
+            </select>
+          </div>
+          <div class="form-group" id="equalIndividualGroup">
+            <label>거주 지역 <span class="hint">(지자체별 세액이 다릅니다)</span></label>
+            <select id="individualArea">
+              <option value="10000">서울특별시 (10,000원)</option>
+              <option value="10000">광역시 (10,000원)</option>
+              <option value="6000">그 외 시·군 (6,000원)</option>
+              <option value="5000">읍·면 지역 (5,000원)</option>
+            </select>
+          </div>
+          <button class="btn-calc" onclick="calcEqual()">균등분 주민세 계산</button>
+        </div>
+
+        <!-- 소득분 탭 -->
+        <div class="tab-panel" id="panel-income">
+          <div class="input-section-title">소득분 주민세 (= 지방소득세)</div>
+          <p style="font-size:0.85em;color:#666;margin-bottom:14px;">종합소득세·법인세·양도소득세의 10%가 지방소득세(소득분 주민세)로 부과됩니다.</p>
+          <div class="form-group">
+            <label>소득세 종류</label>
+            <select id="incomeType">
+              <option value="general">종합소득세</option>
+              <option value="corporate">법인세</option>
+              <option value="capital">양도소득세</option>
+              <option value="retirement">퇴직소득세</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>소득세 납부세액 <span class="hint">원</span></label>
+            <input type="number" id="incomeTaxAmt" placeholder="예: 5000000" value="5000000" min="0" step="10000">
+          </div>
+          <button class="btn-calc" onclick="calcIncome()">소득분 주민세 계산</button>
+        </div>
+
+        <!-- 재산분 탭 -->
+        <div class="tab-panel" id="panel-property">
+          <div class="input-section-title">재산분 주민세 (매년 7월 신고·납부)</div>
+          <p style="font-size:0.85em;color:#666;margin-bottom:14px;">사업소 연면적 330㎡ 초과 부분에 대해 1㎡당 250원이 부과됩니다.</p>
+          <div class="form-group">
+            <label>사업소 연면적 <span class="hint">㎡</span></label>
+            <input type="number" id="propArea" placeholder="예: 500" value="500" min="0" step="1">
+          </div>
+          <div class="form-group">
+            <label>오염물질 배출 사업소 여부</label>
+            <select id="pollutionType">
+              <option value="none">해당 없음</option>
+              <option value="pollute">오염물질 배출 사업소 (2배 중과)</option>
+            </select>
+          </div>
+          <button class="btn-calc" onclick="calcProperty()">재산분 주민세 계산</button>
+        </div>
+
+        <!-- 종업원분 탭 -->
+        <div class="tab-panel" id="panel-employee">
+          <div class="input-section-title">종업원분 주민세 (매월 납부)</div>
+          <p style="font-size:0.85em;color:#666;margin-bottom:14px;">최근 1년 월평균 종업원 수 50명 초과 사업장에 부과됩니다. 해당 월 급여총액의 0.5%.</p>
+          <div class="form-group">
+            <label>월평균 종업원 수 <span class="hint">명 (최근 1년 평균)</span></label>
+            <input type="number" id="empCount" placeholder="예: 80" value="80" min="0" step="1">
+          </div>
+          <div class="form-group">
+            <label>해당 월 급여총액 <span class="hint">원 (비과세 급여 제외)</span></label>
+            <input type="number" id="empSalary" placeholder="예: 300000000" value="300000000" min="0" step="1000000">
+          </div>
+          <button class="btn-calc" onclick="calcEmployee()">종업원분 주민세 계산</button>
+        </div>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+          <div class="total-tax-box">
+            <div class="ttlabel" id="resultTypeLabel">주민세 납부세액</div>
+            <div class="ttvalue" id="totalTax"></div>
+            <div class="ttsub" id="totalSub"></div>
+          </div>
+
+          <div class="tax-cards" id="taxCards"></div>
+
+          <table class="result-table" id="taxTable">
+            <tbody id="taxTableBody"></tbody>
+          </table>
+
+          <div class="notice-box" id="noticeBox"></div>
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 완벽 가이드 섹션 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">2026년 주민세 완벽 가이드</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주민세란?</h3>
+        <p>주민세는 지방자치단체의 구성원(주민)에게 부과하는 지방세입니다. 지방세법 제75조~제84조에 근거하며, 개인·개인사업자·법인 등 납세 의무자에 따라 균등분, 재산분, 종업원분으로 구분됩니다. 과거 소득분 주민세는 2014년부터 '지방소득세'로 독립 분리되었지만, 실무에서는 여전히 소득분 주민세라는 표현이 혼용됩니다. 본 계산기는 편의상 소득분 계산도 함께 제공합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">1. 균등분 주민세</h3>
+        <p>균등분 주민세는 지방세법 제75조에 따라 지방자치단체에 주소를 둔 개인(세대주)과 사업소를 둔 개인사업자·법인에게 매년 부과되는 정액 세금입니다. 과세 기준일은 매년 8월 1일이며, 8월 16일~31일 사이에 납부합니다.</p>
+        <p><strong>개인 균등분</strong>은 세대주에게만 부과되며, 지자체 조례에 따라 1만원 이내에서 결정됩니다. 서울·광역시는 10,000원, 시·군 지역은 6,000원, 읍·면 지역은 5,000원이 일반적입니다. 여기에 지방교육세 25%가 추가됩니다.</p>
+        <p><strong>개인사업자 균등분</strong>은 직전년도 부가가치세 과세표준 합계가 4,800만원 이상인 개인사업자에게 50,000원이 부과됩니다. 4,800만원 미만이면 개인 균등분만 납부합니다.</p>
+        <p><strong>법인 균등분</strong>은 자본금(또는 출자금)과 종업원 수에 따라 50,000원~500,000원까지 차등 부과됩니다. 자본금 100억원 초과이면서 종업원 100명 초과인 법인이 최고세율(50만원)을 적용받습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">균등분 주민세 세율표 (2026년)</h3>
+        <table class="rate-table">
+          <thead>
+            <tr><th>구분</th><th>조건</th><th>세액</th><th>지방교육세(25%)</th><th>합계</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>개인</td><td>세대주</td><td>10,000원 이내</td><td>2,500원 이내</td><td>12,500원 이내</td></tr>
+            <tr><td>개인사업자</td><td>부가세 과세표준 4,800만원 이상</td><td>50,000원</td><td>12,500원</td><td>62,500원</td></tr>
+            <tr><td>법인 1단계</td><td>자본금 100억 이하 + 100명 이하</td><td>50,000원</td><td>12,500원</td><td>62,500원</td></tr>
+            <tr><td>법인 2단계</td><td>자본금 100억 이하 + 100명 초과</td><td>100,000원</td><td>25,000원</td><td>125,000원</td></tr>
+            <tr><td>법인 3단계</td><td>자본금 100억 초과 + 100명 이하</td><td>200,000원</td><td>50,000원</td><td>250,000원</td></tr>
+            <tr><td>법인 4단계</td><td>자본금 100억 초과 + 100명 초과</td><td>500,000원</td><td>125,000원</td><td>625,000원</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2. 소득분 주민세 (지방소득세)</h3>
+        <p>소득분 주민세는 2014년부터 '지방소득세'라는 독립 세목으로 전환되었습니다. 종합소득세·법인세·양도소득세·퇴직소득세 납부세액의 10%를 지방소득세로 납부합니다. 종합소득세 확정신고 시(5월) 함께 신고·납부하며, 법인세는 사업연도 종료일 다음 달 말일까지 신고합니다.</p>
+        <p>지방소득세는 특별징수(원천징수)와 확정신고 두 가지 방식으로 납부합니다. 근로소득에서 원천징수되는 소득세의 10%는 사업주가 매월 특별징수하여 납부하고, 종합소득세 확정신고 시 정산합니다. 이미 특별징수된 금액은 확정신고 시 공제됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">소득분 주민세 세율표</h3>
+        <table class="rate-table">
+          <thead>
+            <tr><th>소득세 종류</th><th>세율</th><th>신고·납부 시기</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>종합소득세</td><td>소득세의 10%</td><td>5월 (종합소득세 확정신고 시)</td></tr>
+            <tr><td>법인세</td><td>법인세의 10%</td><td>사업연도 종료 후 4개월 이내</td></tr>
+            <tr><td>양도소득세</td><td>양도소득세의 10%</td><td>양도소득세 신고 시</td></tr>
+            <tr><td>퇴직소득세</td><td>퇴직소득세의 10%</td><td>퇴직금 지급 시 원천징수</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">3. 재산분 주민세</h3>
+        <p>재산분 주민세(지방세법 제80조~제82조)는 사업소의 연면적을 기준으로 부과됩니다. 과세 기준일은 매년 7월 1일이며, 7월 1일~31일 사이에 신고·납부합니다. 사업소 연면적 330㎡(약 100평)까지는 기본면적으로 비과세이고, 330㎡ 초과 부분에 대해 1㎡당 250원이 부과됩니다.</p>
+        <p>오염물질 배출 사업소(대기환경보전법, 수질환경보전법에 따른 배출시설)는 2배인 1㎡당 500원이 적용됩니다. 재산분 주민세에는 별도의 지방교육세가 붙지 않습니다.</p>
+        <p>사업소가 여러 개인 경우 각 사업소별로 연면적을 산정합니다. 하나의 건물에 여러 사업자가 입주한 경우 각 사업자의 사용 면적을 기준으로 합니다. 임차인이 실제 사업을 영위하는 경우 임차인이 납세 의무자입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">재산분 주민세 세율표</h3>
+        <table class="rate-table">
+          <thead>
+            <tr><th>구분</th><th>과세 기준</th><th>세율</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>일반 사업소</td><td>330㎡ 초과 부분</td><td>1㎡당 250원</td></tr>
+            <tr><td>오염물질 배출 사업소</td><td>330㎡ 초과 부분</td><td>1㎡당 500원 (2배 중과)</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">4. 종업원분 주민세</h3>
+        <p>종업원분 주민세(지방세법 제83조~제84조)는 사업소에서 종업원에게 급여를 지급하는 사업주에게 부과됩니다. 최근 1년간 해당 사업소의 월평균 종업원 수가 50명을 초과하는 경우에만 납세 의무가 발생합니다. 50명 이하 사업장은 면세입니다.</p>
+        <p>과세표준은 해당 월에 종업원에게 지급한 급여총액(비과세 급여 제외)이며, 세율은 0.5%입니다. 매월 급여 지급일이 속하는 달의 다음 달 10일까지 신고·납부합니다. 예를 들어 3월분 급여에 대한 종업원분은 4월 10일까지 납부합니다.</p>
+        <p>종업원 수 계산 시 정규직·계약직·일용직·파견근로자를 모두 포함하며, 파견근로자는 파견받는 사업장의 종업원으로 산입합니다. 급여총액에는 기본급, 상여금, 수당 등이 포함되지만 비과세 급여(식대 월 20만원 이내, 자가운전보조금 월 20만원 이내 등)는 제외됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">종업원분 주민세 세율 및 기준</h3>
+        <table class="rate-table">
+          <thead>
+            <tr><th>구분</th><th>세율</th><th>면세 기준</th><th>납부 시기</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>종업원분</td><td>급여총액의 0.5%</td><td>월평균 50명 이하 면세</td><td>매월 (다음 달 10일)</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주민세와 지방교육세의 관계</h3>
+        <p>주민세 중 균등분에만 지방교육세가 부가됩니다. 지방교육세율은 균등분 세액의 25%입니다. 소득분(지방소득세), 재산분, 종업원분에는 별도의 지방교육세가 부과되지 않습니다. 따라서 균등분 주민세의 실질적인 부담은 세액 + 25%가 됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주민세 납부 방법</h3>
+        <p>주민세는 위택스(wetax.go.kr), 인터넷지로(giro.or.kr), 은행 ATM, ARS 등 다양한 방법으로 납부할 수 있습니다. 균등분은 8월에 고지서가 발송되어 납부하고, 재산분과 종업원분은 납세자가 직접 신고·납부합니다. 소득분(지방소득세)은 홈택스(hometax.go.kr)에서 종합소득세 확정신고 시 위택스로 연계하여 신고합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주민세 면세 및 감면 대상</h3>
+        <p>개인 균등분은 다음에 해당하면 면세됩니다: (1) 미성년자인 세대주(세대원인 미성년자는 아닌 세대주), (2) 기초생활수급자, (3) 미성년자로만 구성된 세대. 국가유공자·장애인 등에 대한 감면은 지자체 조례에 따라 다를 수 있습니다.</p>
+        <p>사업소 재산분은 330㎡ 이하 사업소는 비과세입니다. 종업원분은 월평균 종업원 수 50명 이하 사업장이 면세됩니다. 또한 지방세특례제한법에 따라 창업중소기업, 사회적기업, 협동조합 등은 주민세 감면 혜택을 받을 수 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주민세 가산세</h3>
+        <p>주민세를 기한 내 납부하지 않으면 가산세가 부과됩니다. 균등분은 납부기한 경과 시 3%의 납부불성실가산세가 부과되고, 이후 매월 0.66%(연 7.92%)의 중가산금이 추가됩니다(최대 60개월). 재산분·종업원분 무신고 시 무신고가산세 20%, 과소신고 시 10%가 부과됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">주민세와 다른 세금의 차이</h3>
+        <p>주민세는 지방세이고, 소득세·법인세는 국세입니다. 지방소득세(소득분 주민세)는 국세인 소득세·법인세와 별도로 지방자치단체에 납부합니다. 재산세는 부동산·선박 등 재산 자체에 부과되는 세금이고, 주민세 재산분은 사업소의 연면적을 기준으로 부과되는 점에서 차이가 있습니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">사업자를 위한 주민세 절세 팁</h3>
+        <p>사업자는 주민세 균등분(법인 최대 50만원)과 재산분(연면적 기준), 종업원분(급여총액 0.5%)을 모두 확인해야 합니다. 절세 포인트는 다음과 같습니다:</p>
+        <p>(1) 종업원 수가 50명 내외인 사업장은 종업원분 과세 여부를 월별로 확인하세요. 월평균 50명 이하면 면세입니다. (2) 사업소 면적이 330㎡ 근처라면 실제 사용 면적을 정확히 산정하세요. 공용면적은 지분비율로 안분합니다. (3) 창업중소기업은 지방세특례제한법에 따라 주민세 감면을 받을 수 있으니 관할 지자체에 확인하세요.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>주민세와 지방소득세는 다른 건가요?</summary>
+            <p>2014년 지방세법 개정으로 기존 주민세 소득분이 '지방소득세'라는 독립 세목으로 분리되었습니다. 현행 지방세법상 주민세는 균등분·재산분·종업원분 3가지이고, 소득분은 지방소득세로 별도 관리됩니다. 다만 실무와 일상에서는 여전히 "소득분 주민세"라는 표현이 혼용됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>세대주가 아니면 주민세를 안 내도 되나요?</summary>
+            <p>네, 개인 균등분 주민세는 세대주에게만 부과됩니다. 세대원은 납부 의무가 없습니다. 단, 주민등록상 세대주로 등록되어 있으면 실제 생활과 관계없이 부과됩니다. 불필요한 세대주 등록은 주의하세요.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>1인 가구도 주민세를 내나요?</summary>
+            <p>네, 1인 가구도 세대주이므로 균등분 주민세가 부과됩니다. 다만 기초생활수급자이거나 미성년자인 경우는 면세됩니다. 금액은 지자체에 따라 5,000원~10,000원이며 지방교육세 25%가 추가됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>주민세 고지서를 받지 못했는데 어떻게 하나요?</summary>
+            <p>균등분 주민세 고지서는 8월 중순에 발송됩니다. 미수령 시 위택스(wetax.go.kr)에서 조회·납부할 수 있습니다. 또는 거주지 관할 시·군·구청 세무과에 문의하세요. 전자고지 신청을 해두면 카카오톡·문자로 안내받을 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>사업장이 여러 곳이면 주민세를 각각 내나요?</summary>
+            <p>네, 균등분·재산분·종업원분 모두 사업소(사업장) 단위로 부과됩니다. 법인이 본점과 지점을 운영하면 각 사업소마다 균등분이 부과되고, 재산분은 각 사업소 면적별로 산정합니다. 종업원분도 사업소별 종업원 수와 급여를 기준으로 합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>프리랜서도 소득분 주민세를 내야 하나요?</summary>
+            <p>프리랜서가 종합소득세를 납부하면 그 세액의 10%를 지방소득세(소득분 주민세)로 납부해야 합니다. 3.3% 원천징수 시 소득세 3%와 함께 지방소득세 0.3%가 이미 원천징수되고 있으며, 5월 종합소득세 확정신고 시 정산합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>종업원 수 50명 기준은 어떻게 판단하나요?</summary>
+            <p>최근 1년간(과세 대상 월 포함 직전 12개월) 해당 사업소의 매월 말일 기준 종업원 수를 합산하여 12로 나눈 수치입니다. 정규직·계약직·일용직·파견직 모두 포함됩니다. 50.5명처럼 소수점이 나오면 50명 초과이므로 과세 대상입니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>주민세를 연체하면 불이익이 있나요?</summary>
+            <p>균등분 미납 시 3% 가산금이 즉시 부과되고, 이후 매월 0.66%씩 중가산금이 붙습니다(최대 60개월). 재산분·종업원분 무신고 시 20%의 무신고가산세가 부과됩니다. 장기 체납 시 재산 압류, 신용정보 등록 등 불이익이 있으므로 기한 내 납부하는 것이 중요합니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>주민세 납부 일정</h3>
+        <ul>
+          <li><strong>균등분</strong>: 매년 8월 16~31일</li>
+          <li><strong>재산분</strong>: 매년 7월 1~31일</li>
+          <li><strong>소득분</strong>: 종합소득세 신고 시 (5월)</li>
+          <li><strong>종업원분</strong>: 매월 (다음 달 10일)</li>
+        </ul>
+        <p style="font-size:0.8em;color:#888;margin-top:8px;">* 2026년 기준</p>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>균등분 계산 공식</h3>
+        <ul>
+          <li><strong>개인</strong>: 세대주당 정액 (최대 1만원)</li>
+          <li><strong>개인사업자</strong>: 50,000원 (과표 4,800만 이상)</li>
+          <li><strong>법인</strong>: 5만~50만원 (자본금·종업원 수)</li>
+          <li><strong>+ 지방교육세</strong>: 균등분의 25%</li>
+        </ul>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>재산분·종업원분 공식</h3>
+        <ul>
+          <li><strong>재산분</strong>: (연면적 - 330㎡) x 250원/㎡</li>
+          <li><strong>종업원분</strong>: 급여총액 x 0.5%</li>
+          <li><strong>면세</strong>: 330㎡ 이하 / 50명 이하</li>
+        </ul>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>소득분(지방소득세) 공식</h3>
+        <ul>
+          <li><strong>종합소득세분</strong>: 소득세 x 10%</li>
+          <li><strong>법인세분</strong>: 법인세 x 10%</li>
+          <li><strong>양도소득세분</strong>: 양도세 x 10%</li>
+          <li><strong>퇴직소득세분</strong>: 퇴직세 x 10%</li>
+        </ul>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="corporate-tax.html" class="related-link">법인세</a>
+          <a href="property-tax.html" class="related-link">재산세</a>
+          <a href="four-insurance.html" class="related-link">4대보험료</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="capital-gains.html" class="related-link">양도소득세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 관할 시·군·구청 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  // ── 탭 전환 ─────────────────────────────────────
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('panel-' + tabId).classList.add('active');
+    document.getElementById('result').style.display = 'none';
+  }
+
+  // ── 균등분 타입 변경 시 추가 필드 표시 ──────────
+  document.getElementById('equalType').addEventListener('change', function() {
+    const v = this.value;
+    document.getElementById('equalCorpGroup').style.display = v === 'corp' ? 'block' : 'none';
+    document.getElementById('equalSoleGroup').style.display = v === 'sole' ? 'block' : 'none';
+    document.getElementById('equalIndividualGroup').style.display = v === 'individual' ? 'block' : 'none';
+  });
+
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+
+  // ── 1. 균등분 계산 ─────────────────────────────
+  function calcEqual() {
+    const type = document.getElementById('equalType').value;
+    let taxAmt = 0;
+    let typeLabel = '';
+
+    if (type === 'individual') {
+      taxAmt = parseInt(document.getElementById('individualArea').value);
+      typeLabel = '개인 (세대주)';
+    } else if (type === 'sole') {
+      const soleAmt = parseInt(document.getElementById('soleScale').value);
+      if (soleAmt === 0) {
+        // 개인 균등분과 동일
+        taxAmt = parseInt(document.getElementById('individualArea').value);
+        typeLabel = '개인사업자 (과표 4,800만 미만)';
+      } else {
+        taxAmt = soleAmt;
+        typeLabel = '개인사업자';
+      }
+    } else if (type === 'corp') {
+      taxAmt = parseInt(document.getElementById('corpScale').value);
+      typeLabel = '법인';
+    }
+
+    const eduTax = Math.round(taxAmt * 0.25);
+    const total = taxAmt + eduTax;
+
+    document.getElementById('resultTypeLabel').textContent = '균등분 주민세 납부세액';
+    document.getElementById('totalTax').textContent = fmt(total);
+    document.getElementById('totalSub').textContent = `균등분 ${fmt(taxAmt)} + 지방교육세 ${fmt(eduTax)}`;
+
+    document.getElementById('taxCards').innerHTML = [
+      { label: '납세 의무자', val: typeLabel, cls: '' },
+      { label: '균등분 세액', val: fmt(taxAmt), cls: 'highlight' },
+      { label: '지방교육세 (25%)', val: fmt(eduTax), cls: '' },
+    ].map(c => `<div class="tax-card ${c.cls}"><div class="tlabel">${c.label}</div><div class="tval">${c.val}</div></div>`).join('');
+
+    const rows = [
+      ['납세 의무자 유형', typeLabel],
+      ['균등분 세액', fmt(taxAmt)],
+      ['지방교육세 (균등분 × 25%)', fmt(eduTax)],
+    ];
+    document.getElementById('taxTableBody').innerHTML = rows.map(r =>
+      `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`
+    ).join('') + `<tr class="total"><td>총 납부세액</td><td>${fmt(total)}</td></tr>`;
+
+    document.getElementById('noticeBox').innerHTML = '<strong>균등분 주민세</strong>: 매년 8월 1일 기준으로 부과되며, 8월 16일~31일 사이에 납부합니다. 위택스(wetax.go.kr)에서 납부 가능합니다.';
+
+    showResult();
+  }
+
+  // ── 2. 소득분 계산 ─────────────────────────────
+  function calcIncome() {
+    const incomeType = document.getElementById('incomeType').value;
+    const incomeTax = parseFloat(document.getElementById('incomeTaxAmt').value) || 0;
+
+    if (incomeTax <= 0) {
+      alert('소득세 납부세액을 입력해 주세요.');
+      return;
+    }
+
+    const typeLabels = {
+      general: '종합소득세',
+      corporate: '법인세',
+      capital: '양도소득세',
+      retirement: '퇴직소득세'
+    };
+    const typeLabel = typeLabels[incomeType];
+    const localIncomeTax = Math.round(incomeTax * 0.1);
+
+    document.getElementById('resultTypeLabel').textContent = '소득분 주민세 (지방소득세)';
+    document.getElementById('totalTax').textContent = fmt(localIncomeTax);
+    document.getElementById('totalSub').textContent = `${typeLabel} ${fmt(incomeTax)}의 10%`;
+
+    document.getElementById('taxCards').innerHTML = [
+      { label: typeLabel + ' 납부세액', val: fmt(incomeTax), cls: '' },
+      { label: '지방소득세율', val: '10%', cls: '' },
+      { label: '지방소득세 (소득분)', val: fmt(localIncomeTax), cls: 'highlight' },
+    ].map(c => `<div class="tax-card ${c.cls}"><div class="tlabel">${c.label}</div><div class="tval">${c.val}</div></div>`).join('');
+
+    const rows = [
+      [typeLabel + ' 납부세액', fmt(incomeTax)],
+      ['지방소득세율', '10%'],
+      ['지방소득세 산출세액', fmt(localIncomeTax)],
+    ];
+    document.getElementById('taxTableBody').innerHTML = rows.map(r =>
+      `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`
+    ).join('') + `<tr class="total"><td>소득분 주민세 납부세액</td><td>${fmt(localIncomeTax)}</td></tr>`;
+
+    let notice = '';
+    if (incomeType === 'general') {
+      notice = '<strong>종합소득세분 지방소득세</strong>: 5월 종합소득세 확정신고 시 위택스에서 함께 신고·납부합니다. 이미 원천징수된 지방소득세(특별징수)는 확정신고 시 공제됩니다.';
+    } else if (incomeType === 'corporate') {
+      notice = '<strong>법인세분 지방소득세</strong>: 사업연도 종료일이 속하는 달의 말일부터 4개월 이내에 사업장 소재지 관할 지자체에 신고·납부합니다.';
+    } else if (incomeType === 'capital') {
+      notice = '<strong>양도소득세분 지방소득세</strong>: 양도소득세 예정·확정 신고 시 양도 물건 소재지 관할 지자체에 함께 신고·납부합니다.';
+    } else {
+      notice = '<strong>퇴직소득세분 지방소득세</strong>: 퇴직금 지급 시 사업주가 퇴직소득세와 함께 원천징수하여 납부합니다.';
+    }
+    document.getElementById('noticeBox').innerHTML = notice;
+
+    showResult();
+  }
+
+  // ── 3. 재산분 계산 ─────────────────────────────
+  function calcProperty() {
+    const area = parseFloat(document.getElementById('propArea').value) || 0;
+    const isPollution = document.getElementById('pollutionType').value === 'pollute';
+
+    if (area <= 0) {
+      alert('사업소 연면적을 입력해 주세요.');
+      return;
+    }
+
+    const exemptArea = 330; // 기본면적 비과세
+    const taxableArea = Math.max(0, area - exemptArea);
+    const ratePerSqm = isPollution ? 500 : 250;
+    const tax = Math.round(taxableArea * ratePerSqm);
+
+    document.getElementById('resultTypeLabel').textContent = '재산분 주민세 납부세액';
+    document.getElementById('totalTax').textContent = fmt(tax);
+    if (taxableArea > 0) {
+      document.getElementById('totalSub').textContent = `과세 면적 ${taxableArea.toLocaleString('ko-KR')}㎡ × ${ratePerSqm.toLocaleString('ko-KR')}원/㎡`;
+    } else {
+      document.getElementById('totalSub').textContent = '330㎡ 이하로 비과세';
+    }
+
+    const cards = [
+      { label: '사업소 연면적', val: area.toLocaleString('ko-KR') + '㎡', cls: '' },
+      { label: '기본면적 (비과세)', val: exemptArea.toLocaleString('ko-KR') + '㎡', cls: 'discount' },
+      { label: '과세 면적', val: taxableArea.toLocaleString('ko-KR') + '㎡', cls: '' },
+      { label: '㎡당 세율', val: fmt(ratePerSqm), cls: '' },
+      { label: '재산분 세액', val: fmt(tax), cls: 'highlight' },
+    ];
+    document.getElementById('taxCards').innerHTML = cards.map(c =>
+      `<div class="tax-card ${c.cls}"><div class="tlabel">${c.label}</div><div class="tval">${c.val}</div></div>`
+    ).join('');
+
+    const rows = [
+      ['사업소 연면적', area.toLocaleString('ko-KR') + '㎡'],
+      ['기본면적 (비과세)', exemptArea + '㎡'],
+      ['과세 대상 면적', taxableArea.toLocaleString('ko-KR') + '㎡'],
+      ['㎡당 세율', fmt(ratePerSqm) + (isPollution ? ' (오염물질 배출 2배 중과)' : '')],
+    ];
+    document.getElementById('taxTableBody').innerHTML = rows.map(r =>
+      `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`
+    ).join('') + `<tr class="total"><td>재산분 주민세 납부세액</td><td>${fmt(tax)}</td></tr>`;
+
+    let notice = '<strong>재산분 주민세</strong>: 매년 7월 1일 기준으로 사업소 연면적 330㎡ 초과 부분에 부과됩니다. 7월 1일~31일 사이에 신고·납부합니다.';
+    if (isPollution) notice += ' 오염물질 배출 사업소는 2배 중과(1㎡당 500원)가 적용됩니다.';
+    if (taxableArea === 0) notice = '<strong>비과세</strong>: 사업소 연면적이 330㎡ 이하이므로 재산분 주민세가 부과되지 않습니다.';
+    document.getElementById('noticeBox').innerHTML = notice;
+
+    showResult();
+  }
+
+  // ── 4. 종업원분 계산 ───────────────────────────
+  function calcEmployee() {
+    const empCount = parseFloat(document.getElementById('empCount').value) || 0;
+    const salary = parseFloat(document.getElementById('empSalary').value) || 0;
+
+    if (empCount <= 0) {
+      alert('종업원 수를 입력해 주세요.');
+      return;
+    }
+
+    const isExempt = empCount <= 50;
+    let tax = 0;
+    let monthlyTax = 0;
+    let yearlyTax = 0;
+
+    if (!isExempt && salary > 0) {
+      monthlyTax = Math.round(salary * 0.005);
+      yearlyTax = monthlyTax * 12;
+      tax = monthlyTax;
+    }
+
+    document.getElementById('resultTypeLabel').textContent = '종업원분 주민세 (월 납부액)';
+    document.getElementById('totalTax').textContent = isExempt ? '면세' : fmt(tax);
+    if (isExempt) {
+      document.getElementById('totalSub').textContent = `월평균 종업원 ${empCount}명 (50명 이하 면세)`;
+    } else {
+      document.getElementById('totalSub').textContent = `급여총액 ${salary.toLocaleString('ko-KR')}원 × 0.5% (연간 약 ${fmt(yearlyTax)})`;
+    }
+
+    if (isExempt) {
+      document.getElementById('taxCards').innerHTML = [
+        { label: '월평균 종업원 수', val: empCount + '명', cls: '' },
+        { label: '과세 여부', val: '면세 (50명 이하)', cls: 'discount' },
+        { label: '종업원분 세액', val: '0원', cls: '' },
+      ].map(c => `<div class="tax-card ${c.cls}"><div class="tlabel">${c.label}</div><div class="tval">${c.val}</div></div>`).join('');
+    } else {
+      document.getElementById('taxCards').innerHTML = [
+        { label: '월평균 종업원 수', val: empCount + '명', cls: '' },
+        { label: '해당 월 급여총액', val: salary.toLocaleString('ko-KR') + '원', cls: '' },
+        { label: '세율', val: '0.5%', cls: '' },
+        { label: '월 납부세액', val: fmt(monthlyTax), cls: 'highlight' },
+        { label: '연간 예상세액', val: fmt(yearlyTax), cls: '' },
+      ].map(c => `<div class="tax-card ${c.cls}"><div class="tlabel">${c.label}</div><div class="tval">${c.val}</div></div>`).join('');
+    }
+
+    const rows = [
+      ['월평균 종업원 수', empCount + '명'],
+      ['과세 대상 여부', isExempt ? '면세 (50명 이하)' : '과세 대상 (50명 초과)'],
+      ['해당 월 급여총액', salary.toLocaleString('ko-KR') + '원'],
+      ['세율', '0.5%'],
+      ['월 납부세액', isExempt ? '면세' : fmt(monthlyTax)],
+    ];
+    document.getElementById('taxTableBody').innerHTML = rows.map(r =>
+      `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`
+    ).join('') + `<tr class="total"><td>연간 예상 총액</td><td>${isExempt ? '면세' : fmt(yearlyTax)}</td></tr>`;
+
+    if (isExempt) {
+      document.getElementById('noticeBox').innerHTML = '<strong>면세</strong>: 최근 1년간 월평균 종업원 수가 50명 이하이므로 종업원분 주민세가 부과되지 않습니다.';
+    } else {
+      document.getElementById('noticeBox').innerHTML = '<strong>종업원분 주민세</strong>: 급여 지급월의 다음 달 10일까지 신고·납부합니다. 비과세 급여(식대 월 20만원 이내 등)는 과세표준에서 제외됩니다.';
+    }
+
+    showResult();
+  }
+
+  function showResult() {
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

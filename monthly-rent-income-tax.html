@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="bbb2e816e372612b1e5820af29a23857b401ffea" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>월세 임대소득세 계산기 - 2026년 월세소득세 분리과세·종합과세 비교 | 1주택·2주택·3주택</title>
+  <meta name="description" content="2026년 기준 월세 임대소득세를 상세 계산합니다. 주택 수·기준시가·보증금·간주임대료를 입력하면 분리과세(14%)와 종합과세 세액을 자동 비교하고 유리한 과세방식을 추천합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/monthly-rent-income-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="월세 임대소득세 계산기 - 2026년 분리과세·종합과세 비교">
+  <meta property="og:description" content="월세 수입·보증금·주택 수 입력 시 분리과세와 종합과세 세액을 자동 비교하고 절세 방법을 추천합니다.">
+  <meta property="og:url" content="https://calcmoney.kr/monthly-rent-income-tax">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "월세 임대소득세란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "주택을 월세로 임대하고 받는 수입에 부과하는 소득세입니다. 연간 월세 수입 2,000만원 이하는 분리과세(14%)와 종합과세 중 선택할 수 있고, 2,000만원 초과 시 다른 소득과 합산해 종합소득세를 납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "1주택자 월세도 임대소득세를 내야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1주택자는 기준시가 12억원 이하 주택의 월세는 비과세입니다. 기준시가 12억 초과 고가주택 월세만 과세됩니다. 전세 보증금은 1주택자 전액 비과세입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2주택자 월세 임대소득세 기준은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2주택자는 월세 수입 전액이 과세 대상입니다. 전세 보증금은 비과세입니다. 연간 월세 수입 2,000만원 이하면 분리과세(14%)와 종합과세 중 유리한 것을 선택할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "3주택 이상 보증금 간주임대료는 어떻게 계산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "3주택 이상 보유자는 전세 보증금 합계에서 3억원을 공제한 금액의 60%에 정기예금이자율(2026년 2.9%)을 곱해 간주임대료를 산정합니다. 예: 보증금 합계 5억 → (5억-3억) × 60% × 2.9% = 348만원이 월세 수입에 더해집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월세 분리과세와 종합과세 중 어느 것이 유리한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "다른 소득(근로소득 등)이 많아 합산 과세표준이 1,400만원을 초과하면 종합과세 세율이 15% 이상이 되어 분리과세(14%) 고정세율이 유리합니다. 다른 소득이 거의 없으면 종합과세 6% 구간이 적용되어 종합과세가 더 유리할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월세 소득세 필요경비율은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "분리과세 선택 시 50% 필요경비율이 일괄 적용됩니다. 종합과세 선택 시 임대사업자 등록 임대주택은 60%, 미등록은 50%가 적용됩니다. 실제 경비가 더 높으면 실비 적용도 가능합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "월세 임대소득세 신고 기한은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "매년 5월 1일~31일에 종합소득세 확정신고를 합니다. 분리과세를 선택해도 5월에 신고해야 합니다. 미신고 시 무신고가산세 20%, 납부불성실가산세 일 0.022%가 부과됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "임대사업자 등록하면 월세 세금이 줄어드나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 임대사업자로 등록하면 분리과세 기본공제가 400만원(미등록 200만원), 종합과세 경비율이 60%(미등록 50%)로 우대됩니다. 다만 의무임대기간 준수, 임대료 5% 증액 상한 등 의무가 따릅니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="rental-income-tax.html">임대소득세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>월세 임대소득세 계산기</h1>
+        <p class="desc">2026년 기준 월세 소득에 대한 임대소득세를 상세 계산합니다. 분리과세(14%)와 종합과세 세액을 자동 비교해 유리한 과세방식을 추천합니다.</p>
+
+        <!-- 주택 수 -->
+        <div class="form-group">
+          <label>보유 주택 수</label>
+          <div class="radio-group">
+            <label><input type="radio" name="houseCount" value="1" checked onchange="onHouseCountChange()"><span>1주택</span></label>
+            <label><input type="radio" name="houseCount" value="2" onchange="onHouseCountChange()"><span>2주택</span></label>
+            <label><input type="radio" name="houseCount" value="3" onchange="onHouseCountChange()"><span>3주택 이상</span></label>
+          </div>
+        </div>
+
+        <!-- 1주택 기준시가 -->
+        <div class="form-group" id="stdPriceGroup">
+          <label>기준시가 <span class="hint">공시가격(국토부 공시) 기준</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="stdPrice" value="under12" checked onchange="onHouseCountChange()"><span>12억원 이하</span></label>
+            <label><input type="radio" name="stdPrice" value="over12" onchange="onHouseCountChange()"><span>12억원 초과</span></label>
+          </div>
+          <div id="taxExemptNotice" style="margin-top:10px;padding:12px 16px;background:#e8f5e9;border-left:4px solid #43a047;border-radius:4px;">
+            <p style="margin:0;font-size:13px;color:#2e7d32;line-height:1.6;">
+              <strong>비과세 대상:</strong> 1주택자 기준시가 12억원 이하 주택의 월세는 <strong>비과세</strong>입니다.<br>전세 보증금도 1주택자는 전액 비과세입니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 월세 수입 -->
+        <div class="form-group">
+          <label>월세 수입 <span class="hint">월 단위 입력 (원)</span></label>
+          <input type="number" id="monthlyRent" placeholder="예: 800000 (80만원/월)" value="800000" oninput="onInputChange()">
+          <p class="hint" id="annualRentHint" style="margin-top:4px;">연간 수입: <strong id="annualRentDisplay">9,600,000원</strong></p>
+        </div>
+
+        <!-- 보증금 -->
+        <div class="form-group">
+          <label>보증금 <span class="hint">원 단위 입력</span></label>
+          <input type="number" id="deposit" placeholder="예: 50000000 (5천만원)" value="50000000" oninput="onInputChange()">
+        </div>
+
+        <!-- 간주임대료 (3주택 이상) -->
+        <div class="form-group" id="jeonseGroup" style="display:none;">
+          <label>전세 보증금 합계 <span class="hint">3주택 이상: 간주임대료 계산용 (원)</span></label>
+          <input type="number" id="jeonseDeposit" placeholder="예: 500000000 (5억원)" value="0" oninput="onInputChange()">
+          <p class="hint" style="margin-top:4px;">간주임대료 = (보증금합계 - 3억) × 60% × 2.9%</p>
+        </div>
+
+        <!-- 과세 방식 -->
+        <div class="form-group" id="taxMethodGroup">
+          <label>계산 방식 선택</label>
+          <div class="radio-group">
+            <label><input type="radio" name="calcMode" value="compare" checked onchange="onInputChange()"><span>분리과세 vs 종합과세 비교</span></label>
+            <label><input type="radio" name="calcMode" value="separate" onchange="onInputChange()"><span>분리과세만</span></label>
+            <label><input type="radio" name="calcMode" value="global" onchange="onInputChange()"><span>종합과세만</span></label>
+          </div>
+        </div>
+
+        <!-- 임대사업자 등록 여부 -->
+        <div class="form-group">
+          <label>임대사업자 등록 여부 <span class="hint">경비율·기본공제에 영향</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="registration" value="yes" checked onchange="onInputChange()"><span>등록 (경비율 60%, 기본공제 400만원)</span></label>
+            <label><input type="radio" name="registration" value="no" onchange="onInputChange()"><span>미등록 (경비율 50%, 기본공제 200만원)</span></label>
+          </div>
+        </div>
+
+        <!-- 종합과세 - 다른 소득 -->
+        <div class="form-group" id="otherIncomeGroup">
+          <label>다른 종합소득 합계 <span class="hint">근로·사업·이자·배당 등 (원, 종합과세 계산용)</span></label>
+          <input type="number" id="otherIncome" placeholder="예: 40000000 (4천만원)" value="0" oninput="onInputChange()">
+          <p class="hint" style="margin-top:4px;">다른 소득이 많을수록 종합과세 세율이 높아져 분리과세가 유리해집니다</p>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <!-- 결과 영역 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 비과세 판정 -->
+          <div id="taxExemptResult" style="display:none;padding:16px;background:#e8f5e9;border-radius:8px;margin-bottom:16px;border-left:4px solid #43a047;">
+            <strong style="color:#2e7d32;font-size:1.1em;">비과세 대상입니다</strong>
+            <p style="margin:8px 0 0 0;color:#388e3c;font-size:14px;line-height:1.7;" id="taxExemptMsg"></p>
+          </div>
+
+          <!-- 과세 결과 -->
+          <div id="taxableResult" style="display:none;">
+            <!-- 추천 과세방식 -->
+            <div id="recommendBox" style="margin-bottom:16px;padding:14px 18px;border-radius:8px;background:#e8eaf6;border-left:4px solid #3949ab;">
+              <strong style="color:#1a237e;font-size:1em;" id="recommendTitle"></strong>
+              <p style="margin:6px 0 0 0;font-size:13px;color:#3949ab;line-height:1.6;" id="recommendMsg"></p>
+            </div>
+
+            <!-- 수입 요약 -->
+            <div class="result-highlight">
+              <div class="label">연간 과세 대상 임대수입</div>
+              <div class="value" id="rTotalIncome">-</div>
+              <div class="sub" id="rIncomeSub"></div>
+            </div>
+
+            <table class="result-table">
+              <tr><td>월세 수입 (월간)</td><td id="rMonthly">-</td></tr>
+              <tr><td>월세 수입 (연간)</td><td id="rAnnual">-</td></tr>
+              <tr id="jeonseRow" style="display:none;"><td>전세 보증금 간주임대료</td><td id="rJeonseLoan">-</td></tr>
+              <tr class="total"><td>총 과세 임대수입</td><td id="rTaxableTotal">-</td></tr>
+            </table>
+
+            <!-- 분리과세 결과 -->
+            <div id="separateSection" style="margin-top:20px;">
+              <h3 style="font-size:1em;font-weight:700;color:#1a73e8;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #e8f0fe;">분리과세 (14%) 계산</h3>
+              <table class="result-table">
+                <tr><td>필요경비 (50%)</td><td id="sExpense">-</td></tr>
+                <tr><td>기본공제</td><td id="sDeduction">-</td></tr>
+                <tr class="total"><td>과세표준</td><td id="sTaxBase">-</td></tr>
+                <tr><td>세율</td><td>14%</td></tr>
+                <tr><td>임대소득세</td><td id="sTax">-</td></tr>
+                <tr><td>지방소득세 (10%)</td><td id="sLocal">-</td></tr>
+                <tr class="total"><td>분리과세 합계</td><td id="sTotal">-</td></tr>
+              </table>
+            </div>
+
+            <!-- 종합과세 결과 -->
+            <div id="globalSection" style="margin-top:20px;">
+              <h3 style="font-size:1em;font-weight:700;color:#e53935;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #fce4ec;">종합과세 계산</h3>
+              <table class="result-table">
+                <tr><td>필요경비율</td><td id="gExpenseRate">-</td></tr>
+                <tr><td>필요경비</td><td id="gExpense">-</td></tr>
+                <tr><td>임대소득 과세표준 기여분</td><td id="gRentalBase">-</td></tr>
+                <tr><td>다른 소득</td><td id="gOtherIncome">-</td></tr>
+                <tr class="total"><td>합산 과세표준 (추정)</td><td id="gTotalBase">-</td></tr>
+                <tr><td>적용 세율 (한계세율)</td><td id="gRate">-</td></tr>
+                <tr><td>산출 세액 (추정)</td><td id="gTax">-</td></tr>
+                <tr><td>지방소득세 (10%)</td><td id="gLocal">-</td></tr>
+                <tr class="total"><td>종합과세 합계 (추정)</td><td id="gTotal">-</td></tr>
+              </table>
+              <p style="font-size:12px;color:#888;margin-top:8px;line-height:1.6;">※ 종합과세는 실제 소득공제·세액공제 내역에 따라 달라집니다. 정확한 세액은 세무사 상담을 권장합니다.</p>
+            </div>
+
+            <!-- 절세 팁 -->
+            <div id="savingTips" style="margin-top:20px;padding:16px;background:#fff8e1;border-radius:8px;border-left:4px solid #ffb300;">
+              <strong style="color:#e65100;font-size:0.95em;">절세 팁</strong>
+              <ul style="margin:10px 0 0 0;padding-left:18px;font-size:13px;color:#5d4037;line-height:1.9;" id="tipsList"></ul>
+            </div>
+
+            <div style="margin-top:14px;padding:12px 16px;background:#fff3e0;border-radius:8px;font-size:13px;color:#e65100;line-height:1.6;">
+              <strong>주의:</strong> 이 계산기는 참고용 추정치입니다. 실제 세액은 개인 상황에 따라 다를 수 있으니 세무사 상담을 권장합니다.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 과세 기준 요약표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>2026년 월세 임대소득 과세 기준</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>주택 수</td><td>월세 과세 여부</td><td>전세 보증금</td></tr>
+          <tr><td>1주택 (기준시가 12억 이하)</td><td style="color:#43a047;font-weight:600;">비과세</td><td style="color:#43a047;font-weight:600;">비과세</td></tr>
+          <tr><td>1주택 (기준시가 12억 초과)</td><td style="color:#e53935;font-weight:600;">과세</td><td style="color:#43a047;font-weight:600;">비과세</td></tr>
+          <tr><td>2주택</td><td style="color:#e53935;font-weight:600;">과세</td><td style="color:#43a047;font-weight:600;">비과세</td></tr>
+          <tr><td>3주택 이상</td><td style="color:#e53935;font-weight:600;">과세</td><td style="color:#e53935;font-weight:600;">간주임대료 과세</td></tr>
+        </table>
+        <p style="font-size:12px;color:#888;margin-top:8px;">* 간주임대료: (보증금 합계 - 3억) × 60% × 2.9% (2026년 기준금리)</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>분리과세 계산 공식</h3>
+        <ul>
+          <li><strong>대상:</strong> 연 임대수입 2천만원 이하</li>
+          <li><strong>세율:</strong> 14% (단일)</li>
+          <li><strong>경비율:</strong> 50% 일괄</li>
+          <li><strong>기본공제:</strong> 등록 400만원 / 미등록 200만원</li>
+          <li style="margin-top:8px;color:#555;font-size:0.9em;">과세표준 = 수입 × 50% - 기본공제</li>
+          <li style="color:#555;font-size:0.9em;">세액 = 과세표준 × 14%</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>종합과세 누진세율표</h3>
+        <table class="result-table" style="font-size:0.88em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준</td><td>세율</td></tr>
+          <tr><td>1,400만원 이하</td><td>6%</td></tr>
+          <tr><td>5,000만원 이하</td><td>15%</td></tr>
+          <tr><td>8,800만원 이하</td><td>24%</td></tr>
+          <tr><td>1.5억원 이하</td><td>35%</td></tr>
+          <tr><td>3억원 이하</td><td>38%</td></tr>
+          <tr><td>5억원 이하</td><td>40%</td></tr>
+          <tr><td>10억원 이하</td><td>42%</td></tr>
+          <tr><td>10억원 초과</td><td>45%</td></tr>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <h3>간주임대료 공식</h3>
+        <p style="font-size:0.92em;line-height:1.8;color:#444;">3주택 이상 해당:<br>
+        (전세보증금 합계 - <strong>3억</strong>) × <strong>60%</strong> × <strong>2.9%</strong><br>
+        <span style="font-size:0.88em;color:#888;">※ 2.9% = 2026년 정기예금이자율</span></p>
+      </div>
+
+      <div class="info-box">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="rental-income-tax.html" class="related-link">임대소득세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="capital-gains.html" class="related-link">양도소득세</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="property-holding-tax.html" class="related-link">종합부동산세</a>
+          <a href="rent-tax-credit.html" class="related-link">월세 세액공제</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ 섹션 -->
+<div class="container">
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">1주택자 월세도 임대소득세를 내야 하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">1주택자는 기준시가 <strong>12억원 이하</strong> 주택의 월세는 <strong>비과세</strong>입니다. 기준시가 12억원을 초과하는 고가주택 월세만 과세 대상입니다. 전세 보증금은 1주택자라면 금액에 관계없이 모두 비과세입니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">2주택자 월세 임대소득세는 어떻게 계산하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2주택자는 월세 수입 전액이 과세 대상입니다. 연간 월세 합계가 <strong>2,000만원 이하</strong>면 분리과세(14%)와 종합과세 중 유리한 것을 선택할 수 있습니다. 전세 보증금은 2주택자도 비과세입니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">3주택 이상 간주임대료란 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">3주택 이상 보유 시 전세 보증금 합계 <strong>3억원 초과분</strong>에 대해 이자 수익을 얻었다고 간주해 세금을 부과합니다. 계산식: (보증금 합계 - 3억원) × 60% × 2.9%(2026년 정기예금이자율). 예를 들어 보증금 합계 6억이라면 (6억-3억) × 60% × 2.9% = 522만원이 임대수입에 가산됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">분리과세 14%와 종합과세 중 어느 것이 유리한가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">다른 소득(근로·사업소득 등)과 임대소득을 합산한 <strong>과세표준이 1,400만원을 초과</strong>하면 종합과세 한계세율이 15% 이상이 되어 분리과세(14%)가 유리합니다. 반대로 다른 소득이 없거나 매우 적어 합산 과세표준이 낮다면 6% 세율이 적용되는 종합과세가 유리할 수 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">임대사업자 등록 시 세금 혜택은 어느 정도인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">임대사업자 등록 시 ① 분리과세 기본공제 <strong>400만원</strong>(미등록 200만원) ② 종합과세 필요경비율 <strong>60%</strong>(미등록 50%) 혜택이 있습니다. 다만 의무임대기간 준수, 임대료 5% 증액 상한, 임대차 계약 신고 의무 등을 반드시 이행해야 합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">월세 수입이 연 2,000만원을 초과하면?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">연간 임대수입이 2,000만원을 초과하면 분리과세를 선택할 수 없고 <strong>반드시 종합과세</strong>로 신고해야 합니다. 다른 근로·사업소득과 합산해 최고 45% 누진세율이 적용됩니다. 필요경비율은 등록 임대 60%, 미등록 50%가 적용됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">월세 임대소득세 신고는 언제 해야 하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">매년 <strong>5월 1일~31일</strong>에 종합소득세 확정신고를 합니다. 분리과세를 선택해도 신고 의무가 면제되지 않습니다. 미신고 시 무신고가산세(20%)와 납부불성실가산세(1일 0.022%)가 부과됩니다. 성실신고확인 대상자는 6월 30일까지 신고 가능합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">소형주택 특례란 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">기준시가 <strong>2억원 이하</strong>이고 전용면적 <strong>40㎡ 이하</strong>인 소형주택은 2026년 말까지 주택 수 계산에서 제외하는 특례가 적용됩니다. 즉, 해당 소형주택을 여러 채 보유해도 주택 수가 늘어나지 않아 과세 기준이 낮아질 수 있습니다.</p>
+    </details>
+  </div>
+</div>
+
+<!-- SEO 가이드 콘텐츠 -->
+<div class="container">
+  <div style="max-width:860px;margin:0 auto;">
+
+    <!-- 1. 월세 임대소득세 완벽 가이드 -->
+    <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">월세 임대소득세 완벽 가이드 (2026년 기준)</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:24px;">월세를 받는 집주인이라면 임대소득세 신고 의무를 반드시 파악해야 합니다. 주택 수, 기준시가, 월세 금액에 따라 과세 여부와 세액이 크게 달라지며, 잘못된 신고 시 가산세 부담이 커집니다. 2026년 기준 최신 규정을 정확히 이해하고 절세 전략을 세워보세요.</p>
+
+      <!-- 과세 기준 -->
+      <div style="border:1px solid #dbe8ff;border-radius:10px;padding:20px;margin-bottom:20px;">
+        <h3 style="font-size:1.1em;font-weight:700;color:#1a73e8;margin-bottom:10px;">월세 임대소득세 과세 기준 — 주택 수별 정리</h3>
+        <p style="color:#444;line-height:1.8;margin-bottom:12px;">월세 임대소득세는 보유 주택 수에 따라 과세 여부가 결정됩니다. 2026년 기준으로 1주택자는 대부분 비과세이지만, 2주택 이상부터는 월세 전액이 과세 대상이 됩니다.</p>
+        <ul style="color:#444;line-height:1.9;padding-left:18px;">
+          <li><strong>1주택자 (기준시가 12억 이하):</strong> 월세 전액 비과세. 전세 보증금도 비과세.</li>
+          <li><strong>1주택자 (기준시가 12억 초과):</strong> 월세 수입 전액 과세. 전세 보증금은 비과세.</li>
+          <li><strong>2주택자:</strong> 월세 수입 전액 과세. 전세 보증금은 비과세.</li>
+          <li><strong>3주택 이상:</strong> 월세 수입 전액 과세 + 전세 보증금 합계 3억 초과분에 간주임대료 과세.</li>
+          <li><strong>소형주택 특례:</strong> 기준시가 2억 이하 &amp; 전용면적 40㎡ 이하는 2026년 말까지 주택 수에서 제외.</li>
+        </ul>
+      </div>
+
+      <!-- 분리과세 vs 종합과세 -->
+      <div style="border:1px solid #e8f5e9;border-radius:10px;padding:20px;margin-bottom:20px;">
+        <h3 style="font-size:1.1em;font-weight:700;color:#27ae60;margin-bottom:12px;">분리과세 vs 종합과세 — 2026년 선택 기준</h3>
+        <p style="color:#444;line-height:1.8;margin-bottom:14px;">연간 월세 수입이 2,000만원 이하라면 분리과세(14%)와 종합과세(6%~45%) 중 유리한 방식을 선택할 수 있습니다. 2,000만원을 초과하면 종합과세가 강제 적용됩니다.</p>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.93em;">
+            <thead>
+              <tr style="background:#e8f5e9;font-weight:700;">
+                <th style="padding:10px 12px;text-align:left;border:1px solid #c8e6c9;">구분</th>
+                <th style="padding:10px 12px;text-align:center;border:1px solid #c8e6c9;">분리과세</th>
+                <th style="padding:10px 12px;text-align:center;border:1px solid #c8e6c9;">종합과세</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:9px 12px;border:1px solid #e8f5e9;">적용 대상</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">연 2천만원 이하 (선택)</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">연 2천만원 초과 (의무)</td></tr>
+              <tr style="background:#f9fff9;"><td style="padding:9px 12px;border:1px solid #e8f5e9;">세율</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;font-weight:600;color:#1a73e8;">14% 단일</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;font-weight:600;color:#e53935;">6%~45% 누진</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e8f5e9;">필요경비율</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">50% 일괄</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">등록 60% / 미등록 50%</td></tr>
+              <tr style="background:#f9fff9;"><td style="padding:9px 12px;border:1px solid #e8f5e9;">기본공제</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">등록 400만원 / 미등록 200만원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">없음</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e8f5e9;">건강보험료</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">소득 합산 안됨</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">소득 합산, 보험료 증가 가능</td></tr>
+              <tr style="background:#f9fff9;"><td style="padding:9px 12px;border:1px solid #e8f5e9;">추천 상황</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">다른 소득이 많을 때</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8f5e9;">다른 소득이 거의 없을 때</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="background:#f0fff4;border-left:4px solid #27ae60;border-radius:4px;padding:14px;margin-top:14px;">
+          <p style="margin:0;color:#555;font-size:0.93em;line-height:1.8;"><strong>핵심 판단 기준:</strong> 다른 소득과 임대소득을 합산한 과세표준이 <strong>1,400만원 초과</strong> 시 종합과세 세율이 15% 이상이 되어 분리과세(14%)가 유리합니다. 다른 소득이 전혀 없고 임대수입만 1,200만원이라면 종합과세(6% 구간)가 더 저렴할 수 있습니다.</p>
+        </div>
+      </div>
+
+      <!-- 필요경비 -->
+      <div style="border:1px solid #fff3e0;border-radius:10px;padding:20px;margin-bottom:20px;">
+        <h3 style="font-size:1.1em;font-weight:700;color:#e67e22;margin-bottom:10px;">필요경비 인정 항목과 경비율</h3>
+        <p style="color:#444;line-height:1.8;margin-bottom:14px;">임대소득세는 총 임대수입에서 필요경비를 공제한 금액에 세금을 부과합니다. 필요경비율은 임대사업자 등록 여부에 따라 다릅니다.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">
+          <div style="background:#fff8ee;border-radius:8px;padding:14px;">
+            <div style="font-weight:700;color:#e67e22;margin-bottom:8px;">등록 임대사업자</div>
+            <ul style="color:#444;line-height:1.9;padding-left:16px;margin:0;font-size:0.93em;">
+              <li>분리과세 경비율: <strong>50%</strong></li>
+              <li>종합과세 경비율: <strong>60%</strong></li>
+              <li>기본공제: <strong>400만원</strong></li>
+              <li>의무임대기간 준수 필요</li>
+              <li>임대료 5% 증액 제한</li>
+            </ul>
+          </div>
+          <div style="background:#f5f5f5;border-radius:8px;padding:14px;">
+            <div style="font-weight:700;color:#555;margin-bottom:8px;">미등록 임대사업자</div>
+            <ul style="color:#444;line-height:1.9;padding-left:16px;margin:0;font-size:0.93em;">
+              <li>분리과세 경비율: <strong>50%</strong></li>
+              <li>종합과세 경비율: <strong>50%</strong></li>
+              <li>기본공제: <strong>200만원</strong></li>
+              <li>가산세: 수입금액의 0.2%</li>
+              <li>건강보험 피부양자 자격 위험</li>
+            </ul>
+          </div>
+        </div>
+        <p style="color:#555;font-size:0.92em;line-height:1.8;margin:0;"><strong>실제 경비 적용:</strong> 종합과세 선택 시 경비율 대신 실제 지출 경비(수선비, 이자비용, 재산세, 보험료, 감가상각비 등)를 증빙하여 공제할 수도 있습니다. 실제 경비가 기본 경비율보다 높다면 실비 적용이 절세에 유리합니다.</p>
+      </div>
+
+      <!-- 임대사업자 등록 혜택 -->
+      <div style="border:1px solid #e8eaf6;border-radius:10px;padding:20px;">
+        <h3 style="font-size:1.1em;font-weight:700;color:#3949ab;margin-bottom:10px;">임대사업자 등록 혜택과 의무</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div style="background:#e8eaf6;border-radius:8px;padding:14px;">
+            <div style="font-weight:700;color:#3949ab;margin-bottom:8px;">등록 혜택</div>
+            <ul style="color:#444;line-height:1.9;padding-left:16px;margin:0;font-size:0.93em;">
+              <li>임대소득세 경비율 60% (미등록 50%)</li>
+              <li>분리과세 기본공제 400만원</li>
+              <li>재산세 감면 (전용면적 기준)</li>
+              <li>종합부동산세 합산 배제 (요건 충족 시)</li>
+              <li>건강보험료 감면 혜택</li>
+            </ul>
+          </div>
+          <div style="background:#fce4ec;border-radius:8px;padding:14px;">
+            <div style="font-weight:700;color:#c0392b;margin-bottom:8px;">등록 의무 및 제약</div>
+            <ul style="color:#444;line-height:1.9;padding-left:16px;margin:0;font-size:0.93em;">
+              <li>의무 임대기간 준수 (장기 10년)</li>
+              <li>임대료 증액 5% 상한</li>
+              <li>임대차 계약 신고 의무</li>
+              <li>미이행 시 과태료 및 혜택 환수</li>
+              <li>등록 말소 전 임의 매각 제한</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 간주임대료 계산 가이드 -->
+    <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">3주택 이상 간주임대료 계산법 (2026년)</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:20px;">3주택 이상 보유자는 전세 보증금으로 이자 수익을 얻었다고 간주하여 임대수입에 더해 과세합니다. 이를 <strong>간주임대료</strong>라고 합니다. 실제 월세를 받지 않는 전세 임대도 세금이 발생할 수 있어 주의가 필요합니다.</p>
+
+      <div style="background:#e8eaf6;border-radius:8px;padding:20px;margin-bottom:20px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#3949ab;margin-bottom:12px;">간주임대료 계산 공식 (2026년)</h3>
+        <div style="background:#fff;border-radius:6px;padding:16px;font-size:1.05em;line-height:2.2;text-align:center;font-weight:600;color:#1a237e;">
+          간주임대료 = (전세 보증금 합계 - 3억원) × 60% × 2.9%
+        </div>
+        <p style="margin:12px 0 0 0;font-size:0.92em;color:#555;line-height:1.8;">※ 2.9%는 2026년 적용 정기예금이자율입니다. 매년 기획재정부 고시로 결정됩니다.</p>
+      </div>
+
+      <h3 style="font-size:1.05em;font-weight:700;margin:0 0 14px;">간주임대료 계산 예시</h3>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.93em;margin-bottom:14px;">
+          <thead>
+            <tr style="background:#e8eaf6;font-weight:700;">
+              <th style="padding:10px 12px;text-align:left;border:1px solid #c5cae9;">전세 보증금 합계</th>
+              <th style="padding:10px 12px;text-align:center;border:1px solid #c5cae9;">공제 후 금액</th>
+              <th style="padding:10px 12px;text-align:center;border:1px solid #c5cae9;">간주임대료 (연간)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:9px 12px;border:1px solid #e8eaf6;">3억원 이하</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;">0</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;font-weight:600;color:#43a047;">0원 (비과세)</td></tr>
+            <tr style="background:#f9f9ff;"><td style="padding:9px 12px;border:1px solid #e8eaf6;">4억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;">1억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;font-weight:600;">174만원</td></tr>
+            <tr><td style="padding:9px 12px;border:1px solid #e8eaf6;">5억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;">2억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;font-weight:600;">348만원</td></tr>
+            <tr style="background:#f9f9ff;"><td style="padding:9px 12px;border:1px solid #e8eaf6;">7억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;">4억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;font-weight:600;">696만원</td></tr>
+            <tr><td style="padding:9px 12px;border:1px solid #e8eaf6;">10억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;">7억원</td><td style="padding:9px 12px;text-align:center;border:1px solid #e8eaf6;font-weight:600;">1,218만원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="color:#555;font-size:0.92em;line-height:1.8;">간주임대료는 월세 수입에 더해 과세 총수입을 구성합니다. 예를 들어 월세 수입이 연 1,000만원이고 간주임대료가 348만원이면 총 임대수입은 1,348만원으로 계산됩니다.</p>
+    </section>
+
+    <!-- 3. 실제 계산 예시 -->
+    <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">월세 임대소득세 실제 계산 예시</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:20px;">다양한 상황별 실제 계산 예시를 통해 자신의 임대소득세를 가늠해 보세요.</p>
+
+      <!-- 예시 1: 2주택 월세 80만원 -->
+      <div style="border:1px solid #e3f2fd;border-radius:10px;padding:20px;margin-bottom:20px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#1565c0;margin-bottom:14px;">예시 1: 2주택자, 월세 80만원, 미등록 임대사업자</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.92em;">
+            <tbody>
+              <tr style="background:#e3f2fd;"><td style="padding:9px 12px;border:1px solid #bbdefb;font-weight:600;">구분</td><td style="padding:9px 12px;border:1px solid #bbdefb;font-weight:600;">분리과세</td><td style="padding:9px 12px;border:1px solid #bbdefb;font-weight:600;">종합과세 (다른소득 4천만원)</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e3f2fd;">연간 월세수입</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">960만원</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">960만원</td></tr>
+              <tr style="background:#f5f9ff;"><td style="padding:9px 12px;border:1px solid #e3f2fd;">필요경비</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">480만원 (50%)</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">480만원 (50%)</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e3f2fd;">기본공제</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">200만원</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">없음</td></tr>
+              <tr style="background:#f5f9ff;"><td style="padding:9px 12px;border:1px solid #e3f2fd;">과세표준</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">280만원</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">4,480만원 (합산)</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e3f2fd;">세율</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">14%</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">15% (한계세율)</td></tr>
+              <tr style="background:#f5f9ff;"><td style="padding:9px 12px;border:1px solid #e3f2fd;">임대소득세</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">39.2만원</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">약 72만원 (추가분)</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e3f2fd;">지방소득세</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">3.9만원</td><td style="padding:9px 12px;border:1px solid #e3f2fd;">약 7.2만원</td></tr>
+              <tr style="background:#e3f2fd;font-weight:700;"><td style="padding:9px 12px;border:1px solid #bbdefb;">최종 세액</td><td style="padding:9px 12px;border:1px solid #bbdefb;color:#1565c0;">약 43만원</td><td style="padding:9px 12px;border:1px solid #bbdefb;color:#e53935;">약 79만원</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:12px 0 0 0;font-size:0.9em;color:#1565c0;line-height:1.7;"><strong>결론:</strong> 이 경우 분리과세가 약 36만원 유리합니다. 다른 소득이 많을수록 분리과세가 더 유리해집니다.</p>
+      </div>
+
+      <!-- 예시 2: 1주택 고가주택 -->
+      <div style="border:1px solid #f3e5f5;border-radius:10px;padding:20px;margin-bottom:20px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#7b1fa2;margin-bottom:14px;">예시 2: 1주택자 (기준시가 15억), 월세 150만원, 임대사업자 등록</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.92em;">
+            <tbody>
+              <tr style="background:#f3e5f5;"><td style="padding:9px 12px;border:1px solid #e1bee7;font-weight:600;">구분</td><td style="padding:9px 12px;border:1px solid #e1bee7;font-weight:600;">분리과세</td><td style="padding:9px 12px;border:1px solid #e1bee7;font-weight:600;">종합과세 (다른소득 없음)</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #f3e5f5;">연간 월세수입</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">1,800만원</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">1,800만원</td></tr>
+              <tr style="background:#fdf5ff;"><td style="padding:9px 12px;border:1px solid #f3e5f5;">필요경비</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">900만원 (50%)</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">1,080만원 (60%)</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #f3e5f5;">기본공제</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">400만원</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">없음</td></tr>
+              <tr style="background:#fdf5ff;"><td style="padding:9px 12px;border:1px solid #f3e5f5;">과세표준</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">500만원</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">720만원</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #f3e5f5;">세율</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">14%</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">6%</td></tr>
+              <tr style="background:#fdf5ff;"><td style="padding:9px 12px;border:1px solid #f3e5f5;">임대소득세</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">70만원</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">43.2만원</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #f3e5f5;">지방소득세</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">7만원</td><td style="padding:9px 12px;border:1px solid #f3e5f5;">4.3만원</td></tr>
+              <tr style="background:#f3e5f5;font-weight:700;"><td style="padding:9px 12px;border:1px solid #e1bee7;">최종 세액</td><td style="padding:9px 12px;border:1px solid #e1bee7;color:#e53935;">약 77만원</td><td style="padding:9px 12px;border:1px solid #e1bee7;color:#7b1fa2;">약 47만원</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:12px 0 0 0;font-size:0.9em;color:#7b1fa2;line-height:1.7;"><strong>결론:</strong> 다른 소득이 없는 경우 종합과세(6% 구간)가 약 30만원 유리합니다. 임대사업자 등록 시 종합과세 경비율 60% 혜택도 반영됩니다.</p>
+      </div>
+
+      <!-- 예시 3: 3주택 이상 -->
+      <div style="border:1px solid #e8f5e9;border-radius:10px;padding:20px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#1b5e20;margin-bottom:14px;">예시 3: 3주택자, 월세 100만원 + 전세 보증금 합계 6억원</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.92em;">
+            <tbody>
+              <tr style="background:#e8f5e9;"><td style="padding:9px 12px;border:1px solid #c8e6c9;font-weight:600;">항목</td><td style="padding:9px 12px;border:1px solid #c8e6c9;font-weight:600;">계산 내역</td><td style="padding:9px 12px;border:1px solid #c8e6c9;font-weight:600;">금액</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e8f5e9;">연간 월세수입</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">100만원 × 12</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">1,200만원</td></tr>
+              <tr style="background:#f0fff4;"><td style="padding:9px 12px;border:1px solid #e8f5e9;">간주임대료</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">(6억-3억) × 60% × 2.9%</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">522만원</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e8f5e9;font-weight:600;">총 과세 임대수입</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">1,200 + 522</td><td style="padding:9px 12px;border:1px solid #e8f5e9;font-weight:600;">1,722만원</td></tr>
+              <tr style="background:#f0fff4;"><td style="padding:9px 12px;border:1px solid #e8f5e9;">필요경비 (분리과세 50%)</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">1,722 × 50%</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">861만원</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e8f5e9;">기본공제 (미등록)</td><td style="padding:9px 12px;border:1px solid #e8f5e9;"></td><td style="padding:9px 12px;border:1px solid #e8f5e9;">200만원</td></tr>
+              <tr style="background:#f0fff4;"><td style="padding:9px 12px;border:1px solid #e8f5e9;font-weight:600;">분리과세 과세표준</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">1,722 - 861 - 200</td><td style="padding:9px 12px;border:1px solid #e8f5e9;font-weight:600;">661만원</td></tr>
+              <tr><td style="padding:9px 12px;border:1px solid #e8f5e9;">임대소득세 (14%)</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">661 × 14%</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">92.5만원</td></tr>
+              <tr style="background:#f0fff4;"><td style="padding:9px 12px;border:1px solid #e8f5e9;">지방소득세</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">92.5 × 10%</td><td style="padding:9px 12px;border:1px solid #e8f5e9;">9.3만원</td></tr>
+              <tr style="background:#e8f5e9;font-weight:700;"><td style="padding:9px 12px;border:1px solid #c8e6c9;">분리과세 합계</td><td style="padding:9px 12px;border:1px solid #c8e6c9;"></td><td style="padding:9px 12px;border:1px solid #c8e6c9;color:#1b5e20;">약 102만원</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 절세 전략 -->
+    <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">월세 임대소득세 절세 전략 5가지</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:20px;">합법적인 절세 방법을 활용하면 임대소득세 부담을 크게 줄일 수 있습니다. 아래 5가지 방법을 상황에 맞게 적용해 보세요.</p>
+
+      <div style="display:grid;gap:16px;">
+        <div style="border:1px solid #e3f2fd;border-radius:8px;padding:18px;">
+          <h3 style="font-size:1em;font-weight:700;color:#1565c0;margin-bottom:8px;">1. 분리과세 vs 종합과세 매년 비교 후 선택</h3>
+          <p style="color:#444;font-size:0.93em;line-height:1.8;margin:0;">연간 임대수입 2,000만원 이하라면 매년 두 방식을 계산 후 유리한 것을 선택합니다. 다른 소득 변동에 따라 유리한 방식이 달라질 수 있으므로 신고 직전에 비교하는 것이 좋습니다.</p>
+        </div>
+        <div style="border:1px solid #e8f5e9;border-radius:8px;padding:18px;">
+          <h3 style="font-size:1em;font-weight:700;color:#1b5e20;margin-bottom:8px;">2. 임대사업자 등록으로 경비율·공제 혜택 활용</h3>
+          <p style="color:#444;font-size:0.93em;line-height:1.8;margin:0;">임대사업자로 등록하면 분리과세 기본공제 400만원(미등록 200만원), 종합과세 경비율 60%(미등록 50%) 혜택을 받습니다. 장기 임대 계획이 있고 의무 조건을 충족할 수 있다면 등록이 유리합니다.</p>
+        </div>
+        <div style="border:1px solid #fff3e0;border-radius:8px;padding:18px;">
+          <h3 style="font-size:1em;font-weight:700;color:#bf360c;margin-bottom:8px;">3. 실제 경비 증빙으로 필요경비 극대화</h3>
+          <p style="color:#444;font-size:0.93em;line-height:1.8;margin:0;">종합과세 선택 시 수선비, 대출이자, 재산세, 화재보험료, 감가상각비 등 실제 경비가 경비율보다 높다면 실비 적용을 선택합니다. 경비 영수증을 철저히 보관하는 습관이 중요합니다.</p>
+        </div>
+        <div style="border:1px solid #f3e5f5;border-radius:8px;padding:18px;">
+          <h3 style="font-size:1em;font-weight:700;color:#7b1fa2;margin-bottom:8px;">4. 소형주택 특례 활용으로 주택 수 관리</h3>
+          <p style="color:#444;font-size:0.93em;line-height:1.8;margin:0;">기준시가 2억 이하, 전용면적 40㎡ 이하 소형주택은 2026년 말까지 주택 수 산정에서 제외됩니다. 포트폴리오 구성 시 소형주택 비율을 높이면 과세 주택 수를 줄일 수 있습니다.</p>
+        </div>
+        <div style="border:1px solid #e8eaf6;border-radius:8px;padding:18px;">
+          <h3 style="font-size:1em;font-weight:700;color:#3949ab;margin-bottom:8px;">5. 연 2,000만원 기준 초과 방지 및 수입 분산</h3>
+          <p style="color:#444;font-size:0.93em;line-height:1.8;margin:0;">연간 임대수입이 2,000만원을 초과하면 분리과세를 선택할 수 없어 종합과세 의무가 됩니다. 임대 계약 조건 조정 등을 통해 2,000만원 이하를 유지하거나, 배우자 명의 분산 등의 방법도 고려해볼 수 있습니다(세무사 상담 권장).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 신고 방법 -->
+    <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">월세 임대소득세 신고 방법 및 주의사항</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:20px;">매년 5월 종합소득세 신고 기간에 임대소득을 신고합니다. 분리과세를 선택해도 신고 의무가 있으며, 미신고 시 가산세 부담이 커집니다.</p>
+
+      <div style="border:1px solid #e3f2fd;border-radius:10px;padding:20px;margin-bottom:16px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#1565c0;margin-bottom:12px;">신고 일정 및 방법</h3>
+        <ul style="color:#444;line-height:1.9;padding-left:18px;margin:0;">
+          <li><strong>신고 기간:</strong> 매년 5월 1일 ~ 5월 31일 (종합소득세 확정신고)</li>
+          <li><strong>신고 방법:</strong> 국세청 홈택스(www.hometax.go.kr) 전자신고 또는 세무서 방문 신고</li>
+          <li><strong>필요 서류:</strong> 임대차 계약서, 임대수입 내역, 필요경비 증빙 서류</li>
+          <li><strong>납부 기한:</strong> 5월 31일까지 (분납 신청 시 2회 분납 가능)</li>
+          <li><strong>2주택 이상 특수:</strong> 임대수입 400만원 이상이면 간편 신고 불가, 일반 신고 필수</li>
+        </ul>
+      </div>
+
+      <div style="border:1px solid #fce4ec;border-radius:10px;padding:20px;">
+        <h3 style="font-size:1.05em;font-weight:700;color:#c0392b;margin-bottom:12px;">가산세 및 주의사항</h3>
+        <ul style="color:#444;line-height:1.9;padding-left:18px;margin:0;">
+          <li><strong>무신고 가산세:</strong> 납부 세액의 20% (부정신고 시 40%)</li>
+          <li><strong>납부불성실 가산세:</strong> 미납 세액 × 1일 0.022% × 미납일수</li>
+          <li><strong>미등록 가산세:</strong> 임대사업자 미등록 시 임대수입의 0.2%</li>
+          <li><strong>임대차 계약 신고 미이행:</strong> 임대차계약 미신고 시 100만원 이하 과태료</li>
+          <li><strong>주의:</strong> 국세청은 금융정보·건강보험료·전세신고 자료를 통해 무신고자를 추적합니다. 소액 임대소득도 반드시 신고하세요.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. 건강보험료 영향 -->
+    <section style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4em;font-weight:700;color:#1a1a1a;margin-bottom:8px;">월세 임대소득이 건강보험료에 미치는 영향</h2>
+      <p style="color:#555;line-height:1.8;margin-bottom:20px;">임대소득은 소득세뿐 아니라 건강보험료에도 영향을 줍니다. 특히 직장가입자 피부양자로 등록된 경우 주의가 필요합니다.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+        <div style="border:1px solid #e3f2fd;border-radius:8px;padding:16px;">
+          <div style="font-weight:700;color:#1565c0;margin-bottom:10px;">직장가입자 피부양자</div>
+          <ul style="color:#444;line-height:1.9;padding-left:16px;margin:0;font-size:0.92em;">
+            <li>연간 임대수입 <strong>2,000만원 초과</strong> 시 피부양자 자격 상실</li>
+            <li>2,000만원 이하 분리과세 선택 시: 건보료 영향 없음</li>
+            <li>2,000만원 이하 종합과세 선택 시: 소득 기준에 따라 영향 가능</li>
+            <li>자격 상실 시 지역가입자로 전환되어 별도 보험료 발생</li>
+          </ul>
+        </div>
+        <div style="border:1px solid #e8f5e9;border-radius:8px;padding:16px;">
+          <div style="font-weight:700;color:#1b5e20;margin-bottom:10px;">지역가입자</div>
+          <ul style="color:#444;line-height:1.9;padding-left:16px;margin:0;font-size:0.92em;">
+            <li>임대소득이 건보료 산정 소득에 포함</li>
+            <li>분리과세 선택 시에도 임대소득 반영</li>
+            <li>임대수입이 늘수록 건보료 증가</li>
+            <li>임대사업자 등록 시 일부 감면 혜택 가능</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:#fff8e1;border-left:4px solid #ffb300;border-radius:4px;padding:14px;">
+        <p style="margin:0;color:#5d4037;font-size:0.93em;line-height:1.8;"><strong>절세 팁:</strong> 연간 임대수입이 2,000만원에 근접한다면 분리과세를 선택하면 건강보험료 추가 부담 없이 14% 단일세율로 납부할 수 있습니다. 임대수입 규모와 다른 소득을 종합적으로 고려해 과세 방식을 선택하세요.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 금액은 금융기관 및 관계 기관에 문의하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+// 포맷 함수
+function fmt(n) {
+  if (n === null || n === undefined || isNaN(n)) return '-';
+  return Math.round(n).toLocaleString('ko-KR') + '원';
+}
+
+// 종합과세 누진세 계산
+function calcProgressiveTax(base) {
+  if (base <= 0) return 0;
+  const brackets = [
+    [14000000,  0.06,    0],
+    [50000000,  0.15,  1260000],
+    [88000000,  0.24,  5760000],
+    [150000000, 0.35, 15440000],
+    [300000000, 0.38, 19940000],
+    [500000000, 0.40, 25940000],
+    [1000000000,0.42, 35940000],
+    [Infinity,  0.45, 65940000],
+  ];
+  for (const [limit, rate, deduct] of brackets) {
+    if (base <= limit) {
+      return base * rate - deduct;
+    }
+  }
+  return 0;
+}
+
+// 한계세율 반환
+function getMarginalRate(base) {
+  if (base <= 14000000) return 0.06;
+  if (base <= 50000000) return 0.15;
+  if (base <= 88000000) return 0.24;
+  if (base <= 150000000) return 0.35;
+  if (base <= 300000000) return 0.38;
+  if (base <= 500000000) return 0.40;
+  if (base <= 1000000000) return 0.42;
+  return 0.45;
+}
+
+function onHouseCountChange() {
+  const hc = parseInt(document.querySelector('input[name="houseCount"]:checked').value);
+  const stdPriceGroup = document.getElementById('stdPriceGroup');
+  const jeonseGroup = document.getElementById('jeonseGroup');
+  const taxExemptNotice = document.getElementById('taxExemptNotice');
+  const stdPrice = document.querySelector('input[name="stdPrice"]:checked').value;
+
+  stdPriceGroup.style.display = (hc === 1) ? 'block' : 'none';
+  jeonseGroup.style.display = (hc >= 3) ? 'block' : 'none';
+
+  if (hc === 1 && stdPrice === 'under12') {
+    taxExemptNotice.style.display = 'block';
+  } else {
+    taxExemptNotice.style.display = 'none';
+  }
+
+  onInputChange();
+}
+
+function onInputChange() {
+  const monthlyRent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+  const annualRent = monthlyRent * 12;
+  document.getElementById('annualRentDisplay').textContent = annualRent.toLocaleString('ko-KR') + '원';
+}
+
+function calculate() {
+  const hc = parseInt(document.querySelector('input[name="houseCount"]:checked').value);
+  const stdPrice = document.querySelector('input[name="stdPrice"]:checked').value;
+  const monthlyRent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+  const deposit = parseFloat(document.getElementById('deposit').value) || 0;
+  const jeonseDeposit = parseFloat(document.getElementById('jeonseDeposit').value) || 0;
+  const calcMode = document.querySelector('input[name="calcMode"]:checked').value;
+  const registered = document.querySelector('input[name="registration"]:checked').value === 'yes';
+  const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+
+  const result = document.getElementById('result');
+  const taxExemptResult = document.getElementById('taxExemptResult');
+  const taxableResult = document.getElementById('taxableResult');
+  const jeonseRow = document.getElementById('jeonseRow');
+
+  result.style.display = 'block';
+
+  // 1주택 12억 이하 비과세 판정
+  if (hc === 1 && stdPrice === 'under12') {
+    taxExemptResult.style.display = 'block';
+    taxableResult.style.display = 'none';
+    document.getElementById('taxExemptMsg').textContent =
+      '1주택자 기준시가 12억원 이하 주택의 월세는 비과세입니다. 전세 보증금도 1주택자는 전액 비과세입니다. 별도 신고 의무가 없습니다.';
+    return;
+  }
+
+  taxExemptResult.style.display = 'none';
+  taxableResult.style.display = 'block';
+
+  // 연간 월세 수입
+  const annualRent = monthlyRent * 12;
+
+  // 간주임대료 (3주택 이상)
+  let jeonseIncome = 0;
+  if (hc >= 3 && jeonseDeposit > 300000000) {
+    jeonseIncome = (jeonseDeposit - 300000000) * 0.6 * 0.029;
+  }
+
+  const totalIncome = annualRent + jeonseIncome;
+
+  // 수입 표시
+  document.getElementById('rMonthly').textContent = fmt(monthlyRent);
+  document.getElementById('rAnnual').textContent = fmt(annualRent);
+  document.getElementById('rTotalIncome').textContent = fmt(totalIncome);
+  document.getElementById('rIncomeSub').textContent = '월세 연간 합계' + (jeonseIncome > 0 ? ' + 간주임대료 ' + fmt(jeonseIncome) : '');
+  document.getElementById('rTaxableTotal').textContent = fmt(totalIncome);
+
+  if (hc >= 3 && jeonseIncome > 0) {
+    jeonseRow.style.display = '';
+    document.getElementById('rJeonseLoan').textContent = fmt(jeonseIncome);
+  } else {
+    jeonseRow.style.display = 'none';
+  }
+
+  // 분리과세 계산
+  const sepExpenseRate = 0.5;
+  const sepExpense = totalIncome * sepExpenseRate;
+  const sepDeduction = registered ? 4000000 : 2000000;
+  const sepBase = Math.max(0, totalIncome - sepExpense - sepDeduction);
+  const sepTax = sepBase * 0.14;
+  const sepLocal = sepTax * 0.1;
+  const sepTotal = sepTax + sepLocal;
+
+  // 종합과세 계산
+  const globExpenseRate = registered ? 0.6 : 0.5;
+  const globExpense = totalIncome * globExpenseRate;
+  const globRentalBase = Math.max(0, totalIncome - globExpense);
+  const combinedBase = globRentalBase + otherIncome;
+  const combinedTax = calcProgressiveTax(combinedBase);
+  const otherTax = calcProgressiveTax(otherIncome);
+  const rentalTaxContrib = Math.max(0, combinedTax - otherTax);
+  const globLocal = rentalTaxContrib * 0.1;
+  const globTotal = rentalTaxContrib + globLocal;
+  const marginalRate = getMarginalRate(combinedBase);
+
+  // 결과 표시 - 분리과세
+  const showSep = (calcMode === 'compare' || calcMode === 'separate');
+  const showGlob = (calcMode === 'compare' || calcMode === 'global');
+
+  document.getElementById('separateSection').style.display = showSep ? 'block' : 'none';
+  document.getElementById('globalSection').style.display = showGlob ? 'block' : 'none';
+
+  if (showSep) {
+    document.getElementById('sExpense').textContent = fmt(sepExpense) + ' (50%)';
+    document.getElementById('sDeduction').textContent = fmt(sepDeduction);
+    document.getElementById('sTaxBase').textContent = fmt(sepBase);
+    document.getElementById('sTax').textContent = fmt(sepTax);
+    document.getElementById('sLocal').textContent = fmt(sepLocal);
+    document.getElementById('sTotal').textContent = fmt(sepTotal);
+  }
+
+  if (showGlob) {
+    document.getElementById('gExpenseRate').textContent = (globExpenseRate * 100) + '%';
+    document.getElementById('gExpense').textContent = fmt(globExpense);
+    document.getElementById('gRentalBase').textContent = fmt(globRentalBase);
+    document.getElementById('gOtherIncome').textContent = fmt(otherIncome);
+    document.getElementById('gTotalBase').textContent = fmt(combinedBase);
+    document.getElementById('gRate').textContent = (marginalRate * 100).toFixed(0) + '%';
+    document.getElementById('gTax').textContent = fmt(rentalTaxContrib);
+    document.getElementById('gLocal').textContent = fmt(globLocal);
+    document.getElementById('gTotal').textContent = fmt(globTotal);
+  }
+
+  // 추천 과세방식
+  const recommendBox = document.getElementById('recommendBox');
+  const recommendTitle = document.getElementById('recommendTitle');
+  const recommendMsg = document.getElementById('recommendMsg');
+
+  if (calcMode === 'compare') {
+    if (totalIncome > 20000000) {
+      recommendBox.style.background = '#fce4ec';
+      recommendBox.style.borderLeftColor = '#e53935';
+      recommendTitle.style.color = '#b71c1c';
+      recommendTitle.textContent = '종합과세 의무 대상 (연 2,000만원 초과)';
+      recommendMsg.style.color = '#c0392b';
+      recommendMsg.textContent = `연간 임대수입이 ${fmt(totalIncome)}로 2,000만원을 초과하여 분리과세를 선택할 수 없습니다. 종합과세로 신고해야 합니다.`;
+    } else if (sepTotal <= globTotal) {
+      recommendBox.style.background = '#e8f0fe';
+      recommendBox.style.borderLeftColor = '#1a73e8';
+      recommendTitle.style.color = '#1a237e';
+      recommendTitle.textContent = '분리과세(14%)가 유리합니다';
+      recommendMsg.style.color = '#3949ab';
+      recommendMsg.textContent = `분리과세 ${fmt(sepTotal)} vs 종합과세 ${fmt(globTotal)} — 분리과세가 약 ${fmt(globTotal - sepTotal)} 절세됩니다.`;
+    } else {
+      recommendBox.style.background = '#e8f5e9';
+      recommendBox.style.borderLeftColor = '#43a047';
+      recommendTitle.style.color = '#1b5e20';
+      recommendTitle.textContent = '종합과세가 유리합니다';
+      recommendMsg.style.color = '#2e7d32';
+      recommendMsg.textContent = `종합과세 ${fmt(globTotal)} vs 분리과세 ${fmt(sepTotal)} — 종합과세가 약 ${fmt(sepTotal - globTotal)} 절세됩니다.`;
+    }
+  } else {
+    recommendBox.style.display = 'none';
+  }
+
+  // 절세 팁
+  const tips = [];
+  if (hc >= 2 && !registered) {
+    tips.push('임대사업자 등록 시 기본공제 200만원→400만원, 종합과세 경비율 50%→60%로 세금 절감 가능합니다.');
+  }
+  if (totalIncome <= 20000000 && calcMode !== 'separate') {
+    tips.push('연 임대수입이 2,000만원 이하이므로 분리과세(14%)와 종합과세를 매년 비교 후 유리한 방식을 선택하세요.');
+  }
+  if (hc >= 3) {
+    tips.push('전세보증금 합계 3억원 이하로 유지하면 간주임대료 과세를 피할 수 있습니다.');
+  }
+  if (otherIncome > 50000000) {
+    tips.push('다른 소득이 많아 종합과세 한계세율이 높습니다. 분리과세(14%) 선택이 절세에 유리합니다.');
+  }
+  tips.push('임대소득은 매년 5월 종합소득세 신고 기간에 신고해야 합니다. 미신고 시 가산세(무신고 20%)가 부과됩니다.');
+
+  const tipsList = document.getElementById('tipsList');
+  tipsList.innerHTML = tips.map(t => `<li>${t}</li>`).join('');
+}
+
+// 초기화
+onHouseCountChange();
+onInputChange();
+</script>
+
+</body>
+</html>

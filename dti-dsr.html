@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 DTI·DSR 계산기 - 대출 한도 역산 & 규제 초과 여부 확인 | calcmoney.kr</title>
+  <meta name="description" content="2026년 기준 DTI·DSR을 자동 계산합니다. 연소득과 대출 정보를 입력하면 규제 초과 여부와 최대 대출 가능 한도를 즉시 확인할 수 있습니다.">
+  <link rel="canonical" href="https://calcmoney.kr/dti-dsr">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 DTI·DSR 계산기 - 대출 한도 역산 & 규제 초과 여부 확인">
+  <meta property="og:description" content="DTI·DSR 자동 계산, 투기과열·조정·비규제 지역별 규제 기준 비교, 최대 대출 가능 한도 역산.">
+  <meta property="og:url" content="https://calcmoney.kr/dti-dsr">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DTI란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DTI(Debt To Income)는 총부채상환비율로, 연소득 대비 신규대출 연간 원리금 상환액과 기존대출 연간 이자 상환액의 합계 비율입니다. DTI = (신규대출 연간 원리금 + 기존대출 연간 이자) ÷ 연소득 × 100으로 계산합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DSR이란 무엇이며 DTI와 차이점은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DSR(Debt Service Ratio)은 총부채원리금상환비율로, 모든 대출의 원리금(원금+이자) 상환액을 연소득으로 나눈 비율입니다. DTI는 기존대출의 이자만 포함하지만, DSR은 기존대출의 원금까지 포함해 더 엄격한 기준입니다. DSR = (신규대출 연간 원리금 + 기존대출 연간 원리금) ÷ 연소득 × 100."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2026년 DSR 규제 기준은?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 DSR 규제는 총대출 5천만원 초과 시 DSR 40% 이하를 적용합니다(2단계 규제). 투기과열지구에서 주담대를 받을 경우 더욱 엄격하게 적용됩니다. 스트레스 DSR은 변동금리 대출에 0.38%p~0.75%p의 가산금리를 적용해 계산합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "지역별 DTI 규제 한도는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "투기과열지구 DTI 40%, 조정대상지역 DTI 50%, 비규제지역 DTI 60%가 적용됩니다. 지역에 따라 대출 한도가 크게 달라지므로 대상 주택의 소재지를 먼저 확인하는 것이 중요합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "대출 가능 한도는 어떻게 역산하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DSR 40% 기준으로 허용 가능한 연간 원리금 = 연소득 × 40% - 기존대출 연간 원리금을 구한 후, 원리금균등상환(PMT) 공식의 역산으로 최대 대출 가능 원금 P를 계산합니다. P = 연간허용원리금 / 12 × ((1+r)^n - 1) / (r×(1+r)^n), 여기서 r = 월이자율, n = 상환기간(개월)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "스트레스 DSR이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "스트레스 DSR은 금리 상승 위험을 미리 반영해 DSR을 계산하는 방식입니다. 변동금리·혼합형 대출에 0.38%p~0.75%p의 가산금리를 실제 금리에 더한 후 DSR을 계산합니다. 2024년 2단계 도입으로 총대출 5천만원 초과 시 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연봉 5천만원이면 DSR 40% 기준 대출 한도는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "연봉 5천만원의 경우 DSR 40% 기준 허용 연간 원리금은 2,000만원(월 약 167만원)입니다. 금리 4%, 30년 원리금균등 상환 기준으로 계산하면 최대 대출 가능액은 약 3억 4,900만원입니다. 기존 대출이 있다면 그만큼 차감됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .dti-result-section { margin-top: 28px; }
+    .dti-ratio-row { display: flex; gap: 16px; margin-bottom: 16px; }
+    .dti-ratio-card {
+      flex: 1;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      background: #fafafa;
+    }
+    .dti-ratio-card .card-label { font-size: 0.85em; color: #666; margin-bottom: 6px; }
+    .dti-ratio-card .card-value { font-size: 2em; font-weight: 800; color: #1a73e8; line-height: 1.1; }
+    .dti-ratio-card .card-value.over { color: #d32f2f; }
+    .dti-ratio-card .card-status { font-size: 0.82em; margin-top: 6px; font-weight: 600; }
+    .dti-ratio-card .card-status.ok { color: #1e7e34; }
+    .dti-ratio-card .card-status.warn { color: #d32f2f; }
+    .region-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.9em; }
+    .region-table th { background: #f1f3f4; padding: 8px 10px; text-align: left; font-weight: 700; color: #444; }
+    .region-table td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+    .region-table tr.over-row td { color: #d32f2f; font-weight: 600; }
+    .region-table tr.ok-row td:last-child { color: #1e7e34; font-weight: 600; }
+    .region-table tr.over-row td:last-child { color: #d32f2f; font-weight: 600; }
+    .limit-box {
+      background: linear-gradient(135deg, #e8f0fe, #f0f4ff);
+      border: 2px solid #4285f4;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .limit-box h4 { margin: 0 0 12px; color: #1a73e8; font-size: 1em; }
+    .limit-value { font-size: 1.9em; font-weight: 800; color: #1a73e8; }
+    .limit-sub { font-size: 0.85em; color: #555; margin-top: 4px; }
+    .stress-box {
+      background: #fff8e1;
+      border: 1px solid #f9a825;
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 12px;
+      font-size: 0.88em;
+      color: #555;
+    }
+    .stress-box strong { color: #f57f17; }
+    .section-divider {
+      border: none;
+      border-top: 2px dashed #e0e0e0;
+      margin: 28px 0 20px;
+    }
+    .input-section-title {
+      font-size: 0.9em;
+      font-weight: 700;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 20px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8f0fe;
+    }
+    @media (max-width: 600px) {
+      .dti-ratio-row { flex-direction: column; gap: 10px; }
+      .limit-value { font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html" class="active">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>DTI · DSR 계산기</h1>
+        <p class="desc">연소득과 대출 상환 정보를 입력하면 DTI·DSR 비율과 규제 초과 여부, 최대 대출 가능 한도를 즉시 계산해드립니다.</p>
+
+        <!-- 소득 입력 -->
+        <div class="input-section-title">소득 정보</div>
+
+        <div class="form-group">
+          <label>연소득 <span class="hint">만원 단위</span></label>
+          <input type="number" id="annualIncome" placeholder="예: 6000 (6천만원)" value="6000" min="0">
+        </div>
+
+        <!-- DTI/DSR 계산용 -->
+        <hr class="section-divider">
+        <div class="input-section-title">대출 상환 정보 (연간)</div>
+
+        <div class="form-group">
+          <label>신규대출 연간 원리금 상환액 <span class="hint">만원 단위</span></label>
+          <input type="number" id="newLoanPayment" placeholder="예: 1200 (월 100만원)" value="1200" min="0">
+          <span class="hint" style="display:block;margin-top:4px;">원금 + 이자 합계 (월상환액 × 12)</span>
+        </div>
+
+        <div class="form-group">
+          <label>기존대출 연간 이자 상환액 <span class="hint">만원 단위 (DTI용)</span></label>
+          <input type="number" id="existingInterest" placeholder="예: 300" value="0" min="0">
+        </div>
+
+        <div class="form-group">
+          <label>기존대출 연간 원리금 상환액 <span class="hint">만원 단위 (DSR용)</span></label>
+          <input type="number" id="existingPayment" placeholder="예: 600" value="0" min="0">
+          <span class="hint" style="display:block;margin-top:4px;">기존 모든 대출의 원금+이자 합계</span>
+        </div>
+
+        <!-- 대출 가능 한도 역산용 -->
+        <hr class="section-divider">
+        <div class="input-section-title">대출 가능 한도 역산 (선택)</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>대출 금리 <span class="hint">%</span></label>
+            <input type="number" id="loanRate" placeholder="예: 4.5" value="4.5" step="0.01" min="0">
+          </div>
+          <div class="form-group">
+            <label>대출 기간 <span class="hint">년</span></label>
+            <input type="number" id="loanYears" placeholder="예: 30" value="30" min="1" max="50">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>스트레스 가산금리 <span class="hint">변동금리 시 적용</span></label>
+          <select id="stressRate">
+            <option value="0">없음 (고정금리)</option>
+            <option value="0.38" selected>+0.38%p (혼합형, 1단계)</option>
+            <option value="0.75">+0.75%p (순수변동, 2단계)</option>
+          </select>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- DTI / DSR 비율 카드 -->
+          <div class="dti-ratio-row">
+            <div class="dti-ratio-card">
+              <div class="card-label">DTI (총부채상환비율)</div>
+              <div class="card-value" id="dtiValue">-</div>
+              <div class="card-status" id="dtiStatus">-</div>
+            </div>
+            <div class="dti-ratio-card">
+              <div class="card-label">DSR (총부채원리금상환비율)</div>
+              <div class="card-value" id="dsrValue">-</div>
+              <div class="card-status" id="dsrStatus">-</div>
+            </div>
+          </div>
+
+          <!-- 지역별 규제 비교 -->
+          <div class="dti-result-section">
+            <div style="font-weight:700;margin-bottom:8px;color:#333;">지역별 DTI 규제 현황</div>
+            <table class="region-table">
+              <thead>
+                <tr><th>지역 구분</th><th>DTI 한도</th><th>내 DTI</th><th>결과</th></tr>
+              </thead>
+              <tbody id="regionBody"></tbody>
+            </table>
+          </div>
+
+          <!-- DSR 규제 -->
+          <table class="result-table" style="margin-top:16px;">
+            <tr>
+              <td>연소득</td>
+              <td id="rIncome">-</td>
+            </tr>
+            <tr>
+              <td>신규 연간 원리금</td>
+              <td id="rNewPayment">-</td>
+            </tr>
+            <tr>
+              <td>기존 연간 이자 (DTI용)</td>
+              <td id="rExistingInterest">-</td>
+            </tr>
+            <tr>
+              <td>기존 연간 원리금 (DSR용)</td>
+              <td id="rExistingPayment">-</td>
+            </tr>
+            <tr class="total">
+              <td>DSR 규제 기준 (40%)</td>
+              <td id="rDsrLimit">-</td>
+            </tr>
+            <tr>
+              <td>DSR 초과/여유 (40% 대비)</td>
+              <td id="rDsrGap">-</td>
+            </tr>
+          </table>
+
+          <!-- 스트레스 DSR -->
+          <div class="stress-box" id="stressBox"></div>
+
+          <!-- 대출 가능 한도 역산 -->
+          <div class="limit-box" id="limitBox">
+            <h4>DSR 40% 기준 최대 대출 가능 한도 (원리금균등)</h4>
+            <div class="limit-value" id="limitValue">-</div>
+            <div class="limit-sub" id="limitSub"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- FAQ -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">자주 묻는 질문</h2>
+
+        <details>
+          <summary>DTI와 DSR은 어떻게 다른가요?</summary>
+          <p>DTI는 기존 대출의 <strong>이자만</strong> 포함해 계산합니다. DSR은 기존 대출의 <strong>원금+이자</strong>를 모두 포함해 더 엄격한 기준입니다. 같은 조건이라면 DSR이 항상 DTI보다 높게 나옵니다.</p>
+        </details>
+
+        <details>
+          <summary>2026년 DSR 40% 규제 적용 대상은?</summary>
+          <p>총대출 5천만원을 초과하는 경우 DSR 40% 이하 규제가 적용됩니다(2단계). 비은행권(저축은행·보험사 등)은 DSR 50%까지 허용됩니다. 정책모기지(보금자리론 등)는 DSR 규제 대상에서 제외됩니다.</p>
+        </details>
+
+        <details>
+          <summary>스트레스 DSR이란 무엇인가요?</summary>
+          <p>금리 상승 위험을 미리 반영해 대출 한도를 산정하는 방식입니다. 변동금리·혼합형 대출에 가산금리(혼합형 0.38%p, 순수변동 0.75%p)를 더한 금리로 DSR을 계산합니다. 실제 납입액이 아니라 가상의 높은 금리로 한도를 계산하므로 대출 가능 금액이 줄어듭니다.</p>
+        </details>
+
+        <details>
+          <summary>투기과열지구 지정 현황은 어디서 확인하나요?</summary>
+          <p>투기과열지구·조정대상지역 지정 현황은 국토교통부 실거래가 공개 시스템(rt.molit.go.kr) 또는 각 시·도 부동산정보 포털에서 확인할 수 있습니다. 2026년 기준 서울 전 지역 등이 투기과열지구로 지정되어 있습니다.</p>
+        </details>
+
+        <details>
+          <summary>소득 인정 기준은 어떻게 되나요?</summary>
+          <p>DSR·DTI 계산 시 인정 소득은 근로소득(세전 연봉), 사업소득(신고 소득 기준), 임대소득, 연금소득 등이 포함됩니다. 금융기관마다 인정 비율이 다를 수 있으며, 입증 서류(근로소득원천징수영수증·소득확인증명서 등)가 필요합니다.</p>
+        </details>
+
+        <details>
+          <summary>기존 대출이 있으면 대출이 더 어려워지나요?</summary>
+          <p>네. DSR 계산 시 기존 대출(마이너스통장, 신용대출, 카드론, 자동차할부 등 포함)의 원리금이 모두 합산되므로, 기존 대출이 많을수록 신규 대출 한도가 크게 줄어듭니다. 신규 대출 전 기존 고금리 소액 대출을 먼저 정리하는 것이 유리합니다.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>DTI vs DSR 공식</h3>
+        <ul>
+          <li><strong>DTI</strong> = (신규원리금 + 기존이자) ÷ 연소득 × 100</li>
+          <li><strong>DSR</strong> = (신규원리금 + 기존원리금) ÷ 연소득 × 100</li>
+          <li>DTI는 기존 이자만, DSR은 기존 원금+이자 포함</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>2026 규제 기준</h3>
+        <ul>
+          <li><strong>투기과열지구</strong> DTI 40%</li>
+          <li><strong>조정대상지역</strong> DTI 50%</li>
+          <li><strong>비규제지역</strong> DTI 60%</li>
+          <li><strong>DSR</strong> 40% (5천만원 초과)</li>
+          <li>스트레스 DSR: 변동금리 +0.38~0.75%p</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="loan.html" class="related-link">대출이자</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="capital-gains.html" class="related-link">양도세</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 활용 가이드 + 상세 해설 -->
+<div class="container" style="padding-top:0;">
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">DTI·DSR 계산기 활용 가이드</h2>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      주택담보대출을 신청하기 전에 내 DTI·DSR 비율을 미리 확인해두는 것이 중요합니다. 은행 창구를 방문하기 전에 이 계산기로 규제 초과 여부를 파악하면 불필요한 시간 낭비를 줄일 수 있습니다.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 1 — 내 집 마련 계획 시:</strong> 연소득 6,000만원 직장인이 서울 투기과열지구 아파트 매입을 위해 대출을 알아보는 경우, 이 계산기로 DSR 40% 기준 최대 대출 가능 금액을 역산해 예산을 설정할 수 있습니다. 기존 신용대출이 2,000만원 있다면 해당 원리금도 반드시 포함해야 합니다.
+    </p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">
+      <strong>활용 사례 2 — 대환대출 검토 시:</strong> 현재 여러 대출이 혼재된 상황에서 주담대 추가가 가능한지 여부를 판단할 때, 기존대출 연간 원리금을 합산하여 DSR을 계산하면 대환 가능성을 빠르게 체크할 수 있습니다.
+    </p>
+    <p style="line-height:1.8;color:#444;">
+      <strong>활용 사례 3 — 금리 인상 리스크 확인:</strong> 변동금리 대출이라면 스트레스 DSR 가산금리(+0.38~0.75%p)를 적용해 대출 한도가 얼마나 줄어드는지 확인하고 고정금리와 비교해보세요.
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.25em;margin-bottom:14px;">DTI·DSR 상세 해설 — 2026년 기준</h2>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">DTI vs DSR 차이 핵심 정리</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      DTI(총부채상환비율)는 신규대출 연간 원리금과 기존대출 <strong>이자만</strong> 합산해 연소득으로 나눕니다. DSR(총부채원리금상환비율)은 기존대출의 <strong>원금과 이자를 모두</strong> 합산하므로 항상 DTI보다 높게 산출됩니다. 금융당국은 2022년부터 DSR 규제를 단계적으로 강화해 왔으며, 2026년 현재 총대출 5천만원 초과 시 DSR 40% 이내가 원칙입니다.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">2026년 지역별 DTI 규제 기준표</h3>
+    <table class="result-table" style="font-size:0.9em;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>지역 구분</td><td>DTI 한도</td><td>주요 해당 지역</td></tr>
+      <tr><td>투기과열지구</td><td>40%</td><td>서울 전 지역 등</td></tr>
+      <tr><td>조정대상지역</td><td>50%</td><td>수도권 일부 지역</td></tr>
+      <tr><td>비규제지역</td><td>60%</td><td>지방 대부분 지역</td></tr>
+      <tr><td>DSR (전국 공통)</td><td>40%</td><td>총대출 5천만원 초과</td></tr>
+    </table>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">스트레스 DSR 도입 배경과 적용 방식</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:10px;">
+      2024년부터 단계적으로 도입된 스트레스 DSR은 금리 상승 시 원리금 상환 부담이 급증하는 것을 사전에 차단하기 위한 장치입니다. 변동금리 대출에는 실제 금리에 가산금리를 더한 높은 금리로 DSR을 계산하므로 같은 소득이라도 대출 한도가 줄어듭니다. 혼합형 대출(5년 고정 후 변동)은 +0.38%p, 순수 변동금리 대출은 +0.75%p가 적용됩니다.
+    </p>
+
+    <h3 style="font-size:1em;margin:16px 0 8px;">소득 인정 범위 및 주의사항</h3>
+    <p style="line-height:1.8;color:#444;">
+      DTI·DSR 계산 시 인정되는 소득은 근로소득(원천징수영수증 기준), 사업소득(종합소득세 신고 기준), 임대소득, 연금소득 등입니다. 금융기관에 따라 인정 비율이 다를 수 있으며, 부업 소득이나 비정기적 소득은 인정되지 않을 수 있습니다. 카드론·마이너스통장·자동차할부금도 DSR에 포함되므로 대출 전에 불필요한 소액 대출을 정리하는 것이 유리합니다.
+    </p>
+  </div>
+
+  <!-- 내부 링크 -->
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="loan.html">대출이자 계산기</a> — 원리금균등·원금균등·만기일시 비교</li>
+      <li><a href="mortgage-limit.html">주택담보대출 한도 계산기</a> — LTV·DSR 기준 최대 한도</li>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> — 주택·토지·건물 취득세 계산</li>
+      <li><a href="capital-gains.html">양도소득세 계산기</a> — 부동산 양도세 자동 계산</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> — 4대보험·소득세 공제 후 수령액</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 실제 대출 심사 결과와 다를 수 있습니다.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+  const fmtMan = n => {
+    const man = Math.round(n);
+    if (man >= 10000) return (man / 10000).toFixed(2).replace(/\.?0+$/, '') + '억원';
+    return man.toLocaleString('ko-KR') + '만원';
+  };
+
+  function calculate() {
+    const annualIncome   = parseFloat(document.getElementById('annualIncome').value) || 0;
+    const newLoanPayment = parseFloat(document.getElementById('newLoanPayment').value) || 0;
+    const existingInterest = parseFloat(document.getElementById('existingInterest').value) || 0;
+    const existingPayment  = parseFloat(document.getElementById('existingPayment').value) || 0;
+    const loanRate  = parseFloat(document.getElementById('loanRate').value) || 0;
+    const loanYears = parseFloat(document.getElementById('loanYears').value) || 30;
+    const stressAdj = parseFloat(document.getElementById('stressRate').value) || 0;
+
+    if (annualIncome <= 0) { alert('연소득을 입력해주세요.'); return; }
+
+    // DTI = (신규원리금 + 기존이자) / 연소득 * 100
+    const dti = (newLoanPayment + existingInterest) / annualIncome * 100;
+    // DSR = (신규원리금 + 기존원리금) / 연소득 * 100
+    const dsr = (newLoanPayment + existingPayment) / annualIncome * 100;
+
+    // 결과 카드
+    const dtiEl = document.getElementById('dtiValue');
+    const dsrEl = document.getElementById('dsrValue');
+    dtiEl.textContent = dti.toFixed(1) + '%';
+    dsrEl.textContent = dsr.toFixed(1) + '%';
+
+    // DTI 경고 (40% 기준)
+    if (dti > 40) { dtiEl.className = 'card-value over'; }
+    else { dtiEl.className = 'card-value'; }
+    if (dsr > 40) { dsrEl.className = 'card-value over'; }
+    else { dsrEl.className = 'card-value'; }
+
+    // DSR 상태 메시지
+    document.getElementById('dtiStatus').textContent = dti <= 40 ? '✓ 안전 범위' : '⚠ 투기과열지구 초과';
+    document.getElementById('dtiStatus').className   = 'card-status ' + (dti <= 40 ? 'ok' : 'warn');
+    document.getElementById('dsrStatus').textContent = dsr <= 40 ? '✓ DSR 40% 이내' : '⚠ DSR 40% 초과';
+    document.getElementById('dsrStatus').className   = 'card-status ' + (dsr <= 40 ? 'ok' : 'warn');
+
+    // 지역별 규제 비교
+    const regions = [
+      { name: '투기과열지구', limit: 40 },
+      { name: '조정대상지역', limit: 50 },
+      { name: '비규제지역',   limit: 60 },
+    ];
+    let regionHtml = '';
+    regions.forEach(r => {
+      const isOver = dti > r.limit;
+      const rowClass = isOver ? 'over-row' : 'ok-row';
+      regionHtml += `<tr class="${rowClass}">
+        <td>${r.name}</td>
+        <td>${r.limit}%</td>
+        <td>${dti.toFixed(1)}%</td>
+        <td>${isOver ? '❌ 초과' : '✅ 통과'}</td>
+      </tr>`;
+    });
+    // DSR 행 추가
+    const dsrOver = dsr > 40;
+    regionHtml += `<tr class="${dsrOver ? 'over-row' : 'ok-row'}" style="border-top:2px solid #e0e0e0;">
+      <td>DSR (전 지역)</td>
+      <td>40%</td>
+      <td>${dsr.toFixed(1)}%</td>
+      <td>${dsrOver ? '❌ 초과' : '✅ 통과'}</td>
+    </tr>`;
+    document.getElementById('regionBody').innerHTML = regionHtml;
+
+    // 요약 테이블
+    document.getElementById('rIncome').textContent           = fmtMan(annualIncome) + '/년';
+    document.getElementById('rNewPayment').textContent       = fmtMan(newLoanPayment) + '/년';
+    document.getElementById('rExistingInterest').textContent = fmtMan(existingInterest) + '/년';
+    document.getElementById('rExistingPayment').textContent  = fmtMan(existingPayment) + '/년';
+
+    const dsrAllowedAnnual = annualIncome * 0.4; // 만원
+    document.getElementById('rDsrLimit').textContent = fmtMan(dsrAllowedAnnual) + '/년';
+
+    const dsrGap = dsrAllowedAnnual - (newLoanPayment + existingPayment);
+    const gapEl = document.getElementById('rDsrGap');
+    if (dsrGap >= 0) {
+      gapEl.textContent = '여유 ' + fmtMan(dsrGap) + '/년';
+      gapEl.style.color = '#1e7e34';
+    } else {
+      gapEl.textContent = '초과 ' + fmtMan(Math.abs(dsrGap)) + '/년';
+      gapEl.style.color = '#d32f2f';
+    }
+
+    // 스트레스 DSR
+    const effectiveRate = loanRate + stressAdj;
+    let stressHtml = '';
+    if (stressAdj > 0 && loanRate > 0) {
+      const stressMonthlyRate = effectiveRate / 100 / 12;
+      const stressMonths = loanYears * 12;
+      // 스트레스 DSR 역산: 허용 연간 원리금 동일하게 유지, 금리만 올린 한도
+      const allowedMonthly = (annualIncome * 0.4 - existingPayment) / 12; // 만원/월
+      let stressLimit = 0;
+      if (stressMonthlyRate > 0 && allowedMonthly > 0) {
+        stressLimit = allowedMonthly * ((Math.pow(1 + stressMonthlyRate, stressMonths) - 1) / (stressMonthlyRate * Math.pow(1 + stressMonthlyRate, stressMonths)));
+      }
+      stressHtml = `<strong>스트레스 DSR 적용 시</strong> (실제 ${loanRate}% + 가산 ${stressAdj}% = 유효 ${effectiveRate.toFixed(2)}%)<br>` +
+        `가산금리 반영 최대 대출 가능액: <strong style="color:#f57f17">${fmtMan(Math.max(0, stressLimit))}</strong>`;
+    } else {
+      stressHtml = '고정금리 선택 — 스트레스 DSR 가산금리 미적용';
+    }
+    document.getElementById('stressBox').innerHTML = stressHtml;
+
+    // 대출 가능 한도 역산 (기본금리)
+    const allowedAnnualNew = annualIncome * 0.4 - existingPayment; // 만원
+    let maxLoan = 0;
+    let limitSub = '';
+    if (loanRate > 0 && allowedAnnualNew > 0) {
+      const monthlyRate = loanRate / 100 / 12;
+      const n = loanYears * 12;
+      const allowedMonthly = allowedAnnualNew / 12;
+      // P = PMT × ((1+r)^n - 1) / (r × (1+r)^n)
+      maxLoan = allowedMonthly * ((Math.pow(1 + monthlyRate, n) - 1) / (monthlyRate * Math.pow(1 + monthlyRate, n)));
+      limitSub = `금리 ${loanRate}%, ${loanYears}년 원리금균등 기준 | 허용 월 원리금 ${fmtMan(allowedAnnualNew / 12)}`;
+    } else if (allowedAnnualNew <= 0) {
+      limitSub = '⚠ 기존 대출 원리금이 DSR 한도를 초과하여 신규 대출이 불가합니다.';
+    } else {
+      limitSub = '금리와 대출기간을 입력하면 한도를 계산합니다.';
+    }
+
+    const limitValueEl = document.getElementById('limitValue');
+    if (maxLoan > 0) {
+      limitValueEl.textContent = fmtMan(maxLoan);
+      limitValueEl.style.color = '#1a73e8';
+    } else {
+      limitValueEl.textContent = '0원';
+      limitValueEl.style.color = '#d32f2f';
+    }
+    document.getElementById('limitSub').textContent = limitSub;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>

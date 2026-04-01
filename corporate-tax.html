@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법인세 계산기 - 2026년 과세표준별 세율 자동 계산 | 지방소득세 포함</title>
+  <meta name="description" content="2026년 기준 법인세를 자동 계산합니다. 과세표준 입력 시 누진세율 적용, 지방소득세까지 포함한 총 납부세액을 확인하세요.">
+  <link rel="canonical" href="https://calcmoney.kr/corporate-tax">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="법인세 계산기 - 2026년 과세표준별 세율 자동 계산 | 지방소득세 포함">
+  <meta property="og:description" content="2026년 기준 법인세를 자동 계산합니다. 과세표준별 누진세율 적용, 지방소득세까지 포함한 총 납부세액을 확인하세요.">
+  <meta property="og:url" content="https://calcmoney.kr/corporate-tax">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026년 법인세율은 어떻게 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026년 기준 법인세율은 과세표준 구간에 따라 누진 적용됩니다. 2억원 이하 9%, 2억원 초과 200억원 이하 19%, 200억원 초과 3,000억원 이하 21%, 3,000억원 초과 24%입니다. 각 구간별로 세율이 달라지는 누진세 구조이며, 실효세율은 과세표준 규모에 따라 달라집니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "법인세 지방소득세란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "법인세 지방소득세는 법인세 산출세액의 10%를 지방자치단체에 납부하는 세금입니다. 법인세를 신고·납부할 때 함께 신고하며, 국세인 법인세와 별도로 지방세로 납부합니다. 예를 들어 법인세 산출세액이 1,000만원이라면 지방소득세로 100만원을 추가 납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "법인세 신고·납부 기한은 언제인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "법인세는 사업연도 종료일로부터 3개월 이내에 신고·납부해야 합니다. 12월 결산법인(가장 일반적)의 경우 다음 해 3월 31일까지 신고·납부합니다. 중간예납은 사업연도 개시일로부터 6개월이 되는 날로부터 2개월 이내(12월 결산법인은 8월 31일까지) 납부합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "법인세 과세표준이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "법인세 과세표준은 각 사업연도 소득(익금 - 손금)에서 이월결손금 등을 공제한 금액입니다. 쉽게 말해 법인이 벌어들인 순이익 개념이며, 이 금액에 세율을 곱해 산출세액을 계산합니다. 기업 재무제표상 당기순이익과는 세무상 조정 항목으로 인해 차이가 발생할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "중소기업 법인세 특례가 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "중소기업의 경우 조세특례제한법에 따른 각종 세액공제 및 감면 혜택이 있습니다. 중소기업 특별세액감면(업종별 5~30% 감면), 연구개발(R&D) 세액공제, 고용창출투자 세액공제 등이 대표적입니다. 다만 이러한 공제·감면은 세율 자체가 아닌 산출세액에서 차감하는 방식으로 적용됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "과세표준 10억원인 법인의 법인세는?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "과세표준 10억원의 경우: 2억원 이하 구간(9%) = 1,800만원, 2억원 초과 8억원(19%) = 1억 5,200만원, 합계 산출세액 = 1억 7,000만원. 지방소득세(10%) = 1,700만원. 총 납부세액 = 1억 8,700만원입니다. 실효세율은 약 18.7%입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "법인세 중간예납이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "법인세 중간예납은 사업연도 중간에 법인세의 일부를 미리 납부하는 제도입니다. 직전 사업연도 법인세의 50%를 납부하는 방식(직전연도 기준)과 해당 사업연도 상반기 실적으로 계산하는 방식(가결산 기준) 중 선택할 수 있습니다. 12월 결산법인은 매년 8월 31일까지 납부해야 합니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="car-tax.html">자동차세</a>
+      <a href="corporate-tax.html" class="active">법인세</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>법인세 계산기</h1>
+        <p class="desc">2026년 기준 법인세를 자동 계산합니다. 과세표준을 입력하면 구간별 누진세율을 적용하여 산출세액과 지방소득세(10%)를 포함한 총 납부세액을 확인할 수 있습니다.</p>
+
+        <div class="form-group">
+          <label>과세표준 <span class="hint">원 단위 입력 (숫자만)</span></label>
+          <input type="number" id="taxBase" placeholder="예: 200000000 (2억원)" value="200000000" min="0" step="1000000">
+        </div>
+
+        <div class="form-group">
+          <label>빠른 입력 <span class="hint">클릭 시 과세표준 자동 입력</span></label>
+          <div class="quick-btns" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;">
+            <button class="btn-quick" onclick="setBase(100000000)">1억</button>
+            <button class="btn-quick" onclick="setBase(200000000)">2억</button>
+            <button class="btn-quick" onclick="setBase(500000000)">5억</button>
+            <button class="btn-quick" onclick="setBase(1000000000)">10억</button>
+            <button class="btn-quick" onclick="setBase(5000000000)">50억</button>
+            <button class="btn-quick" onclick="setBase(20000000000)">200억</button>
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">계산하기</button>
+
+        <div class="result-box" id="result">
+          <div class="result-highlight">
+            <div class="label">총 납부세액 (법인세 + 지방소득세)</div>
+            <div class="value" id="rTotal">-</div>
+            <div class="sub" id="rTotalSub"></div>
+          </div>
+
+          <table class="result-table">
+            <tr><td>과세표준</td><td id="rTaxBase">-</td></tr>
+            <tr><td>구간별 산출세액 내역</td><td id="rBreakdown">-</td></tr>
+            <tr><td>산출세액 합계</td><td id="rTaxAmount">-</td></tr>
+            <tr><td>지방소득세 (10%)</td><td id="rLocalTax">-</td></tr>
+            <tr style="border-top:2px solid #e0e0e0;" class="total"><td>총 납부세액</td><td id="rGrandTotal">-</td></tr>
+            <tr><td>실효세율</td><td id="rEffectiveRate">-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 세율 구간표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>법인세 세율 구간 (2026년)</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준 구간</td><td>세율</td><td>누진공제액</td></tr>
+          <tr><td>2억원 이하</td><td>9%</td><td>0원</td></tr>
+          <tr><td>2억원 초과 ~ 200억원 이하</td><td>19%</td><td>2,000만원</td></tr>
+          <tr><td>200억원 초과 ~ 3,000억원 이하</td><td>21%</td><td>4억 2,000만원</td></tr>
+          <tr><td>3,000억원 초과</td><td>24%</td><td>94억 2,000만원</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 위 산출세액에 지방소득세 10% 추가 납부. 각종 세액공제·감면 미적용 기준.</p>
+      </div>
+
+      <!-- 계산 예시표 -->
+      <div class="info-box" style="margin-top:20px;">
+        <h3>과세표준별 법인세 납부세액 예시</h3>
+        <table class="result-table" style="font-size:0.92em;">
+          <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준</td><td>산출세액</td><td>지방소득세</td><td>총 납부세액</td></tr>
+          <tr><td>1억원</td><td>900만원</td><td>90만원</td><td>990만원</td></tr>
+          <tr><td>2억원</td><td>1,800만원</td><td>180만원</td><td>1,980만원</td></tr>
+          <tr><td>5억원</td><td>7,500만원</td><td>750만원</td><td>8,250만원</td></tr>
+          <tr><td>10억원</td><td>1억 7,000만원</td><td>1,700만원</td><td>1억 8,700만원</td></tr>
+          <tr><td>50억원</td><td>9억 3,000만원</td><td>9,300만원</td><td>10억 2,300만원</td></tr>
+          <tr><td>200억원</td><td>37억 8,000만원</td><td>3억 7,800만원</td><td>41억 5,800만원</td></tr>
+        </table>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 세액공제·감면 없는 일반 법인 기준. 실제 납부세액은 공제 적용 시 달라질 수 있음.</p>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+      <div class="info-box">
+        <h3>법인세 계산 공식</h3>
+        <ul>
+          <li><strong>산출세액</strong> =<br>과세표준 × 세율 - 누진공제</li>
+          <li style="margin-top:10px;"><strong>지방소득세</strong> =<br>산출세액 × 10%</li>
+          <li style="margin-top:10px;"><strong>총 납부세액</strong> =<br>산출세액 + 지방소득세</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 세액공제·감면·가산세 미적용 기준. 실제 납부세액은 다를 수 있음.</p>
+      </div>
+      <div class="info-box">
+        <h3>신고·납부 일정</h3>
+        <ul>
+          <li><strong>12월 결산법인:</strong><br>다음해 3월 31일까지</li>
+          <li style="margin-top:8px;"><strong>중간예납:</strong><br>매년 8월 31일까지</li>
+          <li style="margin-top:8px;"><strong>지방소득세:</strong><br>법인세 신고 시 함께 신고</li>
+        </ul>
+        <p style="font-size:0.85em;color:#888;margin-top:8px;">* 결산월에 따라 신고 기한이 달라짐</p>
+      </div>
+      <div class="info-box">
+        <h3>다른 계산기</h3>
+        <div class="related-grid">
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="capital-gains.html" class="related-link">양도소득세</a>
+          <a href="acquisition-tax.html" class="related-link">취득세</a>
+          <a href="gift-tax.html" class="related-link">증여세</a>
+          <a href="salary.html" class="related-link">실수령액</a>
+          <a href="loan.html" class="related-link">대출이자</a>
+        </div>
+      </div>
+      <div class="ad-zone rectangle"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- FAQ 섹션 -->
+  <div class="info-box" style="margin-top:32px;">
+    <h2 style="font-size:1.3em;margin-bottom:18px;">자주 묻는 질문 (FAQ)</h2>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">2026년 법인세율은 어떻게 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">2026년 기준 법인세율은 과세표준 구간에 따라 누진 적용됩니다. <strong>2억원 이하 9%</strong>, <strong>2억~200억원 19%</strong>, <strong>200억~3,000억원 21%</strong>, <strong>3,000억원 초과 24%</strong>의 4단계 세율 구조입니다. 예를 들어 과세표준이 5억원이라면 2억원까지는 9%, 초과분 3억원에는 19%가 적용됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">법인세 지방소득세는 반드시 내야 하나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, 법인세 지방소득세는 법인세 산출세액의 <strong>10%를 의무적으로 납부</strong>해야 합니다. 지방소득세법에 따라 지방자치단체에 납부하는 지방세로, 법인세 신고 시 함께 신고하지만 납부처는 다릅니다. 국세인 법인세는 세무서, 지방소득세는 지자체(위택스)에 납부합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">법인세 과세표준은 당기순이익과 같은가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">과세표준과 재무제표상 당기순이익은 다릅니다. 과세표준은 <strong>각 사업연도 소득(익금 합계 - 손금 합계)</strong>에서 이월결손금 등을 차감한 금액입니다. 세무상 익금산입, 손금불산입 등 세무조정 항목으로 인해 당기순이익과 차이가 발생합니다. 정확한 과세표준은 세무사와 상담하거나 세무조정계산서를 통해 확인하세요.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">중소기업은 법인세 감면 혜택이 있나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">네, 중소기업은 <strong>조세특례제한법</strong>에 따른 다양한 세액공제·감면 혜택이 있습니다. 대표적으로 중소기업 특별세액감면(업종별 5~30%), 연구·인력개발(R&D) 세액공제, 고용창출투자 세액공제 등이 있습니다. 이러한 혜택은 산출세액에서 직접 차감되므로 실제 납부세액을 크게 낮출 수 있습니다. 자세한 내용은 국세청 홈택스 또는 세무사를 통해 확인하세요.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">법인세 중간예납은 무엇인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">법인세 중간예납은 사업연도 중간에 법인세의 일부를 미리 납부하는 제도입니다. 12월 결산법인은 <strong>매년 8월 31일까지</strong> 납부해야 합니다. 납부 방법은 직전 사업연도 법인세의 50%를 납부하는 방식과 당해 사업연도 상반기 실적을 가결산하여 계산하는 방식 중 선택할 수 있습니다. 중간예납 세액은 연도 말 확정신고 시 기납부세액으로 차감됩니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">법인세 신고 기한을 넘기면 어떻게 되나요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">신고 기한을 넘기면 <strong>무신고 가산세</strong>가 부과됩니다. 일반 무신고 시 납부세액의 20%(부정행위는 40%), <strong>납부 불성실 가산세</strong>는 미납 세액 × 일수 × 0.022%(연간 약 8.03%)가 적용됩니다. 또한 결손금 이월공제 등 각종 세제 혜택을 받지 못할 수 있습니다. 기한 내 신고·납부가 어렵다면 세무사를 통해 조기에 대처하는 것이 중요합니다.</p>
+    </details>
+
+    <details style="margin-bottom:14px;">
+      <summary style="font-weight:700;cursor:pointer;padding:8px 0;">과세표준 3억원 법인의 법인세는 얼마인가요?</summary>
+      <p style="margin:10px 0 0 0;line-height:1.7;color:#444;">과세표준 3억원의 경우: 2억원 × 9% = 1,800만원, 초과 1억원 × 19% = 1,900만원. <strong>산출세액 합계 3,700만원</strong>. 지방소득세(10%) 370만원. <strong>총 납부세액 4,070만원</strong>. 실효세율은 약 13.6%입니다. 누진공제 방식으로 계산하면 3억 × 19% - 2,000만원 = 3,700만원으로 동일합니다.</p>
+    </details>
+  </div>
+
+  <!-- 법인세 가이드 섹션 -->
+  <div class="info-box" style="margin-top:20px;">
+    <h2 style="font-size:1.4em;margin-bottom:20px;">2026년 법인세 완벽 가이드</h2>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">법인세란 무엇인가?</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">법인세는 법인(주식회사, 유한회사, 합명회사, 합자회사 등)이 각 사업연도에 얻은 소득에 대해 납부하는 국세입니다. 법인세법에 근거하여 과세하며, 개인사업자가 납부하는 종합소득세와 달리 법인 명의로 별도 신고·납부합니다. 법인의 수익에서 비용을 차감한 각 사업연도 소득을 기준으로 산정하되, 세무상 각종 조정을 거친 과세표준에 누진세율을 적용합니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">법인세에는 반드시 <strong>지방소득세(법인세의 10%)</strong>가 함께 부과됩니다. 지방소득세는 지방세로서 법인세 신고 시 함께 신고하지만, 실제 납부는 국세청(홈택스)과 지방자치단체(위택스)에 각각 해야 합니다. 따라서 법인의 실질 세금 부담은 법인세 산출세액의 110%로 보는 것이 정확합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">2026년 법인세율 구조 – 4단계 누진세</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">2026년 기준 법인세율은 과세표준 규모에 따라 4단계 누진세율이 적용됩니다. 과세표준이 클수록 높은 세율이 적용되며, 각 구간의 초과분에만 해당 세율이 적용되는 초과누진세 구조입니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>과세표준 구간</td><td>세율</td><td>누진공제액</td><td>계산 공식</td></tr>
+      <tr><td>2억원 이하</td><td>9%</td><td>0원</td><td>과세표준 × 9%</td></tr>
+      <tr><td>2억원 초과 ~ 200억원 이하</td><td>19%</td><td>2,000만원</td><td>과세표준 × 19% - 2,000만원</td></tr>
+      <tr><td>200억원 초과 ~ 3,000억원 이하</td><td>21%</td><td>4억 2,000만원</td><td>과세표준 × 21% - 4억 2,000만원</td></tr>
+      <tr><td>3,000억원 초과</td><td>24%</td><td>94억 2,000만원</td><td>과세표준 × 24% - 94억 2,000만원</td></tr>
+    </table>
+    <p style="font-size:0.85em;color:#888;margin-bottom:20px;">* 누진공제 방식으로 계산하면 구간별 분리 계산과 동일한 결과가 나옵니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">법인세 계산 과정 단계별 설명</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">법인세 계산은 크게 다음 단계를 거칩니다. 먼저 해당 사업연도의 <strong>익금(수익)에서 손금(비용)을 차감</strong>하여 각 사업연도 소득을 구합니다. 이후 세무조정(익금산입·손금불산입·익금불산입·손금산입)을 반영하고, 이월결손금을 공제하여 <strong>과세표준</strong>을 산출합니다. 과세표준에 해당 구간 세율을 적용하면 <strong>산출세액</strong>이 나오며, 여기서 세액공제·감면을 차감하고 가산세를 더하면 <strong>최종 납부세액</strong>이 결정됩니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>단계</td><td>항목</td><td>비고</td></tr>
+      <tr><td>1단계</td><td>각 사업연도 소득 = 익금 - 손금</td><td>세무조정 반영</td></tr>
+      <tr><td>2단계</td><td>과세표준 = 소득 - 이월결손금 등</td><td>결손금 최대 60% 공제</td></tr>
+      <tr><td>3단계</td><td>산출세액 = 과세표준 × 세율</td><td>누진세율 적용</td></tr>
+      <tr><td>4단계</td><td>납부세액 = 산출세액 - 세액공제·감면 + 가산세</td><td>중간예납 기납부 차감</td></tr>
+      <tr><td>5단계</td><td>지방소득세 = 산출세액 × 10%</td><td>별도 신고·납부</td></tr>
+    </table>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">법인세 주요 세액공제·감면 항목</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">산출세액에서 직접 차감하는 세액공제와 감면은 실질 세금 부담을 크게 낮출 수 있습니다. 중소기업이라면 특히 아래 항목들을 꼼꼼히 검토해야 합니다.</p>
+    <ul style="line-height:1.9;color:#444;padding-left:18px;margin-bottom:12px;">
+      <li><strong>중소기업 특별세액감면:</strong> 제조업·IT 등 업종별 산출세액의 5~30% 감면. 수도권 소재 여부에 따라 감면율이 다름.</li>
+      <li><strong>연구·인력개발(R&D) 세액공제:</strong> 연구개발 비용의 일정 비율(중소기업 25%, 중견기업 8%, 대기업 2%)을 세액에서 공제.</li>
+      <li><strong>통합투자세액공제:</strong> 기계장치 등 사업용 자산 투자금액의 일정 비율 공제. 중소기업 10% + 추가공제 적용 가능.</li>
+      <li><strong>고용증대 세액공제:</strong> 상시근로자 수가 전년 대비 증가한 경우, 증가 인원당 일정 금액을 2~3년간 세액 공제.</li>
+      <li><strong>외국납부세액공제:</strong> 해외에서 이미 납부한 세금을 국내 법인세에서 공제하여 이중과세 방지.</li>
+    </ul>
+    <p style="font-size:0.85em;color:#888;margin-bottom:20px;">* 세액공제·감면 한도 및 중복 적용 가능 여부는 세무사 확인 필수.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">법인세 신고·납부 일정 및 방법</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">법인세는 <strong>사업연도 종료일로부터 3개월 이내</strong>에 신고·납부해야 합니다. 가장 많은 12월 결산법인의 경우 다음 해 3월 31일이 신고 기한입니다. 신고는 국세청 홈택스(hometax.go.kr)에서 전자신고하거나, 세무대리인을 통해 대리 신고할 수 있습니다.</p>
+
+    <table class="result-table" style="font-size:0.92em;margin-bottom:16px;">
+      <tr style="background:#f1f3f4;font-weight:700;"><td>결산월</td><td>신고·납부 기한</td><td>중간예납 기한</td></tr>
+      <tr><td>12월 결산</td><td>다음 해 3월 31일</td><td>당해 8월 31일</td></tr>
+      <tr><td>6월 결산</td><td>당해 9월 30일</td><td>당해 2월 28일</td></tr>
+      <tr><td>3월 결산</td><td>당해 6월 30일</td><td>전년 11월 30일</td></tr>
+      <tr><td>9월 결산</td><td>당해 12월 31일</td><td>당해 5월 31일</td></tr>
+    </table>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">법인세와 종합소득세의 차이</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">개인사업자와 법인의 세금 부담 비교는 사업 규모 결정에 중요한 요소입니다. 개인사업자는 종합소득세(최고세율 45%, 지방소득세 포함 49.5%)를 내는 반면, 법인은 법인세(최고세율 24%, 지방소득세 포함 26.4%)를 납부합니다. 단, 법인의 이익을 대표이사나 주주에게 배당할 경우 배당소득세(15.4% 원천징수)가 추가 발생하므로 단순 세율 비교만으로는 유·불리를 판단하기 어렵습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">일반적으로 <strong>연 순이익이 1억원을 넘는 시점부터 법인 전환이 세금 측면에서 유리</strong>한 경우가 많습니다. 다만 법인은 설립·유지 비용, 급여 및 배당 전략, 4대보험 부담 등 추가 비용 요소가 있으므로 세무사와 충분히 상담 후 결정하세요.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">법인세 절세 실전 전략</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">법인세 부담을 합법적으로 줄이기 위한 주요 전략을 소개합니다. 첫째, <strong>적격 손금 항목을 최대한 반영</strong>합니다. 대표이사 급여, 임원 퇴직급여, 업무 관련 접대비(한도 내), 감가상각비 등을 적절히 계상하면 과세표준을 낮출 수 있습니다. 둘째, <strong>세액공제·감면 제도를 적극 활용</strong>합니다. R&D 세액공제, 투자세액공제, 고용증대 세액공제 등은 직접 세액을 줄이므로 효과가 큽니다. 셋째, <strong>결손금 이월공제</strong>를 활용합니다. 사업 초기 발생한 결손금은 최대 15년간 이월하여 미래 소득과 공제할 수 있습니다.</p>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">법인세 절세는 세법 범위 내에서 합법적으로 이루어져야 합니다. 부당한 비용 계상, 가공경비 처리, 이익 은폐 등은 세무조사와 가산세 부과의 원인이 됩니다. 전문 세무사와 정기적으로 세무 컨설팅을 받으며 합법적인 절세 전략을 수립하는 것이 장기적으로 유리합니다.</p>
+
+    <h3 style="font-size:1.15em;margin:24px 0 12px;">법인세 관련 주요 가산세</h3>
+    <p style="line-height:1.8;color:#444;margin-bottom:12px;">법인세 신고·납부 의무를 이행하지 않으면 다양한 가산세가 부과됩니다. <strong>무신고 가산세</strong>는 납부세액의 20%(부정행위 40%), <strong>과소신고 가산세</strong>는 과소납부세액의 10%(부정행위 40%), <strong>납부지연 가산세</strong>는 미납세액 × 경과일수 × 0.022%가 적용됩니다. 또한 장부 미비치·불성실 기장에 대한 가산세, 지급명세서 미제출 가산세 등도 주의해야 합니다. 신고 기한 내에 성실하게 신고·납부하는 것이 최선의 절세입니다.</p>
+  </div>
+
+  <!-- 내부 링크 섹션 -->
+  <div class="info-box" style="margin-top:20px;margin-bottom:32px;">
+    <h3>다른 계산기도 확인해보세요</h3>
+    <ul>
+      <li><a href="income-tax.html">종합소득세 계산기</a> - 프리랜서, 개인사업자 종합소득세 자동 계산</li>
+      <li><a href="capital-gains.html">양도소득세 계산기</a> - 부동산 양도소득세 자동 계산</li>
+      <li><a href="acquisition-tax.html">취득세 계산기</a> - 주택·토지·건물 취득세 자동 계산</li>
+      <li><a href="gift-tax.html">증여세 계산기</a> - 관계별 공제, 혼인·출산 공제 반영</li>
+      <li><a href="salary.html">연봉 실수령액 계산기</a> - 4대보험·소득세 공제 후 월 수령액</li>
+      <li><a href="loan.html">대출이자 계산기</a> - 원리금균등, 원금균등, 만기일시 비교</li>
+    </ul>
+  </div>
+
+<footer>
+  <p>금융계산기.com | 본 계산기는 참고용이며 실제 세액은 국세청 홈택스(hometax.go.kr) 또는 담당 세무사를 통해 확인하세요.</p>
+  <p><a href="/privacy.html">개인정보처리방침</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+</footer>
+
+<script>
+const fmt = n => {
+  const abs = Math.abs(Math.round(n));
+  return (n < 0 ? '-' : '') + abs.toLocaleString('ko-KR') + '원';
+};
+
+const fmtPct = r => (r * 100).toFixed(2) + '%';
+
+function setBase(val) {
+  document.getElementById('taxBase').value = val;
+  calculate();
+}
+
+// 법인세 세율 구간 (2026년 기준)
+// 2억 이하: 9%, 2억~200억: 19%, 200억~3,000억: 21%, 3,000억 초과: 24%
+const TAX_BRACKETS = [
+  { limit: 200000000,    rate: 0.09, prev: 0 },          // 2억 이하 9%
+  { limit: 20000000000,  rate: 0.19, prev: 200000000 },  // 200억 이하 19%
+  { limit: 300000000000, rate: 0.21, prev: 20000000000 },// 3,000억 이하 21%
+  { limit: Infinity,     rate: 0.24, prev: 300000000000 }// 3,000억 초과 24%
+];
+
+function calcCorpTax(taxBase) {
+  let remaining = taxBase;
+  let totalTax = 0;
+  const breakdown = [];
+  let prevLimit = 0;
+
+  for (const bracket of TAX_BRACKETS) {
+    if (remaining <= 0) break;
+    const bracketSize = bracket.limit === Infinity
+      ? remaining
+      : Math.min(remaining, bracket.limit - prevLimit);
+    const taxInBracket = bracketSize * bracket.rate;
+    if (bracketSize > 0) {
+      breakdown.push({ amount: bracketSize, rate: bracket.rate, tax: taxInBracket });
+    }
+    totalTax += taxInBracket;
+    remaining -= bracketSize;
+    prevLimit = bracket.limit;
+  }
+
+  return { totalTax, breakdown };
+}
+
+function buildBreakdownText(breakdown) {
+  return breakdown.map(b => {
+    const pct = (b.rate * 100) + '%';
+    return b.amount.toLocaleString('ko-KR') + '원 × ' + pct + ' = ' + Math.round(b.tax).toLocaleString('ko-KR') + '원';
+  }).join('\n');
+}
+
+function calculate() {
+  const taxBase = parseFloat(document.getElementById('taxBase').value) || 0;
+
+  if (taxBase < 0) {
+    alert('과세표준은 0원 이상이어야 합니다.');
+    return;
+  }
+
+  const { totalTax, breakdown } = calcCorpTax(taxBase);
+  const localTax = Math.round(totalTax * 0.1);
+  const grandTotal = Math.round(totalTax) + localTax;
+  const effectiveRate = taxBase > 0 ? grandTotal / taxBase : 0;
+
+  // 구간별 내역 문자열 생성
+  const bkLines = breakdown.map(b => {
+    const pct = (b.rate * 100) + '%';
+    return b.amount.toLocaleString('ko-KR') + '원 × ' + pct;
+  });
+
+  document.getElementById('rTaxBase').textContent = fmt(taxBase);
+  document.getElementById('rBreakdown').innerHTML = breakdown.map(b => {
+    const pct = (b.rate * 100) + '%';
+    return '<span style="display:block;font-size:0.88em;color:#555;">'
+      + b.amount.toLocaleString('ko-KR') + '원 × ' + pct
+      + ' = ' + Math.round(b.tax).toLocaleString('ko-KR') + '원'
+      + '</span>';
+  }).join('');
+  document.getElementById('rTaxAmount').textContent = fmt(Math.round(totalTax));
+  document.getElementById('rLocalTax').textContent = fmt(localTax);
+  document.getElementById('rGrandTotal').textContent = fmt(grandTotal);
+  document.getElementById('rEffectiveRate').textContent = fmtPct(effectiveRate);
+
+  document.getElementById('rTotal').textContent = fmt(grandTotal);
+  document.getElementById('rTotalSub').textContent =
+    '법인세 ' + fmt(Math.round(totalTax)) + ' + 지방소득세 ' + fmt(localTax);
+
+  document.getElementById('result').classList.add('show');
+}
+
+// 빠른 입력 버튼 스타일 (인라인 fallback)
+document.querySelectorAll('.btn-quick').forEach(btn => {
+  btn.style.cssText = 'padding:6px 14px;border:1px solid #4285f4;border-radius:6px;background:#fff;color:#4285f4;cursor:pointer;font-size:0.9em;';
+  btn.addEventListener('mouseover', () => btn.style.background = '#e8f0fe');
+  btn.addEventListener('mouseout', () => btn.style.background = '#fff');
+});
+</script>
+</body>
+</html>

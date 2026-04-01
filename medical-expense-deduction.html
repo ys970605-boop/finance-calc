@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="jqzhx5fjBKs650wPB-u9AgtrQfrLaPxJTr-D9Ww1HmA" />
+  <meta name="naver-site-verification" content="5ab80a92695393e8525329d1d549b1992fd86362" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 의료비세액공제 계산기 - 공제한도·난임시술비·실손보험 반영 자동 계산 | calcmoney.kr</title>
+  <meta name="description" content="총급여와 의료비를 입력하면 3% 문턱, 항목별 한도, 난임시술비 30% 공제, 실손보험 차감까지 반영한 의료비세액공제를 자동 계산합니다.">
+  <link rel="canonical" href="https://calcmoney.kr/medical-expense-deduction">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026 의료비세액공제 계산기 - 난임시술비·실손보험 반영 자동 계산">
+  <meta property="og:description" content="총급여·의료비 입력 → 3% 문턱, 항목별 한도, 난임시술비 30%, 실손보험 차감까지 자동 반영한 의료비세액공제 즉시 계산.">
+  <meta property="og:url" content="https://calcmoney.kr/medical-expense-deduction">
+  <meta property="og:image" content="https://calcmoney.kr/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3500431039525089" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "의료비세액공제 3% 기준이란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "의료비세액공제는 총급여의 3%를 초과하는 의료비에 대해서만 공제가 적용됩니다. 예를 들어 총급여가 5,000만원이면 150만원(5,000만원 × 3%)을 초과하는 의료비부터 공제 대상이 됩니다. 단, 본인·65세 이상·장애인·난임시술비·미숙아 및 선천이상아 의료비는 3% 문턱 없이 전액 공제 대상입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "난임시술비 세액공제율은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "난임시술비는 2026년 기준 공제율 30%가 적용됩니다. 총급여의 3% 문턱 적용 없이 전액 공제 대상이며, 한도도 없습니다. 예를 들어 난임시술비가 500만원이라면 150만원의 세액공제를 받을 수 있습니다. 이는 일반 의료비(15%) 및 미숙아·선천이상아 의료비(20%)보다 높은 공제율입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실손보험 수령액은 의료비 공제에서 차감되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, 실손의료보험으로 보전받은 금액은 의료비세액공제 대상에서 차감해야 합니다. 본인이 실제 부담한 의료비에서 실손보험 수령액을 뺀 금액만 공제 대상이 됩니다. 단, 보험회사가 직접 병원에 지급한 경우에도 동일하게 차감됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "안경·콘택트렌즈 구입비도 의료비 공제가 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "시력 교정용 안경 및 콘택트렌즈 구입비는 1인당 연 50만원 한도 내에서 의료비세액공제 대상입니다. 일반 의료비 항목으로 분류되어 총급여의 3% 초과분에 대해 15% 공제율이 적용됩니다. 안경원에서 안경 구입 시 발급받은 영수증을 연말정산 시 제출해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "산후조리원 비용도 의료비 공제 대상인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2019년부터 산후조리원 이용 비용이 의료비세액공제 대상에 포함되었습니다. 총급여 7,000만원 이하인 근로자는 출산 1회당 200만원 한도로 의료비 공제를 받을 수 있습니다. 총급여 7,000만원 초과자는 공제 대상에서 제외됩니다. 산후조리원에서 발급받은 영수증을 제출해야 합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "미숙아·선천이상아 의료비 공제율은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "미숙아 및 선천이상아에 대한 의료비는 공제율 20%가 적용됩니다. 총급여의 3% 문턱 없이 전액 공제 대상이며 한도도 없습니다. 미숙아는 임신 37주 미만 출생아 또는 출생 시 체중 2.5kg 미만인 아이, 선천이상아는 선천성 기형이나 이상이 있는 아이를 말합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "65세 이상 부모님 의료비도 공제받을 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "65세 이상 부모님을 기본공제(인적공제) 대상으로 등록한 경우, 부모님 의료비도 공제받을 수 있습니다. 65세 이상 의료비는 총급여의 3% 문턱 없이 전액 공제 대상이며, 공제 한도도 없습니다. 공제율은 15%입니다. 단, 부모님의 연간 소득금액이 100만원 이하(근로소득만 있는 경우 총급여 500만원 이하)여야 기본공제 대상이 됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65XND7BHMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65XND7BHMS');
+  </script>
+  <style>
+    .section-label { font-size: 0.88em; font-weight: 700; color: #1a73e8; margin: 20px 0 10px; padding: 6px 12px; background: #e8f0fe; border-radius: 6px; display: inline-block; }
+    .section-divider { border: none; border-top: 1px dashed #e0e0e0; margin: 20px 0; }
+    .deduction-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+    .deduction-card { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 10px; padding: 14px; text-align: center; }
+    .deduction-card.highlight { border-color: #1a73e8; background: #e8f0fe; }
+    .deduction-card .dlabel { font-size: 0.78em; color: #666; margin-bottom: 4px; line-height: 1.4; }
+    .deduction-card .dvalue { font-size: 1.15em; font-weight: 800; color: #1a73e8; }
+    .total-deduction-box { background: linear-gradient(135deg, #1a73e8, #0d47a1); border-radius: 12px; padding: 22px; text-align: center; color: white; margin: 16px 0; }
+    .total-deduction-box .tlabel { font-size: 0.9em; opacity: 0.85; margin-bottom: 6px; }
+    .total-deduction-box .tvalue { font-size: 2.2em; font-weight: 800; }
+    .total-deduction-box .tsub { font-size: 0.82em; opacity: 0.8; margin-top: 6px; }
+    .refund-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .refund-table th { background: #f0f4ff; color: #333; font-size: 0.85em; padding: 10px 12px; text-align: left; border-bottom: 2px solid #c5cae9; }
+    .refund-table th:last-child { text-align: right; }
+    .refund-table td { padding: 9px 12px; font-size: 0.88em; border-bottom: 1px solid #f0f0f0; }
+    .refund-table td:last-child { font-weight: 600; text-align: right; }
+    .refund-table tr:hover td { background: #f8f9fa; }
+    .refund-table tr.subtotal td { background: #f0f4ff; font-weight: 700; }
+    .benefit-summary { background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 0 10px 10px 0; padding: 16px; margin: 16px 0; }
+    .benefit-summary h4 { margin: 0 0 10px; font-size: 0.9em; color: #e65100; }
+    .benefit-summary ul { margin: 0; padding-left: 18px; font-size: 0.85em; color: #555; line-height: 1.8; }
+    .notice-box { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 12px 0; font-size: 0.83em; color: #555; line-height: 1.7; }
+    .notice-box strong { color: #c62828; }
+    .faq-list { margin-top: 0; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .faq-item summary { padding: 14px 16px; font-size: 0.9em; font-weight: 600; cursor: pointer; color: var(--text); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::after { content: '+'; font-size: 1.2em; color: var(--primary); flex-shrink: 0; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { padding: 0 16px 14px; font-size: 0.85em; color: var(--text-muted); line-height: 1.7; margin: 0; }
+    .input-section-title { font-size: 0.88em; font-weight: 700; color: #1a73e8; margin: 20px 0 10px; padding: 6px 12px; background: #e8f0fe; border-radius: 6px; display: inline-block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">금융계산기</a>
+    <nav>
+      <a href="loan.html">대출이자</a>
+      <a href="acquisition-tax.html">취득세</a>
+      <a href="severance.html">퇴직금</a>
+      <a href="income-tax.html">종합소득세</a>
+      <a href="capital-gains.html">양도세</a>
+      <a href="dti-dsr.html">DTI/DSR</a>
+      <a href="blog/index.html">블로그</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone horizontal"></div>
+
+  <div class="calc-layout">
+    <div>
+      <div class="calc-box">
+        <h1>의료비세액공제 계산기</h1>
+        <p class="desc">총급여와 의료비를 입력하면 2026년 기준 3% 문턱, 항목별 공제 한도와 공제율, 실손보험 차감을 자동 반영하여 의료비세액공제 총액을 계산합니다.</p>
+
+        <!-- 기본 정보 -->
+        <div class="input-section-title">기본 정보</div>
+        <div class="form-group">
+          <label>총급여 <span class="hint">연간 세전 급여 (비과세 제외)</span></label>
+          <input type="number" id="totalSalary" placeholder="예: 50000000" value="50000000" min="0">
+        </div>
+
+        <!-- 일반 의료비 -->
+        <hr class="section-divider">
+        <div class="input-section-title">의료비 항목 입력</div>
+        <p style="font-size:0.82em;color:#888;margin:-8px 0 12px;">실손보험을 받은 경우, 각 항목의 실손보험 수령액을 별도 입력해주세요.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>일반 의료비 <span class="hint">원 (한도 700만원)</span></label>
+            <input type="number" id="generalMedical" placeholder="예: 3000000" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>실손보험 수령액 (일반) <span class="hint">원</span></label>
+            <input type="number" id="generalInsurance" placeholder="예: 500000" value="0" min="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>본인·65세이상·장애인 의료비 <span class="hint">원 (한도 없음, 15%)</span></label>
+            <input type="number" id="specialMedical" placeholder="예: 2000000" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>실손보험 수령액 (본인 등) <span class="hint">원</span></label>
+            <input type="number" id="specialInsurance" placeholder="예: 0" value="0" min="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>난임시술비 <span class="hint">원 (한도 없음, 30%)</span></label>
+            <input type="number" id="infertilityMedical" placeholder="예: 0" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>실손보험 수령액 (난임) <span class="hint">원</span></label>
+            <input type="number" id="infertilityInsurance" placeholder="예: 0" value="0" min="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>미숙아·선천이상아 의료비 <span class="hint">원 (한도 없음, 20%)</span></label>
+            <input type="number" id="prematureMedical" placeholder="예: 0" value="0" min="0">
+          </div>
+          <div class="form-group">
+            <label>실손보험 수령액 (미숙아 등) <span class="hint">원</span></label>
+            <input type="number" id="prematureInsurance" placeholder="예: 0" value="0" min="0">
+          </div>
+        </div>
+
+        <button class="btn-calc" onclick="calculate()">공제액 계산하기</button>
+
+        <!-- 결과 -->
+        <div class="result-box" id="result" style="display:none;">
+
+          <!-- 총 공제액 -->
+          <div class="total-deduction-box">
+            <div class="tlabel">의료비세액공제 총액</div>
+            <div class="tvalue" id="totalDeduction"></div>
+            <div class="tsub" id="totalSub"></div>
+          </div>
+
+          <!-- 항목별 카드 -->
+          <div class="deduction-cards" id="deductionCards"></div>
+
+          <!-- 항목별 상세 -->
+          <div style="font-weight:700;font-size:0.95em;color:#333;margin:20px 0 8px;">항목별 계산 상세</div>
+          <table class="refund-table" id="refundTable">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>의료비</th>
+                <th>공제 대상액</th>
+                <th>공제율</th>
+                <th>세액공제액</th>
+              </tr>
+            </thead>
+            <tbody id="refundBody"></tbody>
+          </table>
+
+          <!-- 예상 환급 효과 -->
+          <div class="benefit-summary" id="benefitSummary"></div>
+
+        </div>
+      </div>
+
+      <div class="ad-zone horizontal" style="margin-top:20px;"></div>
+
+      <!-- 용어 설명 -->
+      <div class="calc-box" style="margin-top:20px;">
+        <h2 style="font-size:1.15em;margin-bottom:16px;">의료비세액공제 핵심 용어 정리</h2>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">의료비세액공제란?</h3>
+        <p>의료비세액공제는 소득세법 제59조의4에 따라 근로자가 부담한 의료비의 일정 금액을 세액에서 직접 차감하는 제도입니다. 총급여의 3%를 초과하는 의료비에 대해 15~30%의 세액공제율이 적용됩니다. 단, 본인·65세 이상·장애인·난임시술비·미숙아 및 선천이상아 의료비는 3% 문턱 없이 전액 공제 대상입니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">2026년 의료비 공제율 및 한도</h3>
+        <p>① 일반 의료비: 총급여 3% 초과분 × 15%, 한도 700만원. ② 본인·65세 이상·장애인: 3% 문턱 없음, 한도 없음 × 15%. ③ 미숙아·선천이상아: 3% 문턱 없음, 한도 없음 × 20%. ④ 난임시술비: 3% 문턱 없음, 한도 없음 × 30%. 실손보험 수령액은 해당 항목의 의료비에서 차감한 후 공제 대상액을 계산합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">총급여 3% 문턱 계산 방식</h3>
+        <p>의료비 공제 대상 계산: (일반 의료비 - 실손보험 수령액)에서 총급여 × 3%를 초과하는 금액만 공제됩니다. 3% 문턱은 일반 의료비에만 적용되며, 본인·65세 이상·장애인·난임시술비·미숙아 의료비는 3% 문턱 없이 전액이 공제 기준액에 포함됩니다. 3% 초과 계산 시, 3% 문턱 적용 항목들의 합산액이 3% 기준을 이미 충족하는 경우 일반 의료비도 전액 공제됩니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">실손보험 차감 원칙</h3>
+        <p>실손의료보험에서 보험금을 수령한 경우, 해당 금액은 의료비에서 차감하여 공제 대상액을 산출합니다. 예를 들어 입원비 200만원을 지출하고 실손보험에서 150만원을 받았다면, 실제 공제 대상 의료비는 50만원입니다. 보험회사가 직접 병원에 지급한 경우에도 동일하게 차감합니다.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">공제 대상 의료비 범위</h3>
+        <p>공제 대상: 진찰·치료비, 약품 구입비, 장애인 보조기기, 시력교정 안경·콘택트렌즈(1인 50만원 한도), 보청기, 의료기기 임차·구입비, 산후조리원(총급여 7,000만원 이하, 출산 1회당 200만원 한도). 공제 제외: 미용·성형 목적 의료비, 건강증진의약품, 외국 병원 의료비(일부 제외), 보험료, 안마사 안마비용.</p>
+
+        <h3 style="font-size:1em;color:#1a73e8;margin:16px 0 8px;">부양가족 의료비 공제</h3>
+        <p>기본공제 대상 부양가족(배우자, 자녀, 부모 등)의 의료비도 공제받을 수 있습니다. 단, 부양가족의 연간 소득금액이 100만원을 초과하거나 다른 가족이 기본공제를 받는 경우에도 의료비 공제는 실제 지출자가 받을 수 있습니다. 배우자나 형제자매가 소득이 있어도, 실제 지출한 사람이 의료비 공제를 받을 수 있는 특례가 있습니다.</p>
+
+        <!-- FAQ 섹션 -->
+        <h2 style="font-size:1.15em;margin:32px 0 16px;">자주 묻는 질문 (FAQ)</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>의료비 공제 3% 문턱이 있으면 소액은 공제 못 받나요?</summary>
+            <p>일반 의료비는 총급여의 3%를 초과해야 공제받을 수 있습니다. 총급여 5,000만원이면 150만원 이하의 일반 의료비는 공제되지 않습니다. 하지만 본인·65세 이상·장애인·난임시술비·미숙아 의료비는 3% 문턱 없이 전액 공제 대상이므로, 이 항목의 의료비가 있다면 소액이라도 공제 가능합니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>맞벌이 부부의 경우 의료비 공제는 어떻게 하나요?</summary>
+            <p>맞벌이 부부의 경우 의료비는 실제 지출한 배우자의 연말정산에 포함시킵니다. 단, 배우자가 소득이 있어 기본공제 대상이 아니더라도, 배우자 의료비는 공제받을 수 있는 특례가 있습니다. 총급여 3% 기준은 각자의 급여 기준으로 적용되므로, 급여가 낮은 쪽에 몰아주는 것이 유리할 수 있습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>한방 치료비, 침·뜸 치료비도 공제되나요?</summary>
+            <p>한의원에서 받은 치료(침·뜸·한약 처방 등)는 의료비세액공제 대상입니다. 단, 한약재를 개인적으로 구입하거나 의료기관 외 장소에서 받은 시술은 공제 대상이 아닙니다. 의료기관에서 발행한 영수증을 기준으로 공제가 적용됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>라식·라섹 수술비도 의료비 공제가 되나요?</summary>
+            <p>라식·라섹 등 시력교정 수술은 의료비세액공제 대상입니다. 미용·성형 목적이 아닌 치료 목적의 의료행위로 인정되어 일반 의료비 항목으로 공제됩니다. 단, 미용 목적의 쌍꺼풀 수술, 코 성형 등은 공제 대상이 아닙니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>치과 임플란트, 교정 치료비도 공제받을 수 있나요?</summary>
+            <p>치과 임플란트는 의료비세액공제 대상입니다. 치아 교정(교정 치료)의 경우, 기능적 목적(저작 기능 회복 등)이면 공제 대상이지만, 순수 심미적 목적이면 공제되지 않을 수 있습니다. 의료기관에서 발행한 영수증으로 공제 신청하면 됩니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>해외에서 진료받은 비용도 공제되나요?</summary>
+            <p>원칙적으로 국내 의료기관에서 지출한 의료비만 공제 대상입니다. 해외 현지 병원 진료비는 공제 대상에서 제외됩니다. 단, 국내 의료기관에서 처방받아 해외에서 구입한 의약품은 경우에 따라 달라질 수 있으므로 세무사에게 확인하는 것이 좋습니다.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>의료비 세액공제를 못 받으면 이월되나요?</summary>
+            <p>의료비세액공제는 이월 공제가 되지 않습니다. 해당 과세연도의 결정세액 범위 내에서만 공제되며, 공제 후 남은 금액은 환급되지 않습니다. 또한 결정세액이 0인 경우에는 의료비 세액공제의 실질적인 혜택을 받을 수 없습니다.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+      <div class="ad-zone rectangle"></div>
+
+      <div class="info-box">
+        <h3>공제율 요약</h3>
+        <ul>
+          <li><strong>일반 의료비</strong>: 3% 초과분 × 15%<br><span style="font-size:0.85em;">한도 700만원</span></li>
+          <li><strong>본인·65세이상·장애인</strong>: 전액 × 15%<br><span style="font-size:0.85em;">한도 없음</span></li>
+          <li><strong>미숙아·선천이상아</strong>: 전액 × 20%<br><span style="font-size:0.85em;">한도 없음</span></li>
+          <li><strong>난임시술비</strong>: 전액 × 30%<br><span style="font-size:0.85em;">한도 없음</span></li>
+        </ul>
+      </div>
+
+      <div class="info-box" style="margin-top:16px;">
+        <h3>공제 포인트</h3>
+        <ul>
+          <li>총급여 × 3% = <strong>공제 문턱</strong></li>
+          <li>실손보험 수령액은 <strong>차감 필수</strong></li>
+          <li>안경·렌즈: 1인당 <strong>50만원 한도</strong></li>
+          <li>산후조리원: 출산 1회당 <strong>200만원 한도</strong> (총급여 7천만원 이하)</li>
+          <li>부양가족 의료비 <strong>합산 가능</strong></li>
+        </ul>
+      </div>
+
+      <div class="related-links" style="margin-top:16px;">
+        <h3>관련 계산기</h3>
+        <div class="related-grid">
+          <a href="child-tax-deduction.html" class="related-link">자녀세액공제</a>
+          <a href="income-tax.html" class="related-link">종합소득세</a>
+          <a href="salary.html" class="related-link">연봉 실수령액</a>
+          <a href="income-tax-refund.html" class="related-link">소득세 환급액</a>
+        </div>
+      </div>
+
+      <div class="ad-zone rectangle" style="margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>calcmoney.kr · 본 계산기는 참고용으로, 정확한 세액은 국세청 홈택스 또는 세무사에 확인하세요.</p>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="about.html">소개</a> · <a href="contact.html">문의</a></p>
+  </div>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('ko-KR') + '원';
+  }
+  function fmtWan(n) {
+    if (n >= 100000000) return (n / 100000000).toFixed(1).replace(/\.0$/, '') + '억원';
+    if (n >= 10000) return Math.round(n / 10000) + '만원';
+    return fmt(n);
+  }
+
+  function calculate() {
+    const totalSalary      = parseFloat(document.getElementById('totalSalary').value) || 0;
+    const generalMedical   = parseFloat(document.getElementById('generalMedical').value) || 0;
+    const generalIns       = parseFloat(document.getElementById('generalInsurance').value) || 0;
+    const specialMedical   = parseFloat(document.getElementById('specialMedical').value) || 0;
+    const specialIns       = parseFloat(document.getElementById('specialInsurance').value) || 0;
+    const infertilityMed   = parseFloat(document.getElementById('infertilityMedical').value) || 0;
+    const infertilityIns   = parseFloat(document.getElementById('infertilityInsurance').value) || 0;
+    const prematureMed     = parseFloat(document.getElementById('prematureMedical').value) || 0;
+    const prematureIns     = parseFloat(document.getElementById('prematureInsurance').value) || 0;
+
+    // 실손 차감 후 순 의료비
+    const generalNet     = Math.max(0, generalMedical - generalIns);
+    const specialNet     = Math.max(0, specialMedical - specialIns);
+    const infertilityNet = Math.max(0, infertilityMed - infertilityIns);
+    const prematureNet   = Math.max(0, prematureMed - prematureIns);
+
+    // 3% 문턱
+    const threshold = totalSalary * 0.03;
+
+    // 3% 문턱 적용 제외 항목 합산 (본인·65세이상·장애인 + 난임 + 미숙아)
+    const exemptTotal = specialNet + infertilityNet + prematureNet;
+
+    // 일반 의료비 공제 대상액: 3% 문턱 계산
+    // 전체 의료비(exemptTotal + generalNet)에서 threshold를 차감
+    // 단, exempt 항목은 전액 공제 → threshold를 먼저 일반에서 소진
+    let generalDeductible = 0;
+    const totalMedical = exemptTotal + generalNet;
+    if (totalMedical > threshold) {
+      // 문턱을 일반 의료비에 먼저 적용
+      const remainThreshold = Math.max(0, threshold - exemptTotal);
+      generalDeductible = Math.max(0, generalNet - remainThreshold);
+    }
+
+    // 일반 의료비 한도 700만원
+    generalDeductible = Math.min(generalDeductible, 7000000);
+
+    // 세액공제액 계산
+    const generalTaxDeduction     = Math.round(generalDeductible * 0.15);
+    const specialTaxDeduction     = Math.round(specialNet * 0.15);
+    const infertilityTaxDeduction = Math.round(infertilityNet * 0.30);
+    const prematureTaxDeduction   = Math.round(prematureNet * 0.20);
+
+    const totalTaxDeduction = generalTaxDeduction + specialTaxDeduction + infertilityTaxDeduction + prematureTaxDeduction;
+
+    // 총 공제액 표시
+    document.getElementById('totalDeduction').textContent = fmt(totalTaxDeduction);
+    document.getElementById('totalSub').textContent =
+      `의료비 합계 ${fmtWan(totalMedical)} / 문턱 ${fmtWan(threshold)} / 공제 대상 ${fmtWan(generalDeductible + specialNet + infertilityNet + prematureNet)}`;
+
+    // 항목별 카드
+    const cards = [];
+    if (generalTaxDeduction > 0) {
+      cards.push({ label: '일반 의료비 공제\n(15%)', value: fmt(generalTaxDeduction), highlight: false });
+    }
+    if (specialTaxDeduction > 0) {
+      cards.push({ label: '본인·65세이상·장애인\n(15%)', value: fmt(specialTaxDeduction), highlight: true });
+    }
+    if (prematureTaxDeduction > 0) {
+      cards.push({ label: '미숙아·선천이상아\n(20%)', value: fmt(prematureTaxDeduction), highlight: false });
+    }
+    if (infertilityTaxDeduction > 0) {
+      cards.push({ label: '난임시술비\n(30%)', value: fmt(infertilityTaxDeduction), highlight: true });
+    }
+    if (cards.length === 0) {
+      cards.push({ label: '공제 대상 없음\n(의료비 부족)', value: '0원', highlight: false });
+    }
+
+    document.getElementById('deductionCards').innerHTML = cards.map(c =>
+      `<div class="deduction-card ${c.highlight ? 'highlight' : ''}"><div class="dlabel">${c.label.replace('\n','<br>')}</div><div class="dvalue">${c.value}</div></div>`
+    ).join('');
+
+    // 항목별 상세 테이블
+    const rows = [];
+
+    if (generalMedical > 0 || generalNet > 0) {
+      rows.push(`<tr>
+        <td>일반 의료비</td>
+        <td>${fmt(generalNet)}</td>
+        <td>${fmt(generalDeductible)}</td>
+        <td>15%</td>
+        <td><strong>${fmt(generalTaxDeduction)}</strong></td>
+      </tr>`);
+    }
+
+    if (specialMedical > 0 || specialNet > 0) {
+      rows.push(`<tr>
+        <td>본인·65세이상·장애인</td>
+        <td>${fmt(specialNet)}</td>
+        <td>${fmt(specialNet)}</td>
+        <td>15%</td>
+        <td><strong>${fmt(specialTaxDeduction)}</strong></td>
+      </tr>`);
+    }
+
+    if (prematureMed > 0 || prematureNet > 0) {
+      rows.push(`<tr>
+        <td>미숙아·선천이상아</td>
+        <td>${fmt(prematureNet)}</td>
+        <td>${fmt(prematureNet)}</td>
+        <td>20%</td>
+        <td><strong>${fmt(prematureTaxDeduction)}</strong></td>
+      </tr>`);
+    }
+
+    if (infertilityMed > 0 || infertilityNet > 0) {
+      rows.push(`<tr>
+        <td>난임시술비</td>
+        <td>${fmt(infertilityNet)}</td>
+        <td>${fmt(infertilityNet)}</td>
+        <td>30%</td>
+        <td><strong>${fmt(infertilityTaxDeduction)}</strong></td>
+      </tr>`);
+    }
+
+    if (rows.length === 0) {
+      rows.push(`<tr><td colspan="5" style="text-align:center;color:#999;padding:16px;">입력된 의료비가 없거나 공제 대상 금액이 없습니다.</td></tr>`);
+    }
+
+    rows.push(`<tr class="subtotal">
+      <td colspan="2"><strong>합계</strong></td>
+      <td colspan="2"></td>
+      <td><strong>${fmt(totalTaxDeduction)}</strong></td>
+    </tr>`);
+
+    document.getElementById('refundBody').innerHTML = rows.join('');
+
+    // 예상 환급 효과
+    const taxBrackets = [
+      { label: '~2,800만원', rate: 0.06 },
+      { label: '~5,000만원', rate: 0.15 },
+      { label: '~8,800만원', rate: 0.24 },
+      { label: '~1.5억원',  rate: 0.35 },
+    ];
+
+    let bracketLabel = '~2,800만원';
+    if (totalSalary > 150000000) bracketLabel = '1.5억원 초과';
+    else if (totalSalary > 88000000) bracketLabel = '~1.5억원';
+    else if (totalSalary > 50000000) bracketLabel = '~8,800만원';
+    else if (totalSalary > 28000000) bracketLabel = '~5,000만원';
+
+    const refundInfo = totalTaxDeduction > 0
+      ? `예상 연간 환급액: <strong>${fmt(totalTaxDeduction)}</strong> / 월 환산: <strong>${fmt(Math.round(totalTaxDeduction / 12))}</strong>`
+      : '의료비가 총급여의 3%에 미달하여 일반 의료비 공제가 적용되지 않습니다.';
+
+    document.getElementById('benefitSummary').innerHTML = `
+      <h4>예상 환급 효과 안내</h4>
+      <ul>
+        <li>${refundInfo}</li>
+        <li>총급여 구간: <strong>${bracketLabel}</strong> / 공제 문턱: <strong>${fmtWan(threshold)}</strong></li>
+        <li>의료비 세액공제는 세율과 무관하게 세액에서 직접 차감됩니다.</li>
+        <li>결정세액보다 공제액이 크면 결정세액까지만 공제되며 초과분은 이월 불가합니다.</li>
+      </ul>
+    `;
+
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>
